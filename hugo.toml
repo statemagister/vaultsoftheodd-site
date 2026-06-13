@@ -15,7 +15,7 @@ enableEmoji = false
   # Cloudflare Web Analytics (cookieless). Paste the token from your
   # Cloudflare dashboard > Analytics & Logs > Web Analytics. Leaving it
   # blank simply omits the analytics snippet.
-  cloudflareToken = ""
+  cloudflareToken = "62f17538dacb49e2979a2dd99a91bed4"
   # giscus comments (GitHub Discussions). Fill these in after enabling
   # Discussions on the public site repo and installing the giscus app:
   # https://giscus.app  Leaving repo blank disables comments.

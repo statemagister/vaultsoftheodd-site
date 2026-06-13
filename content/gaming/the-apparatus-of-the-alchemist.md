@@ -10,6 +10,8 @@ tags:
   - "Artefacts"
 ---
 
+<figure class="wp-block-image alignright size-large is-resized"><img src="/wp-content/uploads/2026/04/IMG_0791-805x1024.jpeg" alt="" class="wp-image-57" style="aspect-ratio:0.7861431233179215;width:302px;height:auto"/><figcaption class="wp-element-caption">Cover art from I10 Ravenloft II: The House on Gryphon Hill. Art by Clyde Caldwell, TSR Inc., 1986.</figcaption></figure>
+
 *A Source Analysis of I10 Ravenloft II: The House on Gryphon Hill*
 
 The Apparatus of Gryphon Hill is treated in almost every discussion of I10 as a plot device: the thing the players must locate and activate to defeat the Creature and end the adventure. This article examines it as a subject in its own right.
@@ -21,6 +23,8 @@ A second framing note. The Apparatus operates in what I10 consistently calls sou
 -----
 
 ## The Physical Object
+
+<figure class="wp-block-image alignright size-large is-resized"><img src="/wp-content/uploads/2026/05/IMG_0856-823x1024.jpeg" alt="" class="wp-image-174" style="aspect-ratio:0.8037154729894891;width:312px;height:auto"/></figure>
 
 The Apparatus is described in I10 as a great and terrible achievement. It sits in a large room, over two stories tall. A great network of cold-forged steel rings focuses the power of lightning strikes into a great globe in the dome overhead. The energy is stored and converted into a spinning ball of sulphur encased in a fifteen-foot glass globe. This force is channelled into a bank of small spheres at the base. From there it is focused into a pair of glass chambers where subjects are held.
 

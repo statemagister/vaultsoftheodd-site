@@ -133,6 +133,10 @@ a:hover { color: var(--gold-bright); text-decoration: underline; text-underline-
 
 h1, h2, h3, h4 { font-family: var(--display); color: var(--text-primary); line-height: 1.2; font-weight: 600; }
 
+/* Gaming vault: gold titles to match its gothic identity */
+body.theme-gaming .post-title,
+body.theme-gaming .list-title { color: var(--gold); }
+
 img { max-width: 100%; height: auto; }
 
 hr { border: 0; height: 1px; background: var(--rule); margin: 2.4rem auto; max-width: 8rem; }

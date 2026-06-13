@@ -8,9 +8,8 @@
         {{- end }}
         <h1 class="post-title">{{ .Title }}</h1>
         {{- with .Params.subtitle }}<p class="post-subtitle">{{ . }}</p>{{- end }}
-        {{- if not .Date.IsZero }}
-        <p class="post-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
-        {{- end }}
+        {{- $byline := .Params.byline | default .Site.Params.author }}
+        <p class="post-meta">By {{ $byline }}{{ if not .Date.IsZero }} &middot; <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>{{ end }}</p>
       </header>
 
       {{- with .Params.summary }}<p class="post-lede">{{ . }}</p>{{- end }}

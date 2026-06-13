@@ -52,6 +52,23 @@
       </section>
       {{- end }}
 
+      {{- /* Other tags in this vault, so readers can branch off to a new topic */ -}}
+      {{- $own := .Params.tags | default slice }}
+      {{- $vaultTags := slice }}
+      {{- range (where .Site.RegularPages "Section" .Section) }}{{ range .Params.tags }}{{ $vaultTags = $vaultTags | append . }}{{ end }}{{ end }}
+      {{- $others := slice }}
+      {{- range (uniq $vaultTags) }}{{ if not (in $own .) }}{{ $others = $others | append . }}{{ end }}{{ end }}
+      {{- with (sort $others) }}
+      <section class="aside-block">
+        <details class="aside-collapse" open>
+          <summary>Browse by tag</summary>
+          <div class="aside-tags">
+            {{- range . }}<a class="tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+          </div>
+        </details>
+      </section>
+      {{- end }}
+
       {{- with .Site.Params.buymeacoffee }}
       <section class="aside-block">
         <h2 class="aside-title">Support</h2>

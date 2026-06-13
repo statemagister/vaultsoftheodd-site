@@ -36,6 +36,27 @@ tags:
 .vc-doom .vc-hang.vc-on{opacity:1}
 .vc-doom .vc-living{fill:#86714a}
 .vc-doom .vc-living-l{stroke:#86714a;stroke-width:3;stroke-linecap:round}
+.vc-doom .vc-flicker{stroke-width:6;animation:vcflick 2.6s steps(1,end) infinite}
+@keyframes vcflick{
+ 0%{stroke:#b23440;opacity:.95}
+ 7%{stroke:#b23440;opacity:.18}
+ 11%{stroke:#3fae63;opacity:1}
+ 21%{stroke:#3fae63;opacity:.5}
+ 25%{stroke:#b23440;opacity:.95}
+ 36%{stroke:#b23440;opacity:.2}
+ 40%{stroke:#3fae63;opacity:.95}
+ 49%{stroke:#3fae63;opacity:.35}
+ 53%{stroke:#b23440;opacity:1}
+ 63%{stroke:#b23440;opacity:.85}
+ 66%{opacity:.12}
+ 70%{stroke:#3fae63;opacity:1}
+ 79%{stroke:#3fae63;opacity:.4}
+ 83%{stroke:#b23440;opacity:.95}
+ 92%{stroke:#b23440;opacity:.28}
+ 96%{stroke:#3fae63;opacity:.9}
+ 100%{stroke:#b23440;opacity:.95}
+}
+@media (prefers-reduced-motion:reduce){.vc-doom .vc-flicker{animation:none;stroke:var(--gold);opacity:.9}}
 </style>
 
 The cemetery at the foot of the castle road is the most quietly significant feature of the village of Barovia. By day it is unremarkable. At midnight the procession of one hundred spirits rises from its graves, walks the road to the castle, climbs the chapel staircase to the high tower, and throws itself down the shaft toward the crypts. The module describes them as "the spirits of previous adventurers who died trying to destroy Strahd," repeating the attempt nightly and failing nightly. The procession is not atmosphere. It is a register.
@@ -134,7 +155,7 @@ function doom(s){
  var m=s.querySelectorAll('.vc-mark'),b=s.querySelectorAll('.vc-body'),bl=s.querySelector('.vc-blood');
  var mn=s.querySelector('.vc-min'),hr=s.querySelector('.vc-hour'),hg=s.querySelector('.vc-hang');
  function R(el,d){el.setAttribute('transform','rotate('+d+' 180 150)');}
- function finish(){R(mn,330);R(hr,354);hg.classList.add('vc-on');if(!RM){var a=hg.querySelector('animateTransform');if(a&&a.beginElement){try{a.beginElement();}catch(e){}}}}
+ function finish(){R(mn,330);R(hr,354);if(m[19])m[19].classList.add('vc-flicker');hg.classList.add('vc-on');if(!RM){var a=hg.querySelector('animateTransform');if(a&&a.beginElement){try{a.beginElement();}catch(e){}}}}
  if(RM){for(var i=0;i<19;i++){m[i].classList.add('vc-spent');b[i].classList.add('vc-fallen');}bl.style.transform='scale(1.05)';finish();return;}
  var k=0,iv=setInterval(function(){
   R(mn,k*18);R(hr,330+24*k/18);m[k].classList.add('vc-spent');if(b[k])b[k].classList.add('vc-fallen');bl.style.transform='scale('+(0.3+0.04*k).toFixed(3)+')';

@@ -85,3 +85,5 @@ One by one, the gods vanished from the room at the edge of forever, until only L
 ---
 
 *Leomund departed Oerth on Patchwall 23, 620 CY (6135 SD), the day Lenard Lakofka died. Edited by Thomas Kelly; first published at Greyhawk Stories, 25 October 2020.*
+
+*Artwork accompanying the original publication: ["Greek" by matty17art](https://www.deviantart.com/matty17art/art/Greek-196769779).*

@@ -4,7 +4,7 @@ slug: "privacy-policy"
 layout: "page"
 ---
 
-Vaults of the ODD is a small, non-commercial site run from the United Kingdom. This page sets out what data is collected, how it is used, and the rights you have over it under UK GDPR and the Data Protection Act 2018.
+Vaults of the ODD is a small, independent site run from the United Kingdom. This page sets out what data is collected, how it is used, and the rights you have over it under UK GDPR and the Data Protection Act 2018.
 
 ## How the site is hosted
 

@@ -376,6 +376,9 @@ figcaption, .wp-element-caption { font-size: 0.78rem; font-style: italic; color:
 .aside-folder li.current { color: var(--text-muted); }
 .aside-folder li.current span { border-left: 2px solid var(--gold); padding-left: 0.5rem; display: block; margin-left: -0.6rem; }
 
+/* ---- Fan content disclaimer ---- */
+.fan-disclaimer { max-width: var(--maxw); margin: 2.2rem auto 0; padding-top: 1.3rem; border-top: 1px solid var(--rule-soft); font-size: 0.76rem; font-style: italic; color: var(--text-muted); text-align: center; }
+
 /* ---- Comments (fills the content column, matches page theme) ---- */
 .comments { margin: 3rem 0 0; padding-top: 2rem; border-top: 1px solid var(--rule-soft); }
 .comments-title { font-size: 1.4rem; margin-bottom: 1.2rem; }

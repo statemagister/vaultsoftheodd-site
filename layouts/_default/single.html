@@ -17,6 +17,10 @@
       </div>
     </article>
 
+    {{- if .Params.fancontent }}
+    <p class="fan-disclaimer">{{ .Title }} is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. &copy;Wizards of the Coast LLC.</p>
+    {{- end }}
+
     {{- /* Previous / next within the vault, ordered by date so labels are right */ -}}
     {{- $earlier := false }}{{- $later := false }}
     {{- with .PrevInSection }}{{ if lt .Date $.Date }}{{ $earlier = . }}{{ else }}{{ $later = . }}{{ end }}{{ end }}

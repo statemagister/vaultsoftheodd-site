@@ -8,6 +8,7 @@ tags:
   - "Fiction"
   - "Tribute"
 description: "A tribute to Lenard Lakofka, creator of Leomund, written the day he died."
+fancontent: true
 ---
 
 *Lenard W. Lakofka — creator of Leomund, author of the L-series modules, and the designer who gave Greyhawk its Suel gods — died on 23 October 2020. I wrote this the same day. Thomas Kelly edited it and first published it at [Greyhawk Stories](https://greyhawkstories.com/2020/10/25/leomund-at-the-edge-of-forever/) two days later; it is collected here on my own site, with a few small corrections. The gods who gather for Leomund are Lakofka's own.*

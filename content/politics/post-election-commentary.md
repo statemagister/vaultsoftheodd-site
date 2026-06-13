@@ -2,7 +2,7 @@
 title: "Post-Election Commentary"
 subtitle: "Preface to A Framework for Welsh Constitutional Development"
 slug: "post-election-commentary"
-date: 2026-05-12T10:00:00Z
+date: 2026-06-13T10:00:00Z
 weight: 20
 summary: "A short preface to the Framework, written after the 8 May 2026 Senedd election. The framework was substantially complete before the result and its core argument didn't depend on it; this note reads the new political environment against it — where the result strengthens or complicates particular sections, and what it means for sequencing the recommendations."
 pdf: "/papers/griffiths-post-election-commentary-may-2026.pdf"

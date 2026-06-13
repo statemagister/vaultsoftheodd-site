@@ -2,7 +2,7 @@
 title: "Wales–Westminster Constitutional Development"
 subtitle: "An Analytical Paper for the 2026–2030 Senedd Term"
 slug: "wales-westminster-constitutional-development"
-date: 2026-05-15T10:00:00Z
+date: 2026-06-13T10:00:00Z
 weight: 30
 summary: "The Westminster-facing companion to the Framework. It examines where the present devolution settlement creates problems — institutional coherence, accountability, intergovernmental friction, constitutional asymmetry — and where reform would serve both Welsh and UK Government interests. It argues no single constitutional endpoint."
 pdf: "/papers/griffiths-wales-westminster-constitutional-development-may-2026.pdf"

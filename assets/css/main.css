@@ -308,10 +308,56 @@ figcaption, .wp-element-caption { font-size: 0.78rem; font-style: italic; color:
 .page-content h2 { font-size: 1.5rem; margin-top: 2.2rem; }
 .page-content h3 { font-size: 1.2rem; color: var(--gold); margin-top: 1.6rem; }
 
-/* ---- Comments ---- */
-.comments { max-width: var(--maxw); margin: 3rem auto 0; padding-top: 2rem; border-top: 1px solid var(--rule-soft); }
+/* ---- Article layout: content + sticky information sidebar ---- */
+.post-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 16.5rem; /* sidebar on the right; swap the two values to move it left */
+  gap: 2.8rem;
+  align-items: start;
+  max-width: var(--maxw-wide);
+  padding-block: 3rem;
+}
+.post-main { min-width: 0; }
+.post-main .post { max-width: none; padding-block: 0; }
+
+.post-aside { position: sticky; top: 1.5rem; }
+.aside-inner { display: flex; flex-direction: column; gap: 1.9rem; }
+.aside-block { }
+.aside-title {
+  font-family: var(--display); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-muted); margin: 0 0 0.8rem; padding-bottom: 0.45rem; border-bottom: 1px solid var(--rule);
+}
+.aside-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.aside-tags .tag { margin: 0; }
+.post-aside .coffee { width: 100%; justify-content: center; }
+
+.aside-folder { margin-bottom: 0.5rem; }
+.aside-folder summary {
+  cursor: pointer; list-style: none; font-family: var(--display); font-size: 0.82rem;
+  letter-spacing: 0.03em; color: var(--gold); display: flex; justify-content: space-between; align-items: baseline;
+  padding: 0.2rem 0;
+}
+.aside-folder summary::-webkit-details-marker { display: none; }
+.aside-folder summary::before { content: "\25B8"; margin-right: 0.45rem; font-size: 0.7rem; color: var(--text-muted); transition: transform 0.15s ease; display: inline-block; }
+.aside-folder[open] summary::before { transform: rotate(90deg); }
+.folder-count { color: var(--text-muted); opacity: 0.7; font-size: 0.7rem; font-family: var(--display); }
+.aside-folder ul { list-style: none; margin: 0.4rem 0 0.9rem; padding: 0 0 0 1.15rem; }
+.aside-folder li { font-size: 0.93rem; line-height: 1.35; margin-bottom: 0.55rem; }
+.aside-folder li.current { color: var(--text-muted); }
+.aside-folder li.current span { border-left: 2px solid var(--gold); padding-left: 0.5rem; display: block; margin-left: -0.6rem; }
+
+/* ---- Comments (fills the content column, matches page theme) ---- */
+.comments { margin: 3rem 0 0; padding-top: 2rem; border-top: 1px solid var(--rule-soft); }
 .comments-title { font-size: 1.4rem; margin-bottom: 1.2rem; }
 .comments-note { color: var(--text-muted); font-style: italic; }
+
+@media (max-width: 960px) {
+  .post-layout { grid-template-columns: 1fr; gap: 0; }
+  .post-aside { position: static; margin-top: 2.8rem; padding-top: 1.6rem; border-top: 1px solid var(--rule); max-width: var(--maxw); }
+  .post-main .post-body, .post-main .post-header, .post-main .post-nav, .post-main .post-actions, .post-main .comments {
+    max-width: var(--maxw); margin-inline: auto;
+  }
+}
 
 /* ---- 404 ---- */
 .notfound { text-align: center; padding-block: 5rem; max-width: var(--maxw); }

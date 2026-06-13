@@ -1,6 +1,9 @@
 {{- with .Site.Params.giscus }}
 {{- if .repo }}
-<section class="comments wrap">
+{{- /* Match giscus to the vault's palette: dark vaults get the dark theme,
+       light vaults the light theme. */ -}}
+{{- $dark := in (slice "gaming" "mythology") $.Section }}
+<section class="comments">
   <h2 class="comments-title">Comments</h2>
   <script src="https://giscus.app/client.js"
     data-repo="{{ .repo }}"
@@ -11,8 +14,8 @@
     data-strict="1"
     data-reactions-enabled="1"
     data-emit-metadata="0"
-    data-input-position="top"
-    data-theme="dark"
+    data-input-position="bottom"
+    data-theme="{{ cond $dark "dark" "light" }}"
     data-lang="en"
     crossorigin="anonymous"
     async>

@@ -1,9 +1,11 @@
 {{- with .Site.Params.giscus }}
 {{- if .repo }}
-{{- /* Match giscus to the vault's palette: dark vaults get the dark theme,
-       light vaults the light theme. */ -}}
+{{- /* Match giscus to the vault's palette via a custom giscus theme stylesheet.
+       The theme URL is built from the live origin at runtime so it works on the
+       staging (.net) domain now and the canonical (.com) domain after cutover. */ -}}
 {{- $dark := in (slice "gaming" "mythology") $.Section }}
-<section class="comments">
+{{- $themeFile := cond $dark "giscus/vaults-dark.css" "giscus/vaults-light.css" }}
+<section class="comments" id="comments" data-giscus-theme="{{ $themeFile }}">
   <h2 class="comments-title">Comments</h2>
   <script src="https://giscus.app/client.js"
     data-repo="{{ .repo }}"
@@ -21,5 +23,22 @@
     async>
   </script>
 </section>
+<script>
+(function () {
+  var holder = document.getElementById('comments');
+  if (!holder) return;
+  var themeUrl = window.location.origin + '/' + holder.getAttribute('data-giscus-theme');
+  function apply() {
+    var f = document.querySelector('iframe.giscus-frame');
+    if (f && f.contentWindow) {
+      f.contentWindow.postMessage({ giscus: { setConfig: { theme: themeUrl } } }, 'https://giscus.app');
+    }
+  }
+  window.addEventListener('message', function (e) {
+    if (e.origin === 'https://giscus.app' && e.data && e.data.giscus) apply();
+  });
+  var n = 0, iv = setInterval(function () { apply(); if (++n > 15) clearInterval(iv); }, 600);
+})();
+</script>
 {{- end }}
 {{- end }}

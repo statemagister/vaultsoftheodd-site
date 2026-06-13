@@ -1,0 +1,33 @@
+/* giscus theme — Vaults of the ODD, dark archival gothic (dark vaults) */
+main {
+  --color-prettylights-syntax-comment: #a99f8c;
+  --color-fg-default: #d8d0c0;
+  --color-fg-muted: #a99f8c;
+  --color-fg-subtle: #8a8270;
+  --color-canvas-default: #15120f;
+  --color-canvas-overlay: #211c18;
+  --color-canvas-inset: #1d1916;
+  --color-canvas-subtle: #1d1916;
+  --color-border-default: rgba(201, 162, 75, 0.28);
+  --color-border-muted: rgba(233, 226, 211, 0.10);
+  --color-neutral-muted: rgba(233, 226, 211, 0.08);
+  --color-accent-fg: #c9a24b;
+  --color-accent-emphasis: #c9a24b;
+  --color-accent-muted: rgba(201, 162, 75, 0.40);
+  --color-accent-subtle: rgba(201, 162, 75, 0.15);
+  --color-success-fg: #9bb04f;
+  --color-btn-text: #e9e2d3;
+  --color-btn-bg: #211c18;
+  --color-btn-border: rgba(201, 162, 75, 0.28);
+  --color-btn-hover-bg: #1d1916;
+  --color-btn-hover-border: #c9a24b;
+  --color-btn-active-bg: #2a231d;
+  --color-btn-primary-text: #15120f;
+  --color-btn-primary-bg: #c9a24b;
+  --color-btn-primary-border: #c9a24b;
+  --color-btn-primary-hover-bg: #e2c074;
+  --color-btn-primary-hover-border: #e2c074;
+  --color-social-reaction-bg-hover: #2a231d;
+  --color-social-reaction-bg-reacted-hover: #322a22;
+  color-scheme: dark;
+}

@@ -3,14 +3,22 @@
 {{ partial "head.html" . }}
 {{- /* Per-vault theming: each section gets its own palette via a body class,
        and gaming articles add a per-setting class (set-ravenloft, etc.). */ -}}
+{{- $sections := slice "gaming" "journals" "politics" "stories" "mythology" -}}
 {{- $theme := "page" -}}
+{{- $set := "" -}}
 {{- if .IsHome -}}
   {{- $theme = "home" -}}
-{{- else if in (slice "gaming" "journals" "politics" "stories" "mythology") .Section -}}
+{{- else if in $sections .Section -}}
   {{- $theme = .Section -}}
+  {{- with .Params.settings }}{{ $set = printf " set-%s" (index . 0 | urlize) }}{{ end -}}
+{{- else if and (in (slice "term" "taxonomy") .Kind) (gt (len .Pages) 0) -}}
+  {{- /* Tag / setting pages take on the theme of the articles they list */ -}}
+  {{- $first := index .Pages 0 -}}
+  {{- if in $sections $first.Section -}}
+    {{- $theme = $first.Section -}}
+    {{- with $first.Params.settings }}{{ $set = printf " set-%s" (index . 0 | urlize) }}{{ end -}}
+  {{- end -}}
 {{- end -}}
-{{- $set := "" -}}
-{{- with .Params.settings -}}{{- $set = printf " set-%s" (index . 0 | urlize) -}}{{- end -}}
 <body class="theme-{{ $theme }}{{ $set }}">
   {{ partial "header.html" . }}
   <main class="site-main">

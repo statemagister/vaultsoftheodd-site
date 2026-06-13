@@ -79,32 +79,32 @@ body.theme-politics {
   --display: var(--body); /* restrained: drop the decorative display face */
 }
 
-/* ---- Stories: solid deep forest green, light text ---- */
+/* ---- Stories: the light reverse of Mythology — pale olive parchment, deep moss ---- */
 body.theme-stories {
-  --bg: #173524;
-  --bg-alt: #1e4330;
-  --bg-card: #234a36;
-  --text-primary: #eef5ef;
-  --text-body: #d4e6da;
-  --text-muted: #93b39e;
-  --gold: #5fc187;
-  --gold-bright: #84d9a4;
-  --rule: rgba(95, 193, 135, 0.34);
-  --rule-soft: rgba(238, 245, 239, 0.11);
+  --bg: #eef0e1;
+  --bg-alt: #e4e7d2;
+  --bg-card: #f9faf0;
+  --text-primary: #23280f;
+  --text-body: #2f3519;
+  --text-muted: #6a7150;
+  --gold: #6c7c2b;
+  --gold-bright: #54611f;
+  --rule: rgba(108, 124, 43, 0.32);
+  --rule-soft: rgba(35, 40, 15, 0.12);
 }
 
-/* ---- Mythology: the light reverse of Stories — pale sage parchment, deep green ---- */
+/* ---- Mythology: earthy, Welsh, mossy gold-green on deep green ---- */
 body.theme-mythology {
-  --bg: #edf3e7;
-  --bg-alt: #e2ebd8;
-  --bg-card: #f9fcf4;
-  --text-primary: #18301f;
-  --text-body: #26392c;
-  --text-muted: #5e7363;
-  --gold: #2f7d4f;
-  --gold-bright: #225e3a;
-  --rule: rgba(47, 125, 79, 0.30);
-  --rule-soft: rgba(24, 48, 31, 0.12);
+  --bg: #10140f;
+  --bg-alt: #171c15;
+  --bg-card: #1b211a;
+  --text-primary: #e6e9dd;
+  --text-body: #d2d8c6;
+  --text-muted: #9aa58c;
+  --gold: #9bb04f;
+  --gold-bright: #bcd06f;
+  --rule: rgba(155, 176, 79, 0.28);
+  --rule-soft: rgba(230, 233, 221, 0.10);
 }
 
 /* ---- Manual dark/light override (header toggle). Default is the per-vault

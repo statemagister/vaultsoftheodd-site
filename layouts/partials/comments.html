@@ -4,7 +4,7 @@
        The theme URL is built from the live origin at runtime so it works on the
        staging (.net) domain now and the canonical (.com) domain after cutover. */ -}}
 {{- $sec := $.Section }}
-{{- $dark := in (slice "gaming" "stories") $sec }}
+{{- $dark := in (slice "gaming" "mythology") $sec }}
 {{- $themeFile := "giscus/vaults-light.css" }}
 {{- if eq $sec "gaming" }}{{ $themeFile = "giscus/vaults-dark.css" }}{{ end }}
 {{- if eq $sec "stories" }}{{ $themeFile = "giscus/vaults-stories.css" }}{{ end }}

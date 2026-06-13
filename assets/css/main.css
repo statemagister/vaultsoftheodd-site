@@ -160,9 +160,12 @@ a:hover { color: var(--gold-bright); text-decoration: underline; text-underline-
 
 h1, h2, h3, h4 { font-family: var(--display); color: var(--text-primary); line-height: 1.2; font-weight: 600; }
 
-/* Gaming vault: gold titles to match its gothic identity */
-body.theme-gaming .post-title,
-body.theme-gaming .list-title { color: var(--gold); }
+/* Each content vault colours its titles with its own accent; the article-list
+   hover highlight (also var(--gold)) then matches the title colour in that vault. */
+body.theme-gaming .post-title, body.theme-gaming .list-title,
+body.theme-stories .post-title, body.theme-stories .list-title,
+body.theme-mythology .post-title, body.theme-mythology .list-title,
+body.theme-politics .post-title, body.theme-politics .list-title { color: var(--gold); }
 
 img { max-width: 100%; height: auto; }
 

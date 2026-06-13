@@ -1,6 +1,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{- /* Apply a saved dark/light override before paint to avoid a flash. Default is the per-vault theme. */ -}}
+  <script>(function(){try{var t=localStorage.getItem('vo-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-force',t);}}catch(e){}})();</script>
 
   {{- $title := .Title -}}
   {{- $isHome := .IsHome -}}

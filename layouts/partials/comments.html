@@ -32,16 +32,23 @@
 (function () {
   var holder = document.getElementById('comments');
   if (!holder) return;
-  var themeUrl = window.location.origin + '/' + holder.getAttribute('data-giscus-theme');
+  function themeUrl() {
+    var f = document.documentElement.getAttribute('data-force');
+    var file = (f === 'dark') ? 'giscus/vaults-dark.css'
+             : (f === 'light') ? 'giscus/vaults-light.css'
+             : holder.getAttribute('data-giscus-theme');
+    return window.location.origin + '/' + file;
+  }
   function apply() {
-    var f = document.querySelector('iframe.giscus-frame');
-    if (f && f.contentWindow) {
-      f.contentWindow.postMessage({ giscus: { setConfig: { theme: themeUrl } } }, 'https://giscus.app');
+    var fr = document.querySelector('iframe.giscus-frame');
+    if (fr && fr.contentWindow) {
+      fr.contentWindow.postMessage({ giscus: { setConfig: { theme: themeUrl() } } }, 'https://giscus.app');
     }
   }
   window.addEventListener('message', function (e) {
     if (e.origin === 'https://giscus.app' && e.data && e.data.giscus) apply();
   });
+  window.addEventListener('vo-theme-change', apply);
   var n = 0, iv = setInterval(function () { apply(); if (++n > 15) clearInterval(iv); }, 600);
 })();
 </script>

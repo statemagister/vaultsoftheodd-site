@@ -1,6 +1,9 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <div class="header-top">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Colour theme">
+        <span class="tt-icon" aria-hidden="true">&#9681;</span>
+      </button>
       <a class="brand" href="/">
         <span class="brand-vaults">Vaults of the</span> <span class="brand-odd">ODD</span>
       </a>
@@ -16,3 +19,27 @@
     </nav>
   </div>
 </header>
+<script>
+(function () {
+  var modes = ['vault', 'dark', 'light'];
+  var icons = { vault: '◑', dark: '☾', light: '☀' };   // ◑ ☾ ☀
+  var labels = { vault: 'Vault default', dark: 'Dark', light: 'Light' };
+  var btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  function current() { try { return localStorage.getItem('vo-theme') || 'vault'; } catch (e) { return 'vault'; } }
+  function apply(m) {
+    if (m === 'vault') { document.documentElement.removeAttribute('data-force'); }
+    else { document.documentElement.setAttribute('data-force', m); }
+    var ic = btn.querySelector('.tt-icon'); if (ic) ic.innerHTML = icons[m];
+    btn.title = 'Colour theme: ' + labels[m];
+    btn.setAttribute('aria-label', 'Colour theme: ' + labels[m] + ' (click to change)');
+    window.dispatchEvent(new CustomEvent('vo-theme-change', { detail: m }));
+  }
+  apply(current());
+  btn.addEventListener('click', function () {
+    var next = modes[(modes.indexOf(current()) + 1) % modes.length];
+    try { localStorage.setItem('vo-theme', next); } catch (e) {}
+    apply(next);
+  });
+})();
+</script>

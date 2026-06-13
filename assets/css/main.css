@@ -107,6 +107,33 @@ body.theme-mythology {
   --rule-soft: rgba(230, 233, 221, 0.10);
 }
 
+/* ---- Manual dark/light override (header toggle). Default is the per-vault
+   theme; these only apply when the visitor opts in, and win on specificity. ---- */
+html[data-force="dark"] body {
+  --bg: #17181c;
+  --bg-alt: #1f2026;
+  --bg-card: #24262d;
+  --text-primary: #ededed;
+  --text-body: #d7d7d7;
+  --text-muted: #9b9b9b;
+  --gold: #c9a24b;
+  --gold-bright: #e2c074;
+  --rule: rgba(201, 162, 75, 0.28);
+  --rule-soft: rgba(237, 237, 237, 0.10);
+}
+html[data-force="light"] body {
+  --bg: #f6f3ee;
+  --bg-alt: #ece7de;
+  --bg-card: #fffdf9;
+  --text-primary: #25211b;
+  --text-body: #353029;
+  --text-muted: #6f6a60;
+  --gold: #9c6418;
+  --gold-bright: #7d4e10;
+  --rule: rgba(156, 100, 24, 0.30);
+  --rule-soft: rgba(37, 33, 27, 0.12);
+}
+
 /* ============================================================
    Base
    ============================================================ */
@@ -160,6 +187,8 @@ hr { border: 0; height: 1px; background: var(--rule); margin: 2.4rem auto; max-w
 .site-nav a { font-family: var(--display); font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
 .site-nav a:hover, .site-nav a.active { color: var(--gold); text-decoration: none; }
 .nav-toggle { display: none; background: none; border: 0; color: var(--gold); font-size: 1.5rem; cursor: pointer; position: absolute; right: 0; top: 50%; transform: translateY(-50%); }
+.theme-toggle { position: absolute; left: 0; top: 50%; transform: translateY(-50%); background: none; border: 1px solid var(--rule); color: var(--text-muted); width: 1.9rem; height: 1.9rem; border-radius: 50%; cursor: pointer; font-size: 0.92rem; line-height: 1; display: flex; align-items: center; justify-content: center; padding: 0; transition: color 0.15s ease, border-color 0.15s ease; }
+.theme-toggle:hover { color: var(--gold); border-color: var(--gold); }
 
 /* ---- Buy me a coffee (header + articles) ---- */
 .coffee {

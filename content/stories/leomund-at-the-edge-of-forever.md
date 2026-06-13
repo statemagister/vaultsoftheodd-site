@@ -8,6 +8,7 @@ settings:
 tags:
   - "Fiction"
   - "Tribute"
+  - "Greyhawk"
 description: "A tribute to Lenard Lakofka, creator of Leomund, written the day he died."
 fancontent: true
 ---

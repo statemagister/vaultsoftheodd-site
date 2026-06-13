@@ -1,35 +1,52 @@
 {{ define "main" }}
-<div class="list wrap">
-  <header class="list-header">
-    <h1 class="list-title">{{ .Title }}</h1>
-    {{- with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
-  </header>
+<div class="post-layout wrap">
+  <div class="post-main">
+    <header class="list-header">
+      <h1 class="list-title">{{ .Title }}</h1>
+      {{- with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
+    </header>
 
-  {{- /* Browse-by-tag strip, built from the tags actually used in this vault */ -}}
-  {{- $tags := slice }}
-  {{- range .Pages }}{{ range .Params.tags }}{{ $tags = $tags | append . }}{{ end }}{{ end }}
-  {{- with (uniq $tags) }}
-  <nav class="browse-tags" aria-label="Browse by tag">
-    <p class="browse-tags-label">Browse by tag</p>
-    {{- range (sort .) }}<a class="tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}
-  </nav>
-  {{- end }}
-
-  {{- $pages := .Pages.ByDate.Reverse }}
-  {{- if $pages }}
-  <ul class="post-list">
-    {{- range $pages }}
-    <li class="post-list-item">
-      <a class="post-list-link" href="{{ .RelPermalink }}">
-        <h2 class="post-list-title">{{ .Title }}</h2>
-        {{- if not .Date.IsZero }}<p class="post-list-date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>{{ end }}
-        {{- with .Params.tags }}<p class="post-list-tags">{{ delimit . " &middot; " | safeHTML }}</p>{{ end }}
-      </a>
-    </li>
+    {{- $pages := .Pages.ByDate.Reverse }}
+    {{- if $pages }}
+    <ul class="post-list">
+      {{- range $pages }}
+      <li class="post-list-item">
+        <a class="post-list-link" href="{{ .RelPermalink }}">
+          <h2 class="post-list-title">{{ .Title }}</h2>
+          {{- if not .Date.IsZero }}<p class="post-list-date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>{{ end }}
+          {{- with .Params.tags }}<p class="post-list-tags">{{ delimit . " &middot; " | safeHTML }}</p>{{ end }}
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+    {{- else }}
+    <p class="coming-soon">More from this vault is on the way.</p>
     {{- end }}
-  </ul>
-  {{- else }}
-  <p class="coming-soon">More from this vault is on the way.</p>
-  {{- end }}
+  </div>
+
+  {{- /* Vault information sidebar: browse by tag + support */ -}}
+  <aside class="post-aside" aria-label="Vault information">
+    <div class="aside-inner">
+
+      {{- $tags := slice }}
+      {{- range .Pages }}{{ range .Params.tags }}{{ $tags = $tags | append . }}{{ end }}{{ end }}
+      {{- with (uniq $tags) }}
+      <section class="aside-block">
+        <h2 class="aside-title">Browse by tag</h2>
+        <div class="aside-tags">
+          {{- range (sort .) }}<a class="tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+        </div>
+      </section>
+      {{- end }}
+
+      {{- with .Site.Params.buymeacoffee }}
+      <section class="aside-block">
+        <h2 class="aside-title">Support</h2>
+        <a class="coffee" href="{{ . }}" rel="noopener" target="_blank"><span class="cup">&#9749;</span> Buy me a coffee</a>
+      </section>
+      {{- end }}
+
+    </div>
+  </aside>
 </div>
 {{ end }}

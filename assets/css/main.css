@@ -79,18 +79,18 @@ body.theme-politics {
   --display: var(--body); /* restrained: drop the decorative display face */
 }
 
-/* ---- Stories: literary, soft sepia ---- */
+/* ---- Stories: ethereal, soft pastel light on a dusky dark ground ---- */
 body.theme-stories {
-  --bg: #f7f3ec;
-  --bg-alt: #efe9df;
-  --bg-card: #fffdf9;
-  --text-primary: #2a2622;
-  --text-body: #39342d;
-  --text-muted: #776f64;
-  --gold: #8a5a3c;
-  --gold-bright: #6f4429;
-  --rule: rgba(138, 90, 60, 0.28);
-  --rule-soft: rgba(42, 38, 34, 0.12);
+  --bg: #191a24;
+  --bg-alt: #20212e;
+  --bg-card: #242637;
+  --text-primary: #efecf7;
+  --text-body: #dcd7ec;
+  --text-muted: #a59fbe;
+  --gold: #c2add9;
+  --gold-bright: #dcc9f2;
+  --rule: rgba(194, 173, 217, 0.30);
+  --rule-soft: rgba(239, 236, 247, 0.10);
 }
 
 /* ---- Mythology: earthy, Welsh, mossy gold-green on deep green ---- */
@@ -231,7 +231,8 @@ hr { border: 0; height: 1px; background: var(--rule); margin: 2.4rem auto; max-w
 .post { max-width: var(--maxw); }
 .post-header { text-align: center; margin-bottom: 2.4rem; }
 .post-setting { font-family: var(--display); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin: 0 0 0.8rem; }
-.post-title { font-size: clamp(1.8rem, 5vw, 2.8rem); margin: 0 0 0.7rem; }
+.post-title { font-size: clamp(1.8rem, 5vw, 2.8rem); margin: 0 0 0.5rem; }
+.post-subtitle { font-family: var(--display); font-style: italic; color: var(--gold); font-size: 1.1rem; margin: 0 0 0.6rem; }
 .post-meta { color: var(--text-muted); font-style: italic; margin: 0; }
 
 .post-body { font-size: 1.16rem; }

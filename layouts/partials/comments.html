@@ -3,8 +3,9 @@
 {{- /* Match giscus to the vault's palette via a custom giscus theme stylesheet.
        The theme URL is built from the live origin at runtime so it works on the
        staging (.net) domain now and the canonical (.com) domain after cutover. */ -}}
-{{- $dark := in (slice "gaming" "mythology") $.Section }}
+{{- $dark := in (slice "gaming" "mythology" "stories") $.Section }}
 {{- $themeFile := cond $dark "giscus/vaults-dark.css" "giscus/vaults-light.css" }}
+{{- if eq $.Section "stories" }}{{ $themeFile = "giscus/vaults-stories.css" }}{{ end }}
 <section class="comments" id="comments" data-giscus-theme="{{ $themeFile }}">
   <h2 class="comments-title">Comments</h2>
   <script src="https://giscus.app/client.js"

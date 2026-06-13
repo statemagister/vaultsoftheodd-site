@@ -1,5 +1,6 @@
 ---
 title: "Leomund at the Edge of Forever"
+subtitle: "A tribute to Lenard Lakofka"
 date: 2020-10-25T10:00:00Z
 slug: "leomund-at-the-edge-of-forever"
 settings:

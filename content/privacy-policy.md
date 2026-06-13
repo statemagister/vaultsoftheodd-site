@@ -14,9 +14,13 @@ The site is a set of static pages served by GitHub Pages, a service provided by 
 
 Where comments are enabled, they are provided through giscus, which stores them as discussions in this site's public repository on GitHub. To post a comment you sign in with a GitHub account, and your comment, your GitHub username and your public profile are then handled by GitHub under its own privacy terms. If comments are not enabled on a page, no comment data is collected. The site owner does not separately store your email address.
 
+## Analytics
+
+To understand how many people visit and which writing is read, the site uses **Cloudflare Web Analytics**. This is a privacy-first, **cookieless** service: it sets no cookies, does not fingerprint your device, and does not track you across other websites. It records only aggregated, anonymous information such as page views, approximate country, referring site, and browser type. It does not build a profile of you and cannot identify you as an individual. Because no cookies or similar tracking technologies are used, no consent banner is required; a short notice is shown for transparency. The data is processed by Cloudflare, Inc. on the site owner's behalf.
+
 ## What is not collected
 
-No newsletter sign-ups, no accounts on this site, no advertising networks, and no analytics or tracking cookies are used by default. Your reading here is not a product being sold to anyone. If analytics are added in future, this page will be updated first and any non-essential cookies will be set only with your consent.
+No newsletter sign-ups, no accounts on this site, no advertising networks, and no advertising or cross-site tracking cookies. Your reading here is not a product being sold to anyone. The only cookies that may be set are those GitHub uses if you choose to sign in to leave a comment, which are strictly necessary for that function you have opted into.
 
 ## Your rights
 

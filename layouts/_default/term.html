@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="list wrap">
+  <header class="list-header">
+    <p class="post-setting">{{ .Data.Singular | title }}</p>
+    <h1 class="list-title">{{ .Title }}</h1>
+    <p class="list-intro">{{ len .Pages }} essay{{ if ne (len .Pages) 1 }}s{{ end }} tagged &ldquo;{{ .Title }}&rdquo;.</p>
+  </header>
+
+  <ul class="post-list">
+    {{- range .Pages.ByDate.Reverse }}
+    <li class="post-list-item">
+      <a class="post-list-link" href="{{ .RelPermalink }}">
+        <h2 class="post-list-title">{{ .Title }}</h2>
+        {{- if not .Date.IsZero }}<p class="post-list-date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>{{ end }}
+      </a>
+    </li>
+    {{- end }}
+  </ul>
+
+  <p class="section-cta"><a class="button ghost" href="/{{ .Data.Plural }}/">All {{ .Data.Plural }}</a></p>
+</div>
+{{ end }}

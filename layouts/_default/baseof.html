@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode | default "en-gb" }}">
 {{ partial "head.html" . }}
-<body>
+{{- /* Per-vault theming: each section gets its own palette via a body class,
+       and gaming articles add a per-setting class (set-ravenloft, etc.). */ -}}
+{{- $theme := "page" -}}
+{{- if .IsHome -}}
+  {{- $theme = "home" -}}
+{{- else if in (slice "gaming" "journals" "politics" "stories" "mythology") .Section -}}
+  {{- $theme = .Section -}}
+{{- end -}}
+{{- $set := "" -}}
+{{- with .Params.settings -}}{{- $set = printf " set-%s" (index . 0 | urlize) -}}{{- end -}}
+<body class="theme-{{ $theme }}{{ $set }}">
   {{ partial "header.html" . }}
   <main class="site-main">
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
+  {{ partial "privacy-notice.html" . }}
 </body>
 </html>

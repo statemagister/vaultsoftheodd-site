@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="list wrap">
+  <header class="list-header">
+    <h1 class="list-title">{{ .Title }}</h1>
+    <p class="list-intro">Browse the writing by {{ .Data.Singular }}. Larger names have more behind them.</p>
+  </header>
+
+  {{- with .Data.Terms.ByCount }}
+  <div class="tag-cloud">
+    {{- range . }}
+    {{- $w := cond (gt .Count 6) 6 .Count }}
+    <a class="tag" href="{{ .Page.RelPermalink }}" style="--w:{{ $w }}">{{ .Page.Title }} <span class="count">{{ .Count }}</span></a>
+    {{- end }}
+  </div>
+  {{- else }}
+  <p class="coming-soon">No {{ .Data.Plural }} yet.</p>
+  {{- end }}
+</div>
+{{ end }}

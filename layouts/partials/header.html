@@ -3,7 +3,6 @@
     <a class="brand" href="/">
       <span class="brand-vaults">Vaults of the</span> <span class="brand-odd">ODD</span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); document.getElementById('site-nav').classList.toggle('open')">☰</button>
     <nav id="site-nav" class="site-nav" aria-label="Primary">
       <ul>
         {{- range .Site.Menus.main }}
@@ -12,5 +11,13 @@
         {{- end }}
       </ul>
     </nav>
+    <div class="header-right">
+      {{- with .Site.Params.buymeacoffee }}
+      <a class="coffee header-coffee" href="{{ . }}" rel="noopener" target="_blank" aria-label="Support the writing">
+        <span class="cup">&#9749;</span> Support
+      </a>
+      {{- end }}
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); document.getElementById('site-nav').classList.toggle('open')">&#9776;</button>
+    </div>
   </div>
 </header>

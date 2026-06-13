@@ -28,4 +28,10 @@
 
   {{- $css := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint -}}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+
+  {{- /* Cloudflare Web Analytics: cookieless, privacy-friendly. Activates
+         once the token from your Cloudflare dashboard is set in hugo.toml. */ -}}
+  {{- with .Site.Params.cloudflareToken }}
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ . }}"}'></script>
+  {{- end }}
 </head>

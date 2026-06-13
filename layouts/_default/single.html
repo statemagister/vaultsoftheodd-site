@@ -21,5 +21,50 @@
   {{- end }}
 </article>
 
+<div class="post-foot wrap">
+
+  {{- /* Support */ -}}
+  {{- with .Site.Params.buymeacoffee }}
+  <aside class="support-callout">
+    <p>If this was worth your time, you can help keep the work going.</p>
+    <a class="coffee" href="{{ . }}" rel="noopener" target="_blank"><span class="cup">&#9749;</span> Buy me a coffee</a>
+  </aside>
+  {{- end }}
+
+  {{- /* Previous / next, ordered by date so the labels are always right */ -}}
+  {{- $earlier := false }}{{- $later := false }}
+  {{- with .PrevInSection }}{{ if lt .Date $.Date }}{{ $earlier = . }}{{ else }}{{ $later = . }}{{ end }}{{ end }}
+  {{- with .NextInSection }}{{ if lt .Date $.Date }}{{ $earlier = . }}{{ else }}{{ $later = . }}{{ end }}{{ end }}
+  {{- if or $earlier $later }}
+  <nav class="post-nav" aria-label="More in this vault">
+    {{- if $earlier }}<a class="post-nav-link prev" href="{{ $earlier.RelPermalink }}"><span class="post-nav-dir">&larr; Earlier</span><span class="post-nav-title">{{ $earlier.Title }}</span></a>{{ else }}<span></span>{{ end }}
+    {{- if $later }}<a class="post-nav-link next" href="{{ $later.RelPermalink }}"><span class="post-nav-dir">Later &rarr;</span><span class="post-nav-title">{{ $later.Title }}</span></a>{{ else }}<span></span>{{ end }}
+  </nav>
+  {{- end }}
+
+  {{- /* Wayfinding: back to the vault, the shop, home */ -}}
+  <div class="post-actions">
+    {{- with .Site.GetPage (printf "/%s" .Section) }}<a class="button ghost" href="{{ .RelPermalink }}">Back to {{ .Title }}</a>{{ end }}
+    <a class="button ghost" href="/journals/">The Journals</a>
+    <a class="button ghost" href="/">Home</a>
+  </div>
+
+  {{- /* Publication history: every essay in this vault, newest first */ -}}
+  {{- $siblings := where .Site.RegularPages "Section" .Section }}
+  {{- if gt (len $siblings) 1 }}
+  <details class="section-archive">
+    <summary>Publication history &mdash; all {{ len $siblings }} essays in this vault</summary>
+    <ul>
+      {{- range $siblings.ByDate.Reverse }}
+      <li{{ if eq .RelPermalink $.RelPermalink }} class="current"{{ end }}>
+        {{- if eq .RelPermalink $.RelPermalink }}<span>{{ .Title }} <em>(you are here)</em></span>{{ else }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+        {{- if not .Date.IsZero }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2006" }}</time>{{ end }}
+      </li>
+      {{- end }}
+    </ul>
+  </details>
+  {{- end }}
+</div>
+
 {{ partial "comments.html" . }}
 {{ end }}

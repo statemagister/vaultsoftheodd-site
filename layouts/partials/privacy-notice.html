@@ -1,0 +1,25 @@
+{{- /* Transparent, non-blocking privacy notice. We use cookieless analytics
+       and set no advertising/tracking cookies, so no consent gate is legally
+       required; this simply informs and links to the policy. The dismissal
+       flag is stored in localStorage, not a cookie. */ -}}
+<aside class="privacy-notice" id="privacy-notice" role="note" aria-label="Privacy notice" hidden>
+  <p>This site uses privacy-friendly, <strong>cookieless</strong> analytics and sets no advertising or tracking cookies. Comments, if you choose to use them, are handled by GitHub. See the <a href="/privacy-policy/">Privacy&nbsp;Policy</a>.</p>
+  <div class="pn-actions">
+    <button type="button" id="privacy-notice-ok">Got it</button>
+  </div>
+</aside>
+<script>
+(function () {
+  try {
+    var key = 'vo-privacy-ack';
+    var el = document.getElementById('privacy-notice');
+    if (!el) return;
+    if (!window.localStorage || !localStorage.getItem(key)) { el.hidden = false; }
+    var btn = document.getElementById('privacy-notice-ok');
+    if (btn) btn.addEventListener('click', function () {
+      try { localStorage.setItem(key, '1'); } catch (e) {}
+      el.hidden = true;
+    });
+  } catch (e) {}
+})();
+</script>

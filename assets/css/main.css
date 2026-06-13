@@ -1,11 +1,38 @@
 /* ============================================================
-   Vaults of the ODD — dark archival theme
-   Cinzel (display) + EB Garamond (body), gold accents.
-   The custom properties below are also relied on by migrated
-   article HTML (var(--gold), var(--text-primary), var(--text-muted)).
+   Vaults of the ODD — per-vault theming system
+   ------------------------------------------------------------
+   Each vault has its own palette, applied via a body class
+   (theme-home, theme-gaming, theme-politics, ...). Gaming
+   articles add a per-setting class (set-ravenloft, and later
+   set-greyhawk / set-forgotten-realms / set-mystara).
+
+   Everything below the palette blocks is built on the custom
+   properties, so a new vault or setting only needs its own
+   colour block — no component rules change. The migrated
+   article HTML also relies on var(--gold), var(--text-primary)
+   and var(--text-muted).
    ============================================================ */
 
+/* ---- Default palette: warm, friendly, light (Home, Journals, About) ---- */
 :root {
+  --bg: #f6efe1;
+  --bg-alt: #efe5d3;
+  --bg-card: #fffdf7;
+  --text-primary: #2c2417;
+  --text-body: #3a3122;
+  --text-muted: #796f5b;
+  --gold: #9c6418;
+  --gold-bright: #7d4e10;
+  --rule: rgba(156, 100, 24, 0.30);
+  --rule-soft: rgba(44, 36, 23, 0.13);
+  --maxw: 44rem;
+  --maxw-wide: 64rem;
+  --display: "Cinzel", Georgia, serif;
+  --body: "EB Garamond", Georgia, "Times New Roman", serif;
+}
+
+/* ---- Gaming / Ravenloft: dark archival gothic, gold accents ---- */
+body.theme-gaming {
   --bg: #15120f;
   --bg-alt: #1d1916;
   --bg-card: #211c18;
@@ -16,12 +43,73 @@
   --gold-bright: #e2c074;
   --rule: rgba(201, 162, 75, 0.28);
   --rule-soft: rgba(233, 226, 211, 0.10);
-  --maxw: 44rem;
-  --maxw-wide: 64rem;
-  --display: "Cinzel", Georgia, serif;
-  --body: "EB Garamond", Georgia, "Times New Roman", serif;
 }
 
+/* Per-setting accents within the Gaming vault. Ravenloft uses the
+   gothic base above. Add a block like these when a new setting's
+   first article ships — the body already carries set-<slug>. */
+body.theme-gaming.set-greyhawk {
+  --gold: #b98a3c;
+  --gold-bright: #d8aa5b;
+  --bg: #14110c;          /* imperial bronze / parchment-by-candlelight */
+}
+body.theme-gaming.set-forgotten-realms {
+  --gold: #6fa8c7;
+  --gold-bright: #9cc8e0; /* silver-blue, Sword Coast */
+  --rule: rgba(111, 168, 199, 0.28);
+}
+body.theme-gaming.set-mystara {
+  --gold: #c77b4a;
+  --gold-bright: #e09b6c; /* earthy Known World red-gold */
+  --rule: rgba(199, 123, 74, 0.28);
+}
+
+/* ---- Politics: academic, sober, scholarly blue on cool white ---- */
+body.theme-politics {
+  --bg: #f3f4f6;
+  --bg-alt: #e8eaed;
+  --bg-card: #ffffff;
+  --text-primary: #1b2733;
+  --text-body: #27323d;
+  --text-muted: #5d6b78;
+  --gold: #34607f;
+  --gold-bright: #244660;
+  --rule: rgba(52, 96, 127, 0.28);
+  --rule-soft: rgba(27, 39, 51, 0.12);
+  --display: var(--body); /* restrained: drop the decorative display face */
+}
+
+/* ---- Stories: literary, soft sepia ---- */
+body.theme-stories {
+  --bg: #f7f3ec;
+  --bg-alt: #efe9df;
+  --bg-card: #fffdf9;
+  --text-primary: #2a2622;
+  --text-body: #39342d;
+  --text-muted: #776f64;
+  --gold: #8a5a3c;
+  --gold-bright: #6f4429;
+  --rule: rgba(138, 90, 60, 0.28);
+  --rule-soft: rgba(42, 38, 34, 0.12);
+}
+
+/* ---- Mythology: earthy, Welsh, mossy gold-green on deep green ---- */
+body.theme-mythology {
+  --bg: #10140f;
+  --bg-alt: #171c15;
+  --bg-card: #1b211a;
+  --text-primary: #e6e9dd;
+  --text-body: #d2d8c6;
+  --text-muted: #9aa58c;
+  --gold: #9bb04f;
+  --gold-bright: #bcd06f;
+  --rule: rgba(155, 176, 79, 0.28);
+  --rule-soft: rgba(230, 233, 221, 0.10);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
 *, *::before, *::after { box-sizing: border-box; }
 
 html { font-size: 18px; -webkit-text-size-adjust: 100%; }
@@ -35,6 +123,7 @@ body {
   font-size: 1.12rem;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .wrap { width: 100%; max-width: var(--maxw-wide); margin-inline: auto; padding-inline: 1.4rem; }
@@ -60,10 +149,22 @@ hr { border: 0; height: 1px; background: var(--rule); margin: 2.4rem auto; max-w
 .header-inner { display: flex; align-items: center; justify-content: space-between; padding-block: 1.1rem; gap: 1rem; }
 .brand { font-size: 1.5rem; color: var(--text-primary); white-space: nowrap; }
 .brand:hover { text-decoration: none; }
+.header-right { display: flex; align-items: center; gap: 1.1rem; }
 .site-nav ul { list-style: none; display: flex; gap: 1.3rem; margin: 0; padding: 0; flex-wrap: wrap; }
 .site-nav a { font-family: var(--display); font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
 .site-nav a:hover, .site-nav a.active { color: var(--gold); text-decoration: none; }
 .nav-toggle { display: none; background: none; border: 0; color: var(--gold); font-size: 1.5rem; cursor: pointer; }
+
+/* ---- Buy me a coffee (header + articles) ---- */
+.coffee {
+  display: inline-flex; align-items: center; gap: 0.45rem; font-family: var(--display);
+  font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.45rem 0.9rem; border: 1px solid var(--gold); color: var(--gold);
+  border-radius: 2px; white-space: nowrap; transition: all 0.15s ease;
+}
+.coffee:hover { background: var(--gold); color: var(--bg); text-decoration: none; }
+.coffee .cup { font-size: 0.95rem; }
+.header-coffee { }
 
 /* ---- Hero / home ---- */
 .hero { text-align: center; padding-block: 4rem 2.6rem; border-bottom: 1px solid var(--rule-soft); }
@@ -113,6 +214,10 @@ hr { border: 0; height: 1px; background: var(--rule); margin: 2.4rem auto; max-w
 .post-list-date, .post-list-tags { margin: 0.3rem 0 0; color: var(--text-muted); font-size: 0.85rem; }
 .coming-soon { text-align: center; color: var(--text-muted); font-style: italic; }
 
+/* ---- Browse by tag (section pages) ---- */
+.browse-tags { max-width: var(--maxw); margin: 0 auto 2.4rem; text-align: center; }
+.browse-tags-label { font-family: var(--display); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 0.7rem; }
+
 /* ---- Single article ---- */
 .post { max-width: var(--maxw); }
 .post-header { text-align: center; margin-bottom: 2.4rem; }
@@ -155,6 +260,7 @@ figcaption, .wp-element-caption { font-size: 0.78rem; font-style: italic; color:
   }
 }
 
+/* ---- Tags ---- */
 .post-tags { margin-top: 2.6rem; padding-top: 1.4rem; border-top: 1px solid var(--rule-soft); text-align: center; }
 .tag {
   display: inline-block; font-family: var(--display); font-size: 0.68rem; letter-spacing: 0.08em;
@@ -162,6 +268,40 @@ figcaption, .wp-element-caption { font-size: 0.78rem; font-style: italic; color:
   padding: 0.3rem 0.7rem; border-radius: 2px; margin: 0.2rem;
 }
 .tag:hover { border-color: var(--gold); color: var(--gold); text-decoration: none; }
+
+/* Tag cloud (the /tags/ index) */
+.tag-cloud { max-width: var(--maxw); margin: 0 auto; text-align: center; line-height: 2.4; }
+.tag-cloud .tag { font-size: calc(0.62rem + var(--w, 0) * 0.12rem); }
+.tag-cloud .tag .count { color: var(--text-muted); opacity: 0.7; }
+
+/* ---- Article footer navigation ---- */
+.post-foot { max-width: var(--maxw); margin: 0 auto; }
+.support-callout {
+  text-align: center; margin: 3rem auto 0; padding: 1.8rem; background: var(--bg-card);
+  border: 1px solid var(--rule-soft); border-radius: 4px;
+}
+.support-callout p { margin: 0 0 1rem; color: var(--text-muted); }
+
+.post-nav {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2.6rem auto 0;
+}
+.post-nav-link {
+  display: block; padding: 1rem 1.2rem; background: var(--bg-card); border: 1px solid var(--rule-soft);
+  border-radius: 4px; color: var(--text-primary); transition: border-color 0.15s ease;
+}
+.post-nav-link:hover { border-color: var(--gold); text-decoration: none; }
+.post-nav-link.next { text-align: right; }
+.post-nav-dir { display: block; font-family: var(--display); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.3rem; }
+.post-nav-title { color: var(--gold); }
+
+.post-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; margin: 2rem auto 0; }
+
+.section-archive { margin: 2.8rem auto 0; padding-top: 1.8rem; border-top: 1px solid var(--rule-soft); }
+.section-archive summary { cursor: pointer; font-family: var(--display); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+.section-archive ul { list-style: none; margin: 1.2rem 0 0; padding: 0; }
+.section-archive li { padding: 0.5rem 0; border-bottom: 1px solid var(--rule-soft); display: flex; justify-content: space-between; gap: 1rem; }
+.section-archive li.current { color: var(--text-muted); }
+.section-archive time { color: var(--text-muted); font-size: 0.82rem; white-space: nowrap; }
 
 /* ---- Generic page (about, privacy, contact) ---- */
 .page-content { max-width: var(--maxw); margin-inline: auto; }
@@ -171,6 +311,7 @@ figcaption, .wp-element-caption { font-size: 0.78rem; font-style: italic; color:
 /* ---- Comments ---- */
 .comments { max-width: var(--maxw); margin: 3rem auto 0; padding-top: 2rem; border-top: 1px solid var(--rule-soft); }
 .comments-title { font-size: 1.4rem; margin-bottom: 1.2rem; }
+.comments-note { color: var(--text-muted); font-style: italic; }
 
 /* ---- 404 ---- */
 .notfound { text-align: center; padding-block: 5rem; max-width: var(--maxw); }
@@ -184,12 +325,35 @@ figcaption, .wp-element-caption { font-size: 0.78rem; font-style: italic; color:
 .footer-nav a:hover { color: var(--gold); text-decoration: none; }
 .footer-fine { font-size: 0.8rem; color: var(--text-muted); max-width: 38rem; margin: 0 auto; }
 
+/* ---- Privacy notice (transparent, non-blocking) ---- */
+.privacy-notice {
+  position: fixed; bottom: 1rem; left: 1rem; right: 1rem; max-width: 30rem; margin-inline: auto;
+  background: var(--bg-card); border: 1px solid var(--rule); border-radius: 6px;
+  padding: 1rem 1.1rem; box-shadow: 0 6px 24px rgba(0,0,0,0.25); z-index: 50;
+  font-size: 0.88rem; color: var(--text-body);
+}
+.privacy-notice[hidden] { display: none; }
+.privacy-notice p { margin: 0 0 0.8rem; }
+.privacy-notice .pn-actions { display: flex; gap: 0.8rem; justify-content: flex-end; align-items: center; }
+.privacy-notice button {
+  font-family: var(--display); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.4rem 0.9rem; border: 1px solid var(--gold); background: var(--gold); color: var(--bg);
+  border-radius: 2px; cursor: pointer;
+}
+.privacy-notice button:hover { background: var(--gold-bright); border-color: var(--gold-bright); }
+
 @media (max-width: 720px) {
   .nav-toggle { display: block; }
   .site-nav { display: none; width: 100%; }
   .site-nav.open { display: block; }
   .header-inner { flex-wrap: wrap; }
+  .header-right { gap: 0.7rem; }
   .site-nav ul { flex-direction: column; gap: 0.4rem; padding-block: 0.8rem; }
+}
+
+@media (max-width: 520px) {
+  .post-nav { grid-template-columns: 1fr; }
+  .post-nav-link.next { text-align: left; }
 }
 
 /* ---- Journals / shop ---- */
@@ -197,7 +361,7 @@ figcaption, .wp-element-caption { font-size: 0.78rem; font-style: italic; color:
 .product-grid { display: grid; gap: 1.4rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); margin: 2rem 0; }
 .product-card { background: var(--bg-card); border: 1px solid var(--rule-soft); border-radius: 4px; padding: 1.4rem; }
 .product-cover { aspect-ratio: 3 / 4; border-radius: 2px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; text-align: center; }
-.product-cover.placeholder { background: linear-gradient(160deg, var(--bg-alt), #2a231d); border: 1px dashed var(--rule); color: var(--text-muted); font-family: var(--display); font-size: 0.85rem; letter-spacing: 0.06em; }
+.product-cover.placeholder { background: linear-gradient(160deg, var(--bg-alt), var(--bg)); border: 1px dashed var(--rule); color: var(--text-muted); font-family: var(--display); font-size: 0.85rem; letter-spacing: 0.06em; }
 .product-name { margin: 0 0 0.5rem; font-size: 1.25rem; color: var(--gold); }
 .product-desc { font-size: 0.98rem; color: var(--text-muted); margin: 0 0 1rem; }
 .product-status { font-family: var(--display); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin: 0; }

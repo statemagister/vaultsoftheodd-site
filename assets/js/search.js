@@ -18,7 +18,7 @@
     var terms = q.split(/\s+/);
     var matches = index.filter(function (it) {
       var hay = (it.title + ' ' + (it.tags || []).join(' ') + ' ' +
-                 (it.settings || []).join(' ') + ' ' + (it.summary || '')).toLowerCase();
+                 (it.settings || []).join(' ') + ' ' + (it.content || it.summary || '')).toLowerCase();
       return terms.every(function (t) { return hay.indexOf(t) !== -1; });
     }).slice(0, 8);
     if (!matches.length) {

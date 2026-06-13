@@ -8,6 +8,7 @@
       "settings" (or .Params.settings slice)
       "date" (cond .Date.IsZero "" (.Date.Format "2 January 2006"))
       "summary" (.Summary | plainify | truncate 180)
+      "content" (.Plain | replaceRE "\\s+" " ")
   ) -}}
 {{- end -}}
 {{- $list | jsonify -}}

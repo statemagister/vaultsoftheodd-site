@@ -21,8 +21,8 @@ The first titles are in preparation. Each is offered in a choice of covers — p
 
   <div class="product-card">
     <div class="product-covers">
-      <span class="book-cover titled" style="--c:#14182b;--ct:#e8e2d0">The Monster Hunter's Journal</span>
-      <span class="book-cover titled" style="--c:#c4a24a;--ct:#241d0e">The Monster Hunter's Journal</span>
+      <img class="cover-img" src="/images/journals/monster-hunters-journal-midnight.png" alt="The Monster Hunter's Journal, midnight cover" loading="lazy">
+      <img class="cover-img" src="/images/journals/monster-hunters-journal-gold.png" alt="The Monster Hunter's Journal, gold cover" loading="lazy">
     </div>
     <h3 class="product-name">The Monster Hunter's Journal</h3>
     <p class="product-desc">A campaign keepsake for any tabletop roleplaying game: a chronological log of every creature your party brings down, with character pages, trackers, and an atmospheric bestiary running through it. System-agnostic — bring your own monsters.</p>

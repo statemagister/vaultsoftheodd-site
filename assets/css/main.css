@@ -1,0 +1,203 @@
+/* ============================================================
+   Vaults of the ODD — dark archival theme
+   Cinzel (display) + EB Garamond (body), gold accents.
+   The custom properties below are also relied on by migrated
+   article HTML (var(--gold), var(--text-primary), var(--text-muted)).
+   ============================================================ */
+
+:root {
+  --bg: #15120f;
+  --bg-alt: #1d1916;
+  --bg-card: #211c18;
+  --text-primary: #e9e2d3;
+  --text-body: #d8d0c0;
+  --text-muted: #a99f8c;
+  --gold: #c9a24b;
+  --gold-bright: #e2c074;
+  --rule: rgba(201, 162, 75, 0.28);
+  --rule-soft: rgba(233, 226, 211, 0.10);
+  --maxw: 44rem;
+  --maxw-wide: 64rem;
+  --display: "Cinzel", Georgia, serif;
+  --body: "EB Garamond", Georgia, "Times New Roman", serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { font-size: 18px; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-body);
+  font-family: var(--body);
+  line-height: 1.65;
+  font-size: 1.12rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { width: 100%; max-width: var(--maxw-wide); margin-inline: auto; padding-inline: 1.4rem; }
+
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--gold-bright); text-decoration: underline; text-underline-offset: 3px; }
+
+h1, h2, h3, h4 { font-family: var(--display); color: var(--text-primary); line-height: 1.2; font-weight: 600; }
+
+img { max-width: 100%; height: auto; }
+
+hr { border: 0; height: 1px; background: var(--rule); margin: 2.4rem auto; max-width: 8rem; }
+
+/* ---- Brand wordmark ---- */
+.brand-vaults { font-family: var(--display); letter-spacing: 0.04em; }
+.brand-odd { font-family: var(--display); color: var(--gold); letter-spacing: 0.12em; }
+
+/* ---- Header / nav ---- */
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  background: linear-gradient(180deg, var(--bg-alt), var(--bg));
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding-block: 1.1rem; gap: 1rem; }
+.brand { font-size: 1.5rem; color: var(--text-primary); white-space: nowrap; }
+.brand:hover { text-decoration: none; }
+.site-nav ul { list-style: none; display: flex; gap: 1.3rem; margin: 0; padding: 0; flex-wrap: wrap; }
+.site-nav a { font-family: var(--display); font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
+.site-nav a:hover, .site-nav a.active { color: var(--gold); text-decoration: none; }
+.nav-toggle { display: none; background: none; border: 0; color: var(--gold); font-size: 1.5rem; cursor: pointer; }
+
+/* ---- Hero / home ---- */
+.hero { text-align: center; padding-block: 4rem 2.6rem; border-bottom: 1px solid var(--rule-soft); }
+.hero-title { font-size: clamp(2.2rem, 6vw, 3.6rem); margin: 0 0 0.6rem; }
+.hero-tagline { font-style: italic; color: var(--text-muted); font-size: 1.25rem; margin: 0 auto 1.6rem; }
+.hero-intro { max-width: var(--maxw); margin-inline: auto; color: var(--text-body); }
+
+.section-heading { font-size: clamp(1.5rem, 3.5vw, 2.1rem); text-align: center; margin-bottom: 0.4rem; }
+.section-heading::after { content: ""; display: block; width: 3rem; height: 1px; background: var(--rule); margin: 0.8rem auto 0; }
+.section-lede { text-align: center; color: var(--text-muted); max-width: var(--maxw); margin: 0 auto 2rem; }
+.section-cta { text-align: center; margin-top: 1.8rem; }
+
+.journals-teaser, .vaults, .recent { padding-block: 3rem; border-bottom: 1px solid var(--rule-soft); }
+
+.button {
+  display: inline-block; font-family: var(--display); font-size: 0.8rem; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 0.7rem 1.5rem; border: 1px solid var(--gold);
+  color: var(--gold); border-radius: 2px; transition: all 0.15s ease;
+}
+.button:hover { background: var(--gold); color: var(--bg); text-decoration: none; }
+.button.ghost { border-color: var(--rule); color: var(--text-muted); }
+.button.ghost:hover { border-color: var(--gold); color: var(--gold); background: transparent; }
+
+/* ---- Vault cards ---- */
+.vault-grid { display: grid; gap: 1.2rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.vault-card {
+  display: block; background: var(--bg-card); border: 1px solid var(--rule-soft);
+  border-radius: 4px; padding: 1.6rem 1.5rem; color: var(--text-body); transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.vault-card:hover { border-color: var(--gold); transform: translateY(-2px); text-decoration: none; }
+.vault-name { margin: 0 0 0.5rem; font-size: 1.4rem; color: var(--gold); }
+.vault-desc { margin: 0 0 1rem; font-size: 1rem; color: var(--text-muted); }
+.vault-status { font-family: var(--display); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
+.vault-card.live .vault-status { color: var(--gold); }
+
+/* ---- Post lists ---- */
+.list, .post { padding-block: 3rem; }
+.list-header { text-align: center; margin-bottom: 2.4rem; }
+.list-title { font-size: clamp(1.8rem, 5vw, 2.8rem); }
+.list-intro { max-width: var(--maxw); margin: 0.6rem auto 0; color: var(--text-muted); }
+.post-list { list-style: none; margin: 0 auto; padding: 0; max-width: var(--maxw); }
+.post-list-item { border-bottom: 1px solid var(--rule-soft); }
+.post-list-link { display: block; padding: 1.2rem 0; color: var(--text-primary); }
+.post-list-link:hover { text-decoration: none; }
+.post-list-link:hover .post-list-title { color: var(--gold); }
+.post-list-title { margin: 0; font-size: 1.4rem; transition: color 0.15s ease; }
+.post-list-date, .post-list-tags { margin: 0.3rem 0 0; color: var(--text-muted); font-size: 0.85rem; }
+.coming-soon { text-align: center; color: var(--text-muted); font-style: italic; }
+
+/* ---- Single article ---- */
+.post { max-width: var(--maxw); }
+.post-header { text-align: center; margin-bottom: 2.4rem; }
+.post-setting { font-family: var(--display); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin: 0 0 0.8rem; }
+.post-title { font-size: clamp(1.8rem, 5vw, 2.8rem); margin: 0 0 0.7rem; }
+.post-meta { color: var(--text-muted); font-style: italic; margin: 0; }
+
+.post-body { font-size: 1.16rem; }
+.post-body h2 { font-size: 1.7rem; margin-top: 2.6rem; margin-bottom: 0.8rem; }
+.post-body h3 { font-size: 1.35rem; margin-top: 2rem; margin-bottom: 0.6rem; color: var(--gold); }
+.post-body p { margin: 0 0 1.3rem; }
+.post-body a { text-decoration: underline; text-underline-offset: 2px; text-decoration-color: var(--rule); }
+.post-body blockquote {
+  margin: 1.8rem 0; padding: 0.4rem 0 0.4rem 1.4rem; border-left: 2px solid var(--gold);
+  color: var(--text-primary); font-style: italic;
+}
+.post-body ul, .post-body ol { margin: 0 0 1.3rem 1.4rem; padding: 0; }
+.post-body li { margin-bottom: 0.5rem; }
+.post-body table { width: 100%; border-collapse: collapse; margin: 1.6rem 0; font-size: 0.98rem; }
+.post-body th, .post-body td { border: 1px solid var(--rule-soft); padding: 0.55rem 0.7rem; text-align: left; }
+.post-body th { color: var(--gold); font-family: var(--display); font-size: 0.85rem; }
+
+/* WordPress block / figure classes carried over from the export */
+.wp-block-image, figure { margin: 1.8rem 0; }
+figure img { border-radius: 2px; }
+.wp-block-image.alignright, figure.alignright { float: right; margin: 0.4rem 0 1.2rem 1.6rem; max-width: 50%; }
+.wp-block-image.alignleft, figure.alignleft { float: left; margin: 0.4rem 1.6rem 1.2rem 0; max-width: 50%; }
+.wp-block-image.aligncenter, figure.aligncenter { text-align: center; }
+figcaption, .wp-element-caption { font-size: 0.78rem; font-style: italic; color: var(--text-muted); margin-top: 0.5rem; text-align: center; }
+.wp-block-separator { max-width: 8rem; }
+.wp-block-button__link, .wp-block-file__button {
+  display: inline-block; font-family: var(--display); font-size: 0.8rem; letter-spacing: 0.08em;
+  padding: 0.6rem 1.3rem; border: 1px solid var(--gold); color: var(--gold) !important; border-radius: 2px; text-decoration: none !important;
+}
+.wp-block-file { margin: 1.6rem 0; }
+
+@media (max-width: 600px) {
+  .wp-block-image.alignright, .wp-block-image.alignleft, figure.alignright, figure.alignleft {
+    float: none; max-width: 100%; margin-inline: auto;
+  }
+}
+
+.post-tags { margin-top: 2.6rem; padding-top: 1.4rem; border-top: 1px solid var(--rule-soft); text-align: center; }
+.tag {
+  display: inline-block; font-family: var(--display); font-size: 0.68rem; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--rule-soft);
+  padding: 0.3rem 0.7rem; border-radius: 2px; margin: 0.2rem;
+}
+.tag:hover { border-color: var(--gold); color: var(--gold); text-decoration: none; }
+
+/* ---- Generic page (about, privacy, contact) ---- */
+.page-content { max-width: var(--maxw); margin-inline: auto; }
+.page-content h2 { font-size: 1.5rem; margin-top: 2.2rem; }
+.page-content h3 { font-size: 1.2rem; color: var(--gold); margin-top: 1.6rem; }
+
+/* ---- Comments ---- */
+.comments { max-width: var(--maxw); margin: 3rem auto 0; padding-top: 2rem; border-top: 1px solid var(--rule-soft); }
+.comments-title { font-size: 1.4rem; margin-bottom: 1.2rem; }
+
+/* ---- 404 ---- */
+.notfound { text-align: center; padding-block: 5rem; max-width: var(--maxw); }
+
+/* ---- Footer ---- */
+.site-footer { border-top: 1px solid var(--rule); background: var(--bg-alt); margin-top: 3rem; }
+.footer-inner { text-align: center; padding-block: 2.4rem; }
+.footer-brand { font-size: 1.2rem; margin: 0 0 1rem; }
+.footer-nav ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem; margin: 0 0 1.2rem; padding: 0; }
+.footer-nav a { font-family: var(--display); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
+.footer-nav a:hover { color: var(--gold); text-decoration: none; }
+.footer-fine { font-size: 0.8rem; color: var(--text-muted); max-width: 38rem; margin: 0 auto; }
+
+@media (max-width: 720px) {
+  .nav-toggle { display: block; }
+  .site-nav { display: none; width: 100%; }
+  .site-nav.open { display: block; }
+  .header-inner { flex-wrap: wrap; }
+  .site-nav ul { flex-direction: column; gap: 0.4rem; padding-block: 0.8rem; }
+}
+
+/* ---- Journals / shop ---- */
+.journals-page { max-width: var(--maxw-wide); }
+.product-grid { display: grid; gap: 1.4rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); margin: 2rem 0; }
+.product-card { background: var(--bg-card); border: 1px solid var(--rule-soft); border-radius: 4px; padding: 1.4rem; }
+.product-cover { aspect-ratio: 3 / 4; border-radius: 2px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; text-align: center; }
+.product-cover.placeholder { background: linear-gradient(160deg, var(--bg-alt), #2a231d); border: 1px dashed var(--rule); color: var(--text-muted); font-family: var(--display); font-size: 0.85rem; letter-spacing: 0.06em; }
+.product-name { margin: 0 0 0.5rem; font-size: 1.25rem; color: var(--gold); }
+.product-desc { font-size: 0.98rem; color: var(--text-muted); margin: 0 0 1rem; }
+.product-status { font-family: var(--display); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin: 0; }

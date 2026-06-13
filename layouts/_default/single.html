@@ -1,0 +1,25 @@
+{{ define "main" }}
+<article class="post wrap">
+  <header class="post-header">
+    {{- with .Params.settings }}
+    <p class="post-setting">{{ delimit . " · " }}</p>
+    {{- end }}
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{- if not .Date.IsZero }}
+    <p class="post-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
+    {{- end }}
+  </header>
+
+  <div class="post-body">
+    {{ .Content }}
+  </div>
+
+  {{- with .Params.tags }}
+  <footer class="post-tags">
+    {{- range . }}<a class="tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+  </footer>
+  {{- end }}
+</article>
+
+{{ partial "comments.html" . }}
+{{ end }}

@@ -1,0 +1,73 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="wrap">
+    <h1 class="hero-title"><span class="brand-vaults">Vaults of the</span> <span class="brand-odd">ODD</span></h1>
+    <p class="hero-tagline">{{ .Site.Params.tagline }}</p>
+    <div class="hero-intro">
+      {{ .Content }}
+    </div>
+  </div>
+</section>
+
+<section class="journals-teaser">
+  <div class="wrap">
+    <h2 class="section-heading">The Journals</h2>
+    <p class="section-lede">A range of journals published under the Vaults of the ODD imprint, from gaming notebooks to themed lifestyle journals. Each one built to be used and kept.</p>
+    <p class="section-cta"><a class="button" href="/journals/">Browse the journals</a></p>
+  </div>
+</section>
+
+<section class="vaults">
+  <div class="wrap">
+    <h2 class="section-heading">The Vaults</h2>
+    <p class="section-lede">Each vault holds writing of a different kind. Open the one that draws you.</p>
+    <div class="vault-grid">
+
+      <a class="vault-card live" href="/gaming/">
+        <h3 class="vault-name">Gaming</h3>
+        <p class="vault-desc">Close analysis of TSR-era Dungeons &amp; Dragons and its campaign worlds. Source criticism, setting history, artefacts, and some very peculiar history, beginning with Ravenloft.</p>
+        <span class="vault-status">Open now</span>
+      </a>
+
+      <a class="vault-card" href="/stories/">
+        <h3 class="vault-name">Stories</h3>
+        <p class="vault-desc">Long-form fiction and creative writing.</p>
+        <span class="vault-status">Coming soon</span>
+      </a>
+
+      <a class="vault-card" href="/mythology/">
+        <h3 class="vault-name">Mythology</h3>
+        <p class="vault-desc">Welsh mythological work, the Mabinogion and the worlds around it.</p>
+        <span class="vault-status">Coming soon</span>
+      </a>
+
+      <a class="vault-card" href="/politics/">
+        <h3 class="vault-name">Politics</h3>
+        <p class="vault-desc">Welsh constitutional, independence and governance writing.</p>
+        <span class="vault-status">Coming soon</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+{{- $recent := where .Site.RegularPages "Section" "gaming" }}
+{{- with $recent.ByDate.Reverse }}
+<section class="recent">
+  <div class="wrap">
+    <h2 class="section-heading">Latest from the Gaming vault</h2>
+    <ul class="post-list">
+      {{- range first 5 . }}
+      <li class="post-list-item">
+        <a class="post-list-link" href="{{ .RelPermalink }}">
+          <h3 class="post-list-title">{{ .Title }}</h3>
+          {{- if not .Date.IsZero }}<p class="post-list-date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>{{ end }}
+        </a>
+      </li>
+      {{- end }}
+    </ul>
+    <p class="section-cta"><a class="button ghost" href="/gaming/">All gaming essays</a></p>
+  </div>
+</section>
+{{- end }}
+{{ end }}

@@ -1,0 +1,83 @@
+baseURL = "https://www.vaultsoftheodd.com/"
+languageCode = "en-gb"
+title = "Vaults of the ODD"
+enableRobotsTXT = true
+enableEmoji = false
+
+# British English prose, American English slugs (search friendliness).
+# Slugs are set per-page in front matter; titles preserve British spelling.
+
+[params]
+  description = "Analytical writing about TSR-era Dungeons & Dragons and its campaign worlds, plus the Vaults of the ODD journal range. Written by Drew Griffiths."
+  author = "Drew Griffiths"
+  tagline = "A vault of something odd and eclectic."
+  buymeacoffee = "https://buymeacoffee.com/drewgriffiths"
+  # giscus comments (GitHub Discussions). Fill these in after enabling
+  # Discussions on the public site repo and installing the giscus app:
+  # https://giscus.app  Leaving repo blank disables comments.
+  [params.giscus]
+    repo = ""
+    repoId = ""
+    category = "Comments"
+    categoryId = ""
+
+# Preserve the existing root-level article URLs so inbound links and
+# Search Console indexing survive the migration. Essays live under
+# content/gaming/ but are served at /<slug>/ exactly as on WordPress.
+[permalinks]
+  [permalinks.page]
+    gaming = "/:slug/"
+
+[taxonomies]
+  tag = "tags"
+  setting = "settings"
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+
+[menus]
+  [[menus.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menus.main]]
+    name = "Journals"
+    url = "/journals/"
+    weight = 2
+  [[menus.main]]
+    name = "Gaming"
+    url = "/gaming/"
+    weight = 3
+  [[menus.main]]
+    name = "Stories"
+    url = "/stories/"
+    weight = 4
+  [[menus.main]]
+    name = "Mythology"
+    url = "/mythology/"
+    weight = 5
+  [[menus.main]]
+    name = "Politics"
+    url = "/politics/"
+    weight = 6
+  [[menus.main]]
+    name = "About"
+    url = "/about/"
+    weight = 7
+
+  [[menus.footer]]
+    name = "About"
+    url = "/about/"
+    weight = 1
+  [[menus.footer]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 2
+  [[menus.footer]]
+    name = "Privacy"
+    url = "/privacy-policy/"
+    weight = 3

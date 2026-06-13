@@ -1,0 +1,521 @@
+---
+title: "The Most Peculiar Census of Barovia"
+date: 2026-04-28T17:31:20Z
+slug: "the-most-peculiar-census-of-barovia"
+settings:
+  - "Ravenloft"
+tags:
+  - "Peculiar History"
+  - "Source Analysis"
+---
+<p></p>
+
+<style>
+.cotd { font-family: 'EB Garamond', Georgia, serif; color: var(--text-primary, #e8dcc8); max-width: 860px; margin: 0 auto; }
+.cotd-masthead { text-align: center; border-bottom: 1px solid var(--gold, #b89050); padding: 2rem 0 1.4rem; margin-bottom: 0; }
+.cotd-journal { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.28em; color: var(--text-muted, #7a6a50); margin-bottom: 1rem; }
+.cotd-title { font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 700; color: var(--gold, #b89050); line-height: 1.15; margin: 0 0 0.25rem; }
+.cotd-subtitle { font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--text-primary, #e8dcc8); letter-spacing: 0.05em; margin: 0 0 0.9rem; }
+.cotd-orn { color: var(--gold, #b89050); font-size: 1rem; letter-spacing: 0.5em; margin: 0.6rem 0; }
+.cotd-lede { font-style: italic; font-size: 0.93rem; color: var(--text-muted, #7a6a50); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+.cotd-meta { display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 3px double var(--gold, #b89050); font-family: 'Cinzel', serif; font-size: 0.56rem; letter-spacing: 0.14em; color: var(--text-muted, #7a6a50); margin-bottom: 0; flex-wrap: wrap; gap: 0.3rem; }
+.cotd-sec { padding: 1.6rem 0; border-bottom: 1px solid rgba(184,144,80,0.25); }
+.cotd-sh { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.3rem; }
+.cotd-sh::before, .cotd-sh::after { content: ''; flex: 1; height: 1px; background: var(--gold, #b89050); opacity: 0.5; }
+.cotd-sh span { font-family: 'Cinzel', serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.24em; color: var(--gold, #b89050); white-space: nowrap; margin: 0; display: block; }
+.cotd-stats { display: grid; grid-template-columns: repeat(4,1fr); border: 1px solid rgba(184,144,80,0.4); margin-bottom: 1.3rem; }
+.cotd-stat { text-align: center; padding: 0.85rem 0.4rem; border-right: 1px solid rgba(184,144,80,0.4); background: rgba(184,144,80,0.06); }
+.cotd-stat:last-child { border-right: none; }
+.cotd-sn { display: block; font-family: 'Cinzel', serif; font-size: 1.85rem; color: var(--gold, #b89050); line-height: 1; margin-bottom: 0.22rem; }
+.cotd-sl { display: block; font-family: 'Cinzel', serif; font-size: 0.54rem; letter-spacing: 0.12em; color: var(--text-muted, #7a6a50); line-height: 1.4; }
+.cotd-pq { border-left: 3px solid var(--gold, #b89050); padding: 0.65rem 1.1rem; margin: 1.1rem 0; background: rgba(184,144,80,0.06); }
+.cotd-pq p { font-style: italic; font-size: 1rem; color: var(--text-primary, #e8dcc8); line-height: 1.65; margin: 0; }
+.cotd-callout { border: 1px solid rgba(184,144,80,0.4); border-left: 4px solid var(--gold, #b89050); background: rgba(184,144,80,0.06); padding: 0.8rem 1rem; margin: 1.1rem 0; font-size: 0.87rem; line-height: 1.65; color: var(--text-primary, #e8dcc8); }
+.cotd-callout strong { font-family: 'Cinzel', serif; font-size: 0.66rem; letter-spacing: 0.1em; color: var(--gold, #b89050); display: block; margin-bottom: 0.35rem; }
+.cotd-cap { font-style: italic; font-size: 0.76rem; color: var(--text-muted, #7a6a50); margin-top: 0.45rem; line-height: 1.5; }
+.cotd-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.3rem; }
+.cotd-cols p { font-size: 0.92rem; line-height: 1.75; color: var(--text-primary, #e8dcc8); margin-bottom: 0.75rem; }
+.cotd-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; margin-bottom: 1.3rem; }
+.cotd-box { background: rgba(184,144,80,0.06); border: 1px solid rgba(184,144,80,0.35); padding: 1.1rem; }
+.cotd-box-t { font-family: 'Cinzel', serif; font-size: 0.56rem; letter-spacing: 0.15em; color: var(--text-muted, #7a6a50); text-align: center; margin-bottom: 0.85rem; border-bottom: 1px solid rgba(184,144,80,0.25); padding-bottom: 0.42rem; }
+.cotd-bars { display: flex; flex-direction: column; gap: 0.48rem; }
+.cotd-br { display: grid; grid-template-columns: 150px 1fr 54px; align-items: center; gap: 0.5rem; }
+.cotd-br.sm { grid-template-columns: 110px 1fr 54px; }
+.cotd-bl { font-style: italic; font-size: 0.8rem; color: var(--text-primary, #e8dcc8); text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cotd-bt { height: 14px; background: rgba(184,144,80,0.1); border: 1px solid rgba(184,144,80,0.25); overflow: hidden; }
+.cotd-bf { height: 100%; width: 0; transition: width 1.1s cubic-bezier(.22,.68,0,1.2); }
+.cotd-bv { font-family: 'Cinzel', serif; font-size: 0.62rem; color: var(--text-muted, #7a6a50); text-align: right; }
+.cotd-bsep { border: none; border-top: 1px solid rgba(184,144,80,0.3); margin: 0.18rem 0; }
+.cotd-stacked { height: 30px; display: flex; overflow: hidden; border: 1px solid rgba(184,144,80,0.4); margin: 0.45rem 0 0.7rem; }
+.cotd-seg { height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; white-space: nowrap; font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.04em; color: rgba(255,255,255,0.88); cursor: default; }
+.cotd-leg { display: flex; flex-wrap: wrap; gap: 0.4rem 0.85rem; margin-top: 0.45rem; }
+.cotd-li { display: flex; align-items: center; gap: 0.3rem; font-size: 0.78rem; color: var(--text-primary, #e8dcc8); }
+.cotd-sw { width: 10px; height: 10px; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0; }
+.cotd-swr { border-radius: 50%; }
+.cotd-dots { display: flex; flex-wrap: wrap; gap: 4px; margin: 0.35rem 0 0.25rem; }
+.cotd-dot { width: 10px; height: 10px; border-radius: 50%; cursor: default; transition: transform 0.12s; }
+.cotd-dot:hover { transform: scale(1.6); }
+.cotd-dgl { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.13em; color: var(--text-muted, #7a6a50); margin-top: 0.5rem; margin-bottom: 0.15rem; }
+.cotd-tip { font-style: italic; font-size: 0.72rem; color: var(--text-muted, #7a6a50); min-height: 1.1rem; margin-top: 0.2rem; }
+.cotd-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin-top: 0.9rem; }
+.cotd-table th { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.12em; color: var(--text-muted, #7a6a50); border-bottom: 2px solid rgba(184,144,80,0.5); padding: 0.3rem 0.5rem; text-align: left; font-weight: normal; background: rgba(184,144,80,0.06); }
+.cotd-table td { padding: 0.33rem 0.5rem; border-bottom: 1px solid rgba(184,144,80,0.15); vertical-align: top; line-height: 1.42; color: var(--text-primary, #e8dcc8); }
+.cotd-table tr:last-child td { border-bottom: none; }
+.cotd-table tr:hover td { background: rgba(184,144,80,0.05); }
+.cotd-badge { display: inline-block; font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.04em; padding: 0.05rem 0.25rem; border-radius: 2px; color: #fff; margin-left: 0.2rem; vertical-align: middle; }
+.cotd-footer { padding: 1.3rem 0 0; border-top: 3px double rgba(184,144,80,0.5); margin-top: 0; }
+.cotd-footer h3 { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.18em; color: var(--text-muted, #7a6a50); margin-bottom: 0.5rem; }
+.cotd-footer p { font-size: 0.77rem; line-height: 1.65; color: var(--text-muted, #7a6a50); margin-bottom: 0.3rem; }
+.cotd-full { margin-bottom: 1.3rem; }
+@media (max-width: 640px) {
+  .cotd-cols, .cotd-pair { grid-template-columns: 1fr; }
+  .cotd-stats { grid-template-columns: repeat(2,1fr); }
+  .cotd-title { font-size: 1.5rem; }
+  .cotd-br { grid-template-columns: 80px 1fr 44px; }
+  .cotd-br.sm { grid-template-columns: 75px 1fr 44px; }
+  .cotd-meta { flex-direction: column; }
+}
+</style>
+
+<div class="cotd">
+
+<div class="cotd-masthead">
+  <div class="cotd-journal">Statistical Annals &nbsp;&middot;&nbsp; Module I6: Ravenloft &nbsp;&middot;&nbsp; TSR Inc., 1983</div>
+  <h1 class="cotd-title">A Census of the Damned</h1>
+  <div class="cotd-subtitle">The Complete Population of Barovia: Living, Dead, and Knowing</div>
+  <div class="cotd-orn">&#10087; &#10022; &#10087;</div>
+  <p class="cotd-lede">The valley of Barovia has been sealed for centuries. No settled population has entered by ordinary migration; none has left. It is therefore a closed system, and a precise accounting of every living soul and every animated corpse is not merely possible but necessary to understand the full horror of what the Count has done to his own people. I6 does not describe a doomed village because the text says doomed village. It describes one because the numbers make any other reading impossible.</p>
+  <p class="cotd-lede" style="margin-top:0.6rem;font-size:0.78rem">This piece uses <em>Rhenari</em> as a neutral substitute for the term I6 uses for the itinerant people in the valley.</p>
+</div>
+
+<div class="cotd-meta">
+  <span>Tracy &amp; Laura Hickman, Authors</span>
+  <span>First Edition Advanced Dungeons &amp; Dragons</span>
+  <span>All figures at midpoint averages</span>
+</div>
+
+<!-- AT A GLANCE -->
+
+<div class="cotd-sec">
+  <div class="cotd-sh"><span>At a Glance</span></div>
+  <div class="cotd-stats">
+    <div class="cotd-stat"><span class="cotd-sn">~200</span><span class="cotd-sl">Living Humans<br>in Barovia</span></div>
+    <div class="cotd-stat"><span class="cotd-sn">~33</span><span class="cotd-sl">Statted Humans<br>Capable of Resistance</span></div>
+    <div class="cotd-stat"><span class="cotd-sn">54</span><span class="cotd-sl">Fixed Hostile<br>Monsters</span></div>
+    <div class="cotd-stat"><span class="cotd-sn">~205</span><span class="cotd-sl">Total Hostiles<br>(all tables once)</span></div>
+  </div>
+  <div class="cotd-pq"><p>The wonder is not that the village is dying. The wonder is that anyone is still alive at all.</p></div>
+</div>
+
+<!-- THE LIVING -->
+
+<div class="cotd-sec">
+  <div class="cotd-sh"><span>I. The Living Population</span></div>
+
+  <div class="cotd-box" style="margin-bottom:1.3rem">
+    <div class="cotd-box-t">Degrees of Certainty</div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.5rem 1.5rem">
+      <div style="font-size:0.82rem;color:var(--text-primary,#e8dcc8);font-family:'EB Garamond',Georgia,serif"><strong style="color:var(--gold,#b89050)">Textual count</strong> &mdash; directly stated in I6</div>
+      <div style="font-size:0.82rem;color:var(--text-primary,#e8dcc8);font-family:'EB Garamond',Georgia,serif"><strong style="color:var(--gold,#b89050)">Rules-derived count</strong> &mdash; calculated from module procedures and AD&amp;D 1e mechanics</div>
+      <div style="font-size:0.82rem;color:var(--text-primary,#e8dcc8);font-family:'EB Garamond',Georgia,serif"><strong style="color:var(--gold,#b89050)">Inference</strong> &mdash; best-fit reconstruction from the module's internal logic</div>
+      <div style="font-size:0.82rem;color:var(--text-primary,#e8dcc8);font-family:'EB Garamond',Georgia,serif"><strong style="color:var(--gold,#b89050)">Speculation</strong> &mdash; plausible but not required by the sources</div>
+    </div>
+    <p class="cotd-cap" style="margin-top:0.6rem">Section VIII is explicitly inference and speculation throughout. Figures in Sections I through VI are textual or rules-derived unless individually flagged.</p>
+  </div>
+
+  <div class="cotd-cols">
+    <div>
+      <p>The village map shows 157 total structures. Removing the six named locations leaves 151 residential buildings. At 60% occupancy, one man per occupied house, a 30% chance of a wife, and a 10% chance of children, this yields 91 occupied homes: 91 men, 27 wives, roughly 41 children, and 9 named NPCs. Village total: approximately 168.</p>
+      <p>The 60 empty houses matter as much as the occupied ones. They are the physical record of centuries of attrition: families that died out, people who tried to flee and did not survive the fog, households that simply stopped one night. The Rhenari add an estimated 35 to 40, bringing the valley total to approximately 200.</p>
+    </div>
+    <div>
+      <p>The Rhenari figure is an inference, not a direct count: 11 statted camp members, a plausible wandering encounter group averaging around 16, and non-combatants making up the remainder. They are protected clients in a valley that has no other patrons. Unlike the villagers, they are not ordinary prey.</p>
+      <p>Of approximately 200 living humans in Barovia, roughly 33 have a character class of any kind. The remaining 167 are unstatted villagers and non-combatant Rhenari. The genuine fighting ratio is approximately ten hostile combatants per one human fighter.</p>
+    </div>
+  </div>
+  <div class="cotd-pair">
+    <div class="cotd-box">
+      <div class="cotd-box-t">Composition of the Living (~200)</div>
+      <div class="cotd-stacked">
+        <div class="cotd-seg" style="width:79%;background:#7a5025" title="Village ~168">Village (~168)</div>
+        <div class="cotd-seg" style="width:18%;background:#4e6040" title="Rhenari ~35">Rhenari</div>
+        <div class="cotd-seg" style="width:3%;background:#505050">&nbsp;</div>
+      </div>
+      <div class="cotd-leg">
+        <div class="cotd-li"><div class="cotd-sw" style="background:#7a5025"></div> Village (~168)</div>
+        <div class="cotd-li"><div class="cotd-sw" style="background:#4e6040"></div> Rhenari (est. ~35)</div>
+      </div>
+      <p class="cotd-cap">Rhenari figure inferred from Number Appearing range and 10% in-lair convention; not a direct module count.</p>
+    </div>
+    <div class="cotd-box">
+      <div class="cotd-box-t">Village Household Breakdown (151 houses &middot; 60% occupied)</div>
+      <div class="cotd-bars" id="cotd-bars-village"></div>
+      <p class="cotd-cap">Sixty empty houses stand as the physical record of what the fog has taken.</p>
+    </div>
+  </div>
+  <div class="cotd-box cotd-full">
+    <div class="cotd-box-t">Statted Human Fighters &mdash; The Only Meaningful Resistance</div>
+    <div class="cotd-bars" id="cotd-bars-fighters"></div>
+    <p class="cotd-cap">Bar length shows combined combat weight: headcount multiplied by level. Individual level shown at right. Of approximately 200 living humans, roughly 33 have a character class. The remaining 167 are unstatted villagers and non-combatant Rhenari.</p>
+  </div>
+</div>
+
+<!-- SURVIVORS AND INSTITUTIONS -->
+
+<div class="cotd-sec">
+  <div class="cotd-sh"><span>II. Survivors, Institutions, and Subsistence</span></div>
+
+  <div class="cotd-cols">
+    <div>
+      <p><strong style="font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.1em;color:var(--gold,#b89050)">Notable Households</strong></p>
+      <p>Bildrath Cantemir runs the only functioning commercial establishment in the village, pricing recovered goods at ten times standard rates. This is not simple gouging. In a sealed valley with no supply lines, the most plausible source for most of the shop's stock is previous adventuring parties. His nephew Parriwimple, estimated in his twenties to early thirties and orphaned young under circumstances consistent with valley predation, has been the building&rsquo;s primary defence since his mid-teens. His 9th level fighter status in a village of zero-level men is explained by decades of repeated lethal encounters against the full spectrum of valley threats, including trained adventurers who attempted to take rather than buy. Parriwimple almost certainly carries equipment from Bildrath&rsquo;s recovered stock adequate to deal with undead, since an employee who cannot harm the valley&rsquo;s primary threat is a liability Bildrath would not accept.</p>
+      <p>Father Donavich maintains the church and its graveyard. He has buried villagers, Rhenari, and adventurers alike across his entire ministry. He knows which graves are occupied and which are not, having observed the graveyard change overnight on occasions the module does not specify. In a valley where that distinction is operationally significant, Donavich&rsquo;s knowledge of the graveyard is the most complete record of the valley&rsquo;s losses available to any living person. The graveyard itself functions as an archive of failed expeditions: foreign names on markers, equipment too damaged or personal to trade, graves opened from within.</p>
+    </div>
+    <div>
+      <p><strong style="font-family:'Cinzel',serif;font-size:0.75rem;letter-spacing:0.1em;color:var(--gold,#b89050)">Subsistence</strong></p>
+      <p>The module describes the Svalich Woods as dominated by wolf packs of up to 25 animals in Strahd&rsquo;s nightly attack alone, with additional worg patrols. Worgs are Semi- to Low intelligence and communicate with wolves. A predator load of this scale on a sealed valley implies that conventional game hunting has been severely depleted. The realistic protein sources available to villagers are river fishing from the Ivlis, small-animal trapping close to the village perimeter, and opportunistic hunting of wolves themselves in hard winters, preferring wolves over worgs on the reasonable inference that a missing wolf is less likely to be reported than a missing worg. Agriculture on the land of what was once a larger settlement, with surviving households working fields formerly maintained by more people, is the primary food base. The 60 empty houses represent abandoned agricultural capacity as much as lost population.</p>
+      <p>The witches in K56, by contrast, forage across a wider range with greater confidence, protected from wolf encounters by Strahd&rsquo;s active interest in keeping them functional. Their foraging access extends to plant materials, fungi, and components the wolves do not compete for. This is what distinguishes their provisioning from the villagers&rsquo; rather than any significant game advantage.</p>
+    </div>
+  </div>
+
+  <div class="cotd-callout">
+    <strong>The Cemetery as the Only Census Barovia Has</strong>
+    Father Donavich's graveyard is the valley's most complete record of loss. It contains villagers, Rhenari, and adventurers from outside the valley, marked with names in multiple languages across decades or centuries of failed expeditions. Donavich knows which graves are full and which are not. In a valley where that distinction is operationally significant, that knowledge is not trivial. It is possibly the most important practical knowledge any living person in Barovia possesses.
+  </div>
+
+  <div class="cotd-pair" style="margin-top:1.3rem">
+    <div class="cotd-box">
+      <div class="cotd-box-t">Named Living Individuals</div>
+      <table class="cotd-table" style="margin-top:0">
+        <thead><tr><th>Name</th><th>Class / Level</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Bildrath Cantemir</td><td>F4</td><td>Merchant; sole functioning trader</td></tr>
+          <tr><td>Parriwimple</td><td>F9</td><td>Bildrath's nephew; primary building defence</td></tr>
+          <tr><td>Ismark the Lesser</td><td>F2</td><td>De facto civic leader; father recently dead</td></tr>
+          <tr><td>Ireena Kolyana</td><td>F4</td><td>Under direct pressure from Strahd</td></tr>
+          <tr><td>Father Donavich</td><td>C2</td><td>Maintains church; graveyard keeper</td></tr>
+          <tr><td>Mad Mary</td><td>F0</td><td>Daughter Gertruda missing; withdrawn</td></tr>
+          <tr><td>Arik the barman</td><td>F0</td><td>Mindlessly cleaning glasses; dissociated</td></tr>
+          <tr><td>Gertruda</td><td>F0</td><td>Mad Mary's daughter; in Strahd's castle</td></tr>
+          <tr><td>Cyrus Belview</td><td>F0</td><td>Castle manservant; loyal to Strahd</td></tr>
+          <tr><td>Madam Eva</td><td>Rhenari elder</td><td>Card reader; most informed person in valley</td></tr>
+        </tbody>
+      </table>
+      <p class="cotd-cap">Kolyan Indirovich, the Burgomaster, is dead at the adventure's start. His letter brought the party to Barovia.</p>
+    </div>
+    <div class="cotd-box">
+      <div class="cotd-box-t">Village Defence Reality</div>
+      <p style="font-size:0.88rem;line-height:1.7;color:var(--text-primary,#e8dcc8);font-family:'EB Garamond',Georgia,serif">The ~33 statted humans capable of armed resistance do not constitute a village militia. The Rhenari fighters are socially separate and protected by their own arrangement with Strahd; they do not defend the village. Bildrath defends his shop. Parriwimple defends Bildrath. Ireena and Ismark are under direct personal pressure. Donavich is trapped by grief and duty at the church. The village therefore has bodies with levels but no functioning defence structure. The effective armed resistance available to the settlement itself is close to zero.</p>
+      <div style="border-top:1px solid rgba(184,144,80,0.25);margin-top:0.8rem;padding-top:0.8rem">
+        <p style="font-size:0.88rem;line-height:1.7;color:var(--text-primary,#e8dcc8);font-family:'EB Garamond',Georgia,serif">The census records roughly 41 children across the village's occupied households. They are the demographic future Strahd is consuming. In a village of approximately 200, forty children means Barovia has not yet ceased reproducing. The horror is not extinction already completed. It is extinction in progress.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FIXED MONSTERS (was II) -->
+
+<div class="cotd-sec">
+  <div class="cotd-sh"><span>III. The Fixed Monster Population</span></div>
+  <div class="cotd-cols">
+    <div>
+      <p>Fifty-four combat-capable hostile entities occupy fixed locations across the module, independent of any random encounter roll. The tally is room-by-room: 10 skeletons (K69), 8 Strahd zombies (K28, K76), 7 witches (K56), 5 giant spiders (K40), 3 hellhounds (Crypt 38), 3 standard zombies (K65), 3 cat familiars (K54), 2 wraiths (K35), 1 werewolf (K75), and 12 singular entities.</p>
+    </div>
+    <div>
+      <p>The split is 29 undead, 19 non-undead hostile, and 6 other. Undead includes Strahd himself and Helga alongside the zombies, skeletons, wraiths, ghost, spectre, banshee, and wight trap. Non-undead hostile covers witches, spiders, cats, hellhounds, and the werewolf. Other covers shadow demon, nightmare, trapper, green slime, guardian portrait, and Guardian of Sorrow.</p>
+    </div>
+  </div>
+  <div class="cotd-pair">
+    <div class="cotd-box">
+      <div class="cotd-box-t">Fixed Monsters by Type (54 &mdash; audited)</div>
+      <div class="cotd-bars" id="cotd-bars-monsters"></div>
+      <p class="cotd-cap">&#8224; Undead singulars: Strahd, Helga, ghost, spectre, banshee, wight trap. Other singulars: shadow demon, Guardian of Sorrow, nightmare, trapper, green slime, guardian portrait. Wight trap (Crypt 14) restored from prior omission.</p>
+    </div>
+    <div class="cotd-box">
+      <div class="cotd-box-t">Undead / Non-Undead Hostile / Other</div>
+      <svg width="100%" viewBox="0 0 200 170" style="display:block;max-width:200px;margin:0.5rem auto">
+        <circle cx="100" cy="85" r="58" fill="none" stroke="rgba(184,144,80,0.15)" stroke-width="34"/>
+        <circle cx="100" cy="85" r="58" fill="none" stroke="#7a1515" stroke-width="34"
+          stroke-dasharray="196.8 367.6" stroke-dashoffset="91.1" transform="rotate(-90 100 85)"/>
+        <circle cx="100" cy="85" r="58" fill="none" stroke="#3e5030" stroke-width="34"
+          stroke-dasharray="127.5 436.9" stroke-dashoffset="-105.7" transform="rotate(-90 100 85)"/>
+        <circle cx="100" cy="85" r="58" fill="none" stroke="#7a5025" stroke-width="34"
+          stroke-dasharray="40.1 524.3" stroke-dashoffset="-233.2" transform="rotate(-90 100 85)"/>
+        <text x="100" y="79" text-anchor="middle" font-family="Cinzel,Georgia,serif" font-size="20" fill="#b89050" font-weight="700">54</text>
+        <text x="100" y="96" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#7a6a50">fixed</text>
+      </svg>
+      <div class="cotd-leg" style="justify-content:center">
+        <div class="cotd-li"><div class="cotd-sw" style="background:#7a1515"></div> Undead (29) &mdash; 54%</div>
+        <div class="cotd-li"><div class="cotd-sw" style="background:#3e5030"></div> Non-undead hostile (19) &mdash; 35%</div>
+        <div class="cotd-li"><div class="cotd-sw" style="background:#7a5025"></div> Other (6) &mdash; 11%</div>
+      </div>
+      <p class="cotd-cap" style="text-align:center">The undead in this count are not an imported monster population. They are the valley's own dead.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ENCOUNTER RESERVOIRS -->
+
+<div class="cotd-sec">
+  <div class="cotd-sh"><span>IV. The Encounter-Table Reservoirs</span></div>
+  <div class="cotd-cols">
+    <div>
+      <p>If every encounter table entry fires exactly once, a strict finite reading, the total hostile ceiling is approximately 205, excluding non-combatant bats. The figures below are independent encounter-source reservoirs, not components of a single additive sum. Tables draw from overlapping populations; ~205 is a ceiling, not a sum.</p>
+    </div>
+    <div>
+      <p>The model contains a self-consuming logic. Wights drain energy levels; any human killed by a wight rises as a wight. Ghouls propagate similarly. The 200 living humans are therefore not only the target population but the reserve supply of future undead. The module does not describe a stable equilibrium. It describes a clock.</p>
+    </div>
+  </div>
+  <div class="cotd-box cotd-full">
+    <div class="cotd-box-t">Encounter-Source Reservoirs (independent; not additive)</div>
+    <div class="cotd-bars" id="cotd-bars-tables"></div>
+    <p class="cotd-cap">&#8224; Daytime wolves only; villagers and gypsies in Table 4 are drawn from the existing human population. The ~205 figure is not a simultaneous headcount. It is a lethality reservoir: the number of hostile bodies the module can plausibly put into play if every listed source is exhausted once.</p>
+  </div>
+  <div class="cotd-box">
+    <div class="cotd-box-t">One Dot Per Individual &mdash; The Entire Known Population of Barovia</div>
+    <div class="cotd-dgl">Living humans (~200) &mdash; hover to identify</div>
+    <div class="cotd-dots" id="cotd-dots-living"></div>
+    <div class="cotd-tip" id="cotd-tip-living">&nbsp;</div>
+    <div class="cotd-dgl">Fixed hostile monsters (54)</div>
+    <div class="cotd-dots" id="cotd-dots-monsters"></div>
+    <div class="cotd-tip" id="cotd-tip-monsters">&nbsp;</div>
+    <div class="cotd-leg" style="margin-top:0.7rem;border-top:1px solid rgba(184,144,80,0.25);padding-top:0.6rem">
+      <div class="cotd-li"><div class="cotd-sw cotd-swr" style="background:#7a5025"></div> Villager</div>
+      <div class="cotd-li"><div class="cotd-sw cotd-swr" style="background:#4e6040"></div> Rhenari</div>
+      <div class="cotd-li"><div class="cotd-sw cotd-swr" style="background:#9e3d20"></div> Human fighter</div>
+      <div class="cotd-li"><div class="cotd-sw cotd-swr" style="background:#7a1515"></div> Undead</div>
+      <div class="cotd-li"><div class="cotd-sw cotd-swr" style="background:#3e5030"></div> Non-undead hostile</div>
+      <div class="cotd-li"><div class="cotd-sw cotd-swr" style="background:#505050"></div> Other</div>
+    </div>
+  </div>
+</div>
+
+<!-- RATIO -->
+
+<div class="cotd-sec">
+  <div class="cotd-sh"><span>V. The Ratio of the Living to the Dead</span></div>
+  <div class="cotd-pair">
+    <div class="cotd-box">
+      <div class="cotd-box-t">Statted Humans vs. Fixed Hostiles</div>
+      <div class="cotd-stacked" style="height:36px">
+        <div class="cotd-seg" style="width:38%;background:#4e6040">~33 statted</div>
+        <div class="cotd-seg" style="width:62%;background:#7a1515">54 monsters</div>
+      </div>
+      <div class="cotd-leg">
+        <div class="cotd-li"><div class="cotd-sw" style="background:#4e6040"></div> Statted humans (~33)</div>
+        <div class="cotd-li"><div class="cotd-sw" style="background:#7a1515"></div> Fixed hostiles (54)</div>
+      </div>
+      <p class="cotd-cap">Nearly two hostile combatants per fighter, before any random table is consulted.</p>
+    </div>
+    <div class="cotd-box">
+      <div class="cotd-box-t">All Living vs. Hostile Ceiling</div>
+      <div class="cotd-stacked" style="height:36px">
+        <div class="cotd-seg" style="width:49%;background:#4e6040">~200 living</div>
+        <div class="cotd-seg" style="width:51%;background:#7a1515">~205 hostile</div>
+      </div>
+      <div class="cotd-leg">
+        <div class="cotd-li"><div class="cotd-sw" style="background:#4e6040"></div> All living (~200)</div>
+        <div class="cotd-li"><div class="cotd-sw" style="background:#7a1515"></div> Hostile ceiling (~205)</div>
+      </div>
+      <p class="cotd-cap">The hostile ceiling equals the entire living population. Of those 200, only ~33 can fight.</p>
+    </div>
+  </div>
+  <div class="cotd-pq"><p>The module is not balanced. It was never meant to be. The Hickmans built a valley that is mathematically certain to die unless the player characters intervene, and built it that way deliberately.</p></div>
+</div>
+
+<!-- INTELLIGENCE -->
+
+<div class="cotd-sec">
+  <div class="cotd-sh"><span>VI. Intelligence, Memory, and Deliberate Predation</span></div>
+  <div class="cotd-cols">
+    <div>
+      <p>The module runs its intelligent undead as pure combat encounters. The stat blocks do not. Wights, wraiths, and spectres carry High intelligence (13 to 14) with Lawful Evil alignment. Ghasts are Very Intelligent (11 to 12), Chaotic Evil. This does not mean smarter than a wolf. It means human-level cognition: planning, recognition, social awareness, deliberate use of environment and knowledge.</p>
+      <p>Three claims follow, with different evidential weight. That these creatures are capable of recognising living people they formerly knew is strongly supported, given local origin and a sealed valley. That they may retain significant knowledge of their former lives is probable but degrades with age. That they may understand what they have become is compatible with their intelligence and alignment, and explicit for vampires and ghosts, though not directly stated for wights and wraiths.</p>
+    </div>
+    <div>
+      <p>The structural implication the module never draws: the nighttime encounter tables do not describe aimless threats. They describe former Barovians, born in this valley, who knew its streets and families, now acting with intelligence, deliberate malice, and probable recognition of their targets within the same community they came from.</p>
+      <p>Barovia is not populated by monsters. It is populated by former people who now act as monsters. The barred doors become rational. The village paralysis becomes socially informed fear. The encounter tables become the reappearance, night after night, of the community's own dead.</p>
+    </div>
+  </div>
+  <div class="cotd-callout">
+    <strong>The Implication the Module Does Not Draw</strong>
+    A recently turned wight knows which house has the weak latch. A wraith knows which widow lives alone. A ghast knows the faces of the people it grew up among. The module treats them as encounter-table automatons. Their intelligence scores say otherwise.
+  </div>
+  <table class="cotd-table">
+    <thead>
+      <tr><th>Undead Type</th><th>Intelligence</th><th>Alignment</th><th>Capable of Recognition?</th><th>Self-Aware of Condition?</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Vampire</td><td>Exceptional <span class="cotd-badge" style="background:#7a1515">High+</span></td><td>Chaotic Evil</td><td style="color:#b89050;font-style:italic">Yes &mdash; fully</td><td style="color:#b89050;font-style:italic">Yes &mdash; explicitly stated</td></tr>
+      <tr><td>Ghost</td><td>Exceptional <span class="cotd-badge" style="background:#7a1515">High+</span></td><td>Varies</td><td style="color:#b89050;font-style:italic">Yes &mdash; fully</td><td style="color:#b89050;font-style:italic">Yes &mdash; defined by it</td></tr>
+      <tr><td>Spectre</td><td>High (13&ndash;14) <span class="cotd-badge" style="background:#7a1515">High</span></td><td>Lawful Evil</td><td style="color:#b89050;font-style:italic">Yes &mdash; capable</td><td style="color:#9e3d20">Probable</td></tr>
+      <tr><td>Wraith</td><td>High (13&ndash;14) <span class="cotd-badge" style="background:#7a1515">High</span></td><td>Lawful Evil</td><td style="color:#b89050;font-style:italic">Yes &mdash; capable</td><td style="color:#9e3d20">Probable &mdash; deliberate organised intent</td></tr>
+      <tr><td>Wight</td><td>High (13&ndash;14) <span class="cotd-badge" style="background:#7a1515">High</span></td><td>Lawful Evil</td><td style="color:#b89050;font-style:italic">Yes &mdash; likely if recent</td><td style="color:#9e3d20">Probable &mdash; compatible, not stated</td></tr>
+      <tr><td>Banshee</td><td>Exceptional <span class="cotd-badge" style="background:#7a1515">High+</span></td><td>Chaotic Evil</td><td style="color:#b89050;font-style:italic">Yes &mdash; fully</td><td style="color:#b89050;font-style:italic">Yes &mdash; Patrina's condition is her identity</td></tr>
+      <tr><td>Ghast</td><td>Very Int. (11&ndash;12) <span class="cotd-badge" style="background:#9e3d20">V.High</span></td><td>Chaotic Evil</td><td style="color:#b89050;font-style:italic">Yes &mdash; near-human</td><td style="color:#9e3d20">Possible &mdash; hunger-modified</td></tr>
+      <tr><td>Ghoul</td><td>Low (5&ndash;7) <span class="cotd-badge" style="background:#7a6a50">Low</span></td><td>Chaotic Evil</td><td style="color:#7a6a50">Unlikely</td><td style="color:#7a6a50">No evidence</td></tr>
+      <tr><td>Strahd zombie</td><td>Non- (0) <span class="cotd-badge" style="background:#505050">None</span></td><td>Neutral</td><td style="color:#7a6a50">No</td><td style="color:#9e3d20;font-style:italic">Faces intact &mdash; villagers may know the face</td></tr>
+      <tr><td>Standard zombie</td><td>Non- (0) <span class="cotd-badge" style="background:#505050">None</span></td><td>Neutral</td><td style="color:#7a6a50">No</td><td style="color:#7a6a50">No</td></tr>
+      <tr><td>Skeleton</td><td>Non- (0) <span class="cotd-badge" style="background:#505050">None</span></td><td>Neutral</td><td style="color:#7a6a50">No</td><td style="color:#7a6a50;font-style:italic">Faces gone; identity irretrievable</td></tr>
+    </tbody>
+  </table>
+  <div class="cotd-pq" style="margin-top:1.2rem"><p>The village's barred doors are not irrational fear. They are a sensible response to being surrounded by former people who are capable of recognising you, who remember where you sleep, and who have chosen, with full intelligence and deliberate malice, to drain the life from you.</p></div>
+</div>
+
+<!-- NAMED DEAD -->
+
+<div class="cotd-sec">
+  <div class="cotd-sh"><span>VII. Named Undead Individuals</span></div>
+  <table class="cotd-table">
+    <thead><tr><th>Name / Location</th><th>Type</th><th>Recognisable?</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Ab-Centeer (Crypt 1)</td><td>Spectre</td><td style="color:#9e3d20;font-style:italic">By name; too old for face</td><td>Epitaph written in mourning. Someone knew her well enough to grieve in stone.</td></tr>
+      <tr><td>Prince Ariel Du Plumette (Crypt 4)</td><td>Ghost</td><td style="color:#7a6a50;font-style:italic">Legend only</td><td>Ancient. &ldquo;Sacrificed more than himself in his quest for wings.&rdquo;</td></tr>
+      <tr><td>Endorovich the Terrible (Crypt 7)</td><td>Spectre</td><td style="color:#7a6a50;font-style:italic">Epitaph only</td><td>Poisoned the man who loved Marya Markovia. Her stone next door has been clawed off by something mad and tormented. The name Endorovich follows Slavic patronymic convention: son of Endor. As a hereditary surname it suggests a family of sufficient standing to require one, and the soubriquet &ldquo;the Terrible&rdquo; implies historical significance beyond local unpleasantness. The neighbouring crypt of Marya Markovia similarly carries an old family name. Both may represent political lines predating the Von Zarovich consolidation of Barovia, making the crypt level a partial document of displaced power.</td></tr>
+      <tr><td>Patrina Velikovna (Crypt 21)</td><td>Banshee</td><td style="color:#e8dcc8">Rhenari elders: certainly</td><td>Rhenari woman, student of the black arts. Stoned by her own people before Strahd could complete the transformation. He demanded the body anyway. Crypt stonework is newer than all others.</td></tr>
+      <tr><td>Helga (K32, Maid&rsquo;s Hall)</td><td>Vampire</td><td style="color:#e8dcc8">Older villagers: likely</td><td>Daughter of a townsperson. Chose evil. Now uses that face to lure people to their deaths.</td></tr>
+      <tr><td>Table 7 vampires (1&ndash;4)</td><td>Vampire</td><td style="color:#9e3d20;font-style:italic">If recently turned: possibly</td><td>&ldquo;Old, hapless victims of the Count.&rdquo; Former people, ruined involuntarily.</td></tr>
+      <tr><td>Vampire maiden (night table)</td><td>Vampire</td><td style="color:#9e3d20;font-style:italic">Possibly living memory</td><td>Unnamed. A woman. She was someone.</td></tr>
+      <tr><td>100 tower spirits (K20)</td><td>Spirit (0 HD)</td><td style="color:#7a6a50;font-style:italic">Not Barovians</td><td>Former adventurers from outside. They repeat the same failed quest every night. They know they have failed.</td></tr>
+    </tbody>
+  </table>
+  <p class="cotd-cap" style="margin-top:0.7rem">Horror checks are a Second Edition mechanic from the Realm of Terror boxset, 1990, and do not appear in I6. The module uses saving throws and specific behavioural penalties per encounter only.</p>
+</div>
+
+<!-- SECTION VII: SOCIAL AND ECONOMIC STRUCTURE -->
+
+<div class="cotd-sec">
+  <div class="cotd-sh"><span>VIII. Social and Economic Structure &mdash; Inference and Implication</span></div>
+  <div class="cotd-cols">
+    <div>
+      <p>What follows is interpretive rather than directly stated in the module. It is presented as the reading that best fits the internal logic of I6&rsquo;s closed system, not as a claim about what the module explicitly describes.</p>
+      <p>The seven witches of K56 are best explained as local recruits from the valley's settled human population. The valley has been sealed for centuries and external recruitment is implausible at scale. They are the only group Strahd keeps alive in the castle rather than turning or destroying, which implies they provide something he values that death would extinguish. Their communal spellbook, held collectively rather than individually, is consistent with a controlled arrangement: one visible resource is easier to monitor than seven private ones. Their individual hit points suggest recruitment across different periods rather than a single founding event. Some are recent enough that village connections may still be living memory.</p>
+    </div>
+    <div>
+      <p>The valley&rsquo;s only sources of traded goods and magical texts are adventuring parties who entered and did not leave. Bildrath&rsquo;s stock is most plausibly explained as recovered equipment from those parties rather than from any external supply chain that no longer exists. The graveyard, maintained by Donavich, is the physical record of where those people ended up.</p>
+      <p>The most coherent reading of the valley&rsquo;s exchange economy is that Bildrath and the witches occupy complementary positions within it. The witches have access to the castle interior and can recover magical materials, including spellbooks, from adventurer deaths there. Bildrath has practical goods and no obvious use for spellbooks. The witches have no obvious use for swords and armour but need supplies they cannot safely obtain themselves. More speculatively, a trade relationship between them is the simplest explanation for how both populations remain provisioned. That relationship is not stated in the module and should be treated as speculation, not established fact.</p>
+    </div>
+  </div>
+  <div class="cotd-pq"><p>The valley of Barovia is not merely a population under siege. It is a closed economic system that has found its own level under centuries of intelligent predation. Every exchange of goods, every provisioning arrangement, every surviving institution reflects the constraints Strahd has imposed and the accommodations the living have made within them.</p></div>
+</div>
+
+<!-- FOOTER -->
+
+<div class="cotd-footer">
+  <h3>Notes on Method</h3>
+  <p>Village house count: 157 total structures; 151 residential after removing 6 named locations. Rhenari estimate is an inference: 11 statted camp members plus a wandering encounter group averaging around 16, plus non-combatants, yielding 35 to 40. Fixed monster total 54, audited room by room; Crypt 14 wight trap restored from prior omission. Encounter-table figures are independent reservoir totals; ~205 is a ceiling, not a sum. Wight and wraith intelligence confirmed as High (13 to 14) per the AD&amp;D first edition Monster Manual; ghast as Very Intelligent (11 to 12). Bats of K84 excluded as non-hostile. Tower spirits of K20 (0 HD, 0 attacks) excluded from combat totals.</p>
+  <p><em>Module I6: Ravenloft</em>, Tracy and Laura Hickman, TSR Inc., 1983. First Edition Advanced Dungeons &amp; Dragons.</p>
+</div>
+
+</div><!-- .cotd -->
+
+<script>
+(function(){
+  function bar(id, rows, maxVal, narrow) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var max = maxVal || Math.max.apply(null, rows.filter(function(r){return !r.sep;}).map(function(r){return r.value;}));
+    rows.forEach(function(r) {
+      if (r.sep) { var hr = document.createElement('div'); hr.className = 'cotd-bsep'; el.appendChild(hr); return; }
+      var row = document.createElement('div');
+      row.className = narrow ? 'cotd-br sm' : 'cotd-br';
+      var lbl = document.createElement('span'); lbl.className = 'cotd-bl'; lbl.textContent = r.label;
+      var track = document.createElement('div'); track.className = 'cotd-bt';
+      var fill = document.createElement('div'); fill.className = 'cotd-bf';
+      fill.style.background = r.color || '#7a1515';
+      fill.dataset.w = ((r.value / max) * 100) + '%';
+      track.appendChild(fill);
+      var val = document.createElement('span'); val.className = 'cotd-bv';
+      val.textContent = r.display !== undefined ? r.display : r.value;
+      row.appendChild(lbl); row.appendChild(track); row.appendChild(val);
+      el.appendChild(row);
+    });
+  }
+
+  function dots(cid, tid, groups) {
+    var el = document.getElementById(cid), tip = document.getElementById(tid);
+    if (!el) return;
+    groups.forEach(function(g) {
+      for (var i = 0; i < g.n; i++) {
+        var d = document.createElement('div'); d.className = 'cotd-dot';
+        d.style.background = g.color;
+        (function(t){ d.addEventListener('mouseenter', function(){ if(tip) tip.textContent = t; }); })(g.tip);
+        d.addEventListener('mouseleave', function(){ if(tip) tip.innerHTML = '&nbsp;'; });
+        el.appendChild(d);
+      }
+    });
+  }
+
+  bar('cotd-bars-village', [
+    {label:'Total houses', value:151, display:'151', color:'#505050'},
+    {label:'Occupied (60%)', value:91, display:'91', color:'#7a5025'},
+    {label:'Men (1 each)', value:91, display:'91', color:'#9e3d20'},
+    {label:'Wives (30%)', value:27, display:'27', color:'#7a6a50'},
+    {label:'Children (10%)', value:41, display:'~41', color:'#8a7a60'},
+    {sep:true},
+    {label:'Empty houses', value:60, display:'60', color:'#505050'},
+  ], 151, true);
+
+  bar('cotd-bars-fighters', [
+    {label:'Tser Pool Rhenari (x10)', value:40, display:'F4 each', color:'#4e6040'},
+    {label:'Tavern Rhenari (x3)', value:12, display:'F4 each', color:'#4e6040'},
+    {label:'Parriwimple', value:9, display:'F9', color:'#7a5025'},
+    {label:'Bildrath', value:4, display:'F4', color:'#7a5025'},
+    {label:'Ireena Kolyana', value:4, display:'F4', color:'#9e3d20'},
+    {label:'Ismark the Lesser', value:2, display:'F2', color:'#7a5025'},
+    {label:'Father Donavich', value:2, display:'C2', color:'#3e5030'},
+    {label:'Cyrus Belview', value:0, display:'F0', color:'#505050'},
+  ], 40, false);
+
+  bar('cotd-bars-monsters', [
+    {label:'Skeletons (K69)', value:10, color:'#505050'},
+    {label:'Strahd zombies', value:8, color:'#7a1515'},
+    {label:'Witches (K56)', value:7, color:'#7a5025'},
+    {label:'Giant spiders (K40)', value:5, color:'#3e5030'},
+    {label:'Hellhounds (Crypt 38)', value:3, color:'#9e3d20'},
+    {label:'Standard zombies', value:3, color:'#7a1515'},
+    {label:'Cat familiars (K54)', value:3, color:'#7a6a50'},
+    {label:'Wraiths (K35)', value:2, color:'#505050'},
+    {label:'Werewolf (K75)', value:1, color:'#3e5030'},
+    {label:'Singular entities \u2020', value:12, color:'#8a7a60'},
+    {sep:true},
+    {label:'Total', value:54, display:'54', color:'#b89050'},
+  ], 54, true);
+
+  bar('cotd-bars-tables', [
+    {label:'Castle random (Table 6)', value:148, display:'~148', color:'#7a1515'},
+    {label:'Barovia night (Table 5)', value:91, display:'~91', color:'#9e3d20'},
+    {label:"Strahd's nightly attack", value:65, display:'~65', color:'#7a5025'},
+    {label:'Fixed encounters', value:54, display:'54', color:'#7a6a50'},
+    {label:'Barovia day (Table 4)', value:5, display:'5 \u2020', color:'#8a7a60'},
+    {label:'Castle special (Table 7)', value:3, display:'~3', color:'#505050'},
+  ], 148, false);
+
+  dots('cotd-dots-living', 'cotd-tip-living', [
+    {n:147, color:'#7a5025', tip:'Villager (non-combatant)'},
+    {n:20, color:'#4e6040', tip:'Rhenari'},
+    {n:33, color:'#9e3d20', tip:'Statted human capable of resistance'},
+  ]);
+
+  dots('cotd-dots-monsters', 'cotd-tip-monsters', [
+    {n:29, color:'#7a1515', tip:'Undead: skeletons x10, Strahd zombies x8, std zombies x3, wraiths x2, Strahd, Helga, ghost, spectre, banshee, wight trap'},
+    {n:19, color:'#3e5030', tip:'Non-undead hostile: witches x7, spiders x5, cats x3, hellhounds x3, werewolf x1'},
+    {n:6, color:'#505050', tip:'Other: shadow demon, nightmare, trapper, green slime, guardian portrait, Guardian of Sorrow'},
+  ]);
+
+  if (window.IntersectionObserver) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (!e.isIntersecting) return;
+        e.target.querySelectorAll('.cotd-bf').forEach(function(f){ f.style.width = f.dataset.w; });
+        obs.unobserve(e.target);
+      });
+    }, {threshold:0.2});
+    document.querySelectorAll('.cotd-box, .cotd-pair').forEach(function(el){ obs.observe(el); });
+  } else {
+    document.querySelectorAll('.cotd-bf').forEach(function(f){ f.style.width = f.dataset.w; });
+  }
+})();
+</script>
+
+<p></p>

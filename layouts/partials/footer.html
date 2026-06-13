@@ -1,0 +1,16 @@
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="footer-brand"><span class="brand-vaults">Vaults of the</span> <span class="brand-odd">ODD</span></p>
+    <nav class="footer-nav" aria-label="Footer">
+      <ul>
+        {{- range .Site.Menus.footer }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{- end }}
+        {{- with .Site.Params.buymeacoffee }}
+        <li><a href="{{ . }}" rel="noopener">Buy me a coffee</a></li>
+        {{- end }}
+      </ul>
+    </nav>
+    <p class="footer-fine">&copy; {{ now.Year }} {{ .Site.Params.author }}. An independent, non-commercial site. Trademarks remain the property of their respective rights-holders.</p>
+  </div>
+</footer>

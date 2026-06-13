@@ -1,0 +1,624 @@
+---
+title: "The Peculiar Census of Mordentshire"
+date: 2026-05-09T08:00:00Z
+slug: "the-peculiar-census-of-mordentshire"
+settings:
+  - "Ravenloft"
+tags:
+  - "Source Analysis"
+---
+<style>
+.cotc { font-family: 'EB Garamond', Georgia, serif; color: var(--text-primary, #e8dcc8); max-width: 860px; margin: 0 auto; }
+.cotc-masthead { text-align: center; border-bottom: 1px solid var(--gold, #b89050); padding: 2rem 0 1.4rem; }
+.cotc-journal { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.28em; color: var(--text-muted, #7a6a50); margin-bottom: 1rem; text-align: center; display: block; }
+.cotc-title { font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 700; color: var(--gold, #b89050); line-height: 1.15; margin: 0 0 0.25rem; display: block; text-align: center; width: 100%; padding: 0; border: none; float: none; clear: both; }
+.cotc-subtitle { font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--text-primary, #e8dcc8); letter-spacing: 0.05em; margin: 0 0 0.9rem; display: block; text-align: center; }
+.cotc-orn { color: var(--gold, #b89050); font-size: 1rem; letter-spacing: 0.5em; margin: 0.6rem 0; display: block; text-align: center; }
+.cotc-lede { font-style: italic; font-size: 0.93rem; color: var(--text-muted, #7a6a50); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+.cotc-meta { display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 3px double var(--gold, #b89050); font-family: 'Cinzel', serif; font-size: 0.56rem; letter-spacing: 0.14em; color: var(--text-muted, #7a6a50); flex-wrap: wrap; gap: 0.3rem; }
+.cotc-sec { padding: 1.6rem 0; border-bottom: 1px solid rgba(184,144,80,0.25); }
+.cotc-sh { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.3rem; }
+.cotc-sh::before, .cotc-sh::after { content: ''; flex: 1; height: 1px; background: var(--gold, #b89050); opacity: 0.5; }
+.cotc-sh span { font-family: 'Cinzel', serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.24em; color: var(--gold, #b89050); white-space: nowrap; margin: 0; display: block; }
+.cotc-stats { display: grid; grid-template-columns: repeat(4,1fr); border: 1px solid rgba(184,144,80,0.4); margin-bottom: 1.3rem; }
+.cotc-stat { text-align: center; padding: 0.85rem 0.4rem; border-right: 1px solid rgba(184,144,80,0.4); background: rgba(184,144,80,0.06); }
+.cotc-stat:last-child { border-right: none; }
+.cotc-sn { display: block; font-family: 'Cinzel', serif; font-size: 1.85rem; color: var(--gold, #b89050); line-height: 1; margin-bottom: 0.22rem; }
+.cotc-sl { display: block; font-family: 'Cinzel', serif; font-size: 0.54rem; letter-spacing: 0.12em; color: var(--text-muted, #7a6a50); line-height: 1.4; }
+.cotc-pq { border-left: 3px solid var(--gold, #b89050); padding: 0.65rem 1.1rem; margin: 1.1rem 0; background: rgba(184,144,80,0.06); }
+.cotc-pq p { font-style: italic; font-size: 1rem; color: var(--text-primary, #e8dcc8); line-height: 1.65; margin: 0; }
+.cotc-callout { border: 1px solid rgba(184,144,80,0.4); border-left: 4px solid var(--gold, #b89050); background: rgba(184,144,80,0.06); padding: 0.8rem 1rem; margin: 1.1rem 0; font-size: 0.87rem; line-height: 1.65; color: var(--text-primary, #e8dcc8); }
+.cotc-callout strong { font-family: 'Cinzel', serif; font-size: 0.66rem; letter-spacing: 0.1em; color: var(--gold, #b89050); display: block; margin-bottom: 0.35rem; }
+.cotc-cap { font-style: italic; font-size: 0.76rem; color: var(--text-muted, #7a6a50); margin-top: 0.45rem; line-height: 1.5; }
+.cotc-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.3rem; }
+.cotc-cols p { font-size: 0.92rem; line-height: 1.75; color: var(--text-primary, #e8dcc8); margin-bottom: 0.75rem; }
+.cotc-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; margin-bottom: 1.3rem; }
+.cotc-box { background: rgba(184,144,80,0.06); border: 1px solid rgba(184,144,80,0.35); padding: 1.1rem; margin-bottom: 1.3rem; }
+.cotc-box-t { font-family: 'Cinzel', serif; font-size: 0.56rem; letter-spacing: 0.15em; color: var(--text-muted, #7a6a50); text-align: center; margin-bottom: 0.85rem; border-bottom: 1px solid rgba(184,144,80,0.25); padding-bottom: 0.42rem; }
+.cotc-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin-top: 0.5rem; }
+.cotc-table th { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.12em; color: var(--text-muted, #7a6a50); border-bottom: 2px solid rgba(184,144,80,0.5); padding: 0.3rem 0.5rem; text-align: left; font-weight: normal; background: rgba(184,144,80,0.06); }
+.cotc-table td { padding: 0.33rem 0.5rem; border-bottom: 1px solid rgba(184,144,80,0.15); vertical-align: top; line-height: 1.45; color: var(--text-primary, #e8dcc8); font-size: 0.82rem; }
+.cotc-table tr:last-child td { border-bottom: none; }
+.cotc-table tr:hover td { background: rgba(184,144,80,0.05); }
+.cotc-table .cotc-total td { border-top: 2px solid rgba(184,144,80,0.5); }
+.cotc-td-muted { color: var(--text-muted, #7a6a50) !important; font-size: 0.78rem !important; }
+.cotc-td-warn { color: #c87050 !important; }
+.cotc-td-gone { color: #7a1515 !important; }
+/* Conversion track */
+.cotc-track { margin: 0.8rem 0 0.4rem; }
+.cotc-track-row { display: grid; grid-template-columns: 130px 1fr 1fr; gap: 0.4rem; align-items: center; margin-bottom: 0.35rem; }
+.cotc-track-label { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.06em; color: var(--text-muted, #7a6a50); text-align: right; }
+.cotc-track-bar-wrap { position: relative; height: 16px; background: rgba(184,144,80,0.08); border: 1px solid rgba(184,144,80,0.2); overflow: hidden; }
+.cotc-track-fill { height: 100%; width: 0; transition: width 1.2s cubic-bezier(.22,.68,0,1.1); }
+.cotc-track-val { font-family: 'Cinzel', serif; font-size: 0.58rem; color: var(--text-muted, #7a6a50); text-align: left; padding-left: 0.3rem; }
+.cotc-track-hdr { display: grid; grid-template-columns: 130px 1fr 1fr; gap: 0.4rem; margin-bottom: 0.2rem; }
+.cotc-track-hdr span { font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.1em; color: var(--text-muted, #7a6a50); text-align: center; }
+/* Inversion table status badges */
+.cotc-badge { display: inline-block; font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.04em; padding: 0.06rem 0.3rem; border-radius: 2px; color: #fff; vertical-align: middle; }
+.cotc-badge-gone { background: #7a1515; }
+.cotc-badge-comp { background: #9e3d20; }
+.cotc-badge-vuln { background: #6a5030; }
+/* Dot matrix */
+.cotc-dots { display: flex; flex-wrap: wrap; gap: 4px; margin: 0.35rem 0 0.25rem; }
+.cotc-dot { width: 10px; height: 10px; border-radius: 50%; cursor: default; transition: transform 0.12s, background 0.3s; }
+.cotc-dot:hover { transform: scale(1.6); }
+.cotc-tip { font-style: italic; font-size: 0.72rem; color: var(--text-muted, #7a6a50); min-height: 1.1rem; margin-top: 0.2rem; }
+.cotc-dgl { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.13em; color: var(--text-muted, #7a6a50); margin-top: 0.5rem; margin-bottom: 0.15rem; }
+.cotc-leg { display: flex; flex-wrap: wrap; gap: 0.4rem 0.85rem; margin-top: 0.45rem; }
+.cotc-li { display: flex; align-items: center; gap: 0.3rem; font-size: 0.78rem; color: var(--text-primary, #e8dcc8); }
+.cotc-sw { width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0; }
+/* Toggle */
+.cotc-toggle { display: flex; gap: 0.5rem; margin-bottom: 0.7rem; flex-wrap: wrap; }
+.cotc-btn { font-family: 'Cinzel', serif; font-size: 0.54rem; letter-spacing: 0.1em; padding: 0.25rem 0.7rem; border: 1px solid rgba(184,144,80,0.5); background: transparent; color: var(--text-muted, #7a6a50); cursor: pointer; transition: all 0.2s; }
+.cotc-btn:hover, .cotc-btn.active { background: rgba(184,144,80,0.15); color: var(--gold, #b89050); border-color: var(--gold, #b89050); }
+.cotc-footer { padding: 1.3rem 0 0; border-top: 3px double rgba(184,144,80,0.5); }
+.cotc-footer h3 { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.18em; color: var(--text-muted, #7a6a50); margin-bottom: 0.5rem; }
+.cotc-footer p { font-size: 0.77rem; line-height: 1.65; color: var(--text-muted, #7a6a50); margin-bottom: 0.3rem; }
+.cotc-itag { font-style: italic; font-size: 0.82rem; color: var(--text-muted, #7a6a50); font-family: 'EB Garamond', Georgia, serif; font-weight: normal; letter-spacing: 0; }
+@media (max-width: 640px) {
+  .cotc-cols, .cotc-pair { grid-template-columns: 1fr; }
+  .cotc-stats { grid-template-columns: repeat(2,1fr); }
+  .cotc-title { font-size: 1.5rem; }
+  .cotc-meta { flex-direction: column; }
+  .cotc-track-row, .cotc-track-hdr { grid-template-columns: 90px 1fr 1fr; }
+}
+</style>
+
+<div class="cotc">
+
+<div class="cotc-masthead">
+  <div class="cotc-journal">Population Analysis &nbsp;&middot;&nbsp; Module I10: Ravenloft II &nbsp;&middot;&nbsp; TSR Inc., 1986</div>
+  <div class="cotc-title">A Census of the Habited</div>
+  <div class="cotc-subtitle">The Population of Mordentshire and the Mechanism of Its Capture</div>
+  <div class="cotc-orn">&#10087; &#10022; &#10087;</div>
+  <div class="cotc-lede">Mordentshire is not empty. That is the horror. Its houses are occupied, its shops are open, its people still answer to their names &mdash; but fewer and fewer of those bodies are inhabited by the people who began inside them.</div>
+  <div class="cotc-lede" style="margin-top:0.6rem;font-size:0.78rem">A companion piece to <em>A Census of the Damned</em> and <em>Economy of the Damned</em>. All figures drawn directly from the I10 NPC roster, location descriptions, and event mechanics.</p>
+</div>
+
+<div class="cotc-meta">
+  <span>Based on an outline by Tracy &amp; Laura Hickman</span>
+  <span>First Edition Advanced Dungeons &amp; Dragons</span>
+  <span>Companion to A Census of the Damned</span>
+</div>
+
+<!-- AT A GLANCE -->
+
+<div class="cotc-sec">
+  <div class="cotc-sh"><span>At a Glance</span></div>
+  <div class="cotc-stats">
+    <div class="cotc-stat"><span class="cotc-sn">52</span><span class="cotc-sl">Named Civic<br>Population</span></div>
+    <div class="cotc-stat"><span class="cotc-sn">4+</span><span class="cotc-sl">Already Converted<br>at Adventure Start</span></div>
+    <div class="cotc-stat"><span class="cotc-sn">4</span><span class="cotc-sl">Exit Routes<br>Blocked or Contested</span></div>
+    <div class="cotc-stat"><span class="cotc-sn">0</span><span class="cotc-sl">Reliable Institutional<br>Anchors at Start</span></div>
+  </div>
+  <div class="cotc-pq"><p>The wonder of Mordentshire is not that it is falling. The wonder is how quickly a town with a functioning garrison, a working economy, and open roads in three directions can be made into a closed system with no meaningful exit and no reliable institutional anchor.</p></div>
+</div>
+
+<!-- CERTAINTY KEY -->
+
+<div class="cotc-sec">
+  <div class="cotc-sh"><span>Degrees of Certainty</span></div>
+  <div class="cotc-box" style="margin-bottom:0">
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.5rem 1.5rem">
+      <div style="font-size:0.82rem;color:var(--text-primary,#e8dcc8)"><strong style="color:var(--gold,#b89050)">Textual</strong> &mdash; directly stated in I10</div>
+      <div style="font-size:0.82rem;color:var(--text-primary,#e8dcc8)"><strong style="color:var(--gold,#b89050)">Rules-derived</strong> &mdash; calculated from module procedures and AD&amp;D 1e mechanics</div>
+      <div style="font-size:0.82rem;color:var(--text-primary,#e8dcc8)"><strong style="color:var(--gold,#b89050)">Inference</strong> &mdash; best-fit reconstruction from the module&rsquo;s internal logic</div>
+      <div style="font-size:0.82rem;color:var(--text-primary,#e8dcc8)"><strong style="color:var(--gold,#b89050)">Speculation</strong> &mdash; plausible but not required by the sources</div>
+    </div>
+    <p class="cotc-cap" style="margin-top:0.6rem">Sections I through IV are primarily textual or rules-derived. Sections V through VII contain inference and speculation, flagged where used.</p>
+  </div>
+</div>
+
+<!-- I. THE OPEN TOWN -->
+
+<div class="cotc-sec">
+  <div class="cotc-sh"><span>I. The Open Town</span></div>
+  <div class="cotc-cols">
+    <div>
+      <p>Mordentshire before the Creature is a functioning coastal community. The module describes it as once open and happy: a town with two inns, two taverns, a boarding house, a shipping operation, a warehouse, a mill, a garrison, a church, a sanitarium, a smithy, a butchery, a bakery, a general store, a bookshop, a livery, a market, a wharf, and four working farms to its east. Roads exit north along the Arden River, south into the hills, and northeast toward Gryphon Hill. Ships are in the harbour.</p>
+      <p>Nothing physically prevents exit. The sea closes the western and southern approaches, but three land routes are open and a functioning wharf provides maritime access. Unlike Barovia, Mordentshire has no fog barrier, no ancestral terror keeping the population indoors, no centuries of accumulated despair thinning the will to leave.</p>
+    </div>
+    <div>
+      <p>The module introduces it as a place people could walk out of at any time.</p>
+      <p>By the time the players arrive, they cannot.</p>
+      <p>A Census of the Damned examined a sealed valley and counted its dead: perhaps two hundred living people, near-zero effective resistance, a population maintained at minimum viable level. Mordentshire is the earlier stage of the same process &mdash; not the finished product of centuries, but the mechanism in motion, measured in weeks.</p>
+    </div>
+  </div>
+</div>
+
+<!-- II. POPULATION AND FACTIONS -->
+
+<div class="cotc-sec">
+  <div class="cotc-sh"><span>II. The Population and Its Factions</span></div>
+  <p style="font-size:0.92rem;line-height:1.75;color:var(--text-primary,#e8dcc8);margin-bottom:1rem">I10 names exactly fifty-two townspeople, organised as a standard deck of playing cards without jokers. Each named individual corresponds to a card. This is not decorative. The deck is the conversion mechanic: when the Creature&rsquo;s Apparatus transpossesses a townsperson, the DM draws from the townspeople deck to determine who. The deck is the module&rsquo;s civic register for ordinary townspeople: every named resident subject to the conversion mechanic is in it.</p>
+  <p style="font-size:0.92rem;line-height:1.75;color:var(--text-primary,#e8dcc8);margin-bottom:1rem">The fifty-two cards are not necessarily Mordentshire&rsquo;s total population. They are its named civic population: the people I10 tracks, converts, and uses mechanically. The module notes that farms house hired hands and distant cousins in barns and sheds, and that private homes at location 21 shelter residents not otherwise mapped. The census that follows counts the fifty-two named cards only.</p>
+  <p style="font-size:0.92rem;line-height:1.75;color:var(--text-primary,#e8dcc8);margin-bottom:1.3rem">One person is excluded from the four already converted at adventure start: Dominic the innkeeper, H5. The module states explicitly that the opening conversions cannot include him. His own location entry carries text for if he is converted, however, making clear he can be converted later. Everyone on the deck is eventually eligible.</p>
+
+  <!-- Conversion track -->
+
+  <div class="cotc-box">
+    <div class="cotc-box-t">The Conversion Mechanic &mdash; The Headcount Does Not Change</div>
+    <p style="font-size:0.82rem;line-height:1.65;color:var(--text-primary,#e8dcc8);margin-bottom:0.8rem">Conversion happens through Event Record triggers: 1d4 townspeople per event, drawn at random from the deck. The module fixes a minimum of four converted at adventure start. The track below shows how the number of bodies still occupied by their original inhabitants declines as the mechanism runs.</p>
+    <div class="cotc-track-hdr">
+      <span></span>
+      <span>Converted</span>
+      <span>Unconverted</span>
+    </div>
+    <div class="cotc-track" id="cotc-track"></div>
+    <p class="cotc-cap">The visible town remains fifty-two named people. What changes is not the headcount but the number of bodies still occupied by their original inhabitants.</p>
+  </div>
+
+  <!-- 52-dot matrix with toggle -->
+
+  <div class="cotc-box">
+    <div class="cotc-box-t">The 52-Card Civic Population</div>
+    <div class="cotc-toggle" id="cotc-toggle">
+      <button class="cotc-btn active" data-mode="combat">By Combat Level</button>
+      <button class="cotc-btn" data-mode="civic">By Civic Role</button>
+      <button class="cotc-btn" data-mode="effect">By Conversion Effect</button>
+    </div>
+    <div class="cotc-dgl" id="cotc-dgl">Each dot = one named townsperson. Hover for name and class.</div>
+    <div class="cotc-dots" id="cotc-dots"></div>
+    <div class="cotc-tip" id="cotc-tip">Hover a dot to see name and details.</div>
+    <div class="cotc-leg" id="cotc-legend"></div>
+  </div>
+
+  <!-- Class breakdown table -->
+
+  <div class="cotc-box" style="margin-bottom:0">
+    <div class="cotc-box-t">Combat Capability by Class Band</div>
+    <table class="cotc-table">
+      <thead><tr><th>Group</th><th>Count</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Fighter level 0</td><td>21</td><td class="cotc-td-muted">Civilians, vendors, domestic workers</td></tr>
+        <tr><td>Fighter levels 1&ndash;4</td><td>11</td><td class="cotc-td-muted">Limited combat capability</td></tr>
+        <tr><td>Fighter level 5 and above</td><td>18</td><td class="cotc-td-muted">Significant combat potential</td></tr>
+        <tr><td>Bard (B7)</td><td>1</td><td class="cotc-td-muted">Gwydion</td></tr>
+        <tr><td>Cleric (C6)</td><td>1</td><td class="cotc-td-muted">Father Joshua Talbot</td></tr>
+        <tr class="cotc-total"><td><strong>Total</strong></td><td><strong>52</strong></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- III. ECONOMIC NODES -->
+
+<div class="cotc-sec">
+  <div class="cotc-sh"><span>III. The Economic Nodes and Their Operators</span></div>
+  <div class="cotc-cols">
+    <div>
+      <p>The module maps Mordentshire&rsquo;s economy through its location descriptions. Each commercial location has a named proprietor whose conversion status changes how the location functions.</p>
+      <p>The garrison at location 5 is the town&rsquo;s only explicitly military institution. Its four permanent guards &mdash; Carlisle (F10), Kedar Kleinen (F10), Honorius (F8), and Justinian (F8) &mdash; represent the highest concentration of combat-capable individuals in any single location in town. Combined they have 272 hit points. If they are converted, the garrison becomes the Creature&rsquo;s most dangerous asset. If not yet converted, they are the town&rsquo;s best hope for organised resistance. The module notes that one of the Creature&rsquo;s four vampire minions may attend the garrison cells at night.</p>
+      <p>The shipping house at location 6 is operated by Cavel Warden (H3). The shipping operation becomes far more useful once he is converted, because his paperwork legitimises the cargo transfers from the warehouse to the mausoleum. If converted, he reverses his schedule, staying home by day and working by night.</p>
+    </div>
+    <div>
+      <p>The mill at location 11 is the town&rsquo;s primary food processing node. If Sterling Toddburry (F7) and his son Ethan (F6) are converted, the mill wheel stops. The market vendors become absent rather than hostile when converted, thinning the town&rsquo;s economic activity visibly. The bookshop at location 22 is the town&rsquo;s only source of historical records on Gryphon Hill; if either Tobias Kenkiny (F10) or his wife Desma is converted, it closes in chaos.</p>
+      <p>Dominic at the Blackard Inn is protected from the opening conversion draw, but not from later conversion. His conversion-adjacent behaviour &mdash; asking guests when they are moving on, holding their gear, and triggering events in his absence &mdash; means his usefulness to the players depends on his faction status at any given moment.</p>
+      <p>The farms at locations 27A through 27D house eight of the fifty-two named townspeople plus unnamed hired hands and distant cousins in barns and sheds: the only indication of a population beyond the named cards.</p>
+    </div>
+  </div>
+
+  <!-- Civic inversion table -->
+
+  <div class="cotc-box" style="margin-bottom:0">
+    <div class="cotc-box-t">Civic Asset Becomes Hostile Asset</div>
+    <table class="cotc-table">
+      <thead><tr><th>Institution</th><th>Normal Function</th><th>If Operator Converted</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Garrison <span class="cotc-badge cotc-badge-vuln">vulnerable</span></td>
+          <td class="cotc-td-muted">Town defence, law enforcement</td>
+          <td class="cotc-td-warn">Armed occupation; 272 HP turned against the players</td>
+        </tr>
+        <tr>
+          <td>Inn / Taverns</td>
+          <td class="cotc-td-muted">Hospitality, rumour, rest</td>
+          <td class="cotc-td-warn">Surveillance, pressure, gear held hostage</td>
+        </tr>
+        <tr>
+          <td>Shipping House</td>
+          <td class="cotc-td-muted">Trade logistics</td>
+          <td class="cotc-td-warn">Official cover for mausoleum cargo transfers</td>
+        </tr>
+        <tr>
+          <td>Mill</td>
+          <td class="cotc-td-muted">Food processing</td>
+          <td class="cotc-td-warn">Wheel stops; food supply disrupted</td>
+        </tr>
+        <tr>
+          <td>Bookshop</td>
+          <td class="cotc-td-muted">Historical records on Gryphon Hill</td>
+          <td class="cotc-td-warn">Records denied; shop closes in chaos</td>
+        </tr>
+        <tr>
+          <td>Farms</td>
+          <td class="cotc-td-muted">Food supply, perimeter</td>
+          <td class="cotc-td-warn">Converted farmers become hostile at perimeter</td>
+        </tr>
+        <tr>
+          <td>Church <span class="cotc-badge cotc-badge-gone">gone</span></td>
+          <td class="cotc-td-muted">Religious anchor, community trust</td>
+          <td class="cotc-td-gone">Burned before adventure begins; priest displaced</td>
+        </tr>
+        <tr>
+          <td>Sanitarium <span class="cotc-badge cotc-badge-comp">compromised</span></td>
+          <td class="cotc-td-muted">Medical care</td>
+          <td class="cotc-td-gone">Witness absorption; incarceration on demand</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- IV. INSTITUTIONS NEUTRALISED -->
+
+<div class="cotc-sec">
+  <div class="cotc-sh"><span>IV. The Institutions Already Neutralised or Compromised</span></div>
+  <div class="cotc-cols">
+    <div>
+      <p>Before the players begin interacting with the conversion mechanic, two of Mordentshire&rsquo;s institutions are already unusable as reliable anchors of resistance. This is what the module establishes.</p>
+      <div class="cotc-callout">
+        <strong>The Church <span class="cotc-badge cotc-badge-gone" style="vertical-align:middle">gone</span></strong>
+        The church at location 12 burned to the ground before the adventure begins, during the recent storm. Father Joshua Talbot (HK, C6) lives in a gardener&rsquo;s shack on the derelict grounds. He is Fearfully Silent: nervous, haunted, too frightened to act. The one person with formal religious authority and genuine clerical capability is cowering in a shack. The church is gone as a functioning institution before play begins. Whether the Creature directly arranged the fire or exploited it, its destruction is the first major institutional fact of Mordentshire&rsquo;s capture.
+      </div>
+    </div>
+    <div>
+      <div class="cotc-callout">
+        <strong>The Sanitarium <span class="cotc-badge cotc-badge-comp" style="vertical-align:middle">compromised</span></strong>
+        The sanitarium at location 26 is run by Docteur Germain d&rsquo;Honaire, listed among the Masters of Mordentshire &mdash; the named power figures who stand outside the conversion mechanic entirely. D&rsquo;Honaire cannot be randomly converted. His institution functions as the module&rsquo;s incarceration mechanism: the Unknowing faction may assist in committing the players to it if they become too demonstrative. The sanitarium does not merely hold madmen; mechanically, it absorbs witnesses. D&rsquo;Honaire is also available to the players through the mesmerism mechanic, which complicates any simple reading of his allegiance. What is textually clear is that the sanitarium can function as a suppression tool regardless of how that allegiance resolves.
+      </div>
+      <p style="font-size:0.92rem;line-height:1.75;color:var(--text-primary,#e8dcc8)">His two attendants, Axtel Bartel (HA) and Barth Kleinen (H2), are on the deck and can be converted. The sanitarium&rsquo;s day-to-day workers are vulnerable. Its operator is not.</p>
+      <p style="font-size:0.92rem;line-height:1.75;color:var(--text-primary,#e8dcc8)">Two of the three institutions that might anchor community resistance &mdash; religious authority and civic coercion &mdash; begin the adventure in weakened or ambiguous states. The third, the garrison, is the prize.</p>
+    </div>
+  </div>
+</div>
+
+<!-- V. ISOLATION -->
+
+<div class="cotc-sec">
+  <div class="cotc-sh"><span>V. The Isolation Mechanism <span class="cotc-itag">&mdash; inference throughout</span></span></div>
+  <p style="font-size:0.92rem;line-height:1.75;color:var(--text-primary,#e8dcc8);margin-bottom:1.1rem">Mordentshire has three exit routes by land and one by sea. By the time the players arrive, all four have been functionally closed; the maritime closure is explicit, while the landward closure is enforced by fog, surveillance, and pursuit.</p>
+
+  <!-- Institutional failure map -->
+
+  <div class="cotc-box">
+    <div class="cotc-box-t">Institutional Failure Map &mdash; State at Adventure Start</div>
+    <table class="cotc-table">
+      <thead><tr><th>Exit or Institution</th><th>Starting State</th><th>What Its Loss Means</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Church</td>
+          <td><span class="cotc-badge cotc-badge-gone">burned</span></td>
+          <td class="cotc-td-muted">No religious anchor, no clerical authority, priest isolated in shack</td>
+        </tr>
+        <tr>
+          <td>Sanitarium</td>
+          <td><span class="cotc-badge cotc-badge-comp">available for suppression</span></td>
+          <td class="cotc-td-muted">Witnesses can be removed; operator outside the conversion deck</td>
+        </tr>
+        <tr>
+          <td>Harbour</td>
+          <td><span class="cotc-badge cotc-badge-gone">sabotaged</span></td>
+          <td class="cotc-td-muted">Ships breached, manned by zombies; no sea escape</td>
+        </tr>
+        <tr>
+          <td>Roads</td>
+          <td><span class="cotc-badge cotc-badge-comp">fog and pursuit</span></td>
+          <td class="cotc-td-muted">Heath fog returns travellers; creatures sent after anyone who attempts to leave</td>
+        </tr>
+        <tr>
+          <td>Garrison</td>
+          <td><span class="cotc-badge cotc-badge-vuln">vulnerable</span></td>
+          <td class="cotc-td-muted">Best defensive concentration in town; if converted, becomes primary threat</td>
+        </tr>
+        <tr>
+          <td>Shipping</td>
+          <td><span class="cotc-badge cotc-badge-vuln">useful if Cavel converted</span></td>
+          <td class="cotc-td-muted">Cargo operation gains official cover once operator is drawn</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cotc-pair">
+    <div class="cotc-box" style="margin-bottom:0">
+      <div class="cotc-box-t">Maritime Exit</div>
+      <p style="font-size:0.88rem;line-height:1.72;color:var(--text-primary,#e8dcc8)">The harbour contains ships that are unserviceable. The module states that the Creature has seen to it that none of the ships are usable: hulls are breached, repairs poor, and each ship is manned by five sailors who are now converted Strahd zombies. The maritime exit was deliberately sabotaged and its personnel replaced.</p>
+    </div>
+    <div class="cotc-box" style="margin-bottom:0">
+      <div class="cotc-box-t">Land Exits</div>
+      <p style="font-size:0.88rem;line-height:1.72;color:var(--text-primary,#e8dcc8)">The heath fog returns travellers to town from a new direction regardless of how many times they try. A raven sentinel watches the road boundary. The Creature will send his creatures of the night after anyone who attempts to leave. The North Road escalates encounter chance rapidly once characters leave the map. The South Road is explicitly discouraged. The Gryphon Road leads toward the house&rsquo;s own hostile population.</p>
+    </div>
+  </div>
+
+  <div class="cotc-callout" style="margin-top:1.1rem">
+    <strong>The Fog as Infrastructure <span class="cotc-itag">(inference)</span></strong>
+    The fog on the heath is not the Barovian fog. It is not ancient, permanent, or geological. The module does not explain when it appeared or how. The most coherent reading is that it appeared early in the Creature&rsquo;s occupation, before or during the initial conversion operation. An open town with working exits cannot be systematically converted: converted individuals will be detected by departing townspeople who report to the outside world, and help will arrive. The fog prevents that. It is the prerequisite for the conversion operation rather than a side effect of it. If this reading is correct, the sequence was: fog first, church gone, sanitarium available to suppression, conversion begun. By the time the first townsperson was transpossessed, the town was already a sealed system.
+  </div>
+</div>
+
+<!-- VI. CONVERSION PRIORITY -->
+
+<div class="cotc-sec">
+  <div class="cotc-sh"><span>VI. The Conversion Priority <span class="cotc-itag">&mdash; inference throughout</span></span></div>
+  <div class="cotc-cols">
+    <div>
+      <p>The conversion mechanic uses random card draws. Who gets converted when is not predetermined. But the Creature&rsquo;s deliberate actions &mdash; the ships, the church, the sanitarium, the cargo operation &mdash; suggest a strategic intelligence that the random draw alone does not capture.</p>
+      <p>The cargo transfers from the warehouse to the mausoleum via Event 6 are not random. They are a systematic movement of resources to a location Azalin controls. The module explicitly says to use the highest-level converted individuals for the transfer wagon. The Creature selects for capability when capability matters.</p>
+    </div>
+    <div>
+      <p>What the conversion deck does not control is the institutional infrastructure. The church required no conversion because it was destroyed. The sanitarium required no conversion because d&rsquo;Honaire stands outside the conversion deck and the institution is already available as a mechanism for suppressing witnesses. The shipping operation becomes far more useful once Cavel Warden is converted, because his paperwork legitimises the cargo transfers.</p>
+      <p>The institutional foundations were either established first or already available for exploitation. The random conversion of the population then added bodies to a system already built to use them.</p>
+    </div>
+  </div>
+  <div class="cotc-pq"><p>This is the difference between Mordentshire and Barovia. In Barovia, the sealed population is the result of centuries. In Mordentshire, the Creature does not have centuries. He has the Apparatus he emerged from, a church already burned, a sanitarium available to suppression, and centuries of practice at building sealed populations.</p></div>
+</div>
+
+<!-- VII. THE ARGUMENT -->
+
+<div class="cotc-sec">
+  <div class="cotc-sh"><span>VII. The Argument</span></div>
+  <div class="cotc-cols">
+    <div>
+      <p>The fifty-two named townspeople of Mordentshire are not the population of a dying community. They are the population of a functioning town that has been entered, instrumentalised, and is in the process of being replaced from the inside.</p>
+      <p>Barovia shows what extraction looks like after centuries: approximately two hundred survivors, near-zero effective resistance, a population maintained at the minimum viable level. Mordentshire shows what extraction looks like in its first weeks: a population of fifty-two named individuals, eighteen of them fighters of level 5 or above, trapped in a town that appears open but is not, being converted at a randomised rate by a mechanism their own deck of cards defines.</p>
+    </div>
+    <div>
+      <p>The wonder of Mordentshire is not that it is falling. The wonder is how quickly a town with four high-level guards in a garrison, a functioning economy, and open roads in three directions can be made into a closed system with no meaningful exit and no reliable institutional anchor. The church is ash. The sanitarium is available to suppression. The ships are breached. The fog does not lift. The garrison may already be gone.</p>
+      <p>The Creature emerged from the Apparatus the Alchemist had built, drove him from Gryphon Hill, and in time turned the machine to his own use. Mordentshire supplied the rest: a sanitarium already available as a suppression mechanism, and a population with no reason yet to suspect it had an enemy. The Creature supplied centuries of practice at building sealed populations. Mordentshire did not fall because it was weak. It fell because the foundations of its capture were laid before anyone in it understood that it had an enemy.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+
+<div class="cotc-footer">
+  <h3>Sources and Method</h3>
+  <p><em>I10 Ravenloft II: The House on Gryphon Hill</em>, based on an outline by Tracy and Laura Hickman, TSR Inc., 1986. All figures drawn directly from the module&rsquo;s NPC roster and location descriptions. The NPC roster provides class, AC, hit points, THAC0, and primary location for all fifty-two named townspeople.</p>
+  <p style="margin-top:0.3rem">Companion pieces: <em>A Census of the Damned</em> and <em>Economy of the Damned</em>, Vaults of the Odd.</p>
+</div>
+
+</div><!-- .cotc -->
+
+<script>
+(function(){
+
+// === CONVERSION TRACK ===
+var stages = [
+  {label:"Opening minimum", convMin:4,  convMax:4,  townMin:48, townMax:48},
+  {label:"After 3 events",  convMin:7,  convMax:16, townMin:36, townMax:45},
+  {label:"After 6 events",  convMin:10, convMax:28, townMin:24, townMax:42},
+  {label:"Parity",          convMin:26, convMax:26, townMin:26, townMax:26},
+  {label:"Full conversion", convMin:52, convMax:52, townMin:0,  townMax:0},
+];
+var trackEl = document.getElementById('cotc-track');
+if(trackEl){
+  stages.forEach(function(s){
+    var row = document.createElement('div');
+    row.className = 'cotc-track-row';
+    var lbl = document.createElement('span');
+    lbl.className = 'cotc-track-label';
+    lbl.textContent = s.label;
+    // converted bar -- show range as min fill + range overlay
+    var cWrap = document.createElement('div');
+    cWrap.className = 'cotc-track-bar-wrap';
+    var cFill = document.createElement('div');
+    cFill.className = 'cotc-track-fill';
+    cFill.style.background = 'rgba(122,21,21,0.75)';
+    cFill.dataset.w = (s.convMax/52*100)+'%';
+    if(s.convMin !== s.convMax){
+      var cFill2 = document.createElement('div');
+      cFill2.style.cssText = 'position:absolute;left:0;top:0;height:100%;background:rgba(122,21,21,0.35);width:0;transition:width 1.2s cubic-bezier(.22,.68,0,1.1)';
+      cFill2.dataset.w = (s.convMin/52*100)+'%';
+      cWrap.appendChild(cFill2);
+    }
+    var cVal = document.createElement('span');
+    cVal.style.cssText = 'position:absolute;right:4px;top:0;line-height:16px;font-family:Cinzel,serif;font-size:0.52rem;color:rgba(255,255,255,0.8)';
+    cVal.textContent = s.convMin === s.convMax ? s.convMin : s.convMin+'\u2013'+s.convMax;
+    cWrap.appendChild(cFill); cWrap.appendChild(cVal);
+    // apparent town bar
+    var tWrap = document.createElement('div');
+    tWrap.className = 'cotc-track-bar-wrap';
+    var tFill = document.createElement('div');
+    tFill.className = 'cotc-track-fill';
+    tFill.style.background = 'rgba(78,96,64,0.75)';
+    tFill.dataset.w = (s.townMax/52*100)+'%';
+    if(s.townMin !== s.townMax){
+      var tFill2 = document.createElement('div');
+      tFill2.style.cssText = 'position:absolute;left:0;top:0;height:100%;background:rgba(78,96,64,0.35);width:0;transition:width 1.2s cubic-bezier(.22,.68,0,1.1)';
+      tFill2.dataset.w = (s.townMin/52*100)+'%';
+      tWrap.appendChild(tFill2);
+    }
+    var tVal = document.createElement('span');
+    tVal.style.cssText = 'position:absolute;right:4px;top:0;line-height:16px;font-family:Cinzel,serif;font-size:0.52rem;color:rgba(255,255,255,0.8)';
+    tVal.textContent = s.townMin === s.townMax ? s.townMin : s.townMin+'\u2013'+s.townMax;
+    tWrap.appendChild(tFill); tWrap.appendChild(tVal);
+    row.appendChild(lbl); row.appendChild(cWrap); row.appendChild(tWrap);
+    trackEl.appendChild(row);
+  });
+  var legend = document.createElement('div');
+  legend.className = 'cotc-leg';
+  legend.style.marginTop = '0.5rem';
+  legend.innerHTML = '<div class="cotc-li"><div class="cotc-sw" style="background:rgba(122,21,21,0.75);border-radius:0"></div>Converted</div><div class="cotc-li"><div class="cotc-sw" style="background:rgba(78,96,64,0.75);border-radius:0"></div>Unconverted</div>';
+  trackEl.parentNode.insertBefore(legend, trackEl.nextSibling);
+}
+
+// === DOT MATRIX ===
+var npcs = [
+  // card, name, class, level, hp, civic role, conversion effect
+  {n:"Carlisle",       c:"F10",hp:90, role:"guard",    effect:"defence→coercion",  col:{combat:"#7a1515",civic:"#7a1515",effect:"#7a1515"}},
+  {n:"Kedar Kleinen",  c:"F10",hp:74, role:"guard",    effect:"defence→coercion",  col:{combat:"#7a1515",civic:"#7a1515",effect:"#7a1515"}},
+  {n:"Justinian",      c:"F8", hp:50, role:"guard",    effect:"defence→coercion",  col:{combat:"#7a1515",civic:"#7a1515",effect:"#7a1515"}},
+  {n:"Honorius",       c:"F8", hp:58, role:"guard",    effect:"defence→coercion",  col:{combat:"#7a1515",civic:"#7a1515",effect:"#7a1515"}},
+  {n:"Kirk Terrinton", c:"F10",hp:68, role:"tavern",   effect:"rumour→surveillance",col:{combat:"#7a1515",civic:"#9e3d20",effect:"#9e3d20"}},
+  {n:"Tobias Kenkiny", c:"F10",hp:70, role:"bookshop", effect:"records→denied",    col:{combat:"#7a1515",civic:"#9e3d20",effect:"#9e3d20"}},
+  {n:"Vogler Kervil",  c:"F10",hp:70, role:"shop",     effect:"supplies→denied",   col:{combat:"#7a1515",civic:"#9e3d20",effect:"#9e3d20"}},
+  {n:"Parvis Soddenter",c:"F8",hp:52, role:"farm",     effect:"supply→hostile",    col:{combat:"#7a1515",civic:"#6a5030",effect:"#6a5030"}},
+  {n:"Silas Archer",   c:"F8", hp:47, role:"butcher",  effect:"trade→disruption",  col:{combat:"#7a1515",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Solita Maravan", c:"F7", hp:48, role:"inn",      effect:"rest→trap",         col:{combat:"#7a1515",civic:"#9e3d20",effect:"#9e3d20"}},
+  {n:"Sterling Toddburry",c:"F7",hp:63,role:"mill",    effect:"food→stopped",      col:{combat:"#7a1515",civic:"#6a5030",effect:"#9e3d20"}},
+  {n:"Lee Heatherby",  c:"F7", hp:38, role:"estate",   effect:"grounds→hostile",   col:{combat:"#7a1515",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Malvin Heatherby",c:"F7",hp:40, role:"civic",    effect:"authority→hollow",  col:{combat:"#7a1515",civic:"#9e3d20",effect:"#9e3d20"}},
+  {n:"Ethan Toddburry",c:"F6", hp:39, role:"mill",     effect:"food→stopped",      col:{combat:"#7a1515",civic:"#6a5030",effect:"#9e3d20"}},
+  {n:"Tabb Finhallen", c:"F6", hp:42, role:"inn",      effect:"neutral→threat",    col:{combat:"#7a1515",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Erica Toddburry",c:"F5", hp:35, role:"market",   effect:"trade→absent",      col:{combat:"#7a1515",civic:"#6a5030",effect:"#4a4035"}},
+  {n:"Percival Sud",   c:"F5", hp:36, role:"farm",     effect:"supply→hostile",    col:{combat:"#7a1515",civic:"#6a5030",effect:"#6a5030"}},
+  {n:"Tyler Smythy",   c:"F5", hp:32, role:"livery",   effect:"transport→denied",  col:{combat:"#7a1515",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Brenna Raven",   c:"F3", hp:24, role:"tavern",   effect:"rumour→surveillance",col:{combat:"#9e3d20",civic:"#9e3d20",effect:"#9e3d20"}},
+  {n:"Bathilda Sud",   c:"F3", hp:18, role:"market",   effect:"trade→absent",      col:{combat:"#9e3d20",civic:"#6a5030",effect:"#4a4035"}},
+  {n:"Desma Kenkiny",  c:"F3", hp:18, role:"bookshop", effect:"records→denied",    col:{combat:"#9e3d20",civic:"#9e3d20",effect:"#9e3d20"}},
+  {n:"Gaston Hedgewick",c:"F4",hp:42, role:"farm",     effect:"supply→hostile",    col:{combat:"#9e3d20",civic:"#6a5030",effect:"#6a5030"}},
+  {n:"Carina Loch",    c:"F4", hp:22, role:"wharf",    effect:"trade→disruption",  col:{combat:"#9e3d20",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Berwin Hedgewick",c:"F2",hp:12, role:"farm",     effect:"supply→hostile",    col:{combat:"#9e3d20",civic:"#6a5030",effect:"#6a5030"}},
+  {n:"Dominic",        c:"F2", hp:15, role:"inn",      effect:"rest→trap",         col:{combat:"#9e3d20",civic:"#9e3d20",effect:"#9e3d20"}},
+  {n:"Baron Fielder",  c:"F2", hp:55, role:"guest",    effect:"neutral→threat",    col:{combat:"#9e3d20",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Neola Caraway",  c:"F1", hp:11, role:"boarding", effect:"rest→trap",         col:{combat:"#9e3d20",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Elwin Hobson",   c:"F3", hp:13, role:"smithy",   effect:"tools→denied",      col:{combat:"#9e3d20",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Baroness Fielder",c:"F3",hp:21, role:"guest",    effect:"neutral→threat",    col:{combat:"#9e3d20",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Gwydion",        c:"B7", hp:28, role:"civic",    effect:"morale→hollow",     col:{combat:"#6a5030",civic:"#9e3d20",effect:"#9e3d20"}},
+  {n:"Father Talbot",  c:"C6", hp:29, role:"church",   effect:"already displaced", col:{combat:"#6a5030",civic:"#7a1515",effect:"#7a1515"}},
+  {n:"Lenor Hedgewick",c:"F0", hp:8,  role:"farm",     effect:"supply→hostile",    col:{combat:"#4a4035",civic:"#6a5030",effect:"#6a5030"}},
+  {n:"Kyna Smythy",    c:"F0", hp:7,  role:"livery",   effect:"transport→denied",  col:{combat:"#4a4035",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Lobelia Tarner", c:"F0", hp:9,  role:"market",   effect:"trade→absent",      col:{combat:"#4a4035",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Rae Soddenter",  c:"F0", hp:8,  role:"farm",     effect:"supply→hostile",    col:{combat:"#4a4035",civic:"#6a5030",effect:"#6a5030"}},
+  {n:"Tilda Maybery",  c:"F0", hp:6,  role:"bakery",   effect:"food→absent",       col:{combat:"#4a4035",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Freeda Maybery", c:"F0", hp:6,  role:"bakery",   effect:"food→absent",       col:{combat:"#4a4035",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Ariana Bartel",  c:"F0", hp:5,  role:"civilian", effect:"none",              col:{combat:"#4a4035",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Christina Bartel",c:"F0",hp:8,  role:"civilian", effect:"none",              col:{combat:"#4a4035",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Darcy Pease",    c:"F0", hp:4,  role:"civilian", effect:"none",              col:{combat:"#4a4035",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Fiona Matheson", c:"F0", hp:7,  role:"civilian", effect:"none",              col:{combat:"#4a4035",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Glenna Warden",  c:"F0", hp:9,  role:"civilian", effect:"none",              col:{combat:"#4a4035",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Ida Hobson",     c:"F0", hp:6,  role:"smithy",   effect:"tools→denied",      col:{combat:"#4a4035",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Margaret Heatherby",c:"F0",hp:5,role:"estate",   effect:"grounds→hostile",   col:{combat:"#4a4035",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Penelope Archer",c:"F0", hp:4,  role:"butcher",  effect:"trade→disruption",  col:{combat:"#4a4035",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Violet Archer",  c:"F0", hp:7,  role:"butcher",  effect:"trade→disruption",  col:{combat:"#4a4035",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Winifred Kleinen",c:"F0",hp:10, role:"estate",   effect:"grounds→hostile",   col:{combat:"#4a4035",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Lady Fielder",   c:"F0", hp:5,  role:"guest",    effect:"neutral→threat",    col:{combat:"#4a4035",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Bridget Dumas",  c:"F0", hp:9,  role:"estate",   effect:"grounds→hostile",   col:{combat:"#4a4035",civic:"#4a4035",effect:"#4a4035"}},
+  {n:"Axtel Bartel",   c:"F0", hp:4,  role:"sanitarium",effect:"witness→absorbed", col:{combat:"#4a4035",civic:"#9e3d20",effect:"#9e3d20"}},
+  {n:"Barth Kleinen",  c:"F0", hp:12, role:"sanitarium",effect:"witness→absorbed", col:{combat:"#4a4035",civic:"#9e3d20",effect:"#9e3d20"}},
+  {n:"Cavel Warden",   c:"F0", hp:8,  role:"shipping", effect:"trade→cover",       col:{combat:"#4a4035",civic:"#9e3d20",effect:"#9e3d20"}},
+];
+
+var modes = {
+  combat: {
+    label:"By Combat Level",
+    dgl:"Each dot = one named townsperson. Hover for name and class.",
+    legend:[
+      {col:"#7a1515",txt:"Fighter 5+ (18)"},
+      {col:"#9e3d20",txt:"Fighter 1\u20134 (11)"},
+      {col:"#6a5030",txt:"Bard / Cleric (2)"},
+      {col:"#4a4035",txt:"Non-combatant F0 (21)"},
+    ],
+    tip: function(npc){ return npc.n + ' \u2014 ' + npc.c + ', HP ' + npc.hp; }
+  },
+  civic: {
+    label:"By Civic Role",
+    dgl:"Each dot = one named townsperson. Hover for name and role.",
+    legend:[
+      {col:"#7a1515",txt:"Garrison / defence"},
+      {col:"#9e3d20",txt:"Commercial / information node"},
+      {col:"#6a5030",txt:"Food production"},
+      {col:"#4a4035",txt:"Civilian / domestic"},
+    ],
+    tip: function(npc){ return npc.n + ' \u2014 ' + npc.role; }
+  },
+  effect: {
+    label:"By Conversion Effect",
+    dgl:"Each dot = one named townsperson. Hover for conversion effect.",
+    legend:[
+      {col:"#7a1515",txt:"Conversion inverts function (high impact)"},
+      {col:"#9e3d20",txt:"Conversion degrades or weaponises node"},
+      {col:"#6a5030",txt:"Conversion disrupts supply or perimeter"},
+      {col:"#4a4035",txt:"Conversion: limited systemic effect"},
+    ],
+    tip: function(npc){ return npc.n + ' \u2014 ' + npc.effect; }
+  }
+};
+
+var currentMode = 'combat';
+var dots = [];
+var tip = document.getElementById('cotc-tip');
+var dgl = document.getElementById('cotc-dgl');
+var legEl = document.getElementById('cotc-legend');
+var container = document.getElementById('cotc-dots');
+
+if(container){
+  npcs.forEach(function(npc){
+    var d = document.createElement('div');
+    d.className = 'cotc-dot';
+    d.style.background = npc.col.combat;
+    d.addEventListener('mouseenter', function(){
+      if(tip) tip.textContent = modes[currentMode].tip(npc);
+    });
+    d.addEventListener('mouseleave', function(){
+      if(tip) tip.textContent = 'Hover a dot to see name and details.';
+    });
+    container.appendChild(d);
+    dots.push({el:d, npc:npc});
+  });
+}
+
+function setMode(mode){
+  currentMode = mode;
+  var m = modes[mode];
+  if(dgl) dgl.textContent = m.dgl;
+  dots.forEach(function(d){ d.el.style.background = d.npc.col[mode]; });
+  if(legEl){
+    legEl.innerHTML = '';
+    m.legend.forEach(function(l){
+      var li = document.createElement('div');
+      li.className = 'cotc-li';
+      li.innerHTML = '<div class="cotc-sw" style="background:'+l.col+'"></div>' + l.txt;
+      legEl.appendChild(li);
+    });
+  }
+}
+
+setMode('combat');
+
+var btns = document.querySelectorAll('#cotc-toggle .cotc-btn');
+btns.forEach(function(btn){
+  btn.addEventListener('click', function(){
+    btns.forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    setMode(btn.dataset.mode);
+  });
+});
+
+// === ANIMATE ON SCROLL ===
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(!e.isIntersecting) return;
+    e.target.querySelectorAll('[data-w]').forEach(function(f){
+      f.style.width = f.dataset.w;
+    });
+    obs.unobserve(e.target);
+  });
+},{threshold:0.15});
+document.querySelectorAll('.cotc-box, .cotc-sec').forEach(function(el){ obs.observe(el); });
+
+})();
+</script>
+
+<p></p>

@@ -1,0 +1,476 @@
+---
+title: "The Most Peculiar Account of Barovia"
+date: 2026-05-02T10:30:12Z
+slug: "the-most-peculiar-economy-of-barovia"
+settings:
+  - "Ravenloft"
+tags:
+  - "Source Analysis"
+---
+<style>
+.eotd { font-family: 'EB Garamond', Georgia, serif; color: var(--text-primary, #e8dcc8); max-width: 860px; margin: 0 auto; }
+.eotd-masthead { text-align: center; border-bottom: 1px solid var(--gold, #b89050); padding: 2rem 0 1.4rem; margin-bottom: 0; }
+.eotd-journal { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.28em; color: var(--text-muted, #7a6a50); margin-bottom: 1rem; }
+.eotd-title { font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 700; color: var(--gold, #b89050); line-height: 1.15; margin: 0 0 0.25rem; }
+.eotd-subtitle { font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--text-primary, #e8dcc8); letter-spacing: 0.05em; margin: 0 0 0.9rem; }
+.eotd-orn { color: var(--gold, #b89050); font-size: 1rem; letter-spacing: 0.5em; margin: 0.6rem 0; }
+.eotd-lede { font-style: italic; font-size: 0.93rem; color: var(--text-muted, #7a6a50); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+.eotd-meta { display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 3px double var(--gold, #b89050); font-family: 'Cinzel', serif; font-size: 0.56rem; letter-spacing: 0.14em; color: var(--text-muted, #7a6a50); margin-bottom: 0; flex-wrap: wrap; gap: 0.3rem; }
+.eotd-sec { padding: 1.6rem 0; border-bottom: 1px solid rgba(184,144,80,0.25); }
+.eotd-sh { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.3rem; }
+.eotd-sh::before, .eotd-sh::after { content: ''; flex: 1; height: 1px; background: var(--gold, #b89050); opacity: 0.5; }
+.eotd-sh span { font-family: 'Cinzel', serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.24em; color: var(--gold, #b89050); white-space: nowrap; margin: 0; display: block; }
+.eotd-pq { border-left: 3px solid var(--gold, #b89050); padding: 0.65rem 1.1rem; margin: 1.1rem 0; background: rgba(184,144,80,0.06); }
+.eotd-pq p { font-style: italic; font-size: 1rem; color: var(--text-primary, #e8dcc8); line-height: 1.65; margin: 0; }
+.eotd-callout { border: 1px solid rgba(184,144,80,0.4); border-left: 4px solid var(--gold, #b89050); background: rgba(184,144,80,0.06); padding: 0.8rem 1rem; margin: 1.1rem 0; font-size: 0.87rem; line-height: 1.65; color: var(--text-primary, #e8dcc8); }
+.eotd-callout strong { font-family: 'Cinzel', serif; font-size: 0.66rem; letter-spacing: 0.1em; color: var(--gold, #b89050); display: block; margin-bottom: 0.35rem; }
+.eotd-cap { font-style: italic; font-size: 0.76rem; color: var(--text-muted, #7a6a50); margin-top: 0.45rem; line-height: 1.5; }
+.eotd-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.3rem; }
+.eotd-cols p { font-size: 0.92rem; line-height: 1.75; color: var(--text-primary, #e8dcc8); margin-bottom: 0.75rem; }
+.eotd-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; margin-bottom: 1.3rem; }
+.eotd-box { background: rgba(184,144,80,0.06); border: 1px solid rgba(184,144,80,0.35); padding: 1.1rem; margin-bottom: 1.3rem; }
+.eotd-box-t { font-family: 'Cinzel', serif; font-size: 0.56rem; letter-spacing: 0.15em; color: var(--text-muted, #7a6a50); text-align: center; margin-bottom: 0.85rem; border-bottom: 1px solid rgba(184,144,80,0.25); padding-bottom: 0.42rem; }
+.eotd-box p { font-size: 0.88rem; line-height: 1.72; color: var(--text-primary, #e8dcc8); margin-bottom: 0.6rem; }
+.eotd-box p:last-child { margin-bottom: 0; }
+.eotd-bars { display: flex; flex-direction: column; gap: 0.48rem; }
+.eotd-br { display: grid; grid-template-columns: 160px 1fr 80px; align-items: center; gap: 0.5rem; }
+.eotd-bl { font-style: italic; font-size: 0.8rem; color: var(--text-primary, #e8dcc8); text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.eotd-bt { height: 14px; background: rgba(184,144,80,0.1); border: 1px solid rgba(184,144,80,0.25); overflow: hidden; }
+.eotd-bf { height: 100%; width: 0; transition: width 1.1s cubic-bezier(.22,.68,0,1.2); }
+.eotd-bv { font-family: 'Cinzel', serif; font-size: 0.62rem; color: var(--text-muted, #7a6a50); text-align: right; }
+.eotd-subhead { font-family: 'Cinzel', serif; font-size: 0.66rem; letter-spacing: 0.1em; color: var(--gold, #b89050); display: block; margin-bottom: 0.4rem; margin-top: 0.8rem; }
+.eotd-subhead:first-child { margin-top: 0; }
+.eotd-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin-top: 0.5rem; }
+.eotd-table th { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.12em; color: var(--text-muted, #7a6a50); border-bottom: 2px solid rgba(184,144,80,0.5); padding: 0.3rem 0.5rem; text-align: left; font-weight: normal; background: rgba(184,144,80,0.06); }
+.eotd-table td { padding: 0.33rem 0.5rem; border-bottom: 1px solid rgba(184,144,80,0.15); vertical-align: top; line-height: 1.42; color: var(--text-primary, #e8dcc8); }
+.eotd-table tr:last-child td { border-bottom: none; }
+.eotd-table tr:hover td { background: rgba(184,144,80,0.05); }
+.eotd-table .eotd-total td { border-top: 2px solid rgba(184,144,80,0.5); font-weight: bold; background: rgba(122,21,21,0.08); }
+.eotd-table .eotd-gap td { padding: 0.1rem; background: rgba(184,144,80,0.04); border-bottom: none; }
+.eotd-wbar { height: 11px; background: rgba(184,144,80,0.1); border: 1px solid rgba(184,144,80,0.2); overflow: hidden; min-width: 60px; }
+.eotd-wbf { height: 100%; width: 0; transition: width 1.2s cubic-bezier(.22,.68,0,1.2); }
+.eotd-badge { display: inline-block; font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.04em; padding: 0.05rem 0.25rem; border-radius: 2px; color: #fff; margin-left: 0.2rem; vertical-align: middle; }
+.eotd-cert-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 0.4rem 1.5rem; }
+.eotd-cert-item { font-size: 0.82rem; color: var(--text-primary, #e8dcc8); display: flex; align-items: baseline; gap: 0.5rem; }
+.eotd-cert-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 0.25rem; display: inline-block; }
+.eotd-itag { font-style: italic; font-size: 0.78rem; color: var(--text-muted, #7a6a50); }
+.eotd-footer { padding: 1.3rem 0 0; border-top: 3px double rgba(184,144,80,0.5); margin-top: 0; }
+.eotd-footer h3 { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.18em; color: var(--text-muted, #7a6a50); margin-bottom: 0.5rem; }
+.eotd-footer p { font-size: 0.77rem; line-height: 1.65; color: var(--text-muted, #7a6a50); margin-bottom: 0.3rem; }
+@media (max-width: 640px) {
+  .eotd-cols, .eotd-pair { grid-template-columns: 1fr; }
+  .eotd-title { font-size: 1.5rem; }
+  .eotd-br { grid-template-columns: 90px 1fr 50px; }
+  .eotd-meta { flex-direction: column; }
+  .eotd-cert-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="eotd">
+
+<div class="eotd-masthead">
+  <div class="eotd-journal">Economic Analysis &nbsp;&middot;&nbsp; Module I6: Ravenloft &nbsp;&middot;&nbsp; TSR Inc., 1983</div>
+  <h1 class="eotd-title">An Account of the Damned</h1>
+  <div class="eotd-subtitle">The Closed Economy of Barovia: I6 as a Single-Actor Extraction System</div>
+  <div class="eotd-orn">&#10087; &#10022; &#10087;</div>
+  <p class="eotd-lede">The villagers are not poor because the economy failed. They are poor because the economy works.</p>
+  <p class="eotd-lede" style="margin-top:0.6rem;font-size:0.78rem">This piece uses <em>Rhenari</em> as a neutral substitute for the term I6 uses for the itinerant people in the valley. All figures are drawn directly from I6 and the AD&amp;D first edition core rulebooks.</p>
+</div>
+
+<div class="eotd-meta">
+  <span>Tracy &amp; Laura Hickman, Authors</span>
+  <span>First Edition Advanced Dungeons &amp; Dragons</span>
+  <span>Companion to A Census of the Damned</span>
+</div>
+
+<!-- CERTAINTY -->
+
+<div class="eotd-sec">
+  <div class="eotd-sh"><span>Degrees of Certainty</span></div>
+  <div class="eotd-box" style="margin-bottom:0">
+    <div class="eotd-cert-grid">
+      <div class="eotd-cert-item"><span class="eotd-cert-dot" style="background:#3e5030"></span><div><strong style="color:var(--gold,#b89050)">Textual</strong> &mdash; directly stated in I6</div></div>
+      <div class="eotd-cert-item"><span class="eotd-cert-dot" style="background:#3e4e58"></span><div><strong style="color:var(--gold,#b89050)">Rules-derived</strong> &mdash; calculated from module procedures and AD&amp;D 1e mechanics</div></div>
+      <div class="eotd-cert-item"><span class="eotd-cert-dot" style="background:#9e3d20"></span><div><strong style="color:var(--gold,#b89050)">Inference</strong> &mdash; best-fit reconstruction from the module&rsquo;s internal logic</div></div>
+      <div class="eotd-cert-item"><span class="eotd-cert-dot" style="background:#7a6a50"></span><div><strong style="color:var(--gold,#b89050)">Speculation</strong> &mdash; plausible but not required by the sources</div></div>
+    </div>
+    <p class="eotd-cap" style="margin-top:0.6rem">Sections I through IV are primarily textual or rules-derived. Sections V and VII include substantial inference and speculation, flagged where used. Section VIII draws on all of the above.</p>
+  </div>
+</div>
+
+<!-- I. CLOSED SYSTEM -->
+
+<div class="eotd-sec">
+  <div class="eotd-sh"><span>I. The Closed System</span></div>
+  <div class="eotd-cols">
+    <div>
+      <p>Barovia is not simply a failed economy. It is a system that continues to serve the needs of the person who controls and maintains it. Every exchange of goods within the valley, every act of provisioning, every surviving institution, and every accumulation of wealth reflects constraints imposed by one actor and accommodations made by everyone else within those constraints.</p>
+      <p>Whatever else the fog may be, economically it functions as infrastructure. No merchant from outside can enter to compete with Bildrath. No craftsman from outside can undercut the valley&rsquo;s labour rates. No coin spent in the valley can leave it. No wealth accumulated by a Barovian can be transferred to safety outside its borders.</p>
+      <p>Barovia is, in economic terms, a closed system with a single actor holding dominant positions across every significant sector: food supply, indirectly shaped by predator pressure that depletes conventional game; knowledge, through the communal spellbook; physical security, through the fog barrier itself; and external trade, through the Rhenari&rsquo;s licensed crossing rights.</p>
+    </div>
+    <div>
+      <div class="eotd-box" style="margin-bottom:1rem">
+        <div class="eotd-box-t">Why Strahd Permits Poverty But Not Collapse</div>
+        <p>Strahd does not need the valley to prosper. He needs it to continue. A starving village produces instability and eventually collapses the population that sustains him. A comfortable village produces independence and the capacity for organised resistance. Barovia survives at the narrow band between those outcomes: poor enough to remain dependent, functional enough to keep reproducing the population he feeds on.</p>
+      </div>
+      <div class="eotd-box" style="margin-bottom:0">
+        <div class="eotd-box-t">Labour as Captive Resource</div>
+        <p>Barovia&rsquo;s labour force is immobile. Villagers cannot leave for higher wages, safer land, or better patrons. The fog converts labour into a captive resource. The wolves and undead prevent surplus mobility within the valley. The result is a labour system with no exit option and no competing employer. The governing constraint on wages and conditions is not a labour market. It is the minimum required to keep the population alive and reproducing.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- II. PRODUCTION -->
+
+<div class="eotd-sec">
+  <div class="eotd-sh"><span>II. Production and Subsistence</span></div>
+  <div class="eotd-cols">
+    <div>
+      <span class="eotd-subhead">What the Valley Produces</span>
+      <p>The valley&rsquo;s primary productive output is agricultural. With 151 residential buildings at 60% occupancy, surviving households farm the land of what was once a larger settlement. The abandoned fields of sixty empty houses represent capacity that existing households cannot maintain. Production is constrained by available labour rather than available land.</p>
+      <p>River fishing from the Ivlis supplements agriculture as the valley&rsquo;s second reliable protein source. The river is described as clear and runs through accessible terrain. Fishing does not require penetrating wolf territory and provides a caloric resource that predators do not compete for.</p>
+    </div>
+    <div>
+      <span class="eotd-subhead">The Predator Problem</span>
+      <p>Game hunting is effectively closed as a productive activity. The module places wolf packs of up to 25 animals in Strahd&rsquo;s nightly attack alone, with additional worg patrols operating as intelligent surveillance assets through the Svalich Woods. A predator load of this scale in a sealed valley implies severe depletion of conventional game. Villagers may opportunistically hunt wolves in hard winters, but this is desperation foraging rather than planned production.</p>
+      <p>The seven witches of K56 hold a privileged foraging position. Their protected status extends their range beyond what ordinary villagers can safely access. Their K55 workroom lists its contents explicitly: Eye of Newt, Hair of Bat, Snail hearts, Maresweat. These require access to environmental sources that the witches reach and villagers ordinarily do not. Their primary productive output, however, is magical services for Strahd rather than food.</p>
+    </div>
+  </div>
+  <div class="eotd-box">
+    <div class="eotd-box-t">Valley Subsistence Sources &mdash; Relative Viability</div>
+    <div class="eotd-bars" id="eotd-bars-subsist"></div>
+    <p class="eotd-cap">Bar length indicates relative productive viability, not caloric quantity. Game hunting is listed as severely constrained rather than zero because opportunistic wolf hunting does occur in hard seasons.</p>
+  </div>
+</div>
+
+<!-- III. CAPITAL -->
+
+<div class="eotd-sec">
+  <div class="eotd-sh"><span>III. Capital and the Import Mechanism</span></div>
+  <div class="eotd-cols">
+    <div>
+      <span class="eotd-subhead">The Graveyard as Import Terminal</span>
+      <p>In a sealed economy, new capital can only enter through people who carry it in. Barovia&rsquo;s capital import mechanism is adventuring parties. Every party that enters the valley carries equipment, weapons, armour, coin, scrolls, potions, and magic items accumulated before arrival. When those parties die, their equipment enters the valley&rsquo;s capital stock. It does not leave.</p>
+      <p>Father Donavich&rsquo;s graveyard is the physical terminus of this import mechanism for parties dying in or near the village. The dungeon cells of K74 and K75 are the terminus for parties reaching the castle. The module states explicitly that the cells contain the accumulated coin of many previous adventurers, still lying under the water. That water is a permanent record of what has entered the valley and remained.</p>
+    </div>
+    <div>
+      <span class="eotd-subhead">Liquid Wealth versus Trapped Wealth</span>
+      <p>Barovia contains substantial wealth but almost no liquidity. Coin exists in castle vaults, sunken dungeon cells, graves, and hoards. It does not circulate through the village. The valley is rich in accumulated treasure and poor in usable money. The wealth visible in Strahd&rsquo;s verified holdings does not fund village wages or agricultural investment. It sits where it fell when its previous owners died.</p>
+      <span class="eotd-subhead">The Capital Hierarchy</span>
+      <p>Strahd holds first claim on everything reaching the castle. The witches hold second claim, positioned to recover items from upper-castle deaths before full attention arrives. <span class="eotd-itag">(Inference.)</span> Bildrath holds third claim through the village graveyard. The Rhenari hold a liquid position through external access. The village holds essentially nothing: there are no explicit monetary figures for any village household in I6.</p>
+    </div>
+  </div>
+</div>
+
+<!-- IV. WEALTH DISTRIBUTION -->
+
+<div class="eotd-sec">
+  <div class="eotd-sh"><span>IV. The Wealth Distribution</span></div>
+  <p style="font-size:0.92rem;line-height:1.75;color:var(--text-primary,#e8dcc8);margin-bottom:1.1rem">The following table presents Barovia&rsquo;s known wealth distribution drawn directly from I6&rsquo;s room descriptions. Figures are converted to gold piece equivalents at standard AD&amp;D rates. The bar in each Strahd row shows scale relative to his total verified holding. Every other population row is blank because no explicit figures exist in the module.</p>
+  <div class="eotd-box">
+    <div class="eotd-box-t">Wealth by Population and Location &mdash; Gold Piece Equivalents</div>
+    <table class="eotd-table">
+      <thead>
+        <tr>
+          <th>Population / Location</th>
+          <th>Coin &amp; Goods (gp equiv.)</th>
+          <th>Scale</th>
+          <th>Magic Items</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Strahd &mdash; K41 Treasury</td>
+          <td>28,000 gp</td>
+          <td><div class="eotd-wbar"><div class="eotd-wbf" style="background:#7a1515" data-pct="22"></div></div></td>
+          <td style="font-size:0.76rem;color:var(--text-muted,#7a6a50)">+2 sword, 3&times; +3 maces</td>
+          <td><span class="eotd-badge" style="background:#3e5030">T</span></td>
+        </tr>
+        <tr>
+          <td>Strahd &mdash; Crypts (itemised)</td>
+          <td>~32,650 gp</td>
+          <td><div class="eotd-wbar"><div class="eotd-wbf" style="background:#7a1515" data-pct="26"></div></div></td>
+          <td style="font-size:0.76rem;color:var(--text-muted,#7a6a50)">+1 sword/wish, scrolls (Crypt 37)</td>
+          <td><span class="eotd-badge" style="background:#3e5030">T</span></td>
+        </tr>
+        <tr>
+          <td>Strahd &mdash; K74/K75 Dungeon cells</td>
+          <td>15,550 gp</td>
+          <td><div class="eotd-wbar"><div class="eotd-wbf" style="background:#7a1515" data-pct="12"></div></div></td>
+          <td style="font-size:0.76rem;color:var(--text-muted,#7a6a50)">+2 intelligent sword (LG)</td>
+          <td><span class="eotd-badge" style="background:#3e5030">T</span></td>
+        </tr>
+        <tr>
+          <td>Strahd &mdash; K30 Accountant&rsquo;s office</td>
+          <td>4,700 gp</td>
+          <td><div class="eotd-wbar"><div class="eotd-wbf" style="background:#7a1515" data-pct="4"></div></div></td>
+          <td style="font-size:0.76rem;color:var(--text-muted,#7a6a50)">&mdash;</td>
+          <td><span class="eotd-badge" style="background:#3e5030">T</span></td>
+        </tr>
+        <tr>
+          <td>Strahd &mdash; K77 Balcony / K38 False Treasury</td>
+          <td>3,080 gp</td>
+          <td><div class="eotd-wbar"><div class="eotd-wbf" style="background:#7a1515" data-pct="2"></div></div></td>
+          <td style="font-size:0.76rem;color:var(--text-muted,#7a6a50)">&mdash;</td>
+          <td><span class="eotd-badge" style="background:#3e5030">T</span></td>
+        </tr>
+        <tr>
+          <td>Strahd &mdash; Witches&rsquo; spellbook <span class="eotd-itag">(notional)</span></td>
+          <td>42,750 gp</td>
+          <td><div class="eotd-wbar"><div class="eotd-wbf" style="background:#9e3d20" data-pct="34"></div></div></td>
+          <td style="font-size:0.76rem;color:var(--text-muted,#7a6a50)">&mdash;</td>
+          <td><span class="eotd-badge" style="background:#3e5030">T</span></td>
+        </tr>
+        <tr>
+          <td>Strahd &mdash; K78 Brazier chest</td>
+          <td>Not monetised</td>
+          <td><div class="eotd-wbar"></div></td>
+          <td style="font-size:0.76rem;color:var(--text-muted,#7a6a50)">Deck of many things, scrolls, potions</td>
+          <td><span class="eotd-badge" style="background:#3e5030">T</span></td>
+        </tr>
+        <tr class="eotd-total">
+          <td>Strahd total (verified coin + notional spellbook)</td>
+          <td>~126,730 gp equiv.</td>
+          <td><div class="eotd-wbar"><div class="eotd-wbf" style="background:#7a1515" data-pct="100"></div></div></td>
+          <td style="font-size:0.76rem;color:var(--text-muted,#7a6a50)">Multiple; centuries of adventurer equipment unquantified</td>
+          <td><span class="eotd-badge" style="background:#3e5030">T</span></td>
+        </tr>
+        <tr class="eotd-gap"><td colspan="5"></td></tr>
+        <tr>
+          <td>Rhenari &mdash; Tser Pool camp</td>
+          <td>1,000&ndash;6,000 gp (Treasure Type W)</td>
+          <td><div class="eotd-wbar"><div class="eotd-wbf" style="background:#4e6040" data-pct="5"></div></div></td>
+          <td style="font-size:0.76rem;color:var(--text-muted,#7a6a50)">Not stated</td>
+          <td><span class="eotd-badge" style="background:#3e4e58">R</span></td>
+        </tr>
+        <tr>
+          <td>Bildrath</td>
+          <td style="font-style:italic;color:var(--text-muted,#7a6a50)">Not stated in module</td>
+          <td><div class="eotd-wbar"></div></td>
+          <td style="font-size:0.76rem;font-style:italic;color:var(--text-muted,#7a6a50)">Inferred: some magic weapons</td>
+          <td><span class="eotd-badge" style="background:#9e3d20">I</span></td>
+        </tr>
+        <tr>
+          <td>Witches (K56)</td>
+          <td style="font-style:italic;color:var(--text-muted,#7a6a50)">Not stated in module</td>
+          <td><div class="eotd-wbar"></div></td>
+          <td style="font-size:0.76rem;font-style:italic;color:var(--text-muted,#7a6a50)">Speculated: private reserves</td>
+          <td><span class="eotd-badge" style="background:#7a6a50">S</span></td>
+        </tr>
+        <tr>
+          <td>Village households</td>
+          <td style="font-style:italic;color:var(--text-muted,#7a6a50)">Not stated in module</td>
+          <td><div class="eotd-wbar"></div></td>
+          <td style="font-size:0.76rem;font-style:italic;color:var(--text-muted,#7a6a50)">Speculated: possibly some</td>
+          <td><span class="eotd-badge" style="background:#7a6a50">S</span></td>
+        </tr>
+        <tr>
+          <td>Donavich</td>
+          <td style="font-style:italic;color:var(--text-muted,#7a6a50)">Not stated in module</td>
+          <td><div class="eotd-wbar"></div></td>
+          <td style="font-size:0.76rem;color:var(--text-primary,#e8dcc8)">Holy Symbol (non-transferable)</td>
+          <td><span class="eotd-badge" style="background:#3e5030">T</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="eotd-cap">Crypt figures: Crypt 9 (6,200 gp equiv.), Crypt 10 (15,000 gp), Crypt 13 (2,500 gp), Crypt 21 (8,450 gp equiv.), Crypt 28 (3,600 gp). Spellbook value is notional: no buyer exists in the valley. T&nbsp;=&nbsp;Textual, R&nbsp;=&nbsp;Rules-derived, I&nbsp;=&nbsp;Inference, S&nbsp;=&nbsp;Speculation.</p>
+  </div>
+  <div class="eotd-pq"><p>One actor holds the dominant share of every category of monetisable wealth in a sealed system from which that wealth cannot leave. The visual argument requires no elaboration.</p></div>
+</div>
+
+<!-- V. TRADE NETWORK -->
+
+<div class="eotd-sec">
+  <div class="eotd-sh"><span>V. The Trade Network</span></div>
+
+  <!-- SVG node diagram -->
+
+  <div class="eotd-box" style="margin-bottom:1.3rem">
+    <div class="eotd-box-t">Capital and Goods Flows &mdash; The Valley&rsquo;s Trade Structure &nbsp;<span class="eotd-itag">(dashed lines = inference or speculation)</span></div>
+    <svg viewBox="0 0 700 300" style="display:block;width:100%;max-height:280px" role="img" aria-label="Trade network diagram">
+      <defs>
+        <marker id="ea" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(184,144,80,0.7)"/></marker>
+        <marker id="eb" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(158,61,32,0.7)"/></marker>
+        <marker id="ec" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="rgba(62,80,48,0.9)"/></marker>
+      </defs>
+      <!-- Castle/Strahd - top centre -->
+      <rect x="255" y="16" width="190" height="46" rx="3" fill="rgba(122,21,21,0.35)" stroke="rgba(122,21,21,0.7)" stroke-width="1.5"/>
+      <text x="350" y="34" text-anchor="middle" font-family="'Cinzel',serif" font-size="11" fill="#e8dcc8" font-weight="600">STRAHD / CASTLE</text>
+      <text x="350" y="50" text-anchor="middle" font-family="'EB Garamond',Georgia,serif" font-size="9" fill="rgba(232,220,200,0.6)">~126,730 gp &middot; spellbooks &middot; magic items</text>
+      <!-- Witches - left -->
+      <rect x="50" y="120" width="140" height="46" rx="3" fill="rgba(122,80,37,0.3)" stroke="rgba(158,61,32,0.6)" stroke-width="1.5"/>
+      <text x="120" y="138" text-anchor="middle" font-family="'Cinzel',serif" font-size="11" fill="#e8dcc8" font-weight="600">WITCHES (K56)</text>
+      <text x="120" y="154" text-anchor="middle" font-family="'EB Garamond',Georgia,serif" font-size="9" fill="rgba(232,220,200,0.6)">magical services &middot; components</text>
+      <!-- Bildrath - bottom left -->
+      <rect x="120" y="230" width="140" height="46" rx="3" fill="rgba(62,64,80,0.3)" stroke="rgba(100,100,130,0.5)" stroke-width="1.5"/>
+      <text x="190" y="248" text-anchor="middle" font-family="'Cinzel',serif" font-size="11" fill="#e8dcc8" font-weight="600">BILDRATH</text>
+      <text x="190" y="264" text-anchor="middle" font-family="'EB Garamond',Georgia,serif" font-size="9" fill="rgba(232,220,200,0.6)">goods &middot; recovered equipment</text>
+      <!-- Village - bottom right -->
+      <rect x="340" y="230" width="140" height="46" rx="3" fill="rgba(78,64,48,0.3)" stroke="rgba(130,110,70,0.5)" stroke-width="1.5"/>
+      <text x="410" y="248" text-anchor="middle" font-family="'Cinzel',serif" font-size="11" fill="#e8dcc8" font-weight="600">VILLAGE</text>
+      <text x="410" y="264" text-anchor="middle" font-family="'EB Garamond',Georgia,serif" font-size="9" fill="rgba(232,220,200,0.6)">agriculture &middot; labour &middot; people</text>
+      <!-- Rhenari - right -->
+      <rect x="510" y="120" width="140" height="46" rx="3" fill="rgba(62,80,48,0.3)" stroke="rgba(62,80,48,0.7)" stroke-width="1.5"/>
+      <text x="580" y="138" text-anchor="middle" font-family="'Cinzel',serif" font-size="11" fill="#e8dcc8" font-weight="600">RHENARI</text>
+      <text x="580" y="154" text-anchor="middle" font-family="'EB Garamond',Georgia,serif" font-size="9" fill="rgba(232,220,200,0.6)">trade &middot; intelligence &middot; mobility</text>
+      <!-- External - top right -->
+      <rect x="590" y="16" width="100" height="46" rx="3" fill="rgba(40,48,64,0.4)" stroke="rgba(80,100,130,0.5)" stroke-width="1.5"/>
+      <text x="640" y="34" text-anchor="middle" font-family="'Cinzel',serif" font-size="10" fill="rgba(232,220,200,0.7)" font-weight="600">EXTERNAL</text>
+      <text x="640" y="50" text-anchor="middle" font-family="'Cinzel',serif" font-size="9" fill="rgba(232,220,200,0.5)">WORLD</text>
+      <!-- ARROWS: no rotated text labels -->
+      <line x1="445" y1="39" x2="514" y2="122" stroke="rgba(184,144,80,0.55)" stroke-width="1.5" marker-end="url(#ea)"/>
+      <line x1="260" y1="39" x2="188" y2="122" stroke="rgba(184,144,80,0.55)" stroke-width="1.5" marker-end="url(#ea)"/>
+      <line x1="350" y1="62" x2="378" y2="230" stroke="rgba(122,21,21,0.4)" stroke-width="1.5" marker-end="url(#ea)"/>
+      <line x1="340" y1="253" x2="262" y2="253" stroke="rgba(184,144,80,0.5)" stroke-width="1.5" marker-end="url(#ea)"/>
+      <line x1="262" y1="263" x2="340" y2="263" stroke="rgba(184,144,80,0.5)" stroke-width="1.5" marker-end="url(#ea)"/>
+      <line x1="514" y1="158" x2="482" y2="230" stroke="rgba(158,61,32,0.5)" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#eb)"/>
+      <line x1="622" y1="120" x2="638" y2="62" stroke="rgba(62,80,48,0.8)" stroke-width="2" marker-end="url(#ec)"/>
+      <line x1="510" y1="143" x2="192" y2="143" stroke="rgba(158,61,32,0.4)" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#eb)"/>
+      <line x1="232" y1="230" x2="298" y2="64" stroke="rgba(184,144,80,0.3)" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#ea)"/>
+      <line x1="183" y1="120" x2="266" y2="62" stroke="rgba(158,61,32,0.4)" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#eb)"/>
+    </svg>
+    <!-- Legend below SVG instead of rotated inline labels -->
+    <div style="display:flex;flex-wrap:wrap;gap:0.4rem 1.2rem;margin-top:0.5rem">
+      <div class="eotd-li"><svg width="24" height="10"><line x1="0" y1="5" x2="24" y2="5" stroke="rgba(184,144,80,0.7)" stroke-width="1.5" marker-end="url(#ea)"/></svg> Authority / supervised access / control</div>
+      <div class="eotd-li"><svg width="24" height="10"><line x1="0" y1="5" x2="24" y2="5" stroke="rgba(62,80,48,0.8)" stroke-width="2"/></svg> Licensed external crossing</div>
+      <div class="eotd-li"><svg width="24" height="10"><line x1="0" y1="5" x2="24" y2="5" stroke="rgba(158,61,32,0.6)" stroke-width="1.2" stroke-dasharray="4,3"/></svg> Inference or speculation</div>
+      <div class="eotd-li"><svg width="24" height="10"><line x1="0" y1="5" x2="24" y2="5" stroke="rgba(184,144,80,0.3)" stroke-width="1" stroke-dasharray="3,3"/></svg> Goods flow (inferred)</div>
+    </div>
+    <p class="eotd-cap" style="margin-top:0.3rem">Solid lines indicate relationships supported by module text. Dashed lines indicate inference or speculation. The Rhenari-witches trade link and the witches-to-castle goods flow are both inferred from provisioning logic rather than stated directly.</p>
+  </div>
+
+  <div class="eotd-cols">
+    <div>
+      <span class="eotd-subhead">Bildrath as Internal Commercial Node</span>
+      <p>Bildrath&rsquo;s Mercantile is the valley&rsquo;s only functioning commercial establishment. His pricing at ten times normal rates is replacement-cost pricing in a system where replacement cost is the death of the next adventurer who happens to carry the relevant item. The valley&rsquo;s principal visible sources of traded goods are whatever adventurers carried in and did not carry out.</p>
+      <span class="eotd-subhead">The Rhenari as External Channel <span class="eotd-badge" style="background:#9e3d20">I</span></span>
+      <p>The Rhenari are the only population that can leave the valley. The inference, clearly flagged, is that their crossing rights function under Strahd&rsquo;s approval or instruction. The more coherent reading is that he permits it because it serves his requirements: external goods, external information, and the valley&rsquo;s reputation reaching the outside world all flow through the same channel.</p>
+    </div>
+    <div>
+      <span class="eotd-subhead">The Self-Recruiting Trap <span class="eotd-badge" style="background:#9e3d20">I</span></span>
+      <p>The valley recruits its own victims. Its reputation for great treasure, the distress signals that exit through Rhenari contacts, the accumulated evidence of adventurers who went in and have not come back: these function as a continuous passive recruitment system. The burgomaster&rsquo;s letter that opens I6 is one deliberate signal. The broader pattern is structural rather than dependent on any single act.</p>
+      <span class="eotd-subhead">The Rhenari and the Witches <span class="eotd-badge" style="background:#7a6a50">S</span></span>
+      <p>The witches need provisioning and components that neither the village nor the castle interior reliably supplies. The Rhenari have mobility, external contacts, and trade goods. A trade relationship between them is the simplest explanation for how both populations remain adequately provisioned. It is not stated in the module.</p>
+    </div>
+  </div>
+</div>
+
+<!-- VI. KNOWLEDGE -->
+
+<div class="eotd-sec">
+  <div class="eotd-sh"><span>VI. The Knowledge Monopoly</span></div>
+  <div class="eotd-cols">
+    <div>
+      <span class="eotd-subhead">Strahd&rsquo;s Library</span>
+      <p>Every magic-user who entered the valley and died left a spellbook behind. Over the centuries that adventuring parties have been drawn to Barovia, this represents an accumulation of magical texts from multiple traditions, schools, and external origins that no single living magic-user could have assembled in a normal career. The module gives Strahd spells through 5th level as his prepared selection. This is not the limit of his available spells.</p>
+      <span class="eotd-subhead">The Witches&rsquo; Supervised Access</span>
+      <p>The witches&rsquo; communal spellbook contains their collective knowledge plus fear, curse, and cloudkill. Fear and cloudkill are 4th and 5th level spells respectively, beyond what any of the seven witches has reached by hit point evidence. Curse is a clerical spell not found in the standard Magic-User list at all. None of these spells belong to the current coven&rsquo;s demonstrable capability.</p>
+    </div>
+    <div>
+      <span class="eotd-subhead">The Previous Coven Argument</span>
+      <p>The most coherent reading is that the book records accumulated knowledge across every coven that has occupied K56, and some previous practitioners were more capable than the current seven. They reached a threshold that made them worth removing. Their spells remained in the book because Strahd kept the book, not because he kept them. The current seven are the latest iteration of an institution he has maintained and pruned across generations.</p>
+      <p>The communal book is not the witches&rsquo; private resource under Strahd&rsquo;s supervision. It is his resource that the witches are permitted to use within limits he sets. The gap between their knowledge and his is the mechanism of their continued subordination.</p>
+    </div>
+  </div>
+  <div class="eotd-callout">
+    <strong>The Book Outlasts Its Contributors</strong>
+    Strahd is the only permanent element of the coven arrangement. The witches are recruited from the valley&rsquo;s settled population, develop under supervised access to the book, and are eliminated when they become too capable. The current seven are not the first coven. The book is older than all of them.
+  </div>
+</div>
+
+<!-- VII. DEVELOPMENT AGENDA -->
+
+<div class="eotd-sec">
+  <div class="eotd-sh"><span>VII. The Development Agenda <span class="eotd-itag" style="font-size:0.65rem">&mdash; inference and speculation throughout</span></span></div>
+  <div class="eotd-cols">
+    <div>
+      <p>He is a 10th level magic-user. Teleport is a 5th level spell, already within his capability. The fog does not confine him in any absolute sense. It confines those who must travel by physical means. What constrains his external operation is not access to the spell but the risk inherent in its use: teleport requires familiarity with the destination to be reliably safe, and arriving at an unfamiliar location carries a meaningful chance of mishap.</p>
+      <p>The valley is a prison for everyone else. For Strahd it is already a selectively permeable boundary. What the Rhenari&rsquo;s intelligence function provides is not a capability he lacks but a reduction of risk around a capability he already possesses. Every piece of external cartographic information they return narrows the mishap probability for a teleport to that location.</p>
+    </div>
+    <div>
+      <p>The broader picture this suggests is of a system that is not static but directional. The extraction funds his continued existence. The knowledge accumulation advances his magical development. The intelligence the Rhenari provide extends his operational range. The castle, with its accumulated wealth, magical resources, and undead staff, is plausibly a headquarters being prepared for a mode of operation that is not yet fully active rather than a permanent residence.</p>
+    </div>
+  </div>
+  <div class="eotd-pq"><p>The module never connects these elements explicitly. The picture they form when connected is of a controlling actor whose requirements the valley&rsquo;s economy serves at multiple levels simultaneously: immediate sustenance, ongoing magical development, and gradual expansion of external operational capability.</p></div>
+</div>
+
+<!-- VIII. THE ARGUMENT -->
+
+<div class="eotd-sec">
+  <div class="eotd-sh"><span>VIII. The Argument</span></div>
+  <div class="eotd-cols">
+    <div>
+      <p>Barovia is not a valley that fell under a monster&rsquo;s shadow and declined. It is a system that has been operating successfully for centuries under the management of a single actor pursuing a consistent agenda.</p>
+      <p>Whatever else the fog may be, economically it functions as infrastructure. The predator pressure that eliminates game hunting and drives villagers into agricultural dependency is not a threat that happens to be present. It is a sustained condition. The Rhenari&rsquo;s privileged crossing rights are not a loophole that has not been closed. They are a licensed channel. The witches&rsquo; communal spellbook is not a resource they maintain for themselves. It is a knowledge monopoly administered through them.</p>
+    </div>
+    <div>
+      <p>Every element of the valley&rsquo;s economic life, production, trade, capital accumulation, knowledge distribution, and labour allocation, operates within constraints that serve defined ends.</p>
+      <p>The shadow economy exists. Items circulate in the gaps of the surveillance system. The Rhenari import goods that have not been inventoried. Bildrath and Parriwimple maintain a private position Strahd probably does not fully know. The witches keep corners of the castle he does not always examine. These gaps sustain survival. They do not threaten the system.</p>
+    </div>
+  </div>
+  <div class="eotd-pq"><p>What threatens the system is adventuring parties arriving with external resources, external knowledge, external magical capability, and the specific combination of items the Fortunes of Ravenloft can assemble into a weapon against him. The valley&rsquo;s economy recruits those parties through the same mechanisms that sustain it: reputation, distress signals, the Rhenari who move between the valley and the world, and the accumulated record of people who went in and did not come back. The trap baits itself. The economy sustains the trap. Strahd manages both.</p></div>
+</div>
+
+<!-- FOOTER -->
+
+<div class="eotd-footer">
+  <h3>Sources and Method</h3>
+  <p>All monetary figures drawn directly from I6&rsquo;s room descriptions and converted to gold piece equivalents at standard AD&amp;D first edition rates (1&nbsp;pp&nbsp;=&nbsp;5&nbsp;gp; 1&nbsp;ep&nbsp;=&nbsp;0.5&nbsp;gp; 1&nbsp;sp&nbsp;=&nbsp;0.1&nbsp;gp; 1&nbsp;cp&nbsp;=&nbsp;0.01&nbsp;gp). Treasure Type W for the Rhenari is from the AD&amp;D first edition Monster Manual. The witches&rsquo; spellbook value of 42,750&nbsp;gp is stated in K56&rsquo;s room text. The subsistence viability chart uses relative rather than absolute values; no caloric data exists in the module. The trade network diagram distinguishes textual relationships from inferred and speculative ones through line style.</p>
+  <p style="margin-top:0.4rem"><em>Module I6: Ravenloft</em>, Tracy and Laura Hickman, TSR Inc., 1983. First Edition Advanced Dungeons &amp; Dragons. Companion piece to <em>A Census of the Damned</em>.</p>
+</div>
+
+</div><!-- .eotd -->
+
+<script>
+(function(){
+  function bar(id, rows, maxV) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    rows.forEach(function(r) {
+      var row = document.createElement('div');
+      row.className = 'eotd-br';
+      var lbl = document.createElement('span');
+      lbl.className = 'eotd-bl';
+      lbl.textContent = r.label;
+      var trk = document.createElement('div');
+      trk.className = 'eotd-bt';
+      var fil = document.createElement('div');
+      fil.className = 'eotd-bf';
+      fil.style.background = r.color;
+      fil.dataset.w = ((r.value/maxV)*100)+'%';
+      trk.appendChild(fil);
+      var val = document.createElement('span');
+      val.className = 'eotd-bv';
+      val.textContent = r.note;
+      row.appendChild(lbl); row.appendChild(trk); row.appendChild(val);
+      el.appendChild(row);
+    });
+  }
+
+  bar('eotd-bars-subsist', [
+    {label:'River fishing',      value:85, color:'#3e5030', note:'Reliable'},
+    {label:'Agriculture',        value:80, color:'#4e6040', note:'Primary base'},
+    {label:'Foraging (witches)', value:65, color:'#7a5025', note:'Protected range'},
+    {label:'Foraging (village)', value:35, color:'#6a6050', note:'Perimeter only'},
+    {label:'Small-animal trapping', value:30, color:'#5a5848', note:'Supplementary'},
+    {label:'Game hunting',       value:10, color:'#9e3d20', note:'Severely constrained'},
+  ], 100);
+
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      e.target.querySelectorAll('[data-w],[data-pct]').forEach(function(f){
+        if (f.dataset.w) f.style.width = f.dataset.w;
+        if (f.dataset.pct) f.style.width = f.dataset.pct + '%';
+      });
+      obs.unobserve(e.target);
+    });
+  },{threshold:0.15});
+
+  document.querySelectorAll('.eotd-box, .eotd-sec').forEach(function(el){ obs.observe(el); });
+})();
+</script>
+
+<p></p>

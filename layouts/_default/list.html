@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="list wrap">
+  <header class="list-header">
+    <h1 class="list-title">{{ .Title }}</h1>
+    {{- with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
+  </header>
+
+  {{- $pages := .Pages.ByDate.Reverse }}
+  {{- if $pages }}
+  <ul class="post-list">
+    {{- range $pages }}
+    <li class="post-list-item">
+      <a class="post-list-link" href="{{ .RelPermalink }}">
+        <h2 class="post-list-title">{{ .Title }}</h2>
+        {{- if not .Date.IsZero }}<p class="post-list-date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>{{ end }}
+        {{- with .Params.tags }}<p class="post-list-tags">{{ delimit . " · " }}</p>{{ end }}
+      </a>
+    </li>
+    {{- end }}
+  </ul>
+  {{- else }}
+  <p class="coming-soon">More from this vault is on the way.</p>
+  {{- end }}
+</div>
+{{ end }}

@@ -387,6 +387,7 @@ figcaption, .wp-element-caption { font-size: 0.78rem; font-style: italic; color:
 /* ---- Papers (Politics vault): lede, download, read-first, reading list ---- */
 .post-lede { max-width: var(--maxw); margin: 0 auto 1.3rem; font-size: 1.18rem; font-style: italic; color: var(--text-muted); text-align: center; }
 .paper-download { text-align: center; margin: 0 0 1.6rem; }
+.paper-embed { display: block; width: 100%; height: 85vh; min-height: 30rem; margin: 0 auto 1.6rem; border: 1px solid var(--rule); border-radius: 4px; background: var(--bg-card); }
 .read-first { max-width: var(--maxw); margin: 0 auto 2rem; padding: 0.9rem 1.2rem; background: var(--bg-card); border: 1px solid var(--rule); border-left: 3px solid var(--gold); border-radius: 4px; font-size: 0.95rem; color: var(--text-body); }
 .read-first p { margin: 0; }
 .reading-list { list-style: none; max-width: var(--maxw); margin: 0 auto; padding: 0; counter-reset: rl; }

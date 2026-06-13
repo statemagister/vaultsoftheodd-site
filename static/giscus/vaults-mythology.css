@@ -1,0 +1,32 @@
+/* giscus theme — Vaults of the ODD, earthy Welsh (Mythology vault) */
+main {
+  --color-fg-default: #d2d8c6;
+  --color-fg-muted: #9aa58c;
+  --color-fg-subtle: #7e8a70;
+  --color-canvas-default: #10140f;
+  --color-canvas-overlay: #1b211a;
+  --color-canvas-inset: #171c15;
+  --color-canvas-subtle: #171c15;
+  --color-border-default: rgba(155, 176, 79, 0.28);
+  --color-border-muted: rgba(230, 233, 221, 0.10);
+  --color-neutral-muted: rgba(230, 233, 221, 0.08);
+  --color-accent-fg: #9bb04f;
+  --color-accent-emphasis: #9bb04f;
+  --color-accent-muted: rgba(155, 176, 79, 0.40);
+  --color-accent-subtle: rgba(155, 176, 79, 0.15);
+  --color-success-fg: #9bb04f;
+  --color-btn-text: #e6e9dd;
+  --color-btn-bg: #1b211a;
+  --color-btn-border: rgba(155, 176, 79, 0.28);
+  --color-btn-hover-bg: #171c15;
+  --color-btn-hover-border: #9bb04f;
+  --color-btn-active-bg: #222a1f;
+  --color-btn-primary-text: #10140f;
+  --color-btn-primary-bg: #9bb04f;
+  --color-btn-primary-border: #9bb04f;
+  --color-btn-primary-hover-bg: #bcd06f;
+  --color-btn-primary-hover-border: #bcd06f;
+  --color-social-reaction-bg-hover: #222a1f;
+  --color-social-reaction-bg-reacted-hover: #2a3326;
+  color-scheme: dark;
+}

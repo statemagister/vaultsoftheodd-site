@@ -89,3 +89,7 @@ enableEmoji = false
     name = "Privacy"
     url = "/privacy-policy/"
     weight = 3
+  [[menus.footer]]
+    name = "Cookie Policy"
+    url = "/cookie-policy/"
+    weight = 4

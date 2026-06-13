@@ -1,0 +1,32 @@
+/* giscus theme — Vaults of the ODD, academic (Politics vault) */
+main {
+  --color-fg-default: #27323d;
+  --color-fg-muted: #5d6b78;
+  --color-fg-subtle: #7d8893;
+  --color-canvas-default: #f3f4f6;
+  --color-canvas-overlay: #ffffff;
+  --color-canvas-inset: #ffffff;
+  --color-canvas-subtle: #e8eaed;
+  --color-border-default: rgba(52, 96, 127, 0.28);
+  --color-border-muted: rgba(27, 39, 51, 0.12);
+  --color-neutral-muted: rgba(27, 39, 51, 0.08);
+  --color-accent-fg: #34607f;
+  --color-accent-emphasis: #34607f;
+  --color-accent-muted: rgba(52, 96, 127, 0.40);
+  --color-accent-subtle: rgba(52, 96, 127, 0.12);
+  --color-success-fg: #2f6b46;
+  --color-btn-text: #27323d;
+  --color-btn-bg: #ffffff;
+  --color-btn-border: rgba(52, 96, 127, 0.30);
+  --color-btn-hover-bg: #e8eaed;
+  --color-btn-hover-border: #34607f;
+  --color-btn-active-bg: #dfe3e8;
+  --color-btn-primary-text: #ffffff;
+  --color-btn-primary-bg: #34607f;
+  --color-btn-primary-border: #34607f;
+  --color-btn-primary-hover-bg: #244660;
+  --color-btn-primary-hover-border: #244660;
+  --color-social-reaction-bg-hover: #e8eaed;
+  --color-social-reaction-bg-reacted-hover: #dfe3e8;
+  color-scheme: light;
+}

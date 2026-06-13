@@ -79,18 +79,18 @@ body.theme-politics {
   --display: var(--body); /* restrained: drop the decorative display face */
 }
 
-/* ---- Stories: ethereal, soft pastel light on a dusky dark ground ---- */
+/* ---- Stories: ethereal, soft pastel light on a gentle dusk ground ---- */
 body.theme-stories {
-  --bg: #191a24;
-  --bg-alt: #20212e;
-  --bg-card: #242637;
-  --text-primary: #efecf7;
-  --text-body: #dcd7ec;
-  --text-muted: #a59fbe;
-  --gold: #c2add9;
-  --gold-bright: #dcc9f2;
-  --rule: rgba(194, 173, 217, 0.30);
-  --rule-soft: rgba(239, 236, 247, 0.10);
+  --bg: #2d2a3a;
+  --bg-alt: #363246;
+  --bg-card: #3c3850;
+  --text-primary: #f2eff8;
+  --text-body: #e3dff0;
+  --text-muted: #b4aec8;
+  --gold: #ccb9e7;
+  --gold-bright: #e3d5f6;
+  --rule: rgba(204, 185, 231, 0.32);
+  --rule-soft: rgba(242, 239, 248, 0.11);
 }
 
 /* ---- Mythology: earthy, Welsh, mossy gold-green on deep green ---- */

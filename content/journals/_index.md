@@ -10,8 +10,8 @@ The first titles are in preparation. Each is offered in a choice of covers — p
 
   <div class="product-card">
     <div class="product-covers">
-      <span class="book-cover" style="--c:#1a1a1a"></span>
-      <span class="book-cover" style="--c:#d2641e"></span>
+      <span class="book-cover" style="--c:#0b0b0d"></span>
+      <span class="book-cover" style="--c:#f26b24"></span>
     </div>
     <h3 class="product-name">The Perpetual Journal</h3>
     <p class="product-desc">A clean, undated hardback in a plain cover — open it on any day and carry it through any year. Circle the month, date and weekday in the margin and write the year in the box, so no pages are wasted and it never goes stale.</p>

@@ -1,0 +1,37 @@
+{{ define "main" }}
+<div class="post-layout wrap">
+  <div class="post-main">
+    <header class="list-header">
+      <h1 class="list-title">{{ .Title }}</h1>
+      {{- with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
+    </header>
+
+    {{- $pages := .Pages.ByWeight }}
+    {{- if $pages }}
+    <ol class="reading-list">
+      {{- range $pages }}
+      <li>
+        <h2 class="rl-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        {{- with .Params.subtitle }}<p class="rl-sub">{{ . }}</p>{{ end }}
+        {{- with .Params.summary }}<p class="rl-lede">{{ . }}</p>{{ end }}
+      </li>
+      {{- end }}
+    </ol>
+    {{- else }}
+    <p class="coming-soon">More from this vault is on the way.</p>
+    {{- end }}
+  </div>
+
+  <aside class="post-aside" aria-label="Vault information">
+    <div class="aside-inner">
+      {{ partial "search.html" . }}
+      {{- with .Site.Params.buymeacoffee }}
+      <section class="aside-block">
+        <h2 class="aside-title">Support</h2>
+        <a class="coffee" href="{{ . }}" rel="noopener" target="_blank"><span class="cup">&#9749;</span> Buy me a coffee</a>
+      </section>
+      {{- end }}
+    </div>
+  </aside>
+</div>
+{{ end }}

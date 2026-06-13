@@ -384,6 +384,20 @@ figcaption, .wp-element-caption { font-size: 0.78rem; font-style: italic; color:
 /* ---- Fan content disclaimer ---- */
 .fan-disclaimer { max-width: var(--maxw); margin: 2.2rem auto 0; padding-top: 1.3rem; border-top: 1px solid var(--rule-soft); font-size: 0.76rem; font-style: italic; color: var(--text-muted); text-align: center; }
 
+/* ---- Papers (Politics vault): lede, download, read-first, reading list ---- */
+.post-lede { max-width: var(--maxw); margin: 0 auto 1.3rem; font-size: 1.18rem; font-style: italic; color: var(--text-muted); text-align: center; }
+.paper-download { text-align: center; margin: 0 0 1.6rem; }
+.read-first { max-width: var(--maxw); margin: 0 auto 2rem; padding: 0.9rem 1.2rem; background: var(--bg-card); border: 1px solid var(--rule); border-left: 3px solid var(--gold); border-radius: 4px; font-size: 0.95rem; color: var(--text-body); }
+.read-first p { margin: 0; }
+.reading-list { list-style: none; max-width: var(--maxw); margin: 0 auto; padding: 0; counter-reset: rl; }
+.reading-list > li { counter-increment: rl; position: relative; padding: 1.3rem 0 1.3rem 3rem; border-bottom: 1px solid var(--rule-soft); }
+.reading-list > li::before { content: counter(rl); position: absolute; left: 0; top: 1.25rem; font-family: var(--display); font-size: 1.3rem; color: var(--gold); width: 2rem; text-align: center; }
+.reading-list .rl-title { font-family: var(--display); font-size: 1.3rem; margin: 0 0 0.2rem; }
+.reading-list .rl-title a { color: var(--text-primary); }
+.reading-list .rl-title a:hover { color: var(--gold); }
+.reading-list .rl-sub { color: var(--gold); font-style: italic; font-size: 0.95rem; margin: 0 0 0.5rem; }
+.reading-list .rl-lede { color: var(--text-muted); margin: 0; font-size: 0.98rem; }
+
 /* ---- Comments (fills the content column, matches page theme) ---- */
 .comments { margin: 3rem 0 0; padding-top: 2rem; border-top: 1px solid var(--rule-soft); }
 .comments-title { font-size: 1.4rem; margin-bottom: 1.2rem; }

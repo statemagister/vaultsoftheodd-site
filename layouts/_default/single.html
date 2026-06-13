@@ -13,6 +13,10 @@
         {{- end }}
       </header>
 
+      {{- with .Params.summary }}<p class="post-lede">{{ . }}</p>{{- end }}
+      {{- with .Params.pdf }}<p class="paper-download"><a class="button" href="{{ . }}" download>Download the paper (PDF)</a></p>{{- end }}
+      {{- with .Params.prereq }}<aside class="read-first">{{ . | markdownify }}</aside>{{- end }}
+
       <div class="post-body">
         {{ .Content }}
       </div>

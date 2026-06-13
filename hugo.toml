@@ -20,10 +20,10 @@ enableEmoji = false
   # Discussions on the public site repo and installing the giscus app:
   # https://giscus.app  Leaving repo blank disables comments.
   [params.giscus]
-    repo = ""
-    repoId = ""
-    category = "Comments"
-    categoryId = ""
+    repo = "statemagister/vaultsoftheodd-site"
+    repoId = "R_kgDOS5Z5xw"
+    category = "Announcements"
+    categoryId = "DIC_kwDOS5Z5x84C_Ewv"
 
 # Preserve the existing root-level article URLs so inbound links and
 # Search Console indexing survive the migration. Essays live under

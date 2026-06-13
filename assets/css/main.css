@@ -79,18 +79,18 @@ body.theme-politics {
   --display: var(--body); /* restrained: drop the decorative display face */
 }
 
-/* ---- Stories: ethereal, soft misty seafoam light on a gentle dusk ground ---- */
+/* ---- Stories: solid deep forest green, light text ---- */
 body.theme-stories {
-  --bg: #26302e;
-  --bg-alt: #2e3a37;
-  --bg-card: #344340;
-  --text-primary: #eef4f1;
-  --text-body: #dce8e3;
-  --text-muted: #a6b8b2;
-  --gold: #9bcfbf;
-  --gold-bright: #bce6d6;
-  --rule: rgba(155, 207, 191, 0.32);
-  --rule-soft: rgba(238, 244, 241, 0.11);
+  --bg: #173524;
+  --bg-alt: #1e4330;
+  --bg-card: #234a36;
+  --text-primary: #eef5ef;
+  --text-body: #d4e6da;
+  --text-muted: #93b39e;
+  --gold: #5fc187;
+  --gold-bright: #84d9a4;
+  --rule: rgba(95, 193, 135, 0.34);
+  --rule-soft: rgba(238, 245, 239, 0.11);
 }
 
 /* ---- Mythology: earthy, Welsh, mossy gold-green on deep green ---- */

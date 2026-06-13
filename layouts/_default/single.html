@@ -41,6 +41,8 @@
   <aside class="post-aside" aria-label="Article information">
     <div class="aside-inner">
 
+      {{ partial "search.html" . }}
+
       {{- with .Params.tags }}
       <section class="aside-block">
         <h2 class="aside-title">Tags</h2>

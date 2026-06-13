@@ -1,0 +1,13 @@
+{{- $list := slice -}}
+{{- range .Site.RegularPages -}}
+  {{- $list = $list | append (dict
+      "title" .Title
+      "url" .RelPermalink
+      "section" .Section
+      "tags" (or .Params.tags slice)
+      "settings" (or .Params.settings slice)
+      "date" (cond .Date.IsZero "" (.Date.Format "2 January 2006"))
+      "summary" (.Summary | plainify | truncate 180)
+  ) -}}
+{{- end -}}
+{{- $list | jsonify -}}

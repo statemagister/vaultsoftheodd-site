@@ -1,0 +1,7 @@
+<section class="aside-block aside-search">
+  <label class="aside-title" for="site-search">Search</label>
+  <input type="search" id="site-search" class="search-input" placeholder="Search the vaults&hellip;" autocomplete="off" aria-label="Search articles">
+  <ul id="search-results" class="search-results" hidden></ul>
+</section>
+{{- $js := resources.Get "js/search.js" | resources.Minify | resources.Fingerprint -}}
+<script src="{{ $js.RelPermalink }}" defer></script>

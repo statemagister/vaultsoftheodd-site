@@ -21,19 +21,41 @@
     </ul>
   </div>
 
-  {{- /* Vault information sidebar: browse by tag + support */ -}}
+  {{- /* Vault information sidebar: search, browse by tag/date, support */ -}}
   <aside class="post-aside" aria-label="Vault information">
     <div class="aside-inner">
+
+      {{ partial "search.html" . }}
+
       {{- $tags := slice }}
       {{- range .Pages }}{{ range .Params.tags }}{{ $tags = $tags | append . }}{{ end }}{{ end }}
       {{- with (uniq $tags) }}
       <section class="aside-block">
-        <h2 class="aside-title">Browse by tag</h2>
-        <div class="aside-tags">
-          {{- range (sort .) }}<a class="tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}
-        </div>
+        <details class="aside-collapse" open>
+          <summary>Browse by tag</summary>
+          <div class="aside-tags">
+            {{- range (sort .) }}<a class="tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+          </div>
+        </details>
       </section>
       {{- end }}
+
+      <section class="aside-block">
+        <details class="aside-collapse">
+          <summary>Browse by date</summary>
+          <div class="aside-bydate">
+            {{- range .Pages.GroupByDate "January 2006" }}
+            <details class="aside-folder">
+              <summary>{{ .Key }} <span class="folder-count">{{ len .Pages }}</span></summary>
+              <ul>
+                {{- range .Pages.ByDate.Reverse }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+              </ul>
+            </details>
+            {{- end }}
+          </div>
+        </details>
+      </section>
+
       {{- with .Site.Params.buymeacoffee }}
       <section class="aside-block">
         <h2 class="aside-title">Support</h2>

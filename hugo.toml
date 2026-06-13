@@ -32,6 +32,10 @@ enableEmoji = false
   [permalinks.page]
     gaming = "/:slug/"
 
+# Emit a JSON search index at /index.json for the client-side search.
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 [taxonomies]
   tag = "tags"
   setting = "settings"

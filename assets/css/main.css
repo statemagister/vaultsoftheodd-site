@@ -335,6 +335,31 @@ figcaption, .wp-element-caption { font-size: 0.78rem; font-style: italic; color:
 .aside-tags .tag { margin: 0; }
 .post-aside .coffee { width: 100%; justify-content: center; }
 
+/* Collapsible sidebar sections (browse by tag / by date) */
+.aside-collapse > summary {
+  list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--display); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-muted); padding-bottom: 0.45rem; margin-bottom: 0.8rem; border-bottom: 1px solid var(--rule);
+}
+.aside-collapse > summary::-webkit-details-marker { display: none; }
+.aside-collapse > summary::after { content: "\2212"; color: var(--text-muted); font-size: 0.95rem; line-height: 1; }
+.aside-collapse:not([open]) > summary { margin-bottom: 0; }
+.aside-collapse:not([open]) > summary::after { content: "\002B"; }
+.aside-bydate { display: flex; flex-direction: column; }
+
+/* Sidebar search */
+.aside-search .search-input {
+  width: 100%; padding: 0.5rem 0.7rem; background: var(--bg-card); border: 1px solid var(--rule);
+  border-radius: 3px; color: var(--text-body); font-family: var(--body); font-size: 0.98rem;
+}
+.aside-search .search-input::placeholder { color: var(--text-muted); }
+.aside-search .search-input:focus { outline: none; border-color: var(--gold); }
+.search-results { list-style: none; margin: 0.6rem 0 0; padding: 0; }
+.search-results li { margin-bottom: 0.5rem; line-height: 1.3; }
+.search-results a { display: block; font-size: 0.93rem; }
+.search-results .search-meta { display: block; font-family: var(--display); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.1rem; }
+.search-results .search-empty { color: var(--text-muted); font-style: italic; font-size: 0.9rem; }
+
 .aside-folder { margin-bottom: 0.5rem; }
 .aside-folder summary {
   cursor: pointer; list-style: none; font-family: var(--display); font-size: 0.82rem;

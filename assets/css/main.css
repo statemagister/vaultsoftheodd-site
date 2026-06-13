@@ -146,14 +146,16 @@ hr { border: 0; height: 1px; background: var(--rule); margin: 2.4rem auto; max-w
   border-bottom: 1px solid var(--rule);
   background: linear-gradient(180deg, var(--bg-alt), var(--bg));
 }
-.header-inner { display: flex; align-items: center; justify-content: space-between; padding-block: 1.1rem; gap: 1rem; }
-.brand { font-size: 1.5rem; color: var(--text-primary); white-space: nowrap; }
+/* Stacked masthead: wordmark on top, navigation centred on the row below. */
+.header-inner { display: flex; flex-direction: column; align-items: stretch; gap: 0.7rem; padding-block: 1.15rem; }
+.header-top { display: flex; align-items: center; justify-content: center; position: relative; }
+.brand { font-size: 1.6rem; color: var(--text-primary); white-space: nowrap; text-align: center; }
 .brand:hover { text-decoration: none; }
-.header-right { display: flex; align-items: center; gap: 1.1rem; }
-.site-nav ul { list-style: none; display: flex; gap: 1.3rem; margin: 0; padding: 0; flex-wrap: wrap; }
+.site-nav { display: flex; justify-content: center; }
+.site-nav ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 1.4rem; margin: 0; padding: 0; }
 .site-nav a { font-family: var(--display); font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
 .site-nav a:hover, .site-nav a.active { color: var(--gold); text-decoration: none; }
-.nav-toggle { display: none; background: none; border: 0; color: var(--gold); font-size: 1.5rem; cursor: pointer; }
+.nav-toggle { display: none; background: none; border: 0; color: var(--gold); font-size: 1.5rem; cursor: pointer; position: absolute; right: 0; top: 50%; transform: translateY(-50%); }
 
 /* ---- Buy me a coffee (header + articles) ---- */
 .coffee {
@@ -213,6 +215,8 @@ hr { border: 0; height: 1px; background: var(--rule); margin: 2.4rem auto; max-w
 .post-list-title { margin: 0; font-size: 1.4rem; transition: color 0.15s ease; }
 .post-list-date, .post-list-tags { margin: 0.3rem 0 0; color: var(--text-muted); font-size: 0.85rem; }
 .coming-soon { text-align: center; color: var(--text-muted); font-style: italic; }
+.empty-vault { text-align: center; max-width: var(--maxw); margin: 1.5rem auto 0; }
+.empty-vault .coming-soon { margin-bottom: 1.8rem; }
 
 /* ---- Browse by tag (section pages) ---- */
 .browse-tags { max-width: var(--maxw); margin: 0 auto 2.4rem; text-align: center; }
@@ -389,12 +393,11 @@ figcaption, .wp-element-caption { font-size: 0.78rem; font-style: italic; color:
 .privacy-notice button:hover { background: var(--gold-bright); border-color: var(--gold-bright); }
 
 @media (max-width: 720px) {
-  .nav-toggle { display: block; }
-  .site-nav { display: none; width: 100%; }
-  .site-nav.open { display: block; }
-  .header-inner { flex-wrap: wrap; }
-  .header-right { gap: 0.7rem; }
-  .site-nav ul { flex-direction: column; gap: 0.4rem; padding-block: 0.8rem; }
+  .header-top { justify-content: space-between; }
+  .nav-toggle { display: block; position: static; transform: none; }
+  .site-nav { display: none; }
+  .site-nav.open { display: flex; }
+  .site-nav ul { flex-direction: column; align-items: center; gap: 0.5rem; padding-block: 0.6rem; }
 }
 
 @media (max-width: 520px) {

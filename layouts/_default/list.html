@@ -1,4 +1,6 @@
 {{ define "main" }}
+{{- $pages := .Pages.ByDate.Reverse }}
+{{- if $pages }}
 <div class="post-layout wrap">
   <div class="post-main">
     <header class="list-header">
@@ -6,8 +8,6 @@
       {{- with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
     </header>
 
-    {{- $pages := .Pages.ByDate.Reverse }}
-    {{- if $pages }}
     <ul class="post-list">
       {{- range $pages }}
       <li class="post-list-item">
@@ -19,15 +19,11 @@
       </li>
       {{- end }}
     </ul>
-    {{- else }}
-    <p class="coming-soon">More from this vault is on the way.</p>
-    {{- end }}
   </div>
 
   {{- /* Vault information sidebar: browse by tag + support */ -}}
   <aside class="post-aside" aria-label="Vault information">
     <div class="aside-inner">
-
       {{- $tags := slice }}
       {{- range .Pages }}{{ range .Params.tags }}{{ $tags = $tags | append . }}{{ end }}{{ end }}
       {{- with (uniq $tags) }}
@@ -38,15 +34,29 @@
         </div>
       </section>
       {{- end }}
-
       {{- with .Site.Params.buymeacoffee }}
       <section class="aside-block">
         <h2 class="aside-title">Support</h2>
         <a class="coffee" href="{{ . }}" rel="noopener" target="_blank"><span class="cup">&#9749;</span> Buy me a coffee</a>
       </section>
       {{- end }}
-
     </div>
   </aside>
 </div>
+{{- else }}
+{{- /* Empty vault: a clean, intentional placeholder rather than a sparse sidebar */ -}}
+<div class="list wrap">
+  <header class="list-header">
+    <h1 class="list-title">{{ .Title }}</h1>
+    {{- with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
+  </header>
+  <div class="empty-vault">
+    <p class="coming-soon">This vault is being prepared. The first pieces will appear here soon.</p>
+    <p class="section-cta">
+      <a class="button ghost" href="/">Return home</a>
+      <a class="button ghost" href="/gaming/">Visit the Gaming vault</a>
+    </p>
+  </div>
+</div>
+{{- end }}
 {{ end }}

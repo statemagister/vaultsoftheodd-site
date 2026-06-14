@@ -14,7 +14,7 @@ The first titles are in preparation. Each is offered in a choice of covers — p
       <span class="book-cover" style="--c:#0b0b0d"></span>
       <span class="book-cover" style="--c:#f26b24"></span>
     </div>
-    <p class="product-desc">A clean, undated hardback in a plain cover — open it on any day and carry it through any year. Circle the month, date and weekday in the margin and write the year in the box, so no pages are wasted and it never goes stale.</p>
+    <p class="product-desc">A clean, undated hardback in a plain cover — open it on any day and carry it through any year. A slim date strip runs down the outer edge of every page: circle the month, circle the date and write the year in the box. Nothing is printed to a fixed date, so no page is wasted and the book never expires on a shelf. 256 lined, numbered pages, with a two-page index and an ownership and volume page for keeping a numbered set. Hardcover, 7 × 10 inches.</p>
     <p class="product-variants">Choose your cover and store:</p>
     <div class="buy">
       <p class="buy-row"><span class="buy-cover">Black</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H599D1NW" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H599D1NW" rel="noopener noreferrer" target="_blank">Amazon UK</a></p>

@@ -6,7 +6,7 @@ layout: "page"
 
 For journal enquiries, corrections, permissions, review copies, or any other business, email:
 
-**drew [at] vaultsoftheodd [dot] com**
+**contact [at] vaultsoftheodd [dot] com**
 
 (Written out to keep the address away from harvesters — replace the bracketed words with `@` and `.` when you write to me.)
 

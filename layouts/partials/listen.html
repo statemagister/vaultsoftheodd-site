@@ -1,0 +1,92 @@
+{{- /* Free, client-side "Listen" control using the browser's Web Speech API.
+       Reads the page's main text aloud with the visitor's own device voices —
+       no API keys, no cost, nothing leaves the browser. Hidden automatically
+       where speech synthesis is unavailable. */ -}}
+<div class="listen" data-listen hidden>
+  <button class="listen-btn" type="button" aria-pressed="false">
+    <span class="listen-icon" aria-hidden="true">&#9658;</span>
+    <span class="listen-label">Listen to this</span>
+  </button>
+  <button class="listen-stop" type="button" aria-label="Stop reading" title="Stop">&#10005;</button>
+</div>
+<script>
+(function () {
+  function init() {
+    var root = document.querySelector('[data-listen]');
+    if (!root) return;
+    var synth = window.speechSynthesis;
+    var content = document.querySelector('[data-listen-content]');
+    if (!synth || typeof SpeechSynthesisUtterance === 'undefined' || !content) return;
+
+    var btn = root.querySelector('.listen-btn');
+    var stopBtn = root.querySelector('.listen-stop');
+    var label = root.querySelector('.listen-label');
+    var icon = root.querySelector('.listen-icon');
+    var chunks = [], idx = 0, state = 'idle';
+
+    function gatherText() {
+      var clone = content.cloneNode(true);
+      var drop = clone.querySelectorAll('svg, script, style, figure, .listen');
+      for (var i = 0; i < drop.length; i++) { if (drop[i].parentNode) drop[i].parentNode.removeChild(drop[i]); }
+      return (clone.textContent || '').replace(/\s+/g, ' ').trim();
+    }
+    function buildChunks() {
+      var lead = '';
+      var h = document.querySelector('.post-title'); if (h) lead += h.textContent.trim() + '. ';
+      var sub = document.querySelector('.post-subtitle'); if (sub) lead += sub.textContent.trim() + '. ';
+      var all = (lead + gatherText()).trim();
+      var sentences = all.match(/[^.!?]+[.!?]*\s*/g) || (all ? [all] : []);
+      var out = [], cur = '';
+      for (var i = 0; i < sentences.length; i++) {
+        var s = sentences[i];
+        if ((cur + s).length > 160 && cur) { out.push(cur.trim()); cur = s; }
+        else { cur += s; }
+      }
+      if (cur.trim()) out.push(cur.trim());
+      return out;
+    }
+    function pickVoice() {
+      var vs = synth.getVoices() || [];
+      var gb = vs.filter(function (v) { return /en[-_]GB/i.test(v.lang); });
+      if (gb.length) {
+        var nat = gb.filter(function (v) { return /natural|enhanced|premium|siri|libby|sonia|ryan|google|neural/i.test(v.name); });
+        return nat[0] || gb[0];
+      }
+      var en = vs.filter(function (v) { return /^en/i.test(v.lang); });
+      return en[0] || vs[0] || null;
+    }
+    function setState(s) {
+      state = s;
+      if (s === 'playing') { icon.innerHTML = '&#10074;&#10074;'; label.textContent = 'Pause'; btn.setAttribute('aria-pressed', 'true'); root.classList.add('is-active'); }
+      else if (s === 'paused') { icon.innerHTML = '&#9658;'; label.textContent = 'Resume'; btn.setAttribute('aria-pressed', 'false'); root.classList.add('is-active'); }
+      else { icon.innerHTML = '&#9658;'; label.textContent = 'Listen to this'; btn.setAttribute('aria-pressed', 'false'); root.classList.remove('is-active'); }
+    }
+    function speakNext() {
+      if (state !== 'playing') return;
+      if (idx >= chunks.length) { stopAll(); return; }
+      var u = new SpeechSynthesisUtterance(chunks[idx]);
+      var v = pickVoice(); if (v) { u.voice = v; u.lang = v.lang; } else { u.lang = 'en-GB'; }
+      u.rate = 1; u.pitch = 1;
+      u.onend = function () { if (state === 'playing') { idx++; speakNext(); } };
+      u.onerror = function () { if (state === 'playing') { idx++; speakNext(); } };
+      synth.speak(u);
+    }
+    function start() { chunks = buildChunks(); if (!chunks.length) return; idx = 0; synth.cancel(); setState('playing'); speakNext(); }
+    function stopAll() { setState('idle'); synth.cancel(); }
+
+    btn.addEventListener('click', function () {
+      if (state === 'idle') start();
+      else if (state === 'playing') { synth.pause(); setState('paused'); }
+      else if (state === 'paused') { synth.resume(); setState('playing'); }
+    });
+    stopBtn.addEventListener('click', stopAll);
+    window.addEventListener('beforeunload', function () { synth.cancel(); });
+    window.addEventListener('pagehide', function () { synth.cancel(); });
+    if (synth.getVoices().length === 0 && synth.addEventListener) { synth.addEventListener('voiceschanged', function () {}); }
+
+    root.hidden = false;
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>

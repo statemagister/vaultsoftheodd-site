@@ -10,13 +10,14 @@
         {{- with .Params.subtitle }}<p class="post-subtitle">{{ . }}</p>{{- end }}
         {{- $byline := .Params.byline | default .Site.Params.author }}
         <p class="post-meta">By {{ $byline }}{{ if not .Date.IsZero }} &middot; <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>{{ end }}</p>
+        {{ partial "listen.html" . }}
       </header>
 
       {{- with .Params.summary }}<p class="post-lede">{{ . }}</p>{{- end }}
       {{- with .Params.pdf }}<p class="paper-download"><a class="button" href="{{ . }}" download>Download the paper (PDF)</a></p>{{- end }}
       {{- with .Params.prereq }}<aside class="read-first">{{ . | markdownify }}</aside>{{- end }}
 
-      <div class="post-body">
+      <div class="post-body" data-listen-content>
         {{ .Content }}
       </div>
     </article>

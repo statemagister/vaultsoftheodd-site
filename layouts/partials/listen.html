@@ -22,7 +22,7 @@
     var stopBtn = root.querySelector('.listen-stop');
     var label = root.querySelector('.listen-label');
     var icon = root.querySelector('.listen-icon');
-    var state = 'idle', userPaused = false, keepTimer = null, chunks = [], idx = 0;
+    var state = 'idle', userPaused = false, queue = [], qi = 0, ticker = null;
     var isChromium = /Chrome|Chromium|Edg\//.test(navigator.userAgent) && !/CriOS|EdgiOS|FxiOS|OPiOS/.test(navigator.userAgent);
 
     function gatherText() {
@@ -58,57 +58,39 @@
       var v = pickVoice(); if (v) { u.voice = v; u.lang = v.lang; } else { u.lang = 'en-GB'; }
       u.rate = 1; u.pitch = 1; return u;
     }
+    // Split into sentences so a pause falls naturally between each one.
     function buildChunks(text) {
-      var sentences = text.match(/[^.!?]+[.!?]*\s*/g) || [text];
-      var out = [], cur = '';
-      for (var i = 0; i < sentences.length; i++) {
-        var s = sentences[i];
-        if ((cur + s).length > 200 && cur) { out.push(cur.trim()); cur = s; }
-        else { cur += s; }
-      }
-      if (cur.trim()) out.push(cur.trim());
-      return out;
+      var parts = text.match(/[^.!?…]+[.!?…]+["'’)\]]*\s*|[^.!?…]+$/g) || [text];
+      var out = [];
+      for (var i = 0; i < parts.length; i++) { var s = parts[i].trim(); if (s) out.push(s); }
+      return out.length ? out : [text];
     }
-    // Chrome stops a long utterance after ~15s; a periodic resume keeps the
-    // chained chunks flowing. WebKit dislikes the nudge, so Chromium only.
-    function keepAlive() {
-      if (!isChromium) return;
-      clearTimeout(keepTimer);
-      keepTimer = setTimeout(function () {
-        if (state === 'playing' && !userPaused) { try { synth.resume(); } catch (e) {} keepAlive(); }
-      }, 9000);
-    }
-    function speakChunk() {
+    // Speak one sentence at a time: never queue (which WebKit drops) and never
+    // send one giant utterance (which Chrome caps and reads without pauses).
+    // The driver waits for each utterance to finish, then the next tick speaks
+    // the following one — the gap between is the inter-sentence pause.
+    function drive() {
       if (state !== 'playing') return;
-      if (idx >= chunks.length) { stopAll(); return; }
-      var u = makeUtter(chunks[idx]);
-      u.onend = function () { if (state === 'playing') { idx++; speakChunk(); } };
-      u.onerror = function () { if (state === 'playing') { idx++; speakChunk(); } };
-      synth.speak(u);
+      if (isChromium && !userPaused) { try { synth.resume(); } catch (e) {} }
+      if (synth.speaking || synth.pending) return;
+      if (qi >= queue.length) { stopAll(); return; }
+      synth.speak(makeUtter(queue[qi])); qi++;
     }
+    function startTicker() { stopTicker(); ticker = setInterval(drive, 220); drive(); }
+    function stopTicker() { if (ticker) { clearInterval(ticker); ticker = null; } }
     function start() {
       var text = buildText(); if (!text) return;
       synth.cancel();
-      userPaused = false; setState('playing');
-      if (isChromium) {
-        // Chrome: many short utterances, chained on end, kept alive past 15s.
-        chunks = buildChunks(text); idx = 0;
-        speakChunk();
-        keepAlive();
-      } else {
-        // WebKit/Firefox: one long utterance plays reliably; queues do not.
-        var u = makeUtter(text);
-        u.onend = function () { stopAll(); };
-        u.onerror = function () { stopAll(); };
-        synth.speak(u);
-      }
+      queue = buildChunks(text); qi = 0; userPaused = false;
+      setState('playing');
+      startTicker();
     }
-    function stopAll() { setState('idle'); userPaused = false; clearTimeout(keepTimer); synth.cancel(); }
+    function stopAll() { setState('idle'); userPaused = false; stopTicker(); synth.cancel(); }
 
     btn.addEventListener('click', function () {
       if (state === 'idle') start();
       else if (state === 'playing') { userPaused = true; synth.pause(); setState('paused'); }
-      else if (state === 'paused') { userPaused = false; synth.resume(); setState('playing'); keepAlive(); }
+      else if (state === 'paused') { userPaused = false; setState('playing'); synth.resume(); }
     });
     stopBtn.addEventListener('click', stopAll);
     window.addEventListener('beforeunload', function () { synth.cancel(); });

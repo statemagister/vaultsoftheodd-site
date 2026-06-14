@@ -22,7 +22,7 @@
     var stopBtn = root.querySelector('.listen-stop');
     var label = root.querySelector('.listen-label');
     var icon = root.querySelector('.listen-icon');
-    var chunks = [], idx = 0, state = 'idle';
+    var chunks = [], state = 'idle', userPaused = false, watchdog = null;
 
     function gatherText() {
       var clone = content.cloneNode(true);
@@ -61,23 +61,41 @@
       else if (s === 'paused') { icon.innerHTML = '&#9658;'; label.textContent = 'Resume'; btn.setAttribute('aria-pressed', 'false'); root.classList.add('is-active'); }
       else { icon.innerHTML = '&#9658;'; label.textContent = 'Listen to this'; btn.setAttribute('aria-pressed', 'false'); root.classList.remove('is-active'); }
     }
-    function speakNext() {
-      if (state !== 'playing') return;
-      if (idx >= chunks.length) { stopAll(); return; }
-      var u = new SpeechSynthesisUtterance(chunks[idx]);
-      var v = pickVoice(); if (v) { u.voice = v; u.lang = v.lang; } else { u.lang = 'en-GB'; }
-      u.rate = 1; u.pitch = 1;
-      u.onend = function () { if (state === 'playing') { idx++; speakNext(); } };
-      u.onerror = function () { if (state === 'playing') { idx++; speakNext(); } };
-      synth.speak(u);
+    function speakAll() {
+      var v = pickVoice();
+      for (var i = 0; i < chunks.length; i++) {
+        var u = new SpeechSynthesisUtterance(chunks[i]);
+        if (v) { u.voice = v; u.lang = v.lang; } else { u.lang = 'en-GB'; }
+        u.rate = 1; u.pitch = 1;
+        if (i === chunks.length - 1) {
+          u.onend = function () { if (state === 'playing') stopAll(); };
+        }
+        synth.speak(u);
+      }
     }
-    function start() { chunks = buildChunks(); if (!chunks.length) return; idx = 0; synth.cancel(); setState('playing'); speakNext(); }
-    function stopAll() { setState('idle'); synth.cancel(); }
+    function startWatchdog() {
+      stopWatchdog();
+      // Chrome silently stops long queues; nudge it while genuinely playing.
+      watchdog = setInterval(function () {
+        if (state === 'playing' && !userPaused) { try { synth.resume(); } catch (e) {} }
+        if (state === 'playing' && !synth.speaking && !synth.pending) stopAll();
+      }, 5000);
+    }
+    function stopWatchdog() { if (watchdog) { clearInterval(watchdog); watchdog = null; } }
+    function start() {
+      chunks = buildChunks(); if (!chunks.length) return;
+      userPaused = false; setState('playing');
+      // Queue every chunk inside this user gesture; chaining via onend is
+      // unreliable on iOS/Safari, so we do not wait between utterances.
+      speakAll();
+      startWatchdog();
+    }
+    function stopAll() { setState('idle'); userPaused = false; stopWatchdog(); synth.cancel(); }
 
     btn.addEventListener('click', function () {
       if (state === 'idle') start();
-      else if (state === 'playing') { synth.pause(); setState('paused'); }
-      else if (state === 'paused') { synth.resume(); setState('playing'); }
+      else if (state === 'playing') { userPaused = true; synth.pause(); setState('paused'); }
+      else if (state === 'paused') { userPaused = false; synth.resume(); setState('playing'); }
     });
     stopBtn.addEventListener('click', stopAll);
     window.addEventListener('beforeunload', function () { synth.cancel(); });

@@ -15,8 +15,12 @@ The first titles are in preparation. Each is offered in a choice of covers — p
       <span class="book-cover" style="--c:#f26b24"></span>
     </div>
     <p class="product-desc">A clean, undated hardback in a plain cover — open it on any day and carry it through any year. Circle the month, date and weekday in the margin and write the year in the box, so no pages are wasted and it never goes stale.</p>
-    <p class="product-variants">Plain covers: Black &middot; Orange</p>
-    <p class="product-status">In preparation</p>
+    <p class="product-variants">Choose your cover and store:</p>
+    <div class="buy">
+      <p class="buy-row"><span class="buy-cover">Black</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H599D1NW" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H599D1NW" rel="noopener noreferrer" target="_blank">Amazon UK</a></p>
+      <p class="buy-row"><span class="buy-cover">Orange</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H58YCR9F" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H58YCR9F" rel="noopener noreferrer" target="_blank">Amazon UK</a></p>
+    </div>
+    <p class="product-status available">Available now on Amazon</p>
   </div>
 
   <div class="product-card">
@@ -62,3 +66,18 @@ Further titles are on the way. These are in development behind the first two.
 </div>
 
 All journals are independent products under the Vaults of the ODD imprint. They are not affiliated with, or endorsed by, any game publisher.
+
+<script>
+(function () {
+  var uk = false;
+  try { uk = /^en-GB/i.test(navigator.language || '') || (window.Intl && Intl.DateTimeFormat().resolvedOptions().timeZone === 'Europe/London'); } catch (e) {}
+  if (!uk) return;
+  // UK visitors: lead with the UK store instead of the US default.
+  var rows = document.querySelectorAll('.buy-row');
+  for (var i = 0; i < rows.length; i++) {
+    var us = rows[i].querySelector('[data-store="us"]');
+    var gb = rows[i].querySelector('[data-store="uk"]');
+    if (us && gb) { us.classList.add('ghost'); gb.classList.remove('ghost'); rows[i].insertBefore(gb, us); }
+  }
+})();
+</script>

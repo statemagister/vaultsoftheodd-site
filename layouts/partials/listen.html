@@ -22,7 +22,7 @@
     var stopBtn = root.querySelector('.listen-stop');
     var label = root.querySelector('.listen-label');
     var icon = root.querySelector('.listen-icon');
-    var state = 'idle', userPaused = false, queue = [], qi = 0, current = null, keepTimer = null;
+    var state = 'idle', userPaused = false, queue = [], qi = 0, current = null, keepTimer = null, startTimer = null;
     var isChromium = /Chrome|Chromium|Edg\//.test(navigator.userAgent) && !/CriOS|EdgiOS|FxiOS|OPiOS/.test(navigator.userAgent);
 
     function gatherText() {
@@ -95,8 +95,15 @@
       setState('playing');
       speakNext();
       keepAlive();
+      // Some browsers (e.g. Brave) block the Web Speech API for privacy:
+      // speak() does nothing and no events fire. If playback never actually
+      // begins, reset the button rather than leaving it stuck on "Pause".
+      clearTimeout(startTimer);
+      startTimer = setTimeout(function () {
+        if (state === 'playing' && qi <= 1 && !synth.speaking && !synth.pending) stopAll();
+      }, 2500);
     }
-    function stopAll() { setState('idle'); userPaused = false; clearTimeout(keepTimer); current = null; synth.cancel(); }
+    function stopAll() { setState('idle'); userPaused = false; clearTimeout(keepTimer); clearTimeout(startTimer); current = null; synth.cancel(); }
 
     btn.addEventListener('click', function () {
       if (state === 'idle') start();

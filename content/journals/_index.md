@@ -47,7 +47,7 @@ Further titles are on the way. These are in development behind the first two.
 
   <div class="product-card">
     <div class="product-cover placeholder">Cover<br>to come</div>
-    <h3 class="product-name">The Dungeon Master's Notebook</h3>
+    <h3 class="product-name">The Game Master's Notebook</h3>
     <p class="product-desc">A system-agnostic campaign design notebook for running any tabletop roleplaying game. Structured space for worlds, sessions, NPCs and the long thread of a campaign.</p>
     <p class="product-status">Planned</p>
   </div>

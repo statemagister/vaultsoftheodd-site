@@ -32,10 +32,17 @@
       return (clone.textContent || '').replace(/\s+/g, ' ').trim();
     }
     function buildText() {
-      var lead = '';
-      var h = document.querySelector('.post-title'); if (h) lead += h.textContent.trim() + '. ';
-      var sub = document.querySelector('.post-subtitle'); if (sub) lead += sub.textContent.trim() + '. ';
-      return (lead + gatherText()).trim();
+      // Read the whole header in order — setting, title, subtitle, byline,
+      // lede — then the body, so nothing visible to the reader is skipped.
+      var sels = ['.post-setting', '.post-title', '.post-subtitle', '.post-meta', '.post-lede'];
+      var bits = [];
+      for (var i = 0; i < sels.length; i++) {
+        var el = document.querySelector(sels[i]);
+        if (el) { var t = (el.textContent || '').replace(/\s+/g, ' ').trim(); if (t) bits.push(t); }
+      }
+      var lead = bits.join('. ').replace(/\s*[·•∙]\s*/g, ', ');
+      if (lead && !/[.!?]$/.test(lead)) lead += '.';
+      return (lead + ' ' + gatherText()).trim();
     }
     function pickVoice() {
       var vs = synth.getVoices() || [];

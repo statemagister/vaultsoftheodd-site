@@ -22,7 +22,8 @@
     var stopBtn = root.querySelector('.listen-stop');
     var label = root.querySelector('.listen-label');
     var icon = root.querySelector('.listen-icon');
-    var chunks = [], state = 'idle', userPaused = false, watchdog = null;
+    var state = 'idle', userPaused = false, keepTimer = null, chunks = [], idx = 0;
+    var isChromium = /Chrome|Chromium|Edg\//.test(navigator.userAgent) && !/CriOS|EdgiOS|FxiOS|OPiOS/.test(navigator.userAgent);
 
     function gatherText() {
       var clone = content.cloneNode(true);
@@ -30,20 +31,11 @@
       for (var i = 0; i < drop.length; i++) { if (drop[i].parentNode) drop[i].parentNode.removeChild(drop[i]); }
       return (clone.textContent || '').replace(/\s+/g, ' ').trim();
     }
-    function buildChunks() {
+    function buildText() {
       var lead = '';
       var h = document.querySelector('.post-title'); if (h) lead += h.textContent.trim() + '. ';
       var sub = document.querySelector('.post-subtitle'); if (sub) lead += sub.textContent.trim() + '. ';
-      var all = (lead + gatherText()).trim();
-      var sentences = all.match(/[^.!?]+[.!?]*\s*/g) || (all ? [all] : []);
-      var out = [], cur = '';
-      for (var i = 0; i < sentences.length; i++) {
-        var s = sentences[i];
-        if ((cur + s).length > 160 && cur) { out.push(cur.trim()); cur = s; }
-        else { cur += s; }
-      }
-      if (cur.trim()) out.push(cur.trim());
-      return out;
+      return (lead + gatherText()).trim();
     }
     function pickVoice() {
       var vs = synth.getVoices() || [];
@@ -61,41 +53,62 @@
       else if (s === 'paused') { icon.innerHTML = '&#9658;'; label.textContent = 'Resume'; btn.setAttribute('aria-pressed', 'false'); root.classList.add('is-active'); }
       else { icon.innerHTML = '&#9658;'; label.textContent = 'Listen to this'; btn.setAttribute('aria-pressed', 'false'); root.classList.remove('is-active'); }
     }
-    function speakAll() {
-      var v = pickVoice();
-      for (var i = 0; i < chunks.length; i++) {
-        var u = new SpeechSynthesisUtterance(chunks[i]);
-        if (v) { u.voice = v; u.lang = v.lang; } else { u.lang = 'en-GB'; }
-        u.rate = 1; u.pitch = 1;
-        if (i === chunks.length - 1) {
-          u.onend = function () { if (state === 'playing') stopAll(); };
-        }
+    function makeUtter(t) {
+      var u = new SpeechSynthesisUtterance(t);
+      var v = pickVoice(); if (v) { u.voice = v; u.lang = v.lang; } else { u.lang = 'en-GB'; }
+      u.rate = 1; u.pitch = 1; return u;
+    }
+    function buildChunks(text) {
+      var sentences = text.match(/[^.!?]+[.!?]*\s*/g) || [text];
+      var out = [], cur = '';
+      for (var i = 0; i < sentences.length; i++) {
+        var s = sentences[i];
+        if ((cur + s).length > 200 && cur) { out.push(cur.trim()); cur = s; }
+        else { cur += s; }
+      }
+      if (cur.trim()) out.push(cur.trim());
+      return out;
+    }
+    // Chrome stops a long utterance after ~15s; a periodic resume keeps the
+    // chained chunks flowing. WebKit dislikes the nudge, so Chromium only.
+    function keepAlive() {
+      if (!isChromium) return;
+      clearTimeout(keepTimer);
+      keepTimer = setTimeout(function () {
+        if (state === 'playing' && !userPaused) { try { synth.resume(); } catch (e) {} keepAlive(); }
+      }, 9000);
+    }
+    function speakChunk() {
+      if (state !== 'playing') return;
+      if (idx >= chunks.length) { stopAll(); return; }
+      var u = makeUtter(chunks[idx]);
+      u.onend = function () { if (state === 'playing') { idx++; speakChunk(); } };
+      u.onerror = function () { if (state === 'playing') { idx++; speakChunk(); } };
+      synth.speak(u);
+    }
+    function start() {
+      var text = buildText(); if (!text) return;
+      synth.cancel();
+      userPaused = false; setState('playing');
+      if (isChromium) {
+        // Chrome: many short utterances, chained on end, kept alive past 15s.
+        chunks = buildChunks(text); idx = 0;
+        speakChunk();
+        keepAlive();
+      } else {
+        // WebKit/Firefox: one long utterance plays reliably; queues do not.
+        var u = makeUtter(text);
+        u.onend = function () { stopAll(); };
+        u.onerror = function () { stopAll(); };
         synth.speak(u);
       }
     }
-    function startWatchdog() {
-      stopWatchdog();
-      // Chrome silently stops long queues; nudge it while genuinely playing.
-      watchdog = setInterval(function () {
-        if (state === 'playing' && !userPaused) { try { synth.resume(); } catch (e) {} }
-        if (state === 'playing' && !synth.speaking && !synth.pending) stopAll();
-      }, 5000);
-    }
-    function stopWatchdog() { if (watchdog) { clearInterval(watchdog); watchdog = null; } }
-    function start() {
-      chunks = buildChunks(); if (!chunks.length) return;
-      userPaused = false; setState('playing');
-      // Queue every chunk inside this user gesture; chaining via onend is
-      // unreliable on iOS/Safari, so we do not wait between utterances.
-      speakAll();
-      startWatchdog();
-    }
-    function stopAll() { setState('idle'); userPaused = false; stopWatchdog(); synth.cancel(); }
+    function stopAll() { setState('idle'); userPaused = false; clearTimeout(keepTimer); synth.cancel(); }
 
     btn.addEventListener('click', function () {
       if (state === 'idle') start();
       else if (state === 'playing') { userPaused = true; synth.pause(); setState('paused'); }
-      else if (state === 'paused') { userPaused = false; synth.resume(); setState('playing'); }
+      else if (state === 'paused') { userPaused = false; synth.resume(); setState('playing'); keepAlive(); }
     });
     stopBtn.addEventListener('click', stopAll);
     window.addEventListener('beforeunload', function () { synth.cancel(); });

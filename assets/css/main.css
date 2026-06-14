@@ -254,6 +254,7 @@ hr { border: 0; height: 1px; background: var(--rule); margin: 2.4rem auto; max-w
 .post-list-link:hover .post-list-title { color: var(--gold); }
 .post-list-title { margin: 0; font-size: 1.4rem; transition: color 0.15s ease; }
 .post-list-date, .post-list-tags { margin: 0.3rem 0 0; color: var(--text-muted); font-size: 0.85rem; }
+.post-list-eyebrow { display: block; font-family: var(--display); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
 .coming-soon { text-align: center; color: var(--text-muted); font-style: italic; }
 .empty-vault { text-align: center; max-width: var(--maxw); margin: 1.5rem auto 0; }
 .empty-vault .coming-soon { margin-bottom: 1.8rem; }

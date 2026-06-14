@@ -51,23 +51,37 @@
   </div>
 </section>
 
-{{- $recent := where .Site.RegularPages "Section" "gaming" }}
-{{- with $recent.ByDate.Reverse }}
 <section class="recent">
   <div class="wrap">
-    <h2 class="section-heading">Latest from the Gaming vault</h2>
+    <h2 class="section-heading">Latest from the Vaults</h2>
     <ul class="post-list">
-      {{- range first 5 . }}
+      {{- range slice "gaming" "politics" "stories" }}
+      {{- with (where $.Site.RegularPages "Section" .).ByDate.Reverse }}
+      {{- $p := index . 0 }}
       <li class="post-list-item">
-        <a class="post-list-link" href="{{ .RelPermalink }}">
-          <h3 class="post-list-title">{{ .Title }}</h3>
-          {{- if not .Date.IsZero }}<p class="post-list-date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>{{ end }}
+        <a class="post-list-link" href="{{ $p.RelPermalink }}">
+          <span class="post-list-eyebrow">{{ $p.Section | humanize }}</span>
+          <h3 class="post-list-title">{{ $p.Title }}</h3>
+          {{- if not $p.Date.IsZero }}<p class="post-list-date"><time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "2 January 2006" }}</time></p>{{ end }}
         </a>
       </li>
       {{- end }}
+      {{- end }}
+      <li class="post-list-item">
+        <a class="post-list-link" href="/journals/">
+          <span class="post-list-eyebrow">Journals</span>
+          <h3 class="post-list-title">The journal range</h3>
+          <p class="post-list-date">First titles in preparation</p>
+        </a>
+      </li>
+      <li class="post-list-item">
+        <a class="post-list-link" href="/mythology/">
+          <span class="post-list-eyebrow">Mythology</span>
+          <h3 class="post-list-title">Welsh myth and the Mabinogion</h3>
+          <p class="post-list-date">Opening soon</p>
+        </a>
+      </li>
     </ul>
-    <p class="section-cta"><a class="button ghost" href="/gaming/">All gaming essays</a></p>
   </div>
 </section>
-{{- end }}
 {{ end }}

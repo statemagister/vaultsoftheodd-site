@@ -2,4 +2,4 @@
 title: "The Stories Vault"
 ---
 
-Long-form fiction and creative writing. This vault is being prepared. The first pieces will appear here soon.
+This vault is being rebuilt. An earlier piece is available below; new long-form fiction and creative work will follow.

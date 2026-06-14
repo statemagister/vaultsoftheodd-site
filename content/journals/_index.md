@@ -9,22 +9,22 @@ The first titles are in preparation. Each is offered in a choice of covers — p
 <div class="product-grid">
 
   <div class="product-card">
+    <h3 class="product-name">The Perpetual Journal</h3>
     <div class="product-covers">
       <span class="book-cover" style="--c:#0b0b0d"></span>
       <span class="book-cover" style="--c:#f26b24"></span>
     </div>
-    <h3 class="product-name">The Perpetual Journal</h3>
     <p class="product-desc">A clean, undated hardback in a plain cover — open it on any day and carry it through any year. Circle the month, date and weekday in the margin and write the year in the box, so no pages are wasted and it never goes stale.</p>
     <p class="product-variants">Plain covers: Black &middot; Orange</p>
     <p class="product-status">In preparation</p>
   </div>
 
   <div class="product-card">
+    <h3 class="product-name">The Monster Hunter's Journal</h3>
     <div class="product-covers">
       <img class="cover-img" src="/images/journals/monster-hunters-journal-midnight.png" alt="The Monster Hunter's Journal, midnight cover" loading="lazy">
       <img class="cover-img" src="/images/journals/monster-hunters-journal-gold.png" alt="The Monster Hunter's Journal, gold cover" loading="lazy">
     </div>
-    <h3 class="product-name">The Monster Hunter's Journal</h3>
     <p class="product-desc">A campaign keepsake for any tabletop roleplaying game: a chronological log of every creature your party brings down, with character pages, trackers, and an atmospheric bestiary running through it. System-agnostic — bring your own monsters.</p>
     <p class="product-variants">Cover options: Midnight &middot; Gold</p>
     <p class="product-status">In preparation</p>

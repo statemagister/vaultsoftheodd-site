@@ -20,6 +20,22 @@
   <meta property="og:url" content="{{ .Permalink }}">
   <meta name="twitter:card" content="summary_large_image">
 
+  {{- /* Social share image: per-page `images` front matter if set, else the
+         site-wide default banner. Facebook/Twitter need an absolute URL. */ -}}
+  {{- $ogImage := site.Params.ogImage -}}
+  {{- $ogW := "1200" -}}{{- $ogH := "630" -}}
+  {{- with .Params.images }}{{ $ogImage = index . 0 }}{{ $ogW = "" }}{{ $ogH = "" }}{{ end -}}
+  {{- with $ogImage -}}
+    {{- $img := . -}}{{ if not (hasPrefix $img "http") }}{{ $img = ($img | absURL) }}{{ end }}
+  <meta property="og:image" content="{{ $img }}">
+    {{- if $ogW }}
+  <meta property="og:image:width" content="{{ $ogW }}">
+  <meta property="og:image:height" content="{{ $ogH }}">
+    {{- end }}
+  <meta property="og:image:alt" content="{{ if $isHome }}{{ site.Title }}{{ else }}{{ $title }}{{ end }}">
+  <meta name="twitter:image" content="{{ $img }}">
+  {{- end }}
+
   {{- with .OutputFormats.Get "rss" -}}
     <link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
   {{- end }}

@@ -297,11 +297,12 @@ hr { border: 0; height: 1px; background: var(--rule); margin: 2.4rem auto; max-w
 
 /* WordPress block / figure classes carried over from the export */
 .wp-block-image, figure { margin: 1.8rem 0; }
-figure img { border-radius: 2px; }
+.wp-block-image { display: table; }
+figure img, .wp-block-image img { display: block; border-radius: 2px; }
 .wp-block-image.alignright, figure.alignright { float: right; margin: 0.4rem 0 1.2rem 1.6rem; max-width: 50%; }
 .wp-block-image.alignleft, figure.alignleft { float: left; margin: 0.4rem 1.6rem 1.2rem 0; max-width: 50%; }
-.wp-block-image.aligncenter, figure.aligncenter { text-align: center; }
-figcaption, .wp-element-caption { font-size: 0.78rem; font-style: italic; color: var(--text-muted); margin-top: 0.5rem; text-align: center; }
+.wp-block-image.aligncenter, figure.aligncenter { text-align: center; margin-inline: auto; }
+figcaption, .wp-element-caption { display: table-caption; caption-side: bottom; font-size: 0.78rem; font-style: italic; color: var(--text-muted); margin-top: 0.5rem; text-align: center; }
 .wp-block-separator { max-width: 8rem; }
 .wp-block-button__link, .wp-block-file__button {
   display: inline-block; font-family: var(--display); font-size: 0.8rem; letter-spacing: 0.08em;

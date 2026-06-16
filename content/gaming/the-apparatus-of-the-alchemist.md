@@ -24,7 +24,7 @@ A second framing note. The Apparatus operates in what I10 consistently calls sou
 
 ## The Physical Object
 
-<figure class="wp-block-image alignright size-large is-resized"><img src="/wp-content/uploads/2026/05/IMG_0856-823x1024.jpeg" alt="" class="wp-image-174" style="aspect-ratio:0.8037154729894891;width:312px;height:auto"/></figure>
+<figure class="wp-block-image alignright size-large is-resized"><img src="/wp-content/uploads/2026/05/IMG_0856-823x1024.jpeg" alt="" class="wp-image-174" style="aspect-ratio:0.8037154729894891;width:312px;height:auto"/><figcaption class="wp-element-caption">Interior art from I10 Ravenloft II: The House on Gryphon Hill. Art by Jeff Easley, TSR Inc., 1986.</figcaption></figure>
 
 The Apparatus is described in I10 as a great and terrible achievement. It sits in a large room, over two stories tall. A great network of cold-forged steel rings focuses the power of lightning strikes into a great globe in the dome overhead. The energy is stored and converted into a spinning ball of sulphur encased in a fifteen-foot glass globe. This force is channelled into a bank of small spheres at the base. From there it is focused into a pair of glass chambers where subjects are held.
 

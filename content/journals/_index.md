@@ -4,7 +4,7 @@ title: "The Journals"
 
 Journals published under the Vaults of the ODD imprint. Each one is built to be used and kept: hardback, with a date margin on every page for circle-the-date journalling, so a single journal works for any year and never goes out of date.
 
-The Perpetual Journal is available now; further titles are in preparation. Each is offered in a choice of covers — pick the one you like, and choose a different cover next time. Buy links go live as each journal is published. If you bought a journal that carried this website on its cover, welcome; this is the home it points to.
+The Perpetual Journal and The Monster Hunter's Journal are available now; further titles are in preparation. Each is offered in a choice of covers — pick the one you like, and choose a different cover next time. Buy links go live as each journal is published. If you bought a journal that carried this website on its cover, welcome; this is the home it points to.
 
 <div class="product-grid">
 
@@ -30,8 +30,12 @@ The Perpetual Journal is available now; further titles are in preparation. Each 
       <img class="cover-img" src="/images/journals/monster-hunters-journal-gold.png" alt="The Monster Hunter's Journal, gold cover" loading="lazy">
     </div>
     <p class="product-desc">A campaign keepsake for any tabletop roleplaying game: a chronological log of every creature your party brings down, with character pages, trackers, and an atmospheric bestiary running through it. System-agnostic — bring your own monsters.</p>
-    <p class="product-variants">Cover options: Midnight &middot; Gold</p>
-    <p class="product-status">In preparation</p>
+    <p class="product-variants">Choose your cover and store:</p>
+    <div class="buy">
+      <p class="buy-row"><span class="buy-cover">Midnight</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H5FS9GRV" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H5FS9GRV" rel="noopener noreferrer" target="_blank">Amazon UK</a></p>
+      <p class="buy-row"><span class="buy-cover">Gold</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H5FJW5QY" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H5FJW5QY" rel="noopener noreferrer" target="_blank">Amazon UK</a></p>
+    </div>
+    <p class="product-status available">Available now on Amazon</p>
   </div>
 
 </div>

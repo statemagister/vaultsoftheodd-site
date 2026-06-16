@@ -518,5 +518,5 @@ figcaption, .wp-element-caption { font-size: 0.78rem; font-style: italic; color:
 .product-status.available { color: var(--gold); }
 .buy { margin: 0 0 0.9rem; display: flex; flex-direction: column; gap: 0.5rem; }
 .buy-row { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin: 0; }
-.buy-cover { font-family: var(--display); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); min-width: 3.4rem; }
-.buy .button { font-size: 0.72rem; padding: 0.34rem 0.8rem; }
+.buy-cover { font-family: var(--display); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); flex: 0 0 4.75rem; white-space: nowrap; }
+.buy .button { font-size: 0.72rem; padding: 0.34rem 0.8rem; text-align: center; flex: 0 0 auto; min-width: 5.4rem; }

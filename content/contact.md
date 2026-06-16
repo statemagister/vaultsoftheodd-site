@@ -6,9 +6,7 @@ layout: "page"
 
 For journal enquiries, corrections, permissions, review copies, or any other business, email:
 
-**contact [at] vaultsoftheodd [dot] com**
-
-(Written out to keep the address away from harvesters — replace the bracketed words with `@` and `.` when you write to me.)
+<p class="contact-email"><a href="mailto:contact&#64;vaultsoftheodd.com"><strong>contact&#64;vaultsoftheodd.com</strong></a></p>
 
 Comments are also welcome on any article, and I read them — but for product and permissions questions, email is the better route.
 

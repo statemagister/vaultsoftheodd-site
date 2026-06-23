@@ -24,7 +24,7 @@ No newsletter sign-ups, no accounts on this site, no advertising networks, and n
 
 ## Your rights
 
-Under UK GDPR you have the right to request a copy of any personal data held about you, to have it corrected if inaccurate, and to have it deleted. For anything held by this site, such as a comment, contact the site owner via [buymeacoffee.com/drewgriffiths](https://buymeacoffee.com/drewgriffiths) and it will be dealt with within a reasonable period. Data held by GitHub as the hosting and comments provider is subject to GitHub's own privacy statement and your rights are exercised through GitHub.
+Under UK GDPR you have the right to request a copy of any personal data held about you, to have it corrected if inaccurate, and to have it deleted. For anything held by this site, such as a comment, email the site owner at [contact@vaultsoftheodd.com](mailto:contact@vaultsoftheodd.com) and it will be dealt with within a reasonable period. Data held by GitHub as the hosting and comments provider is subject to GitHub's own privacy statement and your rights are exercised through GitHub.
 
 If you believe your data has been mishandled, you have the right to complain to the Information Commissioner's Office at [ico.org.uk](https://ico.org.uk).
 

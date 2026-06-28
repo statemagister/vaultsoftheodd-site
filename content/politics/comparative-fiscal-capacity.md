@@ -1323,7 +1323,9 @@ Pensions. Competence: Design-dependent. A federal settlement could leave the sch
   window.addEventListener('hashchange', openHash); openHash();
 
   // Footnote evidence popover: clicking a footnote marker shows the referenced
-  // mechanism cell(s) in a floating sheet over the page, without moving it.
+  // evidence (mechanism cell, or the method/synthesis section) in a floating
+  // sheet over the page, without moving it.
+  var CLONEABLE = /^(m\d\d|annex-a|annex-c)$/;   // not annex-d (78 sources) or appendix-f (archived)
   var bd = document.createElement('div'); bd.className = 'fn-backdrop'; bd.hidden = true; document.body.appendChild(bd);
   var pop = document.createElement('div'); pop.className = 'fn-pop'; pop.hidden = true;
   pop.innerHTML = '<button class="fn-pop-close" type="button" aria-label="Close">×</button><div class="fn-pop-inner"></div>';
@@ -1333,6 +1335,8 @@ Pensions. Competence: Design-dependent. A federal settlement could leave the sch
   pop.querySelector('.fn-pop-close').addEventListener('click', close);
   bd.addEventListener('click', close);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  // a link inside the popover (rare fallback case) should dismiss it so the target is visible
+  inner.addEventListener('click', function (e) { if (e.target.closest('a[href^="#"]')) close(); });
 
   post.addEventListener('click', function (e) {
     var a = e.target.closest('a.footnote-ref'); if (!a) return;
@@ -1340,9 +1344,9 @@ Pensions. Competence: Design-dependent. A federal settlement could leave the sch
     var li = document.getElementById((a.getAttribute('href') || '').slice(1)); if (!li) return;
     var num = li.id.split(':').pop();
     var ids = [];
-    Array.prototype.forEach.call(li.querySelectorAll('a[href^="#m"]'), function (l) {
+    Array.prototype.forEach.call(li.querySelectorAll('a[href^="#"]'), function (l) {
       var p = l.getAttribute('href').slice(1);
-      if (/^m\d\d$/.test(p) && ids.indexOf(p) < 0) ids.push(p);
+      if (CLONEABLE.test(p) && ids.indexOf(p) < 0) ids.push(p);
     });
     inner.innerHTML = '';
     var lab = document.createElement('p'); lab.className = 'fn-pop-label'; lab.textContent = 'Note ' + num; inner.appendChild(lab);

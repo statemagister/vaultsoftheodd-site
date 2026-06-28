@@ -323,6 +323,7 @@ hr { border: 0; height: 1px; background: var(--rule); margin: 2.4rem auto; max-w
 .fn-pop-close { position: absolute; top: 0.4rem; right: 0.7rem; background: none; border: 0; font-size: 1.6rem; line-height: 1; color: var(--text-muted); cursor: pointer; }
 .fn-pop-label { font-family: var(--display); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 0.7rem; }
 .fn-pop-note { font-size: 0.85rem; font-style: italic; color: var(--text-muted); margin: 0 0 0.6rem; }
+.fn-pop-inner h4:not(:first-of-type) { border-top: 1px solid var(--rule); padding-top: 1rem; margin-top: 1.3rem; }
 .fn-pop h4 { font-family: var(--display); color: var(--gold); font-size: 1.02rem; margin: 0.9rem 0 0.5rem; }
 .fn-pop p { margin: 0 0 0.7rem; font-size: 0.95rem; line-height: 1.5; }
 .fn-pop table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin: 0.6rem 0; }

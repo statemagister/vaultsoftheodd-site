@@ -1320,8 +1320,6 @@ Pensions. Competence: Design-dependent. A federal settlement could leave the sch
   function openHash() { var h = location.hash; if (!h) return; try { var e = document.querySelector(h); if (e && e.tagName === 'DETAILS') { e.open = true; e.scrollIntoView(); } } catch (x) {} }
   window.addEventListener('hashchange', openHash); openHash();
 
-  // Footnote popover: shows the referenced evidence in a floating sheet and
-  // NEVER navigates the page (every internal link inside it is neutralised).
   var CLONEABLE = /^(m\d\d|annex-a|annex-c|appendix-f)$/;
   var bd = document.createElement('div'); bd.className = 'fn-backdrop'; bd.hidden = true; document.body.appendChild(bd);
   var pop = document.createElement('div'); pop.className = 'fn-pop'; pop.hidden = true;
@@ -1343,6 +1341,12 @@ Pensions. Competence: Design-dependent. A federal settlement could leave the sch
     }
     return frag;
   }
+  function compactMatrix() {
+    var a = document.getElementById('annex-a'); if (!a) return null;
+    var ts = a.querySelectorAll('table');
+    for (var i = 0; i < ts.length; i++) { var x = ts[i].textContent || ''; if (/Mechanism/.test(x) && /IND/.test(x)) return ts[i]; }
+    return null;
+  }
 
   post.addEventListener('click', function (e) {
     var a = e.target.closest('a.footnote-ref'); if (!a) return;
@@ -1357,8 +1361,11 @@ Pensions. Competence: Design-dependent. A federal settlement could leave the sch
     });
     inner.innerHTML = '';
     var lab = document.createElement('p'); lab.className = 'fn-pop-label'; lab.textContent = 'Note ' + num; inner.appendChild(lab);
-    if (refs.length >= 1 && refs.length <= 3) {
-      if (range) { var nt = document.createElement('p'); nt.className = 'fn-pop-note'; nt.textContent = 'Evidenced across all eleven mechanisms; the first and last cells are shown.'; inner.appendChild(nt); }
+    var mx;
+    if (range && (mx = compactMatrix())) {
+      var nt = document.createElement('p'); nt.className = 'fn-pop-note'; nt.textContent = 'Evidenced across all eleven mechanisms. The compact matrix is shown; the full dossiers are in the Evidence Annex below.'; inner.appendChild(nt);
+      inner.appendChild(mx.cloneNode(true));
+    } else if (refs.length >= 1 && refs.length <= 3) {
       refs.forEach(function (r) {
         var panel = document.getElementById(r.pid); if (!panel) return;
         var h = document.createElement('h4'); h.textContent = panel.querySelector('summary').textContent; inner.appendChild(h);

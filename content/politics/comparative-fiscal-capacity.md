@@ -1315,5 +1315,49 @@ Pensions. Competence: Design-dependent. A federal settlement could leave the sch
 </details>
 
 <script>
-(function(){function o(){var h=location.hash;if(!h)return;try{var e=document.querySelector(h);if(e&&e.tagName==='DETAILS'){e.open=true;e.scrollIntoView();}}catch(x){}}window.addEventListener('hashchange',o);o();})();
+(function () {
+  var post = document.querySelector('.post-body'); if (!post) return;
+
+  // Open a targeted annex panel when its link is followed directly.
+  function openHash() { var h = location.hash; if (!h) return; try { var e = document.querySelector(h); if (e && e.tagName === 'DETAILS') { e.open = true; e.scrollIntoView(); } } catch (x) {} }
+  window.addEventListener('hashchange', openHash); openHash();
+
+  // Footnote evidence popover: clicking a footnote marker shows the referenced
+  // mechanism cell(s) in a floating sheet over the page, without moving it.
+  var bd = document.createElement('div'); bd.className = 'fn-backdrop'; bd.hidden = true; document.body.appendChild(bd);
+  var pop = document.createElement('div'); pop.className = 'fn-pop'; pop.hidden = true;
+  pop.innerHTML = '<button class="fn-pop-close" type="button" aria-label="Close">×</button><div class="fn-pop-inner"></div>';
+  document.body.appendChild(pop);
+  var inner = pop.querySelector('.fn-pop-inner');
+  function close() { pop.hidden = true; bd.hidden = true; }
+  pop.querySelector('.fn-pop-close').addEventListener('click', close);
+  bd.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+
+  post.addEventListener('click', function (e) {
+    var a = e.target.closest('a.footnote-ref'); if (!a) return;
+    e.preventDefault();
+    var li = document.getElementById((a.getAttribute('href') || '').slice(1)); if (!li) return;
+    var num = li.id.split(':').pop();
+    var ids = [];
+    Array.prototype.forEach.call(li.querySelectorAll('a[href^="#m"]'), function (l) {
+      var p = l.getAttribute('href').slice(1);
+      if (/^m\d\d$/.test(p) && ids.indexOf(p) < 0) ids.push(p);
+    });
+    inner.innerHTML = '';
+    var lab = document.createElement('p'); lab.className = 'fn-pop-label'; lab.textContent = 'Note ' + num; inner.appendChild(lab);
+    if (ids.length >= 1 && ids.length <= 3) {
+      ids.forEach(function (p) {
+        var panel = document.getElementById(p); if (!panel) return;
+        var h = document.createElement('h4'); h.textContent = panel.querySelector('summary').textContent; inner.appendChild(h);
+        Array.prototype.forEach.call(panel.children, function (node) { if (node.tagName !== 'SUMMARY') inner.appendChild(node.cloneNode(true)); });
+      });
+    } else {
+      var clone = li.cloneNode(true);
+      var br = clone.querySelector('.footnote-backref'); if (br) br.parentNode.removeChild(br);
+      var c = document.createElement('div'); c.innerHTML = clone.innerHTML; inner.appendChild(c);
+    }
+    inner.scrollTop = 0; pop.scrollTop = 0; pop.hidden = false; bd.hidden = false;
+  });
+})();
 </script>

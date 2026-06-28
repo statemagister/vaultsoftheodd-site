@@ -295,6 +295,18 @@ hr { border: 0; height: 1px; background: var(--rule); margin: 2.4rem auto; max-w
 .post-body th, .post-body td { border: 1px solid var(--rule-soft); padding: 0.55rem 0.7rem; text-align: left; }
 .post-body th { color: var(--gold); font-family: var(--display); font-size: 0.85rem; }
 
+/* Collapsible evidence annex */
+.post-body details.annex { margin: 2.4rem 0; border: 1px solid var(--rule); border-radius: 4px; background: var(--bg-alt); }
+.post-body details.annex > summary { cursor: pointer; padding: 1rem 1.2rem; font-family: var(--display); font-size: 0.95rem; letter-spacing: 0.02em; color: var(--gold); list-style: none; }
+.post-body details.annex > summary::-webkit-details-marker { display: none; }
+.post-body details.annex > summary::before { content: "\25B8"; display: inline-block; margin-right: 0.6rem; transition: transform 0.15s ease; }
+.post-body details.annex[open] > summary::before { transform: rotate(90deg); }
+.post-body details.annex[open] > summary { border-bottom: 1px solid var(--rule-soft); }
+.post-body details.annex > :not(summary) { margin-left: 1.2rem; margin-right: 1.2rem; }
+.post-body details.annex > summary + * { margin-top: 1.2rem; }
+.post-body details.annex table { font-size: 0.9rem; }
+.paper-download .button.ghost { margin-left: 0.4rem; }
+
 /* WordPress block / figure classes carried over from the export */
 .wp-block-image, figure { margin: 1.8rem 0; }
 .wp-block-image { display: table; }

@@ -6,7 +6,7 @@ date: 2026-06-13T10:00:00Z
 weight: 10
 summary: "A strategic framework for Welsh constitutional development across the 2026–2030 Senedd term. Its thesis is that constitutional durability follows institutional capability rather than preceding it — that building governing capacity is itself constitutional work, and serves Wales under any of the futures identified by the Independent Commission on the Constitutional Future of Wales."
 pdf: "/papers/griffiths-welsh-constitutional-framework-may-2026.pdf"
-prereq: "**New to this work? This is the place to start.** The four companion papers all build on the argument set out here."
+prereq: "**New to this work? This is the place to start.** The five companion papers all build on the argument set out here."
 ---
 
 *A working paper on how a Plaid Cymru-led Welsh government, working with the Welsh Greens and broader civil society, can advance serious Welsh constitutional development across the full range of options identified by the Independent Commission on the Constitutional Future of Wales (2024).*

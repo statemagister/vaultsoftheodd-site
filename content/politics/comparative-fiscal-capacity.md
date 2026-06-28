@@ -1318,14 +1318,12 @@ Pensions. Competence: Design-dependent. A federal settlement could leave the sch
 (function () {
   var post = document.querySelector('.post-body'); if (!post) return;
 
-  // Open a targeted annex panel when its link is followed directly.
   function openHash() { var h = location.hash; if (!h) return; try { var e = document.querySelector(h); if (e && e.tagName === 'DETAILS') { e.open = true; e.scrollIntoView(); } } catch (x) {} }
   window.addEventListener('hashchange', openHash); openHash();
 
-  // Footnote evidence popover: clicking a footnote marker shows the referenced
-  // evidence (mechanism cell, or the method/synthesis section) in a floating
-  // sheet over the page, without moving it.
-  var CLONEABLE = /^(m\d\d|annex-a|annex-c)$/;   // not annex-d (78 sources) or appendix-f (archived)
+  // Footnote evidence popover: show the SPECIFIC cell a footnote names
+  // (e.g. M04-IND), not the whole mechanism, in a floating sheet.
+  var CLONEABLE = /^(m\d\d|annex-a|annex-c)$/;
   var bd = document.createElement('div'); bd.className = 'fn-backdrop'; bd.hidden = true; document.body.appendChild(bd);
   var pop = document.createElement('div'); pop.className = 'fn-pop'; pop.hidden = true;
   pop.innerHTML = '<button class="fn-pop-close" type="button" aria-label="Close">×</button><div class="fn-pop-inner"></div>';
@@ -1335,26 +1333,43 @@ Pensions. Competence: Design-dependent. A federal settlement could leave the sch
   pop.querySelector('.fn-pop-close').addEventListener('click', close);
   bd.addEventListener('click', close);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
-  // a link inside the popover (rare fallback case) should dismiss it so the target is visible
   inner.addEventListener('click', function (e) { if (e.target.closest('a[href^="#"]')) close(); });
+
+  function bodyNodes(panel) { return Array.prototype.filter.call(panel.children, function (n) { return n.tagName !== 'SUMMARY'; }); }
+  // pull just the named cell (e.g. M04-IND) out of a mechanism panel
+  function extractCell(panel, code) {
+    var frag = [], started = false, kids = bodyNodes(panel);
+    for (var i = 0; i < kids.length; i++) {
+      var t = (kids[i].textContent || '').trim();
+      var hm = t.match(/^(M\d\d-[A-Za-z]+)\./);
+      if (started) { if (hm || /^Federal variant/.test(t)) break; frag.push(kids[i]); }
+      else if (hm && hm[1] === code) { started = true; frag.push(kids[i]); }
+    }
+    return frag;
+  }
 
   post.addEventListener('click', function (e) {
     var a = e.target.closest('a.footnote-ref'); if (!a) return;
     e.preventDefault();
     var li = document.getElementById((a.getAttribute('href') || '').slice(1)); if (!li) return;
     var num = li.id.split(':').pop();
-    var ids = [];
-    Array.prototype.forEach.call(li.querySelectorAll('a[href^="#"]'), function (l) {
-      var p = l.getAttribute('href').slice(1);
-      if (CLONEABLE.test(p) && ids.indexOf(p) < 0) ids.push(p);
-    });
+    var range = / through /.test(li.textContent || '');   // whole-column refs -> citation fallback
+    var refs = [];
+    if (!range) {
+      Array.prototype.forEach.call(li.querySelectorAll('a[href^="#"]'), function (l) {
+        var pid = l.getAttribute('href').slice(1);
+        if (CLONEABLE.test(pid)) refs.push({ pid: pid, code: (l.textContent || '').trim() });
+      });
+    }
     inner.innerHTML = '';
     var lab = document.createElement('p'); lab.className = 'fn-pop-label'; lab.textContent = 'Note ' + num; inner.appendChild(lab);
-    if (ids.length >= 1 && ids.length <= 3) {
-      ids.forEach(function (p) {
-        var panel = document.getElementById(p); if (!panel) return;
+    if (refs.length >= 1 && refs.length <= 3) {
+      refs.forEach(function (r) {
+        var panel = document.getElementById(r.pid); if (!panel) return;
         var h = document.createElement('h4'); h.textContent = panel.querySelector('summary').textContent; inner.appendChild(h);
-        Array.prototype.forEach.call(panel.children, function (node) { if (node.tagName !== 'SUMMARY') inner.appendChild(node.cloneNode(true)); });
+        var nodes = /^m\d\d$/.test(r.pid) ? extractCell(panel, r.code) : [];
+        if (!nodes.length) nodes = bodyNodes(panel);
+        nodes.forEach(function (n) { inner.appendChild(n.cloneNode(true)); });
       });
     } else {
       var clone = li.cloneNode(true);

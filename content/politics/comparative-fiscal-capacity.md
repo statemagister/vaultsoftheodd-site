@@ -38,7 +38,7 @@ The paper compares three live paths: the current settlement, enhanced devolution
 
 A word on what the readings mean. "Reserved" marks a function held at UK level. "Build-required" marks a capacity Wales would have to construct. "Sovereign build" marks a function that independence would place wholly in Welsh hands but that no existing Welsh institution yet performs. And the evidence readings matter as much as the capacity ones: to say a requirement is well diagnosed but its design absent is not to say it is impossible, only that the work of specifying it has not yet been done. The paper is an account of requirements and evidence. It is not, and does not become, an argument for a destination.
 
-[^1]: See Evidence Annex, Annex A, for the competence, capacity and evidence-band coding method.
+[^1]: See Evidence Annex, [Annex A](#annex-a), for the competence, capacity and evidence-band coding method.
 
 ## 2. The current settlement: a partial state
 
@@ -60,14 +60,14 @@ Debt and pensions complete the picture, and pensions in particular show how a re
 
 The point of this section is not to judge whether the current settlement is adequate. It is to establish, in concrete terms, the starting position from which any change is measured. That position is a partial state: an operating tax authority over a narrow base, real but capped borrowing, a development bank that is not a deposit-taking bank, a welfare layer beside a reserved system, procurement-level payment practice without payment-system power, and reserved liabilities that nonetheless cost Welsh budgets. Every requirement the other two paths impose is a change to this baseline, not to a blank page.
 
-[^2]: See Evidence Annex, Annex B, M01-B through M11-B.
-[^3]: See Evidence Annex, Annex B, M01-B; Annex D, S001, S002.
-[^4]: See Evidence Annex, Annex B, M02-B; Annex D, S002, S003.
-[^5]: See Evidence Annex, Annex B, M03-B; Annex D, S070, S071, S067.
-[^6]: See Evidence Annex, Annex B, M07-B; Annex D, S044, S045, S046, S047.
-[^7]: See Evidence Annex, Annex B, M10-B; Annex D, S055, S018.
-[^8]: See Evidence Annex, Annex B, M09-B; Annex D, S055, S056, S051, S052, S018.
-[^9]: See Evidence Annex, Annex B, M06-B; Annex D, S018, S023, S030, S031, S035.
+[^2]: See Evidence Annex, [Annex B](#annex-b), [M01-B](#m01) through [M11-B](#m11).
+[^3]: See Evidence Annex, [Annex B](#annex-b), [M01-B](#m01); [Annex D](#annex-d), S001, S002.
+[^4]: See Evidence Annex, [Annex B](#annex-b), [M02-B](#m02); [Annex D](#annex-d), S002, S003.
+[^5]: See Evidence Annex, [Annex B](#annex-b), [M03-B](#m03); [Annex D](#annex-d), S070, S071, S067.
+[^6]: See Evidence Annex, [Annex B](#annex-b), [M07-B](#m07); [Annex D](#annex-d), S044, S045, S046, S047.
+[^7]: See Evidence Annex, [Annex B](#annex-b), [M10-B](#m10); [Annex D](#annex-d), S055, S018.
+[^8]: See Evidence Annex, [Annex B](#annex-b), [M09-B](#m09); [Annex D](#annex-d), S055, S056, S051, S052, S018.
+[^9]: See Evidence Annex, [Annex B](#annex-b), [M06-B](#m06); [Annex D](#annex-d), S018, S023, S030, S031, S035.
 
 ## 3. Enhanced devolution: the build question
 
@@ -85,11 +85,11 @@ So the enhanced-devolution finding is twofold. It is a capacity-and-design route
 
 It is also uneven. It strengthens some mechanisms substantially, leaves others, currency, the core of payments, the deposit-taking boundary, untouched unless the model is stretched into something else, and in the case of welfare requires Wales to construct a delivery institution before the responsibility can be carried safely. That unevenness is not a flaw in the model; it is what the evidence shows the model to be.
 
-[^10]: See Evidence Annex, Annex B, M01-ED through M11-ED.
-[^11]: See Evidence Annex, Annex B, M01-ED, M02-ED, M03-ED; Annex D, S001, S002.
-[^12]: See Evidence Annex, Annex B, M07-ED; Annex D, S044, S045, S046, S047.
-[^13]: See Evidence Annex, Annex B, M07-ED, M08-ED; Annex D, S044, S048.
-[^14]: See Evidence Annex, Annex B, M09-ED, M10-ED, M05-ED; Annex D, S055, S018, S051, S052.
+[^10]: See Evidence Annex, [Annex B](#annex-b), [M01-ED](#m01) through [M11-ED](#m11).
+[^11]: See Evidence Annex, [Annex B](#annex-b), [M01-ED](#m01), [M02-ED](#m02), [M03-ED](#m03); [Annex D](#annex-d), S001, S002.
+[^12]: See Evidence Annex, [Annex B](#annex-b), [M07-ED](#m07); [Annex D](#annex-d), S044, S045, S046, S047.
+[^13]: See Evidence Annex, [Annex B](#annex-b), [M07-ED](#m07), [M08-ED](#m08); [Annex D](#annex-d), S044, S048.
+[^14]: See Evidence Annex, [Annex B](#annex-b), [M09-ED](#m09), [M10-ED](#m10), [M05-ED](#m05); [Annex D](#annex-d), S055, S018, S051, S052.
 
 ## 4. Independence: the change of form
 
@@ -111,15 +111,15 @@ Debt, pensions and inherited liabilities are the last movement, and they are dif
 
 Taken together, these movements give the independence finding its real shape. Independence removes the dependence that defines the current settlement and replaces it with a requirement to build sovereign fiscal architecture: most of it well diagnosed but not yet designed, the currency question well mapped but unchosen, the liabilities question resolvable only by negotiation. Whether that exchange is worth making is precisely the question this paper does not answer. What it can do, and what this section has tried to do, is set out what the exchange consists of.[^23]
 
-[^15]: See Evidence Annex, Annex B, M01-IND through M11-IND.
-[^16]: See Evidence Annex, Annex B, M01-IND; Annex D, S064, S065, S066, S067.
-[^17]: See Evidence Annex, Annex B, M02-IND; Annex D, S068, S069.
-[^18]: See Evidence Annex, Annex B, M03-IND, M04-IND; Annex D, S070, S071, S073.
-[^19]: See Evidence Annex, Annex B, M07-IND, M08-IND; Annex D, S044, S048, S049, S050.
-[^20]: See Evidence Annex, Annex B, M05-IND; Annex D, S074, S075.
-[^21]: See Evidence Annex, Annex B, M09-IND, M10-IND; Annex D, S055, S057, S018.
-[^22]: See Evidence Annex, Annex B, M06-IND; Annex D, S027, S028, S029.
-[^23]: See Evidence Annex, Annex A; Annex B, M01-IND through M11-IND.
+[^15]: See Evidence Annex, [Annex B](#annex-b), [M01-IND](#m01) through [M11-IND](#m11).
+[^16]: See Evidence Annex, [Annex B](#annex-b), [M01-IND](#m01); [Annex D](#annex-d), S064, S065, S066, S067.
+[^17]: See Evidence Annex, [Annex B](#annex-b), [M02-IND](#m02); [Annex D](#annex-d), S068, S069.
+[^18]: See Evidence Annex, [Annex B](#annex-b), [M03-IND](#m03), [M04-IND](#m04); [Annex D](#annex-d), S070, S071, S073.
+[^19]: See Evidence Annex, [Annex B](#annex-b), [M07-IND](#m07), [M08-IND](#m08); [Annex D](#annex-d), S044, S048, S049, S050.
+[^20]: See Evidence Annex, [Annex B](#annex-b), [M05-IND](#m05); [Annex D](#annex-d), S074, S075.
+[^21]: See Evidence Annex, [Annex B](#annex-b), [M09-IND](#m09), [M10-IND](#m10); [Annex D](#annex-d), S055, S057, S018.
+[^22]: See Evidence Annex, [Annex B](#annex-b), [M06-IND](#m06); [Annex D](#annex-d), S027, S028, S029.
+[^23]: See Evidence Annex, [Annex A](#annex-a); [Annex B](#annex-b), [M01-IND](#m01) through [M11-IND](#m11).
 
 
 ---
@@ -154,13 +154,13 @@ That is also why the strength of the evidence matters as much as the direction o
 
 The federal model is treated separately because it was considered in the underlying assessment but is not one of the live paths compared in the reader-facing paper.
 
-[^24]: See Evidence Annex, Annex C; Annex A.
+[^24]: See Evidence Annex, [Annex C](#annex-c); [Annex A](#annex-a).
 
 ## 6. The federal model
 
 Federalism was considered during the underlying assessment but is not treated as a live publication spine in this paper. The reason is not that federalism is analytically irrelevant, but that it has low Welsh-specific evidence, high institutional distance from the present UK settlement, and low present political plausibility as a practical route. The federal column is therefore retained in the evidence annex as archived comparator material, rather than placed beside the current settlement, enhanced devolution and independence as a live path in the reader comparison.[^25]
 
-[^25]: See Evidence Annex, Appendix F.
+[^25]: See Evidence Annex, [Appendix F](#appendix-f).
 
 ## 7. What this paper does and does not settle
 
@@ -174,8 +174,7 @@ The evidence behind the findings is set out in full in the companion evidence an
 
 [^26]: See the companion document, Comparative Fiscal Capacity: Evidence Annex.
 
-<details class="annex">
-<summary>Evidence Annex — method, mechanism dossiers, cross-cutting synthesis, source log, and archived federal column</summary>
+## Evidence Annex
 
 Companion document to the policy paper Comparative Fiscal Capacity.
 
@@ -189,7 +188,8 @@ Provenance. This annex was assembled from verified mechanism modules and a consi
 
 How to read this annex. Annex A sets out the method: the constitutional models compared, the competence and capacity codes, and the evidence bands, with the full technical matrix. Annex B is the heart of the annex: eleven mechanism dossiers, each gathering a mechanism's variants across the current settlement, enhanced devolution and independence, with a pointer to the archived federal variant. Annex C is the cross-cutting synthesis, which reads the pattern across mechanisms and models. Annex D is the source log. Appendix F holds the archived federal column in full.
 
-## Annex A: Method and matrix
+<details class="annex" id="annex-a">
+<summary>Annex A — Method and matrix</summary>
 
 ### A.1 Column codes
 
@@ -294,11 +294,14 @@ A cell should not be treated as strong merely because the literature is dense. D
 
 Note on cross-column mechanism notes: the whole-mechanism interpretation notes for M05 through M11 are placed at the head of their respective mechanism dossiers in Annex B, where they introduce the mechanism before its model variants. Mechanisms M01 through M04 have no whole-mechanism note; their model-specific interpretation, where it exists, is federal-specific and is held in Appendix F.
 
-## Annex B: Mechanism dossiers
+</details>
+
+<h3 id="annex-b">Annex B — Mechanism dossiers</h3>
 
 Each dossier gathers one mechanism across the current settlement (baseline), enhanced devolution and independence, with a pointer to the archived federal variant in Appendix F. Mechanisms M05 through M11 open with a whole-mechanism interpretation note; M01 through M04 have no whole-mechanism note (their model-specific interpretation, where it exists, is federal-specific and is held in Appendix F). Cell identifiers (for example M04-IND) and source identifiers (for example S066) are the stable citation anchors used by the companion policy paper.
 
-### B.M01 Barnett and territorial funding
+<details class="annex" id="m01">
+<summary>M01 — Barnett and territorial funding</summary>
 
 **M01-B. Baseline: repaired or protected current devolution**
 
@@ -338,7 +341,10 @@ Each dossier gathers one mechanism across the current settlement (baseline), enh
 
 **Federal variant:** see Appendix F, M01-FED.
 
-### B.M02 Borrowing and budget management
+</details>
+
+<details class="annex" id="m02">
+<summary>M02 — Borrowing and budget management</summary>
 
 **M02-B. Baseline: repaired or protected current devolution**
 
@@ -378,7 +384,10 @@ Each dossier gathers one mechanism across the current settlement (baseline), enh
 
 **Federal variant:** see Appendix F, M02-FED.
 
-### B.M03 Devolved taxation and tax administration
+</details>
+
+<details class="annex" id="m03">
+<summary>M03 — Devolved taxation and tax administration</summary>
 
 **M03-B. Baseline: repaired or protected current devolution**
 
@@ -418,7 +427,10 @@ Each dossier gathers one mechanism across the current settlement (baseline), enh
 
 **Federal variant:** see Appendix F, M03-FED.
 
-### B.M04 Fiscal measurement and instrumentation
+</details>
+
+<details class="annex" id="m04">
+<summary>M04 — Fiscal measurement and instrumentation</summary>
 
 **M04-B. Baseline: repaired or protected current devolution**
 
@@ -458,7 +470,10 @@ Each dossier gathers one mechanism across the current settlement (baseline), enh
 
 **Federal variant:** see Appendix F, M04-FED.
 
-### B.M05 Currency and monetary policy
+</details>
+
+<details class="annex" id="m05">
+<summary>M05 — Currency and monetary policy</summary>
 
 Cross-column mechanism note (M05)
 
@@ -508,7 +523,10 @@ The independence column is the point at which the live currency questions arise:
 
 **Federal variant:** see Appendix F, M05-FED.
 
-### B.M06 Debt, pensions, and inherited liabilities
+</details>
+
+<details class="annex" id="m06">
+<summary>M06 — Debt, pensions, and inherited liabilities</summary>
 
 Cross-column mechanism note (M06)
 
@@ -564,7 +582,10 @@ Pensions. Competence: reserved, with the same narrow devolved exception for fire
 
 **Federal variant:** see Appendix F, M06-FED.
 
-### B.M07 Social security and welfare
+</details>
+
+<details class="annex" id="m07">
+<summary>M07 — Social security and welfare</summary>
 
 Cross-column mechanism note (M07)
 
@@ -616,7 +637,10 @@ The independence column makes social security a full sovereign responsibility (M
 
 **Federal variant:** see Appendix F, M07-FED.
 
-### B.M08 State capacity and transition capacity
+</details>
+
+<details class="annex" id="m08">
+<summary>M08 — State capacity and transition capacity</summary>
 
 Cross-column mechanism note (M08)
 
@@ -668,7 +692,10 @@ The independence column makes state capacity full sovereign capacity (M08-IND, M
 
 **Federal variant:** see Appendix F, M08-FED.
 
-### B.M09 Payment resilience and payment rails
+</details>
+
+<details class="annex" id="m09">
+<summary>M09 — Payment resilience and payment rails</summary>
 
 Cross-column mechanism note (M09)
 
@@ -718,7 +745,10 @@ The enhanced-devolution finding is that resilience work does not have to wait fo
 
 **Federal variant:** see Appendix F, M09-FED.
 
-### B.M10 Green Bank and public finance vehicles
+</details>
+
+<details class="annex" id="m10">
+<summary>M10 — Green Bank and public finance vehicles</summary>
 
 Cross-column mechanism note (M10)
 
@@ -772,7 +802,10 @@ The independence column (M10-IND, Medium) removes the UK regulatory constraint o
 
 **Federal variant:** see Appendix F, M10-FED.
 
-### B.M11 Productivity and economic structure
+</details>
+
+<details class="annex" id="m11">
+<summary>M11 — Productivity and economic structure</summary>
 
 Cross-column mechanism note (M11)
 
@@ -826,7 +859,10 @@ The independence column (M11-IND, Medium) makes the full set of economic levers 
 
 **Federal variant:** see Appendix F, M11-FED.
 
-## Annex C: Cross-cutting synthesis
+</details>
+
+<details class="annex" id="annex-c">
+<summary>Annex C — Cross-cutting synthesis</summary>
 
 This section reads the pattern across the coded mechanisms and constitutional models. It is included as an audit-facing synthesis: claims remain tagged to mechanism cells, source-log entries, or preserved cross-column mechanism notes so that the route from finding to evidence remains visible.
 
@@ -924,7 +960,10 @@ The stopping line:
 
 The synthesis explains what the grid shows about fiscal capacity, dependency and build requirements. It does not choose the constitutional future.
 
-## Annex D: Source log
+</details>
+
+<details class="annex" id="annex-d">
+<summary>Annex D — Source log (78 sources)</summary>
 
 Scope: S001 through S078. S036 and S037 intentionally unallocated. This source log is the reference target for the mechanism cells in Annex B and Appendix F, and for the footnotes in the companion policy paper.
 
@@ -1090,7 +1129,10 @@ Note on source numbering: S036 and S037 are intentionally unallocated. The OECD 
 
 Source-log consistency pass complete: S057 producer confirmed; S026, S030, S031, S039, S065 and S066 dates confirmed. No "Date to confirm" or producer-to-confirm flags remain.
 
-## Appendix F: Federal column archive
+</details>
+
+<details class="annex" id="appendix-f">
+<summary>Appendix F — Federal column archive</summary>
 
 The federal column is archived, not part of the publication spine. It is retained here in full for analytical completeness and as the resolution target for the "Federal variant" pointers in the Annex B dossiers. The companion policy paper carries only a short note explaining why federalism was archived (low Welsh-specific evidence, high institutional distance, low present political plausibility); the full federal cells and federal-specific interpretation notes are held here.
 
@@ -1271,3 +1313,7 @@ Pensions. Competence: Design-dependent. A federal settlement could leave the sch
 **Caveat:** The evidence for the Welsh federal application is thin. The federal column changes the allocation question but does not itself solve the productivity problem. The grid has already shown that federal funding, borrowing, taxation, fiscal measurement, welfare, state capacity, payment resilience and public-finance vehicles would all require new shared-rule architecture. M11 records that productivity would sit across those systems rather than follow automatically from federal form.
 
 </details>
+
+<script>
+(function(){function o(){var h=location.hash;if(!h)return;try{var e=document.querySelector(h);if(e&&e.tagName==='DETAILS'){e.open=true;e.scrollIntoView();}}catch(x){}}window.addEventListener('hashchange',o);o();})();
+</script>

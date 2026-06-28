@@ -2,6 +2,7 @@
 <div class="post-layout wrap">
   <div class="post-main">
     <article class="post">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a>{{- if .Section }}{{- with .Site.GetPage (printf "/%s" .Section) }}<span class="sep" aria-hidden="true">&rsaquo;</span><a href="{{ .RelPermalink }}">{{ $.Section | humanize | title }}</a>{{- end }}{{- end }}</nav>
       <header class="post-header">
         {{- with .Params.settings }}
         <p class="post-setting">{{ delimit . " &middot; " | safeHTML }}</p>

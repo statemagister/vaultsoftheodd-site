@@ -1317,13 +1317,12 @@ Pensions. Competence: Design-dependent. A federal settlement could leave the sch
 <script>
 (function () {
   var post = document.querySelector('.post-body'); if (!post) return;
-
   function openHash() { var h = location.hash; if (!h) return; try { var e = document.querySelector(h); if (e && e.tagName === 'DETAILS') { e.open = true; e.scrollIntoView(); } } catch (x) {} }
   window.addEventListener('hashchange', openHash); openHash();
 
-  // Footnote evidence popover: show the SPECIFIC cell a footnote names
-  // (e.g. M04-IND), not the whole mechanism, in a floating sheet.
-  var CLONEABLE = /^(m\d\d|annex-a|annex-c)$/;
+  // Footnote popover: shows the exact referenced evidence in a floating sheet
+  // and NEVER navigates the page (every internal link inside it is neutralised).
+  var CLONEABLE = /^(m\d\d|annex-a|annex-c|appendix-f)$/;
   var bd = document.createElement('div'); bd.className = 'fn-backdrop'; bd.hidden = true; document.body.appendChild(bd);
   var pop = document.createElement('div'); pop.className = 'fn-pop'; pop.hidden = true;
   pop.innerHTML = '<button class="fn-pop-close" type="button" aria-label="Close">×</button><div class="fn-pop-inner"></div>';
@@ -1333,15 +1332,12 @@ Pensions. Competence: Design-dependent. A federal settlement could leave the sch
   pop.querySelector('.fn-pop-close').addEventListener('click', close);
   bd.addEventListener('click', close);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
-  inner.addEventListener('click', function (e) { if (e.target.closest('a[href^="#"]')) close(); });
 
   function bodyNodes(panel) { return Array.prototype.filter.call(panel.children, function (n) { return n.tagName !== 'SUMMARY'; }); }
-  // pull just the named cell (e.g. M04-IND) out of a mechanism panel
   function extractCell(panel, code) {
     var frag = [], started = false, kids = bodyNodes(panel);
     for (var i = 0; i < kids.length; i++) {
-      var t = (kids[i].textContent || '').trim();
-      var hm = t.match(/^(M\d\d-[A-Za-z]+)\./);
+      var t = (kids[i].textContent || '').trim(), hm = t.match(/^(M\d\d-[A-Za-z]+)\./);
       if (started) { if (hm || /^Federal variant/.test(t)) break; frag.push(kids[i]); }
       else if (hm && hm[1] === code) { started = true; frag.push(kids[i]); }
     }
@@ -1353,14 +1349,12 @@ Pensions. Competence: Design-dependent. A federal settlement could leave the sch
     e.preventDefault();
     var li = document.getElementById((a.getAttribute('href') || '').slice(1)); if (!li) return;
     var num = li.id.split(':').pop();
-    var range = / through /.test(li.textContent || '');   // whole-column refs -> citation fallback
+    var range = / through /.test(li.textContent || '');
     var refs = [];
-    if (!range) {
-      Array.prototype.forEach.call(li.querySelectorAll('a[href^="#"]'), function (l) {
-        var pid = l.getAttribute('href').slice(1);
-        if (CLONEABLE.test(pid)) refs.push({ pid: pid, code: (l.textContent || '').trim() });
-      });
-    }
+    if (!range) Array.prototype.forEach.call(li.querySelectorAll('a[href^="#"]'), function (l) {
+      var pid = l.getAttribute('href').slice(1);
+      if (CLONEABLE.test(pid)) refs.push({ pid: pid, code: (l.textContent || '').trim() });
+    });
     inner.innerHTML = '';
     var lab = document.createElement('p'); lab.className = 'fn-pop-label'; lab.textContent = 'Note ' + num; inner.appendChild(lab);
     if (refs.length >= 1 && refs.length <= 3) {
@@ -1376,6 +1370,8 @@ Pensions. Competence: Design-dependent. A federal settlement could leave the sch
       var br = clone.querySelector('.footnote-backref'); if (br) br.parentNode.removeChild(br);
       var c = document.createElement('div'); c.innerHTML = clone.innerHTML; inner.appendChild(c);
     }
+    // Neutralise every in-page link so the popover can never move the page.
+    Array.prototype.forEach.call(inner.querySelectorAll('a[href^="#"]'), function (x) { x.removeAttribute('href'); });
     inner.scrollTop = 0; pop.scrollTop = 0; pop.hidden = false; bd.hidden = false;
   });
 })();

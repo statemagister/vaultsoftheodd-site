@@ -48,20 +48,31 @@ body.theme-gaming {
 /* Per-setting accents within the Gaming vault. Ravenloft uses the
    gothic base above. Add a block like these when a new setting's
    first article ships — the body already carries set-<slug>. */
-/* Greyhawk: warm candlelit bronze and sepia — distinct from Ravenloft's
-   colder gothic. Same dark "gaming" family, opposite temperature. */
+/* Greyhawk: the old site's heraldic parchment theme — light parchment,
+   deep-blue titles, crimson links and labels, gold rules. A deliberate light
+   counterpoint to Ravenloft's dark gothic. */
 body.theme-gaming.set-greyhawk {
-  --bg: #1c150d;
-  --bg-alt: #251c11;
-  --bg-card: #2b2114;
-  --text-primary: #efe0c4;
-  --text-body: #e0d0b2;
-  --text-muted: #b39e7e;
-  --gold: #c2873a;          /* imperial bronze */
-  --gold-bright: #e3ac5b;
-  --rule: rgba(194, 135, 58, 0.32);
-  --rule-soft: rgba(239, 224, 196, 0.12);
+  --bg: #f4ecd8;
+  --bg-alt: #ebe0c3;
+  --bg-card: #faf4e6;
+  --text-primary: #1f1812;
+  --text-body: #2a2018;
+  --text-muted: #5a4a38;
+  --gold: #8c6d22;          /* heraldic gold, deepened for contrast on parchment */
+  --gold-bright: #6d531a;
+  --rule: rgba(168, 131, 51, 0.45);
+  --rule-soft: rgba(31, 24, 18, 0.14);
 }
+body.theme-gaming.set-greyhawk .post-title,
+body.theme-gaming.set-greyhawk .list-title { color: #142748; }
+body.theme-gaming.set-greyhawk .post-subtitle,
+body.theme-gaming.set-greyhawk .post-setting,
+body.theme-gaming.set-greyhawk .post-body h2,
+body.theme-gaming.set-greyhawk .post-body h3 { color: #1e3a6f; }
+body.theme-gaming.set-greyhawk .post-body a { color: #8b1d2b; text-decoration-color: #a88333; }
+body.theme-gaming.set-greyhawk .post-body a:hover { color: #1e3a6f; }
+body.theme-gaming.set-greyhawk .post-body strong,
+body.theme-gaming.set-greyhawk .cat-label { color: #8b1d2b; }
 body.theme-gaming.set-forgotten-realms {
   --gold: #6fa8c7;
   --gold-bright: #9cc8e0; /* silver-blue, Sword Coast */
@@ -302,10 +313,10 @@ hr { border: 0; height: 1px; background: var(--rule); margin: 2.4rem auto; max-w
 .setting-tab { font-family: var(--display); font-size: 1.05rem; letter-spacing: 0.04em; background: none; border: 0; border-bottom: 2px solid transparent; color: var(--text-muted); cursor: pointer; padding: 0.5rem 0.75rem 0.55rem; margin-bottom: -1px; }
 .setting-tab:hover { color: var(--gold); }
 .setting-tab.is-active { color: var(--gold); border-bottom-color: var(--gold); }
-.setting-tab.s-greyhawk.is-active { color: #c2873a; border-bottom-color: #c2873a; }
+.setting-tab.s-greyhawk.is-active { color: #8fb3dd; border-bottom-color: #8fb3dd; }
 .setting-tab.s-ravenloft.is-active { color: #c9a24b; border-bottom-color: #c9a24b; }
 .setting-heading { font-family: var(--display); font-size: 1.5rem; color: var(--gold); letter-spacing: 0.04em; margin: 1.6rem 0 0.2rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--rule); }
-.setting-heading.s-greyhawk { color: #c2873a; border-bottom-color: rgba(194, 135, 58, 0.4); }
+.setting-heading.s-greyhawk { color: #8fb3dd; border-bottom-color: rgba(143, 179, 221, 0.4); }
 .setting-heading.s-ravenloft { color: #c9a24b; border-bottom-color: rgba(201, 162, 75, 0.4); }
 
 /* In-world catalogue entry that closes an artefact piece */

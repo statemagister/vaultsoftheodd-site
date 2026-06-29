@@ -107,6 +107,9 @@
   function activate(slug) {
     tabs.forEach(function (t) { var on = t.getAttribute('data-target') === slug; t.classList.toggle('is-active', on); t.setAttribute('aria-selected', on ? 'true' : 'false'); });
     panes.forEach(function (p) { p.hidden = (p.getAttribute('data-set') !== slug); });
+    // Re-theme the whole vault page to the chosen setting's palette.
+    document.body.className = document.body.className.replace(/\s*\bset-[a-z0-9-]+\b/g, '');
+    document.body.classList.add('set-' + slug);
   }
   tabs.forEach(function (t) { t.addEventListener('click', function () { activate(t.getAttribute('data-target')); }); });
   activate(tabs[0].getAttribute('data-target'));

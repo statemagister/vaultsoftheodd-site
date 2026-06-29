@@ -296,6 +296,14 @@ hr { border: 0; height: 1px; background: var(--rule); margin: 2.4rem auto; max-w
 
 /* Per-setting subsections on the Gaming vault list */
 .setting-section { margin-bottom: 2.6rem; }
+/* Tabs to switch between settings (revealed by JS; no-JS falls back to stacked) */
+.setting-tabs { display: none; flex-wrap: wrap; gap: 0.3rem; margin: 1.4rem 0 1.8rem; border-bottom: 1px solid var(--rule); }
+.setting-tabs.ready { display: flex; }
+.setting-tab { font-family: var(--display); font-size: 1.05rem; letter-spacing: 0.04em; background: none; border: 0; border-bottom: 2px solid transparent; color: var(--text-muted); cursor: pointer; padding: 0.5rem 0.75rem 0.55rem; margin-bottom: -1px; }
+.setting-tab:hover { color: var(--gold); }
+.setting-tab.is-active { color: var(--gold); border-bottom-color: var(--gold); }
+.setting-tab.s-greyhawk.is-active { color: #c2873a; border-bottom-color: #c2873a; }
+.setting-tab.s-ravenloft.is-active { color: #c9a24b; border-bottom-color: #c9a24b; }
 .setting-heading { font-family: var(--display); font-size: 1.5rem; color: var(--gold); letter-spacing: 0.04em; margin: 1.6rem 0 0.2rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--rule); }
 .setting-heading.s-greyhawk { color: #c2873a; border-bottom-color: rgba(194, 135, 58, 0.4); }
 .setting-heading.s-ravenloft { color: #c9a24b; border-bottom-color: rgba(201, 162, 75, 0.4); }

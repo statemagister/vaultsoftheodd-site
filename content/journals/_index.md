@@ -41,8 +41,8 @@ The Perpetual Journal and The Monster Hunter's Journal are available now; furthe
   <div class="product-card">
     <h3 class="product-name">The Monster Hunter's Field Notes</h3>
     <div class="product-covers">
-      <span class="book-cover" style="--c:#0f1119"></span>
-      <span class="book-cover" style="--c:#ddca94"></span>
+      <img class="cover-img" src="/images/journals/monster-hunters-field-notes-midnight.png" alt="The Monster Hunter's Field Notes, midnight cover" loading="lazy">
+      <img class="cover-img" src="/images/journals/monster-hunters-field-notes-gold.png" alt="The Monster Hunter's Field Notes, gold cover" loading="lazy">
     </div>
     <p class="product-desc">The companion to The Monster Hunter's Journal. Capture every encounter while the fight is still warm — the beast, the wound, the loot, the way out — then write the confirmed account into the Journal afterward. This is the working book: rough, fast, partial, and made to be used hard. Inside the 7 × 10 inch field book: ruled-and-blank session pages, square-grid pages throughout for buildings, dungeons, tunnels and mazes, occasional hex pages for overland maps, and a &ldquo;To Write Up&rdquo; roster to carry every confirmed encounter into the Journal. The capture book that feeds the keepsake. System-neutral — bring your own monsters. Paperback, 120 pages.</p>
     <p class="product-variants">Choose your cover and store:</p>

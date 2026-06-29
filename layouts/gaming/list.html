@@ -1,0 +1,95 @@
+{{ define "main" }}
+<div class="post-layout wrap">
+  <div class="post-main">
+    <header class="list-header">
+      <h1 class="list-title">{{ .Title }}</h1>
+      {{- with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
+    </header>
+
+    {{- /* Group articles by setting, in a preferred order, then any others. */ -}}
+    {{- $order := slice "Ravenloft" "Greyhawk" "Forgotten Realms" "Mystara" }}
+    {{- range $order }}
+      {{- $set := . }}
+      {{- with where $.Pages "Params.settings" "intersect" (slice $set) }}
+      <section class="setting-section">
+        <h2 class="setting-heading s-{{ $set | urlize }}">{{ $set }}</h2>
+        <ul class="post-list">
+          {{- range .ByDate.Reverse }}
+          <li class="post-list-item">
+            <a class="post-list-link" href="{{ .RelPermalink }}">
+              <h3 class="post-list-title">{{ .Title }}</h3>
+              {{- if not .Date.IsZero }}<p class="post-list-date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>{{ end }}
+              {{- with .Params.tags }}<p class="post-list-tags">{{ delimit . " &middot; " | safeHTML }}</p>{{ end }}
+            </a>
+          </li>
+          {{- end }}
+        </ul>
+      </section>
+      {{- end }}
+    {{- end }}
+
+    {{- /* Any articles whose setting isn't in the preferred list (future-proofing). */ -}}
+    {{- $matched := where $.Pages "Params.settings" "intersect" $order }}
+    {{- with ($.Pages | complement $matched) }}
+    <section class="setting-section">
+      <h2 class="setting-heading">Other</h2>
+      <ul class="post-list">
+        {{- range .ByDate.Reverse }}
+        <li class="post-list-item">
+          <a class="post-list-link" href="{{ .RelPermalink }}">
+            <h3 class="post-list-title">{{ .Title }}</h3>
+            {{- if not .Date.IsZero }}<p class="post-list-date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>{{ end }}
+            {{- with .Params.tags }}<p class="post-list-tags">{{ delimit . " &middot; " | safeHTML }}</p>{{ end }}
+          </a>
+        </li>
+        {{- end }}
+      </ul>
+    </section>
+    {{- end }}
+  </div>
+
+  {{- /* Vault information sidebar: search, browse by tag/date, support */ -}}
+  <aside class="post-aside" aria-label="Vault information">
+    <div class="aside-inner">
+
+      {{ partial "search.html" . }}
+
+      {{- $tags := slice }}
+      {{- range .Pages }}{{ range .Params.tags }}{{ $tags = $tags | append . }}{{ end }}{{ end }}
+      {{- with (uniq $tags) }}
+      <section class="aside-block">
+        <details class="aside-collapse" open>
+          <summary>Browse by tag</summary>
+          <div class="aside-tags">
+            {{- range (sort .) }}<a class="tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+          </div>
+        </details>
+      </section>
+      {{- end }}
+
+      <section class="aside-block">
+        <details class="aside-collapse">
+          <summary>Browse by date</summary>
+          <div class="aside-bydate">
+            {{- range .Pages.GroupByDate "January 2006" }}
+            <details class="aside-folder">
+              <summary>{{ .Key }} <span class="folder-count">{{ len .Pages }}</span></summary>
+              <ul>
+                {{- range .Pages.ByDate.Reverse }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+              </ul>
+            </details>
+            {{- end }}
+          </div>
+        </details>
+      </section>
+
+      {{- with .Site.Params.buymeacoffee }}
+      <section class="aside-block">
+        <h2 class="aside-title">Support</h2>
+        <a class="coffee" href="{{ . }}" rel="noopener" target="_blank"><span class="cup">&#9749;</span> Buy me a coffee</a>
+      </section>
+      {{- end }}
+    </div>
+  </aside>
+</div>
+{{ end }}

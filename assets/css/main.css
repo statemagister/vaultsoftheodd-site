@@ -48,10 +48,19 @@ body.theme-gaming {
 /* Per-setting accents within the Gaming vault. Ravenloft uses the
    gothic base above. Add a block like these when a new setting's
    first article ships — the body already carries set-<slug>. */
+/* Greyhawk: warm candlelit bronze and sepia — distinct from Ravenloft's
+   colder gothic. Same dark "gaming" family, opposite temperature. */
 body.theme-gaming.set-greyhawk {
-  --gold: #b98a3c;
-  --gold-bright: #d8aa5b;
-  --bg: #14110c;          /* imperial bronze / parchment-by-candlelight */
+  --bg: #1c150d;
+  --bg-alt: #251c11;
+  --bg-card: #2b2114;
+  --text-primary: #efe0c4;
+  --text-body: #e0d0b2;
+  --text-muted: #b39e7e;
+  --gold: #c2873a;          /* imperial bronze */
+  --gold-bright: #e3ac5b;
+  --rule: rgba(194, 135, 58, 0.32);
+  --rule-soft: rgba(239, 224, 196, 0.12);
 }
 body.theme-gaming.set-forgotten-realms {
   --gold: #6fa8c7;
@@ -284,6 +293,18 @@ hr { border: 0; height: 1px; background: var(--rule); margin: 2.4rem auto; max-w
 .breadcrumb a { color: var(--text-muted); text-decoration: none; }
 .breadcrumb a:hover { color: var(--gold); }
 .breadcrumb .sep { margin: 0 0.45rem; opacity: 0.6; }
+
+/* Per-setting subsections on the Gaming vault list */
+.setting-section { margin-bottom: 2.6rem; }
+.setting-heading { font-family: var(--display); font-size: 1.5rem; color: var(--gold); letter-spacing: 0.04em; margin: 1.6rem 0 0.2rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--rule); }
+.setting-heading.s-greyhawk { color: #c2873a; border-bottom-color: rgba(194, 135, 58, 0.4); }
+.setting-heading.s-ravenloft { color: #c9a24b; border-bottom-color: rgba(201, 162, 75, 0.4); }
+
+/* In-world catalogue entry that closes an artefact piece */
+.catalogue { margin: 2.8rem 0 0.5rem; padding: 1.1rem 1.3rem; border: 1px solid var(--rule); border-radius: 4px; background: var(--bg-alt); }
+.catalogue p { margin: 0 0 0.45rem; display: flex; gap: 0.8rem; align-items: baseline; }
+.cat-label { font-family: var(--display); font-size: 0.64rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); flex: 0 0 6.5rem; }
+.cat-source { display: block !important; margin: 0.7rem 0 0; padding-top: 0.7rem; border-top: 1px solid var(--rule-soft); font-size: 0.82rem; font-style: italic; color: var(--text-muted); }
 
 .post-body { font-size: 1.16rem; }
 .post-body h2 { font-size: 1.7rem; margin-top: 2.6rem; margin-bottom: 0.8rem; }

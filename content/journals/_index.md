@@ -38,6 +38,21 @@ The Perpetual Journal and The Monster Hunter's Journal are available now; furthe
     <p class="product-status available">Available now on Amazon</p>
   </div>
 
+  <div class="product-card">
+    <h3 class="product-name">The Monster Hunter's Field Notes</h3>
+    <div class="product-covers">
+      <span class="book-cover" style="--c:#141a2e"></span>
+      <span class="book-cover" style="--c:#b8902f"></span>
+    </div>
+    <p class="product-desc">The rough-and-ready field companion to The Monster Hunter's Journal — a paperback to carry to the table and scrawl in without fear of spoiling the keepsake. Capture each hunt as it happens — quarry, tracks, weaknesses, loot, open threads — then write the confirmed entries up in the Journal. Repeating hunt-log spreads, dot-grid scratch space for maps and monster sketches, and quick trackers. System-agnostic — bring your own monsters. Paperback, 7 × 10 inches.</p>
+    <p class="product-variants">Choose your cover and store:</p>
+    <div class="buy">
+      <p class="buy-row"><span class="buy-cover">Midnight</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H6XMJXGH" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H6XMJXGH" rel="noopener noreferrer" target="_blank">Amazon UK</a></p>
+      <p class="buy-row"><span class="buy-cover">Gold</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H6XSBR63" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H6XSBR63" rel="noopener noreferrer" target="_blank">Amazon UK</a></p>
+    </div>
+    <p class="product-status available">Available now on Amazon</p>
+  </div>
+
 </div>
 
 ## Also planned for the range

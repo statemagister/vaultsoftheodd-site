@@ -52,16 +52,16 @@ body.theme-gaming {
    deep-blue titles, crimson links and labels, gold rules. A deliberate light
    counterpoint to Ravenloft's dark gothic. */
 body.theme-gaming.set-greyhawk {
-  --bg: #f4ecd8;
-  --bg-alt: #ebe0c3;
-  --bg-card: #faf4e6;
-  --text-primary: #1f1812;
-  --text-body: #2a2018;
-  --text-muted: #5a4a38;
-  --gold: #8c6d22;          /* heraldic gold, deepened for contrast on parchment */
-  --gold-bright: #6d531a;
-  --rule: rgba(168, 131, 51, 0.45);
-  --rule-soft: rgba(31, 24, 18, 0.14);
+  --bg: #ecdfb6;            /* aged gold parchment — distinctly warmer than the cream default */
+  --bg-alt: #e3d29e;
+  --bg-card: #f6efce;
+  --text-primary: #211a10;
+  --text-body: #2c2315;
+  --text-muted: #5c4c30;
+  --gold: #936b15;          /* richer heraldic gold, toward the gold-box frame */
+  --gold-bright: #6f5113;
+  --rule: rgba(147, 107, 21, 0.48);
+  --rule-soft: rgba(33, 26, 16, 0.14);
 }
 body.theme-gaming.set-greyhawk .post-title,
 body.theme-gaming.set-greyhawk .list-title { color: #142748; }

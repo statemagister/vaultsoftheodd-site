@@ -77,9 +77,10 @@ body.theme-gaming.set-greyhawk .cat-label { color: #8b1d2b; }
    drop cap, and a heraldic-lozenge section divider. */
 body.theme-gaming.set-greyhawk { background-image: url("/img/greyhawk-parchment.svg"); }
 body.theme-gaming.set-greyhawk .post-body > p:first-of-type::first-letter {
-  font-family: "EB Garamond", Georgia, serif; font-size: 4.2rem; line-height: 0.78;
-  float: left; padding: 0.32rem 0.55rem 0 0; color: #8b1d2b; font-weight: 700;
-  text-shadow: 2px 2px 0 #c9a655;
+  float: left; font-family: "EB Garamond", Georgia, serif; font-weight: 700;
+  font-size: 2.7rem; line-height: 1; color: #f4ead0;
+  background: #8b1d2b; border: 2px solid #b8902f;
+  padding: 0.28rem 0.42rem; margin: 0.45rem 0.7rem 0.15rem 0;
 }
 body.theme-gaming.set-greyhawk .post-body hr {
   border: 0; height: 24px; max-width: 300px; margin: 2.8rem auto;

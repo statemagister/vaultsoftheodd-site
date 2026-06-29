@@ -20,6 +20,9 @@
   {{- end -}}
 {{- end -}}
 <body class="theme-{{ $theme }}{{ $set }}">
+  {{- if and (eq .Kind "section") (eq .Section "gaming") }}
+  <script>(function(){try{var s=localStorage.getItem('vo-gaming-setting');if(s)document.body.className=document.body.className.replace(/\s*\bset-[a-z0-9-]+\b/g,'')+' set-'+s;}catch(e){}})();</script>
+  {{- end }}
   {{ partial "header.html" . }}
   <main class="site-main">
     {{ block "main" . }}{{ end }}

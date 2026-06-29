@@ -110,9 +110,13 @@
     // Re-theme the whole vault page to the chosen setting's palette.
     document.body.className = document.body.className.replace(/\s*\bset-[a-z0-9-]+\b/g, '');
     document.body.classList.add('set-' + slug);
+    try { localStorage.setItem('vo-gaming-setting', slug); } catch (e) {}
   }
   tabs.forEach(function (t) { t.addEventListener('click', function () { activate(t.getAttribute('data-target')); }); });
-  activate(tabs[0].getAttribute('data-target'));
+  var initial = tabs[0].getAttribute('data-target'), saved;
+  try { saved = localStorage.getItem('vo-gaming-setting'); } catch (e) {}
+  if (saved && Array.prototype.some.call(tabs, function (t) { return t.getAttribute('data-target') === saved; })) initial = saved;
+  activate(initial);
 })();
 </script>
 {{ end }}

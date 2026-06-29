@@ -73,6 +73,18 @@ body.theme-gaming.set-greyhawk .post-body a { color: #8b1d2b; text-decoration-co
 body.theme-gaming.set-greyhawk .post-body a:hover { color: #1e3a6f; }
 body.theme-gaming.set-greyhawk .post-body strong,
 body.theme-gaming.set-greyhawk .cat-label { color: #8b1d2b; }
+/* Greyhawk flourishes from the old theme: parchment grain, illuminated
+   drop cap, and a heraldic-lozenge section divider. */
+body.theme-gaming.set-greyhawk { background-image: url("/img/greyhawk-parchment.svg"); }
+body.theme-gaming.set-greyhawk .post-body > p:first-of-type::first-letter {
+  font-family: "EB Garamond", Georgia, serif; font-size: 4.2rem; line-height: 0.78;
+  float: left; padding: 0.32rem 0.55rem 0 0; color: #8b1d2b; font-weight: 700;
+  text-shadow: 2px 2px 0 #c9a655;
+}
+body.theme-gaming.set-greyhawk .post-body hr {
+  border: 0; height: 24px; max-width: 300px; margin: 2.8rem auto;
+  background: url("/img/greyhawk-divider.svg") center / contain no-repeat;
+}
 body.theme-gaming.set-forgotten-realms {
   --gold: #6fa8c7;
   --gold-bright: #9cc8e0; /* silver-blue, Sword Coast */

@@ -6,7 +6,7 @@ settings:
   - "Greyhawk"
 tags:
   - "Greyhawk"
-  - "Artefacts"
+  - "In-world Document"
 ---
 
 Jokingly described by Otto Taratarat as "Ah, the book I wrote on how to make friends and influence people." The joke, like most of Otto's jokes, is doing more work than it appears to.

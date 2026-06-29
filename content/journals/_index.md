@@ -41,10 +41,10 @@ The Perpetual Journal and The Monster Hunter's Journal are available now; furthe
   <div class="product-card">
     <h3 class="product-name">The Monster Hunter's Field Notes</h3>
     <div class="product-covers">
-      <span class="book-cover" style="--c:#141a2e"></span>
-      <span class="book-cover" style="--c:#b8902f"></span>
+      <span class="book-cover" style="--c:#0f1119"></span>
+      <span class="book-cover" style="--c:#ddca94"></span>
     </div>
-    <p class="product-desc">The rough-and-ready field companion to The Monster Hunter's Journal — a paperback to carry to the table and scrawl in without fear of spoiling the keepsake. Capture each hunt as it happens — quarry, tracks, weaknesses, loot, open threads — then write the confirmed entries up in the Journal. Repeating hunt-log spreads, dot-grid scratch space for maps and monster sketches, and quick trackers. System-agnostic — bring your own monsters. Paperback, 7 × 10 inches.</p>
+    <p class="product-desc">The companion to The Monster Hunter's Journal. Capture every encounter while the fight is still warm — the beast, the wound, the loot, the way out — then write the confirmed account into the Journal afterward. This is the working book: rough, fast, partial, and made to be used hard. Inside the 7 × 10 inch field book: ruled-and-blank session pages, square-grid pages throughout for buildings, dungeons, tunnels and mazes, occasional hex pages for overland maps, and a &ldquo;To Write Up&rdquo; roster to carry every confirmed encounter into the Journal. The capture book that feeds the keepsake. System-neutral — bring your own monsters. Paperback, 120 pages.</p>
     <p class="product-variants">Choose your cover and store:</p>
     <div class="buy">
       <p class="buy-row"><span class="buy-cover">Midnight</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H6XMJXGH" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H6XMJXGH" rel="noopener noreferrer" target="_blank">Amazon UK</a></p>

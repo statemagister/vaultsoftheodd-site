@@ -22,14 +22,14 @@
     {{- if gt (len $groups) 1 }}
     <div class="setting-tabs" role="tablist" aria-label="Choose a setting">
       {{- range $i, $g := $groups }}
-      <button class="setting-tab s-{{ $g.slug }}{{ if eq $i 0 }} is-active{{ end }}" type="button" role="tab" data-target="set-{{ $g.slug }}" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}">{{ $g.label }}</button>
+      <button class="setting-tab s-{{ $g.slug }}{{ if eq $i 0 }} is-active{{ end }}" type="button" role="tab" data-target="{{ $g.slug }}" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}">{{ $g.label }}</button>
       {{- end }}
     </div>
     {{- end }}
 
     {{- range $i, $g := $groups }}
     {{- $gp := $g.pages }}
-    <section class="setting-section" id="set-{{ $g.slug }}" aria-label="{{ $g.label }}">
+    <section class="setting-section" data-set="{{ $g.slug }}" aria-label="{{ $g.label }}">
       <h2 class="setting-heading s-{{ $g.slug }}">{{ $g.label }}</h2>
       <ul class="post-list">
         {{- range $gp.ByDate.Reverse }}
@@ -46,40 +46,44 @@
     {{- end }}
   </div>
 
-  {{- /* Vault information sidebar: search, browse by tag/date, support */ -}}
+  {{- /* Sidebar: global search, then per-setting browse, then support */ -}}
   <aside class="post-aside" aria-label="Vault information">
     <div class="aside-inner">
 
       {{ partial "search.html" . }}
 
-      {{- $tags := slice }}
-      {{- range .Pages }}{{ range .Params.tags }}{{ $tags = $tags | append . }}{{ end }}{{ end }}
-      {{- with (uniq $tags) }}
-      <section class="aside-block">
-        <details class="aside-collapse" open>
-          <summary>Browse by tag</summary>
-          <div class="aside-tags">
-            {{- range (sort .) }}<a class="tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}
-          </div>
-        </details>
-      </section>
+      {{- range $g := $groups }}
+      {{- $label := $g.label }}{{ $slug := $g.slug }}{{ $gp := $g.pages }}
+      <div class="setting-browse" data-set="{{ $slug }}">
+        {{- $tags := slice }}
+        {{- range $gp }}{{ range .Params.tags }}{{ $tags = $tags | append . }}{{ end }}{{ end }}
+        {{- with (uniq $tags) }}
+        <section class="aside-block">
+          <details class="aside-collapse" open>
+            <summary>{{ $label }} &mdash; by tag</summary>
+            <div class="aside-tags">
+              {{- range (sort .) }}<a class="tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+            </div>
+          </details>
+        </section>
+        {{- end }}
+        <section class="aside-block">
+          <details class="aside-collapse">
+            <summary>{{ $label }} &mdash; by date</summary>
+            <div class="aside-bydate">
+              {{- range $gp.GroupByDate "January 2006" }}
+              <details class="aside-folder">
+                <summary>{{ .Key }} <span class="folder-count">{{ len .Pages }}</span></summary>
+                <ul>
+                  {{- range .Pages.ByDate.Reverse }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+                </ul>
+              </details>
+              {{- end }}
+            </div>
+          </details>
+        </section>
+      </div>
       {{- end }}
-
-      <section class="aside-block">
-        <details class="aside-collapse">
-          <summary>Browse by date</summary>
-          <div class="aside-bydate">
-            {{- range .Pages.GroupByDate "January 2006" }}
-            <details class="aside-folder">
-              <summary>{{ .Key }} <span class="folder-count">{{ len .Pages }}</span></summary>
-              <ul>
-                {{- range .Pages.ByDate.Reverse }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
-              </ul>
-            </details>
-            {{- end }}
-          </div>
-        </details>
-      </section>
 
       {{- with .Site.Params.buymeacoffee }}
       <section class="aside-block">
@@ -95,14 +99,14 @@
 (function () {
   var bar = document.querySelector('.setting-tabs');
   var tabs = document.querySelectorAll('.setting-tab');
-  var sections = document.querySelectorAll('.setting-section');
+  var panes = document.querySelectorAll('.setting-section, .setting-browse');
   if (!bar || tabs.length < 2) return;
   bar.classList.add('ready');
   // the tabs act as the headings now
-  sections.forEach(function (s) { var h = s.querySelector('.setting-heading'); if (h) h.hidden = true; });
-  function activate(target) {
-    tabs.forEach(function (t) { var on = t.getAttribute('data-target') === target; t.classList.toggle('is-active', on); t.setAttribute('aria-selected', on ? 'true' : 'false'); });
-    sections.forEach(function (s) { s.hidden = (s.id !== target); });
+  document.querySelectorAll('.setting-section > .setting-heading').forEach(function (h) { h.hidden = true; });
+  function activate(slug) {
+    tabs.forEach(function (t) { var on = t.getAttribute('data-target') === slug; t.classList.toggle('is-active', on); t.setAttribute('aria-selected', on ? 'true' : 'false'); });
+    panes.forEach(function (p) { p.hidden = (p.getAttribute('data-set') !== slug); });
   }
   tabs.forEach(function (t) { t.addEventListener('click', function () { activate(t.getAttribute('data-target')); }); });
   activate(tabs[0].getAttribute('data-target'));

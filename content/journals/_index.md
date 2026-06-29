@@ -17,8 +17,8 @@ The Perpetual Journal and The Monster Hunter's Journal are available now; furthe
     <p class="product-desc">A clean, undated hardback in a plain cover — open it on any day and carry it through any year. A slim date strip runs down the outer edge of every page: circle the month, circle the date and write the year in the box. Nothing is printed to a fixed date, so no page is wasted and the book never expires on a shelf. 256 lined, numbered pages, with a two-page index and an ownership and volume page for keeping a numbered set. Hardcover, 7 × 10 inches.</p>
     <p class="product-variants">Choose your cover and store:</p>
     <div class="buy">
-      <p class="buy-row"><span class="buy-cover">Black</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H599D1NW" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H599D1NW" rel="noopener noreferrer" target="_blank">Amazon UK</a></p>
-      <p class="buy-row"><span class="buy-cover">Orange</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H58YCR9F" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H58YCR9F" rel="noopener noreferrer" target="_blank">Amazon UK</a></p>
+      <p class="buy-row"><span class="buy-cover">Black</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H599D1NW" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H599D1NW" rel="noopener noreferrer" target="_blank">Amazon UK</a><a class="button ghost" data-store="ie" href="https://www.amazon.ie/dp/B0H599D1NW" rel="noopener noreferrer" target="_blank">Amazon IE</a><a class="button ghost" data-store="au" href="https://www.amazon.com.au/dp/B0H599D1NW" rel="noopener noreferrer" target="_blank">Amazon AU</a></p>
+      <p class="buy-row"><span class="buy-cover">Orange</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H58YCR9F" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H58YCR9F" rel="noopener noreferrer" target="_blank">Amazon UK</a><a class="button ghost" data-store="ie" href="https://www.amazon.ie/dp/B0H58YCR9F" rel="noopener noreferrer" target="_blank">Amazon IE</a><a class="button ghost" data-store="au" href="https://www.amazon.com.au/dp/B0H58YCR9F" rel="noopener noreferrer" target="_blank">Amazon AU</a></p>
     </div>
     <p class="product-status available">Available now on Amazon</p>
   </div>
@@ -32,8 +32,8 @@ The Perpetual Journal and The Monster Hunter's Journal are available now; furthe
     <p class="product-desc">A campaign keepsake for any tabletop roleplaying game: a chronological log of every creature your party brings down, with character pages, trackers, and an atmospheric bestiary running through it. System-agnostic — bring your own monsters.</p>
     <p class="product-variants">Choose your cover and store:</p>
     <div class="buy">
-      <p class="buy-row"><span class="buy-cover">Midnight</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H5FS9GRV" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H5FS9GRV" rel="noopener noreferrer" target="_blank">Amazon UK</a></p>
-      <p class="buy-row"><span class="buy-cover">Gold</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H5FJW5QY" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H5FJW5QY" rel="noopener noreferrer" target="_blank">Amazon UK</a></p>
+      <p class="buy-row"><span class="buy-cover">Midnight</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H5FS9GRV" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H5FS9GRV" rel="noopener noreferrer" target="_blank">Amazon UK</a><a class="button ghost" data-store="ie" href="https://www.amazon.ie/dp/B0H5FS9GRV" rel="noopener noreferrer" target="_blank">Amazon IE</a><a class="button ghost" data-store="au" href="https://www.amazon.com.au/dp/B0H5FS9GRV" rel="noopener noreferrer" target="_blank">Amazon AU</a></p>
+      <p class="buy-row"><span class="buy-cover">Gold</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H5FJW5QY" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H5FJW5QY" rel="noopener noreferrer" target="_blank">Amazon UK</a><a class="button ghost" data-store="ie" href="https://www.amazon.ie/dp/B0H5FJW5QY" rel="noopener noreferrer" target="_blank">Amazon IE</a><a class="button ghost" data-store="au" href="https://www.amazon.com.au/dp/B0H5FJW5QY" rel="noopener noreferrer" target="_blank">Amazon AU</a></p>
     </div>
     <p class="product-status available">Available now on Amazon</p>
   </div>
@@ -47,8 +47,8 @@ The Perpetual Journal and The Monster Hunter's Journal are available now; furthe
     <p class="product-desc">The companion to The Monster Hunter's Journal. Capture every encounter while the fight is still warm — the beast, the wound, the loot, the way out — then write the confirmed account into the Journal afterward. This is the working book: rough, fast, partial, and made to be used hard. Inside the 7 × 10 inch field book: ruled-and-blank session pages, square-grid pages throughout for buildings, dungeons, tunnels and mazes, occasional hex pages for overland maps, and a &ldquo;To Write Up&rdquo; roster to carry every confirmed encounter into the Journal. The capture book that feeds the keepsake. System-neutral — bring your own monsters. Paperback, 120 pages.</p>
     <p class="product-variants">Choose your cover and store:</p>
     <div class="buy">
-      <p class="buy-row"><span class="buy-cover">Midnight</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H6XMJXGH" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H6XMJXGH" rel="noopener noreferrer" target="_blank">Amazon UK</a></p>
-      <p class="buy-row"><span class="buy-cover">Gold</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H6XSBR63" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H6XSBR63" rel="noopener noreferrer" target="_blank">Amazon UK</a></p>
+      <p class="buy-row"><span class="buy-cover">Midnight</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H6XMJXGH" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H6XMJXGH" rel="noopener noreferrer" target="_blank">Amazon UK</a><a class="button ghost" data-store="ie" href="https://www.amazon.ie/dp/B0H6XMJXGH" rel="noopener noreferrer" target="_blank">Amazon IE</a><a class="button ghost" data-store="au" href="https://www.amazon.com.au/dp/B0H6XMJXGH" rel="noopener noreferrer" target="_blank">Amazon AU</a></p>
+      <p class="buy-row"><span class="buy-cover">Gold</span><a class="button" data-store="us" href="https://www.amazon.com/dp/B0H6XSBR63" rel="noopener noreferrer" target="_blank">Amazon US</a><a class="button ghost" data-store="uk" href="https://www.amazon.co.uk/dp/B0H6XSBR63" rel="noopener noreferrer" target="_blank">Amazon UK</a><a class="button ghost" data-store="ie" href="https://www.amazon.ie/dp/B0H6XSBR63" rel="noopener noreferrer" target="_blank">Amazon IE</a><a class="button ghost" data-store="au" href="https://www.amazon.com.au/dp/B0H6XSBR63" rel="noopener noreferrer" target="_blank">Amazon AU</a></p>
     </div>
     <p class="product-status available">Available now on Amazon</p>
   </div>
@@ -88,15 +88,27 @@ All journals are independent products under the Vaults of the ODD imprint. They 
 
 <script>
 (function () {
-  var uk = false;
-  try { uk = /^en-GB/i.test(navigator.language || '') || (window.Intl && Intl.DateTimeFormat().resolvedOptions().timeZone === 'Europe/London'); } catch (e) {}
-  if (!uk) return;
-  // UK visitors: lead with the UK store instead of the US default.
+  function pref() {
+    try {
+      var l = (navigator.language || '').toLowerCase();
+      var tz = (window.Intl && Intl.DateTimeFormat().resolvedOptions().timeZone) || '';
+      if (l.indexOf('-gb') > -1 || tz === 'Europe/London') return 'uk';
+      if (l.indexOf('-ie') > -1 || tz === 'Europe/Dublin') return 'ie';
+      if (l.indexOf('-au') > -1 || tz.indexOf('Australia/') === 0) return 'au';
+    } catch (e) {}
+    return 'us';
+  }
+  var p = pref();
+  if (p === 'us') return;
   var rows = document.querySelectorAll('.buy-row');
   for (var i = 0; i < rows.length; i++) {
-    var us = rows[i].querySelector('[data-store="us"]');
-    var gb = rows[i].querySelector('[data-store="uk"]');
-    if (us && gb) { us.classList.add('ghost'); gb.classList.remove('ghost'); rows[i].insertBefore(gb, us); }
+    var row = rows[i], primary = row.querySelector('[data-store="' + p + '"]');
+    if (!primary) continue;
+    var btns = row.querySelectorAll('[data-store]');
+    for (var j = 0; j < btns.length; j++) btns[j].classList.add('ghost');
+    primary.classList.remove('ghost');
+    var label = row.querySelector('.buy-cover');
+    row.insertBefore(primary, label ? label.nextSibling : btns[0]);
   }
 })();
 </script>

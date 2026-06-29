@@ -614,4 +614,4 @@ figcaption, .wp-element-caption { display: table-caption; caption-side: bottom; 
 .buy { margin: 0 0 0.9rem; display: flex; flex-direction: column; gap: 0.85rem; }
 .buy-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem; margin: 0; }
 .buy-cover { font-family: var(--display); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); flex: 0 0 100%; margin-bottom: 0.05rem; }
-.buy .button { font-size: 0.72rem; padding: 0.36rem 0.5rem; text-align: center; flex: 1 1 0; min-width: 0; }
+.buy .button { font-size: 0.72rem; padding: 0.36rem 0.5rem; text-align: center; flex: 1 1 6rem; min-width: 0; }

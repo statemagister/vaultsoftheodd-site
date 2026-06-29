@@ -464,6 +464,8 @@ figcaption, .wp-element-caption { display: table-caption; caption-side: bottom; 
 
 .post-aside { position: sticky; top: 1.5rem; }
 .aside-inner { display: flex; flex-direction: column; gap: 1.9rem; }
+/* per-setting browse wraps two blocks; give them the same gap (and keep hidden working) */
+.setting-browse:not([hidden]) { display: flex; flex-direction: column; gap: 1.9rem; }
 .aside-block { }
 .aside-title {
   font-family: var(--display); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;

@@ -1,6 +1,5 @@
 ---
 title: "Arcane Puissance of the Mind"
-subtitle: "A Catalogue Entry from the Library of the Society of Magi"
 date: 2026-06-30T09:00:00Z
 slug: "arcane-puissance-of-the-mind"
 settings:

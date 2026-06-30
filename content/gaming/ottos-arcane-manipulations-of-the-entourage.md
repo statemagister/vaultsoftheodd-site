@@ -42,7 +42,7 @@ It is believed that the enigmatic book collector Erabry N'qu-el bought or acquir
 <aside class="catalogue" aria-label="Catalogue entry">
 <p><span class="cat-label">Location</span> <span>Æstrald, Oerth &mdash; Eastern Oerik, Flanaess, Greyhawk City</span></p>
 <p><span class="cat-label">Type</span> <span>Book &mdash; handwritten on parchment</span></p>
-<p><span class="cat-label">Holdings</span> <span>Original held by the collector Erabry N&rsquo;qu-el; copies in the Library of the Society of Magi (mostly accurate)</span></p>
+<p><span class="cat-label">Holdings</span> <span>Original acquired by the collector Erabry N&rsquo;qu-el from the Library of the Society of Magi, where copies remain (mostly accurate)</span></p>
 <p><span class="cat-label">Rarity</span> <span>Unique</span></p>
 <p><span class="cat-label">Note</span> <span>Otto retains the original source materials and so has no need of the book</span></p>
 <p class="cat-source">Dragon Magazine, Issue 82, p.&nbsp;58. Additional material by Drew Griffiths.</p>

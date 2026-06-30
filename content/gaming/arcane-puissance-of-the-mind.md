@@ -24,11 +24,10 @@ Rary ended up a penniless drunk, and sold his name to a sorcerer from the west, 
 There have now been several wizards claiming to be Rary, but divinations, and communing with many of the powerful beings beyond our world, indicate that they are all impostors. The rarity of this book and the death of the author means that genuine originals now sell for vast sums of money.
 
 <aside class="catalogue" aria-label="Catalogue entry">
-<p><span class="cat-label">Location</span> <span>&AElig;strald, Oerth &mdash; Eastern Oerik, Flanaess, Greyhawk City</span></p>
-<p><span class="cat-label">Classification</span> <span>Book</span></p>
+<p><span class="cat-label">Location</span> <span>Æstrald, Oerth &mdash; Eastern Oerik, Flanaess, Greyhawk City</span></p>
+<p><span class="cat-label">Type</span> <span>Book &mdash; handwritten, some copies illustrated; parchment, mostly</span></p>
 <p><span class="cat-label">Holdings</span> <span>Library of the Society of Magi; the Library at Grey College</span></p>
-<p><span class="cat-label">Alternative titles</span> <span><em>The Medium Rary</em>; some copies mistitled <em>Arcane Puissance of the Memory</em></span></p>
 <p><span class="cat-label">Rarity</span> <span>Rare</span></p>
-<p><span class="cat-label">Form</span> <span>Handwritten, some copies illustrated; parchment, mostly</span></p>
-<p class="cat-source">Original material by Drew Griffiths.</p>
+<p><span class="cat-label">Note</span> <span>Also called <em>The Medium Rary</em>; some copies mistitled <em>Arcane Puissance of the Memory</em></span></p>
+<p class="cat-source">Dragon Magazine, Issue 82, p.&nbsp;58. Additional material by Drew Griffiths.</p>
 </aside>

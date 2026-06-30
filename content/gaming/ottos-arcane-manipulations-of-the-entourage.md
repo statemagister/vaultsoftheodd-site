@@ -11,9 +11,9 @@ tags:
 
 Jokingly described by Otto Taratarat as "Ah, the book I wrote on how to make friends and influence people." The joke, like most of Otto's jokes, is doing more work than it appears to.
 
-Otto wrote this book in 577 as payment to the Society of Magi, without ever saying why. It is also actually called Otto's Hexad, and was a one-off until the Society duplicated and sold it with the name it is known by today. Why the Society chose to rename it is unclear. Why Otto permitted it is equally so, though one suspects that a man who pays debts he will not explain is unlikely to quarrel over a title.
+Otto wrote this book in five hundred and seventy-seven as payment to the Society of Magi, without ever saying why. It is also actually called Otto's Hexad, and was a one-off until the Society duplicated and sold it with the name it is known by today. Why the Society chose to rename it is unclear. Why Otto permitted it is equally so, though one suspects that a man who pays debts he will not explain is unlikely to quarrel over a title.
 
-It is carefully curated extracts from his notebooks, diaries, and spell-books from around 559 to 561 covering Greyhawk City, his residency under the ruins, his apprenticeship with the wizard Tenser, and his rise to Magus-de-Camp to the warrior Robilar.
+It is carefully curated extracts from his notebooks, diaries, and spell-books from around five hundred and fifty-nine to five hundred and sixty-one covering Greyhawk City, his residency under the ruins, his apprenticeship with the wizard Tenser, and his rise to Magus-de-Camp to the warrior Robilar.
 
 Points of note include Otto's using an unknown befriending charm, mostly to gather everyone he needed to explore and reside at the castle ruins. He did not name those enamoured, but his charm offensive — and it was an offensive, conducted with the same deliberation a general brings to a campaign — was successful. Some of his new friends knew of secret ways into the ruins and had connections with some of the different power groups found there. He still spent considerable amounts of time rewarding those who helped him set up his residency under the castle. Otto has always understood that charm alone, even magical charm, does not hold people. Payment does.
 

@@ -9,6 +9,8 @@ tags:
   - "In-world Document"
 ---
 
+<figure class="wp-block-image aligncenter size-large"><img src="/images/gaming/treatyse-of-fysshynge-sample-text.png" alt="A facsimile of the book&rsquo;s opening page, its words stamped rather than written by hand" style="aspect-ratio:1.473465;width:100%;height:auto"/><figcaption class="wp-element-caption">The opening page of the book, in its stamped hand &mdash; strange to the eye, yet legible to any reader.</figcaption></figure>
+
 <figure class="wp-block-image alignright size-large is-resized"><img src="/images/gaming/treatyse-of-fysshynge-woodcut.png" alt="A stamped illustration of an angler with rod, line and hook beside a river, a walled town behind him" style="aspect-ratio:0.829091;width:300px;height:auto"/><figcaption class="wp-element-caption">One of the book&rsquo;s stamped illustrations: an angler with rod, line and hook, his catch in the tub beside him, a walled town beyond.</figcaption></figure>
 
 The cover of this book is titled *The Art of Coarse Angling*, yet its first page gives a different title altogether: *A Treatyse of Fysshynge wyth an Angle*, by Juliana De Berners.
@@ -41,7 +43,7 @@ The lore it revealed was this:
 Others, seeing the popularity of the book, have published their own variations upon it, with mixed success.
 
 <aside class="catalogue" aria-label="Catalogue entry">
-<p><span class="cat-label">Location</span> <span>Æstrald, Oerth &mdash; Oerik, Western Flanaess, Berghof, Spendlowe<br>Æstrald, Earth &mdash; Eurasie, Westerne Europe, Englonde, Westmestre</span></p>
+<p><span class="cat-label">Location</span> <span>Æstrald, Oerth &mdash; Oerik, Western Flanaess, Berghof, Spendlowe<br>Æstrald, Erthe &mdash; Europe &amp; Asie, Westerne Europe, Englonde, Westmestre</span></p>
 <p><span class="cat-label">Type</span> <span>Book &mdash; stamped rather than hand-written, the technique unknown; on fine handmade paper</span></p>
 <p><span class="cat-label">Holdings</span> <span>Original acquired for the collector Erabry N&rsquo;qu-el; his hand-written copies widely dispersed</span></p>
 <p><span class="cat-label">Rarity</span> <span>Rare &mdash; the only stamped exemplar; all other copies are hand-written and illustrated</span></p>

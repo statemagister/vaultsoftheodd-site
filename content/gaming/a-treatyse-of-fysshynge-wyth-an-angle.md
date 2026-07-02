@@ -11,8 +11,6 @@ tags:
 
 <figure class="wp-block-image aligncenter size-large"><img src="/images/gaming/treatyse-of-fysshynge-sample-text.png" alt="A facsimile of the book&rsquo;s opening page, its words stamped rather than written by hand" style="aspect-ratio:1.473465;width:100%;height:auto"/><figcaption class="wp-element-caption">The opening page of the book, in its stamped hand &mdash; strange to the eye, yet legible to any reader.</figcaption></figure>
 
-<figure class="wp-block-image alignright size-large is-resized"><img src="/images/gaming/treatyse-of-fysshynge-woodcut.png" alt="A stamped illustration of an angler with rod, line and hook beside a river, a walled town behind him" style="aspect-ratio:0.829091;width:300px;height:auto"/><figcaption class="wp-element-caption">One of the book&rsquo;s stamped illustrations: an angler with rod, line and hook, his catch in the tub beside him, a walled town beyond.</figcaption></figure>
-
 The cover of this book is titled *The Art of Coarse Angling*, yet its first page gives a different title altogether: *A Treatyse of Fysshynge wyth an Angle*, by Juliana De Berners.
 
 It is a comprehensive treatise describing the theory and practice of freshwater fishing. Anyone who takes the time and effort to study it will have less difficulty catching fish from river or lake.
@@ -24,6 +22,8 @@ A sample of the book&rsquo;s own hand &mdash; stamped, yet plainly legible &mdas
 > Salamon in his parablys sayth that a good spyryte makyth a flourynge aege / that is a fayre aege &amp; a longe. &hellip; The beste to my symple dyscrecōn whyche is fysshynge : callyd Anglynge wyth a rodde : and a lyne and an hoke.
 
 The pages themselves are not parchment but a handmade paper of unusual quality — arguably better than that produced in some of the greater cities, which no doubt lends the book a higher value.
+
+<figure class="wp-block-image alignright size-large is-resized"><img src="/images/gaming/treatyse-of-fysshynge-woodcut.png" alt="A stamped illustration of an angler with rod, line and hook beside a river, a walled town behind him" style="aspect-ratio:0.829091;width:300px;height:auto"/><figcaption class="wp-element-caption">One of the book&rsquo;s stamped illustrations: an angler with rod, line and hook, his catch in the tub beside him, a walled town beyond.</figcaption></figure>
 
 The book was discovered at Berghof in the year five hundred and seventy-nine of the Common Year, a region in the polyarchy of the Hold of the Sea Princes. It was found at a villa near Lake Spendlowe, where the lake is fed by the River Lewyn. The building had belonged to the Van Arthog family, but the last descendant of that line had fallen into poverty, unable to pay his debts, and had died in five hundred and sixty.
 

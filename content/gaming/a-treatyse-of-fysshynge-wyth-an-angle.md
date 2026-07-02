@@ -43,7 +43,7 @@ The lore it revealed was this:
 Others, seeing the popularity of the book, have published their own variations upon it, with mixed success.
 
 <aside class="catalogue" aria-label="Catalogue entry">
-<p><span class="cat-label">Location</span> <span>Æstrald, Oerth &mdash; Oerik, Western Flanaess, Berghof, Spendlowe<br>Æstrald, Erthe &mdash; Europe, Westerne Europe, Englonde, Westmestre</span></p>
+<p><span class="cat-label">Location</span> <span>Æstrald, Oerth &mdash; Oerik, Western Flanaess, Berghof, Spendlowe<br>Æstrald, Erthe &mdash; Westerne Europe, Englonde, Lundene, Westmestre</span></p>
 <p><span class="cat-label">Type</span> <span>Book &mdash; stamped rather than hand-written, the technique unknown; on fine handmade paper</span></p>
 <p><span class="cat-label">Holdings</span> <span>Original acquired for the collector Erabry N&rsquo;qu-el; his hand-written copies widely dispersed</span></p>
 <p><span class="cat-label">Rarity</span> <span>Rare &mdash; the only stamped exemplar; all other copies are hand-written and illustrated</span></p>

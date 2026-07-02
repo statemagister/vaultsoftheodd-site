@@ -9,11 +9,17 @@ tags:
   - "In-world Document"
 ---
 
+<figure class="wp-block-image alignright size-large is-resized"><img src="/images/gaming/treatyse-of-fysshynge-woodcut.png" alt="A stamped illustration of an angler with rod, line and hook beside a river, a walled town behind him" style="aspect-ratio:0.829091;width:300px;height:auto"/><figcaption class="wp-element-caption">One of the book&rsquo;s stamped illustrations: an angler with rod, line and hook, his catch in the tub beside him, a walled town beyond.</figcaption></figure>
+
 The cover of this book is titled *The Art of Coarse Angling*, yet its first page gives a different title altogether: *A Treatyse of Fysshynge wyth an Angle*, by Juliana De Berners.
 
 It is a comprehensive treatise describing the theory and practice of freshwater fishing. Anyone who takes the time and effort to study it will have less difficulty catching fish from river or lake.
 
 It is a book of many oddities. Among the details of its publication it gives "Wynkyn De Worde, Westmestre," and a date of 1496. It does not appear to be hand-written, nor hand-illustrated: the words and illustrations are somehow stamped onto the pages, in a writing style difficult to understand. It defies magical translation, for it appears to be already readable.
+
+A sample of the book&rsquo;s own hand &mdash; stamped, yet plainly legible &mdash; runs thus:
+
+> Salamon in his parablys sayth that a good spyryte makyth a flourynge aege / that is a fayre aege &amp; a longe. &hellip; The beste to my symple dyscrecōn whyche is fysshynge : callyd Anglynge wyth a rodde : and a lyne and an hoke.
 
 The pages themselves are not parchment but a handmade paper of unusual quality — arguably better than that produced in some of the greater cities, which no doubt lends the book a higher value.
 

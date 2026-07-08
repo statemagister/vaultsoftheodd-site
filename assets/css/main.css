@@ -235,13 +235,13 @@ hr { border: 0; height: 1px; background: var(--rule); margin: 2.4rem auto; max-w
 .theme-toggle:hover { color: var(--gold); border-color: var(--gold); }
 
 /* ---- Buy me a coffee (header + articles) ---- */
-.coffee {
+.coffee, .shoplink {
   display: inline-flex; align-items: center; gap: 0.45rem; font-family: var(--display);
   font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase;
   padding: 0.45rem 0.9rem; border: 1px solid var(--gold); color: var(--gold);
   border-radius: 2px; white-space: nowrap; transition: all 0.15s ease;
 }
-.coffee:hover { background: var(--gold); color: var(--bg); text-decoration: none; }
+.coffee:hover, .shoplink:hover { background: var(--gold); color: var(--bg); text-decoration: none; }
 .coffee .cup { font-size: 0.95rem; }
 .header-coffee { }
 
@@ -479,7 +479,7 @@ figcaption, .wp-element-caption { display: table-caption; caption-side: bottom; 
 }
 .aside-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
 .aside-tags .tag { margin: 0; }
-.post-aside .coffee { width: 100%; justify-content: center; }
+.post-aside .coffee, .post-aside .shoplink { width: 100%; justify-content: center; }
 
 /* Collapsible sidebar sections (browse by tag / by date) */
 .aside-collapse > summary {

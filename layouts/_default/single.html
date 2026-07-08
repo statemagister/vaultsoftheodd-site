@@ -86,6 +86,13 @@
       </section>
       {{- end }}
 
+      {{- if and .Site.Params.ebay (eq .Section "gaming") }}
+      <section class="aside-block">
+        <h2 class="aside-title">The collection</h2>
+        <a class="shoplink" href="{{ .Site.Params.ebay }}" rel="noopener" target="_blank">Vintage D&amp;D &amp; finds on eBay</a>
+      </section>
+      {{- end }}
+
       {{- $siblings := where .Site.RegularPages "Section" .Section }}
       {{- if gt (len $siblings) 1 }}
       <section class="aside-block">

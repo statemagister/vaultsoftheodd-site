@@ -12,6 +12,8 @@ enableEmoji = false
   author = "Drew Griffiths"
   tagline = "A vault of something odd and eclectic."
   buymeacoffee = "https://buymeacoffee.com/drewgriffiths"
+  # eBay seller page — surfaced only in the Gaming vault sidebar.
+  ebay = "https://www.ebay.co.uk/usr/efharhdt"
   # Default social-share banner (Open Graph / Twitter). 1200x630.
   ogImage = "images/og-default.png"
   # Cloudflare Web Analytics (cookieless). Paste the token from your

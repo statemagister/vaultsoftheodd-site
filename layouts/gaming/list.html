@@ -91,6 +91,13 @@
         <a class="coffee" href="{{ . }}" rel="noopener" target="_blank"><span class="cup">&#9749;</span> Buy me a coffee</a>
       </section>
       {{- end }}
+
+      {{- with .Site.Params.ebay }}
+      <section class="aside-block">
+        <h2 class="aside-title">The collection</h2>
+        <a class="shoplink" href="{{ . }}" rel="noopener" target="_blank">Vintage D&amp;D &amp; finds on eBay</a>
+      </section>
+      {{- end }}
     </div>
   </aside>
 </div>

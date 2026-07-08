@@ -1,0 +1,37 @@
+/* giscus theme — Vaults of the ODD, Greyhawk heraldic parchment (aged gold) */
+main {
+  --color-prettylights-syntax-comment: #6b5836;
+  --color-fg-default: #2c2315;
+  --color-fg-muted: #5c4c30;
+  --color-fg-subtle: #7a684a;
+  --color-canvas-default: #ecdfb6;
+  --color-canvas-overlay: #f6efce;
+  --color-canvas-inset: #f6efce;
+  --color-canvas-subtle: #e3d29e;
+  --color-border-default: rgba(147, 107, 21, 0.48);
+  --color-border-muted: rgba(33, 26, 16, 0.14);
+  --color-neutral-muted: rgba(33, 26, 16, 0.10);
+  --color-accent-fg: #8b1d2b;
+  --color-accent-emphasis: #8b1d2b;
+  --color-accent-muted: rgba(139, 29, 43, 0.40);
+  --color-accent-subtle: rgba(139, 29, 43, 0.12);
+  --color-success-fg: #4a7a2c;
+  --color-btn-text: #211a10;
+  --color-btn-bg: #f6efce;
+  --color-btn-border: rgba(147, 107, 21, 0.48);
+  --color-btn-hover-bg: #e3d29e;
+  --color-btn-hover-border: #936b15;
+  --color-btn-active-bg: #dcc99a;
+  --color-btn-primary-text: #f4ead0;
+  --color-btn-primary-bg: #8b1d2b;
+  --color-btn-primary-border: #8b1d2b;
+  --color-btn-primary-hover-bg: #6f1622;
+  --color-btn-primary-hover-border: #6f1622;
+  --color-social-reaction-bg-hover: #e3d29e;
+  --color-social-reaction-bg-reacted-hover: #dcc99a;
+  color-scheme: light;
+}
+main .gsc-comment-box-tabs,
+main .gsc-comment-box {
+  border-color: rgba(147, 107, 21, 0.48);
+}

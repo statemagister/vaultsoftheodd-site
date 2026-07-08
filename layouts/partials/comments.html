@@ -4,9 +4,17 @@
        The theme URL is built from the live origin at runtime so it works on the
        staging (.net) domain now and the canonical (.com) domain after cutover. */ -}}
 {{- $sec := $.Section }}
+{{- $set := "" }}
+{{- with $.Params.settings }}{{ $set = index . 0 | urlize }}{{ end }}
 {{- $dark := in (slice "gaming" "mythology") $sec }}
 {{- $themeFile := "giscus/vaults-light.css" }}
-{{- if eq $sec "gaming" }}{{ $themeFile = "giscus/vaults-dark.css" }}{{ end }}
+{{- if eq $sec "gaming" }}
+  {{- /* Gaming settings carry their own palettes: Ravenloft (dark gothic) is the
+         default, Greyhawk is light heraldic parchment. Match giscus to the
+         article's setting, not just the section. */ -}}
+  {{- $themeFile = "giscus/vaults-dark.css" }}
+  {{- if eq $set "greyhawk" }}{{ $themeFile = "giscus/vaults-greyhawk.css" }}{{ $dark = false }}{{ end }}
+{{- end }}
 {{- if eq $sec "stories" }}{{ $themeFile = "giscus/vaults-stories.css" }}{{ end }}
 {{- if eq $sec "mythology" }}{{ $themeFile = "giscus/vaults-mythology.css" }}{{ end }}
 {{- if eq $sec "politics" }}{{ $themeFile = "giscus/vaults-politics.css" }}{{ end }}

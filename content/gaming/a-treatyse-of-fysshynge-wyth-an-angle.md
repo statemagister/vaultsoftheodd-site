@@ -25,7 +25,7 @@ The pages themselves are not parchment but a handmade paper of unusual quality, 
 
 <figure class="wp-block-image alignright size-large is-resized"><img src="/images/gaming/treatyse-of-fysshynge-woodcut.png" alt="A stamped illustration of an angler with rod, line and hook beside a river, a walled town behind him" style="aspect-ratio:0.829091;width:240px;height:auto"/><figcaption class="wp-element-caption">One of the book&rsquo;s stamped illustrations: an angler with rod, line and hook, his catch in the tub beside him, a walled town beyond.</figcaption></figure>
 
-In the year five hundred and seventy-nine of the Common Year the book was discovered in Berghof, a region in the polyarchy of the Hold of the Sea Princes. It was found at a villa near Lake Spendlowe, where the lake is fed by the River Lewyn. The building had belonged to the Van Arthog family, but the last descendant of that line had fallen into poverty, unable to pay his debts, and had died in five hundred and sixty.
+In five hundred and seventy-nine of the Common Year the book was discovered in Berghof, a region in the polyarchy of the Hold of the Sea Princes. It was found at a villa near Lake Spendlowe, where the lake is fed by the River Lewyn. The building had belonged to the Van Arthog family, but the last descendant of that line had fallen into poverty, unable to pay his debts, and had died in five hundred and sixty.
 
 It is uncertain how this particular book came into the possession of the Van Arthogs. It has been speculated that Karl Van Arthog — a mage of the family from four hundred and twenty-three to four hundred and eighty-six, known as the guardian of Adlerweg — had acquired it somehow, perhaps having visited Westmestre at some point.
 

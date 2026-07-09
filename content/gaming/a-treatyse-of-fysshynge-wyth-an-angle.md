@@ -45,7 +45,7 @@ Others, seeing the popularity of the book, have published their own variations u
 <aside class="catalogue" aria-label="Catalogue entry">
 <p><span class="cat-label">Location</span> <span>Æstrald, Oerth &mdash; Oerik, Western Flanaess, Berghof, Spendlowe<br>Æstrald, Erthe &mdash; Westerne Europe, Englonde, Lundene, Westmestre</span></p>
 <p><span class="cat-label">Type</span> <span>Book &mdash; stamped rather than hand-written, the technique unknown; on fine handmade paper</span></p>
-<p><span class="cat-label">Holdings</span> <span>Original acquired for the collector Erabry N&rsquo;qu-el; his hand-written copies widely dispersed</span></p>
+<p><span class="cat-label">Holdings</span> <span>Original held by the collector Erabry N&rsquo;qu-el; several hand-written copies made by various sages</span></p>
 <p><span class="cat-label">Rarity</span> <span>Rare &mdash; the only stamped exemplar; all other copies are hand-written and illustrated</span></p>
 <p><span class="cat-label">Note</span> <span>Found at a lake-side villa near Lake Spendlowe; printed at Westmestre by Wynkyn de Worde</span></p>
 <p class="cat-source">UK2 The Sentinel, p.&nbsp;22. Additional material by Drew Griffiths.</p>

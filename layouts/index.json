@@ -1,6 +1,6 @@
 {{- $list := slice -}}
 {{- range (where .Site.Pages "Kind" "in" (slice "page" "section")) -}}
-  {{- if .Content -}}
+  {{- if and .Content (not .Params.noindex) -}}
   {{- $list = $list | append (dict
       "title" .Title
       "url" .RelPermalink

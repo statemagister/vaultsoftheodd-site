@@ -1,0 +1,2319 @@
+---
+title: "The Peculiar but Interactive Timeline of Barovia"
+slug: "barovia-timeline"
+date: 2026-07-11T12:00:00Z
+settings:
+  - "Ravenloft"
+layout: "timeline"
+noindex: true
+_build:
+  list: never
+  render: always
+---
+
+<style>
+.tl-page { width: 100%; }
+.tl-wrap { font-family: var(--body); color: var(--text-body); max-width: 1320px; margin: 0 auto; padding: 0.5rem 1rem 3rem; }
+.tl-head { text-align: center; margin-bottom: 1.4rem; }
+.tl-orn { display: flex; align-items: center; gap: 1rem; justify-content: center; max-width: 760px; margin: 0.4rem auto 0.9rem; }
+.tl-orn::before, .tl-orn::after { content: ''; flex: 1; height: 1px; background: var(--gold); opacity: 0.5; }
+.tl-orn span { font-family: var(--display); font-size: 1.15rem; letter-spacing: 0.05em; color: var(--gold); }
+.tl-sub { max-width: 660px; margin: 0 auto; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; font-style: italic; }
+.tl-note { max-width: 640px; margin: 0.6rem auto 0; color: var(--text-muted); font-size: 0.76rem; }
+.tl-legend { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; justify-content: center; max-width: 900px; margin: 1.1rem auto 0; }
+.tl-lg { display: flex; align-items: center; gap: 0.4rem; font-size: 0.7rem; color: var(--text-muted); font-family: var(--display); letter-spacing: 0.05em; }
+.tl-sw { width: 12px; height: 12px; border-radius: 50%; box-shadow: 0 0 0 2px var(--bg); flex-shrink: 0; }
+
+.tl-layout { display: flex; gap: 1.5rem; align-items: flex-start; margin-top: 1.4rem; }
+.tl-stage { position: relative; overflow-x: auto; overflow-y: visible; flex: 1 1 auto; min-width: 0; border: 1px solid var(--rule); border-radius: 4px; background: linear-gradient(var(--bg-alt), var(--bg)); }
+.tl-field { position: relative; }
+
+.tl-linecol { position: absolute; width: 2px; background: var(--rule); }
+.tl-linecol.is-spine { width: 3px; background: linear-gradient(var(--gold), rgba(201,162,75,0.2)); opacity: 0.85; }
+.tl-branch { position: absolute; height: 2px; }
+.tl-guide { position: absolute; left: 0; height: 1px; background: rgba(201,162,75,0.07); }
+.tl-century { position: absolute; left: 0; height: 1px; background: rgba(201,162,75,0.2); }
+.tl-settingband { position: absolute; left: 0; height: 0; border-top: 1px dashed; opacity: 0.6; }
+.tl-ytick { position: absolute; font-family: var(--display); font-size: 0.6rem; color: var(--text-muted); letter-spacing: 0.02em; text-align: right; padding-right: 8px; }
+.tl-yev { position: absolute; font-family: var(--display); font-size: 0.6rem; color: var(--gold); text-align: right; padding-right: 8px; }
+.tl-llabel { position: absolute; font-family: var(--display); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); white-space: nowrap; cursor: pointer; }
+.tl-llabel.is-spine { color: var(--gold-bright); font-size: 0.72rem; }
+.tl-llabel:hover { color: var(--gold); }
+
+.tl-ev { position: absolute; width: 13px; height: 13px; border-radius: 50%; border: 0; padding: 0; cursor: pointer; box-shadow: 0 0 0 2px var(--bg); transform: translate(-50%, -50%); transition: transform 0.1s ease; }
+.tl-ev:hover, .tl-ev:focus-visible { transform: translate(-50%, -50%) scale(1.4); outline: none; z-index: 6; }
+.tl-ev.is-active { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--gold-bright); z-index: 7; }
+.tl-ev.scope-shared { border-radius: 2px; }
+.tl-ev.scope-setting { border-radius: 2px; width: 16px; height: 16px; }
+
+.tl-tip { position: fixed; pointer-events: none; background: var(--bg-card); border: 1px solid var(--gold); color: var(--text-primary); font-size: 0.72rem; line-height: 1.35; padding: 0.3rem 0.5rem; border-radius: 3px; z-index: 60; max-width: 230px; }
+
+.tl-panel { position: sticky; top: 1rem; width: 344px; flex: 0 0 344px; max-height: calc(100vh - 2rem); overflow-y: auto; background: var(--bg-card); border: 1px solid var(--rule); border-radius: 4px; padding: 1rem 1.1rem 1.4rem; }
+.tl-close { float: right; background: transparent; border: 1px solid var(--rule); color: var(--text-muted); font-family: var(--display); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 3px; cursor: pointer; }
+.tl-close:hover { color: var(--gold); border-color: var(--gold); }
+.tl-pyear { font-family: var(--display); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 0.2rem; }
+.tl-scope { color: var(--gold); }
+.tl-ptitle { font-family: var(--display); font-size: 1.1rem; color: var(--gold-bright); margin: 0 0 0.5rem; line-height: 1.25; }
+.tl-status { margin: 0 0 0.3rem; font-size: 0.9rem; color: var(--text-primary); }
+.tl-badge { display: inline-block; font-family: var(--display); font-size: 0.56rem; letter-spacing: 0.08em; color: #15120f; padding: 0.12rem 0.42rem; border-radius: 2px; margin-right: 0.4rem; vertical-align: middle; }
+.tl-gloss { font-size: 0.82rem; color: var(--text-muted); margin: 0 0 0.6rem; line-height: 1.55; }
+.tl-sec-b { border-top: 1px solid var(--rule); padding-top: 0.6rem; margin-top: 0.6rem; }
+.tl-sec { display: block; font-family: var(--display); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
+.tl-sec-b p { font-size: 0.86rem; line-height: 1.6; color: var(--text-body); margin: 0 0 0.4rem; }
+.tl-sec-b ul { margin: 0 0 0.4rem; padding-left: 1.1rem; }
+.tl-sec-b li { font-size: 0.84rem; line-height: 1.5; color: var(--text-body); margin-bottom: 0.25rem; }
+.tl-src { font-size: 0.82rem; color: var(--text-body); margin: 0 0 0.3rem; }
+.tl-src-g { color: var(--text-muted); font-style: italic; }
+.tl-meta-line { font-size: 0.78rem; color: var(--text-muted); margin: 0.2rem 0; }
+.tl-flag { margin-bottom: 0.4rem; }
+.tl-flag summary { cursor: pointer; color: var(--gold); font-size: 0.82rem; }
+.tl-flag p { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem; line-height: 1.55; }
+.tl-castwrap > summary { cursor: pointer; color: var(--gold); font-size: 0.85rem; margin-bottom: 0.4rem; }
+.tl-cast { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.4rem; }
+.tl-person { border-left: 2px solid var(--rule); padding-left: 0.6rem; }
+.tl-pn { font-family: var(--display); font-size: 0.82rem; color: var(--text-primary); margin: 0; }
+.tl-age { color: var(--gold); font-size: 0.72rem; }
+.tl-pl { font-size: 0.76rem; color: var(--text-muted); font-style: italic; margin: 0.1rem 0; }
+.tl-rel { margin: 0.2rem 0 0; padding-left: 1rem; }
+.tl-rel li { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.15rem; }
+
+@media (max-width: 900px) {
+  .tl-layout { display: block; }
+  .tl-panel { position: fixed; left: 0; right: 0; bottom: 0; top: auto; width: auto; flex: none; max-height: 64vh; border-radius: 10px 10px 0 0; z-index: 50; box-shadow: 0 -8px 30px rgba(0,0,0,0.5); }
+}
+</style>
+
+<div class="tl-wrap">
+  <header class="tl-head">
+    <div class="tl-orn"><span>The Peculiar but Interactive Timeline of Barovia</span></div>
+    <p class="tl-sub">A vertical descent through the Barovian calendar. Time runs downward, earliest year at the top. Barovia is the continuous spine; each domain branches in as its own track at the year it enters, so the timeline widens as it falls. Every marker is an event, coloured by how firmly its dating stands.</p>
+    <p class="tl-note">Unlisted working build, for testing before launch. Select any marker to read what the entry is, how certain its date is, its sources, and who was present. This page is not linked from anywhere on the site.</p>
+    <div class="tl-legend" id="tlLegend"></div>
+  </header>
+  <div class="tl-layout">
+    <div class="tl-stage" id="tlStage"><div class="tl-field" id="tlField"></div></div>
+    <aside class="tl-panel" id="tlPanel" hidden aria-live="polite">
+      <button type="button" class="tl-close" id="tlClose">Close</button>
+      <div id="tlPanelBody"></div>
+    </aside>
+  </div>
+</div>
+<div class="tl-tip" id="tlTip" hidden></div>
+
+<script id="timeline-data" type="application/json">
+{
+  "meta": {
+    "title": "The Peculiar but Interactive Timeline of Barovia",
+    "span": {
+      "from": 277,
+      "to": 851
+    },
+    "calendar": "Barovian Calendar (BC). Every absolute year descends from Realm of Terror (1990). I6 itself carries only two relative markers.",
+    "source_of_truth": "ravenloft_bloodlines_core_ledger.md",
+    "tiers": {
+      "CORE": "RoT-printed absolute value.",
+      "VOTM": "Derived from Vampire of the Mists; relative age/interval, year-numbers inherited from RoT.",
+      "PUB": "Established position in a published Vaults of the Odd article.",
+      "INFER": "Reasoned inference from dated evidence.",
+      "SPEC": "Speculation; strong (extends a proven pattern) or loose. Marked per item.",
+      "INVENT": "Narrative reconstruction with no source verification (scaffolding/colour).",
+      "OPEN": "A reasoned open question; see open_questions."
+    },
+    "event_scope": {
+      "single": "Occurs in one domain; sits on that domain's line.",
+      "shared": "Belongs to two lines (chiefly absorptions); spans the seam between them.",
+      "setting": "Affects every domain; spans the full width. Setting-wide events presuppose the demiplane and are therefore RoT-era constructs by nature."
+    },
+    "lines_note": "Barovia is the continuous spine from the top. Each domain branches in as its own line at its absorption year; the timeline widens as it descends. Mordent is the same-world-time-displaced exception: its line carries a full parallel run of events, not just a foreign fragment.",
+    "verification": "People and dates transcribed from ravenloft_bloodlines_core_ledger.md (itself read from RoT source page images). Consistency-checked: no death-before-birth, no child-before-parent, all relationships resolve. RM4 exhibit verified by Drew's first-hand examination of a physical copy.",
+    "sources": {
+      "I6": "I6 Ravenloft (Hickmans, TSR 1983). Primary.",
+      "I10": "I10 Ravenloft II: The House on Gryphon Hill (TSR 1986). Primary.",
+      "RoT": "Realm of Terror boxed set (Nesmith/Hayday, TSR 1990). Origin of the entire absolute Barovian calendar.",
+      "RM4": "RM4 (reprint of I6 in the Ravenloft line, TSR 1993). Faithful reprint incl. both burgomaster letters and both markers.",
+      "VotM": "Vampire of the Mists (Golden, TSR 1991). Relative structure; absolute year-numbers inherited from RoT.",
+      "VotO": "Vaults of the Odd (this site). PUB tier = published article; INFER/SPEC/INVENT = working reconstruction.",
+      "IStrahd": "I, Strahd: The Memoirs of a Vampire (Golden, TSR 1993). Strahd's own first-person memoir; MAXIMALLY unreliable by nature (the narrator is the liar the whole project documents). Anything attested ONLY here inherits that unreliability.",
+      "DoD": "Domains of Dread (TSR 1997). Later setting-era product. Origin of some retconned detail (e.g. the Tergs) not present in RoT or the novels. Also reproduces RoT's invented dates (e.g. 528)."
+    },
+    "model_note": "SOURCE is separate from TIER. TIER = how certain (CORE/INFER/SPEC/INVENT/PUB-as-status). SOURCE = which product/site asserts it. A date may carry an originating source plus an optional 'carried_by' list showing inheritance (e.g. RoT invents 351, VotM/DoD carry it). The widget derives its span from the data (min/max year present), so new products extend the axis automatically. New products append records and new source labels; no rebuild required. Cross-source contradictions (same subject, conflicting date, different sources) fire a flag.",
+    "span_note": "Span is DERIVED from data at render time (earliest to latest year). The declared span is a hint only.",
+    "open_tasks": [
+      "Dilisnya husband: settle invented-name vs spinster vs the 'Dorien/Dostron Dilisnya' name that appears in Drew's Timeline_A document.",
+      "Timeline_A reconciliation: ~22k-word document, largely Drew's own edits, disagrees with the ledger in places (marriage year 300 vs 304; Dorien/Dostron husband name; Tatyana surname 'Federovna') and contains unique material (Vasili von Zarovich grandfather; I,Strahd page citations; Dagmar Olavnya). Needs a three-way reconciliation report (this doc vs ledger vs sources), no silent merging. Substantial job, do fresh.",
+      "I, Strahd (first novel) ingestion: decide how much of the cast/subplot to bring in; all of it carries maximal-unreliability (persecution_device flag).",
+      "Second novel (War Against Azalin, 1998): owned but in storage; check whether it references the Tergs when accessible (can only confirm later propagation, not origin). Corpus gap for any future Strahd-Azalin / Darkon-formation work drawn from Strahd's POV.",
+      "~160 eventless later-generation RoT names: optionally append for fully-populated 'who was alive' panels.",
+      "Holy Symbol article: candidate for alignment pass to match the committed 346-orchestration reading (flag holy_symbol_lag).",
+      "Claude Code build spec: vertical widening-descent widget in the Census/Account skin, reading this data file."
+    ]
+  },
+  "lines": [
+    {
+      "id": "barovia",
+      "label": "Barovia",
+      "kind": "core-spine",
+      "starts": 277,
+      "tier": "CORE",
+      "note": "The continuous Barovian world. The only line that runs the full height.",
+      "source": "I6"
+    },
+    {
+      "id": "mordent",
+      "label": "Mordent",
+      "kind": "same-world-time-displaced",
+      "starts": 579,
+      "tier": "CORE",
+      "note": "Linked to Barovia by I10 (Drum of Barovia / Dreams of Barovia). Same world, displaced in time; I10 says 'perhaps centuries apart' and leaves the offset open. RoT fixes the offset unilaterally via the Weathermay tree (Byron age 57 at entry => 522+57=579). Carries a full parallel event track. [SOURCE: the Mordent-Barovia LINK is I10 (Dreams of Barovia); the DATED anchor at 579 is RoT (Weathermay Byron age 57).]",
+      "source": "RoT"
+    },
+    {
+      "id": "falkovnia",
+      "label": "Falkovnia",
+      "kind": "foreign",
+      "starts": 690,
+      "tier": "CORE",
+      "note": "Foreign domain; no Barovian blood tie. Anchored only at formation (Vlad Drakov, Lord of Falkovnia 690).",
+      "source": "RoT"
+    },
+    {
+      "id": "richemulot",
+      "label": "Richemulot",
+      "kind": "foreign",
+      "starts": 694,
+      "tier": "CORE",
+      "note": "Seeded from the Barovian-rooted Renier line (wererats). Claude Renier, Lord of Richemulot 694.",
+      "source": "RoT"
+    },
+    {
+      "id": "dementlieu",
+      "label": "Dementlieu",
+      "kind": "foreign",
+      "starts": 707,
+      "tier": "CORE",
+      "note": "Seeded from the Mordent-linked d'Honaire line. Dominic d'Honaire, Lord of Dementlieu 707.",
+      "source": "RoT"
+    },
+    {
+      "id": "borca",
+      "label": "Borca",
+      "kind": "foreign",
+      "starts": 684,
+      "tier": "CORE",
+      "note": "Seeded from the Barovian-rooted Boritsi/Dilisnya line. Camille first lord; her first poisonings 684, lordship consolidated by the 698 killing spree; Ivana assumes lordship 711.",
+      "source": "RoT"
+    },
+    {
+      "id": "dorvinia",
+      "label": "Dorvinia",
+      "kind": "foreign",
+      "starts": 715,
+      "tier": "CORE",
+      "note": "Ivan Dilisnya became Lord of Dorvinia in 715 (Dilisnya Note D).",
+      "source": "RoT"
+    },
+    {
+      "id": "arkandale",
+      "label": "Arkandale",
+      "kind": "foreign",
+      "starts": 700,
+      "tier": "INFER",
+      "note": "Nathan Timothy, Lord of Arkandale (Timothy Note C). RoT gives the lord but not a precise formation year; placed near his lifetime (684-707) pending a firmer date. Marked INFER for the year, CORE for the lordship.",
+      "source": "RoT"
+    },
+    {
+      "id": "verbrek",
+      "label": "Verbrek",
+      "kind": "foreign",
+      "starts": 715,
+      "tier": "INFER",
+      "note": "Alfred Timothy, Lord of Verbrek (Timothy Notes D/E). RoT gives the lord but not a precise formation year; placed near his lifetime (709-724) pending a firmer date. Marked INFER for the year, CORE for the lordship.",
+      "source": "RoT"
+    }
+  ],
+  "people": [
+    {
+      "id": "barov",
+      "name": "Barov Von Zarovich",
+      "family": "VonZarovich",
+      "line": "barovia",
+      "birth": {
+        "year": 277,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 346,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Castle Ravenloft",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "ravenia",
+          "tier": "CORE",
+          "source": "RoT"
+        },
+        {
+          "type": "parent-of",
+          "with": [
+            "strahd",
+            "sturm",
+            "sergei"
+          ],
+          "tier": "CORE",
+          "source": "RoT"
+        },
+        {
+          "type": "sibling",
+          "with": "dorfniya",
+          "tier": "INFER",
+          "note": "Dorfniya likely a Von Zarovich, sister to Barov; parentage struck from RoT's Dilisnya tree.",
+          "source": "VotO"
+        }
+      ],
+      "notes": "King of Barovia; the kingdom is named for him (though likely originally for an antecedent). Dies 346, before Strahd's return. PUB position: dead before the return, load-bearing for the succession."
+    },
+    {
+      "id": "ravenia",
+      "name": "Ravenia Van Roeyen",
+      "family": "VonZarovich",
+      "line": "barovia",
+      "birth": {
+        "year": 283,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 346,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Castle Ravenloft",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "barov",
+          "tier": "CORE",
+          "source": "RoT"
+        },
+        {
+          "type": "parent-of",
+          "with": [
+            "strahd",
+            "sturm",
+            "sergei"
+          ],
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "name_variants": [
+        {
+          "form": "Ravenia Van Roeyen",
+          "source": "RoT Bloodlines",
+          "tier": "CORE",
+          "source_product": "RoT"
+        },
+        {
+          "form": "Queen Raven",
+          "source": "I6 Crypt 30",
+          "tier": "CORE",
+          "source_product": "RoT"
+        },
+        {
+          "form": "Ravenovia",
+          "source": "I6 Room K88; VotM; Holy Symbol article",
+          "tier": "PUB",
+          "source_product": "VotO"
+        }
+      ],
+      "open_question": "queen_name",
+      "notes": "Queen of Barovia. Marriage to Barov reconstructed at ~304 (INFER; RoT prints no marriage date). Name unsettled across sources; see open question."
+    },
+    {
+      "id": "strahd",
+      "name": "Strahd Von Zarovich",
+      "family": "VonZarovich",
+      "line": "barovia",
+      "birth": {
+        "year": 306,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 351,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Castle Ravenloft",
+      "relationships": [
+        {
+          "type": "parent",
+          "with": [
+            "barov",
+            "ravenia"
+          ],
+          "tier": "CORE",
+          "source": "RoT"
+        },
+        {
+          "type": "sibling",
+          "with": [
+            "sturm",
+            "sergei"
+          ],
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Firstborn. Became the undead Lord of Barovia in 351 (Note A). Away at war for ~30 years (left ~347-14=... left as a youth c.320, war ends 347). PRIMARY reconstruction: orchestrated the 346 catastrophe and authored the counter-narrative that became de facto history; see events massacre_346 and transformation_351. 'Death' year 351 = transformation, not a true death."
+    },
+    {
+      "id": "sturm",
+      "name": "Sturm Von Zarovich",
+      "family": "VonZarovich",
+      "line": "barovia",
+      "birth": {
+        "year": 312,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 382,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "away from Castle Ravenloft (crypt empty)",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "gisella",
+          "tier": "CORE",
+          "source": "RoT"
+        },
+        {
+          "type": "parent",
+          "with": [
+            "barov",
+            "ravenia"
+          ],
+          "tier": "CORE",
+          "source": "RoT"
+        },
+        {
+          "type": "sibling",
+          "with": [
+            "strahd",
+            "sergei"
+          ],
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Middle brother; next in succession after Strahd. SURVIVES with a natural lifespan and marries; his crypt in Castle Ravenloft is EMPTY (VotM ch.25). Reconstruction: the one man who understood Strahd's coup and fled, lacking the manpower to stop him or make an accusation stick. His survival is predicted evidence, not an anomaly."
+    },
+    {
+      "id": "gisella",
+      "name": "Gisella Fallona",
+      "family": "VonZarovich",
+      "line": "barovia",
+      "birth": {
+        "year": 313,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 370,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "away from Castle Ravenloft",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "sturm",
+          "tier": "CORE",
+          "source": "RoT"
+        },
+        {
+          "type": "parent-of",
+          "with": [
+            "elsa_fallona"
+          ],
+          "tier": "INFER",
+          "note": "Elsa Fallona named as Gisella's mother in the Holy Symbol article; relationship direction is mother-of-Gisella.",
+          "source": "VotO"
+        }
+      ],
+      "notes": "Sturm's wife. Her mother Elsa Fallona (I6 Crypt 16) is among the 346 dead."
+    },
+    {
+      "id": "sergei",
+      "name": "Sergei Von Zarovich",
+      "family": "VonZarovich",
+      "line": "barovia",
+      "birth": {
+        "year": 324,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 351,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Castle Ravenloft",
+      "relationships": [
+        {
+          "type": "betrothed",
+          "with": "tatyana",
+          "tier": "CORE",
+          "note": "Marriage day = the 351 massacre; marriage never completed.",
+          "source": "RoT"
+        },
+        {
+          "type": "parent",
+          "with": [
+            "barov",
+            "ravenia"
+          ],
+          "tier": "CORE",
+          "source": "RoT"
+        },
+        {
+          "type": "sibling",
+          "with": [
+            "strahd",
+            "sturm"
+          ],
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Youngest brother. Took the Priest's Pendant (the Holy Symbol, unrecognised) after Kir died in 350. Murdered by Strahd in 351 on his wedding day; Strahd blamed an unknown assassin, the birth of his 'easy way with falsehood' (VotM)."
+    },
+    {
+      "id": "tatyana",
+      "name": "Tatyana",
+      "family": "VonZarovich",
+      "line": "barovia",
+      "birth": {
+        "year": 333,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 351,
+        "tier": "CORE",
+        "uncertain": true,
+        "note": "RoT prints '351?' with a question mark; presumed dead the day of her wedding to Sergei.",
+        "source": "RoT"
+      },
+      "location": "Castle Ravenloft",
+      "relationships": [
+        {
+          "type": "betrothed",
+          "with": "sergei",
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Object of Strahd's passion (Note B). Falls from the castle walls in 351. Recurs thereafter (see returns): Marina 400, Olya 475, Ireena at I6's present. Only ever reincarnates in Barovia."
+    },
+    {
+      "id": "pidlwik",
+      "name": "Pidlwik",
+      "family": "Dilisnya",
+      "line": "barovia",
+      "birth": {
+        "year": 280,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 349,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Castle Ravenloft",
+      "relationships": [
+        {
+          "type": "jester-to",
+          "with": "dorfniya",
+          "tier": "PUB",
+          "note": "I6 Crypt 9 'Fool of Dorfniya' = her court jester. NOT her husband. RoT misread this professional relationship as marriage.",
+          "source": "VotO"
+        }
+      ],
+      "open_question": null,
+      "notes": "RoT's Dilisnya tree prints Pidlwik as Dorfniya's husband; this is the single most consequential Bloodlines misreading. Corrected: jester only. RoT dates retained (280-349) but the marital relationship is rejected."
+    },
+    {
+      "id": "dorfniya",
+      "name": "Dorfniya",
+      "family": "Dilisnya",
+      "line": "barovia",
+      "birth": {
+        "year": 289,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 346,
+        "tier": "INFER",
+        "rejected": {
+          "year": 340,
+          "source": "RoT",
+          "tier": "CORE",
+          "reason": "Dies with Barov and Raven in the 346 pre-return catastrophe, not 340. Her children die at the castle in 351, so she was resident there; a widowed royal sister would be kept in the household."
+        },
+        "source": "VotO"
+      },
+      "location": "Castle Ravenloft",
+      "relationships": [
+        {
+          "type": "jester",
+          "with": "pidlwik",
+          "tier": "PUB",
+          "note": "Her court fool, not her husband.",
+          "source": "VotO"
+        },
+        {
+          "type": "spouse",
+          "with": "dilisnya_husband",
+          "tier": "INVENT",
+          "note": "Scaffolding: an early-widowed husband roots the legitimate line, then dies ~318. See open question.",
+          "source": "VotO"
+        },
+        {
+          "type": "affair",
+          "with": "gunther_cosco",
+          "tier": "CORE",
+          "note": "Father of Leo, per RoT Note B.",
+          "source": "RoT"
+        },
+        {
+          "type": "parent-of",
+          "with": [
+            "reinhold",
+            "gertrude_d",
+            "oleka",
+            "leo"
+          ],
+          "tier": "CORE",
+          "source": "RoT"
+        },
+        {
+          "type": "sibling",
+          "with": "barov",
+          "tier": "INFER",
+          "note": "Likely Von Zarovich, sister to Barov; parentage struck from RoT's tree (see flag).",
+          "source": "VotO"
+        }
+      ],
+      "open_question": "dilisnya_husband",
+      "notes": "Duchess. Death corrected from RoT's 340 to ~346 (dies with the elder royals). Effectively a royal widow / spinster-in-practice at the castle. Her Von Zarovich parentage is reconstructed to explain RoT's omission."
+    },
+    {
+      "id": "gunther_cosco",
+      "name": "Gunther Cosco",
+      "family": "Dilisnya",
+      "line": "barovia",
+      "birth": {
+        "year": 299,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 351,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Castle Ravenloft",
+      "relationships": [
+        {
+          "type": "affair",
+          "with": "dorfniya",
+          "tier": "CORE",
+          "source": "RoT"
+        },
+        {
+          "type": "parent-of",
+          "with": [
+            "leo"
+          ],
+          "tier": "CORE",
+          "note": "Leo raised as Pidlwik's son; actually Cosco's (Note B).",
+          "source": "RoT"
+        }
+      ],
+      "notes": "The courtier 'who caught Dorfniya's eye'. Father of Leo by affair. Dies 351."
+    },
+    {
+      "id": "leo",
+      "name": "Leo Dilisnya",
+      "family": "Dilisnya",
+      "line": "barovia",
+      "birth": {
+        "year": 320,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 398,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Barovia",
+      "relationships": [
+        {
+          "type": "raised-by",
+          "with": "dorfniya",
+          "tier": "CORE",
+          "source": "RoT"
+        },
+        {
+          "type": "biological-parent",
+          "with": "gunther_cosco",
+          "tier": "CORE",
+          "source": "RoT"
+        },
+        {
+          "type": "framed",
+          "with": "illya_buchvold",
+          "tier": "SPEC",
+          "source": "IStrahd",
+          "note": "In Strahd's memoir, Leo killed Illya and framed him, and Leo is later shown to be the real traitor. All of this is Strahd's narration; treat as asserted-by-Strahd, not established."
+        }
+      ],
+      "notes": "Raised as Pidlwik's son; on Pidlwik's death learned his true blood and left the Dilisnya family (Note B). Root of the later Boritsi/Borca line. | I,Strahd: The memoir PRESENTS Leo as the true traitor and 'architect of the slaughter', framing Illya. But this reveal comes near the end, years later, and is itself Strahd's narration. It is NOT an external correction of the frame; it is the next layer of the same unreliable account. Do not treat Leo's guilt as the reliable bottom layer. (See flag istrahd_persecution_device.)"
+    },
+    {
+      "id": "reinhold",
+      "name": "Reinhold Dilisnya",
+      "family": "Dilisnya",
+      "line": "barovia",
+      "birth": {
+        "year": 310,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 351,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Castle Ravenloft",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "nadia_yakimov",
+          "tier": "CORE",
+          "source": "RoT"
+        },
+        {
+          "type": "parent",
+          "with": [
+            "dorfniya",
+            "dilisnya_husband"
+          ],
+          "tier": "CORE",
+          "note": "Legitimate child; father is the reconstructed early-widowed husband.",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Most senior officer in Strahd's Army (CORE). Dies 351 at the castle (Note A). Stance toward 346: PRIMARY reading deceived; alternatives complicit or coerced. His army seniority reads as earned loyalty (deceived), reward (complicit), or a leash (coerced)."
+    },
+    {
+      "id": "nadia_yakimov",
+      "name": "Nadia Yakimov",
+      "family": "Dilisnya",
+      "line": "barovia",
+      "birth": {
+        "year": 320,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 367,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Barovia",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "reinhold",
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Reinhold's wife; survives the 351 massacre (dies 367)."
+    },
+    {
+      "id": "gertrude_d",
+      "name": "Gertrude Dilisnya",
+      "family": "Dilisnya",
+      "line": "barovia",
+      "birth": {
+        "year": 315,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 351,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Castle Ravenloft",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "ivan_buchvold",
+          "tier": "CORE",
+          "source": "RoT"
+        },
+        {
+          "type": "parent",
+          "with": [
+            "dorfniya",
+            "dilisnya_husband"
+          ],
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Dies 351 at the castle (Note A)."
+    },
+    {
+      "id": "ivan_buchvold",
+      "name": "Ivan Buchvold",
+      "family": "Dilisnya",
+      "line": "barovia",
+      "birth": {
+        "year": 311,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 351,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Castle Ravenloft",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "gertrude_d",
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "open_question": "buchvold",
+      "notes": "RoT prints 'Ivan Buchvold'. The Peculiar History suspects 'Illya Buchvold' (Tome of Strahd, one iteration) may be a Strahd fabrication. Whether Ivan and Illya are the same figure is contested; see open question."
+    },
+    {
+      "id": "illya_buchvold",
+      "name": "Illya Buchvold",
+      "family": "Buchvold",
+      "line": "barovia",
+      "birth": {
+        "year": null,
+        "tier": "INFER",
+        "source": "IStrahd",
+        "note": "Ivan's YOUNGER brother (I,Strahd), so born after Ivan's 311. No year given."
+      },
+      "death": {
+        "year": null,
+        "tier": "INFER",
+        "source": "IStrahd",
+        "note": "In I,Strahd, killed during the assassination-plot night. Leo Dilisnya cuts his throat and accuses him of being the Ba'al Verzi, but Leo is LATER revealed as the true traitor ('architect of tonight's slaughter'). Illya was framed, not the assassin. No calendar year."
+      },
+      "location": "Castle Ravenloft (I,Strahd narration)",
+      "relationships": [
+        {
+          "type": "sibling",
+          "with": "ivan_buchvold",
+          "tier": "INFER",
+          "source": "IStrahd",
+          "note": "Younger brother of Ivan Buchvold, per I,Strahd. Ivan is RoT-Bloodlines; Illya is NOT in the Bloodlines at all."
+        }
+      ],
+      "open_question": "buchvold",
+      "on_event_spine": false,
+      "notes": "Attested ONLY in I,Strahd, absent from RoT's Bloodlines. In the memoir: Ivan's younger brother and a staff officer, killed on the assassination-plot night. For YEARS afterward the in-world account held that Illya WAS the Ba'al Verzi (Leo's frame stood; the body was burned as an assassin's), so the family could in good faith have believed him a disgraced assassin during that time. Only near the end does the memoir reveal Leo as the real traitor. CRITICAL: every layer of this — Illya-as-assassin, Leo-as-true-traitor, the frame, the exposure — is Strahd's own narration. There is no reliable floor beneath it. Held OFF the dated event spine; even his existence is unverifiable outside Strahd's memoir."
+    },
+    {
+      "id": "oleka",
+      "name": "Oleka Dilisnya",
+      "family": "Dilisnya",
+      "line": "barovia",
+      "birth": {
+        "year": 317,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 351,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Castle Ravenloft",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "victor_wachter",
+          "tier": "CORE",
+          "source": "RoT"
+        },
+        {
+          "type": "parent",
+          "with": [
+            "dorfniya",
+            "dilisnya_husband"
+          ],
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Dies 351 at the castle (Note A)."
+    },
+    {
+      "id": "victor_wachter",
+      "name": "Victor Wachter",
+      "family": "Dilisnya",
+      "line": "barovia",
+      "birth": {
+        "year": 310,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 372,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Barovia",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "oleka",
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Oleka's husband; survives the massacre (dies 372)."
+    },
+    {
+      "id": "dilisnya_husband",
+      "name": "[Dorfniya's husband]",
+      "family": "Dilisnya",
+      "line": "barovia",
+      "birth": {
+        "year": null,
+        "tier": "INVENT",
+        "source": "VotO"
+      },
+      "death": {
+        "year": 318,
+        "tier": "INVENT",
+        "note": "Dies early to leave Dorfniya widowed by ~318, before Leo (Cosco's) in 320.",
+        "source": "VotO"
+      },
+      "location": "Castle Ravenloft",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "dorfniya",
+          "tier": "INVENT",
+          "source": "VotO"
+        },
+        {
+          "type": "parent-of",
+          "with": [
+            "reinhold",
+            "gertrude_d",
+            "oleka"
+          ],
+          "tier": "INVENT",
+          "source": "VotO"
+        }
+      ],
+      "open_question": "dilisnya_husband",
+      "notes": "SCAFFOLDING ONLY. Invented to root the legitimate Dilisnya line once Pidlwik is removed as husband. Deliberately minimal, unnamed, no political stance. Evidence-honest alternative: Dorfniya had no husband at all (spinster). See open question."
+    },
+    {
+      "id": "kir",
+      "name": "Kir",
+      "family": "Church",
+      "line": "barovia",
+      "birth": {
+        "year": null,
+        "tier": "INFER",
+        "note": "Young at elevation; born est. early 4th century.",
+        "source": "VotO"
+      },
+      "death": {
+        "year": 350,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Barovia (church)",
+      "relationships": [
+        {
+          "type": "successor-to",
+          "with": "ciril",
+          "tier": "PUB",
+          "source": "VotO"
+        }
+      ],
+      "notes": "Young novice who found Ciril dead and became High Priest, first holder of the Holy Symbol. Used it in secret against the goblin king at Strahd's arrival; then hid it. Died suddenly in 350; Sergei took the pendant. (Holy Symbol article, VotM.)"
+    },
+    {
+      "id": "ciril",
+      "name": "Prefect Ciril Romulich",
+      "family": "Church",
+      "line": "barovia",
+      "birth": {
+        "year": null,
+        "tier": "INFER",
+        "source": "VotO"
+      },
+      "death": {
+        "year": 347,
+        "tier": "PUB",
+        "note": "The crafting of the Holy Symbol killed him.",
+        "source": "VotO"
+      },
+      "location": "Barovia (chapel; dies at the stone circle outside the village)",
+      "relationships": [],
+      "notes": "The Most High Priest (I6 Crypt 30 'beloved of King Barov and Queen Raven'). Crafted the Holy Symbol of Ravenkind in 347 at divine instruction; already at the work for weeks, accelerating to finish before Strahd's arrival. (Holy Symbol article, published.)"
+    },
+    {
+      "id": "gregorovich",
+      "name": "Stephan Gregorovich",
+      "family": "Court",
+      "line": "barovia",
+      "birth": {
+        "year": null,
+        "tier": "INFER",
+        "source": "VotO"
+      },
+      "death": {
+        "year": 346,
+        "tier": "PUB",
+        "note": "Among the 346 ruling-circle dead.",
+        "source": "VotO"
+      },
+      "location": "Castle Ravenloft",
+      "relationships": [],
+      "notes": "First Counsellor to King Barov (I6 Crypt 25; 'Baron' in the printed text is a TYPESETTING ERROR for Barov, a name not a rank). CONFIRMED published position; do not describe as a rank error or connect to nobility."
+    },
+    {
+      "id": "khazan",
+      "name": "Khazan",
+      "family": "Court",
+      "line": "barovia",
+      "birth": {
+        "year": null,
+        "tier": "INFER",
+        "source": "VotO"
+      },
+      "death": {
+        "year": 346,
+        "tier": "PUB",
+        "source": "VotO"
+      },
+      "location": "Castle Ravenloft",
+      "relationships": [],
+      "notes": "Court wizard (I6 Crypt 15). Among the 346 dead."
+    },
+    {
+      "id": "elsa_fallona",
+      "name": "Elsa Fallona",
+      "family": "Court",
+      "line": "barovia",
+      "birth": {
+        "year": null,
+        "tier": "INFER",
+        "source": "VotO"
+      },
+      "death": {
+        "year": 346,
+        "tier": "PUB",
+        "source": "VotO"
+      },
+      "location": "Castle Ravenloft",
+      "relationships": [
+        {
+          "type": "parent-of",
+          "with": [
+            "gisella"
+          ],
+          "tier": "INFER",
+          "source": "VotO"
+        }
+      ],
+      "notes": "Mother of Gisella Fallona, Sturm's mother-in-law (I6 Crypt 16). Among the 346 dead."
+    },
+    {
+      "id": "byron_w",
+      "name": "Byron Weathermay",
+      "family": "Weathermay",
+      "line": "mordent",
+      "birth": {
+        "year": 522,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 599,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Mordent",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "katherine_s",
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Lifelong resident of Mordent; age 57 when Mordent entered Ravenloft (Note A). 522+57=579 is the anchor that ties the entire Mordent line to the Barovian calendar THROUGH RoT alone."
+    },
+    {
+      "id": "katherine_s",
+      "name": "Katherine Sutherwaite",
+      "family": "Weathermay",
+      "line": "mordent",
+      "birth": {
+        "year": 533,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 561,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Mordent",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "byron_w",
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Byron's wife."
+    },
+    {
+      "id": "godefroy",
+      "name": "Lord Wilfred Godefroy",
+      "family": "Weathermay",
+      "line": "mordent",
+      "birth": {
+        "year": 510,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 579,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Mordent (Gryphon Hill)",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "estelle_w",
+          "tier": "CORE",
+          "source": "RoT"
+        },
+        {
+          "type": "parent-of",
+          "with": [
+            "lilia"
+          ],
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Murdered wife and daughter in 578; suicide one year later; became ghost-lord of Mordent in 579 (Note C). FLAG: RoT dates the murder to 578, but I10's Mordentshire magistrate records place it roughly four centuries before the adventure. Collides with I10 and Bibles Part 2."
+    },
+    {
+      "id": "estelle_w",
+      "name": "Estelle Weathermay",
+      "family": "Weathermay",
+      "line": "mordent",
+      "birth": {
+        "year": 550,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 578,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Mordent (Gryphon Hill)",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "godefroy",
+          "tier": "CORE",
+          "source": "RoT"
+        },
+        {
+          "type": "parent-of",
+          "with": [
+            "lilia"
+          ],
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Murdered by Godefroy in 578."
+    },
+    {
+      "id": "lilia",
+      "name": "Lilia Godefroy",
+      "family": "Weathermay",
+      "line": "mordent",
+      "birth": {
+        "year": 568,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 578,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Mordent (Gryphon Hill)",
+      "relationships": [
+        {
+          "type": "parent",
+          "with": [
+            "godefroy",
+            "estelle_w"
+          ],
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Murdered with her mother in 578, aged 10."
+    },
+    {
+      "id": "camille",
+      "name": "Camille Dilisnya",
+      "family": "Boritsi",
+      "line": "borca",
+      "birth": {
+        "year": 662,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 711,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Borca",
+      "relationships": [],
+      "notes": "First Lord of Borca. Poisoned her husband and his mistress in 684; a 698 killing spree pruned the tree; poisoned by her daughter Ivana in 711."
+    },
+    {
+      "id": "ivana_b",
+      "name": "Ivana Boritsi",
+      "family": "Boritsi",
+      "line": "borca",
+      "birth": {
+        "year": 689,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": null,
+        "tier": "CORE",
+        "note": "RoT leaves death open.",
+        "source": "RoT"
+      },
+      "location": "Borca",
+      "relationships": [
+        {
+          "type": "parent",
+          "with": [
+            "camille"
+          ],
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Assumed lordship of Borca after poisoning her mother Camille in 711 (Note F)."
+    },
+    {
+      "id": "claude_r",
+      "name": "Claude Renier",
+      "family": "Renier",
+      "line": "richemulot",
+      "birth": {
+        "year": 654,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 726,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Richemulot",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "isabelle_m",
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Lord of Richemulot 694-726 (Note A). Wererat. Renier line is Barovian-rooted via Von Zarovich (Gertrude Von Zarovich marries Roul Renier)."
+    },
+    {
+      "id": "isabelle_m",
+      "name": "Isabelle Museau",
+      "family": "Renier",
+      "line": "richemulot",
+      "birth": {
+        "year": 659,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 710,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Richemulot",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "claude_r",
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Wererat. Her female descendants take Isabelle as a middle name (Note B)."
+    },
+    {
+      "id": "vlad_drakov",
+      "name": "Vlad Drakov",
+      "family": "Drakov",
+      "line": "falkovnia",
+      "birth": {
+        "year": 665,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": null,
+        "tier": "CORE",
+        "note": "RoT leaves death open.",
+        "source": "RoT"
+      },
+      "location": "Falkovnia",
+      "relationships": [],
+      "notes": "Became Lord of Falkovnia in 690 (Note A). The one genuinely FOREIGN family: no Barovian blood tie. Control case proving the others are Barovian by contrast."
+    },
+    {
+      "id": "germain_dh",
+      "name": "Germain d'Honaire",
+      "family": "dHonaire",
+      "line": "mordent",
+      "birth": {
+        "year": 634,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 707,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Mordent (later seeds Dementlieu)",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "alicia_c",
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Head of the Mordent-linked d'Honaire line (dates in the Mordent band). Seeds Dementlieu via Dominic."
+    },
+    {
+      "id": "alicia_c",
+      "name": "Alicia Corgiat",
+      "family": "dHonaire",
+      "line": "mordent",
+      "birth": {
+        "year": 650,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 716,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Mordent",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "germain_dh",
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Germain's wife."
+    },
+    {
+      "id": "dominic_dh",
+      "name": "Dominic d'Honaire",
+      "family": "dHonaire",
+      "line": "dementlieu",
+      "birth": {
+        "year": 700,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": null,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Dementlieu",
+      "relationships": [],
+      "notes": "Became Lord of Dementlieu in 707 (Note B). His mother Ernestine died in his childbirth (700)."
+    },
+    {
+      "id": "cain_t",
+      "name": "Cain Timothy",
+      "family": "Timothy",
+      "line": "mordent",
+      "birth": {
+        "year": 537,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 579,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Mordent",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "elizabeth_t",
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Head of the Timothy line. RoT Note A places the Timothys 'a werewolf in Mordent' — the Mordent placement is TEXTUAL, not inferred. Seeds Arkandale and Verbrek."
+    },
+    {
+      "id": "elizabeth_t",
+      "name": "Elizabeth Timothy",
+      "family": "Timothy",
+      "line": "mordent",
+      "birth": {
+        "year": 539,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 579,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Mordent",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "cain_t",
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Cain's wife."
+    },
+    {
+      "id": "nathan_t",
+      "name": "Nathan Timothy",
+      "family": "Timothy",
+      "line": "arkandale",
+      "birth": {
+        "year": 684,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 707,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Arkandale",
+      "relationships": [],
+      "notes": "Lord of Arkandale (Note C)."
+    },
+    {
+      "id": "alfred_t",
+      "name": "Alfred Timothy",
+      "family": "Timothy",
+      "line": "verbrek",
+      "birth": {
+        "year": 709,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 724,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Verbrek",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "winifred_r",
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Lord of Verbrek; married his distant cousin Winifred Ratcliff (Notes D/E)."
+    },
+    {
+      "id": "winifred_r",
+      "name": "Winifred Ratcliff",
+      "family": "Timothy",
+      "line": "verbrek",
+      "birth": {
+        "year": 706,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "death": {
+        "year": 734,
+        "tier": "CORE",
+        "source": "RoT"
+      },
+      "location": "Verbrek",
+      "relationships": [
+        {
+          "type": "spouse",
+          "with": "alfred_t",
+          "tier": "CORE",
+          "source": "RoT"
+        }
+      ],
+      "notes": "Alfred's wife/cousin."
+    }
+  ],
+  "events": [
+    {
+      "id": "marriage_barov",
+      "year": 304,
+      "scope": "single",
+      "line": "barovia",
+      "tier": "INFER",
+      "title": "Barov weds Ravenovia (reconstructed)",
+      "present": [
+        "barov",
+        "ravenia"
+      ],
+      "notes": "RoT prints no marriage date. Reconstructed ~299-305, most likely 304, arranged; van Roeyen wealth funds Zarovich wars. INFER.",
+      "source": "VotO"
+    },
+    {
+      "id": "strahd_to_war",
+      "year": 320,
+      "scope": "single",
+      "line": "barovia",
+      "tier": "INFER",
+      "title": "Strahd leaves for war as a youth",
+      "present": [
+        "strahd"
+      ],
+      "notes": "Left ~age 14, fought ~30 years, stayed beyond duty to avoid settling/arranged marriage while his parents lived and Sturm managed the lands. INFER, from the Peculiar History and the 347 'war is over' entry.",
+      "source": "VotO"
+    },
+    {
+      "id": "massacre_346",
+      "year": 346,
+      "scope": "single",
+      "line": "barovia",
+      "tier": "SPEC",
+      "spec_strength": "strong",
+      "title": "The ruling circle dies (the 346 catastrophe)",
+      "present": [
+        "barov",
+        "ravenia",
+        "dorfniya",
+        "gregorovich",
+        "khazan",
+        "elsa_fallona"
+      ],
+      "primary_reading": "Strahd orchestrated a goblin assault to overwhelm the castle at end-346 as a disguised coup, killing the entire ruling circle while the castle still stood, then returned as saviour and authored the counter-narrative (goblins as external tragedy) that became de facto history.",
+      "alternatives": [
+        "Encouraged the attacks but did not directly kill the circle.",
+        "Merely waited for the goblins to do enough damage, then claimed the vacancy.",
+        "A genuinely external goblin raid Strahd exploited rather than caused."
+      ],
+      "open_seam": "Whether the goblin attack was wholly orchestrated (primary) or a real raid exploited (alt). Sources will not settle it.",
+      "flags": [
+        "massacre_scatter",
+        "holy_symbol_lag"
+      ],
+      "notes": "Barov, Ravenia, Dorfniya (death corrected to 346), Gregorovich, Khazan, Elsa Fallona all die. PUB: dead before Strahd's return. The amulet warns of an enemy 'far worse than the goblins' that 'had yet to darken Barovia' — i.e. Strahd, not goblins. Strong speculation: extends the lying-Strahd pattern the Holy Symbol article proves for the 351 Sergei murder.",
+      "source": "VotO"
+    },
+    {
+      "id": "return_347",
+      "year": 347,
+      "scope": "single",
+      "line": "barovia",
+      "tier": "PUB",
+      "title": "Strahd returns; the war ends; the Holy Symbol is crafted",
+      "present": [
+        "strahd",
+        "ciril",
+        "kir"
+      ],
+      "notes": "Strahd defeats the goblins in essentially one night ('Twelfth Moon, 347: the war is over'). Ciril completes the Holy Symbol at divine instruction, the act killing him; the church could not manage the 346 dead against resurrection, which the divine instruction answers. Kir finds Ciril dead and becomes High Priest.",
+      "source": "VotO"
+    },
+    {
+      "id": "transformation_351",
+      "year": 351,
+      "scope": "single",
+      "line": "barovia",
+      "tier": "CORE",
+      "title": "Sergei murdered; Tatyana falls; Strahd transforms; the wedding-day massacre",
+      "present": [
+        "strahd",
+        "sergei",
+        "tatyana",
+        "reinhold",
+        "gertrude_d",
+        "ivan_buchvold",
+        "oleka",
+        "gunther_cosco"
+      ],
+      "notes": "The transformation (Note A) and the Castle Ravenloft massacre (Dilisnya Note A: all 351 deaths on the wedding day). The next generation dies here; the elder royals died earlier in 346. Strahd blames the Sergei murder on an unknown assassin — the birth of his falsehood (VotM). Anchor year for the whole Barovian calendar. [SOURCE: 351 originates in RoT (p.9 timeline + Strahd write-up p.38 'spring of the year 351'); VotM carries it as 'Spring 351'; RM4 reprints I6's relative markers only.]",
+      "source": "RoT",
+      "carried_by": [
+        "VotM",
+        "RM4"
+      ]
+    },
+    {
+      "id": "return_marina_400",
+      "year": 400,
+      "scope": "single",
+      "line": "barovia",
+      "tier": "VOTM",
+      "title": "Tatyana returns as Marina; killed; Strahd slays her family",
+      "present": [
+        "strahd",
+        "tatyana"
+      ],
+      "notes": "VotM/journal: Tenth Moon 400 Marina appears; Twelfth Moon 400 killed by her father; Strahd slays the whole family. A dated instance of the returns pattern.",
+      "source": "RoT",
+      "carried_by": [
+        "VotM"
+      ]
+    },
+    {
+      "id": "return_olya_475",
+      "year": 475,
+      "scope": "single",
+      "line": "barovia",
+      "tier": "VOTM",
+      "title": "Tatyana returns as Olya; Jander Sunstar arrives",
+      "present": [
+        "strahd",
+        "tatyana"
+      ],
+      "notes": "Fourth Moon 475: Olya appears; Strahd courts her. Jander arrives the same period; Olya dies of fever that night. The Olya identification pins Jander's arrival to 475. Begins VotM's densely-dated quarter-century.",
+      "source": "RoT",
+      "carried_by": [
+        "VotM"
+      ]
+    },
+    {
+      "id": "jander_period",
+      "year": 486,
+      "scope": "single",
+      "line": "barovia",
+      "tier": "VOTM",
+      "title": "Strahd massacres Sasha's family (Jander period)",
+      "present": [
+        "strahd"
+      ],
+      "notes": "Sasha aged 10. Part of the 475-500 Jander sequence (Sasha born 476; Eva dies 495; final assault 500). Relative structure from VotM; absolute years inherited from RoT.",
+      "source": "RoT",
+      "carried_by": [
+        "VotM"
+      ]
+    },
+    {
+      "id": "jander_fall_500",
+      "year": 500,
+      "scope": "single",
+      "line": "barovia",
+      "tier": "VOTM",
+      "title": "Final assault on Castle Ravenloft; Jander and Sasha die",
+      "present": [
+        "strahd"
+      ],
+      "notes": "End of the Jander quarter-century. ~25 years after 475.",
+      "source": "RoT",
+      "carried_by": [
+        "VotM"
+      ]
+    },
+    {
+      "id": "false_date_528",
+      "year": 528,
+      "scope": "single",
+      "line": "barovia",
+      "tier": "FLAG",
+      "title": "RoT/DoD date the I6 assault here — the impossible date",
+      "present": [],
+      "flags": [
+        "reductio_528",
+        "single_source_calendar"
+      ],
+      "notes": "RoT p.9 and DoD p.16-17 date 'powerful heroes assault Castle Ravenloft and perish' to 528. IMPOSSIBLE both ways against I6's own marker: forward, only 177 years since 351 (needs 'over 400'); backward, honouring the burgomaster, Strahd's transformation would fall before 127 — 224 years before the printed 351 and 179 before his 306 birth. This is a contradiction marker, not a real event. [SOURCE: 528 originates RoT p.9; carried by DoD (1997) citing House of Strahd. DoD to be added as a source when that product is reached.]",
+      "source": "RoT",
+      "carried_by": [
+        "DoD"
+      ]
+    },
+    {
+      "id": "mordent_murder_578",
+      "year": 578,
+      "scope": "single",
+      "line": "mordent",
+      "tier": "CORE",
+      "title": "Godefroy murders his wife and daughter",
+      "present": [
+        "godefroy",
+        "estelle_w",
+        "lilia"
+      ],
+      "flags": [
+        "godefroy_dating"
+      ],
+      "notes": "RoT Weathermay Note C. FLAG: collides with I10's magistrate records placing the murder ~four centuries before the adventure.",
+      "source": "RoT"
+    },
+    {
+      "id": "mordent_entry_579",
+      "year": 579,
+      "scope": "shared",
+      "lines": [
+        "barovia",
+        "mordent"
+      ],
+      "tier": "CORE",
+      "title": "Mordent enters Ravenloft (the worlds are joined on the axis)",
+      "present": [
+        "byron_w",
+        "godefroy"
+      ],
+      "flags": [
+        "mordent_anchor"
+      ],
+      "notes": "SHARED event: the moment the Mordent line joins the Barovian axis. Godefroy becomes ghost-lord. Anchored via Byron (age 57 => 522+57=579). I10 leaves the offset open ('perhaps centuries apart'); RoT fixes it. Mordent is same-world-time-displaced, not foreign.",
+      "source": "RoT"
+    },
+    {
+      "id": "borca_684",
+      "year": 684,
+      "scope": "shared",
+      "lines": [
+        "barovia",
+        "borca"
+      ],
+      "tier": "CORE",
+      "title": "Camille poisons her way toward the lordship of Borca",
+      "present": [
+        "camille"
+      ],
+      "notes": "Borca's line branches from the Barovian-rooted Boritsi/Dilisnya stock. First poisonings 684; lordship consolidated by 698.",
+      "source": "RoT"
+    },
+    {
+      "id": "falkovnia_690",
+      "year": 690,
+      "scope": "shared",
+      "lines": [
+        "barovia",
+        "falkovnia"
+      ],
+      "tier": "CORE",
+      "title": "Vlad Drakov becomes Lord of Falkovnia",
+      "present": [
+        "vlad_drakov"
+      ],
+      "notes": "The one genuinely foreign line branches in — no Barovian blood tie, anchored only here.",
+      "source": "RoT"
+    },
+    {
+      "id": "richemulot_694",
+      "year": 694,
+      "scope": "shared",
+      "lines": [
+        "barovia",
+        "richemulot"
+      ],
+      "tier": "CORE",
+      "title": "Claude Renier becomes Lord of Richemulot",
+      "present": [
+        "claude_r"
+      ],
+      "notes": "Richemulot branches from the Barovian-rooted (wererat) Renier line.",
+      "source": "RoT"
+    },
+    {
+      "id": "arkandale_700",
+      "year": 700,
+      "scope": "shared",
+      "lines": [
+        "barovia",
+        "arkandale"
+      ],
+      "tier": "INFER",
+      "title": "Nathan Timothy, Lord of Arkandale",
+      "present": [
+        "nathan_t"
+      ],
+      "notes": "Lordship CORE (Note C); precise formation year INFER, placed in Nathan's lifetime.",
+      "source": "VotO"
+    },
+    {
+      "id": "dementlieu_707",
+      "year": 707,
+      "scope": "shared",
+      "lines": [
+        "barovia",
+        "dementlieu"
+      ],
+      "tier": "CORE",
+      "title": "Dominic d'Honaire becomes Lord of Dementlieu",
+      "present": [
+        "dominic_dh"
+      ],
+      "notes": "Dementlieu branches from the Mordent-linked d'Honaire line.",
+      "source": "RoT"
+    },
+    {
+      "id": "dorvinia_715",
+      "year": 715,
+      "scope": "shared",
+      "lines": [
+        "barovia",
+        "dorvinia"
+      ],
+      "tier": "CORE",
+      "title": "Ivan Dilisnya becomes Lord of Dorvinia",
+      "present": [],
+      "notes": "Dilisnya Note D. Barovian-rooted line seeding another domain.",
+      "source": "RoT"
+    },
+    {
+      "id": "verbrek_715",
+      "year": 715,
+      "scope": "shared",
+      "lines": [
+        "barovia",
+        "verbrek"
+      ],
+      "tier": "INFER",
+      "title": "Alfred Timothy, Lord of Verbrek",
+      "present": [
+        "alfred_t"
+      ],
+      "notes": "Lordship CORE (Notes D/E); precise formation year INFER, placed in Alfred's lifetime.",
+      "source": "VotO"
+    },
+    {
+      "id": "campaign_present_735",
+      "year": 735,
+      "scope": "setting",
+      "tier": "FLAG",
+      "title": "RoT's 'campaigns begin' — the recorded present",
+      "present": [],
+      "flags": [
+        "single_source_calendar"
+      ],
+      "notes": "SETTING-WIDE: RoT records its timeline and 'campaigns begin' at 735. A setting-wide marker presupposes the demiplane, so it is a RoT construct by nature. 735-351=384 years, still short of I6's 'over 400'.",
+      "source": "VotO"
+    },
+    {
+      "id": "branch_fail_752",
+      "year": 752,
+      "scope": "single",
+      "line": "barovia",
+      "tier": "PUB",
+      "title": "Earliest possible present of I6 (failure state)",
+      "present": [],
+      "flags": [
+        "reductio_528",
+        "rm4_markers"
+      ],
+      "notes": "From I6's own marker: 351+400=751 exactly, so the 'over 400 years' failure-state present falls no earlier than 752. Failure band plausibly 752-c.801 before the wording tips toward the 500 marker. The 100 spirits (undated, textual) evidence many prior runs of the branch.",
+      "source": "VotO"
+    },
+    {
+      "id": "branch_success_851",
+      "year": 851,
+      "scope": "single",
+      "line": "barovia",
+      "tier": "PUB",
+      "title": "The success horizon (Tatyana and Sergei reunited)",
+      "present": [
+        "tatyana",
+        "sergei"
+      ],
+      "notes": "From I6's optional ending 'after 500 years': 351+500=851. The success state where the recurrence ends. The bottom of the timeline.",
+      "source": "VotO"
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "dilisnya_husband",
+      "status": "permanently-open",
+      "question": "Who fathered Dorfniya's legitimate Dilisnya line, once Pidlwik is removed as her husband?",
+      "readings": [
+        {
+          "reading": "An invented early-widowed husband roots the line, then dies ~318.",
+          "for": "A genealogy needs a root; the legitimate children (Reinhold 310, Gertrude 315, Oleka 317) must have a father.",
+          "against": "Wholly unattested; pure scaffolding."
+        },
+        {
+          "reading": "Dorfniya was a spinster with no husband at all.",
+          "for": "Evidence-honest: I6 gives her a fool, not a spouse; the sources remember her with a jester and no living husband.",
+          "against": "A spinster cannot head a bloodline; the children still need a father."
+        }
+      ],
+      "why_open": "The evidence-honest reading (spinster) and the genealogical necessity (a root) pull against each other.",
+      "what_would_close_it": "Nothing in the extant sources. This is a permanent reconstruction choice, not a recoverable fact.",
+      "source": "VotO"
+    },
+    {
+      "id": "buchvold",
+      "status": "open-no-floor",
+      "question": "If Illya Buchvold is real, why do RoT's Bloodlines omit him? (Ivan and Illya are DISTINCT brothers, not the same figure.)",
+      "readings": [
+        {
+          "reading": "Illya real; family erased him during the years they believed the (false) assassin frame.",
+          "for": "Leo's frame stood unchallenged for years; the body was burned as a Ba'al Verzi; a house would strike a believed-assassin from its tree. The Dorfniya-parentage erasure shows the genealogy does expunge disgraces.",
+          "against": "The belief rested on a frame later exposed as false; and the whole frame is Strahd's telling."
+        },
+        {
+          "reading": "Illya real; omission is mere genealogical incompleteness, unrelated to the assassin story.",
+          "for": "RoT's trees drop many figures for no stated reason.",
+          "against": "Coincidental that the dropped figure is the one Strahd's narrative uses as a framed victim."
+        },
+        {
+          "reading": "The entire arc is Strahd's fabrication — Illya, the frame, Leo's guilt, all invented.",
+          "for": "Sole source is Strahd's memoir. A traitor-and-frame subplot running through the book casts Strahd as the conspired-against victim rather than the murderer he is. None of it need have happened.",
+          "against": "Some detail is mundane and non-load-bearing; but that is weak evidence against a skilled fabricator."
+        }
+      ],
+      "why_open": "There is no floor beneath the narrator. Every candidate resolution is asserted by Strahd, who has the strongest motive to construct exactly such a persecution narrative. The genealogy and the memoir disagree about who existed; neither can be trusted to settle it.",
+      "what_would_close_it": "A non-Strahd, non-RoT source. None known. Likely permanently open.",
+      "source": "VotO",
+      "resolved_point": "From I,Strahd: (1) Ivan and Illya are distinct brothers. (2) The memoir frames Illya as the assassin, then later reveals Leo as the true traitor. (3) BUT every layer, including the Leo reveal, is Strahd's narration — there is no external corroboration at any level.",
+      "significance": "The point is NOT which person was the real traitor. It is that the whole traitor-and-frame structure may be a DEVICE by which Strahd's memoir recasts his crimes as self-defence against conspirators, making him seem unlucky and beset. Reliability does not bottom out at Leo; it bottoms out nowhere, because the narrator is Strahd. Meanwhile the surviving genealogy (RoT) keeps Leo and lacks Illya — but even that asymmetry is only meaningful if the memoir's people are real."
+    },
+    {
+      "id": "queen_name",
+      "status": "permanently-open",
+      "question": "Which of three printed forms of the queen's name is authoritative?",
+      "readings": [
+        {
+          "reading": "Raven",
+          "for": "I6 Crypt 30 'Queen Raven'.",
+          "against": "Contradicted by K88 and VotM."
+        },
+        {
+          "reading": "Ravenovia",
+          "for": "I6 Room K88; VotM throughout; the Holy Symbol article follows this.",
+          "against": "Not the RoT Bloodlines form."
+        },
+        {
+          "reading": "Ravenia",
+          "for": "RoT Bloodlines prints 'Ravenia Van Roeyen'.",
+          "against": "Not I6's or VotM's form."
+        }
+      ],
+      "why_open": "The primary source I6 contradicts itself (Crypt 30 vs K88). There is no single authoritative form.",
+      "what_would_close_it": "Nothing; the inconsistency is itself the finding. The tool should show all three rather than pick.",
+      "source": "VotO"
+    }
+  ],
+  "flags": [
+    {
+      "id": "massacre_scatter",
+      "title": "Two-stage collapse, not one massacre",
+      "text": "RoT dates Barov and Ravenia to 346, five years before the 351 wedding-day catastrophe (Dilisnya Note A). Reconstruction reads this as a genuine two-stage collapse: 346 elder royals (incl. Dorfniya, corrected from 340), 351 next generation at the castle. PUB (pre-return deaths), Bibles Part 2.",
+      "source": "VotO"
+    },
+    {
+      "id": "reductio_528",
+      "title": "The 528 date is impossible both ways",
+      "text": "I6 at 528 gives only 177 years since 351 (fails 'over 400'); read backward it puts the transformation before 127, 224 years before the printed 351 and 179 before Strahd's 306 birth. Headline contradiction; anchor on 528.",
+      "source": "VotO"
+    },
+    {
+      "id": "single_source_calendar",
+      "title": "Every absolute date is RoT's alone",
+      "text": "Every family and every domain absorption is dated by RoT on one Barovian calendar. The non-commensurability the primary sources implied (esp. Mordent's 'perhaps centuries apart', I10) is overwritten wholesale. Second edge: RM4, the physical reprint of I6, omits even I6's two relative markers (see rm4_markers), so the reprint circulating in the line carries no evidence to contradict the box's dates.",
+      "source": "VotO"
+    },
+    {
+      "id": "rm4_markers",
+      "title": "I6 itself prints a sanitised letter and a truthful one; the marker lives only in the truthful one",
+      "text": "VERIFIED against I6 page 9. I6 gives the players TWO burgomaster's letters. The first, handed over openly by the Vistana at the inn, is short and sanitised: 'I, a lowly servant of the township of Barovia, send honor to thee', pleading to save Ireena, with NO mention of the vampire and NO 'over 400 years'. The second, found on a dead villager in the Svalich woods, is the truthful account: 'I, the Burgomaster of Barovia send you honor with despair... For over 400 years he has drained this land of the life-blood of its people.' So the temporal marker appears ONLY in the truthful letter, and the truthful letter is literally taken off a corpse, while the sanitised version is the one delivered openly. This true-vs-false pair is I6's own 1983 design (the Hickmans), NOT an RM4 or RoT addition. RM4 page 64 reprints both letters and merely adds the explicit labels 'False Letter to the PCs' and 'Original Letter to the PCs' plus handling instructions; both markers survive in RM4 because both survive in I6. CORRECTION of two earlier working errors in this session: (1) RM4 does NOT strip I6's markers; (2) RM4 did NOT invent the false-vs-true framing. The genuine finding is I6's: the honest account with the deep-past marker is the one hidden on a dead man, the open plea has the history removed. This still chimes with the timeline's theme (erasure of the past marks the sanitised account) but it is the module's own move, not evidence about RoT/RM4. The Peculiar History's 'RM4 has the same dating issues' line is therefore roughly right after all: RM4 is a faithful reprint including both letters and both markers.",
+      "source": "VotO"
+    },
+    {
+      "id": "truncation_continuity",
+      "title": "The truncation gap misread as continuity",
+      "text": "RoT prints a truncation gap in the Von Zarovich line (a real break). Later writers missed it and assumed continuous descent between the top block and the 630s block. Drew's derivation of the gap: ~300 years / ~12 generations (INFER; the '12 generation' label on the scan is Drew's annotation, not RoT's).",
+      "source": "VotO"
+    },
+    {
+      "id": "godefroy_dating",
+      "title": "Godefroy's 578/579 dating contradicts I10",
+      "text": "RoT dates the Godefroy murders to 578 and ghost-lordship to 579. I10's Mordentshire magistrate records place the murder roughly four centuries before the adventure. Collides with I10 and Bibles Part 2.",
+      "source": "VotO"
+    },
+    {
+      "id": "mordent_anchor",
+      "title": "Mordent's offset is RoT's invention",
+      "text": "I10 links Mordent and Barovia as the same world, time-displaced, and leaves the offset open ('perhaps centuries apart'). RoT fixes it unilaterally via Byron Weathermay (age 57 at entry => 579). The Mordent line is anchored, but the anchor is RoT's, not the primary sources'.",
+      "source": "VotO"
+    },
+    {
+      "id": "dorfniya_parentage",
+      "title": "Dorfniya's parentage omitted by RoT",
+      "text": "RoT's Dilisnya tree omits Dorfniya's parentage. Reconstruction supplies it (Von Zarovich, sister to Barov, disowned, records struck). This fills a printed blank; it is not a contradiction of RoT. INFER.",
+      "source": "VotO"
+    },
+    {
+      "id": "holy_symbol_lag",
+      "title": "The published article lags the committed 346 reading",
+      "text": "The Holy Symbol article deliberately holds the 346 question open; this timeline commits to the orchestrated-and-overwritten reading. Legitimate (Drew's thinking advanced) but a self-consistency drift. The article is a candidate for a future alignment pass. Recorded so the corpus does not silently diverge.",
+      "source": "VotO"
+    },
+    {
+      "id": "original_calendar_phrase",
+      "title": "RoT calls it the 'original Barovian calendar' — supports the retrofit reading",
+      "source": "RoT",
+      "text": "RoT darklord write-up (p.118 / Strahd entry): 'The years have passed, and Barovia still stands. The original Barovian calendar still marks the passage of time in the demiplane.' RoT's own word 'original' implies the calendar predates the isolation and was inherited, i.e. it was some prior kingdom's reckoning that isolation renamed. Primary-text support for the calendar-retrofit thesis (retrofitted in-world once isolation leaves nothing else to count against, and retrofitted in publication when 1990 back-applies a calendar to a 1983 module). Also on the same pages RoT restates the open-cause hedge: 'not known exactly how or why Barovia entered the demiplane, whether Strahd's pact, the murderous rampage, or a curse in the land, perhaps all three' — RoT declines to commit on the mechanism."
+    },
+    {
+      "id": "istrahd_persecution_device",
+      "title": "I, Strahd may fabricate a running traitor-and-frame subplot to cast Strahd as the conspired-against victim",
+      "source": "VotO",
+      "text": "I, Strahd (1993) is Strahd's first-person memoir. Its Ba'al Verzi subplot runs a nested frame: Illya Buchvold is killed and framed as the assassin by Leo Dilisnya; years later the memoir reveals Leo as the true traitor; and the knife from Illya's body is used to frame Ivan for the Sergei murder Strahd committed. CRITICAL: every layer is Strahd's narration, with no external corroboration. A traitor perpetually conspiring against Strahd makes him appear unlucky and sinned-against rather than a murderer — a persecution narrative that recasts his crimes as self-defence. So the arc cannot be trusted even at its 'reveal' layer (Leo's guilt). Anything attested only in this book, including Illya's very existence, inherits maximal unreliability. The surviving RoT genealogy keeps Leo and omits Illya, but that asymmetry only signifies if the memoir's people are real. EXTERNAL CORROBORATION (secondary, web reviews of both novels): the I, Strahd novels are built as, and received as, deliberately unreliable self-justification. The second novel opens in Strahd's voice claiming to set down 'an exact record' because his reign has been 'misunderstood by those who are better at garbling history than recording it'; reviewers note it is 'Strahd's book... he's going to make himself look better', that both novels open by insisting there were 'many false versions' of his past in a way that makes the reader distrust his version, and that the designers themselves treated the diary as 'a slightly twisted version of the truth'. Notably the books never apologise for Strahd's acts -- he stays both protagonist and monster -- so the narrative sustains the unreliability rather than resolving it toward his innocence."
+    },
+    {
+      "id": "tergs_dod_invention",
+      "title": "The Tergs are a Domains of Dread (1997) invention, not primary history",
+      "source": "VotO",
+      "text": "ESTABLISHED PROVENANCE: 'The Tergs invade Barovia, conquering the ancestral lands' first appears in Domains of Dread (1997), on its timeline at 320 and its history page. The word 'Terg' is ABSENT from RoT (1990) and ABSENT from I, Strahd: The Memoirs of a Vampire (1993, checked in full: zero occurrences). So the Tergs are a late setting-era invention, not primary history and not Strahd's own account. THE SEAM THEY PATCH (established from I6 crypts): I6's crypts hold Barov, Ravenovia and the whole ruling circle -- Strahd's family, predating his lordship -- yet the setting framing casts Strahd as a conqueror who 'arrives' to claim the castle. If his family is already entombed there, it was already the family seat; he did not arrive as an outsider. The Terg invasion papers over exactly this: the ancestral lands are lost and reclaimed, so Strahd can be both returning heir and conqueror and the family can predate him. INFERRED INTENT (tier INFER): DoD's authors likely invented the Tergs to make Strahd's early history cohere, because goblins alone did not carry enough weight and the family-in-the-crypts contradiction needed resolving. Crucially they resolved it IN STRAHD'S FAVOUR (external enemy, heroic reclamation) -- the same direction Strahd's own narrative would want, which is itself weak support for the persecution-device reading. COMPETING RESOLUTION (VotO): the same seam is resolved more economically by the 346 coup reading -- the family were always resident at the castle and Strahd killed them from within (patricide/regicide disguised), requiring no invented people. Two patches for one documented contradiction; only DoD's requires manufacturing an uncorroborated nation. SECOND NOVEL: 'I, Strahd: The War Against Azalin' (Elrod, 1998) is owned by Drew but in storage and not currently accessible; it postdates DoD by a year, so even if it uses the Tergs it can only be later repetition, never the origin. The DoD-1997 origin is therefore stable regardless."
+    }
+  ]
+}
+</script>
+
+<script>
+(function () {
+  var dataEl = document.getElementById('timeline-data');
+  if (!dataEl) return;
+  var DATA;
+  try { DATA = JSON.parse(dataEl.textContent); }
+  catch (e) { console.error('Barovia timeline: data parse failed', e); return; }
+
+  var meta = DATA.meta || {};
+  var lines = DATA.lines || [];
+  var people = DATA.people || [];
+  var events = DATA.events || [];
+  var flags = DATA.flags || [];
+
+  var personById = {}; people.forEach(function (p) { personById[p.id] = p; });
+  var lineById = {}; lines.forEach(function (l) { lineById[l.id] = l; });
+  var flagById = {}; flags.forEach(function (f) { flagById[f.id] = f; });
+
+  // Span is derived from the data (min to max year present), never hardcoded.
+  var yrs = [];
+  function addYr(y) { if (typeof y === 'number' && isFinite(y)) yrs.push(y); }
+  lines.forEach(function (l) { addYr(l.starts); });
+  people.forEach(function (p) { if (p.birth) addYr(p.birth.year); if (p.death) addYr(p.death.year); });
+  events.forEach(function (e) { addYr(e.year); });
+  var minY = Math.min.apply(null, yrs), maxY = Math.max.apply(null, yrs);
+
+  var TIER_COLORS = { CORE: '#c9a24b', VOTM: '#c98b3a', PUB: '#8fa96b', INFER: '#7fa0bd', SPEC: '#b083c0', INVENT: '#8f8674', OPEN: '#c9a24b', FLAG: '#c0553a' };
+  function tierColor(t) { return TIER_COLORS[t] || '#a99f8c'; }
+
+  function statusInfo(tier) {
+    switch (tier) {
+      case 'CORE': return { label: 'Established', blurb: (meta.tiers && meta.tiers.CORE) || 'Printed as an absolute value in Realm of Terror.' };
+      case 'VOTM': return { label: 'Established (derived)', blurb: (meta.tiers && meta.tiers.VOTM) || 'Fixed by Vampire of the Mists as a relative interval; the year is inherited from Realm of Terror.' };
+      case 'PUB': return { label: 'Published position', blurb: (meta.tiers && meta.tiers.PUB) || 'An established position argued in a Vaults of the Odd article.' };
+      case 'INFER': return { label: 'Interpreted', blurb: (meta.tiers && meta.tiers.INFER) || 'A reasoned inference from dated evidence.' };
+      case 'SPEC': return { label: 'Supposition', blurb: (meta.tiers && meta.tiers.SPEC) || 'Speculation; strong or loose, marked per item.' };
+      case 'INVENT': return { label: 'Supposition (scaffolding)', blurb: (meta.tiers && meta.tiers.INVENT) || 'Narrative reconstruction with no source verification.' };
+      case 'FLAG': return { label: 'Disputed', blurb: 'A cross-source contradiction. The date is printed but cannot be reconciled with the primary evidence.' };
+      case 'OPEN': return { label: 'Open question', blurb: (meta.tiers && meta.tiers.OPEN) || 'A reasoned open question.' };
+      default: return { label: tier || '', blurb: '' };
+    }
+  }
+
+  // Columns ordered by branch-in year; Barovia (earliest) is leftmost.
+  var ordered = lines.slice().sort(function (a, b) { return (a.starts - b.starts) || 0; });
+  var colIndex = {}; ordered.forEach(function (l, i) { colIndex[l.id] = i; });
+
+  // A line's rendered top is its start, pulled up to hold any single event that
+  // sits before it (Mordent carries a pre-entry event on its parallel track).
+  var lineTop = {}; ordered.forEach(function (l) { lineTop[l.id] = l.starts; });
+  events.forEach(function (e) {
+    if (e.scope === 'single' && e.line && lineById[e.line] && e.year < lineTop[e.line]) lineTop[e.line] = e.year;
+  });
+
+  var PXY = 6, padTop = 54, padBottom = 64, gutterW = 64, colGap = 104, colX0 = gutterW + 58;
+  function yFor(year) { return padTop + (year - minY) * PXY; }
+  function xFor(id) { return colX0 + (colIndex[id] || 0) * colGap; }
+  var fieldH = padTop + padBottom + (maxY - minY) * PXY;
+  var fieldW = xFor(ordered[ordered.length - 1].id) + 120;
+
+  var field = document.getElementById('tlField');
+  field.style.height = fieldH + 'px';
+  field.style.width = fieldW + 'px';
+  function px(n) { return n + 'px'; }
+  function mk(cls, parent) { var d = document.createElement('div'); if (cls) d.className = cls; if (parent) parent.appendChild(d); return d; }
+
+  var gutterLabels = [];
+  function gutterLabel(cls, year, gold) {
+    var t = mk(cls, field);
+    t.textContent = year;
+    t.style.left = '0'; t.style.width = px(gutterW);
+    gutterLabels.push({ el: t, y: yFor(year) });
+    return t;
+  }
+
+  // Century and quarter-century guides. Event years get their own gold labels.
+  var eventYears = {}; events.forEach(function (e) { eventYears[e.year] = true; });
+  var firstTick = Math.ceil(minY / 25) * 25;
+  for (var yy = firstTick; yy <= maxY; yy += 25) {
+    var isC = (yy % 100 === 0);
+    var g = mk(isC ? 'tl-century' : 'tl-guide', field);
+    g.style.top = px(yFor(yy)); g.style.width = px(fieldW);
+    if (!eventYears[yy]) { var tk = gutterLabel('tl-ytick', yy, false); if (isC) tk.style.color = 'var(--gold-bright)'; }
+  }
+  Object.keys(eventYears).forEach(function (y) { gutterLabel('tl-yev', parseInt(y, 10), true); });
+
+  // Lines and their labels.
+  ordered.forEach(function (l) {
+    var top = yFor(lineTop[l.id]), bottom = yFor(maxY);
+    var spine = (l.kind === 'core-spine');
+    var col = mk('tl-linecol' + (spine ? ' is-spine' : ''), field);
+    col.style.left = px(xFor(l.id)); col.style.top = px(top); col.style.height = px(bottom - top);
+    var lab = mk('tl-llabel' + (spine ? ' is-spine' : ''), field);
+    lab.textContent = l.label;
+    lab.style.left = px(xFor(l.id) + 8);
+    lab.style.top = px(top - (spine ? 28 : 16));
+    lab.setAttribute('role', 'button'); lab.tabIndex = 0; lab.dataset.line = l.id;
+    lab.addEventListener('click', function () { selectLine(l.id); });
+    lab.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); selectLine(l.id); } });
+  });
+
+  // Events (rendered in year order so near-neighbour markers can be nudged apart).
+  var evEls = {};
+  var lastOnCol = {};
+  var evSorted = events.slice().sort(function (a, b) { return a.year - b.year; });
+  evSorted.forEach(function (e) {
+    var color = tierColor(e.tier);
+    if (e.scope === 'shared' && e.lines && e.lines.length >= 2) {
+      var x1 = xFor(e.lines[0]), x2 = xFor(e.lines[e.lines.length - 1]);
+      var left = Math.min(x1, x2), right = Math.max(x1, x2);
+      var br = mk('tl-branch', field);
+      br.style.left = px(left); br.style.top = px(yFor(e.year)); br.style.width = px(right - left);
+      br.style.background = color; br.style.opacity = '0.55';
+    }
+    if (e.scope === 'setting') {
+      var band = mk('tl-settingband', field);
+      band.style.top = px(yFor(e.year)); band.style.width = px(fieldW); band.style.borderTopColor = color;
+    }
+    var mx, colKey;
+    if (e.scope === 'single') { mx = xFor(e.line); colKey = e.line; }
+    else if (e.scope === 'shared') { mx = xFor(e.lines[e.lines.length - 1]); colKey = e.lines[e.lines.length - 1]; }
+    else { mx = colX0; colKey = '__setting__'; }
+    // Nudge horizontally if the previous marker on this column is within a few years.
+    var yv = yFor(e.year), prev = lastOnCol[colKey];
+    var step = (prev && (yv - prev.y) < 11) ? prev.step + 1 : 0;
+    lastOnCol[colKey] = { y: yv, step: step };
+    mx += step * 13;
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'tl-ev scope-' + e.scope;
+    btn.style.left = px(mx); btn.style.top = px(yv); btn.style.background = color;
+    btn.setAttribute('aria-label', e.title + ' (' + e.year + ')');
+    btn.dataset.ev = e.id;
+    btn.addEventListener('click', function () { selectEvent(e.id); });
+    btn.addEventListener('mouseenter', function (ev) { showTip(ev, e.year + '  ' + e.title); });
+    btn.addEventListener('mousemove', moveTip);
+    btn.addEventListener('mouseleave', hideTip);
+    field.appendChild(btn);
+    evEls[e.id] = btn;
+  });
+
+  // Keep gutter year labels legible where years crowd together.
+  gutterLabels.sort(function (a, b) { return a.y - b.y; });
+  var prevBottom = -999;
+  gutterLabels.forEach(function (g) {
+    var top = g.y - 6;
+    if (top < prevBottom + 1) top = prevBottom + 1;
+    g.el.style.top = px(top);
+    prevBottom = top + 11;
+  });
+
+  // Detail panel.
+  var panel = document.getElementById('tlPanel');
+  var panelBody = document.getElementById('tlPanelBody');
+  var activeEl = null;
+  function setActive(el) { if (activeEl) activeEl.classList.remove('is-active'); activeEl = el; if (el) el.classList.add('is-active'); }
+  function esc(s) { var d = document.createElement('div'); d.textContent = (s == null ? '' : String(s)); return d.innerHTML; }
+  function personName(id) { return personById[id] ? personById[id].name : id; }
+  function sourceGloss(code) { return (meta.sources && meta.sources[code]) ? meta.sources[code] : ''; }
+  function srcLine(label, code) {
+    var g = sourceGloss(code);
+    return '<p class="tl-src"><strong>' + label + ':</strong> ' + esc(code) + (g ? ' <span class="tl-src-g">' + esc(g) + '</span>' : '') + '</p>';
+  }
+
+  function castFor(e) {
+    var yr = e.year, out = [];
+    (e.present || []).forEach(function (pid) {
+      var p = personById[pid]; if (!p) return;
+      var b = (p.birth && typeof p.birth.year === 'number') ? p.birth.year : null;
+      var d = (p.death && typeof p.death.year === 'number') ? p.death.year : null;
+      if (b != null && b > yr) return;   // not yet born
+      if (d != null && d < yr) return;   // already dead
+      out.push(p);
+    });
+    return out;
+  }
+  function personCard(p, yr) {
+    var b = (p.birth && typeof p.birth.year === 'number') ? p.birth.year : null;
+    var age = (b != null) ? (yr - b) : null;
+    var s = '<div class="tl-person"><p class="tl-pn">' + esc(p.name) + ' <span class="tl-age">' + (age != null ? ('age ' + age) : 'age unknown') + '</span></p>';
+    if (p.location) s += '<p class="tl-pl">' + esc(p.location) + '</p>';
+    if (p.relationships && p.relationships.length) {
+      s += '<ul class="tl-rel">';
+      p.relationships.forEach(function (r) {
+        var who = Array.isArray(r.with) ? r.with.map(personName).join(', ') : personName(r.with);
+        s += '<li>' + esc(r.type) + ': ' + esc(who) + '</li>';
+      });
+      s += '</ul>';
+    }
+    return s + '</div>';
+  }
+
+  function selectEvent(id) {
+    var e = null; for (var i = 0; i < events.length; i++) { if (events[i].id === id) { e = events[i]; break; } }
+    if (!e) return;
+    setActive(evEls[id]);
+    var st = statusInfo(e.tier);
+    var h = '';
+    h += '<p class="tl-pyear">Year ' + esc(e.year) + ' <span class="tl-scope">' + esc(e.scope) + '</span></p>';
+    h += '<h3 class="tl-ptitle">' + esc(e.title) + '</h3>';
+    h += '<p class="tl-status"><span class="tl-badge" style="background:' + tierColor(e.tier) + '">' + esc(e.tier) + '</span>' + esc(st.label) + '</p>';
+    h += '<p class="tl-gloss">' + esc(st.blurb) + '</p>';
+    if (e.notes) h += '<div class="tl-sec-b"><span class="tl-sec">What this is</span><p>' + esc(e.notes) + '</p></div>';
+    if (e.primary_reading) h += '<div class="tl-sec-b"><span class="tl-sec">Primary reading</span><p>' + esc(e.primary_reading) + '</p></div>';
+    if (e.alternatives && e.alternatives.length) {
+      h += '<div class="tl-sec-b"><span class="tl-sec">Alternatives</span><ul>';
+      e.alternatives.forEach(function (a) { h += '<li>' + esc(a) + '</li>'; });
+      h += '</ul></div>';
+    }
+    if (e.open_seam) h += '<div class="tl-sec-b"><span class="tl-sec">Open seam</span><p>' + esc(e.open_seam) + '</p></div>';
+    if (e.spec_strength) h += '<p class="tl-meta-line">Speculation strength: ' + esc(e.spec_strength) + '</p>';
+    h += '<div class="tl-sec-b"><span class="tl-sec">Provenance</span>' + srcLine('Source', e.source);
+    if (e.carried_by && e.carried_by.length) {
+      h += '<p class="tl-src"><strong>Carried by:</strong> ' + e.carried_by.map(function (c) { var g = sourceGloss(c); return esc(c) + (g ? ' <span class="tl-src-g">' + esc(g) + '</span>' : ''); }).join('; ') + '</p>';
+    }
+    h += '</div>';
+    if (e.flags && e.flags.length) {
+      h += '<div class="tl-sec-b"><span class="tl-sec">Flags</span>';
+      e.flags.forEach(function (fid) { var f = flagById[fid]; if (!f) return; h += '<details class="tl-flag"><summary>' + esc(f.title || fid) + '</summary><p>' + esc(f.text || '') + '</p></details>'; });
+      h += '</div>';
+    }
+    if (e.present && e.present.length) {
+      var cast = castFor(e);
+      h += '<div class="tl-sec-b"><span class="tl-sec">Who was present</span>';
+      if (cast.length) {
+        h += '<details class="tl-castwrap"><summary>Show the cast alive in ' + esc(e.year) + ' (' + cast.length + ')</summary><div class="tl-cast">';
+        cast.forEach(function (c) { h += personCard(c, e.year); });
+        h += '</div></details>';
+      } else {
+        h += '<p class="tl-gloss">No one on this entry\'s cast list was alive in ' + esc(e.year) + '.</p>';
+      }
+      h += '</div>';
+    }
+    panelBody.innerHTML = h;
+    openPanel();
+  }
+
+  function selectLine(id) {
+    var l = lineById[id]; if (!l) return;
+    setActive(null);
+    var st = statusInfo(l.tier);
+    var h = '';
+    h += '<p class="tl-pyear">Branches in ' + esc(l.starts) + '</p>';
+    h += '<h3 class="tl-ptitle">' + esc(l.label) + ' line</h3>';
+    h += '<p class="tl-status"><span class="tl-badge" style="background:' + tierColor(l.tier) + '">' + esc(l.tier) + '</span>' + esc(st.label) + '</p>';
+    h += '<p class="tl-gloss">Kind: ' + esc(l.kind) + '</p>';
+    if (l.note) h += '<div class="tl-sec-b"><span class="tl-sec">About this line</span><p>' + esc(l.note) + '</p></div>';
+    h += '<div class="tl-sec-b"><span class="tl-sec">Provenance</span>' + srcLine('Source', l.source) + '</div>';
+    panelBody.innerHTML = h;
+    openPanel();
+  }
+
+  function openPanel() { panel.hidden = false; panel.classList.add('is-open'); if (window.innerWidth <= 900) panel.scrollTop = 0; }
+  document.getElementById('tlClose').addEventListener('click', function () { panel.hidden = true; panel.classList.remove('is-open'); setActive(null); });
+
+  var tip = document.getElementById('tlTip');
+  function showTip(ev, text) { tip.textContent = text; tip.hidden = false; moveTip(ev); }
+  function moveTip(ev) { tip.style.left = (ev.clientX + 14) + 'px'; tip.style.top = (ev.clientY + 14) + 'px'; }
+  function hideTip() { tip.hidden = true; }
+
+  // Legend, built from the tiers actually used by events.
+  var legend = document.getElementById('tlLegend');
+  var order = ['CORE', 'VOTM', 'PUB', 'INFER', 'SPEC', 'INVENT', 'FLAG'];
+  var seen = {}; events.forEach(function (e) { seen[e.tier] = true; });
+  order.forEach(function (t) {
+    if (!seen[t]) return;
+    var d = mk('tl-lg', legend);
+    d.innerHTML = '<span class="tl-sw" style="background:' + tierColor(t) + '"></span>' + esc(t) + ' - ' + esc(statusInfo(t).label);
+  });
+})();
+</script>

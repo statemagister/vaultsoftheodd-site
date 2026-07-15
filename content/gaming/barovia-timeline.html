@@ -13,52 +13,59 @@ _build:
 
 <style>
 .tl-page { width: 100%; }
-.tl-wrap { font-family: var(--body); color: var(--text-body); max-width: 1320px; margin: 0 auto; padding: 0.5rem 1rem 3rem; }
-.tl-head { text-align: center; margin-bottom: 1.4rem; }
-.tl-orn { display: flex; align-items: center; gap: 1rem; justify-content: center; max-width: 760px; margin: 0.4rem auto 0.9rem; }
+.tl-wrap { font-family: var(--body); color: var(--text-body); max-width: 1360px; margin: 0 auto; padding: 0.4rem 1rem 1rem; }
+.tl-head { text-align: center; margin-bottom: 0.9rem; }
+.tl-orn { display: flex; align-items: center; gap: 1rem; justify-content: center; max-width: 760px; margin: 0.2rem auto 0.7rem; }
 .tl-orn::before, .tl-orn::after { content: ''; flex: 1; height: 1px; background: var(--gold); opacity: 0.5; }
-.tl-orn span { font-family: var(--display); font-size: 1.15rem; letter-spacing: 0.05em; color: var(--gold); }
-.tl-sub { max-width: 660px; margin: 0 auto; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; font-style: italic; }
-.tl-note { max-width: 640px; margin: 0.6rem auto 0; color: var(--text-muted); font-size: 0.76rem; }
-.tl-legend { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; justify-content: center; max-width: 900px; margin: 1.1rem auto 0; }
-.tl-lg { display: flex; align-items: center; gap: 0.4rem; font-size: 0.7rem; color: var(--text-muted); font-family: var(--display); letter-spacing: 0.05em; }
+.tl-orn span { font-family: var(--display); font-size: 1.1rem; letter-spacing: 0.05em; color: var(--gold); }
+.tl-sub { max-width: 720px; margin: 0 auto; color: var(--text-muted); font-size: 0.88rem; line-height: 1.55; font-style: italic; }
+.tl-legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; justify-content: center; max-width: 940px; margin: 0.8rem auto 0.3rem; }
+.tl-lg { display: flex; align-items: center; gap: 0.4rem; font-size: 0.68rem; color: var(--text-muted); font-family: var(--display); letter-spacing: 0.05em; }
 .tl-sw { width: 12px; height: 12px; border-radius: 50%; box-shadow: 0 0 0 2px var(--bg); flex-shrink: 0; }
+.tl-hint { max-width: 760px; margin: 0.2rem auto 0; color: var(--text-muted); font-size: 0.74rem; }
 
-.tl-layout { display: flex; gap: 1.5rem; align-items: flex-start; margin-top: 1.4rem; }
-.tl-stage { position: relative; overflow-x: auto; overflow-y: visible; flex: 1 1 auto; min-width: 0; border: 1px solid var(--rule); border-radius: 4px; background: linear-gradient(var(--bg-alt), var(--bg)); }
+.tl-layout { display: flex; gap: 1.2rem; align-items: stretch; height: 74vh; min-height: 520px; margin-top: 0.6rem; }
+.tl-stage { position: relative; overflow: auto; flex: 1 1 auto; min-width: 0; height: 100%; border: 1px solid var(--rule); border-radius: 4px; background: linear-gradient(var(--bg-alt), var(--bg)); outline: none; }
+.tl-stage:focus-visible { box-shadow: inset 0 0 0 2px var(--gold); }
 .tl-field { position: relative; }
 
-.tl-linecol { position: absolute; width: 2px; background: var(--rule); }
-.tl-linecol.is-spine { width: 3px; background: linear-gradient(var(--gold), rgba(201,162,75,0.2)); opacity: 0.85; }
-.tl-branch { position: absolute; height: 2px; }
-.tl-guide { position: absolute; left: 0; height: 1px; background: rgba(201,162,75,0.07); }
-.tl-century { position: absolute; left: 0; height: 1px; background: rgba(201,162,75,0.2); }
-.tl-settingband { position: absolute; left: 0; height: 0; border-top: 1px dashed; opacity: 0.6; }
-.tl-ytick { position: absolute; font-family: var(--display); font-size: 0.6rem; color: var(--text-muted); letter-spacing: 0.02em; text-align: right; padding-right: 8px; }
-.tl-yev { position: absolute; font-family: var(--display); font-size: 0.6rem; color: var(--gold); text-align: right; padding-right: 8px; }
-.tl-llabel { position: absolute; font-family: var(--display); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); white-space: nowrap; cursor: pointer; }
-.tl-llabel.is-spine { color: var(--gold-bright); font-size: 0.72rem; }
-.tl-llabel:hover { color: var(--gold); }
+.tl-pillar { position: absolute; box-sizing: border-box; border-left: 1px solid rgba(201,162,75,0.22); border-right: 1px solid rgba(201,162,75,0.10); background: linear-gradient(rgba(201,162,75,0.05), rgba(201,162,75,0.015)); z-index: 1; }
+.tl-pillar.is-spine { background: linear-gradient(rgba(201,162,75,0.16), rgba(201,162,75,0.05)); border-left: 2px solid var(--gold); border-right: 1px solid rgba(201,162,75,0.22); }
+.tl-pillar.is-branch { border-top: 2px solid var(--gold); }
+.tl-wname { position: absolute; writing-mode: vertical-rl; text-orientation: mixed; font-family: var(--display); font-size: 1.5rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(201,162,75,0.12); pointer-events: none; z-index: 2; white-space: nowrap; transform: translateX(-50%); }
+.tl-pname { position: absolute; text-align: center; font-family: var(--display); font-size: 0.66rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold-bright); cursor: pointer; z-index: 4; }
+.tl-pname:hover { text-decoration: underline; }
 
-.tl-ev { position: absolute; width: 13px; height: 13px; border-radius: 50%; border: 0; padding: 0; cursor: pointer; box-shadow: 0 0 0 2px var(--bg); transform: translate(-50%, -50%); transition: transform 0.1s ease; }
-.tl-ev:hover, .tl-ev:focus-visible { transform: translate(-50%, -50%) scale(1.4); outline: none; z-index: 6; }
-.tl-ev.is-active { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--gold-bright); z-index: 7; }
+.tl-branch { position: absolute; height: 0; border-top: 2px solid; z-index: 4; pointer-events: none; }
+.tl-guide { position: absolute; left: 0; height: 1px; background: rgba(201,162,75,0.06); z-index: 1; }
+.tl-century { position: absolute; left: 0; height: 1px; background: rgba(201,162,75,0.2); z-index: 1; }
+.tl-settingband { position: absolute; left: 0; height: 0; border-top: 1px dashed; opacity: 0.6; z-index: 4; }
+.tl-ytick { position: absolute; left: 0; font-family: var(--display); font-size: 0.6rem; color: var(--text-muted); text-align: right; padding-right: 7px; z-index: 5; }
+.tl-yev { position: absolute; left: 0; font-family: var(--display); font-size: 0.6rem; color: var(--gold); text-align: right; padding-right: 7px; z-index: 5; }
+
+.tl-cursor { position: absolute; left: 0; height: 0; border-top: 2px solid var(--gold-bright); box-shadow: 0 0 8px rgba(226,192,116,0.45); z-index: 8; pointer-events: none; }
+.tl-cursor-y { position: absolute; left: 0; transform: translateY(-50%); font-family: var(--display); font-size: 0.62rem; color: #15120f; background: var(--gold-bright); padding: 0 4px; border-radius: 2px; z-index: 9; pointer-events: none; }
+.tl-hover { position: absolute; left: 0; height: 0; border-top: 1px dashed rgba(226,192,116,0.5); z-index: 7; pointer-events: none; }
+
+.tl-ev { position: absolute; width: 14px; height: 14px; border-radius: 50%; border: 0; padding: 0; cursor: pointer; box-shadow: 0 0 0 2px var(--bg); transform: translate(-50%, -50%); transition: transform 0.1s ease; z-index: 10; }
+.tl-ev:hover, .tl-ev:focus-visible { transform: translate(-50%, -50%) scale(1.4); outline: none; z-index: 12; }
+.tl-ev.is-active { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--gold-bright); z-index: 13; }
 .tl-ev.scope-shared { border-radius: 2px; }
 .tl-ev.scope-setting { border-radius: 2px; width: 16px; height: 16px; }
 
 .tl-tip { position: fixed; pointer-events: none; background: var(--bg-card); border: 1px solid var(--gold); color: var(--text-primary); font-size: 0.72rem; line-height: 1.35; padding: 0.3rem 0.5rem; border-radius: 3px; z-index: 60; max-width: 230px; }
 
-.tl-panel { position: sticky; top: 1rem; width: 344px; flex: 0 0 344px; max-height: calc(100vh - 2rem); overflow-y: auto; background: var(--bg-card); border: 1px solid var(--rule); border-radius: 4px; padding: 1rem 1.1rem 1.4rem; }
-.tl-close { float: right; background: transparent; border: 1px solid var(--rule); color: var(--text-muted); font-family: var(--display); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 3px; cursor: pointer; }
-.tl-close:hover { color: var(--gold); border-color: var(--gold); }
+.tl-panel { width: 348px; flex: 0 0 348px; height: 100%; overflow-y: auto; background: var(--bg-card); border: 1px solid var(--rule); border-radius: 4px; padding: 1rem 1.1rem 1.4rem; }
+.tl-close { display: none; }
 .tl-pyear { font-family: var(--display); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 0.2rem; }
 .tl-scope { color: var(--gold); }
-.tl-ptitle { font-family: var(--display); font-size: 1.1rem; color: var(--gold-bright); margin: 0 0 0.5rem; line-height: 1.25; }
+.tl-ptitle { font-family: var(--display); font-size: 1.05rem; color: var(--gold-bright); margin: 0 0 0.5rem; line-height: 1.25; }
 .tl-status { margin: 0 0 0.3rem; font-size: 0.9rem; color: var(--text-primary); }
 .tl-badge { display: inline-block; font-family: var(--display); font-size: 0.56rem; letter-spacing: 0.08em; color: #15120f; padding: 0.12rem 0.42rem; border-radius: 2px; margin-right: 0.4rem; vertical-align: middle; }
 .tl-gloss { font-size: 0.82rem; color: var(--text-muted); margin: 0 0 0.6rem; line-height: 1.55; }
+.tl-yearlink { background: transparent; border: 0; color: var(--gold); font-family: var(--body); font-size: 0.8rem; cursor: pointer; padding: 0; text-decoration: underline; }
 .tl-sec-b { border-top: 1px solid var(--rule); padding-top: 0.6rem; margin-top: 0.6rem; }
-.tl-sec { display: block; font-family: var(--display); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
+.tl-sec { display: block; font-family: var(--display); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
 .tl-sec-b p { font-size: 0.86rem; line-height: 1.6; color: var(--text-body); margin: 0 0 0.4rem; }
 .tl-sec-b ul { margin: 0 0 0.4rem; padding-left: 1.1rem; }
 .tl-sec-b li { font-size: 0.84rem; line-height: 1.5; color: var(--text-body); margin-bottom: 0.25rem; }
@@ -68,6 +75,9 @@ _build:
 .tl-flag { margin-bottom: 0.4rem; }
 .tl-flag summary { cursor: pointer; color: var(--gold); font-size: 0.82rem; }
 .tl-flag p { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem; line-height: 1.55; }
+.tl-evlink { display: flex; align-items: center; gap: 0.5rem; width: 100%; text-align: left; background: transparent; border: 0; color: var(--text-primary); font-family: var(--body); font-size: 0.86rem; cursor: pointer; padding: 0.25rem 0; }
+.tl-evlink:hover { color: var(--gold-bright); }
+.tl-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 0 2px var(--bg-card); }
 .tl-castwrap > summary { cursor: pointer; color: var(--gold); font-size: 0.85rem; margin-bottom: 0.4rem; }
 .tl-cast { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.4rem; }
 .tl-person { border-left: 2px solid var(--rule); padding-left: 0.6rem; }
@@ -78,22 +88,28 @@ _build:
 .tl-rel li { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.15rem; }
 
 @media (max-width: 900px) {
-  .tl-layout { display: block; }
-  .tl-panel { position: fixed; left: 0; right: 0; bottom: 0; top: auto; width: auto; flex: none; max-height: 64vh; border-radius: 10px 10px 0 0; z-index: 50; box-shadow: 0 -8px 30px rgba(0,0,0,0.5); }
+  .tl-layout { display: block; height: auto; }
+  .tl-stage { height: 66vh; }
+  .tl-panel { width: auto; flex: none; height: auto; max-height: 60vh; margin-top: 0.9rem; }
 }
 </style>
 
 <div class="tl-wrap">
   <header class="tl-head">
     <div class="tl-orn"><span>The Peculiar but Interactive Timeline of Barovia</span></div>
-    <p class="tl-sub">A vertical descent through the Barovian calendar. Time runs downward, earliest year at the top. Barovia is the continuous spine; each domain branches in as its own track at the year it enters, so the timeline widens as it falls. Every marker is an event, coloured by how firmly its dating stands.</p>
-    <p class="tl-note">Unlisted working build, for testing before launch. Select any marker to read what the entry is, how certain its date is, its sources, and who was present. This page is not linked from anywhere on the site.</p>
+    <p class="tl-sub">A vertical descent through the Barovian calendar. Barovia is the continuous pillar; each domain joins it as its own pillar at the year it enters, attached where it connects, so the timeline widens as it falls. Scroll the timeline to move through the years. Hover or click any year to see who was alive; click a marker for the event behind it.</p>
     <div class="tl-legend" id="tlLegend"></div>
+    <p class="tl-hint">Every year is reachable. Move the pointer over the timeline for a live year read-out, click to hold a year, or focus the timeline and use the up and down arrow keys to step one year at a time.</p>
   </header>
   <div class="tl-layout">
-    <div class="tl-stage" id="tlStage"><div class="tl-field" id="tlField"></div></div>
-    <aside class="tl-panel" id="tlPanel" hidden aria-live="polite">
-      <button type="button" class="tl-close" id="tlClose">Close</button>
+    <div class="tl-stage" id="tlStage" tabindex="0" aria-label="Barovia timeline. Scroll to move through the years, arrow keys to step year by year.">
+      <div class="tl-field" id="tlField">
+        <div class="tl-hover" id="tlHover" hidden></div>
+        <div class="tl-cursor" id="tlCursor" hidden></div>
+        <div class="tl-cursor-y" id="tlCursorY" hidden></div>
+      </div>
+    </div>
+    <aside class="tl-panel" id="tlPanel" aria-live="polite">
       <div id="tlPanelBody"></div>
     </aside>
   </div>
@@ -2075,35 +2091,37 @@ _build:
   function tierColor(t) { return TIER_COLORS[t] || '#a99f8c'; }
 
   function statusInfo(tier) {
+    var g = (meta.tiers && meta.tiers[tier]) || '';
     switch (tier) {
-      case 'CORE': return { label: 'Established', blurb: (meta.tiers && meta.tiers.CORE) || 'Printed as an absolute value in Realm of Terror.' };
-      case 'VOTM': return { label: 'Established (derived)', blurb: (meta.tiers && meta.tiers.VOTM) || 'Fixed by Vampire of the Mists as a relative interval; the year is inherited from Realm of Terror.' };
-      case 'PUB': return { label: 'Published position', blurb: (meta.tiers && meta.tiers.PUB) || 'An established position argued in a Vaults of the Odd article.' };
-      case 'INFER': return { label: 'Interpreted', blurb: (meta.tiers && meta.tiers.INFER) || 'A reasoned inference from dated evidence.' };
-      case 'SPEC': return { label: 'Supposition', blurb: (meta.tiers && meta.tiers.SPEC) || 'Speculation; strong or loose, marked per item.' };
-      case 'INVENT': return { label: 'Supposition (scaffolding)', blurb: (meta.tiers && meta.tiers.INVENT) || 'Narrative reconstruction with no source verification.' };
+      case 'CORE': return { label: 'Established', blurb: g || 'Printed as an absolute value in Realm of Terror.' };
+      case 'VOTM': return { label: 'Established (derived)', blurb: g || 'Fixed by Vampire of the Mists as a relative interval; the year is inherited from Realm of Terror.' };
+      case 'PUB': return { label: 'Published position', blurb: g || 'An established position argued in a Vaults of the Odd article.' };
+      case 'INFER': return { label: 'Interpreted', blurb: g || 'A reasoned inference from dated evidence.' };
+      case 'SPEC': return { label: 'Supposition', blurb: g || 'Speculation; strong or loose, marked per item.' };
+      case 'INVENT': return { label: 'Supposition (scaffolding)', blurb: g || 'Narrative reconstruction with no source verification.' };
       case 'FLAG': return { label: 'Disputed', blurb: 'A cross-source contradiction. The date is printed but cannot be reconciled with the primary evidence.' };
-      case 'OPEN': return { label: 'Open question', blurb: (meta.tiers && meta.tiers.OPEN) || 'A reasoned open question.' };
-      default: return { label: tier || '', blurb: '' };
+      case 'OPEN': return { label: 'Open question', blurb: g || 'A reasoned open question.' };
+      default: return { label: tier || '', blurb: g };
     }
   }
 
-  // Columns ordered by branch-in year; Barovia (earliest) is leftmost.
+  // Columns ordered by branch-in year; Barovia (earliest) is leftmost. Pillars are contiguous.
   var ordered = lines.slice().sort(function (a, b) { return (a.starts - b.starts) || 0; });
   var colIndex = {}; ordered.forEach(function (l, i) { colIndex[l.id] = i; });
 
-  // A line's rendered top is its start, pulled up to hold any single event that
-  // sits before it (Mordent carries a pre-entry event on its parallel track).
+  // A line's rendered top is its start, pulled up to hold any single event that sits
+  // before it (Mordent carries a pre-entry event on its parallel track).
   var lineTop = {}; ordered.forEach(function (l) { lineTop[l.id] = l.starts; });
   events.forEach(function (e) {
     if (e.scope === 'single' && e.line && lineById[e.line] && e.year < lineTop[e.line]) lineTop[e.line] = e.year;
   });
 
-  var PXY = 6, padTop = 54, padBottom = 64, gutterW = 64, colGap = 104, colX0 = gutterW + 58;
+  var PXY = 6, padTop = 44, padBottom = 54, gutterW = 52, pillarW = 108;
   function yFor(year) { return padTop + (year - minY) * PXY; }
-  function xFor(id) { return colX0 + (colIndex[id] || 0) * colGap; }
+  function pillarLeft(id) { return gutterW + (colIndex[id] || 0) * pillarW; }
+  function xCenter(id) { return pillarLeft(id) + pillarW / 2; }
   var fieldH = padTop + padBottom + (maxY - minY) * PXY;
-  var fieldW = xFor(ordered[ordered.length - 1].id) + 120;
+  var fieldW = gutterW + ordered.length * pillarW + 6;
 
   var field = document.getElementById('tlField');
   field.style.height = fieldH + 'px';
@@ -2111,67 +2129,64 @@ _build:
   function px(n) { return n + 'px'; }
   function mk(cls, parent) { var d = document.createElement('div'); if (cls) d.className = cls; if (parent) parent.appendChild(d); return d; }
 
+  // Guides and gutter year labels.
   var gutterLabels = [];
-  function gutterLabel(cls, year, gold) {
-    var t = mk(cls, field);
-    t.textContent = year;
-    t.style.left = '0'; t.style.width = px(gutterW);
-    gutterLabels.push({ el: t, y: yFor(year) });
-    return t;
-  }
-
-  // Century and quarter-century guides. Event years get their own gold labels.
   var eventYears = {}; events.forEach(function (e) { eventYears[e.year] = true; });
   var firstTick = Math.ceil(minY / 25) * 25;
   for (var yy = firstTick; yy <= maxY; yy += 25) {
     var isC = (yy % 100 === 0);
     var g = mk(isC ? 'tl-century' : 'tl-guide', field);
     g.style.top = px(yFor(yy)); g.style.width = px(fieldW);
-    if (!eventYears[yy]) { var tk = gutterLabel('tl-ytick', yy, false); if (isC) tk.style.color = 'var(--gold-bright)'; }
+    if (!eventYears[yy]) { var tk = mk('tl-ytick', field); tk.textContent = yy; tk.style.width = px(gutterW); gutterLabels.push({ el: tk, y: yFor(yy) }); if (isC) tk.style.color = 'var(--gold-bright)'; }
   }
-  Object.keys(eventYears).forEach(function (y) { gutterLabel('tl-yev', parseInt(y, 10), true); });
-
-  // Lines and their labels.
-  ordered.forEach(function (l) {
-    var top = yFor(lineTop[l.id]), bottom = yFor(maxY);
-    var spine = (l.kind === 'core-spine');
-    var col = mk('tl-linecol' + (spine ? ' is-spine' : ''), field);
-    col.style.left = px(xFor(l.id)); col.style.top = px(top); col.style.height = px(bottom - top);
-    var lab = mk('tl-llabel' + (spine ? ' is-spine' : ''), field);
-    lab.textContent = l.label;
-    lab.style.left = px(xFor(l.id) + 8);
-    lab.style.top = px(top - (spine ? 28 : 16));
-    lab.setAttribute('role', 'button'); lab.tabIndex = 0; lab.dataset.line = l.id;
-    lab.addEventListener('click', function () { selectLine(l.id); });
-    lab.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); selectLine(l.id); } });
+  Object.keys(eventYears).forEach(function (yk) {
+    var y = parseInt(yk, 10);
+    var el = mk('tl-yev', field); el.textContent = y; el.style.width = px(gutterW);
+    gutterLabels.push({ el: el, y: yFor(y) });
   });
 
-  // Events (rendered in year order so near-neighbour markers can be nudged apart).
+  // Pillars, their names, and a faint vertical watermark down each one.
+  ordered.forEach(function (l) {
+    var spine = (l.kind === 'core-spine');
+    var top = yFor(lineTop[l.id]), bottom = yFor(maxY);
+    var left = pillarLeft(l.id);
+    var pil = mk('tl-pillar' + (spine ? ' is-spine' : ' is-branch'), field);
+    pil.style.left = px(left); pil.style.width = px(pillarW); pil.style.top = px(top); pil.style.height = px(bottom - top);
+    var nm = mk('tl-pname', field);
+    nm.textContent = l.label; nm.style.left = px(left); nm.style.width = px(pillarW); nm.style.top = px(top + 6);
+    nm.setAttribute('role', 'button'); nm.tabIndex = 0;
+    nm.addEventListener('click', function (ev) { ev.stopPropagation(); selectLine(l.id); });
+    nm.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); selectLine(l.id); } });
+    for (var wy = top + 40; wy < bottom - 60; wy += 700) {
+      var wm = mk('tl-wname', field); wm.textContent = l.label; wm.style.left = px(left + pillarW / 2); wm.style.top = px(wy);
+    }
+  });
+
+  // Events, rendered in year order so near-neighbour markers nudge apart within a pillar.
   var evEls = {};
   var lastOnCol = {};
   var evSorted = events.slice().sort(function (a, b) { return a.year - b.year; });
   evSorted.forEach(function (e) {
     var color = tierColor(e.tier);
     if (e.scope === 'shared' && e.lines && e.lines.length >= 2) {
-      var x1 = xFor(e.lines[0]), x2 = xFor(e.lines[e.lines.length - 1]);
-      var left = Math.min(x1, x2), right = Math.max(x1, x2);
+      // Connector showing the new pillar joining Barovia at this year.
+      var x1 = xCenter(e.lines[0]), x2 = xCenter(e.lines[e.lines.length - 1]);
+      var lft = Math.min(x1, x2), rgt = Math.max(x1, x2);
       var br = mk('tl-branch', field);
-      br.style.left = px(left); br.style.top = px(yFor(e.year)); br.style.width = px(right - left);
-      br.style.background = color; br.style.opacity = '0.55';
+      br.style.left = px(lft); br.style.top = px(yFor(e.year)); br.style.width = px(rgt - lft); br.style.borderTopColor = color; br.style.opacity = '0.7';
     }
     if (e.scope === 'setting') {
       var band = mk('tl-settingband', field);
       band.style.top = px(yFor(e.year)); band.style.width = px(fieldW); band.style.borderTopColor = color;
     }
     var mx, colKey;
-    if (e.scope === 'single') { mx = xFor(e.line); colKey = e.line; }
-    else if (e.scope === 'shared') { mx = xFor(e.lines[e.lines.length - 1]); colKey = e.lines[e.lines.length - 1]; }
-    else { mx = colX0; colKey = '__setting__'; }
-    // Nudge horizontally if the previous marker on this column is within a few years.
+    if (e.scope === 'single') { mx = xCenter(e.line); colKey = e.line; }
+    else if (e.scope === 'shared') { mx = xCenter(e.lines[e.lines.length - 1]); colKey = e.lines[e.lines.length - 1]; }
+    else { mx = xCenter(ordered[0].id); colKey = '__setting__'; }
     var yv = yFor(e.year), prev = lastOnCol[colKey];
     var step = (prev && (yv - prev.y) < 11) ? prev.step + 1 : 0;
     lastOnCol[colKey] = { y: yv, step: step };
-    mx += step * 13;
+    mx += step * 15;
 
     var btn = document.createElement('button');
     btn.type = 'button';
@@ -2179,7 +2194,7 @@ _build:
     btn.style.left = px(mx); btn.style.top = px(yv); btn.style.background = color;
     btn.setAttribute('aria-label', e.title + ' (' + e.year + ')');
     btn.dataset.ev = e.id;
-    btn.addEventListener('click', function () { selectEvent(e.id); });
+    btn.addEventListener('click', function (ev) { ev.stopPropagation(); selectEvent(e.id); });
     btn.addEventListener('mouseenter', function (ev) { showTip(ev, e.year + '  ' + e.title); });
     btn.addEventListener('mousemove', moveTip);
     btn.addEventListener('mouseleave', hideTip);
@@ -2190,14 +2205,26 @@ _build:
   // Keep gutter year labels legible where years crowd together.
   gutterLabels.sort(function (a, b) { return a.y - b.y; });
   var prevBottom = -999;
-  gutterLabels.forEach(function (g) {
-    var top = g.y - 6;
+  gutterLabels.forEach(function (gl) {
+    var top = gl.y - 6;
     if (top < prevBottom + 1) top = prevBottom + 1;
-    g.el.style.top = px(top);
+    gl.el.style.top = px(top);
     prevBottom = top + 11;
   });
 
-  // Detail panel.
+  // Year cursor and hover preview.
+  var cursor = document.getElementById('tlCursor');
+  var cursorY = document.getElementById('tlCursorY');
+  var hover = document.getElementById('tlHover');
+  cursor.style.width = px(fieldW); hover.style.width = px(fieldW);
+  var selectedYear = null;
+  function positionCursor(y) {
+    cursor.style.top = px(yFor(y)); cursor.hidden = false;
+    cursorY.textContent = y; cursorY.style.top = px(yFor(y)); cursorY.hidden = false;
+  }
+  function positionHover(y) { hover.style.top = px(yFor(y)); hover.hidden = false; }
+
+  // Panel.
   var panel = document.getElementById('tlPanel');
   var panelBody = document.getElementById('tlPanelBody');
   var activeEl = null;
@@ -2210,23 +2237,39 @@ _build:
     return '<p class="tl-src"><strong>' + label + ':</strong> ' + esc(code) + (g ? ' <span class="tl-src-g">' + esc(g) + '</span>' : '') + '</p>';
   }
 
-  function castFor(e) {
-    var yr = e.year, out = [];
-    (e.present || []).forEach(function (pid) {
-      var p = personById[pid]; if (!p) return;
+  // Everyone alive in a given year. Known birth: birth <= y <= death (or death open).
+  // Null birth but known death: shown within a plausible window before that death.
+  // A figure held off the dated spine (Illya) never appears in a year roster.
+  function livingIn(y) {
+    var out = [];
+    people.forEach(function (p) {
+      if (p.on_event_spine === false) return;
       var b = (p.birth && typeof p.birth.year === 'number') ? p.birth.year : null;
       var d = (p.death && typeof p.death.year === 'number') ? p.death.year : null;
-      if (b != null && b > yr) return;   // not yet born
-      if (d != null && d < yr) return;   // already dead
-      out.push(p);
+      var alive;
+      if (b != null) alive = (b <= y) && (d == null || y <= d);
+      else if (d != null) alive = (y <= d) && (y >= d - 95);
+      else alive = false;
+      if (alive) out.push(p);
+    });
+    out.sort(function (a, b) {
+      var ab = (a.birth && typeof a.birth.year === 'number') ? a.birth.year : null;
+      var bb = (b.birth && typeof b.birth.year === 'number') ? b.birth.year : null;
+      if (ab == null && bb == null) return 0;
+      if (ab == null) return 1;
+      if (bb == null) return -1;
+      return ab - bb; // oldest first
     });
     return out;
   }
+
   function personCard(p, yr) {
     var b = (p.birth && typeof p.birth.year === 'number') ? p.birth.year : null;
     var age = (b != null) ? (yr - b) : null;
+    var line = lineById[p.line] ? lineById[p.line].label : '';
+    var place = (line ? line : '') + (line && p.location ? ' - ' : '') + (p.location || '');
     var s = '<div class="tl-person"><p class="tl-pn">' + esc(p.name) + ' <span class="tl-age">' + (age != null ? ('age ' + age) : 'age unknown') + '</span></p>';
-    if (p.location) s += '<p class="tl-pl">' + esc(p.location) + '</p>';
+    if (place) s += '<p class="tl-pl">' + esc(place) + '</p>';
     if (p.relationships && p.relationships.length) {
       s += '<ul class="tl-rel">';
       p.relationships.forEach(function (r) {
@@ -2238,13 +2281,42 @@ _build:
     return s + '</div>';
   }
 
+  function bindEvLinks() {
+    Array.prototype.forEach.call(panelBody.querySelectorAll('.tl-evlink'), function (b) {
+      b.addEventListener('click', function () { selectEvent(b.dataset.ev); });
+    });
+    Array.prototype.forEach.call(panelBody.querySelectorAll('.tl-yearlink'), function (b) {
+      b.addEventListener('click', function () { selectYear(parseInt(b.dataset.year, 10)); });
+    });
+  }
+
+  function selectYear(y) {
+    selectedYear = y; setActive(null); positionCursor(y);
+    var evs = events.filter(function (e) { return e.year === y; });
+    var roster = livingIn(y);
+    var h = '';
+    h += '<p class="tl-pyear">Year ' + esc(y) + ' of the Barovian calendar</p>';
+    h += '<h3 class="tl-ptitle">' + (evs.length ? esc(evs.length + (evs.length > 1 ? ' events this year' : ' event this year')) : 'A quiet year') + '</h3>';
+    if (evs.length) {
+      h += '<div class="tl-sec-b"><span class="tl-sec">What happens this year</span>';
+      evs.forEach(function (e) { h += '<button type="button" class="tl-evlink" data-ev="' + esc(e.id) + '"><span class="tl-dot" style="background:' + tierColor(e.tier) + '"></span>' + esc(e.title) + '</button>'; });
+      h += '</div>';
+    }
+    h += '<div class="tl-sec-b"><span class="tl-sec">Living in ' + esc(y) + ' (' + roster.length + ')</span>';
+    if (roster.length) { h += '<div class="tl-cast">'; roster.forEach(function (p) { h += personCard(p, y); }); h += '</div>'; }
+    else { h += '<p class="tl-gloss">No dated figure is recorded alive in this year.</p>'; }
+    h += '</div>';
+    panelBody.innerHTML = h;
+    bindEvLinks();
+  }
+
   function selectEvent(id) {
     var e = null; for (var i = 0; i < events.length; i++) { if (events[i].id === id) { e = events[i]; break; } }
     if (!e) return;
-    setActive(evEls[id]);
+    setActive(evEls[id]); positionCursor(e.year); scrollYearIntoView(e.year);
     var st = statusInfo(e.tier);
     var h = '';
-    h += '<p class="tl-pyear">Year ' + esc(e.year) + ' <span class="tl-scope">' + esc(e.scope) + '</span></p>';
+    h += '<p class="tl-pyear">Year ' + esc(e.year) + ' <span class="tl-scope">' + esc(e.scope) + '</span> &middot; <button type="button" class="tl-yearlink" data-year="' + esc(e.year) + '">everyone living in ' + esc(e.year) + '</button></p>';
     h += '<h3 class="tl-ptitle">' + esc(e.title) + '</h3>';
     h += '<p class="tl-status"><span class="tl-badge" style="background:' + tierColor(e.tier) + '">' + esc(e.tier) + '</span>' + esc(st.label) + '</p>';
     h += '<p class="tl-gloss">' + esc(st.blurb) + '</p>';
@@ -2268,10 +2340,18 @@ _build:
       h += '</div>';
     }
     if (e.present && e.present.length) {
-      var cast = castFor(e);
+      var cast = [];
+      e.present.forEach(function (pid) {
+        var p = personById[pid]; if (!p) return;
+        var b = (p.birth && typeof p.birth.year === 'number') ? p.birth.year : null;
+        var d = (p.death && typeof p.death.year === 'number') ? p.death.year : null;
+        if (b != null && b > e.year) return;
+        if (d != null && d < e.year) return;
+        cast.push(p);
+      });
       h += '<div class="tl-sec-b"><span class="tl-sec">Who was present</span>';
       if (cast.length) {
-        h += '<details class="tl-castwrap"><summary>Show the cast alive in ' + esc(e.year) + ' (' + cast.length + ')</summary><div class="tl-cast">';
+        h += '<details class="tl-castwrap" open><summary>The cast alive in ' + esc(e.year) + ' (' + cast.length + ')</summary><div class="tl-cast">';
         cast.forEach(function (c) { h += personCard(c, e.year); });
         h += '</div></details>';
       } else {
@@ -2280,33 +2360,62 @@ _build:
       h += '</div>';
     }
     panelBody.innerHTML = h;
-    openPanel();
+    bindEvLinks();
   }
 
   function selectLine(id) {
     var l = lineById[id]; if (!l) return;
-    setActive(null);
+    setActive(null); positionCursor(l.starts); scrollYearIntoView(l.starts);
     var st = statusInfo(l.tier);
     var h = '';
-    h += '<p class="tl-pyear">Branches in ' + esc(l.starts) + '</p>';
+    h += '<p class="tl-pyear">Joins the timeline in ' + esc(l.starts) + '</p>';
     h += '<h3 class="tl-ptitle">' + esc(l.label) + ' line</h3>';
     h += '<p class="tl-status"><span class="tl-badge" style="background:' + tierColor(l.tier) + '">' + esc(l.tier) + '</span>' + esc(st.label) + '</p>';
     h += '<p class="tl-gloss">Kind: ' + esc(l.kind) + '</p>';
     if (l.note) h += '<div class="tl-sec-b"><span class="tl-sec">About this line</span><p>' + esc(l.note) + '</p></div>';
     h += '<div class="tl-sec-b"><span class="tl-sec">Provenance</span>' + srcLine('Source', l.source) + '</div>';
     panelBody.innerHTML = h;
-    openPanel();
+    bindEvLinks();
   }
 
-  function openPanel() { panel.hidden = false; panel.classList.add('is-open'); if (window.innerWidth <= 900) panel.scrollTop = 0; }
-  document.getElementById('tlClose').addEventListener('click', function () { panel.hidden = true; panel.classList.remove('is-open'); setActive(null); });
-
+  // Tooltip.
   var tip = document.getElementById('tlTip');
   function showTip(ev, text) { tip.textContent = text; tip.hidden = false; moveTip(ev); }
   function moveTip(ev) { tip.style.left = (ev.clientX + 14) + 'px'; tip.style.top = (ev.clientY + 14) + 'px'; }
   function hideTip() { tip.hidden = true; }
 
-  // Legend, built from the tiers actually used by events.
+  // Every year is reachable by pointer, click, or arrow keys.
+  var stage = document.getElementById('tlStage');
+  function yearFromClientY(clientY) {
+    var r = field.getBoundingClientRect();
+    var yr = Math.round(minY + ((clientY - r.top) - padTop) / PXY);
+    return Math.max(minY, Math.min(maxY, yr));
+  }
+  function scrollYearIntoView(y) {
+    var target = yFor(y) - stage.clientHeight / 2;
+    stage.scrollTop = Math.max(0, Math.min(target, field.offsetHeight - stage.clientHeight));
+  }
+  field.addEventListener('mousemove', function (ev) {
+    if (ev.target.closest('.tl-ev') || ev.target.closest('.tl-pname')) { hover.hidden = true; return; }
+    var yr = yearFromClientY(ev.clientY);
+    positionHover(yr);
+    showTip(ev, yr + '  (' + livingIn(yr).length + ' living)');
+  });
+  field.addEventListener('mouseleave', function () { hover.hidden = true; hideTip(); });
+  field.addEventListener('click', function (ev) {
+    if (ev.target.closest('.tl-ev') || ev.target.closest('.tl-pname')) return;
+    selectYear(yearFromClientY(ev.clientY));
+  });
+  stage.addEventListener('keydown', function (ev) {
+    if (ev.key === 'ArrowDown' || ev.key === 'ArrowUp') {
+      ev.preventDefault();
+      var base = (selectedYear == null) ? minY : selectedYear;
+      var y = Math.max(minY, Math.min(maxY, base + (ev.key === 'ArrowDown' ? 1 : -1)));
+      selectYear(y); scrollYearIntoView(y);
+    }
+  });
+
+  // Legend, from the tiers actually used by events.
   var legend = document.getElementById('tlLegend');
   var order = ['CORE', 'VOTM', 'PUB', 'INFER', 'SPEC', 'INVENT', 'FLAG'];
   var seen = {}; events.forEach(function (e) { seen[e.tier] = true; });
@@ -2315,5 +2424,10 @@ _build:
     var d = mk('tl-lg', legend);
     d.innerHTML = '<span class="tl-sw" style="background:' + tierColor(t) + '"></span>' + esc(t) + ' - ' + esc(statusInfo(t).label);
   });
+
+  // Open on the anchor year so the living-roster view is visible immediately.
+  var startYear = (351 >= minY && 351 <= maxY) ? 351 : minY;
+  selectYear(startYear);
+  scrollYearIntoView(startYear);
 })();
 </script>

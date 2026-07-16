@@ -90,6 +90,7 @@ _build:
 .tl-person { border-left: 2px solid var(--rule); padding-left: 0.6rem; }
 .tl-pn { font-family: var(--display); font-size: 0.82rem; color: var(--text-primary); margin: 0; }
 .tl-age { color: var(--gold); font-size: 0.72rem; }
+.tl-dies { color: #c0553a; }
 .tl-role { font-size: 0.75rem; color: var(--gold-bright); margin: 0.05rem 0; }
 .tl-pl { font-size: 0.76rem; color: var(--text-muted); font-style: italic; margin: 0.1rem 0; }
 .tl-rel { margin: 0.2rem 0 0; padding-left: 1rem; }
@@ -2344,11 +2345,16 @@ _build:
   function relBornBy(id, y) { var q = personById[id]; if (!q) return true; var b = born(q); return (b == null || b <= y); }
 
   function personCard(p, yr) {
-    var b = born(p), age = (b != null) ? (yr - b) : null;
-    var ageText = (b == null) ? 'birth year unrecorded' : (age <= 0 ? ('born ' + b) : ('age ' + age + ' &middot; b. ' + b));
+    var b = born(p), d = died(p), age = (b != null) ? (yr - b) : null;
+    var dies = (d != null && yr === d);
+    var ageText;
+    if (dies) ageText = (b != null) ? ('dies this year at age ' + age) : 'dies this year';
+    else if (b == null) ageText = 'birth year unrecorded';
+    else if (age <= 0) ageText = 'born ' + b;
+    else ageText = 'age ' + age + ' &middot; b. ' + b;
     var line = lineById[p.line] ? lineById[p.line].label : '';
     var place = (line || '') + (line && p.location ? ' - ' : '') + (p.location || '');
-    var s = '<div class="tl-person"><p class="tl-pn">' + esc(p.name) + ' <span class="tl-age">' + ageText + '</span></p>';
+    var s = '<div class="tl-person"><p class="tl-pn">' + esc(p.name) + ' <span class="tl-age' + (dies ? ' tl-dies' : '') + '">' + ageText + '</span></p>';
     if (p.role) s += '<p class="tl-role">' + esc(p.role) + '</p>';
     if (place) s += '<p class="tl-pl">' + esc(place) + '</p>';
     if (p.relationships && p.relationships.length) {

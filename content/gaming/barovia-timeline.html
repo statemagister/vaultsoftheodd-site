@@ -52,6 +52,11 @@ _build:
 .tl-ev.scope-shared { border-radius: 2px; }
 .tl-ev.scope-setting { border-radius: 2px; width: 15px; height: 15px; }
 .tl-ev.is-multi { width: 17px; height: 17px; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 700; font-size: 0.6rem; color: #15120f; }
+.tl-cell { position: absolute; display: flex; align-items: center; gap: 4px; height: 14px; max-width: 160px; padding: 0 5px 0 3px; border-radius: 7px; border: 0; background: rgba(33,28,24,0.78); box-shadow: 0 0 0 1px var(--rule); cursor: pointer; font-family: var(--body); font-size: 0.62rem; line-height: 1; color: var(--text-primary); white-space: nowrap; z-index: 10; transition: box-shadow 0.1s; }
+.tl-cell:hover, .tl-cell:focus-visible { z-index: 14; box-shadow: 0 0 0 1px var(--gold); outline: none; }
+.tl-cell.is-active { box-shadow: 0 0 0 1px var(--gold-bright), 0 0 6px rgba(226,192,116,0.5); z-index: 15; }
+.tl-cell .cdot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.tl-cell .clab { overflow: hidden; text-overflow: ellipsis; }
 
 .tl-reader { position: absolute; top: 0; bottom: 0; width: 0; pointer-events: none; z-index: 20; border-left: 2px solid var(--gold-bright); box-shadow: 0 0 14px rgba(226,192,116,0.4); }
 .tl-reader::before, .tl-reader::after { content: ''; position: absolute; top: 0; bottom: 0; pointer-events: none; }
@@ -2259,7 +2264,7 @@ _build:
         pre.style.background = 'repeating-linear-gradient(45deg, ' + hexToRgba(color, 0) + ' 0, ' + hexToRgba(color, 0) + ' 6px, ' + hexToRgba(color, 0.06) + ' 6px, ' + hexToRgba(color, 0.06) + ' 12px)';
         var plab = mk('tl-bprelabel', field); plab.dataset.line = l.id; plab.textContent = 'before Ravenloft'; plab.style.left = px(preX + 6); plab.style.top = px(mid); plab.style.color = hexToRgba(color, 0.85);
       }
-      var nm = mk('tl-bname', field); nm.textContent = l.label; nm.dataset.line = l.id; nm.style.left = px(startX + 6); nm.style.top = px(mid); nm.style.color = color;
+      var nm = mk('tl-bname', field); nm.textContent = l.label; nm.dataset.line = l.id; nm.style.left = px(startX + 6); nm.style.top = px(top + 9); nm.style.color = color;
       nm.setAttribute('role', 'button'); nm.tabIndex = 0;
       nm.addEventListener('click', function (ev) { ev.stopPropagation(); selectLine(l.id); });
       nm.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); selectLine(l.id); } });
@@ -2277,35 +2282,44 @@ _build:
       if (e.scope === 'setting') { var band = mk('tl-settingband', field); band.style.left = px(xFor(e.year)); band.style.height = px(fieldH); band.style.borderLeftColor = color; }
     });
 
-    // Markers. Same year + same band collapse to a numbered marker.
+    // Event cells, lane-stacked per band so overlapping years never collide and
+    // each stays cleanly selectable. Same year + same band collapse to one cell.
     var groups = {};
     events.forEach(function (e) { var k = colKeyOf(e) + '|' + e.year; (groups[k] = groups[k] || []).push(e); });
     evEls = {};
-    Object.keys(groups).forEach(function (k) {
-      var arr = groups[k], e0 = arr[0], ck = colKeyOf(e0), yr = e0.year;
-      var starts = lineById[ck] ? lineById[ck].starts : minY;
-      var isPre = (yr < starts && ck !== ordered[0].id);
-      var multi = arr.length > 1;
-      var color = multi ? '#c9a24b' : tierColor(e0.tier);
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'tl-ev' + (multi ? ' is-multi' : ' scope-' + e0.scope) + (isPre ? ' is-pre' : '');
-      btn.dataset.col = ck; btn.style.left = px(xFor(yr)); btn.style.top = px(bandMid(ck));
-      if (isPre) { btn.style.background = 'var(--bg)'; btn.style.border = '2px solid ' + color; } else { btn.style.background = color; }
-      if (multi) {
-        btn.textContent = arr.length;
-        btn.setAttribute('aria-label', arr.length + ' events in ' + yr);
-        btn.addEventListener('click', function (ev) { ev.stopPropagation(); scrollToYear(yr); });
-        btn.addEventListener('mouseenter', function (ev) { showTip(ev, yr + '  ' + arr.length + ' events, scroll here'); });
-      } else {
-        btn.dataset.ev = e0.id;
-        btn.setAttribute('aria-label', e0.title + ' (' + yr + ')');
-        btn.addEventListener('click', function (ev) { ev.stopPropagation(); selectEvent(e0.id); });
-        btn.addEventListener('mouseenter', function (ev) { showTip(ev, yr + '  ' + e0.title); });
-        evEls[e0.id] = btn;
-      }
-      btn.addEventListener('mousemove', moveTip); btn.addEventListener('mouseleave', hideTip);
-      field.appendChild(btn);
+    var byBand = {};
+    Object.keys(groups).forEach(function (k) { var arr = groups[k]; (byBand[colKeyOf(arr[0])] = byBand[colKeyOf(arr[0])] || []).push(arr); });
+    Object.keys(byBand).forEach(function (ck) {
+      var cells = byBand[ck].sort(function (a, b) { return a[0].year - b[0].year; });
+      var laneRight = [], bt = bandTop(ck), startY = lineById[ck] ? lineById[ck].starts : minY;
+      cells.forEach(function (arr) {
+        var e0 = arr[0], yr = e0.year, multi = arr.length > 1;
+        var isPre = (yr < startY && ck !== ordered[0].id);
+        var color = multi ? '#c9a24b' : tierColor(e0.tier);
+        var title = multi ? (arr.length + ' events') : e0.title;
+        var label = title.length > 15 ? (title.slice(0, 14) + '…') : title;
+        var x = xFor(yr), w = 16 + label.length * 5.4 + 8;
+        var lane = 0; for (; lane < laneRight.length; lane++) { if (laneRight[lane] <= x - 3) break; }
+        laneRight[lane] = x + w;
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'tl-cell' + (isPre ? ' is-pre' : '');
+        btn.dataset.col = ck; btn.style.left = px(x); btn.style.top = px(bt + 16 + lane * 13);
+        btn.innerHTML = '<span class="cdot" style="' + (isPre ? 'background:var(--bg);box-shadow:inset 0 0 0 2px ' + color : 'background:' + color) + '"></span><span class="clab">' + esc(label) + '</span>';
+        if (multi) {
+          btn.setAttribute('aria-label', arr.length + ' events in ' + yr);
+          btn.addEventListener('click', function (ev) { ev.stopPropagation(); scrollToYear(yr); });
+          btn.addEventListener('mouseenter', function (ev) { showTip(ev, yr + '  ' + arr.length + ' events'); });
+        } else {
+          btn.dataset.ev = e0.id;
+          btn.setAttribute('aria-label', e0.title + ' (' + yr + ')');
+          btn.addEventListener('click', function (ev) { ev.stopPropagation(); selectEvent(e0.id); });
+          btn.addEventListener('mouseenter', function (ev) { showTip(ev, yr + '  ' + e0.title); });
+          evEls[e0.id] = btn;
+        }
+        btn.addEventListener('mousemove', moveTip); btn.addEventListener('mouseleave', hideTip);
+        field.appendChild(btn);
+      });
     });
 
     // Keep top year labels legible where they crowd.

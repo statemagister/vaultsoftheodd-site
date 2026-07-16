@@ -59,8 +59,13 @@ _build:
 .tl-band.is-expanded { background: rgba(201,162,75,0.07); }
 .tl-lifebar { position: absolute; height: 15px; border-radius: 3px; display: flex; align-items: center; padding: 0 6px; font-family: var(--display); font-size: 0.62rem; color: #15120f; white-space: nowrap; z-index: 3; box-shadow: 0 0 0 1px rgba(0,0,0,0.25); }
 .tl-lifebar .lname-out { position: absolute; left: 100%; margin-left: 5px; color: var(--text-primary); white-space: nowrap; }
-.tl-cell.on-bar { z-index: 11; box-shadow: 0 0 0 1px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.15) inset; }
-.tl-cell.on-bar:hover, .tl-cell.on-bar:focus-visible { z-index: 14; transform: translateY(-1px); }
+.tl-blk { position: absolute; width: 11px; height: 11px; transform: translateX(-50%); cursor: pointer; z-index: 12; border: 0; padding: 0; box-shadow: 0 0 0 1px rgba(0,0,0,0.5); transition: transform 0.12s, box-shadow 0.12s; }
+.tl-blk:hover, .tl-blk:focus-visible { z-index: 16; box-shadow: 0 0 0 1px var(--gold); outline: none; transform: translateX(-50%) scale(1.35); }
+.tl-blk.is-active { box-shadow: 0 0 0 2px var(--gold-bright); z-index: 17; }
+.tl-blk.birth { border-radius: 50%; }
+.tl-blk.event { border-radius: 2px; }
+.tl-blk.death { border-radius: 2px; background: #c0553a; transform: translateX(-50%) rotate(45deg); }
+.tl-blk.death:hover, .tl-blk.death:focus-visible { transform: translateX(-50%) rotate(45deg) scale(1.35); }
 
 .tl-reader { position: absolute; top: 0; bottom: 0; width: 0; pointer-events: none; z-index: 20; border-left: 2px solid var(--gold-bright); box-shadow: 0 0 14px rgba(226,192,116,0.4); }
 .tl-reader::before, .tl-reader::after { content: ''; position: absolute; top: 0; bottom: 0; pointer-events: none; }
@@ -262,7 +267,7 @@ _build:
         var sumH = 0;
         rows.forEach(function (p) {
           var evs = personalEventsById[p.id];
-          var lanes = assignLanes(evs, function (e) { return xFor(e.year); }, function (e) { return xFor(e.year) + labelWText(e.title); });
+          var lanes = assignLanes(evs, function (e) { return xFor(e.year); }, function (e) { return xFor(e.year) + 14; });
           p._rowLanes = Math.max(1, lanes);
           var extraLanes = p._rowLanes - 1;
           p._rowH = BARH + ROWPAD + (extraLanes > 0 ? ROWGAP + extraLanes * LANEH : 0);
@@ -354,10 +359,22 @@ _build:
         });
       } else {
         // Expanded: one row per person, drawn as a solid lifespan bar (name
-        // inside it, or just outside if the bar is too narrow), with personal
-        // events -- including shared events like a marriage -- as solid tag
-        // bars stacked below THEIR OWN bar, at the correct year.
+        // inside it, or just outside if the bar is too narrow). Point-in-time
+        // moments -- birth, personal events like a marriage, death -- are
+        // compact colour blocks at the exact year, since their writing is
+        // always wider than a single year's width; selecting a block expands
+        // it into the full record in the side panel.
         var rowY = top + HEADERH;
+        function mkBlk(cls, x, y, tip, onClick) {
+          var bl = document.createElement('button'); bl.type = 'button'; bl.className = 'tl-blk ' + cls;
+          bl.style.left = px(x); bl.style.top = px(y);
+          bl.setAttribute('aria-label', tip);
+          bl.addEventListener('click', function (ev) { ev.stopPropagation(); onClick(); });
+          bl.addEventListener('mouseenter', function (ev) { showTip(ev, tip); });
+          bl.addEventListener('mousemove', moveTip); bl.addEventListener('mouseleave', hideTip);
+          field.appendChild(bl);
+          return bl;
+        }
         (peopleByLine[l.id] || []).forEach(function (p) {
           var b = born(p), d = died(p);
           var barL = (b != null) ? xFor(b) : (d != null ? xFor(d) - 40 : xFor(minY));
@@ -373,23 +390,20 @@ _build:
           var nameW = p.name.length * 5.6 + 10;
           if (barW >= nameW + 6) { bar.textContent = p.name; }
           else { var out = document.createElement('span'); out.className = 'lname-out'; out.textContent = p.name; bar.appendChild(out); }
-          bar.title = p.name + ' (' + (b != null ? b : '?') + '–' + (d != null ? d : '?') + ')';
+          bar.title = p.name + ' (' + (b != null ? b : '?') + '–' + (d != null ? d : '?') + ') — select for full record';
+          bar.style.cursor = 'pointer'; bar.setAttribute('role', 'button'); bar.tabIndex = 0;
+          bar.addEventListener('click', function (ev) { ev.stopPropagation(); selectPerson(p); });
+          bar.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); selectPerson(p); } });
+
+          if (b != null) { var bb = mkBlk('birth', xFor(b), rowY + 2, b + '  born  ' + p.name, function () { selectPerson(p); }); bb.style.background = color; }
+          if (d != null) { mkBlk('death', xFor(d), rowY + 2, d + '  dies  ' + p.name, function () { selectPerson(p); }); }
+
           personalEventsById[p.id].forEach(function (e) {
             var col2 = tierColor(e.tier);
-            var btn = document.createElement('button'); btn.type = 'button';
-            btn.className = 'tl-cell person-ev';
             var evTop = (e.lane === 0) ? rowY : (rowY + BARH + ROWGAP + (e.lane - 1) * LANEH);
-            btn.style.left = px(xFor(e.year)); btn.style.top = px(evTop);
-            btn.className += (e.lane === 0) ? ' on-bar' : '';
-            btn.style.background = col2;
-            btn.textContent = e.title;
-            btn.dataset.ev = e.id;
-            btn.setAttribute('aria-label', e.title + ' (' + e.year + ') — ' + p.name);
-            btn.addEventListener('click', function (ev) { ev.stopPropagation(); selectEvent(e.id); });
-            btn.addEventListener('mouseenter', function (ev) { showTip(ev, e.year + '  ' + e.title + '  (' + p.name + ')'); });
-            btn.addEventListener('mousemove', moveTip); btn.addEventListener('mouseleave', hideTip);
-            evEls[e.id + '@' + p.id] = btn; evEls[e.id] = btn;
-            field.appendChild(btn);
+            var eb = mkBlk('event', xFor(e.year), evTop + 2, e.year + '  ' + e.title + '  (' + p.name + ')', function () { selectEvent(e.id); });
+            eb.style.background = col2; eb.dataset.ev = e.id;
+            evEls[e.id + '@' + p.id] = eb; evEls[e.id] = eb;
           });
           rowY += p._rowH;
         });
@@ -569,6 +583,56 @@ _build:
     var tgt2 = (l.starts - minY) * PXX;
     if (Math.abs(stage.scrollLeft - tgt2) > 1) stage.scrollLeft = tgt2;
     updateReader(l.starts);
+  }
+
+  // A person's compact blocks (birth/event/death) expand into their full
+  // record here: birth, relationships, every personal event, and death.
+  function selectPerson(p) {
+    setActive(null);
+    var h = '';
+    h += '<p class="tl-pyear">' + esc(lineById[p.line] ? lineById[p.line].label : '') + ' line</p>';
+    h += '<h3 class="tl-ptitle" style="color:' + lineColor(p.line) + '">' + esc(p.name) + '</h3>';
+
+    var b = p.birth, d = p.death;
+    h += '<div class="tl-sec-b"><span class="tl-sec">Birth</span>';
+    if (b && typeof b.year === 'number') {
+      h += '<p class="tl-status"><span class="tl-badge" style="background:' + tierColor(b.tier) + '">' + esc(b.tier) + '</span>Born ' + esc(b.year) + '</p>';
+      if (b.note) h += '<p class="tl-gloss">' + esc(b.note) + '</p>';
+      h += srcLine('Source', b.source);
+    } else {
+      h += '<p class="tl-gloss">Birth year unrecorded' + (b && b.note ? ': ' + esc(b.note) : '') + '.</p>';
+    }
+    h += '</div>';
+
+    if (p.relationships && p.relationships.length) {
+      h += '<div class="tl-sec-b"><span class="tl-sec">Relationships</span><ul>';
+      p.relationships.forEach(function (r) {
+        var who = Array.isArray(r.with) ? r.with.map(personName).join(', ') : personName(r.with);
+        h += '<li>' + esc(r.type) + ': ' + esc(who) + (r.note ? ' — ' + esc(r.note) : '') + '</li>';
+      });
+      h += '</ul></div>';
+    }
+
+    var pevs = personalEventsById[p.id];
+    if (pevs && pevs.length) {
+      h += '<div class="tl-sec-b"><span class="tl-sec">Marriages &amp; personal events</span>';
+      pevs.forEach(function (e) { h += '<button type="button" class="tl-evlink" data-ev="' + esc(e.id) + '"><span class="tl-dot" style="background:' + tierColor(e.tier) + '"></span>' + esc(e.year) + ' — ' + esc(e.title) + '</button>'; });
+      h += '</div>';
+    }
+
+    h += '<div class="tl-sec-b"><span class="tl-sec">Death</span>';
+    if (d && typeof d.year === 'number') {
+      h += '<p class="tl-status"><span class="tl-badge" style="background:' + tierColor(d.tier) + '">' + esc(d.tier) + '</span>Died ' + esc(d.year) + (d.uncertain ? ' (printed with a question mark)' : '') + '</p>';
+      if (d.note) h += '<p class="tl-gloss">' + esc(d.note) + '</p>';
+      if (d.rejected) h += '<p class="tl-gloss">Rejected reading: ' + esc(d.rejected.year) + ' (' + esc(d.rejected.source) + ', ' + esc(d.rejected.tier) + ') — ' + esc(d.rejected.reason) + '</p>';
+      h += srcLine('Source', d.source);
+    } else {
+      h += '<p class="tl-gloss">' + (d && d.note ? esc(d.note) : 'Death year unrecorded, or left open by the source.') + '</p>';
+    }
+    h += '</div>';
+
+    if (p.notes) h += '<div class="tl-sec-b"><span class="tl-sec">Notes</span><p>' + esc(p.notes) + '</p></div>';
+    panelBody.innerHTML = h; bindLinks();
   }
 
   var tip = document.getElementById('tlTip');

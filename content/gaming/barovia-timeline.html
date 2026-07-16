@@ -59,6 +59,8 @@ _build:
 .tl-band.is-expanded { background: rgba(201,162,75,0.07); }
 .tl-lifebar { position: absolute; height: 15px; border-radius: 3px; display: flex; align-items: center; padding: 0 6px; font-family: var(--display); font-size: 0.62rem; color: #15120f; white-space: nowrap; z-index: 3; box-shadow: 0 0 0 1px rgba(0,0,0,0.25); }
 .tl-lifebar .lname-out { position: absolute; left: 100%; margin-left: 5px; color: var(--text-primary); white-space: nowrap; }
+.tl-cell.on-bar { z-index: 11; box-shadow: 0 0 0 1px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.15) inset; }
+.tl-cell.on-bar:hover, .tl-cell.on-bar:focus-visible { z-index: 14; transform: translateY(-1px); }
 
 .tl-reader { position: absolute; top: 0; bottom: 0; width: 0; pointer-events: none; z-index: 20; border-left: 2px solid var(--gold-bright); box-shadow: 0 0 14px rgba(226,192,116,0.4); }
 .tl-reader::before, .tl-reader::after { content: ''; position: absolute; top: 0; bottom: 0; pointer-events: none; }
@@ -261,7 +263,9 @@ _build:
         rows.forEach(function (p) {
           var evs = personalEventsById[p.id];
           var lanes = assignLanes(evs, function (e) { return xFor(e.year); }, function (e) { return xFor(e.year) + labelWText(e.title); });
-          p._rowLanes = Math.max(1, lanes); p._rowH = BARH + ROWGAP + p._rowLanes * LANEH + ROWPAD;
+          p._rowLanes = Math.max(1, lanes);
+          var extraLanes = p._rowLanes - 1;
+          p._rowH = BARH + ROWPAD + (extraLanes > 0 ? ROWGAP + extraLanes * LANEH : 0);
           sumH += p._rowH;
         });
         h = HEADERH + sumH + 10;
@@ -374,7 +378,9 @@ _build:
             var col2 = tierColor(e.tier);
             var btn = document.createElement('button'); btn.type = 'button';
             btn.className = 'tl-cell person-ev';
-            btn.style.left = px(xFor(e.year)); btn.style.top = px(rowY + BARH + ROWGAP + e.lane * LANEH);
+            var evTop = (e.lane === 0) ? rowY : (rowY + BARH + ROWGAP + (e.lane - 1) * LANEH);
+            btn.style.left = px(xFor(e.year)); btn.style.top = px(evTop);
+            btn.className += (e.lane === 0) ? ' on-bar' : '';
             btn.style.background = col2;
             btn.textContent = e.title;
             btn.dataset.ev = e.id;

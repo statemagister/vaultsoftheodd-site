@@ -52,16 +52,13 @@ _build:
 .tl-ev.scope-shared { border-radius: 2px; }
 .tl-ev.scope-setting { border-radius: 2px; width: 15px; height: 15px; }
 .tl-ev.is-multi { width: 17px; height: 17px; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 700; font-size: 0.6rem; color: #15120f; }
-.tl-cell { position: absolute; display: flex; align-items: center; gap: 4px; height: 14px; width: max-content; padding: 0 5px 0 3px; border-radius: 7px; border: 0; background: rgba(33,28,24,0.78); box-shadow: 0 0 0 1px var(--rule); cursor: pointer; font-family: var(--body); font-size: 0.62rem; line-height: 1; color: var(--text-primary); white-space: nowrap; z-index: 10; transition: box-shadow 0.1s; }
-.tl-cell:hover, .tl-cell:focus-visible { z-index: 14; box-shadow: 0 0 0 1px var(--gold); outline: none; }
-.tl-cell.is-active { box-shadow: 0 0 0 1px var(--gold-bright), 0 0 6px rgba(226,192,116,0.5); z-index: 15; }
-.tl-cell .cdot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-.tl-cell .clab { white-space: nowrap; }
+.tl-cell { position: absolute; display: flex; align-items: center; height: 15px; width: max-content; padding: 0 6px; border-radius: 3px; border: 0; cursor: pointer; font-family: var(--body); font-weight: 600; font-size: 0.63rem; line-height: 1; color: #15120f; white-space: nowrap; z-index: 10; box-shadow: 0 0 0 1px rgba(0,0,0,0.3); transition: box-shadow 0.1s, transform 0.1s; }
+.tl-cell:hover, .tl-cell:focus-visible { z-index: 14; transform: translateY(-1px); box-shadow: 0 0 0 1px var(--gold), 0 2px 5px rgba(0,0,0,0.4); outline: none; }
+.tl-cell.is-active { box-shadow: 0 0 0 2px var(--gold-bright), 0 2px 5px rgba(0,0,0,0.4); z-index: 15; }
+.tl-cell.is-pre { background: transparent !important; border: 1.5px dashed; color: var(--text-primary); font-weight: 500; }
 .tl-band.is-expanded { background: rgba(201,162,75,0.07); }
-.tl-lifebar { position: absolute; height: 2px; border-radius: 1px; pointer-events: none; z-index: 3; }
-.tl-pname2 { position: absolute; font-family: var(--display); font-size: 0.62rem; letter-spacing: 0.02em; white-space: nowrap; pointer-events: none; z-index: 4; line-height: 1; }
-.tl-lifecap { position: absolute; width: 7px; height: 7px; border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; z-index: 4; box-shadow: 0 0 0 1px var(--bg); }
-.tl-lifecap.death { background: #c0553a; }
+.tl-lifebar { position: absolute; height: 15px; border-radius: 3px; display: flex; align-items: center; padding: 0 6px; font-family: var(--display); font-size: 0.62rem; color: #15120f; white-space: nowrap; z-index: 3; box-shadow: 0 0 0 1px rgba(0,0,0,0.25); }
+.tl-lifebar .lname-out { position: absolute; left: 100%; margin-left: 5px; color: var(--text-primary); white-space: nowrap; }
 
 .tl-reader { position: absolute; top: 0; bottom: 0; width: 0; pointer-events: none; z-index: 20; border-left: 2px solid var(--gold-bright); box-shadow: 0 0 14px rgba(226,192,116,0.4); }
 .tl-reader::before, .tl-reader::after { content: ''; position: absolute; top: 0; bottom: 0; pointer-events: none; }
@@ -213,6 +210,7 @@ _build:
   });
 
   var PXX = 13, topGutter = 30;
+  var HEADERH = 26, BARH = 15, ROWGAP = 3, LANEH = 14, ROWPAD = 4;
   var fieldH = 560, padLeft = 300, focalX = 300;
   var expanded = {}, bandTops = {}, bandHs = {};
   function xFor(year) { return padLeft + (year - minY) * PXX; }
@@ -263,10 +261,10 @@ _build:
         rows.forEach(function (p) {
           var evs = personalEventsById[p.id];
           var lanes = assignLanes(evs, function (e) { return xFor(e.year); }, function (e) { return xFor(e.year) + labelWText(e.title); });
-          p._rowLanes = Math.max(1, lanes); p._rowH = 10 + p._rowLanes * 14;
+          p._rowLanes = Math.max(1, lanes); p._rowH = BARH + ROWGAP + p._rowLanes * LANEH + ROWPAD;
           sumH += p._rowH;
         });
-        h = 26 + sumH + 10;
+        h = HEADERH + sumH + 10;
       } else {
         var cells = cellsByBand[id] || [];
         var lanes2 = assignLanes(cells, function (c) { return xFor(c.year); }, function (c) { return xFor(c.year) + labelW(c); });
@@ -327,14 +325,15 @@ _build:
       if (!isExp) { for (var wx = startX + 150; wx < rightX - 40; wx += 620) { var wm = mk('tl-bwm', field); wm.textContent = l.label; wm.style.left = px(wx); wm.style.top = px(mid); wm.style.color = hexToRgba(color, 0.1); } }
 
       if (!isExp) {
-        // Domain view: every event on this line's own aggregate row, lane-stacked,
-        // labels always fully visible (never reduced to bare dots).
+        // Domain view: every event is a solid coloured bar on this line's own
+        // aggregate row, lane-stacked, label always fully visible inside it.
         (cellsByBand[l.id] || []).forEach(function (c) {
           var col2 = c.multi ? '#c9a24b' : tierColor(c.e0.tier);
           var btn = document.createElement('button'); btn.type = 'button';
           btn.className = 'tl-cell' + (c.isPre ? ' is-pre' : '');
           btn.style.left = px(xFor(c.year)); btn.style.top = px(top + 20 + c.lane * 17);
-          btn.innerHTML = '<span class="cdot" style="' + (c.isPre ? 'background:var(--bg);box-shadow:inset 0 0 0 2px ' + col2 : 'background:' + col2) + '"></span><span class="clab">' + esc(c.title) + '</span>';
+          if (c.isPre) { btn.style.borderColor = col2; btn.style.color = col2; } else { btn.style.background = col2; }
+          btn.textContent = c.title;
           if (c.multi) {
             btn.setAttribute('aria-label', c.arr.length + ' events in ' + c.year);
             btn.addEventListener('click', function (ev) { ev.stopPropagation(); scrollToYear(c.year); });
@@ -350,31 +349,34 @@ _build:
           field.appendChild(btn);
         });
       } else {
-        // Expanded: one row per person, their own lifespan and personal events
-        // (including shared events like a marriage) at the correct year on
-        // THEIR row -- so Barov's marriage and Raven's marriage each appear on
-        // their own lifeline, not only once on the domain band.
-        var rowY = top + 26;
+        // Expanded: one row per person, drawn as a solid lifespan bar (name
+        // inside it, or just outside if the bar is too narrow), with personal
+        // events -- including shared events like a marriage -- as solid tag
+        // bars stacked below THEIR OWN bar, at the correct year.
+        var rowY = top + HEADERH;
         (peopleByLine[l.id] || []).forEach(function (p) {
           var b = born(p), d = died(p);
           var barL = (b != null) ? xFor(b) : (d != null ? xFor(d) - 40 : xFor(minY));
           var barR = (d != null) ? xFor(d) : xFor(maxY);
-          var baseY = rowY + 10;
-          var lifebar = mk('tl-lifebar', field);
-          lifebar.style.left = px(barL); lifebar.style.width = px(Math.max(2, barR - barL)); lifebar.style.top = px(baseY);
-          lifebar.style.background = hexToRgba(color, (b == null) ? 0.25 : 0.55);
-          if (b == null) lifebar.style.backgroundImage = 'repeating-linear-gradient(90deg,' + hexToRgba(color, 0.5) + ' 0 4px, transparent 4px 8px)';
-          var nameEl = mk('tl-pname2', field); nameEl.textContent = p.name; nameEl.style.left = px(barL); nameEl.style.top = px(rowY); nameEl.style.color = color;
-          var lifeSpan = (b != null ? b : '?') + '–' + (d != null ? d : '?');
-          nameEl.title = p.name + ' (' + lifeSpan + ')';
-          if (b != null) { var bm = mk('tl-lifecap birth', field); bm.style.left = px(xFor(b)); bm.style.top = px(baseY); bm.style.background = color; }
-          if (d != null) { var dm = mk('tl-lifecap death', field); dm.style.left = px(xFor(d)); dm.style.top = px(baseY); }
+          var barW = Math.max(3, barR - barL);
+          var bar = mk('tl-lifebar', field);
+          bar.style.left = px(barL); bar.style.width = px(barW); bar.style.top = px(rowY);
+          bar.style.background = hexToRgba(color, 0.75);
+          bar.style.borderTopLeftRadius = bar.style.borderBottomLeftRadius = (b != null) ? '3px' : '0';
+          bar.style.borderTopRightRadius = bar.style.borderBottomRightRadius = (d != null) ? '3px' : '0';
+          if (b == null) bar.style.borderLeft = '2px dashed ' + hexToRgba(color, 0.95);
+          if (d == null) bar.style.borderRight = '2px dashed ' + hexToRgba(color, 0.95);
+          var nameW = p.name.length * 5.6 + 10;
+          if (barW >= nameW + 6) { bar.textContent = p.name; }
+          else { var out = document.createElement('span'); out.className = 'lname-out'; out.textContent = p.name; bar.appendChild(out); }
+          bar.title = p.name + ' (' + (b != null ? b : '?') + '–' + (d != null ? d : '?') + ')';
           personalEventsById[p.id].forEach(function (e) {
             var col2 = tierColor(e.tier);
             var btn = document.createElement('button'); btn.type = 'button';
             btn.className = 'tl-cell person-ev';
-            btn.style.left = px(xFor(e.year)); btn.style.top = px(baseY + e.lane * 14);
-            btn.innerHTML = '<span class="cdot" style="background:' + col2 + '"></span><span class="clab">' + esc(e.title) + '</span>';
+            btn.style.left = px(xFor(e.year)); btn.style.top = px(rowY + BARH + ROWGAP + e.lane * LANEH);
+            btn.style.background = col2;
+            btn.textContent = e.title;
             btn.dataset.ev = e.id;
             btn.setAttribute('aria-label', e.title + ' (' + e.year + ') — ' + p.name);
             btn.addEventListener('click', function (ev) { ev.stopPropagation(); selectEvent(e.id); });

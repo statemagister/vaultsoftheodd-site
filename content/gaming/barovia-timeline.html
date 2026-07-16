@@ -2233,7 +2233,7 @@ _build:
     ordered.forEach(function (l) {
       var spine = (l.kind === 'core-spine');
       var color = lineColor(l.id);
-      var startTop = yFor(l.starts), bottom = yFor(maxY);
+      var startTop = yFor(spine ? minY : l.starts), bottom = yFor(maxY);
       var pil = mk('tl-pillar', field);
       pil.dataset.line = l.id; pil.style.top = px(startTop); pil.style.height = px(bottom - startTop);
       pil.style.borderLeftColor = color; pil.style.borderLeftWidth = spine ? '3px' : '2px';
@@ -2327,9 +2327,10 @@ _build:
   function srcLine(label, code) { var g = sourceGloss(code); return '<p class="tl-src"><strong>' + label + ':</strong> ' + esc(code) + (g ? ' <span class="tl-src-g">' + esc(g) + '</span>' : '') + '</p>'; }
 
   function livingIn(y) {
+    // on_event_spine:false keeps a person off the timeline as a dated marker, but
+    // they still belong in the who-was-alive roster if their dates are known.
     var out = [];
     people.forEach(function (p) {
-      if (p.on_event_spine === false) return;
       var b = born(p), d = died(p), alive;
       if (b != null) alive = (b <= y) && (d == null || y <= d);
       else if (d != null) alive = (y <= d) && (y >= d - 95);
@@ -2344,9 +2345,10 @@ _build:
 
   function personCard(p, yr) {
     var b = born(p), age = (b != null) ? (yr - b) : null;
+    var ageText = (b == null) ? 'birth year unrecorded' : (age <= 0 ? ('born ' + b) : ('age ' + age + ' &middot; b. ' + b));
     var line = lineById[p.line] ? lineById[p.line].label : '';
     var place = (line || '') + (line && p.location ? ' - ' : '') + (p.location || '');
-    var s = '<div class="tl-person"><p class="tl-pn">' + esc(p.name) + ' <span class="tl-age">' + (age != null ? ('age ' + age) : 'age unknown') + '</span></p>';
+    var s = '<div class="tl-person"><p class="tl-pn">' + esc(p.name) + ' <span class="tl-age">' + ageText + '</span></p>';
     if (p.role) s += '<p class="tl-role">' + esc(p.role) + '</p>';
     if (place) s += '<p class="tl-pl">' + esc(place) + '</p>';
     if (p.relationships && p.relationships.length) {

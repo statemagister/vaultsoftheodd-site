@@ -14,27 +14,28 @@ _build:
 <style>
 .tl-page { width: 100%; }
 .tl-wrap { font-family: var(--body); color: var(--text-body); max-width: 1320px; margin: 0 auto; padding: 0.4rem 1rem 1rem; }
-.tl-head { text-align: center; margin-bottom: 0.7rem; }
-.tl-orn { display: flex; align-items: center; gap: 1rem; justify-content: center; max-width: 760px; margin: 0.2rem auto 0.6rem; }
+.tl-head { text-align: center; margin-bottom: 0.6rem; }
+.tl-orn { display: flex; align-items: center; gap: 1rem; justify-content: center; max-width: 760px; margin: 0.2rem auto 0.5rem; }
 .tl-orn::before, .tl-orn::after { content: ''; flex: 1; height: 1px; background: var(--gold); opacity: 0.5; }
-.tl-orn span { font-family: var(--display); font-size: 1.08rem; letter-spacing: 0.05em; color: var(--gold); }
-.tl-sub { max-width: 720px; margin: 0 auto; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; font-style: italic; }
-.tl-legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; justify-content: center; max-width: 940px; margin: 0.7rem auto 0.2rem; }
-.tl-lg { display: flex; align-items: center; gap: 0.4rem; font-size: 0.66rem; color: var(--text-muted); font-family: var(--display); letter-spacing: 0.04em; }
+.tl-orn span { font-family: var(--display); font-size: 1.06rem; letter-spacing: 0.05em; color: var(--gold); }
+.tl-sub { max-width: 720px; margin: 0 auto; color: var(--text-muted); font-size: 0.83rem; line-height: 1.5; font-style: italic; }
+.tl-legend { display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; justify-content: center; max-width: 960px; margin: 0.6rem auto 0.15rem; }
+.tl-lg { display: flex; align-items: center; gap: 0.4rem; font-size: 0.64rem; color: var(--text-muted); font-family: var(--display); letter-spacing: 0.04em; }
 .tl-sw { width: 12px; height: 12px; border-radius: 50%; box-shadow: 0 0 0 2px var(--bg); flex-shrink: 0; }
-.tl-hint { max-width: 760px; margin: 0.2rem auto 0; color: var(--text-muted); font-size: 0.72rem; }
+.tl-key { max-width: 760px; margin: 0.15rem auto 0; color: var(--text-muted); font-size: 0.68rem; }
+.tl-hint { max-width: 760px; margin: 0.2rem auto 0; color: var(--text-muted); font-size: 0.7rem; }
 
-.tl-layout { display: flex; gap: 1.2rem; align-items: stretch; height: 76vh; min-height: 520px; margin-top: 0.5rem; }
+.tl-layout { display: flex; gap: 1.2rem; align-items: stretch; height: 76vh; min-height: 520px; margin-top: 0.4rem; }
 .tl-stagewrap { position: relative; flex: 1 1 auto; min-width: 0; height: 100%; }
 .tl-stage { position: relative; overflow-y: auto; overflow-x: hidden; height: 100%; border: 1px solid var(--rule); border-radius: 4px; background: linear-gradient(var(--bg-alt), var(--bg)); outline: none; }
 .tl-stage:focus-visible { box-shadow: inset 0 0 0 2px var(--gold); }
 .tl-field { position: relative; }
 
-.tl-pillar { position: absolute; box-sizing: border-box; border-left: 1px solid rgba(201,162,75,0.22); border-right: 1px solid rgba(201,162,75,0.10); background: linear-gradient(rgba(201,162,75,0.05), rgba(201,162,75,0.015)); z-index: 1; }
-.tl-pillar.is-spine { background: linear-gradient(rgba(201,162,75,0.16), rgba(201,162,75,0.05)); border-left: 2px solid var(--gold); border-right: 1px solid rgba(201,162,75,0.22); }
-.tl-pillar.is-branch { border-top: 2px solid var(--gold); }
-.tl-wname { position: absolute; writing-mode: vertical-rl; text-orientation: mixed; font-family: var(--display); font-size: 1.35rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(201,162,75,0.12); pointer-events: none; z-index: 2; white-space: nowrap; transform: translateX(-50%); }
-.tl-pname { position: absolute; text-align: center; font-family: var(--display); font-size: 0.62rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gold-bright); cursor: pointer; z-index: 4; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tl-pillar { position: absolute; box-sizing: border-box; border-left: 2px solid; border-right: 1px solid rgba(201,162,75,0.12); z-index: 1; }
+.tl-preseg { position: absolute; box-sizing: border-box; border-left: 2px dashed; border-right: 1px dashed; z-index: 1; }
+.tl-prelabel { position: absolute; writing-mode: vertical-rl; text-orientation: mixed; transform: translateX(-50%); font-family: var(--display); font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase; z-index: 3; pointer-events: none; white-space: nowrap; }
+.tl-wname { position: absolute; writing-mode: vertical-rl; text-orientation: mixed; font-family: var(--display); font-size: 1.3rem; letter-spacing: 0.12em; text-transform: uppercase; pointer-events: none; z-index: 2; white-space: nowrap; transform: translateX(-50%); }
+.tl-pname { position: absolute; text-align: center; font-family: var(--display); font-size: 0.62rem; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; z-index: 4; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .tl-pname:hover { text-decoration: underline; }
 
 .tl-branch { position: absolute; height: 0; border-top: 2px solid; z-index: 4; pointer-events: none; }
@@ -44,19 +45,20 @@ _build:
 .tl-ytick { position: absolute; left: 0; font-family: var(--display); font-size: 0.58rem; color: var(--text-muted); text-align: right; padding-right: 6px; z-index: 5; }
 .tl-yev { position: absolute; left: 0; font-family: var(--display); font-size: 0.58rem; color: var(--gold); text-align: right; padding-right: 6px; z-index: 5; }
 
-.tl-ev { position: absolute; width: 14px; height: 14px; border-radius: 50%; border: 0; padding: 0; cursor: pointer; box-shadow: 0 0 0 2px var(--bg); transform: translate(-50%, -50%); transition: transform 0.1s ease; z-index: 10; }
+.tl-ev { position: absolute; width: 11px; height: 11px; border-radius: 50%; border: 0; padding: 0; cursor: pointer; box-shadow: 0 0 0 2px var(--bg); transform: translate(-50%, -50%); transition: transform 0.1s ease; z-index: 10; }
 .tl-ev:hover, .tl-ev:focus-visible { transform: translate(-50%, -50%) scale(1.4); outline: none; z-index: 12; }
 .tl-ev.is-active { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--gold-bright); z-index: 13; }
 .tl-ev.scope-shared { border-radius: 2px; }
 .tl-ev.scope-setting { border-radius: 2px; width: 16px; height: 16px; }
+.tl-ev.is-multi { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 700; font-size: 0.62rem; color: #15120f; }
+.tl-ev.is-pre { box-shadow: 0 0 0 2px var(--bg); }
 
-/* The fixed reader: a focal line the timeline scrolls past. */
 .tl-reader { position: absolute; left: 0; right: 0; height: 0; pointer-events: none; z-index: 20; border-top: 2px solid var(--gold-bright); box-shadow: 0 0 14px rgba(226,192,116,0.4); }
 .tl-reader::before, .tl-reader::after { content: ''; position: absolute; left: 0; right: 0; pointer-events: none; }
 .tl-reader::before { top: -46px; height: 46px; background: linear-gradient(rgba(21,18,15,0), rgba(226,192,116,0.09)); }
 .tl-reader::after { top: 0; height: 46px; background: linear-gradient(rgba(226,192,116,0.09), rgba(21,18,15,0)); }
 .tl-readtag { position: absolute; left: 8px; top: 0; transform: translateY(-50%); font-family: var(--display); font-weight: 700; font-size: 1.5rem; color: var(--gold-bright); background: var(--bg); padding: 0 8px; border: 1px solid var(--gold); border-radius: 3px; }
-.tl-readsub { position: absolute; right: 10px; top: 0; transform: translateY(-50%); font-family: var(--display); font-size: 0.66rem; letter-spacing: 0.04em; color: var(--text-muted); background: var(--bg); padding: 0 6px; max-width: 60%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tl-readsub { position: absolute; right: 10px; top: 0; transform: translateY(-50%); font-family: var(--display); font-size: 0.66rem; letter-spacing: 0.04em; color: var(--text-muted); background: var(--bg); padding: 0 6px; max-width: 62%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .tl-tip { position: fixed; pointer-events: none; background: var(--bg-card); border: 1px solid var(--gold); color: var(--text-primary); font-size: 0.72rem; line-height: 1.35; padding: 0.3rem 0.5rem; border-radius: 3px; z-index: 60; max-width: 230px; }
 
@@ -73,6 +75,7 @@ _build:
 .tl-sec-b p { font-size: 0.86rem; line-height: 1.6; color: var(--text-body); margin: 0 0 0.4rem; }
 .tl-sec-b ul { margin: 0 0 0.4rem; padding-left: 1.1rem; }
 .tl-sec-b li { font-size: 0.84rem; line-height: 1.5; color: var(--text-body); margin-bottom: 0.25rem; }
+.tl-pre-note { border-left: 3px solid; padding: 0.4rem 0.6rem; margin: 0 0 0.2rem; background: rgba(201,162,75,0.05); font-size: 0.8rem; color: var(--text-body); line-height: 1.5; }
 .tl-src { font-size: 0.82rem; color: var(--text-body); margin: 0 0 0.3rem; }
 .tl-src-g { color: var(--text-muted); font-style: italic; }
 .tl-meta-line { font-size: 0.78rem; color: var(--text-muted); margin: 0.2rem 0; }
@@ -102,9 +105,10 @@ _build:
 <div class="tl-wrap">
   <header class="tl-head">
     <div class="tl-orn"><span>The Peculiar but Interactive Timeline of Barovia</span></div>
-    <p class="tl-sub">Barovia is the continuous pillar; each domain joins it as its own pillar at the year it enters, attached where it connects, so the timeline widens as it falls. The reader holds a fixed year at the gold line: scroll the timeline down to move forward through the years, up to move back. It begins in 277.</p>
+    <p class="tl-sub">Barovia is the continuous pillar; each domain joins it as its own coloured pillar at the year it enters, attached where it connects, so the timeline widens as it falls. The reader holds a fixed year at the gold line: scroll down to move forward through the years, up to move back. It begins in 277.</p>
     <div class="tl-legend" id="tlLegend"></div>
-    <p class="tl-hint">The panel is a magnifier on the year at the reader line: it names everyone alive that year with their age and place. Scroll, or focus the timeline and use the up and down arrows, to change the year. Click a marker to open the event behind it.</p>
+    <p class="tl-key">Pillars are coloured by domain; event markers are coloured by dating tier. A hollow marker in a faded pre-section is history that happened before that domain entered Ravenloft.</p>
+    <p class="tl-hint">The panel magnifies the year at the reader line, naming everyone alive with their age and place. Scroll, or focus the timeline and use the arrow keys, to change the year. Click a marker to open the event; a numbered marker means several events share that year.</p>
   </header>
   <div class="tl-layout">
     <div class="tl-stagewrap">
@@ -159,6 +163,7 @@ _build:
     "model_note": "SOURCE is separate from TIER. TIER = how certain (CORE/INFER/SPEC/INVENT/PUB-as-status). SOURCE = which product/site asserts it. A date may carry an originating source plus an optional 'carried_by' list showing inheritance (e.g. RoT invents 351, VotM/DoD carry it). The widget derives its span from the data (min/max year present), so new products extend the axis automatically. New products append records and new source labels; no rebuild required. Cross-source contradictions (same subject, conflicting date, different sources) fire a flag.",
     "span_note": "Span is DERIVED from data at render time (earliest to latest year). The declared span is a hint only.",
     "open_tasks": [
+      "RESOLVED from DoD page image (Ravenloft Timeline, DoD 1997): The Terg sequence is confirmed DoD invention — '320: The Tergs invade Barovia, conquering the ancestral lands of the Von Zarovich family'; '321: Strahd leads the armies of Barovia against the Tergs to reclaim his ancestral lands'; '347: The defeated Tergs are driven from Barovia. Strahd claims the throne.' This is NOT I6 and NOT what the RoT box establishes; it is DoD retconning Strahd's origin into a heroic reclamation. CRUCIALLY: 'Dorian the Goblyn King' is NOT in DoD's timeline either — DoD names no Terg leader. So the 'Dorian' name was a FURTHER accretion added by the importer on top of DoD's already-invented Tergs; it has no home even in the product it was cited to. FINAL DISPOSITION: the entire Terg/Dorian/347-reclamation material is later-product invention, quarantined, used ONLY as an object of analysis (an example of the retconning this project documents), never as input to the I6/RoT-grounded reconstruction. DoD also gives its OWN contradictory chronology (Strahd born 299, not 306), confirming it is a separate invented scheme.",
       "Dilisnya husband: settle invented-name vs spinster vs the 'Dorien/Dostron Dilisnya' name that appears in Drew's Timeline_A document.",
       "Timeline_A reconciliation: ~22k-word document, largely Drew's own edits, disagrees with the ledger in places (marriage year 300 vs 304; Dorien/Dostron husband name; Tatyana surname 'Federovna') and contains unique material (Vasili von Zarovich grandfather; I,Strahd page citations; Dagmar Olavnya). Needs a three-way reconciliation report (this doc vs ledger vs sources), no silent merging. Substantial job, do fresh.",
       "I, Strahd (first novel) ingestion: decide how much of the cast/subplot to bring in; all of it carries maximal-unreliability (persecution_device flag).",
@@ -236,18 +241,18 @@ _build:
       "id": "arkandale",
       "label": "Arkandale",
       "kind": "foreign",
-      "starts": 700,
-      "tier": "INFER",
-      "note": "Nathan Timothy, Lord of Arkandale (Timothy Note C). RoT gives the lord but not a precise formation year; placed near his lifetime (684-707) pending a firmer date. Marked INFER for the year, CORE for the lordship.",
+      "starts": 708,
+      "tier": "CORE",
+      "note": "Arkandale appears in 708 (RoT Time Line of Events, p.11: '708 Arkandale appears'). Darklord Nathan Timothy descends from the Mordent-linked Timothy line (Bloodlines Note C). CORRECTED: earlier data had 700 INFER, derived from Nathan's lifespan; the Time Line dates the appearance directly.",
       "source": "RoT"
     },
     {
       "id": "verbrek",
       "label": "Verbrek",
       "kind": "foreign",
-      "starts": 715,
-      "tier": "INFER",
-      "note": "Alfred Timothy, Lord of Verbrek (Timothy Notes D/E). RoT gives the lord but not a precise formation year; placed near his lifetime (709-724) pending a firmer date. Marked INFER for the year, CORE for the lordship.",
+      "starts": 730,
+      "tier": "CORE",
+      "note": "Verbrek takes shape in 730 (RoT Time Line of Events, p.11: '730 Verbrek takes shape'). Darklord Alfred Timothy descends from the Mordent-linked Timothy line (Bloodlines Notes D/E). CORRECTED: earlier data had 715 INFER, derived from Alfred's lifespan; the Time Line dates the appearance directly.",
       "source": "RoT"
     }
   ],
@@ -293,7 +298,7 @@ _build:
           "source": "VotO"
         }
       ],
-      "notes": "King of Barovia; the kingdom is named for him (though likely originally for an antecedent). Dies 346, before Strahd's return. PUB position: dead before the return, load-bearing for the succession."
+      "notes": "King of Barovia; the kingdom is named for him (though likely originally for an antecedent). Dies 346, before Strahd's return. PUB position: dead before the return, load-bearing for the succession. | Peculiar History: Barov is first-born son of 'Czar von Zarovich'; his grandfather is CLAIMED to be Vasili von Zarovich (Drew's reconstruction; note the 'Czar/tsar' element supports the Zarovich='of the tsar' reading)."
     },
     {
       "id": "ravenia",
@@ -540,7 +545,7 @@ _build:
           "source": "RoT"
         }
       ],
-      "notes": "Object of Strahd's passion (Note B). Falls from the castle walls in 351. Recurs thereafter (see returns): Marina 400, Olya 475, Ireena at I6's present. Only ever reincarnates in Barovia."
+      "notes": "Object of Strahd's passion (Note B). Falls from the castle walls in 351. Recurs thereafter (see returns): Marina 400, Olya 475, Ireena at I6's present. Only ever reincarnates in Barovia. | Peculiar History gives her full name as Tatyana Federovna, born in the village of Barovia (Drew's reconstruction; RoT prints only 'Tatyana')."
     },
     {
       "id": "pidlwik",
@@ -548,14 +553,16 @@ _build:
       "family": "Dilisnya",
       "line": "barovia",
       "birth": {
-        "year": 280,
-        "tier": "CORE",
-        "source": "RoT"
+        "year": 322,
+        "tier": "SPEC",
+        "source": "VotO",
+        "note": "SPEC (Drew's reasoning). Pidlwik is I6 Crypt 9 'Fool of Dorfniya' — an INNOCENT fool (per the Peculiar History's fools passage: adopted for amusement, physically or mentally disadvantaged, not the astute professional-jester type, and NOT an advisor to the crown). So he is YOUNG, in his 20s as the court nears its end: born ~322, making him ~24 in 346. He does NOT carry the Duke's noble 280-349 dates; those belong to Pavel. Distinct person."
       },
       "death": {
-        "year": 349,
-        "tier": "CORE",
-        "source": "RoT"
+        "year": 351,
+        "tier": "SPEC",
+        "source": "VotO",
+        "note": "SPEC. Buried with the household at Castle Ravenloft (I6 Crypt 9, beside Dorfniya's Crypt 8). Dies 351 with the court. Confirmed: he IS among the crypt dead, unlike Duke Pavel who is absent."
       },
       "location": "Castle Ravenloft",
       "relationships": [
@@ -568,7 +575,7 @@ _build:
         }
       ],
       "open_question": null,
-      "notes": "RoT's Dilisnya tree prints Pidlwik as Dorfniya's husband; this is the single most consequential Bloodlines misreading. Corrected: jester only. RoT dates retained (280-349) but the marital relationship is rejected."
+      "notes": "Pidlwik, 'Fool of Dorfniya' (I6 Crypt 9, primary — governing). An INNOCENT fool: kept for amusement, likely physically or mentally disadvantaged, NOT an advisor to the crown and NOT a noble. Therefore YOUNG and dependent, not a courtier: Drew places his birth ~322 (in his 20s as the court ends), death ~351 with the household. SPEC, reasoned from the fool's role. DISTINCT from Duke Pavel 'Dorien' Dilisnya, who holds the Bloodlines 280-349 dates; they are two people and must never be merged. RoT's reading of Pidlwik as Dorfniya's husband is the interpretive failure I6 corrects."
     },
     {
       "id": "dorfniya",
@@ -581,15 +588,10 @@ _build:
         "source": "RoT"
       },
       "death": {
-        "year": 346,
-        "tier": "INFER",
-        "rejected": {
-          "year": 340,
-          "source": "RoT",
-          "tier": "CORE",
-          "reason": "Dies with Barov and Raven in the 346 pre-return catastrophe, not 340. Her children die at the castle in 351, so she was resident there; a widowed royal sister would be kept in the household."
-        },
-        "source": "VotO"
+        "year": 340,
+        "tier": "CORE",
+        "source": "RoT",
+        "note": "RoT Bloodlines prints d340, and Drew's Peculiar History keeps 340. (A ~346 death was floated this session so she dies with the elder royals, but Drew's own dated genealogy holds 340; her line is Von Zarovich, disowned into the Dilisnyas.)"
       },
       "location": "Castle Ravenloft",
       "relationships": [
@@ -603,8 +605,8 @@ _build:
         {
           "type": "spouse",
           "with": "dilisnya_husband",
-          "tier": "INVENT",
-          "note": "Scaffolding: an early-widowed husband roots the legitimate line, then dies ~318. See open question.",
+          "tier": "SPEC",
+          "note": "Duke Pavel 'Dorien' Dilisnya (Peculiar History). Her husband; father of the legitimate line. Drew's named reconstruction, not an invented placeholder.",
           "source": "VotO"
         },
         {
@@ -634,7 +636,7 @@ _build:
         }
       ],
       "open_question": "dilisnya_husband",
-      "notes": "Duchess. Death corrected from RoT's 340 to ~346 (dies with the elder royals). Effectively a royal widow / spinster-in-practice at the castle. Her Von Zarovich parentage is reconstructed to explain RoT's omission."
+      "notes": "REASONING LADDER. PRINTED (I6, primary, 1983): Crypt 8 reads 'Duchess Dorfniya Dilisnya' — I6 gives her the rank of Duchess directly. Crypt 9 reads 'Pidlwik (Fool of Dorfniya)' — Pidlwik is her JESTER. PRINTED (RoT, later, 1990): the Bloodlines tree prints Pidlwik as her HUSBAND and prints a blank, 'Dorfniya __?__', where her parentage should be. INTERPRETIVE FAILURE: where RoT contradicts I6, I6 governs (primary). I6 says Pidlwik is her fool; RoT's 'husband' is RoT misreading a jester relationship as a marriage. So: jester, not husband. INFERRED: a dukedom is held only by royal birth (daughter of the royal house) or royal marriage (wife of a duke). I6 prints her Duchess, so she is inside the royal family by one of those two doors. The marriage door requires an otherwise-unattested ducal Von Zarovich brother for her to have married; the birth door simply makes her Barov's sister. The birth door is the more economical and needs no invented figure. RoT's blank parentage is consistent with a struck royal descent. SPECULATION: if the blank hides a Von Zarovich parentage, then RoT's separate 'served the Von Zaroviches for generations' framing (Dilisnya tree) is part of the cover — a blood tie recast as service, the same struck-and-recovered legitimacy pattern seen in Strahd's naming claim and the Terg reclamation. CONCLUSION (tier INFER, favoured): Dorfniya is Barov's sister, royal by birth, her parentage struck by RoT. ALTERNATIVE (preserved): she married an otherwise-unknown royal brother. Either way I6's ducal rank places her inside the royal house."
     },
     {
       "id": "gunther_cosco",
@@ -840,16 +842,16 @@ _build:
       "family": "Buchvold",
       "line": "barovia",
       "birth": {
-        "year": null,
-        "tier": "INFER",
-        "source": "IStrahd",
-        "note": "Ivan's YOUNGER brother (I,Strahd), so born after Ivan's 311. No year given."
+        "year": 314,
+        "tier": "SPEC",
+        "source": "VotO",
+        "note": "Peculiar History (Holstoy) dates Illya b.314, second son to the Buchvold family, on a row explicitly headed 'possible false entry and historical revisionism by Strahd von Zarovich'. So Drew dates him BUT flags the whole entry as possibly Strahd's fabrication (Tome of Strahd, one iteration only)."
       },
       "death": {
-        "year": null,
-        "tier": "INFER",
-        "source": "IStrahd",
-        "note": "In I,Strahd, killed during the assassination-plot night. Leo Dilisnya cuts his throat and accuses him of being the Ba'al Verzi, but Leo is LATER revealed as the true traitor ('architect of tonight's slaughter'). Illya was framed, not the assassin. No calendar year."
+        "year": 347,
+        "tier": "SPEC",
+        "source": "VotO",
+        "note": "Peculiar History dates Illya d.347. Same caveat: dated by Drew but flagged possible-Strahd-fabrication. (This session's I,Strahd reading adds that Leo frames him and the whole arc may be Strahd's persecution device.)"
       },
       "location": "Castle Ravenloft (I,Strahd narration)",
       "relationships": [
@@ -862,7 +864,7 @@ _build:
         }
       ],
       "open_question": "buchvold",
-      "on_event_spine": false,
+      "on_event_spine": true,
       "notes": "Attested ONLY in I,Strahd, absent from RoT's Bloodlines. In the memoir: Ivan's younger brother and a staff officer, killed on the assassination-plot night. For YEARS afterward the in-world account held that Illya WAS the Ba'al Verzi (Leo's frame stood; the body was burned as an assassin's), so the family could in good faith have believed him a disgraced assassin during that time. Only near the end does the memoir reveal Leo as the real traitor. CRITICAL: every layer of this — Illya-as-assassin, Leo-as-true-traitor, the frame, the exposure — is Strahd's own narration. There is no reliable floor beneath it. Held OFF the dated event spine; even his existence is unverifiable outside Strahd's memoir."
     },
     {
@@ -928,27 +930,35 @@ _build:
     },
     {
       "id": "dilisnya_husband",
-      "name": "[Dorfniya's husband]",
+      "name": "Duke Pavel 'Dorien' Dilisnya",
       "family": "Dilisnya",
       "line": "barovia",
       "birth": {
-        "year": null,
-        "tier": "INVENT",
-        "source": "VotO"
+        "year": 280,
+        "tier": "SPEC",
+        "source": "VotO",
+        "note": "Inherits the RoT Bloodlines Dilisnya-tree dates for the Duke (b280 d349): he IS the noble figure in the tree, Dorfniya's husband. Peculiar History names him Pavel 'Dorien' Dilisnya. Distinct from Pidlwik the fool."
       },
       "death": {
-        "year": 318,
-        "tier": "INVENT",
-        "note": "Dies early to leave Dorfniya widowed by ~318, before Leo (Cosco's) in 320.",
-        "source": "VotO"
+        "year": 347,
+        "tier": "SPEC",
+        "source": "VotO",
+        "rejected": {
+          "year": 349,
+          "source": "RoT",
+          "tier": "CORE",
+          "reason": "RoT Bloodlines prints d349. The 347 reading is SPECULATION overriding it, not a confirmed correction."
+        },
+        "note": "SPECULATION (Drew's reconstruction), NOT established. RoT prints d349; this floats 347 instead, on the reading that after the 346 royal deaths and Sturm's flight the Duke holds the castle and dies when Strahd arrives in 347. The Duke's ABSENCE from the I6 castle crypts (his wife Dorfniya is entombed there; he is not) is CONSISTENT WITH this but is not proof — a missing crypt has many possible causes. Marked SPEC; printed 349 preserved. Do not present as a finding."
       },
       "location": "Castle Ravenloft",
       "relationships": [
         {
           "type": "spouse",
           "with": "dorfniya",
-          "tier": "INVENT",
-          "source": "VotO"
+          "tier": "SPEC",
+          "source": "VotO",
+          "note": "Peculiar History; Drew's reconstruction."
         },
         {
           "type": "parent-of",
@@ -957,12 +967,13 @@ _build:
             "gertrude_d",
             "oleka"
           ],
-          "tier": "INVENT",
-          "source": "VotO"
+          "tier": "SPEC",
+          "source": "VotO",
+          "note": "Father of the legitimate Dilisnya line. Leo is NOT his (Leo is Gunther Cosco's, kept secret)."
         }
       ],
-      "open_question": "dilisnya_husband",
-      "notes": "SCAFFOLDING ONLY. Invented to root the legitimate Dilisnya line once Pidlwik is removed as husband. Deliberately minimal, unnamed, no political stance. Evidence-honest alternative: Dorfniya had no husband at all (spinster). See open question."
+      "open_question": null,
+      "notes": "Duke Pavel 'Dorien' Dilisnya (Peculiar History, Holstoy). Dorfniya's husband and father of Reinhold, Gertrude, and Oleka. Drew's spreadsheet holds his dukedom open: inherited from his father, or awarded by King Barov for service, and notes Pavel and Barov were possibly cousins. DISTINCT from Pidlwik: Pidlwik is Dorfniya's FOOL (I6 Crypt 9, primary, governing); Pavel is her husband the Duke. They share b280-d349 in Drew's dating but are two people. These dates are SPEC: best-guess reconstruction from the undated I6, fixed in time by the birth dates of his children. | DEATH 347, not the Bloodlines' 349: he holds the castle after the 346 deaths and Sturm's flight, and dies when Strahd arrives in 347. Supported by his ABSENCE from the I6 castle crypts (his wife Dorfniya is entombed there; the Duke is not)."
     },
     {
       "id": "kir",
@@ -972,8 +983,8 @@ _build:
       "birth": {
         "year": null,
         "tier": "INFER",
-        "note": "Young at elevation; born est. early 4th century.",
-        "source": "VotO"
+        "source": "VotO",
+        "note": "Young novice who became High Priest after Ciril; died 350. NOT dated in Drew's spreadsheet; birth left open ('young' at his 347 elevation) rather than invented."
       },
       "death": {
         "year": 350,
@@ -992,14 +1003,50 @@ _build:
       "notes": "Young novice who found Ciril dead and became High Priest, first holder of the Holy Symbol. Used it in secret against the goblin king at Strahd's arrival; then hid it. Died suddenly in 350; Sergei took the pendant. (Holy Symbol article, VotM.)"
     },
     {
+      "id": "zarak_petrovic",
+      "name": "Zarak Petrovic",
+      "family": "Church",
+      "line": "barovia",
+      "birth": {
+        "year": 250,
+        "tier": "SPEC",
+        "source": "VotO",
+        "note": "Peculiar History (Holstoy) b.250 d.327; 'Old Zarak', likely third-born son, ordained priest 274. SPEC/possible false history in the source, but dated for good reason: he tutors the royal and noble children across a fixed span."
+      },
+      "death": {
+        "year": 327,
+        "tier": "SPEC",
+        "source": "VotO",
+        "note": "Peculiar History d.327. (One row mis-prints d.320; the consistent figure is 327.)"
+      },
+      "location": "Barovia (church)",
+      "relationships": [
+        {
+          "type": "tutor-of",
+          "with": [
+            "strahd",
+            "sturm",
+            "ciril",
+            "barov"
+          ],
+          "tier": "SPEC",
+          "source": "VotO",
+          "note": "Teacher/educator of Ciril, most of the clergy, the noble-born, and the royal family; tutor to Strahd and Sturm up to when Strahd goes to war. Retired before Sergei was old enough to school."
+        }
+      ],
+      "on_event_spine": false,
+      "notes": "Peculiar History figure (Holstoy). Strahd and Sturm's tutor, and Ciril's teacher; 'Old Zarak', in his 60s by Strahd's youth. Dated b250 d327 in Drew's spreadsheet, tier SPEC (the source itself calls it speculation/possible false history). Ordained 274. Not in I6/RoT; a VotO reconstruction that fixes the education of the royal line in time."
+    },
+    {
       "id": "ciril",
       "name": "Prefect Ciril Romulich",
       "family": "Church",
       "line": "barovia",
       "birth": {
-        "year": null,
-        "tier": "INFER",
-        "source": "VotO"
+        "year": 274,
+        "tier": "SPEC",
+        "source": "VotO",
+        "note": "Peculiar History (Holstoy) dates Ciril Romulich Romanov b.274, likely third-born to a man known as Roman, ordained/high priest. SPEC in the source (a reasoned birth, not printed in I6/RoT). Death 347 (crafting the Holy Symbol killed him). This is DREW'S dated reconstruction, not Claude's guess."
       },
       "death": {
         "year": 347,
@@ -1017,9 +1064,10 @@ _build:
       "family": "Court",
       "line": "barovia",
       "birth": {
-        "year": null,
-        "tier": "INFER",
-        "source": "VotO"
+        "year": 275,
+        "tier": "SPEC",
+        "source": "VotO",
+        "note": "Peculiar History (Holstoy) dates Stephan Gregorovich b.275 d.346 (First Counsellor to King Barov, I6 Crypt 25). Drew's dated reconstruction."
       },
       "death": {
         "year": 346,
@@ -1029,7 +1077,7 @@ _build:
       },
       "location": "Castle Ravenloft",
       "relationships": [],
-      "notes": "First Counsellor to King Barov (I6 Crypt 25; 'Baron' in the printed text is a TYPESETTING ERROR for Barov, a name not a rank). CONFIRMED published position; do not describe as a rank error or connect to nobility."
+      "notes": "REASONING LADDER. PRINTED (I6, primary): Crypt 25 reads 'Stephan Gregorovich, First Counsellor to King Barov' (the printed 'Baron von...' is a typesetting error for the NAME Barov, not a rank; I6's own erratum note reads 'Should read First Counsellor to King Barov'). So: First Counsellor to King Barov. Do NOT read 'Baron' as a rank or connect it to nobility. INFERRED (VotO, PUB): among the ruling circle that dies in the 346 catastrophe, before Strahd's return."
     },
     {
       "id": "khazan",
@@ -1039,7 +1087,8 @@ _build:
       "birth": {
         "year": null,
         "tier": "INFER",
-        "source": "VotO"
+        "source": "VotO",
+        "note": "I6 Crypt 15 ('KHAZAN: His word was power'), court wizard, among the 346 dead. NOT dated in Drew's Peculiar History spreadsheet; birth year left open rather than invented. Died 346 with the ruling circle."
       },
       "death": {
         "year": 346,
@@ -1058,7 +1107,8 @@ _build:
       "birth": {
         "year": null,
         "tier": "INFER",
-        "source": "VotO"
+        "source": "VotO",
+        "note": "I6 Crypt 16. Peculiar History notes she was 'very likely' Gisella's mother (Gisella b313) but gives her no birth date; left open rather than invented. Among the 346 dead."
       },
       "death": {
         "year": 346,
@@ -1770,11 +1820,11 @@ _build:
         "borca"
       ],
       "tier": "CORE",
-      "title": "Camille poisons her way toward the lordship of Borca",
+      "title": "Borca appears",
       "present": [
         "camille"
       ],
-      "notes": "Borca's line branches from the Barovian-rooted Boritsi/Dilisnya stock. First poisonings 684; lordship consolidated by 698.",
+      "notes": "RoT Time Line of Events (p.11): '684 Borca appears'. The domain takes shape in the same year as its darklord Camille Dilisnya's first poisonings. Camille descends from the Barovian-rooted Boritsi/Dilisnya line (Bloodlines), so the domain's darklord is Barovian by blood; the appearance itself is RoT's dated metaphysical event.",
       "source": "RoT"
     },
     {
@@ -1786,11 +1836,11 @@ _build:
         "falkovnia"
       ],
       "tier": "CORE",
-      "title": "Vlad Drakov becomes Lord of Falkovnia",
+      "title": "Falkovnia appears",
       "present": [
         "vlad_drakov"
       ],
-      "notes": "The one genuinely foreign line branches in — no Barovian blood tie, anchored only here.",
+      "notes": "RoT Time Line (p.11): '690 Falkovnia appears' (Vlad Drakov enters Ravenloft 689). The one genuinely FOREIGN darklord: Drakov has no Barovian blood tie. Control case against which the Barovian-blooded domains stand out.",
       "source": "RoT"
     },
     {
@@ -1802,28 +1852,28 @@ _build:
         "richemulot"
       ],
       "tier": "CORE",
-      "title": "Claude Renier becomes Lord of Richemulot",
+      "title": "Richemulot appears",
       "present": [
         "claude_r"
       ],
-      "notes": "Richemulot branches from the Barovian-rooted (wererat) Renier line.",
+      "notes": "RoT Time Line (p.11): '694 Richemulot appears'. Darklord Claude Renier (wererat); the Renier line is Barovian-rooted via Von Zarovich (Bloodlines). Domain appearance is RoT's dated event; the bloodline tracing is the reconstruction.",
       "source": "RoT"
     },
     {
-      "id": "arkandale_700",
-      "year": 700,
+      "id": "arkandale_708",
+      "year": 708,
       "scope": "shared",
       "lines": [
         "barovia",
         "arkandale"
       ],
-      "tier": "INFER",
-      "title": "Nathan Timothy, Lord of Arkandale",
+      "tier": "CORE",
+      "title": "Arkandale appears",
       "present": [
         "nathan_t"
       ],
-      "notes": "Lordship CORE (Note C); precise formation year INFER, placed in Nathan's lifetime.",
-      "source": "VotO"
+      "notes": "RoT Time Line (p.11): '708 Arkandale appears'. Darklord Nathan Timothy; Mordent-linked Timothy line (Bloodlines Note C). CORRECTED from 700 INFER.",
+      "source": "RoT"
     },
     {
       "id": "dementlieu_707",
@@ -1834,11 +1884,11 @@ _build:
         "dementlieu"
       ],
       "tier": "CORE",
-      "title": "Dominic d'Honaire becomes Lord of Dementlieu",
+      "title": "Dementlieu appears",
       "present": [
         "dominic_dh"
       ],
-      "notes": "Dementlieu branches from the Mordent-linked d'Honaire line.",
+      "notes": "RoT Time Line (p.11): '707 Dementlieu appears'. Darklord Dominic d'Honaire; the d'Honaire line is Mordent-linked (Bloodlines).",
       "source": "RoT"
     },
     {
@@ -1850,26 +1900,26 @@ _build:
         "dorvinia"
       ],
       "tier": "CORE",
-      "title": "Ivan Dilisnya becomes Lord of Dorvinia",
+      "title": "Dorvinia takes shape",
       "present": [],
-      "notes": "Dilisnya Note D. Barovian-rooted line seeding another domain.",
+      "notes": "RoT Time Line (p.11): '715 Dorvinia takes shape'. Darklord Ivan Dilisnya (Bloodlines Note D); Barovian-rooted Dilisnya stock.",
       "source": "RoT"
     },
     {
-      "id": "verbrek_715",
-      "year": 715,
+      "id": "verbrek_730",
+      "year": 730,
       "scope": "shared",
       "lines": [
         "barovia",
         "verbrek"
       ],
-      "tier": "INFER",
-      "title": "Alfred Timothy, Lord of Verbrek",
+      "tier": "CORE",
+      "title": "Verbrek takes shape",
       "present": [
         "alfred_t"
       ],
-      "notes": "Lordship CORE (Notes D/E); precise formation year INFER, placed in Alfred's lifetime.",
-      "source": "VotO"
+      "notes": "RoT Time Line (p.11): '730 Verbrek takes shape'. Darklord Alfred Timothy; Mordent-linked Timothy line (Bloodlines Notes D/E). CORRECTED from 715 INFER.",
+      "source": "RoT"
     },
     {
       "id": "campaign_present_735",
@@ -1965,25 +2015,25 @@ _build:
     {
       "id": "queen_name",
       "status": "permanently-open",
-      "question": "Which of three printed forms of the queen's name is authoritative?",
+      "question": "What is the queen's name? The primary source I6 contradicts ITSELF, and RoT adds a third form.",
       "readings": [
         {
-          "reading": "Raven",
-          "for": "I6 Crypt 30 'Queen Raven'.",
-          "against": "Contradicted by K88 and VotM."
+          "reading": "Raven (I6 Crypt 30)",
+          "for": "I6, primary, Crypt 30: 'Beloved of King Barov and Queen Raven'. Ground floor.",
+          "against": "I6 contradicts itself: Room K88 gives 'Ravenovia'."
         },
         {
-          "reading": "Ravenovia",
-          "for": "I6 Room K88; VotM throughout; the Holy Symbol article follows this.",
-          "against": "Not the RoT Bloodlines form."
+          "reading": "Ravenovia (I6 Room K88; VotM; the published Holy Symbol article)",
+          "for": "Also I6 (K88), so also primary; carried by VotM and adopted in the published VotO article.",
+          "against": "Conflicts with I6 Crypt 30's 'Raven'."
         },
         {
-          "reading": "Ravenia",
-          "for": "RoT Bloodlines prints 'Ravenia Van Roeyen'.",
-          "against": "Not I6's or VotM's form."
+          "reading": "Ravenia Van Roeyen (RoT Bloodlines)",
+          "for": "RoT's full form with a maiden name.",
+          "against": "RoT is later (1990); where it diverges from I6 it is the interpretive layer, not the authority. A third variant, not a tiebreaker."
         }
       ],
-      "why_open": "The primary source I6 contradicts itself (Crypt 30 vs K88). There is no single authoritative form.",
+      "why_open": "I6, the primary source, is internally inconsistent (Crypt 30 'Raven' vs K88 'Ravenovia'), so there is no single authoritative I6 form. RoT's 'Ravenia' is a later third variant and cannot override I6. The inconsistency is itself the finding; the entry shows all three with their sources rather than picking.",
       "what_would_close_it": "Nothing; the inconsistency is itself the finding. The tool should show all three rather than pick.",
       "source": "VotO"
     }
@@ -2059,7 +2109,25 @@ _build:
       "id": "tergs_dod_invention",
       "title": "The Tergs are a Domains of Dread (1997) invention, not primary history",
       "source": "VotO",
-      "text": "ESTABLISHED PROVENANCE: 'The Tergs invade Barovia, conquering the ancestral lands' first appears in Domains of Dread (1997), on its timeline at 320 and its history page. The word 'Terg' is ABSENT from RoT (1990) and ABSENT from I, Strahd: The Memoirs of a Vampire (1993, checked in full: zero occurrences). So the Tergs are a late setting-era invention, not primary history and not Strahd's own account. THE SEAM THEY PATCH (established from I6 crypts): I6's crypts hold Barov, Ravenovia and the whole ruling circle -- Strahd's family, predating his lordship -- yet the setting framing casts Strahd as a conqueror who 'arrives' to claim the castle. If his family is already entombed there, it was already the family seat; he did not arrive as an outsider. The Terg invasion papers over exactly this: the ancestral lands are lost and reclaimed, so Strahd can be both returning heir and conqueror and the family can predate him. INFERRED INTENT (tier INFER): DoD's authors likely invented the Tergs to make Strahd's early history cohere, because goblins alone did not carry enough weight and the family-in-the-crypts contradiction needed resolving. Crucially they resolved it IN STRAHD'S FAVOUR (external enemy, heroic reclamation) -- the same direction Strahd's own narrative would want, which is itself weak support for the persecution-device reading. COMPETING RESOLUTION (VotO): the same seam is resolved more economically by the 346 coup reading -- the family were always resident at the castle and Strahd killed them from within (patricide/regicide disguised), requiring no invented people. Two patches for one documented contradiction; only DoD's requires manufacturing an uncorroborated nation. SECOND NOVEL: 'I, Strahd: The War Against Azalin' (Elrod, 1998) is owned by Drew but in storage and not currently accessible; it postdates DoD by a year, so even if it uses the Tergs it can only be later repetition, never the origin. The DoD-1997 origin is therefore stable regardless."
+      "text": "ESTABLISHED PROVENANCE: 'The Tergs invade Barovia, conquering the ancestral lands' first appears in Domains of Dread (1997), on its timeline at 320 and its history page. The word 'Terg' is ABSENT from RoT (1990) and ABSENT from I, Strahd: The Memoirs of a Vampire (1993, checked in full: zero occurrences). So the Tergs are a late setting-era invention, not primary history and not Strahd's own account. THE SEAM THEY PATCH (established from I6 crypts): I6's crypts hold Barov, Ravenovia and the whole ruling circle -- Strahd's family, predating his lordship -- yet the setting framing casts Strahd as a conqueror who 'arrives' to claim the castle. If his family is already entombed there, it was already the family seat; he did not arrive as an outsider. The Terg invasion papers over exactly this: the ancestral lands are lost and reclaimed, so Strahd can be both returning heir and conqueror and the family can predate him. INFERRED INTENT (tier INFER): DoD's authors likely invented the Tergs to make Strahd's early history cohere, because goblins alone did not carry enough weight and the family-in-the-crypts contradiction needed resolving. Crucially they resolved it IN STRAHD'S FAVOUR (external enemy, heroic reclamation) -- the same direction Strahd's own narrative would want, which is itself weak support for the persecution-device reading. COMPETING RESOLUTION (VotO): the same seam is resolved more economically by the 346 coup reading -- the family were always resident at the castle and Strahd killed them from within (patricide/regicide disguised), requiring no invented people. Two patches for one documented contradiction; only DoD's requires manufacturing an uncorroborated nation. SECOND NOVEL: 'I, Strahd: The War Against Azalin' (Elrod, 1998) is owned by Drew but in storage and not currently accessible; it postdates DoD by a year, so even if it uses the Tergs it can only be later repetition, never the origin. The DoD-1997 origin is therefore stable regardless. NAMED WARLORD — DEBUNKED: 'Dorian the Goblyn King' is NOT in DoD's own Ravenloft Timeline (confirmed from the page image: DoD names the Tergs but gives their leader NO name). The 'Dorian' name came from imported secondary text (Timeline_A, not Drew's edit) that embroidered on DoD; it has no source even in DoD. Do not use it. DIRECT DoD CONFIRMATION (page image, DoD Ravenloft Timeline): '320 The Tergs invade Barovia, conquering the ancestral lands of the Von Zarovich family'; '321 Strahd leads the armies of Barovia against the Tergs to reclaim his ancestral lands'; '347 The defeated Tergs are driven from Barovia. Strahd claims the throne as his reward.' Also '1 The Nation of Barovia is founded on an unknown world by the ancestors of Strahd von Zarovich' — DoD manufacturing the ancient-ancestral legitimacy framing. NOTE DoD runs its OWN contradictory chronology (Strahd born 299, not the RoT/VotM 306), so it is a separate invented scheme, not a reading of I6 or RoT."
+    },
+    {
+      "id": "domain_dates_timeline_source",
+      "title": "Domain appearance dates come from RoT's Time Line of Events (p.11), not the Bloodlines trees",
+      "source": "VotO",
+      "text": "RoT dates domain FORMATION on its Time Line of Events (Realm of Terror p.11): each domain 'appears' or 'takes shape' in a stated year (Borca 684, Falkovnia 690, Richemulot 694, Dementlieu 707, Arkandale 708, Dorvinia 715, Verbrek 730, Mordent/Darkon 579). This is a DIFFERENT RoT source from the Bloodlines family trees, which date PEOPLE (births/deaths/deeds). The two must be corroborated, not substituted: a darklord's lifespan is not the domain's appearance date. Two entries (Arkandale, Verbrek) were initially mis-derived from Bloodlines lifespans (700, 715) and are corrected here to the Time Line's own dates (708, 730), tier INFER->CORE. All eight domain 'starts' now verified directly against the Time Line. NOTE: RoT's Time Line lists many further domains not yet in this timeline (Gundarak 593, Invidia 603, Kartakass 613, Valachan 625, Nova Vaasa 682, Tepest 691, Markovia 698, G'Henna 702, Hazlan 714, Sithicus 720, etc.) — the current file is the Barovian-blooded subset by scope choice, not by omission of the source."
+    },
+    {
+      "id": "court_birthdates_spec",
+      "title": "Undated I6 court figures given SPEC birth years, reasoned from role and relationships",
+      "source": "VotO",
+      "text": "Several I6-named court figures (Gregorovich, Khazan, Elsa Fallona, Ciril, Kir) are named in I6 crypts/text but carry no printed birth year in any source. They are added with SPECULATIVE birth years, each reasoned for good cause: they demonstrably existed and interacted with dated figures, so they must fall within those figures' lifetimes. The reasoning is shown per entry (senior office under Barov => adult contemporary; a dated child bounds a parent's birth; 'young novice' places a birth band). These years are SPEC, never CORE: they exist so the 'who was alive in year N' panels are complete and honest, with the inference visible. Elsa Fallona's is the tightest (bounded by her daughter Gisella's 313 birth); the counsellor/wizard/priest ones are role-based bands, not precise."
+    },
+    {
+      "id": "pavel_missing_crypt",
+      "title": "The Duke has no castle crypt — CONSISTENT WITH (not proof of) a 347 death in the takeover",
+      "source": "VotO",
+      "text": "I6's Castle Ravenloft crypt roster (33 crypts) entombs Duchess Dorfniya Dilisnya (Crypt 8) and Pidlwik her fool (Crypt 9), plus Gregorovich, Khazan, Elsa Fallona, Ciril. It contains NO crypt for her husband, Duke Pavel 'Dorien' Dilisnya. RoT's Bloodlines prints his death as 349. The reconstruction reads him dying in 347 instead: after the 346 royal deaths and Sturm's flight, the Duke is the senior figure left holding the castle, and he dies when Strahd arrives to claim it. His absence from the family vault, while his wife lies in it, is consistent with a death in the takeover rather than a peaceful ducal end — and sits inside I6's wider erasure pattern (Crypt 6's name clawed off; empty crypts 18, 23). A VotO reading overriding a printed RoT date, marked as such; printed 349 preserved as the rejected value. MARKED SPECULATIVE: a missing crypt has many possible causes; this supports but does not prove the 347 reading. The Bloodlines' printed 349 stands as the alternative."
     }
   ]
 }
@@ -2083,15 +2151,21 @@ _build:
   var lineById = {}; lines.forEach(function (l) { lineById[l.id] = l; });
   var flagById = {}; flags.forEach(function (f) { flagById[f.id] = f; });
 
+  function born(p) { return (p && p.birth && typeof p.birth.year === 'number') ? p.birth.year : null; }
+  function died(p) { return (p && p.death && typeof p.death.year === 'number') ? p.death.year : null; }
+
   var yrs = [];
   function addYr(y) { if (typeof y === 'number' && isFinite(y)) yrs.push(y); }
   lines.forEach(function (l) { addYr(l.starts); });
-  people.forEach(function (p) { if (p.birth) addYr(p.birth.year); if (p.death) addYr(p.death.year); });
+  people.forEach(function (p) { addYr(born(p)); addYr(died(p)); });
   events.forEach(function (e) { addYr(e.year); });
   var minY = Math.min.apply(null, yrs), maxY = Math.max.apply(null, yrs);
 
   var TIER_COLORS = { CORE: '#c9a24b', VOTM: '#c98b3a', PUB: '#8fa96b', INFER: '#7fa0bd', SPEC: '#b083c0', INVENT: '#8f8674', OPEN: '#c9a24b', FLAG: '#c0553a' };
   function tierColor(t) { return TIER_COLORS[t] || '#a99f8c'; }
+
+  var LINE_PALETTE = ['#c9a24b', '#7f9fc4', '#7fa863', '#c0554a', '#9b7bc0', '#4fa9a0', '#d0a24e', '#c07f8f', '#93a05a', '#b98fb0', '#6f93a8', '#a9a06a'];
+  function hexToRgba(hex, a) { var h = hex.replace('#', ''); return 'rgba(' + parseInt(h.substr(0, 2), 16) + ',' + parseInt(h.substr(2, 2), 16) + ',' + parseInt(h.substr(4, 2), 16) + ',' + a + ')'; }
 
   function statusInfo(tier) {
     var g = (meta.tiers && meta.tiers[tier]) || '';
@@ -2111,15 +2185,27 @@ _build:
   var ordered = lines.slice().sort(function (a, b) { return (a.starts - b.starts) || 0; });
   var colIndex = {}; ordered.forEach(function (l, i) { colIndex[l.id] = i; });
   var n = ordered.length;
+  function lineColor(id) { return LINE_PALETTE[(colIndex[id] || 0) % LINE_PALETTE.length]; }
 
-  var lineTop = {}; ordered.forEach(function (l) { lineTop[l.id] = l.starts; });
-  events.forEach(function (e) { if (e.scope === 'single' && e.line && lineById[e.line] && e.year < lineTop[e.line]) lineTop[e.line] = e.year; });
+  // A line gets a pre-section only if it has an event before its formation year.
+  // The pre-section spans from that line's earliest pre-formation content
+  // (event or the birth of one of its people) down to the formation year.
+  var linePre = {};
+  ordered.forEach(function (l) {
+    var hasPreEvent = events.some(function (e) { return e.scope === 'single' && e.line === l.id && e.year < l.starts; });
+    if (!hasPreEvent) return;
+    var earliest = l.starts;
+    events.forEach(function (e) { if (e.scope === 'single' && e.line === l.id && e.year < earliest) earliest = e.year; });
+    people.forEach(function (p) { if (p.line === l.id) { var b = born(p); if (b != null && b < earliest) earliest = b; } });
+    if (earliest < l.starts) linePre[l.id] = earliest;
+  });
 
-  var PXY = 6, gutterW = 46;
+  var PXY = 13, gutterW = 46;
   var pillarW = 100, fieldW = 900, padTop = 180, focalOffset = 180;
   function yFor(year) { return padTop + (year - minY) * PXY; }
   function pillarLeft(id) { return gutterW + (colIndex[id] || 0) * pillarW; }
   function xCenter(id) { return pillarLeft(id) + pillarW / 2; }
+  function colKeyOf(e) { return (e.scope === 'single') ? e.line : (e.scope === 'shared') ? e.lines[e.lines.length - 1] : ordered[0].id; }
 
   var stage = document.getElementById('tlStage');
   var field = document.getElementById('tlField');
@@ -2133,55 +2219,79 @@ _build:
   var evEls = {};
 
   function build() {
-    field.innerHTML = '';
-    gutterLabels = []; evEls = {};
+    field.innerHTML = ''; gutterLabels = []; evEls = {};
 
     var eventYears = {}; events.forEach(function (e) { eventYears[e.year] = true; });
     var firstTick = Math.ceil(minY / 25) * 25;
     for (var yy = firstTick; yy <= maxY; yy += 25) {
       var isC = (yy % 100 === 0);
-      var g = mk(isC ? 'tl-century' : 'tl-guide', field);
-      g.style.top = px(yFor(yy));
+      var g = mk(isC ? 'tl-century' : 'tl-guide', field); g.style.top = px(yFor(yy));
       if (!eventYears[yy]) { var tk = mk('tl-ytick', field); tk.textContent = yy; if (isC) tk.style.color = 'var(--gold-bright)'; gutterLabels.push({ el: tk, y: yFor(yy) }); }
     }
     Object.keys(eventYears).forEach(function (yk) { var y = parseInt(yk, 10); var el = mk('tl-yev', field); el.textContent = y; gutterLabels.push({ el: el, y: yFor(y) }); });
 
     ordered.forEach(function (l) {
       var spine = (l.kind === 'core-spine');
-      var top = yFor(lineTop[l.id]), bottom = yFor(maxY);
-      var pil = mk('tl-pillar' + (spine ? ' is-spine' : ' is-branch'), field);
-      pil.dataset.line = l.id; pil.style.top = px(top); pil.style.height = px(bottom - top);
-      var nm = mk('tl-pname', field); nm.textContent = l.label; nm.dataset.line = l.id; nm.style.top = px(top + 6);
+      var color = lineColor(l.id);
+      var startTop = yFor(l.starts), bottom = yFor(maxY);
+      var pil = mk('tl-pillar', field);
+      pil.dataset.line = l.id; pil.style.top = px(startTop); pil.style.height = px(bottom - startTop);
+      pil.style.borderLeftColor = color; pil.style.borderLeftWidth = spine ? '3px' : '2px';
+      pil.style.background = 'linear-gradient(' + hexToRgba(color, spine ? 0.18 : 0.14) + ',' + hexToRgba(color, 0.045) + ')';
+      if (linePre[l.id] != null) {
+        var pTop = yFor(linePre[l.id]);
+        var pre = mk('tl-preseg', field); pre.dataset.line = l.id; pre.style.top = px(pTop); pre.style.height = px(startTop - pTop);
+        pre.style.borderColor = hexToRgba(color, 0.5);
+        pre.style.background = 'repeating-linear-gradient(45deg, ' + hexToRgba(color, 0) + ' 0, ' + hexToRgba(color, 0) + ' 6px, ' + hexToRgba(color, 0.06) + ' 6px, ' + hexToRgba(color, 0.06) + ' 12px)';
+        var plab = mk('tl-prelabel', field); plab.dataset.line = l.id; plab.textContent = 'before Ravenloft'; plab.style.top = px(pTop + 8); plab.style.color = hexToRgba(color, 0.8);
+      }
+      var nm = mk('tl-pname', field); nm.textContent = l.label; nm.dataset.line = l.id; nm.style.top = px(startTop + 6); nm.style.color = color;
       nm.setAttribute('role', 'button'); nm.tabIndex = 0;
       nm.addEventListener('click', function (ev) { ev.stopPropagation(); selectLine(l.id); });
       nm.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); selectLine(l.id); } });
-      for (var wy = top + 40; wy < bottom - 60; wy += 700) { var wm = mk('tl-wname', field); wm.textContent = l.label; wm.dataset.line = l.id; wm.style.top = px(wy); }
+      for (var wy = startTop + 40; wy < bottom - 60; wy += 700) { var wm = mk('tl-wname', field); wm.textContent = l.label; wm.dataset.line = l.id; wm.style.top = px(wy); wm.style.color = hexToRgba(color, 0.13); }
     });
 
-    var lastOnCol = {};
-    var evSorted = events.slice().sort(function (a, b) { return a.year - b.year; });
-    evSorted.forEach(function (e) {
+    // Bands and connectors, one per event.
+    events.forEach(function (e) {
       var color = tierColor(e.tier);
       if (e.scope === 'shared' && e.lines && e.lines.length >= 2) {
         var br = mk('tl-branch', field); br.dataset.a = e.lines[0]; br.dataset.b = e.lines[e.lines.length - 1];
         br.style.top = px(yFor(e.year)); br.style.borderTopColor = color; br.style.opacity = '0.7';
       }
       if (e.scope === 'setting') { var band = mk('tl-settingband', field); band.style.top = px(yFor(e.year)); band.style.borderTopColor = color; }
-      var colKey = (e.scope === 'single') ? e.line : (e.scope === 'shared') ? e.lines[e.lines.length - 1] : ordered[0].id;
-      var yv = yFor(e.year), prev = lastOnCol[colKey];
-      var step = (prev && (yv - prev.y) < 11) ? prev.step + 1 : 0;
-      lastOnCol[colKey] = { y: yv, step: step };
+    });
+
+    // Markers, aligned on their pillar centre; several events in one year on one
+    // pillar collapse into a single numbered marker that opens the year's tags.
+    var groups = {};
+    events.forEach(function (e) { var k = colKeyOf(e) + '|' + e.year; (groups[k] = groups[k] || []).push(e); });
+    Object.keys(groups).forEach(function (k) {
+      var arr = groups[k], e0 = arr[0], ck = colKeyOf(e0), yr = e0.year;
+      var starts = lineById[ck] ? lineById[ck].starts : minY;
+      var isPre = (yr < starts && ck !== ordered[0].id);
+      var multi = arr.length > 1;
+      var color = multi ? '#c9a24b' : tierColor(e0.tier);
       var btn = document.createElement('button');
-      btn.type = 'button'; btn.className = 'tl-ev scope-' + e.scope;
-      btn.dataset.col = colKey; btn.dataset.step = step; btn.dataset.scope = e.scope;
-      btn.style.top = px(yv); btn.style.background = color;
-      btn.setAttribute('aria-label', e.title + ' (' + e.year + ')'); btn.dataset.ev = e.id;
-      btn.addEventListener('click', function (ev) { ev.stopPropagation(); selectEvent(e.id); });
-      btn.addEventListener('mouseenter', function (ev) { showTip(ev, e.year + '  ' + e.title); });
-      btn.addEventListener('mousemove', moveTip);
-      btn.addEventListener('mouseleave', hideTip);
+      btn.type = 'button';
+      btn.className = 'tl-ev' + (multi ? ' is-multi' : ' scope-' + e0.scope) + (isPre ? ' is-pre' : '');
+      btn.dataset.col = ck; btn.style.top = px(yFor(yr));
+      if (isPre) { btn.style.background = 'var(--bg)'; btn.style.border = '2px solid ' + color; }
+      else { btn.style.background = color; }
+      if (multi) {
+        btn.textContent = arr.length;
+        btn.setAttribute('aria-label', arr.length + ' events in ' + yr);
+        btn.addEventListener('click', function (ev) { ev.stopPropagation(); scrollToYear(yr); });
+        btn.addEventListener('mouseenter', function (ev) { showTip(ev, yr + '  ' + arr.length + ' events, scroll here'); });
+      } else {
+        btn.dataset.ev = e0.id;
+        btn.setAttribute('aria-label', e0.title + ' (' + yr + ')');
+        btn.addEventListener('click', function (ev) { ev.stopPropagation(); selectEvent(e0.id); });
+        btn.addEventListener('mouseenter', function (ev) { showTip(ev, yr + '  ' + e0.title); });
+        evEls[e0.id] = btn;
+      }
+      btn.addEventListener('mousemove', moveTip); btn.addEventListener('mouseleave', hideTip);
       field.appendChild(btn);
-      evEls[e.id] = btn;
     });
 
     gutterLabels.sort(function (a, b) { return a.y - b.y; });
@@ -2193,23 +2303,18 @@ _build:
     fieldW = Math.max(320, stage.clientWidth);
     pillarW = (fieldW - gutterW) / n;
     field.style.width = px(fieldW);
-    field.querySelectorAll('.tl-pillar').forEach(function (el) { el.style.left = px(pillarLeft(el.dataset.line)); el.style.width = px(pillarW); });
+    field.querySelectorAll('.tl-pillar,.tl-preseg').forEach(function (el) { el.style.left = px(pillarLeft(el.dataset.line)); el.style.width = px(pillarW); });
     field.querySelectorAll('.tl-pname').forEach(function (el) { el.style.left = px(pillarLeft(el.dataset.line)); el.style.width = px(pillarW); });
-    field.querySelectorAll('.tl-wname').forEach(function (el) { el.style.left = px(pillarLeft(el.dataset.line) + pillarW / 2); });
+    field.querySelectorAll('.tl-wname,.tl-prelabel').forEach(function (el) { el.style.left = px(pillarLeft(el.dataset.line) + pillarW / 2); });
     field.querySelectorAll('.tl-guide,.tl-century,.tl-settingband').forEach(function (el) { el.style.width = px(fieldW); });
     field.querySelectorAll('.tl-ytick,.tl-yev').forEach(function (el) { el.style.width = px(gutterW); });
     field.querySelectorAll('.tl-branch').forEach(function (el) { var x1 = xCenter(el.dataset.a), x2 = xCenter(el.dataset.b); el.style.left = px(Math.min(x1, x2)); el.style.width = px(Math.abs(x2 - x1)); });
-    var nudge = Math.min(15, pillarW * 0.14);
-    field.querySelectorAll('.tl-ev').forEach(function (el) {
-      var mx = (el.dataset.scope === 'setting') ? xCenter(ordered[0].id) : xCenter(el.dataset.col);
-      el.style.left = px(mx + (parseInt(el.dataset.step || '0', 10) * nudge));
-    });
+    field.querySelectorAll('.tl-ev').forEach(function (el) { el.style.left = px(xCenter(el.dataset.col)); });
   }
 
   function layoutVert() {
     var sh = stage.clientHeight || 520;
-    var bottomPad = Math.max(60, sh - focalOffset);
-    field.style.height = px(padTop + (maxY - minY) * PXY + bottomPad);
+    field.style.height = px(padTop + (maxY - minY) * PXY + Math.max(60, sh - focalOffset));
     reader.style.top = px(focalOffset);
   }
 
@@ -2220,9 +2325,6 @@ _build:
   function personName(id) { return personById[id] ? personById[id].name : id; }
   function sourceGloss(code) { return (meta.sources && meta.sources[code]) ? meta.sources[code] : ''; }
   function srcLine(label, code) { var g = sourceGloss(code); return '<p class="tl-src"><strong>' + label + ':</strong> ' + esc(code) + (g ? ' <span class="tl-src-g">' + esc(g) + '</span>' : '') + '</p>'; }
-
-  function born(p) { return (p && p.birth && typeof p.birth.year === 'number') ? p.birth.year : null; }
-  function died(p) { return (p && p.death && typeof p.death.year === 'number') ? p.death.year : null; }
 
   function livingIn(y) {
     var out = [];
@@ -2238,8 +2340,6 @@ _build:
     return out;
   }
 
-  // A relationship only shows if the counterpart already exists (is born) by year Y,
-  // so a newborn is not listed with a spouse or children who do not exist yet.
   function relBornBy(id, y) { var q = personById[id]; if (!q) return true; var b = born(q); return (b == null || b <= y); }
 
   function personCard(p, yr) {
@@ -2282,8 +2382,7 @@ _build:
     if (roster.length) { h += '<div class="tl-cast">'; roster.forEach(function (p) { h += personCard(p, y); }); h += '</div>'; }
     else { h += '<p class="tl-gloss">No dated figure is recorded alive in this year.</p>'; }
     h += '</div>';
-    panelBody.innerHTML = h;
-    bindLinks();
+    panelBody.innerHTML = h; bindLinks();
   }
 
   function selectEvent(id) {
@@ -2296,6 +2395,10 @@ _build:
     h += '<h3 class="tl-ptitle">' + esc(e.title) + '</h3>';
     h += '<p class="tl-status"><span class="tl-badge" style="background:' + tierColor(e.tier) + '">' + esc(e.tier) + '</span>' + esc(st.label) + '</p>';
     h += '<p class="tl-gloss">' + esc(st.blurb) + '</p>';
+    if (e.scope === 'single' && lineById[e.line] && e.year < lineById[e.line].starts) {
+      var ln = lineById[e.line];
+      h += '<p class="tl-pre-note" style="border-left-color:' + lineColor(e.line) + '">Before Ravenloft: this happens in ' + esc(ln.label) + '&rsquo;s own time, before it entered Ravenloft in ' + esc(ln.starts) + '. ' + esc(ln.label) + ' is the same-world-time-displaced exception; its history runs in parallel and joins the Barovian calendar at ' + esc(ln.starts) + '.</p>';
+    }
     if (e.notes) h += '<div class="tl-sec-b"><span class="tl-sec">What this is</span><p>' + esc(e.notes) + '</p></div>';
     if (e.primary_reading) h += '<div class="tl-sec-b"><span class="tl-sec">Primary reading</span><p>' + esc(e.primary_reading) + '</p></div>';
     if (e.alternatives && e.alternatives.length) { h += '<div class="tl-sec-b"><span class="tl-sec">Alternatives</span><ul>'; e.alternatives.forEach(function (a) { h += '<li>' + esc(a) + '</li>'; }); h += '</ul></div>'; }
@@ -2313,8 +2416,11 @@ _build:
       else { h += '<p class="tl-gloss">No one on this entry\'s cast list was alive in ' + esc(e.year) + '.</p>'; }
       h += '</div>';
     }
-    panelBody.innerHTML = h;
-    bindLinks();
+    panelBody.innerHTML = h; bindLinks();
+    currentYear = e.year;
+    var tgt = (e.year - minY) * PXY;
+    if (Math.abs(stage.scrollTop - tgt) > 1) stage.scrollTop = tgt;
+    updateReader(e.year);
   }
 
   function selectLine(id) {
@@ -2323,13 +2429,16 @@ _build:
     var st = statusInfo(l.tier);
     var h = '';
     h += '<p class="tl-pyear">Joins the timeline in ' + esc(l.starts) + ' &middot; <button type="button" class="tl-yearlink" data-year="' + esc(l.starts) + '">go to ' + esc(l.starts) + '</button></p>';
-    h += '<h3 class="tl-ptitle">' + esc(l.label) + ' line</h3>';
+    h += '<h3 class="tl-ptitle" style="color:' + lineColor(l.id) + '">' + esc(l.label) + ' line</h3>';
     h += '<p class="tl-status"><span class="tl-badge" style="background:' + tierColor(l.tier) + '">' + esc(l.tier) + '</span>' + esc(st.label) + '</p>';
-    h += '<p class="tl-gloss">Kind: ' + esc(l.kind) + '</p>';
+    h += '<p class="tl-gloss">Kind: ' + esc(l.kind) + (linePre[l.id] != null ? '. Carries pre-Ravenloft history from ' + esc(linePre[l.id]) + '.' : '') + '</p>';
     if (l.note) h += '<div class="tl-sec-b"><span class="tl-sec">About this line</span><p>' + esc(l.note) + '</p></div>';
     h += '<div class="tl-sec-b"><span class="tl-sec">Provenance</span>' + srcLine('Source', l.source) + '</div>';
-    panelBody.innerHTML = h;
-    bindLinks();
+    panelBody.innerHTML = h; bindLinks();
+    currentYear = l.starts;
+    var tgt2 = (l.starts - minY) * PXY;
+    if (Math.abs(stage.scrollTop - tgt2) > 1) stage.scrollTop = tgt2;
+    updateReader(l.starts);
   }
 
   var tip = document.getElementById('tlTip');
@@ -2337,7 +2446,6 @@ _build:
   function moveTip(ev) { tip.style.left = (ev.clientX + 14) + 'px'; tip.style.top = (ev.clientY + 14) + 'px'; }
   function hideTip() { tip.hidden = true; }
 
-  // Scroll scrubs the year held at the fixed reader line.
   var currentYear = null, ticking = false;
   function yearFromScroll() { return Math.max(minY, Math.min(maxY, minY + Math.round(stage.scrollTop / PXY))); }
   function updateReader(y) {
@@ -2366,9 +2474,7 @@ _build:
   function init() {
     focalOffset = Math.round((stage.clientHeight || 520) * 0.42);
     padTop = focalOffset;
-    build();
-    layoutHoriz();
-    layoutVert();
+    build(); layoutHoriz(); layoutVert();
     stage.scrollTop = 0;
     currentYear = minY; renderYear(minY); updateReader(minY);
   }

@@ -95,6 +95,16 @@ _build:
 .tl-pl { font-size: 0.76rem; color: var(--text-muted); font-style: italic; margin: 0.1rem 0; }
 .tl-rel { margin: 0.2rem 0 0; padding-left: 1rem; }
 .tl-rel li { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.15rem; }
+.tl-seqtag { font-size: 0.78rem; color: var(--text-muted); margin: 0 0 0.4rem; }
+.tl-seqnote { font-size: 0.8rem; font-style: italic; color: #c9b0d6; border-left: 3px solid #b083c0; padding: 0.4rem 0.6rem; margin: 0 0 0.7rem; background: rgba(176,131,192,0.07); line-height: 1.5; }
+.tl-seq { list-style: none; margin: 0.2rem 0 0; padding: 0; }
+.tl-seqstep { position: relative; padding: 0 0 0.8rem 1.6rem; border-left: 2px solid rgba(176,131,192,0.35); margin-left: 0.7rem; }
+.tl-seqstep:last-child { border-left-color: transparent; padding-bottom: 0; }
+.tl-seqn { position: absolute; left: -0.75rem; top: -0.1rem; width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--bg-card); border: 1px solid #b083c0; color: #c9b0d6; font-family: var(--display); font-size: 0.66rem; display: flex; align-items: center; justify-content: center; }
+.tl-seqstep.is-pre .tl-seqn { border-style: dashed; }
+.tl-seqbefore { display: block; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.1rem; }
+.tl-seqwho { display: block; font-family: var(--display); font-size: 0.74rem; color: var(--text-primary); margin-bottom: 0.15rem; }
+.tl-seqread { font-size: 0.82rem; color: var(--text-body); line-height: 1.5; margin: 0; }
 
 @media (max-width: 900px) {
   .tl-layout { display: block; height: auto; }
@@ -2369,6 +2379,27 @@ _build:
     return s + '</div>';
   }
 
+  // An event's optional step-by-step reconstruction (SPEC tier). Step 0 = before
+  // the main sequence. Rendered as an ordered progression, clearly marked as
+  // reconstruction, with each step's people resolved to names.
+  function sequenceBlock(e) {
+    var steps = e.sequence.slice().sort(function (a, b) { return (a.step || 0) - (b.step || 0); });
+    var h = '<div class="tl-sec-b"><span class="tl-sec">Reconstructed sequence</span>';
+    h += '<p class="tl-seqtag"><span class="tl-badge" style="background:#b083c0">SPEC</span>Reconstruction &mdash; reasoning, not source fact.</p>';
+    if (e.sequence_note) h += '<p class="tl-seqnote">' + esc(e.sequence_note) + '</p>';
+    h += '<ul class="tl-seq">';
+    steps.forEach(function (st) {
+      var ids = Array.isArray(st.who) ? st.who : (st.who != null ? [st.who] : []);
+      var who = ids.map(personName).join(', ');
+      var isPre = (st.step === 0);
+      h += '<li class="tl-seqstep' + (isPre ? ' is-pre' : '') + '"><span class="tl-seqn">' + esc(st.step) + '</span>';
+      if (isPre) h += '<span class="tl-seqbefore">before the sequence</span>';
+      if (who) h += '<span class="tl-seqwho">' + esc(who) + '</span>';
+      h += '<p class="tl-seqread">' + esc(st.reading) + '</p></li>';
+    });
+    return h + '</ul></div>';
+  }
+
   function bindLinks() {
     Array.prototype.forEach.call(panelBody.querySelectorAll('.tl-evlink'), function (b) { b.addEventListener('click', function () { selectEvent(b.dataset.ev); }); });
     Array.prototype.forEach.call(panelBody.querySelectorAll('.tl-yearlink'), function (b) { b.addEventListener('click', function () { scrollToYear(parseInt(b.dataset.year, 10)); }); });
@@ -2409,6 +2440,7 @@ _build:
     }
     if (e.notes) h += '<div class="tl-sec-b"><span class="tl-sec">What this is</span><p>' + esc(e.notes) + '</p></div>';
     if (e.primary_reading) h += '<div class="tl-sec-b"><span class="tl-sec">Primary reading</span><p>' + esc(e.primary_reading) + '</p></div>';
+    if (e.sequence && e.sequence.length) h += sequenceBlock(e);
     if (e.alternatives && e.alternatives.length) { h += '<div class="tl-sec-b"><span class="tl-sec">Alternatives</span><ul>'; e.alternatives.forEach(function (a) { h += '<li>' + esc(a) + '</li>'; }); h += '</ul></div>'; }
     if (e.open_seam) h += '<div class="tl-sec-b"><span class="tl-sec">Open seam</span><p>' + esc(e.open_seam) + '</p></div>';
     if (e.spec_strength) h += '<p class="tl-meta-line">Speculation strength: ' + esc(e.spec_strength) + '</p>';

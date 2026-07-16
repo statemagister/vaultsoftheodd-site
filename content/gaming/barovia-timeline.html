@@ -13,52 +13,52 @@ _build:
 
 <style>
 .tl-page { width: 100%; }
-.tl-wrap { font-family: var(--body); color: var(--text-body); max-width: 1320px; margin: 0 auto; padding: 0.4rem 1rem 1rem; }
+.tl-wrap { font-family: var(--body); color: var(--text-body); max-width: 1360px; margin: 0 auto; padding: 0.4rem 1rem 1rem; }
 .tl-head { text-align: center; margin-bottom: 0.6rem; }
 .tl-orn { display: flex; align-items: center; gap: 1rem; justify-content: center; max-width: 760px; margin: 0.2rem auto 0.5rem; }
 .tl-orn::before, .tl-orn::after { content: ''; flex: 1; height: 1px; background: var(--gold); opacity: 0.5; }
 .tl-orn span { font-family: var(--display); font-size: 1.06rem; letter-spacing: 0.05em; color: var(--gold); }
-.tl-sub { max-width: 720px; margin: 0 auto; color: var(--text-muted); font-size: 0.83rem; line-height: 1.5; font-style: italic; }
+.tl-sub { max-width: 760px; margin: 0 auto; color: var(--text-muted); font-size: 0.83rem; line-height: 1.5; font-style: italic; }
 .tl-legend { display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; justify-content: center; max-width: 960px; margin: 0.6rem auto 0.15rem; }
 .tl-lg { display: flex; align-items: center; gap: 0.4rem; font-size: 0.64rem; color: var(--text-muted); font-family: var(--display); letter-spacing: 0.04em; }
 .tl-sw { width: 12px; height: 12px; border-radius: 50%; box-shadow: 0 0 0 2px var(--bg); flex-shrink: 0; }
-.tl-key { max-width: 760px; margin: 0.15rem auto 0; color: var(--text-muted); font-size: 0.68rem; }
-.tl-hint { max-width: 760px; margin: 0.2rem auto 0; color: var(--text-muted); font-size: 0.7rem; }
+.tl-key { max-width: 800px; margin: 0.15rem auto 0; color: var(--text-muted); font-size: 0.68rem; }
+.tl-hint { max-width: 800px; margin: 0.2rem auto 0; color: var(--text-muted); font-size: 0.7rem; }
 
-.tl-layout { display: flex; gap: 1.2rem; align-items: stretch; height: 76vh; min-height: 520px; margin-top: 0.4rem; }
+.tl-layout { display: flex; gap: 1.2rem; align-items: stretch; height: 72vh; min-height: 480px; margin-top: 0.4rem; }
 .tl-stagewrap { position: relative; flex: 1 1 auto; min-width: 0; height: 100%; }
-.tl-stage { position: relative; overflow-y: auto; overflow-x: hidden; height: 100%; border: 1px solid var(--rule); border-radius: 4px; background: linear-gradient(var(--bg-alt), var(--bg)); outline: none; }
+.tl-stage { position: relative; overflow-x: auto; overflow-y: hidden; height: 100%; border: 1px solid var(--rule); border-radius: 4px; background: linear-gradient(90deg, var(--bg-alt), var(--bg)); outline: none; }
 .tl-stage:focus-visible { box-shadow: inset 0 0 0 2px var(--gold); }
 .tl-field { position: relative; }
 
-.tl-pillar { position: absolute; box-sizing: border-box; border-left: 2px solid; border-right: 1px solid rgba(201,162,75,0.12); z-index: 1; }
-.tl-preseg { position: absolute; box-sizing: border-box; border-left: 2px dashed; border-right: 1px dashed; z-index: 1; }
-.tl-prelabel { position: absolute; writing-mode: vertical-rl; text-orientation: mixed; transform: translateX(-50%); font-family: var(--display); font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase; z-index: 3; pointer-events: none; white-space: nowrap; }
-.tl-wname { position: absolute; writing-mode: vertical-rl; text-orientation: mixed; font-family: var(--display); font-size: 1.3rem; letter-spacing: 0.12em; text-transform: uppercase; pointer-events: none; z-index: 2; white-space: nowrap; transform: translateX(-50%); }
-.tl-pname { position: absolute; text-align: center; font-family: var(--display); font-size: 0.62rem; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; z-index: 4; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.tl-pname:hover { text-decoration: underline; }
+.tl-band { position: absolute; box-sizing: border-box; border-top: 2px solid; border-bottom: 1px solid rgba(201,162,75,0.12); z-index: 1; }
+.tl-band.is-spine { border-top: 3px solid var(--gold); }
+.tl-bpre { position: absolute; box-sizing: border-box; border-top: 2px dashed; border-bottom: 1px dashed; z-index: 1; }
+.tl-bname { position: absolute; transform: translateY(-50%); font-family: var(--display); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; z-index: 5; white-space: nowrap; padding: 0 4px; }
+.tl-bname:hover { text-decoration: underline; }
+.tl-bwm { position: absolute; transform: translateY(-50%); font-family: var(--display); font-size: 1.15rem; letter-spacing: 0.14em; text-transform: uppercase; pointer-events: none; z-index: 2; white-space: nowrap; }
+.tl-bprelabel { position: absolute; transform: translateY(-50%); font-family: var(--display); font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase; pointer-events: none; z-index: 3; white-space: nowrap; }
 
-.tl-branch { position: absolute; height: 0; border-top: 2px solid; z-index: 4; pointer-events: none; }
-.tl-guide { position: absolute; left: 0; height: 1px; background: rgba(201,162,75,0.06); z-index: 1; }
-.tl-century { position: absolute; left: 0; height: 1px; background: rgba(201,162,75,0.2); z-index: 1; }
-.tl-settingband { position: absolute; left: 0; height: 0; border-top: 1px dashed; opacity: 0.6; z-index: 4; }
-.tl-ytick { position: absolute; left: 0; font-family: var(--display); font-size: 0.58rem; color: var(--text-muted); text-align: right; padding-right: 6px; z-index: 5; }
-.tl-yev { position: absolute; left: 0; font-family: var(--display); font-size: 0.58rem; color: var(--gold); text-align: right; padding-right: 6px; z-index: 5; }
+.tl-branch { position: absolute; width: 0; border-left: 2px solid; z-index: 4; pointer-events: none; }
+.tl-vguide { position: absolute; top: 0; width: 1px; background: rgba(201,162,75,0.06); z-index: 1; }
+.tl-vcentury { position: absolute; top: 0; width: 1px; background: rgba(201,162,75,0.2); z-index: 1; }
+.tl-settingband { position: absolute; top: 0; width: 0; border-left: 1px dashed; opacity: 0.6; z-index: 4; }
+.tl-xtick { position: absolute; top: 2px; transform: translateX(-50%); font-family: var(--display); font-size: 0.58rem; color: var(--text-muted); z-index: 6; }
+.tl-xev { position: absolute; top: 2px; transform: translateX(-50%); font-family: var(--display); font-size: 0.58rem; color: var(--gold); z-index: 6; }
 
 .tl-ev { position: absolute; width: 11px; height: 11px; border-radius: 50%; border: 0; padding: 0; cursor: pointer; box-shadow: 0 0 0 2px var(--bg); transform: translate(-50%, -50%); transition: transform 0.1s ease; z-index: 10; }
 .tl-ev:hover, .tl-ev:focus-visible { transform: translate(-50%, -50%) scale(1.4); outline: none; z-index: 12; }
 .tl-ev.is-active { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--gold-bright); z-index: 13; }
 .tl-ev.scope-shared { border-radius: 2px; }
-.tl-ev.scope-setting { border-radius: 2px; width: 16px; height: 16px; }
-.tl-ev.is-multi { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 700; font-size: 0.62rem; color: #15120f; }
-.tl-ev.is-pre { box-shadow: 0 0 0 2px var(--bg); }
+.tl-ev.scope-setting { border-radius: 2px; width: 15px; height: 15px; }
+.tl-ev.is-multi { width: 17px; height: 17px; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 700; font-size: 0.6rem; color: #15120f; }
 
-.tl-reader { position: absolute; left: 0; right: 0; height: 0; pointer-events: none; z-index: 20; border-top: 2px solid var(--gold-bright); box-shadow: 0 0 14px rgba(226,192,116,0.4); }
-.tl-reader::before, .tl-reader::after { content: ''; position: absolute; left: 0; right: 0; pointer-events: none; }
-.tl-reader::before { top: -46px; height: 46px; background: linear-gradient(rgba(21,18,15,0), rgba(226,192,116,0.09)); }
-.tl-reader::after { top: 0; height: 46px; background: linear-gradient(rgba(226,192,116,0.09), rgba(21,18,15,0)); }
-.tl-readtag { position: absolute; left: 8px; top: 0; transform: translateY(-50%); font-family: var(--display); font-weight: 700; font-size: 1.5rem; color: var(--gold-bright); background: var(--bg); padding: 0 8px; border: 1px solid var(--gold); border-radius: 3px; }
-.tl-readsub { position: absolute; right: 10px; top: 0; transform: translateY(-50%); font-family: var(--display); font-size: 0.66rem; letter-spacing: 0.04em; color: var(--text-muted); background: var(--bg); padding: 0 6px; max-width: 62%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tl-reader { position: absolute; top: 0; bottom: 0; width: 0; pointer-events: none; z-index: 20; border-left: 2px solid var(--gold-bright); box-shadow: 0 0 14px rgba(226,192,116,0.4); }
+.tl-reader::before, .tl-reader::after { content: ''; position: absolute; top: 0; bottom: 0; pointer-events: none; }
+.tl-reader::before { left: -46px; width: 46px; background: linear-gradient(90deg, rgba(21,18,15,0), rgba(226,192,116,0.08)); }
+.tl-reader::after { left: 0; width: 46px; background: linear-gradient(90deg, rgba(226,192,116,0.08), rgba(21,18,15,0)); }
+.tl-readtag { position: absolute; left: 0; top: 6px; transform: translateX(-50%); font-family: var(--display); font-weight: 700; font-size: 1.4rem; color: var(--gold-bright); background: var(--bg); padding: 0 8px; border: 1px solid var(--gold); border-radius: 3px; white-space: nowrap; }
+.tl-readsub { position: absolute; left: 0; bottom: 8px; transform: translateX(-50%); font-family: var(--display); font-size: 0.64rem; letter-spacing: 0.04em; color: var(--text-muted); background: var(--bg); padding: 0 6px; max-width: 240px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .tl-tip { position: fixed; pointer-events: none; background: var(--bg-card); border: 1px solid var(--gold); color: var(--text-primary); font-size: 0.72rem; line-height: 1.35; padding: 0.3rem 0.5rem; border-radius: 3px; z-index: 60; max-width: 230px; }
 
@@ -108,7 +108,7 @@ _build:
 
 @media (max-width: 900px) {
   .tl-layout { display: block; height: auto; }
-  .tl-stagewrap { height: 62vh; }
+  .tl-stagewrap { height: 54vh; }
   .tl-panel { width: auto; flex: none; height: auto; max-height: 56vh; margin-top: 0.9rem; }
 }
 </style>
@@ -116,14 +116,14 @@ _build:
 <div class="tl-wrap">
   <header class="tl-head">
     <div class="tl-orn"><span>The Peculiar but Interactive Timeline of Barovia</span></div>
-    <p class="tl-sub">Barovia is the continuous pillar; each domain joins it as its own coloured pillar at the year it enters, attached where it connects, so the timeline widens as it falls. The reader holds a fixed year at the gold line: scroll down to move forward through the years, up to move back. It begins in 277.</p>
+    <p class="tl-sub">Time runs left to right. Barovia is the continuous band along the top; each domain joins as its own coloured band at the year it enters, stacking downward so the timeline widens as it runs on. The reader holds a fixed year at the gold line: scroll right to move forward, left to move back. It begins at the earliest recorded year.</p>
     <div class="tl-legend" id="tlLegend"></div>
-    <p class="tl-key">Pillars are coloured by domain; event markers are coloured by dating tier. A hollow marker in a faded pre-section is history that happened before that domain entered Ravenloft.</p>
-    <p class="tl-hint">The panel magnifies the year at the reader line, naming everyone alive with their age and place. Scroll, or focus the timeline and use the arrow keys, to change the year. Click a marker to open the event; a numbered marker means several events share that year.</p>
+    <p class="tl-key">Bands are coloured by domain; event markers by dating tier. A hollow marker on a faded pre-section is history from before that domain entered Ravenloft.</p>
+    <p class="tl-hint">The panel magnifies the year at the reader line, naming everyone alive with age and place. Scroll (the wheel moves time sideways), or focus the timeline and use the left and right arrows. Click a marker to open the event; a numbered marker means several events share that year.</p>
   </header>
   <div class="tl-layout">
     <div class="tl-stagewrap">
-      <div class="tl-stage" id="tlStage" tabindex="0" aria-label="Barovia timeline. Scroll to move through the years, arrow keys to step year by year.">
+      <div class="tl-stage" id="tlStage" tabindex="0" aria-label="Barovia timeline. Scroll sideways to move through the years, arrow keys to step year by year.">
         <div class="tl-field" id="tlField"></div>
       </div>
       <div class="tl-reader" id="tlReader"><span class="tl-readtag" id="tlReadTag">277</span><span class="tl-readsub" id="tlReadSub"></span></div>
@@ -2174,7 +2174,6 @@ _build:
 
   var TIER_COLORS = { CORE: '#c9a24b', VOTM: '#c98b3a', PUB: '#8fa96b', INFER: '#7fa0bd', SPEC: '#b083c0', INVENT: '#8f8674', OPEN: '#c9a24b', FLAG: '#c0553a' };
   function tierColor(t) { return TIER_COLORS[t] || '#a99f8c'; }
-
   var LINE_PALETTE = ['#c9a24b', '#7f9fc4', '#7fa863', '#c0554a', '#9b7bc0', '#4fa9a0', '#d0a24e', '#c07f8f', '#93a05a', '#b98fb0', '#6f93a8', '#a9a06a'];
   function hexToRgba(hex, a) { var h = hex.replace('#', ''); return 'rgba(' + parseInt(h.substr(0, 2), 16) + ',' + parseInt(h.substr(2, 2), 16) + ',' + parseInt(h.substr(4, 2), 16) + ',' + a + ')'; }
 
@@ -2194,13 +2193,10 @@ _build:
   }
 
   var ordered = lines.slice().sort(function (a, b) { return (a.starts - b.starts) || 0; });
-  var colIndex = {}; ordered.forEach(function (l, i) { colIndex[l.id] = i; });
+  var rowIndex = {}; ordered.forEach(function (l, i) { rowIndex[l.id] = i; });
   var n = ordered.length;
-  function lineColor(id) { return LINE_PALETTE[(colIndex[id] || 0) % LINE_PALETTE.length]; }
+  function lineColor(id) { return LINE_PALETTE[(rowIndex[id] || 0) % LINE_PALETTE.length]; }
 
-  // A line gets a pre-section only if it has an event before its formation year.
-  // The pre-section spans from that line's earliest pre-formation content
-  // (event or the birth of one of its people) down to the formation year.
   var linePre = {};
   ordered.forEach(function (l) {
     var hasPreEvent = events.some(function (e) { return e.scope === 'single' && e.line === l.id && e.year < l.starts; });
@@ -2211,11 +2207,11 @@ _build:
     if (earliest < l.starts) linePre[l.id] = earliest;
   });
 
-  var PXY = 13, gutterW = 46;
-  var pillarW = 100, fieldW = 900, padTop = 180, focalOffset = 180;
-  function yFor(year) { return padTop + (year - minY) * PXY; }
-  function pillarLeft(id) { return gutterW + (colIndex[id] || 0) * pillarW; }
-  function xCenter(id) { return pillarLeft(id) + pillarW / 2; }
+  var PXX = 13, topGutter = 30;
+  var bandH = 60, fieldH = 560, padLeft = 300, focalX = 300;
+  function xFor(year) { return padLeft + (year - minY) * PXX; }
+  function bandTop(id) { return topGutter + (rowIndex[id] || 0) * bandH; }
+  function bandMid(id) { return bandTop(id) + bandH / 2; }
   function colKeyOf(e) { return (e.scope === 'single') ? e.line : (e.scope === 'shared') ? e.lines[e.lines.length - 1] : ordered[0].id; }
 
   var stage = document.getElementById('tlStage');
@@ -2226,57 +2222,65 @@ _build:
   function px(v) { return v + 'px'; }
   function mk(cls, parent) { var d = document.createElement('div'); if (cls) d.className = cls; if (parent) parent.appendChild(d); return d; }
 
-  var gutterLabels = [];
-  var evEls = {};
-
   function build() {
-    field.innerHTML = ''; gutterLabels = []; evEls = {};
+    field.innerHTML = '';
+    var fieldW = padLeft + (maxY - minY) * PXX + 120;
+    fieldH = topGutter + n * bandH;
+    field.style.width = px(fieldW); field.style.height = px(fieldH);
 
+    // Vertical year guides + top gutter labels.
     var eventYears = {}; events.forEach(function (e) { eventYears[e.year] = true; });
+    var xLabels = [];
     var firstTick = Math.ceil(minY / 25) * 25;
     for (var yy = firstTick; yy <= maxY; yy += 25) {
       var isC = (yy % 100 === 0);
-      var g = mk(isC ? 'tl-century' : 'tl-guide', field); g.style.top = px(yFor(yy));
-      if (!eventYears[yy]) { var tk = mk('tl-ytick', field); tk.textContent = yy; if (isC) tk.style.color = 'var(--gold-bright)'; gutterLabels.push({ el: tk, y: yFor(yy) }); }
+      var g = mk(isC ? 'tl-vcentury' : 'tl-vguide', field);
+      g.style.left = px(xFor(yy)); g.style.height = px(fieldH);
+      if (!eventYears[yy]) { var tk = mk('tl-xtick', field); tk.textContent = yy; tk.style.left = px(xFor(yy)); if (isC) tk.style.color = 'var(--gold-bright)'; xLabels.push({ el: tk, x: xFor(yy) }); }
     }
-    Object.keys(eventYears).forEach(function (yk) { var y = parseInt(yk, 10); var el = mk('tl-yev', field); el.textContent = y; gutterLabels.push({ el: el, y: yFor(y) }); });
+    Object.keys(eventYears).forEach(function (yk) { var y = parseInt(yk, 10); var el = mk('tl-xev', field); el.textContent = y; el.style.left = px(xFor(y)); xLabels.push({ el: el, x: xFor(y) }); });
 
+    // Bands (one per line), names, watermark, and pre-section.
     ordered.forEach(function (l) {
       var spine = (l.kind === 'core-spine');
       var color = lineColor(l.id);
-      var startTop = yFor(spine ? minY : l.starts), bottom = yFor(maxY);
-      var pil = mk('tl-pillar', field);
-      pil.dataset.line = l.id; pil.style.top = px(startTop); pil.style.height = px(bottom - startTop);
-      pil.style.borderLeftColor = color; pil.style.borderLeftWidth = spine ? '3px' : '2px';
-      pil.style.background = 'linear-gradient(' + hexToRgba(color, spine ? 0.18 : 0.14) + ',' + hexToRgba(color, 0.045) + ')';
+      var startX = xFor(spine ? minY : l.starts), rightX = xFor(maxY);
+      var top = bandTop(l.id), mid = bandMid(l.id);
+      var band = mk('tl-band' + (spine ? ' is-spine' : ''), field);
+      band.dataset.line = l.id; band.style.left = px(startX); band.style.width = px(rightX - startX + 60);
+      band.style.top = px(top); band.style.height = px(bandH - 3);
+      band.style.borderTopColor = color;
+      band.style.background = 'linear-gradient(' + hexToRgba(color, spine ? 0.17 : 0.13) + ',' + hexToRgba(color, 0.035) + ')';
       if (linePre[l.id] != null) {
-        var pTop = yFor(linePre[l.id]);
-        var pre = mk('tl-preseg', field); pre.dataset.line = l.id; pre.style.top = px(pTop); pre.style.height = px(startTop - pTop);
+        var preX = xFor(linePre[l.id]);
+        var pre = mk('tl-bpre', field); pre.dataset.line = l.id; pre.style.left = px(preX); pre.style.width = px(startX - preX);
+        pre.style.top = px(top); pre.style.height = px(bandH - 3);
         pre.style.borderColor = hexToRgba(color, 0.5);
         pre.style.background = 'repeating-linear-gradient(45deg, ' + hexToRgba(color, 0) + ' 0, ' + hexToRgba(color, 0) + ' 6px, ' + hexToRgba(color, 0.06) + ' 6px, ' + hexToRgba(color, 0.06) + ' 12px)';
-        var plab = mk('tl-prelabel', field); plab.dataset.line = l.id; plab.textContent = 'before Ravenloft'; plab.style.top = px(pTop + 8); plab.style.color = hexToRgba(color, 0.8);
+        var plab = mk('tl-bprelabel', field); plab.dataset.line = l.id; plab.textContent = 'before Ravenloft'; plab.style.left = px(preX + 6); plab.style.top = px(mid); plab.style.color = hexToRgba(color, 0.85);
       }
-      var nm = mk('tl-pname', field); nm.textContent = l.label; nm.dataset.line = l.id; nm.style.top = px(startTop + 6); nm.style.color = color;
+      var nm = mk('tl-bname', field); nm.textContent = l.label; nm.dataset.line = l.id; nm.style.left = px(startX + 6); nm.style.top = px(mid); nm.style.color = color;
       nm.setAttribute('role', 'button'); nm.tabIndex = 0;
       nm.addEventListener('click', function (ev) { ev.stopPropagation(); selectLine(l.id); });
       nm.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); selectLine(l.id); } });
-      for (var wy = startTop + 40; wy < bottom - 60; wy += 700) { var wm = mk('tl-wname', field); wm.textContent = l.label; wm.dataset.line = l.id; wm.style.top = px(wy); wm.style.color = hexToRgba(color, 0.13); }
+      for (var wx = startX + 150; wx < rightX - 40; wx += 620) { var wm = mk('tl-bwm', field); wm.textContent = l.label; wm.dataset.line = l.id; wm.style.left = px(wx); wm.style.top = px(mid); wm.style.color = hexToRgba(color, 0.1); }
     });
 
-    // Bands and connectors, one per event.
+    // Branch connectors (a domain joining Barovia) and setting bands.
     events.forEach(function (e) {
       var color = tierColor(e.tier);
       if (e.scope === 'shared' && e.lines && e.lines.length >= 2) {
+        var y1 = bandMid(e.lines[0]), y2 = bandMid(e.lines[e.lines.length - 1]);
         var br = mk('tl-branch', field); br.dataset.a = e.lines[0]; br.dataset.b = e.lines[e.lines.length - 1];
-        br.style.top = px(yFor(e.year)); br.style.borderTopColor = color; br.style.opacity = '0.7';
+        br.style.left = px(xFor(e.year)); br.style.top = px(Math.min(y1, y2)); br.style.height = px(Math.abs(y2 - y1)); br.style.borderLeftColor = color; br.style.opacity = '0.7';
       }
-      if (e.scope === 'setting') { var band = mk('tl-settingband', field); band.style.top = px(yFor(e.year)); band.style.borderTopColor = color; }
+      if (e.scope === 'setting') { var band = mk('tl-settingband', field); band.style.left = px(xFor(e.year)); band.style.height = px(fieldH); band.style.borderLeftColor = color; }
     });
 
-    // Markers, aligned on their pillar centre; several events in one year on one
-    // pillar collapse into a single numbered marker that opens the year's tags.
+    // Markers. Same year + same band collapse to a numbered marker.
     var groups = {};
     events.forEach(function (e) { var k = colKeyOf(e) + '|' + e.year; (groups[k] = groups[k] || []).push(e); });
+    evEls = {};
     Object.keys(groups).forEach(function (k) {
       var arr = groups[k], e0 = arr[0], ck = colKeyOf(e0), yr = e0.year;
       var starts = lineById[ck] ? lineById[ck].starts : minY;
@@ -2286,9 +2290,8 @@ _build:
       var btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'tl-ev' + (multi ? ' is-multi' : ' scope-' + e0.scope) + (isPre ? ' is-pre' : '');
-      btn.dataset.col = ck; btn.style.top = px(yFor(yr));
-      if (isPre) { btn.style.background = 'var(--bg)'; btn.style.border = '2px solid ' + color; }
-      else { btn.style.background = color; }
+      btn.dataset.col = ck; btn.style.left = px(xFor(yr)); btn.style.top = px(bandMid(ck));
+      if (isPre) { btn.style.background = 'var(--bg)'; btn.style.border = '2px solid ' + color; } else { btn.style.background = color; }
       if (multi) {
         btn.textContent = arr.length;
         btn.setAttribute('aria-label', arr.length + ' events in ' + yr);
@@ -2305,30 +2308,22 @@ _build:
       field.appendChild(btn);
     });
 
-    gutterLabels.sort(function (a, b) { return a.y - b.y; });
-    var prevBottom = -999;
-    gutterLabels.forEach(function (gl) { var top = gl.y - 6; if (top < prevBottom + 1) top = prevBottom + 1; gl.el.style.top = px(top); prevBottom = top + 11; });
+    // Keep top year labels legible where they crowd.
+    xLabels.sort(function (a, b) { return a.x - b.x; });
+    var prevRight = -1e9;
+    xLabels.forEach(function (xl) { var left = xl.x; if (left < prevRight + 16) left = prevRight + 16; xl.el.style.left = px(left); prevRight = left; });
+
+    reader.style.left = px(focalX);
   }
 
-  function layoutHoriz() {
-    fieldW = Math.max(320, stage.clientWidth);
-    pillarW = (fieldW - gutterW) / n;
-    field.style.width = px(fieldW);
-    field.querySelectorAll('.tl-pillar,.tl-preseg').forEach(function (el) { el.style.left = px(pillarLeft(el.dataset.line)); el.style.width = px(pillarW); });
-    field.querySelectorAll('.tl-pname').forEach(function (el) { el.style.left = px(pillarLeft(el.dataset.line)); el.style.width = px(pillarW); });
-    field.querySelectorAll('.tl-wname,.tl-prelabel').forEach(function (el) { el.style.left = px(pillarLeft(el.dataset.line) + pillarW / 2); });
-    field.querySelectorAll('.tl-guide,.tl-century,.tl-settingband').forEach(function (el) { el.style.width = px(fieldW); });
-    field.querySelectorAll('.tl-ytick,.tl-yev').forEach(function (el) { el.style.width = px(gutterW); });
-    field.querySelectorAll('.tl-branch').forEach(function (el) { var x1 = xCenter(el.dataset.a), x2 = xCenter(el.dataset.b); el.style.left = px(Math.min(x1, x2)); el.style.width = px(Math.abs(x2 - x1)); });
-    field.querySelectorAll('.tl-ev').forEach(function (el) { el.style.left = px(xCenter(el.dataset.col)); });
+  function relayout() {
+    focalX = Math.round(stage.clientWidth * 0.34); padLeft = focalX;
+    bandH = Math.max(38, (stage.clientHeight - topGutter) / n);
+    build();
   }
 
-  function layoutVert() {
-    var sh = stage.clientHeight || 520;
-    field.style.height = px(padTop + (maxY - minY) * PXY + Math.max(60, sh - focalOffset));
-    reader.style.top = px(focalOffset);
-  }
-
+  // ---- Panel (orientation-independent) ----
+  var evEls = {};
   var panelBody = document.getElementById('tlPanelBody');
   var activeEl = null;
   function setActive(el) { if (activeEl) activeEl.classList.remove('is-active'); activeEl = el; if (el) el.classList.add('is-active'); }
@@ -2338,8 +2333,6 @@ _build:
   function srcLine(label, code) { var g = sourceGloss(code); return '<p class="tl-src"><strong>' + label + ':</strong> ' + esc(code) + (g ? ' <span class="tl-src-g">' + esc(g) + '</span>' : '') + '</p>'; }
 
   function livingIn(y) {
-    // on_event_spine:false keeps a person off the timeline as a dated marker, but
-    // they still belong in the who-was-alive roster if their dates are known.
     var out = [];
     people.forEach(function (p) {
       var b = born(p), d = died(p), alive;
@@ -2351,7 +2344,6 @@ _build:
     out.sort(function (a, b) { var ab = born(a), bb = born(b); if (ab == null && bb == null) return 0; if (ab == null) return 1; if (bb == null) return -1; return ab - bb; });
     return out;
   }
-
   function relBornBy(id, y) { var q = personById[id]; if (!q) return true; var b = born(q); return (b == null || b <= y); }
 
   function personCard(p, yr) {
@@ -2379,9 +2371,6 @@ _build:
     return s + '</div>';
   }
 
-  // An event's optional step-by-step reconstruction (SPEC tier). Step 0 = before
-  // the main sequence. Rendered as an ordered progression, clearly marked as
-  // reconstruction, with each step's people resolved to names.
   function sequenceBlock(e) {
     var steps = e.sequence.slice().sort(function (a, b) { return (a.step || 0) - (b.step || 0); });
     var h = '<div class="tl-sec-b"><span class="tl-sec">Reconstructed sequence</span>';
@@ -2458,8 +2447,8 @@ _build:
     }
     panelBody.innerHTML = h; bindLinks();
     currentYear = e.year;
-    var tgt = (e.year - minY) * PXY;
-    if (Math.abs(stage.scrollTop - tgt) > 1) stage.scrollTop = tgt;
+    var tgt = (e.year - minY) * PXX;
+    if (Math.abs(stage.scrollLeft - tgt) > 1) stage.scrollLeft = tgt;
     updateReader(e.year);
   }
 
@@ -2476,8 +2465,8 @@ _build:
     h += '<div class="tl-sec-b"><span class="tl-sec">Provenance</span>' + srcLine('Source', l.source) + '</div>';
     panelBody.innerHTML = h; bindLinks();
     currentYear = l.starts;
-    var tgt2 = (l.starts - minY) * PXY;
-    if (Math.abs(stage.scrollTop - tgt2) > 1) stage.scrollTop = tgt2;
+    var tgt2 = (l.starts - minY) * PXX;
+    if (Math.abs(stage.scrollLeft - tgt2) > 1) stage.scrollLeft = tgt2;
     updateReader(l.starts);
   }
 
@@ -2486,23 +2475,29 @@ _build:
   function moveTip(ev) { tip.style.left = (ev.clientX + 14) + 'px'; tip.style.top = (ev.clientY + 14) + 'px'; }
   function hideTip() { tip.hidden = true; }
 
+  // ---- Horizontal scroll scrubbing ----
   var currentYear = null, ticking = false;
-  function yearFromScroll() { return Math.max(minY, Math.min(maxY, minY + Math.round(stage.scrollTop / PXY))); }
+  function yearFromScroll() { return Math.max(minY, Math.min(maxY, minY + Math.round(stage.scrollLeft / PXX))); }
   function updateReader(y) {
     readTag.textContent = y;
     var evs = events.filter(function (e) { return e.year === y; });
-    if (evs.length) { reader.style.borderTopColor = tierColor(evs[0].tier); readSub.textContent = evs.length > 1 ? (evs.length + ' events') : evs[0].title; }
-    else { var living = livingIn(y).length; reader.style.borderTopColor = 'var(--gold-bright)'; readSub.textContent = living + (living === 1 ? ' soul living' : ' souls living'); }
+    if (evs.length) { reader.style.borderLeftColor = tierColor(evs[0].tier); readSub.textContent = evs.length > 1 ? (evs.length + ' events') : evs[0].title; }
+    else { var living = livingIn(y).length; reader.style.borderLeftColor = 'var(--gold-bright)'; readSub.textContent = living + (living === 1 ? ' soul living' : ' souls living'); }
   }
   function onScroll() { var y = yearFromScroll(); updateReader(y); if (y !== currentYear) { currentYear = y; renderYear(y); } }
   stage.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; onScroll(); }); } });
-  function scrollToYear(y) { stage.scrollTop = (y - minY) * PXY; }
+  // The wheel moves time sideways.
+  stage.addEventListener('wheel', function (ev) {
+    var d = Math.abs(ev.deltaY) > Math.abs(ev.deltaX) ? ev.deltaY : ev.deltaX;
+    if (d) { stage.scrollLeft += d; ev.preventDefault(); }
+  }, { passive: false });
+  function scrollToYear(y) { stage.scrollLeft = (y - minY) * PXX; }
   stage.addEventListener('keydown', function (ev) {
-    if (ev.key === 'ArrowDown' || ev.key === 'ArrowUp' || ev.key === 'PageDown' || ev.key === 'PageUp') {
+    if (ev.key === 'ArrowRight' || ev.key === 'ArrowLeft' || ev.key === 'PageDown' || ev.key === 'PageUp') {
       ev.preventDefault();
       var stepY = (ev.key.indexOf('Page') === 0) ? 10 : 1;
       var base = (currentYear == null) ? minY : currentYear;
-      scrollToYear(Math.max(minY, Math.min(maxY, base + ((ev.key === 'ArrowDown' || ev.key === 'PageDown') ? stepY : -stepY))));
+      scrollToYear(Math.max(minY, Math.min(maxY, base + ((ev.key === 'ArrowRight' || ev.key === 'PageDown') ? stepY : -stepY))));
     }
   });
 
@@ -2512,14 +2507,12 @@ _build:
   order.forEach(function (t) { if (!seen[t]) return; var d = mk('tl-lg', legend); d.innerHTML = '<span class="tl-sw" style="background:' + tierColor(t) + '"></span>' + esc(t) + ' - ' + esc(statusInfo(t).label); });
 
   function init() {
-    focalOffset = Math.round((stage.clientHeight || 520) * 0.42);
-    padTop = focalOffset;
-    build(); layoutHoriz(); layoutVert();
-    stage.scrollTop = 0;
+    relayout();
+    stage.scrollLeft = 0;
     currentYear = minY; renderYear(minY); updateReader(minY);
   }
   var resizeT;
-  window.addEventListener('resize', function () { clearTimeout(resizeT); resizeT = setTimeout(function () { layoutHoriz(); layoutVert(); }, 150); });
+  window.addEventListener('resize', function () { clearTimeout(resizeT); resizeT = setTimeout(function () { var y = currentYear; relayout(); if (y != null) scrollToYear(y); }, 160); });
   if (document.readyState === 'complete') requestAnimationFrame(init);
   else window.addEventListener('load', function () { requestAnimationFrame(init); });
 })();

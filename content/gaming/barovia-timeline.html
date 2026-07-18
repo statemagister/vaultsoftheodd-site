@@ -567,7 +567,10 @@ _build:
       "death": {
         "year": 351,
         "tier": "CORE",
-        "source": "RoT"
+        "source": "RoT",
+        "kind": "transformation",
+        "is_true_death": false,
+        "note": "NOT a true death — this is Strahd's TRANSFORMATION to undeath (vampire). He has no true end date (undead). 351 is preserved as the transformation/undeath marker and the calendar anchor. Render as 'became undead 351', not 'died 351'."
       },
       "location": "Officially AWAY at war; in truth returning to Barovia in disguise, unrecognised, until the open return in 347",
       "relationships": [
@@ -625,7 +628,8 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
-      }
+      },
+      "immortal": true
     },
     {
       "id": "sturm",
@@ -1692,7 +1696,10 @@ _build:
       "death": {
         "year": 579,
         "tier": "CORE",
-        "source": "RoT"
+        "source": "RoT",
+        "kind": "transformation",
+        "is_true_death": false,
+        "note": "NOT a true death — Godefroy murdered his family (578) and took his own life, becoming the GHOST-LORD of Mordent in 579. Undead thereafter, no true end date. 579 preserved as the undeath/ghost-lord marker. (His 578 suicide is the mortal end, but he persists as an undead darklord — render as 'becomes ghost-lord 579', not a simple death.)"
       },
       "location": "Mordent (Gryphon Hill)",
       "relationships": [
@@ -1717,7 +1724,8 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
-      }
+      },
+      "immortal": true
     },
     {
       "id": "estelle_w",
@@ -1826,7 +1834,16 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
-      }
+      },
+      "maternal_markers": [
+        {
+          "type": "gave-birth-to",
+          "child": "ivana_b",
+          "child_birth": 689,
+          "father": null,
+          "note": "Maternal 'gave birth to' marker (domain line)."
+        }
+      ]
     },
     {
       "id": "ivana_b",
@@ -2203,7 +2220,7 @@ _build:
       "scope": "single",
       "line": "barovia",
       "tier": "INFER",
-      "title": "Barov weds Ravenovia (reconstructed)",
+      "title": "Marriage: Barov Von Zarovich & Ravenia Van Roeyen (Drew-dated)",
       "present": [
         "barov",
         "ravenia"
@@ -2214,7 +2231,10 @@ _build:
         "from": 299,
         "to": 305,
         "preferred": 304
-      }
+      },
+      "kind": "marriage",
+      "locked": true,
+      "roll_d6": null
     },
     {
       "id": "exile_323",
@@ -3108,6 +3128,12 @@ _build:
       "title": "'Dilisnya' is a Von Zarovich name; RoT's separate Dilisnya house is an interpretive fabrication",
       "source": "VotO",
       "text": "COMMITTED READING (INFER, from primary-source layering). In I6 (primary) the ONLY Dilisnya is 'Duchess Dorfniya Dilisnya' (Crypt 8) — a royal duchess, Von Zarovich by rank, with NO attached Dilisnya family, no husband, no lineage (only her fool Pidlwik, Crypt 9). The entire Dilisnya genealogy — Pavel, Reinhold, Gertrude, Oleka, Leo, and the lines that become Borca and Dorvinia — is added by RoT (later). Therefore: 'Dilisnya' is not a separate house but a NAME WITHIN THE ROYAL (Von Zarovich) FAMILY, and RoT's 'separate Dilisnya house' is the interpretive failure — RoT extrapolated a whole parallel lineage from one royal duchess's name, then rationalised its relationship to the crown as 'served the Von Zaroviches for generations' (the tell of the fabrication: a servant-house explanation invented to justify a house that, in the primary source, did not exist apart from the royals). CONSEQUENCES: (1) the 'Dilisnyas' are Von Zarovich blood — so LEO — a traitor ONLY within Strahd's (unreliable) narrative, NOT in any external record — is himself royal Von Zarovich blood. So the reconstruction reads him not as a betrayer but as the ROYAL KINSMAN SCAPEGOATED for the murders Strahd authored: Strahd needed a traitor who wasn't Strahd, and a corrupted royal cousin served. Strahd's contempt for 'those who would do that to their own' is projection — he corrupted them, then blamed one for his own crime; (2) the Dilisnya-founded domains (Borca via the Boritsi/Dilisnya line, Dorvinia via Ivan Dilisnya) are Von-Zarovich-blooded, deepening the 'Barovian royal blood spreads to the domains' thesis. This rests on the I6-governs-RoT source hierarchy, NOT on etymology; the reading that the name itself carries an imperial 'of-the-tsar' root is Drew's own onomastic observation (supported in-source by the 'Czar von Zarovich' phrasing), corroborating in spirit but not load-bearing and needing no external source. RoT's separate-house version is preserved as the rejected interpretation."
+    },
+    {
+      "id": "lifespan_rule",
+      "title": "Lifespan model: mortals <=90; mortal darklords age slower (punishment prolonged); undead have no true death",
+      "source": "VotO",
+      "text": "MODELLING RULE. (1) Mortal non-darklords: natural lifespan capped ~80-90. (2) Mortal DARKLORDS (incl. lycanthropes like the wererats Claude Renier & Isabelle Museau): they AGE SLOWER but aging does NOT stop — their extended lifespan (up to ~double, ~160-180) is the MECHANISM OF PUNISHMENT: the Dark Powers prolong their period of suffering/torture until it is no longer effective, then it ends. Not a reward, not immortality — a drawn-out sentence. Printed RoT death dates for mortal darklords are kept (they are real deaths at the end of the prolonged sentence). (3) UNDEAD/immortal darklords (Strahd, Godefroy the ghost-lord) have NO TRUE DEATH — their 'death' year is a TRANSFORMATION-to-undeath marker (Strahd 351, Godefroy 579), preserved with kind:'transformation', is_true_death:false. CONSEQUENCE: where a domain's internal timeline outruns a mortal ruler's (prolonged but finite) lifespan, a SUCCESSOR is needed — an invented replacement or, preferably, a CHILD stepping into the ruler's place. (Currently no mortal in the data exceeds its cap, so no replacements are yet required.)"
     }
   ]
 }
@@ -3133,6 +3159,9 @@ _build:
 
   function born(p) { return (p && p.birth && typeof p.birth.year === 'number') ? p.birth.year : null; }
   function died(p) { return (p && p.death && typeof p.death.year === 'number') ? p.death.year : null; }
+  // Undead darklords (Strahd, Godefroy) have no true death: their death-year
+  // marks a transformation to undeath, not an end. Render accordingly.
+  function isTransformation(p) { return !!(p && p.death && (p.death.kind === 'transformation' || p.death.is_true_death === false)); }
 
   var yrs = [];
   function addYr(y) { if (typeof y === 'number' && isFinite(y)) yrs.push(y); }
@@ -3204,7 +3233,7 @@ _build:
   // event like a marriage is therefore plotted once per participant, on each of
   // their own rows, not just once on the domain band.
   var peopleByLine = {};
-  people.forEach(function (p) { if (p.on_event_spine === false) return; (peopleByLine[p.line] = peopleByLine[p.line] || []).push(p); });
+  people.forEach(function (p) { (peopleByLine[p.line] = peopleByLine[p.line] || []).push(p); });
   Object.keys(peopleByLine).forEach(function (lid) {
     peopleByLine[lid].sort(function (a, b) { var ab = born(a), bb = born(b); if (ab == null && bb == null) return 0; if (ab == null) return 1; if (bb == null) return -1; return ab - bb; });
   });
@@ -3222,6 +3251,10 @@ _build:
   // baseline (lane 0); a personal event landing on the same year would
   // otherwise sit exactly on top of one, so events are bumped to a lower
   // lane wherever they overlap a birth or death marker's own small span.
+  // Lanes are stored per (person, event) pair, never on the shared event object
+  // itself -- an event can appear on several people's rows at once (e.g. a
+  // shared domain-entry event lists more than one person in "present"), and
+  // each row's collisions with ITS OWN birth/death marker are independent.
   function layoutPersonEvents(p) {
     var evs = personalEventsById[p.id];
     var bx = born(p), dx = died(p);
@@ -3230,6 +3263,7 @@ _build:
     if (dx != null) reserved.push([xFor(dx) - 3, xFor(dx) + 16]);
     function hitsReserved(L, R) { return reserved.some(function (rr) { return !(R <= rr[0] || L >= rr[1]); }); }
     var laneRight = [], maxLane = 0;
+    p._eventLanes = {};
     evs.slice().sort(function (a, b) { return a.year - b.year; }).forEach(function (e) {
       var L = xFor(e.year), R = L + 14, lane = 0;
       for (;; lane++) {
@@ -3237,7 +3271,7 @@ _build:
         var blocked = (lane === 0) && hitsReserved(L, R);
         if (clear && !blocked) break;
       }
-      laneRight[lane] = R; e.lane = lane;
+      laneRight[lane] = R; p._eventLanes[e.id] = lane;
       if (lane > maxLane) maxLane = lane;
     });
     return maxLane + 1;
@@ -3360,8 +3394,10 @@ _build:
         }
         (peopleByLine[l.id] || []).forEach(function (p) {
           var b = born(p), d = died(p);
-          var barL = (b != null) ? xFor(b) : (d != null ? xFor(d) - 40 : xFor(minY));
-          var barR = (d != null) ? xFor(d) : xFor(maxY);
+          var barL, barR;
+          if (b != null) { barL = xFor(b); barR = (d != null) ? xFor(d) : xFor(maxY); }
+          else if (d != null) { barL = xFor(d) - 40; barR = xFor(d); }
+          else { barL = xFor(minY); barR = barL + 90; }
           var barW = Math.max(3, barR - barL);
           var bar = mk('tl-lifebar', field);
           bar.style.left = px(barL); bar.style.width = px(barW); bar.style.top = px(rowY);
@@ -3379,11 +3415,12 @@ _build:
           bar.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); selectPerson(p); } });
 
           if (b != null) { var bb = mkBlk('birth', xFor(b), rowY + 2, b + '  born  ' + p.name, function () { selectPerson(p); }); bb.style.background = color; }
-          if (d != null) { mkBlk('death', xFor(d), rowY + 2, d + '  dies  ' + p.name, function () { selectPerson(p); }); }
+          if (d != null) { mkBlk('death', xFor(d), rowY + 2, d + (isTransformation(p) ? '  becomes undead  ' : '  dies  ') + p.name, function () { selectPerson(p); }); }
 
           personalEventsById[p.id].forEach(function (e) {
             var col2 = tierColor(e.tier);
-            var evTop = (e.lane === 0) ? rowY : (rowY + BARH + ROWGAP + (e.lane - 1) * LANEH);
+            var lane = (p._eventLanes && p._eventLanes[e.id]) || 0;
+            var evTop = (lane === 0) ? rowY : (rowY + BARH + ROWGAP + (lane - 1) * LANEH);
             var eb = mkBlk('event', xFor(e.year), evTop + 2, e.year + '  ' + e.title + '  (' + p.name + ')', function () { selectEvent(e.id); });
             eb.style.background = col2; eb.dataset.ev = e.id;
             evEls[e.id + '@' + p.id] = eb; evEls[e.id] = eb;
@@ -3434,7 +3471,7 @@ _build:
     var out = [];
     people.forEach(function (p) {
       var b = born(p), d = died(p), alive;
-      if (b != null) alive = (b <= y) && (d == null || y <= d);
+      if (b != null) alive = (b <= y) && (d == null || y <= d || isTransformation(p));
       else if (d != null) alive = (y <= d) && (y >= d - 95);
       else alive = false;
       if (alive) out.push(p);
@@ -3458,16 +3495,20 @@ _build:
 
   function personCard(p, yr) {
     var b = born(p), d = died(p), age = (b != null) ? (yr - b) : null;
-    var dies = (d != null && yr === d);
+    var trans = isTransformation(p);
+    var becomesNow = (d != null && yr === d && trans);
+    var dies = (d != null && yr === d && !trans);
     var ageText;
-    if (dies) ageText = (b != null) ? ('dies this year at age ' + age) : 'dies this year';
+    if (becomesNow) ageText = (b != null) ? ('becomes undead this year at age ' + age) : 'becomes undead this year';
+    else if (dies) ageText = (b != null) ? ('dies this year at age ' + age) : 'dies this year';
     else if (b == null) ageText = 'birth year unrecorded';
     else if (age <= 0) ageText = 'born ' + b;
+    else if (trans && d != null && yr > d) ageText = 'age ' + age + ' &middot; undead since ' + d;
     else ageText = 'age ' + age + ' &middot; b. ' + b;
     var line = lineById[p.line] ? lineById[p.line].label : '';
     var here = locationAt(p, yr);
     var place = (line || '') + (line && here ? ' - ' : '') + (here || '');
-    var s = '<div class="tl-person"><p class="tl-pn">' + esc(p.name) + ' <span class="tl-age' + (dies ? ' tl-dies' : '') + '">' + ageText + '</span></p>';
+    var s = '<div class="tl-person"><p class="tl-pn">' + esc(p.name) + ' <span class="tl-age' + ((dies || becomesNow) ? ' tl-dies' : '') + '">' + ageText + '</span></p>';
     if (p.role) s += '<p class="tl-role">' + esc(p.role) + '</p>';
     if (place) s += '<p class="tl-pl">' + esc(place) + '</p>';
     if (p.relationships && p.relationships.length) {
@@ -3557,7 +3598,7 @@ _build:
     if (e.flags && e.flags.length) { h += '<div class="tl-sec-b"><span class="tl-sec">Flags</span>'; e.flags.forEach(function (fid) { var f = flagById[fid]; if (!f) return; h += '<details class="tl-flag"><summary>' + esc(f.title || fid) + '</summary><p>' + esc(f.text || '') + '</p></details>'; }); h += '</div>'; }
     if (e.present && e.present.length) {
       var cast = [];
-      e.present.forEach(function (pid) { var p = personById[pid]; if (!p) return; var b = born(p), d = died(p); if (b != null && b > e.year) return; if (d != null && d < e.year) return; cast.push(p); });
+      e.present.forEach(function (pid) { var p = personById[pid]; if (!p) return; var b = born(p), d = died(p); if (b != null && b > e.year) return; if (d != null && d < e.year && !isTransformation(p)) return; cast.push(p); });
       h += '<div class="tl-sec-b"><span class="tl-sec">Who was present</span>';
       if (cast.length) { h += '<details class="tl-castwrap" open><summary>The cast alive in ' + esc(e.year) + ' (' + cast.length + ')</summary><div class="tl-cast">'; cast.forEach(function (c) { h += personCard(c, e.year); }); h += '</div></details>'; }
       else { h += '<p class="tl-gloss">No one on this entry\'s cast list was alive in ' + esc(e.year) + '.</p>'; }
@@ -3633,9 +3674,12 @@ _build:
       h += '</div>';
     }
 
-    h += '<div class="tl-sec-b"><span class="tl-sec">Death</span>';
+    var isTrans = isTransformation(p);
+    h += '<div class="tl-sec-b"><span class="tl-sec">' + (isTrans ? 'Transformation' : 'Death') + '</span>';
     if (d && typeof d.year === 'number') {
-      h += '<p class="tl-status"><span class="tl-badge" style="background:' + tierColor(d.tier) + '">' + esc(d.tier) + '</span>Died ' + esc(d.year) + (d.uncertain ? ' (printed with a question mark)' : '') + '</p>';
+      var deathLabel = isTrans ? 'Becomes undead ' : 'Died ';
+      h += '<p class="tl-status"><span class="tl-badge" style="background:' + tierColor(d.tier) + '">' + esc(d.tier) + '</span>' + deathLabel + esc(d.year) + (d.uncertain ? ' (printed with a question mark)' : '') + '</p>';
+      if (isTrans) h += '<p class="tl-gloss">No true death: this marks the transformation to undeath, not an end.</p>';
       if (d.note) h += '<p class="tl-gloss">' + esc(d.note) + '</p>';
       if (d.rejected) h += '<p class="tl-gloss">Rejected reading: ' + esc(d.rejected.year) + ' (' + esc(d.rejected.source) + ', ' + esc(d.rejected.tier) + ') — ' + esc(d.rejected.reason) + '</p>';
       h += srcLine('Source', d.source);

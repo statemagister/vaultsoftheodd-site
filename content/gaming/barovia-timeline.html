@@ -123,11 +123,14 @@ _build:
 .tl-feedback { border-top: 1px solid var(--rule); margin-top: 0.9rem; padding-top: 0.7rem; }
 .tl-feedback .tl-gloss { margin-bottom: 0.4rem; }
 .tl-feedback #tlFbCtxLabel { color: var(--gold); font-style: italic; }
-.tl-fbtext { width: 100%; box-sizing: border-box; resize: vertical; background: var(--bg); color: var(--text-primary); border: 1px solid var(--rule); border-radius: 3px; font-family: var(--body); font-size: 0.82rem; padding: 0.4rem 0.5rem; margin-bottom: 0.5rem; }
-.tl-fbtext:focus { outline: none; border-color: var(--gold); }
+.tl-fbtext, .tl-fbemail { width: 100%; box-sizing: border-box; background: var(--bg); color: var(--text-primary); border: 1px solid var(--rule); border-radius: 3px; font-family: var(--body); font-size: 0.82rem; padding: 0.4rem 0.5rem; margin-bottom: 0.5rem; }
+.tl-fbtext { resize: vertical; }
+.tl-fbtext:focus, .tl-fbemail:focus { outline: none; border-color: var(--gold); }
 .tl-fbsend { background: transparent; border: 1px solid var(--gold); color: var(--gold); font-family: var(--display); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.35rem 0.8rem; border-radius: 3px; cursor: pointer; }
 .tl-fbsend:hover { background: var(--gold); color: #15120f; }
+.tl-fbsend:disabled { opacity: 0.5; cursor: default; background: transparent; color: var(--gold); }
 .tl-fbstatus { margin: 0.5rem 0 0; }
+.tl-fbstatus.is-error { color: #c0553a; }
 
 @media (max-width: 900px) {
   .tl-layout { display: block; height: auto; }
@@ -157,8 +160,9 @@ _build:
         <span class="tl-sec">Suggest a correction</span>
         <p class="tl-gloss">About: <span id="tlFbCtxLabel">this timeline</span></p>
         <textarea id="tlFbText" class="tl-fbtext" rows="3" placeholder="Think this is wrong, or know something we don't? Say what and why."></textarea>
+        <input type="email" id="tlFbEmail" class="tl-fbemail" placeholder="Your email (optional, if you'd like a reply)">
         <button type="button" id="tlFbSend" class="tl-fbsend">Send suggestion</button>
-        <p class="tl-gloss tl-fbstatus" id="tlFbStatus" hidden>Opening your email client &mdash; feel free to add more before sending.</p>
+        <p class="tl-gloss tl-fbstatus" id="tlFbStatus" hidden></p>
       </div>
     </aside>
   </div>
@@ -5301,9 +5305,11 @@ _build:
   function srcLine(label, code) { var g = sourceGloss(code); return '<p class="tl-src"><strong>' + label + ':</strong> ' + esc(code) + (g ? ' <span class="tl-src-g">' + esc(g) + '</span>' : '') + '</p>'; }
 
   // ---- Feedback: whatever's on screen (a year, an event, a person, a line)
-  // is always one click away from being flagged as a suggestion or correction.
-  // No backend -- opens the reader's own mail client with the entry's
-  // context pre-filled, so it lands as an email with a reply-to address.
+  // is always one click away from being flagged as a suggestion or
+  // correction. Posts straight to Formspree (no page navigation, no reader
+  // account) with the entry's context pre-filled; the reader only ever
+  // types the note itself.
+  var FEEDBACK_ENDPOINT = 'https://formspree.io/f/xgogyldq';
   var fbCtx = { label: 'this timeline', kind: 'general', id: null, year: null };
   var fbCtxLabelEl = document.getElementById('tlFbCtxLabel');
   function setFeedbackCtx(label, kind, id, year) {
@@ -5311,22 +5317,44 @@ _build:
     if (fbCtxLabelEl) fbCtxLabelEl.textContent = label;
   }
   var fbText = document.getElementById('tlFbText');
+  var fbEmail = document.getElementById('tlFbEmail');
   var fbStatus = document.getElementById('tlFbStatus');
   var fbSend = document.getElementById('tlFbSend');
   if (fbSend) {
     fbSend.addEventListener('click', function () {
       var text = (fbText.value || '').trim();
       if (!text) { fbText.focus(); return; }
-      var subject = 'Barovia Timeline suggestion: ' + fbCtx.label;
-      var lines = ['Entry: ' + fbCtx.label];
-      if (fbCtx.kind === 'event') lines.push('Event id: ' + fbCtx.id);
-      if (fbCtx.kind === 'person') lines.push('Person id: ' + fbCtx.id);
-      if (fbCtx.kind === 'line') lines.push('Domain id: ' + fbCtx.id);
-      if (fbCtx.year != null) lines.push('Year: ' + fbCtx.year);
-      lines.push('', 'Suggestion:', text, '', '(sent from the Barovia Timeline widget)');
-      var href = 'mailto:statemagister@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
-      window.location.href = href;
-      if (fbStatus) fbStatus.hidden = false;
+      var email = (fbEmail && fbEmail.value || '').trim();
+      var payload = {
+        _subject: 'Barovia Timeline suggestion: ' + fbCtx.label,
+        entry: fbCtx.label,
+        kind: fbCtx.kind,
+        id: fbCtx.id || '',
+        year: (fbCtx.year != null) ? fbCtx.year : '',
+        message: text
+      };
+      if (email) payload._replyto = email;
+      fbSend.disabled = true;
+      fbSend.textContent = 'Sending…';
+      if (fbStatus) { fbStatus.hidden = false; fbStatus.classList.remove('is-error'); fbStatus.textContent = 'Sending…'; }
+      fetch(FEEDBACK_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function (res) {
+        if (res.ok) {
+          fbText.value = '';
+          if (fbEmail) fbEmail.value = '';
+          if (fbStatus) fbStatus.textContent = 'Sent — thank you.';
+        } else {
+          if (fbStatus) { fbStatus.classList.add('is-error'); fbStatus.textContent = "Couldn't send — please try again."; }
+        }
+      }).catch(function () {
+        if (fbStatus) { fbStatus.classList.add('is-error'); fbStatus.textContent = "Couldn't send — check your connection and try again."; }
+      }).then(function () {
+        fbSend.disabled = false;
+        fbSend.textContent = 'Send suggestion';
+      });
     });
   }
 

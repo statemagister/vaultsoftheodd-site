@@ -5549,6 +5549,8 @@ _build:
     if (b && typeof b.year === 'number') {
       h += '<p class="tl-status"><span class="tl-badge" style="background:' + tierColor(b.tier) + '">' + esc(b.tier) + '</span>Born ' + esc(b.year) + '</p>';
       if (b.note) h += '<p class="tl-gloss">' + esc(b.note) + '</p>';
+      if (b.rot_printed != null) h += '<p class="tl-gloss">RoT prints ' + esc(b.rot_printed) + '.</p>';
+      if (b.adjust_note) h += '<p class="tl-gloss">Adjusted: ' + esc(b.adjust_note) + '</p>';
       h += srcLine('Source', b.source);
     } else {
       h += '<p class="tl-gloss">Birth year unrecorded' + (b && b.note ? ': ' + esc(b.note) : '') + '.</p>';
@@ -5595,6 +5597,8 @@ _build:
       h += '<p class="tl-status"><span class="tl-badge" style="background:' + tierColor(d.tier) + '">' + esc(d.tier) + '</span>' + deathLabel + esc(d.year) + (d.uncertain ? ' (printed with a question mark)' : '') + '</p>';
       if (isTrans) h += '<p class="tl-gloss">No true death: this marks the transformation to undeath, not an end.</p>';
       if (d.note) h += '<p class="tl-gloss">' + esc(d.note) + '</p>';
+      if (d.rot_printed != null) h += '<p class="tl-gloss">RoT prints ' + esc(d.rot_printed) + '.</p>';
+      if (d.adjust_note) h += '<p class="tl-gloss">Adjusted: ' + esc(d.adjust_note) + '</p>';
       if (d.rejected) h += '<p class="tl-gloss">Rejected reading: ' + esc(d.rejected.year) + ' (' + esc(d.rejected.source) + ', ' + esc(d.rejected.tier) + ') — ' + esc(d.rejected.reason) + '</p>';
       h += srcLine('Source', d.source);
     } else {

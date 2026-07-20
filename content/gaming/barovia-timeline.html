@@ -149,8 +149,7 @@ _build:
 </div>
 <div class="tl-tip" id="tlTip" hidden></div>
 
-<script id="timeline-data" type="application/json">
-{
+<script id="timeline-data" type="application/json">{
   "meta": {
     "title": "The Peculiar but Interactive Timeline of Barovia",
     "span": {
@@ -200,7 +199,9 @@ _build:
       "DOMAIN FORMATION SOURCE FOUND: Drew uploaded 'Darklords.pdf' (29 pages, scanned/image — eye-read, OCR empty). It contains the darklord write-ups (page 1 = Strahd). NEXT SESSION: read the relevant darklord pages by EYE and source each domain's founding CRIME + border-closing mechanism, then fill the 'formation_todo' on each domain event (borca_684 Camille, falkovnia_690 Drakov, richemulot_694 Renier, dementlieu_707 d'Honaire, arkandale_708 N.Timothy, dorvinia_715 I.Dilisnya, verbrek_730 A.Timothy, mordent_entry_579 Godefroy). This is the clean targeted read the earlier task was waiting on — the 235-page RoT hunt is NO LONGER needed; use Darklords.pdf directly."
     ],
     "tree_markers_note": "TREE MARKERS: (a) each person has a 'born_marker' {year,tier,known} — render a birth node; year=null => unknown, never 0. (b) mothers carry 'maternal_markers' [{type:'gave-birth-to', child, child_birth, father}] — render the maternal line distinctly from paternal parentage (matters where mother/father differ, e.g. Leo: born of Dorfniya, fathered by Gunther Cosco). (c) marriage events carry kind:'marriage', locked:true, roll_d6, and precede the first child (or, for childless couples, sit at wife age 18+1d6). (d) affair/unmarried unions carry unmarried:true and have NO marriage node.",
-    "prime_material_exclusion": "Sturm's line escaped Barovia entirely and was NEVER drawn into the mists; his ~10-12 generational descendants live on the PRIME-MATERIAL Barovia (the restored ancestral home), NOT in the demiplane. They must be EXCLUDED from this (demiplane) timeline unless/until a hook draws one of them into the mists. If Sturm-descendant records are ever added, tag them line:'prime-material' and keep them off the demiplane event spine."
+    "prime_material_exclusion": "Sturm's line escaped Barovia entirely and was NEVER drawn into the mists; his ~10-12 generational descendants live on the PRIME-MATERIAL Barovia (the restored ancestral home), NOT in the demiplane. They must be EXCLUDED from this (demiplane) timeline unless/until a hook draws one of them into the mists. If Sturm-descendant records are ever added, tag them line:'prime-material' and keep them off the demiplane event spine.",
+    "birthplace_rule": "Birthplace is UNKNOWN by default. Asserted only when (a) a source states it (SOURCED), or (b) derived from the MOTHER'S known location at birth (INFER). Castle Ravenloft is reserved for the ROYAL LINES only (von Zarovich ruling house) and children of a castle-resident royal mother (e.g. Dorfniya's children). Court-attached (non-royal) families' children are born in BAROVIA at most, never the castle. Spouses who married in, and anyone whose mother's location at birth is not established, remain UNKNOWN (null; do not render as a place). Residence can change over time (see location_by_period) — birthplace is the fixed point at birth and is not altered by later side-taking or relocation.",
+    "dynasty_naming": "THE FAMILY & THE KINGDOM NAMES (reconstruction). FAMILY: true name DILISNYA; Barov assumed the royal style 'von Zarovich' on founding the kingdom; later record-keepers back-projected it through the ancestry (cf. Windsor), so sources read von Zarovich for the whole line though adopted at Barov. Source display forms are KEPT; strict patronymic convention (male 'Dilisnovich', female 'Dilisnya'; royal masc. '-ovich', fem. '-ovna') is noted but not applied, since the sources don't observe it. KINGDOM: the construction-support town below the castle was taken first in the siege and renamed 'Barov's town' in wartime; at the founding the realm took the town's name — BAROVIA (land of Barov) — suggested by Queen Raven (SPEC). This is why I6's village and kingdom share the name: the town was named first, the realm from it. The land's earlier name honoured an antecedent (Peculiar History). CASTLE: built by Artimus for the Endorovich king (I6); called 'Castle Ravenloft' only from Strahd's 347 naming — earlier births occur at 'the castle', not 'Castle Ravenloft'."
   },
   "lines": [
     {
@@ -328,6 +329,12 @@ _build:
         "tier": "SPEC",
         "known": false,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -367,13 +374,20 @@ _build:
         }
       ],
       "on_event_spine": false,
-      "notes": "The 'Czar von Zarovich' named in Drew's Peculiar History as Barov's father (and Dorfniya's). Son of Vasili; father of the reigning branch. Undated, SPEC — the parent generation needed to root Barov and Dorfniya and to make the shared-grandfather cousin link to Endor work.",
+      "notes": "The 'Czar von Zarovich' named in Drew's Peculiar History as Barov's father (and Dorfniya's). Son of Vasili; father of the reigning branch. Undated, SPEC — the parent generation needed to root Barov and Dorfniya and to make the shared-grandfather cousin link to Endor work. | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two.",
       "born_marker": {
         "year": null,
         "tier": "SPEC",
         "known": false,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
-      }
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
+      },
+      "name_convention": "Displayed under the assumed royal name 'von Zarovich' (source convention). True birth family: Dilisnya. Strict patronymic would be masculine 'Dilisnovich' / royal masc. 'von Zarovich', fem. 'von Zarovna'."
     },
     {
       "id": "vasili_vz",
@@ -405,13 +419,20 @@ _build:
         }
       ],
       "on_event_spine": false,
-      "notes": "Vasili von Zarovich — the CLAIMED grandfather of Barov (Drew's Peculiar History) and the shared dynastic root that makes the Von Zarovich and 'Dilisnya' lines ONE tree, not two. Undated. SPEC reconstruction; unifies the family per the dilisnya_is_vonzarovich reading.",
+      "notes": "Vasili von Zarovich — the CLAIMED grandfather of Barov (Drew's Peculiar History) and the shared dynastic root that makes the Von Zarovich and 'Dilisnya' lines ONE tree, not two. Undated. SPEC reconstruction; unifies the family per the dilisnya_is_vonzarovich reading. | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two.",
       "born_marker": {
         "year": null,
         "tier": "SPEC",
         "known": false,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
-      }
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
+      },
+      "name_convention": "Displayed under the assumed royal name 'von Zarovich' (source convention). True birth family: Dilisnya. Strict patronymic would be masculine 'Dilisnovich' / royal masc. 'von Zarovich', fem. 'von Zarovna'."
     },
     {
       "id": "barov",
@@ -419,9 +440,11 @@ _build:
       "family": "VonZarovich",
       "line": "barovia",
       "birth": {
-        "year": 277,
+        "year": 283,
         "tier": "CORE",
-        "source": "RoT"
+        "source": "RoT",
+        "rot_printed": 277,
+        "adjust_note": "RoT prints 277; adjusted to 281 (VotO compression -4y) to reduce the geriatric clustering at the 346/351 catastrophe. RoT value retained here. Young motherhood was the norm, so parent-child gaps remain plausible. | Male-cohort further -2y -> 283."
       },
       "death": {
         "year": 346,
@@ -463,13 +486,20 @@ _build:
           "note": "Father is the Czar von Zarovich (son of Vasili). Roots Barov/Dorfniya in the unified tree."
         }
       ],
-      "notes": "King of Barovia; the kingdom is named for him (though likely originally for an antecedent). Dies 346, before Strahd's return. PUB position: dead before the return, load-bearing for the succession. | Peculiar History: Barov is first-born son of 'Czar von Zarovich'; his grandfather is CLAIMED to be Vasili von Zarovich (Drew's reconstruction; note the 'Czar/tsar' element supports the Zarovich='of the tsar' reading).",
+      "notes": "King of Barovia; the kingdom is named for him (though likely originally for an antecedent). Dies 346, before Strahd's return. PUB position: dead before the return, load-bearing for the succession. | Peculiar History: Barov is first-born son of 'Czar von Zarovich'; his grandfather is CLAIMED to be Vasili von Zarovich (Drew's reconstruction; note the 'Czar/tsar' element supports the Zarovich='of the tsar' reading). | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two. | FOUNDER: Barov is DILISNYA by birth; he ASSUMES 'von Zarovich' on taking the throne (conquest of the Endorovich castle), as the legitimising royal name. This rhymes forward: his son Strahd later self-styles 'Count' to legitimise HIS seizure — both found rule on an assumed title.",
       "born_marker": {
-        "year": 277,
+        "year": 283,
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
-      }
+      },
+      "birthplace": {
+        "place": "the pre-conquest Dilisnya homeland (a land subject to the Endorovich king; exact place unrecorded)",
+        "tier": "SPEC",
+        "known": true,
+        "note": "Born 277, decades before Barov's conquest of the Endorovich castle (post-marriage ~304+). NOT castle-born. The homeland is the land the construction-slaves came from — Barov's motive and base. Name unrecorded."
+      },
+      "name_convention": "Displayed under the assumed royal name 'von Zarovich' (source convention). True birth family: Dilisnya. Strict patronymic would be masculine 'Dilisnovich' / royal masc. 'von Zarovich', fem. 'von Zarovna'."
     },
     {
       "id": "ravenia",
@@ -477,9 +507,11 @@ _build:
       "family": "VonZarovich",
       "line": "barovia",
       "birth": {
-        "year": 283,
+        "year": 286,
         "tier": "CORE",
-        "source": "RoT"
+        "source": "RoT",
+        "rot_printed": 283,
+        "adjust_note": "RoT prints 283; set to 286 (VotO compression -3y). Kept one year older than the uniform -4 so the dowry/betrothal timeline works: betrothal contract (van Roeyen wealth) funds Barov's founding war; wedding ~305-306."
       },
       "death": {
         "year": 346,
@@ -528,7 +560,7 @@ _build:
       "open_question": "queen_name",
       "notes": "Queen of Barovia. Marriage to Barov reconstructed at ~304 (INFER; RoT prints no marriage date). Name unsettled across sources; see open question.",
       "born_marker": {
-        "year": 283,
+        "year": 286,
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
@@ -555,7 +587,13 @@ _build:
           "father": "barov",
           "note": "Maternal 'gave birth to' marker, distinct from the paternal line."
         }
-      ]
+      ],
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
+      }
     },
     {
       "id": "strahd",
@@ -596,7 +634,7 @@ _build:
           "source": "RoT"
         }
       ],
-      "notes": "Firstborn. Undead Lord of Barovia 351. REVISED RECONSTRUCTION (coup-gone-wrong): a SKILLED (not sorcerous) Ba'al Verzi assassin who funded an army with his trade and returned to Barovia's TOWN/CITY in disguise (never court) to corrupt family and clergy away from the castle. He managed the risk by making sightings CONTRADICTORY (seen in Barovia / seen far off at the war), so 'away at war' held. In 346 the goblin SIEGE let him breach the castle he could not otherwise enter; but the assault hit early and hard, the coup collapsed, and RAVENIA WAS KILLED UNINTENTIONALLY in the chaos he unleashed — he witnessed it, devastated (root of his tomb-grief). He fled to his army and returned 347 as false hero/saviour. 'Death' 351 = transformation. | 346-347 (tighter): orchestrated goblin WAVES as coup-cover; the waves ground Dorian down by attrition and then slipped Strahd's control, wrecking the inside coup (Ravenia killed, Sturm escaped) — his own botched disaster. He then CANNOT let his goblins take the still-standing castle (the prize), so his intervention is COMPELLED: timed (luck or magic) to spare the castle, break the goblins as 'saviour', and besiege a hollow seat he KNOWS won't hold, having engineered its depletion. | THE TRUE DISASTER — RAVENIA'S DEATH (reconstruction, emotional core of 346): To Strahd the catastrophe is NOT the strategic failure of the coup (which he recovers — he takes the throne in 347 regardless). The disaster is his MOTHER'S DEATH. He wanted her to LIVE and SEE HIM ON THE THRONE — for two reasons that are, for him, the same object (her recognition): (1) LEGITIMACY — Ravenia is the queen, the van Roeyen line, the maternal source of a rightful claim; the disinherited son needed her living endorsement to make his throne look rightful rather than stolen. (2) LOVE — she is, arguably, the ONLY person Strahd ever loved: the mother who found the dagger yet saved him from Barov, who kept the secret correspondence for twenty years, who never quite believed his lies but never stopped reaching for him. She loved the son she couldn't trust; he loved the mother he lied to. Her seeing him crowned would have been his political legitimation AND his emotional vindication — proof to the one person whose judgement he cared about that the disgraced son had made himself worthy, had undone Barov's disinheritance. His own botched scheme KILLED HER before she could see it. This is why his grief at her tomb is inconsolable: it is the one loss he cannot spin, recover, or rewrite. He won the crown and lost the only reason it would have meant anything — the one witness whose seeing would have vindicated him, gone by his own hand. (Optional resonance: the centuries-long doomed pursuit of Tatyana reads as the displaced, insatiable form of this original irrecoverable loss — he chases a love he can never secure because he destroyed the love he had.) This makes Strahd TRAGIC without making him good: his defining drive (ambition for the throne + his mother's recognition) destroyed the one thing he valued above the throne, by his own hand.",
+      "notes": "Firstborn. Undead Lord of Barovia 351. REVISED RECONSTRUCTION (coup-gone-wrong): a SKILLED (not sorcerous) Ba'al Verzi assassin who funded an army with his trade and returned to Barovia's TOWN/CITY in disguise (never court) to corrupt family and clergy away from the castle. He managed the risk by making sightings CONTRADICTORY (seen in Barovia / seen far off at the war), so 'away at war' held. In 346 the goblin SIEGE let him breach the castle he could not otherwise enter; but the assault hit early and hard, the coup collapsed, and RAVENIA WAS KILLED UNINTENTIONALLY in the chaos he unleashed — he witnessed it, devastated (root of his tomb-grief). He fled to his army and returned 347 as false hero/saviour. 'Death' 351 = transformation. | 346-347 (tighter): orchestrated goblin WAVES as coup-cover; the waves ground Dorian down by attrition and then slipped Strahd's control, wrecking the inside coup (Ravenia killed, Sturm escaped) — his own botched disaster. He then CANNOT let his goblins take the still-standing castle (the prize), so his intervention is COMPELLED: timed (luck or magic) to spare the castle, break the goblins as 'saviour', and besiege a hollow seat he KNOWS won't hold, having engineered its depletion. | THE TRUE DISASTER — RAVENIA'S DEATH (reconstruction, emotional core of 346): To Strahd the catastrophe is NOT the strategic failure of the coup (which he recovers — he takes the throne in 347 regardless). The disaster is his MOTHER'S DEATH. He wanted her to LIVE and SEE HIM ON THE THRONE — for two reasons that are, for him, the same object (her recognition): (1) LEGITIMACY — Ravenia is the queen, the van Roeyen line, the maternal source of a rightful claim; the disinherited son needed her living endorsement to make his throne look rightful rather than stolen. (2) LOVE — she is, arguably, the ONLY person Strahd ever loved: the mother who found the dagger yet saved him from Barov, who kept the secret correspondence for twenty years, who never quite believed his lies but never stopped reaching for him. She loved the son she couldn't trust; he loved the mother he lied to. Her seeing him crowned would have been his political legitimation AND his emotional vindication — proof to the one person whose judgement he cared about that the disgraced son had made himself worthy, had undone Barov's disinheritance. His own botched scheme KILLED HER before she could see it. This is why his grief at her tomb is inconsolable: it is the one loss he cannot spin, recover, or rewrite. He won the crown and lost the only reason it would have meant anything — the one witness whose seeing would have vindicated him, gone by his own hand. (Optional resonance: the centuries-long doomed pursuit of Tatyana reads as the displaced, insatiable form of this original irrecoverable loss — he chases a love he can never secure because he destroyed the love he had.) This makes Strahd TRAGIC without making him good: his defining drive (ambition for the throne + his mother's recognition) destroyed the one thing he valued above the throne, by his own hand. | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two.",
       "location_by_period": [
         {
           "from": 306,
@@ -632,7 +670,14 @@ _build:
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
       },
-      "immortal": true
+      "immortal": true,
+      "birthplace": {
+        "place": "the castle (the newly-taken seat; not yet named Castle Ravenloft — Strahd names it in 347)",
+        "tier": "INFER",
+        "known": true,
+        "note": "Born 306 as the siege ends: the family moves into the captured keep just in time for Ravenia to give birth. Strahd is thus the FIRST child born at the new seat — the crown prince born as the dynasty is founded. The castle is Endorovich's former keep (built by Artimus), being converted from a tyrant's stronghold into a home around the birth; the name 'Castle Ravenloft' postdates Strahd's 347 naming."
+      },
+      "name_convention": "Displayed under the assumed royal name 'von Zarovich' (source convention). True birth family: Dilisnya. Strict patronymic would be masculine 'Dilisnovich' / royal masc. 'von Zarovich', fem. 'von Zarovna'."
     },
     {
       "id": "sturm",
@@ -676,7 +721,7 @@ _build:
           "source": "RoT"
         }
       ],
-      "notes": "Middle brother; next in succession after Strahd. SURVIVES with a natural lifespan and marries; his crypt in Castle Ravenloft is EMPTY (VotM ch.25). Reconstruction: the one man who understood Strahd's coup and fled, lacking the manpower to stop him or make an accusation stick. His survival is predicted evidence, not an anomaly. | ESCAPE & RESTORATION (SPEC reconstruction): Sturm and his family escape Barovia COMPLETELY and are NEVER drawn into the mists — when Barovia is taken into the demiplane, his line is already out, in exile on the PRIME MATERIAL PLANE. They later discover the physical valley ABANDONED (the true Barovia having been taken into the mists, leaving the prime-material valley empty) and RETURN with friends and supporters to restore their ancestral home on the prime material plane. So the rightful (disinherited) line survives, escapes the demiplane entirely, and reclaims the ORIGINAL Barovia — while the usurper Strahd is sealed in the mists with a hollow copy. This is the deepest reading of his empty crypt: he was never part of Strahd's Barovia at all. Anchors: empty crypt + natural lifespan (VotM); I6's restoration ending; the 'original Barovia it was taken from' language.",
+      "notes": "Middle brother; next in succession after Strahd. SURVIVES with a natural lifespan and marries; his crypt in Castle Ravenloft is EMPTY (VotM ch.25). Reconstruction: the one man who understood Strahd's coup and fled, lacking the manpower to stop him or make an accusation stick. His survival is predicted evidence, not an anomaly. | ESCAPE & RESTORATION (SPEC reconstruction): Sturm and his family escape Barovia COMPLETELY and are NEVER drawn into the mists — when Barovia is taken into the demiplane, his line is already out, in exile on the PRIME MATERIAL PLANE. They later discover the physical valley ABANDONED (the true Barovia having been taken into the mists, leaving the prime-material valley empty) and RETURN with friends and supporters to restore their ancestral home on the prime material plane. So the rightful (disinherited) line survives, escapes the demiplane entirely, and reclaims the ORIGINAL Barovia — while the usurper Strahd is sealed in the mists with a hollow copy. This is the deepest reading of his empty crypt: he was never part of Strahd's Barovia at all. Anchors: empty crypt + natural lifespan (VotM); I6's restoration ending; the 'original Barovia it was taken from' language. | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two.",
       "location_by_period": [
         {
           "from": 312,
@@ -697,7 +742,14 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
-      }
+      },
+      "birthplace": {
+        "place": "the castle (the ancestral seat; NOT yet named Castle Ravenloft — Strahd names it in 347)",
+        "tier": "INFER",
+        "known": true,
+        "note": "Castle-born (royal, castle-resident mother Ravenia). son of Ravenia, born 312, after the conquest. The name 'Castle Ravenloft' postdates 347; the physical seat is the same castle Barov took from the Endorovich line."
+      },
+      "name_convention": "Displayed under the assumed royal name 'von Zarovich' (source convention). True birth family: Dilisnya. Strict patronymic would be masculine 'Dilisnovich' / royal masc. 'von Zarovich', fem. 'von Zarovna'."
     },
     {
       "id": "gisella",
@@ -753,6 +805,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -798,7 +856,7 @@ _build:
           "source": "RoT"
         }
       ],
-      "notes": "Youngest brother. Took the Priest's Pendant (the Holy Symbol, unrecognised) after Kir died in 350. Murdered by Strahd in 351 on his wedding day; Strahd blamed an unknown assassin, the birth of his 'easy way with falsehood' (VotM).",
+      "notes": "Youngest brother. Took the Priest's Pendant (the Holy Symbol, unrecognised) after Kir died in 350. Murdered by Strahd in 351 on his wedding day; Strahd blamed an unknown assassin, the birth of his 'easy way with falsehood' (VotM). | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two.",
       "location_by_period": [
         {
           "from": 324,
@@ -826,7 +884,14 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
-      }
+      },
+      "birthplace": {
+        "place": "the castle (the ancestral seat; NOT yet named Castle Ravenloft — Strahd names it in 347)",
+        "tier": "INFER",
+        "known": true,
+        "note": "Castle-born (royal, castle-resident mother Ravenia). son of Ravenia, born 324, after the conquest. The name 'Castle Ravenloft' postdates 347; the physical seat is the same castle Barov took from the Endorovich line."
+      },
+      "name_convention": "Displayed under the assumed royal name 'von Zarovich' (source convention). True birth family: Dilisnya. Strict patronymic would be masculine 'Dilisnovich' / royal masc. 'von Zarovich', fem. 'von Zarovna'."
     },
     {
       "id": "tatyana",
@@ -860,6 +925,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": "the village of Barovia",
+        "tier": "SPEC",
+        "known": true,
+        "note": "Drew's reconstruction; RoT prints only 'Tatyana Federovna'. Retained as flagged reconstruction, not bare assumption."
       }
     },
     {
@@ -896,17 +967,25 @@ _build:
         "tier": "SPEC",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
       "id": "dorfniya",
-      "name": "Dorfniya Von Zarovich",
+      "name": "Dorfniya Dilisnya",
       "family": "Dilisnya",
       "line": "barovia",
       "birth": {
-        "year": 289,
+        "year": 293,
         "tier": "CORE",
-        "source": "RoT"
+        "source": "RoT",
+        "rot_printed": 289,
+        "adjust_note": "RoT prints 289; adjusted to 293 (VotO compression -4y) to reduce the geriatric clustering at the 346/351 catastrophe. RoT value retained here. Young motherhood was the norm, so parent-child gaps remain plausible."
       },
       "death": {
         "year": 346,
@@ -973,9 +1052,9 @@ _build:
         }
       ],
       "open_question": "dilisnya_husband",
-      "notes": "REASONING LADDER. PRINTED (I6, primary, 1983): Crypt 8 reads 'Duchess Dorfniya Dilisnya' — I6 gives her the rank of Duchess directly. Crypt 9 reads 'Pidlwik (Fool of Dorfniya)' — Pidlwik is her JESTER. PRINTED (RoT, later, 1990): the Bloodlines tree prints Pidlwik as her HUSBAND and prints a blank, 'Dorfniya __?__', where her parentage should be. INTERPRETIVE FAILURE: where RoT contradicts I6, I6 governs (primary). I6 says Pidlwik is her fool; RoT's 'husband' is RoT misreading a jester relationship as a marriage. So: jester, not husband. INFERRED: a dukedom is held only by royal birth (daughter of the royal house) or royal marriage (wife of a duke). I6 prints her Duchess, so she is inside the royal family by one of those two doors. The marriage door requires an otherwise-unattested ducal Von Zarovich brother for her to have married; the birth door simply makes her Barov's sister. The birth door is the more economical and needs no invented figure. RoT's blank parentage is consistent with a struck royal descent. SPECULATION: if the blank hides a Von Zarovich parentage, then RoT's separate 'served the Von Zaroviches for generations' framing (Dilisnya tree) is part of the cover — a blood tie recast as service, the same struck-and-recovered legitimacy pattern seen in Strahd's naming claim and the Terg reclamation. CONCLUSION (tier INFER, favoured): Dorfniya is Barov's sister, royal by birth, her parentage struck by RoT. ALTERNATIVE (preserved): she married an otherwise-unknown royal brother. Either way I6's ducal rank places her inside the royal house. | KEY: Dorfniya is the SOLE Dilisnya in I6 (Crypt 8), a royal Von Zarovich duchess with no attached house — so 'Dilisnya' is a Von Zarovich NAME, and RoT's separate Dilisnya house is a later fabrication (see flag dilisnya_is_vonzarovich). She is not a Von Zarovich who married into a separate Dilisnya house; she IS the royal Dilisnya, and the house RoT built around her is royal blood under a name RoT mistook for a separate lineage. | SUPERSEDED SPECULATION (do not resurface): Peculiar History para 72 once floated Ravenia as 'Dorfniya's older sister' (making Dorfniya van Roeyen by birth, married into a separate Dilisnya house). This is REJECTED: for Dorfniya to hold the rank of DUCHESS (I6 Crypt 8) she must be royal by birth, i.e. Barov's sister (Von Zarovich). The ducal rank requires it. This is also what the dilisnya_is_vonzarovich reading depends on.",
+      "notes": "DILISNYA BY BIRTH AND MARRIAGE: Dorfniya is Barov's sister, born into the true family name DILISNYA (Barov assumed the royal 'von Zarovich' style; she did not). She also MARRIES her cousin Endor 'Dorian' Dilisnya, so she is Dilisnya by both routes — I6 Crypt 8 'Duchess Dorfniya Dilisnya' is correct and overdetermined. The KEY EVIDENCE for the one-family reading is this COUSIN-MARRIAGE (a royal duchess marrying a Dilisnya cousin only makes sense if the families are one), not the surname alone. Her 'heritage removed from the official records' (Peculiar History) reads as the cost of reasserting the Dilisnya name over the crown's von Zarovich style. NOTE: an earlier pass mislabelled her 'von Zarovich' — reverted; I6 was right. | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two.",
       "born_marker": {
-        "year": 289,
+        "year": 293,
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
@@ -1009,7 +1088,14 @@ _build:
           "father": "gunther_cosco",
           "note": "Maternal 'gave birth to' marker, distinct from the paternal line. Leo: born of Dorfniya but FATHERED BY Gunther Cosco (affair), raised as Pidlwik's — the mother/father split matters here."
         }
-      ]
+      ],
+      "house": "Dilisnya (true family name, by birth AND by marriage to her cousin Endor 'Dorian' Dilisnya)",
+      "birthplace": {
+        "place": "the pre-conquest Dilisnya homeland (as Barov's sister; exact place unrecorded)",
+        "tier": "SPEC",
+        "known": true,
+        "note": "Born 289, before the conquest. NOT castle-born; born in the family's pre-conquest homeland like her brother Barov."
+      }
     },
     {
       "id": "gunther_cosco",
@@ -1017,9 +1103,11 @@ _build:
       "family": "Dilisnya",
       "line": "barovia",
       "birth": {
-        "year": 299,
+        "year": 305,
         "tier": "CORE",
-        "source": "RoT"
+        "source": "RoT",
+        "rot_printed": 299,
+        "adjust_note": "RoT prints 299; adjusted to 303 (VotO compression -4y) to reduce the geriatric clustering at the 346/351 catastrophe. RoT value retained here. Young motherhood was the norm, so parent-child gaps remain plausible. | Male-cohort further -2y -> 305."
       },
       "death": {
         "year": 351,
@@ -1046,10 +1134,16 @@ _build:
       ],
       "notes": "The courtier 'who caught Dorfniya's eye'. Father of Leo by affair. Dies 351.",
       "born_marker": {
-        "year": 299,
+        "year": 305,
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -1095,6 +1189,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": "Castle Ravenloft (Barovia)",
+        "tier": "INFER",
+        "known": true,
+        "note": "Royal line / castle-resident royal mother. child of Dorfniya, royal-line and castle-resident"
       }
     },
     {
@@ -1137,6 +1237,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": "Barovia (domain)",
+        "tier": "INFER",
+        "known": true,
+        "note": "Court-attached family; born in Barovia (not the castle: non-royal). Dilisnya court family (Barovia)"
       }
     },
     {
@@ -1169,6 +1275,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -1210,6 +1322,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": "Barovia (domain)",
+        "tier": "INFER",
+        "known": true,
+        "note": "Court-attached family; born in Barovia (not the castle: non-royal). Dilisnya court family (Barovia)"
       }
     },
     {
@@ -1243,6 +1361,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -1280,6 +1404,12 @@ _build:
         "tier": "SPEC",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -1321,6 +1451,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": "Barovia (domain)",
+        "tier": "INFER",
+        "known": true,
+        "note": "Court-attached family; born in Barovia (not the castle: non-royal). Dilisnya court family (Barovia)"
       }
     },
     {
@@ -1353,6 +1489,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -1361,10 +1503,11 @@ _build:
       "family": "Dilisnya",
       "line": "barovia",
       "birth": {
-        "year": 280,
+        "year": 286,
         "tier": "SPEC",
         "source": "VotO",
-        "note": "Inherits the RoT Bloodlines Dilisnya-tree dates for the Duke (b280 d349): he IS the noble figure in the tree, Dorfniya's husband. Peculiar History names him Endor 'Dorian' Dilisnya. Distinct from Pidlwik the fool."
+        "note": "Inherits the RoT Bloodlines Dilisnya-tree dates for the Duke (b280 d349): he IS the noble figure in the tree, Dorfniya's husband. Peculiar History names him Endor 'Dorian' Dilisnya. Distinct from Pidlwik the fool.",
+        "adjust_note": "Reconstruction date lowered by 4y (280->284) to reduce the over-aged founding cohort. SPEC. | Male-cohort further -2y -> 286."
       },
       "death": {
         "year": 347,
@@ -1418,12 +1561,18 @@ _build:
       "open_question": null,
       "notes": "Duke Endor 'Dorian' Dilisnya (Peculiar History, Holstoy). Dorfniya's husband and father of Reinhold, Gertrude, and Oleka. Drew's spreadsheet holds his dukedom open: inherited from his father, or awarded by King Barov for service, and notes Endor and Barov were possibly cousins. DISTINCT from Pidlwik: Pidlwik is Dorfniya's FOOL (I6 Crypt 9, primary, governing); Endor is her husband the Duke. They share b280-d349 in Drew's dating but are two people. These dates are SPEC: best-guess reconstruction from the undated I6, fixed in time by the birth dates of his children. | DEATH 347, not the Bloodlines' 349: he holds the castle after the 346 deaths and Sturm's flight, and dies when Strahd arrives in 347. Supported by his ABSENCE from the I6 castle crypts (his wife Dorfniya is entombed there; the Duke is not). | Under the committed reading (dilisnya_is_vonzarovich), 'Dilisnya' is a Von Zarovich name, so Endor and the whole Dilisnya line are Von Zarovich BLOOD (consistent with Drew's 'possibly cousins' note — Endor a blood kinsman of Barov, not an outside house). No unusual name-taking: the name is royal to begin with. | NAME (revised this session): now Endor 'Dorian' Dilisnya. Everyone calls him Dorian. He is the lord Strahd claims to defeat in taking the castle (347); the later-edition 'Dorian the Goblyn King' is a corruption of THIS defeated Duke — the name is absorbed onto the Endor founder-root and given its true referent (Dorfniya's husband, last holder of the castle), while the Terg/Goblyn-King STORY remains excluded. | DORIAN'S ARC (reconstruction, coup-gone-wrong): Endor 'Dorian' Dilisnya, Dorfniya's husband, SURVIVES the 346 massacre (loses his wife), ensures Sturm and his family ESCAPE, then commits EVERYTHING left to a near-hopeless defence against the goblins. Strahd's fresh mercenary army exploits Dorian's all-in engagement: a TWO-DIRECTION assault (Dorian's exhausted defenders pinning them, Strahd's army delivering the killing blow) wipes the goblins out, and the momentum opens Dorian's PATH OF RETREAT to the castle. Strahd stays to 'clean up' the field, claim the SAVIOUR'S CREDIT for the whole victory (styling himself 'Count' — a self-assumed title for legitimacy, cf. the Count of Monte Cristo, since he was stripped of rank), and turns straight to BESIEGING the castle. But the castle is HOLLOW: Dorian spent its substance on the very battle that made Strahd a hero, so the siege Strahd prepares for a long haul COLLAPSES FAST — faster than Strahd, overprepared, expects. Dorian dies in the royal seat: the last loyal man of the old order, defeated by the dead king's disinherited son. His heroism is stolen TWICE (to make Strahd the saviour, and to make his own last stand hopeless) and INVERTED in the record — he will be remembered as a rebel/commoner/thief squatting in the royal seat, not the dutiful Duke, because everyone who could testify is dead or fled. The later-edition 'Dorian the Goblyn King' is the final layer of this slander. He is what the buried TRUTH looks like; Strahd is what the enthroned LIE looks like — the project's central theme in one figure-pair. | 346 INTERMENT (reconstruction): as the loyal authority holding the interregnum, Dorian handled the logistical INTERMENT of the 346 dead (incl. Dorfniya his wife, and her fool Pidlwik in the adjacent crypt), while Kir performed the religious rites and Ciril remained at the Holy Symbol crafting.",
       "born_marker": {
-        "year": 280,
+        "year": 286,
         "tier": "SPEC",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
       },
-      "name_note": "Endor Dilisnya, universally called DORIAN (Endor -> Endorian -> Dorian). Given name Endor dropped (freed for possible later use). Married to Dorfniya. He is the lord Strahd names as the one he DEFEATS to take Castle Ravenloft in 347 — which is how 'Dorian' enters the historical record (via Strahd's conquest-story), and why later editions, garbling the defeated Duke, produced 'Dorian the Goblyn King'. The name is here ABSORBED onto the primary-source Endor root and given its true referent, rather than left as an external counter-narrative."
+      "name_note": "Endor Dilisnya, universally called DORIAN (Endor -> Endorian -> Dorian). Given name Endor dropped (freed for possible later use). Married to Dorfniya. He is the lord Strahd names as the one he DEFEATS to take Castle Ravenloft in 347 — which is how 'Dorian' enters the historical record (via Strahd's conquest-story), and why later editions, garbling the defeated Duke, produced 'Dorian the Goblyn King'. The name is here ABSORBED onto the primary-source Endor root and given its true referent, rather than left as an external counter-narrative.",
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
+      }
     },
     {
       "id": "kir",
@@ -1456,6 +1605,12 @@ _build:
         "tier": "SPEC",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -1464,10 +1619,11 @@ _build:
       "family": "Church",
       "line": "barovia",
       "birth": {
-        "year": 250,
+        "year": 256,
         "tier": "SPEC",
         "source": "VotO",
-        "note": "Drew's dating (Peculiar History): b.250. SPEC. A teaching priest, not a high priest."
+        "note": "Drew's dating (Peculiar History): b.250. SPEC. A teaching priest, not a high priest.",
+        "adjust_note": "Reconstruction date lowered by 4y (250->254) to reduce the over-aged founding cohort. SPEC. | Male-cohort further -2y -> 256."
       },
       "death": {
         "year": 323,
@@ -1491,10 +1647,16 @@ _build:
       "on_event_spine": false,
       "notes": "Zarak Petrovic, a TEACHING priest, tutor to Strahd in his youth (Drew's reconstruction; b250 d327, SPEC). IMPORTANT SCOPE (per the published Holy Symbol article): Zarak is accepted ONLY as an ordinary teaching priest, NEVER as a high priest or most high priest, and is NOT part of the Holy Symbol succession (Ciril -> Kir). The article rejects the I,Strahd-derived claim that Zarak was a high-priest predecessor; it does not bar him existing as Strahd's tutor. His death 327 puts him long dead before the 347 Holy Symbol events, exactly as the article requires. Do not promote him to high priest. | RECONSTRUCTION: strong candidate for Strahd's first Ba'al Verzi kill (~323). The VotM ritual (see event exile_323) requires the first victim be someone the assassin knew; Strahd's own tutor fits precisely. This is the speculative-victim layer within the exile reconstruction.",
       "born_marker": {
-        "year": 250,
+        "year": 256,
         "tier": "SPEC",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -1503,10 +1665,11 @@ _build:
       "family": "Church",
       "line": "barovia",
       "birth": {
-        "year": 274,
+        "year": 280,
         "tier": "SPEC",
         "source": "VotO",
-        "note": "Peculiar History (Holstoy) dates Ciril Romulich Romanov b.274, likely third-born to a man known as Roman, ordained/high priest. SPEC in the source (a reasoned birth, not printed in I6/RoT). Death 347 (crafting the Holy Symbol killed him). This is DREW'S dated reconstruction, not Claude's guess."
+        "note": "Peculiar History (Holstoy) dates Ciril Romulich Romanov b.274, likely third-born to a man known as Roman, ordained/high priest. SPEC in the source (a reasoned birth, not printed in I6/RoT). Death 347 (crafting the Holy Symbol killed him). This is DREW'S dated reconstruction, not Claude's guess.",
+        "adjust_note": "Reconstruction date lowered by 4y (274->278) to reduce the over-aged founding cohort. SPEC. | Male-cohort further -2y -> 280."
       },
       "death": {
         "year": 347,
@@ -1518,10 +1681,16 @@ _build:
       "relationships": [],
       "notes": "The Most High Priest (I6 Crypt 30 'beloved of King Barov and Queen Raven'). Crafted the Holy Symbol of Ravenkind in 347 at divine instruction; already at the work for weeks, accelerating to finish before Strahd's arrival. (Holy Symbol article, published.) | 346 BURIAL RITES (reconstruction): Ciril did NOT administer the funeral rites for the 346 dead, because he was consumed by the divinely-commanded crafting of the Holy Symbol and WOULD NOT DEFY HIS GODS by taking time from it. His absence from the royal funerals is devotion, not negligence. The rites therefore fell to the young priest KIR, while the logistical interment was handled by Dorian (the loyal Duke holding the interregnum).",
       "born_marker": {
-        "year": 274,
+        "year": 280,
         "tier": "SPEC",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -1530,10 +1699,11 @@ _build:
       "family": "Court",
       "line": "barovia",
       "birth": {
-        "year": 275,
+        "year": 281,
         "tier": "SPEC",
         "source": "VotO",
-        "note": "Peculiar History (Holstoy) dates Stephan Gregorovich b.275 d.346 (First Counsellor to King Barov, I6 Crypt 25). Drew's dated reconstruction."
+        "note": "Peculiar History (Holstoy) dates Stephan Gregorovich b.275 d.346 (First Counsellor to King Barov, I6 Crypt 25). Drew's dated reconstruction.",
+        "adjust_note": "Reconstruction date lowered by 4y (275->279) to reduce the over-aged founding cohort. SPEC. | Male-cohort further -2y -> 281."
       },
       "death": {
         "year": 346,
@@ -1545,10 +1715,16 @@ _build:
       "relationships": [],
       "notes": "REASONING LADDER. PRINTED (I6, primary): Crypt 25 reads 'Stephan Gregorovich, First Counsellor to King Barov' (the printed 'Baron von...' is a typesetting error for the NAME Barov, not a rank; I6's own erratum note reads 'Should read First Counsellor to King Barov'). So: First Counsellor to King Barov. Do NOT read 'Baron' as a rank or connect it to nobility. INFERRED (VotO, PUB): among the ruling circle that dies in the 346 catastrophe, before Strahd's return.",
       "born_marker": {
-        "year": 275,
+        "year": 281,
         "tier": "SPEC",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -1576,6 +1752,12 @@ _build:
         "tier": "INFER",
         "known": false,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -1584,10 +1766,11 @@ _build:
       "family": "Court",
       "line": "barovia",
       "birth": {
-        "year": 291,
+        "year": 295,
         "tier": "SPEC",
         "source": "VotO",
-        "note": "SPEC, reasoned from her daughter: Gisella Fallona is born 313; a mother aged 18-24 at that birth is born 289-295. Placed ~291, making Elsa ~22 at Gisella's birth. Bounded by the child's date, so a constrained speculation, not a free guess."
+        "note": "SPEC, reasoned from her daughter: Gisella Fallona is born 313; a mother aged 18-24 at that birth is born 289-295. Placed ~291, making Elsa ~22 at Gisella's birth. Bounded by the child's date, so a constrained speculation, not a free guess.",
+        "adjust_note": "Reconstruction date lowered by 4y (291->295) to reduce the over-aged founding cohort. SPEC."
       },
       "death": {
         "year": 346,
@@ -1608,7 +1791,7 @@ _build:
       ],
       "notes": "Mother of Gisella Fallona, Sturm's mother-in-law (I6 Crypt 16). Among the 346 dead.",
       "born_marker": {
-        "year": 291,
+        "year": 295,
         "tier": "SPEC",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
@@ -1621,7 +1804,13 @@ _build:
           "father": null,
           "note": "Maternal 'gave birth to' marker, distinct from the paternal line."
         }
-      ]
+      ],
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
+      }
     },
     {
       "id": "byron_w",
@@ -1653,6 +1842,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -1685,6 +1880,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -1729,7 +1930,13 @@ _build:
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
       },
-      "immortal": true
+      "immortal": true,
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
+      }
     },
     {
       "id": "estelle_w",
@@ -1778,7 +1985,13 @@ _build:
           "father": "godefroy",
           "note": "Maternal 'gave birth to' marker, distinct from the paternal line."
         }
-      ]
+      ],
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
+      }
     },
     {
       "id": "lilia",
@@ -1813,6 +2026,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -1847,7 +2066,13 @@ _build:
           "father": null,
           "note": "Maternal 'gave birth to' marker (domain line)."
         }
-      ]
+      ],
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
+      }
     },
     {
       "id": "ivana_b",
@@ -1882,6 +2107,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -1914,6 +2145,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -1946,6 +2183,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -1972,6 +2215,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -2004,6 +2253,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -2036,6 +2291,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -2061,6 +2322,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -2093,6 +2360,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -2125,6 +2398,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -2150,6 +2429,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -2182,6 +2467,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -2214,6 +2505,12 @@ _build:
         "tier": "CORE",
         "known": true,
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
+      },
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       }
     },
     {
@@ -2256,7 +2553,13 @@ _build:
         "known": true,
         "note": "~689, same day as Ivana."
       },
-      "notes": "Ivan Dilisnya — became Lord of Dorvinia in 715 (RoT Bloodlines Note D). Barovian-rooted Dilisnya stock (= Von Zarovich blood, per dilisnya_is_vonzarovich). Founder/darklord of Dorvinia. Founding crime to be sourced from the RoT darklord write-up."
+      "notes": "Ivan Dilisnya — became Lord of Dorvinia in 715 (RoT Bloodlines Note D). Barovian-rooted Dilisnya stock (= Von Zarovich blood, per dilisnya_is_vonzarovich). Founder/darklord of Dorvinia. Founding crime to be sourced from the RoT darklord write-up.",
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
+      }
     },
     {
       "id": "natalia_olszanik",
@@ -2291,7 +2594,13 @@ _build:
         "known": false,
         "note": "Birth year unknown."
       },
-      "notes": "Grandmother of the Dorvinian Dilisnya line; her distant relatives were the wedding guests at Strahd's castle in 351. | SOURCE: Ivan Dilisnya write-up, Darklords.pdf p23 (RoT-era). Under the committed dilisnya_is_vonzarovich reading, this is Von Zarovich blood under the Dilisnya name; RoT presents the Dilisnyas as a separate house (the layer that reading treats as elaboration). Recorded as RoT-sourced with that caveat."
+      "notes": "Grandmother of the Dorvinian Dilisnya line; her distant relatives were the wedding guests at Strahd's castle in 351. | SOURCE: Ivan Dilisnya write-up, Darklords.pdf p23 (RoT-era). Under the committed dilisnya_is_vonzarovich reading, this is Von Zarovich blood under the Dilisnya name; RoT presents the Dilisnyas as a separate house (the layer that reading treats as elaboration). Recorded as RoT-sourced with that caveat.",
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
+      }
     },
     {
       "id": "boris_dilisnya",
@@ -2341,7 +2650,13 @@ _build:
         "known": false,
         "note": "Birth year unknown."
       },
-      "notes": "Ivan's father; grew up in Barovia; married Stefania Septow; children Kristina and Ivan (lord of Dorvinia). | SOURCE: Ivan Dilisnya write-up, Darklords.pdf p23 (RoT-era). Under the committed dilisnya_is_vonzarovich reading, this is Von Zarovich blood under the Dilisnya name; RoT presents the Dilisnyas as a separate house (the layer that reading treats as elaboration). Recorded as RoT-sourced with that caveat."
+      "notes": "Ivan's father; grew up in Barovia; married Stefania Septow; children Kristina and Ivan (lord of Dorvinia). | SOURCE: Ivan Dilisnya write-up, Darklords.pdf p23 (RoT-era). Under the committed dilisnya_is_vonzarovich reading, this is Von Zarovich blood under the Dilisnya name; RoT presents the Dilisnyas as a separate house (the layer that reading treats as elaboration). Recorded as RoT-sourced with that caveat.",
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
+      }
     },
     {
       "id": "stefania_septow",
@@ -2390,7 +2705,13 @@ _build:
           "father": "boris_dilisnya",
           "note": "Dilisnya line (Darklords.pdf p23)."
         }
-      ]
+      ],
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
+      }
     },
     {
       "id": "kristina_dilisnya",
@@ -2432,7 +2753,13 @@ _build:
         "known": false,
         "note": "Birth year unknown."
       },
-      "notes": "Daughter of Boris and Stefania; elder sibling of Ivan. | SOURCE: Ivan Dilisnya write-up, Darklords.pdf p23 (RoT-era). Under the committed dilisnya_is_vonzarovich reading, this is Von Zarovich blood under the Dilisnya name; RoT presents the Dilisnyas as a separate house (the layer that reading treats as elaboration). Recorded as RoT-sourced with that caveat."
+      "notes": "Daughter of Boris and Stefania; elder sibling of Ivan. | SOURCE: Ivan Dilisnya write-up, Darklords.pdf p23 (RoT-era). Under the committed dilisnya_is_vonzarovich reading, this is Von Zarovich blood under the Dilisnya name; RoT presents the Dilisnyas as a separate house (the layer that reading treats as elaboration). Recorded as RoT-sourced with that caveat.",
+      "birthplace": {
+        "place": null,
+        "tier": "OPEN",
+        "known": false,
+        "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
+      }
     }
   ],
   "events": [
@@ -2442,7 +2769,7 @@ _build:
       "scope": "single",
       "line": "barovia",
       "tier": "INFER",
-      "title": "Marriage: Barov Von Zarovich & Ravenia Van Roeyen (Drew-dated)",
+      "title": "Marriage of Barov & Ravenia — SEE betrothal_barov_ravenia (c.296) + wedding_barov_ravenia (c.304-305)",
       "present": [
         "barov",
         "ravenia"
@@ -2456,7 +2783,8 @@ _build:
       },
       "kind": "marriage",
       "locked": true,
-      "roll_d6": null
+      "roll_d6": null,
+      "superseded_note": "The single 'marriage 299-305' entry is now split: the BETROTHAL (c.296, childhood; commits the van Roeyen dowry that funds the war) and the WEDDING proper (c.304-305, during the war, van Roeyens holding Barov to the contract). Kept for continuity; use the two new events."
     },
     {
       "id": "exile_323",
@@ -3191,7 +3519,7 @@ _build:
     },
     {
       "id": "birth_barov",
-      "year": 277,
+      "year": 281,
       "scope": "single",
       "line": "barovia",
       "tier": "CORE",
@@ -3219,7 +3547,7 @@ _build:
     },
     {
       "id": "birth_ravenia",
-      "year": 283,
+      "year": 291,
       "scope": "single",
       "line": "barovia",
       "tier": "CORE",
@@ -3247,7 +3575,7 @@ _build:
     },
     {
       "id": "birth_strahd",
-      "year": 306,
+      "year": 310,
       "scope": "single",
       "line": "barovia",
       "tier": "CORE",
@@ -3275,7 +3603,7 @@ _build:
     },
     {
       "id": "birth_sturm",
-      "year": 312,
+      "year": 316,
       "scope": "single",
       "line": "barovia",
       "tier": "CORE",
@@ -3303,7 +3631,7 @@ _build:
     },
     {
       "id": "birth_gisella",
-      "year": 313,
+      "year": 317,
       "scope": "single",
       "line": "barovia",
       "tier": "CORE",
@@ -3331,7 +3659,7 @@ _build:
     },
     {
       "id": "birth_sergei",
-      "year": 324,
+      "year": 328,
       "scope": "single",
       "line": "barovia",
       "tier": "CORE",
@@ -3359,7 +3687,7 @@ _build:
     },
     {
       "id": "birth_tatyana",
-      "year": 333,
+      "year": 337,
       "scope": "single",
       "line": "barovia",
       "tier": "CORE",
@@ -3387,7 +3715,7 @@ _build:
     },
     {
       "id": "birth_pidlwik",
-      "year": 322,
+      "year": 326,
       "scope": "single",
       "line": "barovia",
       "tier": "SPEC",
@@ -3415,7 +3743,7 @@ _build:
     },
     {
       "id": "birth_dorfniya",
-      "year": 289,
+      "year": 297,
       "scope": "single",
       "line": "barovia",
       "tier": "CORE",
@@ -3443,7 +3771,7 @@ _build:
     },
     {
       "id": "birth_gunther_cosco",
-      "year": 299,
+      "year": 307,
       "scope": "single",
       "line": "barovia",
       "tier": "CORE",
@@ -3471,7 +3799,7 @@ _build:
     },
     {
       "id": "birth_leo",
-      "year": 320,
+      "year": 324,
       "scope": "single",
       "line": "barovia",
       "tier": "CORE",
@@ -3499,7 +3827,7 @@ _build:
     },
     {
       "id": "birth_reinhold",
-      "year": 310,
+      "year": 314,
       "scope": "single",
       "line": "barovia",
       "tier": "CORE",
@@ -3527,7 +3855,7 @@ _build:
     },
     {
       "id": "birth_nadia_yakimov",
-      "year": 320,
+      "year": 324,
       "scope": "single",
       "line": "barovia",
       "tier": "CORE",
@@ -3555,7 +3883,7 @@ _build:
     },
     {
       "id": "birth_gertrude_d",
-      "year": 315,
+      "year": 319,
       "scope": "single",
       "line": "barovia",
       "tier": "CORE",
@@ -3583,7 +3911,7 @@ _build:
     },
     {
       "id": "birth_ivan_buchvold",
-      "year": 311,
+      "year": 315,
       "scope": "single",
       "line": "barovia",
       "tier": "CORE",
@@ -3611,7 +3939,7 @@ _build:
     },
     {
       "id": "birth_illya_buchvold",
-      "year": 314,
+      "year": 318,
       "scope": "single",
       "line": "barovia",
       "tier": "SPEC",
@@ -3639,7 +3967,7 @@ _build:
     },
     {
       "id": "birth_oleka",
-      "year": 317,
+      "year": 321,
       "scope": "single",
       "line": "barovia",
       "tier": "CORE",
@@ -3667,7 +3995,7 @@ _build:
     },
     {
       "id": "birth_victor_wachter",
-      "year": 310,
+      "year": 314,
       "scope": "single",
       "line": "barovia",
       "tier": "CORE",
@@ -3695,7 +4023,7 @@ _build:
     },
     {
       "id": "birth_dilisnya_husband",
-      "year": 280,
+      "year": 288,
       "scope": "single",
       "line": "barovia",
       "tier": "SPEC",
@@ -3723,7 +4051,7 @@ _build:
     },
     {
       "id": "birth_kir",
-      "year": 322,
+      "year": 326,
       "scope": "single",
       "line": "barovia",
       "tier": "SPEC",
@@ -3751,7 +4079,7 @@ _build:
     },
     {
       "id": "birth_zarak_petrovic",
-      "year": 250,
+      "year": 258,
       "scope": "single",
       "line": "barovia",
       "tier": "SPEC",
@@ -3779,7 +4107,7 @@ _build:
     },
     {
       "id": "birth_ciril",
-      "year": 274,
+      "year": 282,
       "scope": "single",
       "line": "barovia",
       "tier": "SPEC",
@@ -3807,7 +4135,7 @@ _build:
     },
     {
       "id": "birth_gregorovich",
-      "year": 275,
+      "year": 283,
       "scope": "single",
       "line": "barovia",
       "tier": "SPEC",
@@ -3849,7 +4177,7 @@ _build:
     },
     {
       "id": "birth_elsa_fallona",
-      "year": 291,
+      "year": 299,
       "scope": "single",
       "line": "barovia",
       "tier": "SPEC",
@@ -4336,6 +4664,66 @@ _build:
       ],
       "notes": "Death of Winifred Ratcliff.",
       "source": "RoT"
+    },
+    {
+      "id": "betrothal_barov_ravenia",
+      "title": "Betrothal of Barov and Ravenia (arranged in childhood)",
+      "year": 296,
+      "date": "c.296",
+      "tier": "SPEC",
+      "source": "VotO",
+      "notes": "Barov (b283) and Ravenia (b286) are betrothed as children — a von Zarovich/van Roeyen alliance arranged well in advance (Peculiar History: 'betrothed whilst young, with many intervening years of negotiating the marriage contract'). The betrothal CONTRACT commits the van Roeyen wealth, which is what later funds Barov's founding war — so the money is available regardless of when the wedding itself takes place. Date c.296 is nominal (both children); SPEC.",
+      "scope": "single",
+      "line": "barovia",
+      "present": [
+        "barov",
+        "ravenia"
+      ]
+    },
+    {
+      "id": "barov_war_endor",
+      "title": "Barov's war: the siege of the Endorovich keep",
+      "year": 304,
+      "date": "c.304-306",
+      "tier": "SPEC",
+      "source": "VotO",
+      "notes": "Barov raises an army — funded by the van Roeyen betrothal wealth — against the Endorovich king, whose cruelty (I6 Crypt 7: 'in his madness killed many') Barov takes up as cause. CHARACTER BEAT: Barov, betrothed against his own inclination, partly launches/prolongs the war to DEFER the arranged wedding; the van Roeyens refuse to release him from the contract, so the wedding happens during the war anyway (see wedding event). The target is a remote MOUNTAIN keep, unprepared for siege and reliant on few supply routes: Barov takes the construction-support town first (renamed 'Barov's town' in wartime), fortifies it, clears forest and blockades the routes. An attrition-siege the isolated garrison cannot outlast. ~2 years. SPEC on I6-grounded anchors (Endorovich, Artimus, the keep).",
+      "scope": "single",
+      "line": "barovia",
+      "present": [
+        "barov"
+      ]
+    },
+    {
+      "id": "wedding_barov_ravenia",
+      "title": "Wedding of Barov and Ravenia (during the war)",
+      "year": 305,
+      "date": "c.304-305",
+      "tier": "SPEC",
+      "source": "VotO",
+      "notes": "Held DURING the war, ~304-305, before Strahd's conception (305) so the heir is born in wedlock. Barov had used the campaign to defer the arranged match; the van Roeyens held him to the childhood betrothal and the wedding went ahead while he was still on campaign. Ravenia (~19) marries into her husband's founding war. This SUPERSEDES the older 'marriage 299-305' framing for the wedding proper; the betrothal (c.296) is the earlier, contract-and-dowry event.",
+      "scope": "single",
+      "line": "barovia",
+      "present": [
+        "barov",
+        "ravenia"
+      ]
+    },
+    {
+      "id": "fall_of_endor_founding",
+      "title": "The fall of the keep and the founding of Barovia",
+      "year": 306,
+      "date": "306",
+      "tier": "SPEC",
+      "source": "VotO",
+      "notes": "The siege ends UNEXPECTEDLY early — Endorovich's own people, starved and alienated, surrender the keep from within (rhymes forward with Alek's line that the castle can only be taken from within). The Endorovich line ENDS here (no heir; 'Endorovich' a surname, first name unrecorded). The family moves into the captured keep — still a tyrant's stronghold being converted into a home — just in time for Ravenia to give birth to STRAHD (the crown prince born at the new seat). The kingdom takes the name of Barov's wartime town: BAROVIA (Raven suggests it; SPEC). Barov is confirmed and CROWNED KING, Ciril officiating (I6 Crypt 30: Ciril 'Beloved of King Barov and Queen Raven, High Priest'); Ravenia becomes QUEEN; Strahd is named CROWN PRINCE. The castle is NOT yet 'Castle Ravenloft' — Strahd names it in 347.",
+      "scope": "single",
+      "line": "barovia",
+      "present": [
+        "barov",
+        "ravenia",
+        "strahd"
+      ]
     }
   ],
   "open_questions": [
@@ -4523,9 +4911,9 @@ _build:
     },
     {
       "id": "dilisnya_is_vonzarovich",
-      "title": "'Dilisnya' is a Von Zarovich name; RoT's separate Dilisnya house is an interpretive fabrication",
+      "title": "von Zarovich is the ASSUMED royal name of the Dilisnya family (name adopted at Barov, back-projected through the ancestry)",
       "source": "VotO",
-      "text": "COMMITTED READING (INFER, from primary-source layering). In I6 (primary) the ONLY Dilisnya is 'Duchess Dorfniya Dilisnya' (Crypt 8) — a royal duchess, Von Zarovich by rank, with NO attached Dilisnya family, no husband, no lineage (only her fool Pidlwik, Crypt 9). The entire Dilisnya genealogy — Endor, Reinhold, Gertrude, Oleka, Leo, and the lines that become Borca and Dorvinia — is added by RoT (later). Therefore: 'Dilisnya' is not a separate house but a NAME WITHIN THE ROYAL (Von Zarovich) FAMILY, and RoT's 'separate Dilisnya house' is the interpretive failure — RoT extrapolated a whole parallel lineage from one royal duchess's name, then rationalised its relationship to the crown as 'served the Von Zaroviches for generations' (the tell of the fabrication: a servant-house explanation invented to justify a house that, in the primary source, did not exist apart from the royals). CONSEQUENCES: (1) the 'Dilisnyas' are Von Zarovich blood — so LEO — a traitor ONLY within Strahd's (unreliable) narrative, NOT in any external record — is himself royal Von Zarovich blood. So the reconstruction reads him not as a betrayer but as the ROYAL KINSMAN SCAPEGOATED for the murders Strahd authored: Strahd needed a traitor who wasn't Strahd, and a corrupted royal cousin served. Strahd's contempt for 'those who would do that to their own' is projection — he corrupted them, then blamed one for his own crime; (2) the Dilisnya-founded domains (Borca via the Boritsi/Dilisnya line, Dorvinia via Ivan Dilisnya) are Von-Zarovich-blooded, deepening the 'Barovian royal blood spreads to the domains' thesis. This rests on the I6-governs-RoT source hierarchy, NOT on etymology; the reading that the name itself carries an imperial 'of-the-tsar' root is Drew's own onomastic observation (supported in-source by the 'Czar von Zarovich' phrasing), corroborating in spirit but not load-bearing and needing no external source. RoT's separate-house version is preserved as the rejected interpretation."
+      "text": "INVERTED READING (was 'Dilisnya is a von Zarovich name'; direction now flipped). The true rising family is DILISNYA. Barov, born Dilisnya, ASSUMED the royal style 'von Zarovich' on founding the kingdom; later record-keepers ran the name BACK through the ancestry (standard practice, cf. Saxe-Coburg->Windsor), so I6/RoT read 'von Zarovich' for the whole royal line though it was adopted at Barov. I6's split — royal 'von Zarovich' (Barov, Strahd, Sergei) vs 'Duchess Dorfniya DILISNYA' (Crypt 8) — is therefore NOT an error but the SEAM where the true family name shows through: Dorfniya kept the family name (and married a Dilisnya cousin, doubly fixing it). KEY EVIDENCE is the COUSIN-MARRIAGE, not the surname alone. RoT's separate Dilisnya genealogy remains wrong (one family, not two). Leo and the Dilisnyas are royal kin under the true name. '-ovich' is a masculine patronymic (fem. would be 'von Zarovna'); strict gendering implies male 'Dilisnovich'/female 'Dilisnya', which the sources don't observe — source forms kept, convention noted. Whether von Zarovich is genuine faded descent or pure adoption is left OPEN (the back-projected record can't tell)."
     },
     {
       "id": "lifespan_rule",
@@ -4544,10 +4932,15 @@ _build:
       "title": "Ravenia's death is Strahd's true disaster — legitimacy and the only love he had, both lost by his own hand",
       "source": "VotO",
       "text": "The emotional core of the 346 reconstruction. Strahd recovers the coup (he takes the throne in 347); what he cannot recover is his mother. He wanted Ravenia to LIVE and SEE HIM CROWNED — her recognition being, for him, a single object that was both LEGITIMACY (the queen, the van Roeyen line, the maternal claim that would make his throne rightful not stolen) and LOVE (she is arguably the only person he ever loved — the mother who found the dagger yet saved him, who kept the twenty-year secret correspondence, who never believed his lies yet never stopped reaching for him). Her seeing him crowned would have been political legitimation and emotional vindication at once — proof to the one person whose judgement mattered that the disgraced son had undone Barov's disinheritance and made himself worthy. His own botched coup killed her first. He wins the crown and loses the only reason it would have meant anything. This is the root of his inconsolable tomb-grief, and it makes him TRAGIC without making him good: his ambition destroyed the one thing he valued above the throne, by his own hand. (Optional: the eternal Tatyana pursuit as the displaced form of this irrecoverable loss.)"
+    },
+    {
+      "id": "endorovich_line_extinct",
+      "title": "Endorovich is a separate surname; the line ends at Barov's conquest (first name unrecorded)",
+      "source": "I6+VotO",
+      "text": "I6 gives 'Endorovich' (Crypt 7, the guilt-ridden king who 'in his madness killed many'), with Artimus 'Builder of the Keep' (Crypt 19) and advisor Stahbal Indi-Bhak 'from eastern lands' (Crypt 14). 'Endorovich' is a SURNAME; the first name was never recorded. In the reconstruction this is a SEPARATE dynasty, UNRELATED to the Dilisnya/von Zarovich family. Barov (a Dilisnya) overthrew the Endorovich king and took his castle; the Endorovich line ENDED at the conquest (no heir in record). This closes the earlier fork: Endorovich was NOT a von Zarovich elder. The castle Endorovich built (via Artimus) is the future Castle Ravenloft; it was NOT called Ravenloft until Strahd named it in 347 (I,Strahd; VotM journal)."
     }
   ]
-}
-</script>
+}</script>
 
 <script>
 (function () {
@@ -4631,8 +5024,11 @@ _build:
   // just duplicate every person's birth and death marker. Excluded from both
   // the domain aggregate view and each person's own event row; the richer
   // multi-person events (marriages, massacres, transformations with real
-  // narrative) are untouched.
+  // narrative) are untouched. An event carrying a superseded_note is kept in
+  // the data for provenance (its window/preferred year, etc.) but replaced by
+  // newer, more granular events -- so it's excluded from the render too.
   var renderableEvents = events.filter(function (e) {
+    if (e.superseded_note) return false;
     return !(('present' in e) && e.present && e.present.length === 1 && ['birth', 'death', 'transformation'].indexOf(e.kind) !== -1);
   });
 
@@ -4911,9 +5307,10 @@ _build:
         if (per.from <= yr && yr <= per.to) return per.place;
       }
     }
-    // A birth year is not covered by an explicit period: don't assume the
+    // A birth year is not covered by an explicit period: use the explicit
+    // birthplace record (per birthplace_rule) instead of assuming the
     // person's general/adult location was also their birthplace.
-    if (yr === born(p)) return '';
+    if (yr === born(p)) return (p.birthplace && p.birthplace.known) ? p.birthplace.place : '';
     return p.location || '';
   }
 
@@ -5077,6 +5474,13 @@ _build:
       h += srcLine('Source', b.source);
     } else {
       h += '<p class="tl-gloss">Birth year unrecorded' + (b && b.note ? ': ' + esc(b.note) : '') + '.</p>';
+    }
+    var bp = p.birthplace;
+    if (bp && bp.known && bp.place) {
+      h += '<p class="tl-status"><span class="tl-badge" style="background:' + tierColor(bp.tier) + '">' + esc(bp.tier) + '</span>Born at ' + esc(bp.place) + '</p>';
+      if (bp.note) h += '<p class="tl-gloss">' + esc(bp.note) + '</p>';
+    } else if (bp) {
+      h += '<p class="tl-gloss">Birthplace unrecorded' + (bp.note ? ': ' + esc(bp.note) : '') + '.</p>';
     }
     h += '</div>';
 

@@ -193,7 +193,7 @@ _build:
       "setting": "Affects every domain; spans the full width. Setting-wide events presuppose the demiplane and are therefore RoT-era constructs by nature."
     },
     "lines_note": "Barovia is the continuous spine from the top. Each domain branches in as its own line at its absorption year; the timeline widens as it descends. Mordent is the same-world-time-displaced exception: its line carries a full parallel run of events, not just a foreign fragment.",
-    "verification": "People and dates transcribed from ravenloft_bloodlines_core_ledger.md (itself read from RoT source page images). Consistency-checked: no death-before-birth, no child-before-parent, all relationships resolve. RM4 exhibit verified by Drew's first-hand examination of a physical copy.",
+    "verification": "People and dates transcribed from ravenloft_bloodlines_core_ledger.md (itself read from RoT source page images). Consistency-checked: no death-before-birth, no child-before-parent, all relationships resolve. RM4 exhibit verified by the author's first-hand examination of a physical copy.",
     "sources": {
       "I6": "I6 Ravenloft (Hickmans, TSR 1983). Primary.",
       "I10": "I10 Ravenloft II: The House on Gryphon Hill (TSR 1986). Primary.",
@@ -208,20 +208,20 @@ _build:
     "span_note": "Span is DERIVED from data at render time (earliest to latest year). The declared span is a hint only.",
     "open_tasks": [
       "RESOLVED from DoD page image (Ravenloft Timeline, DoD 1997): The Terg sequence is confirmed DoD invention — '320: The Tergs invade Barovia, conquering the ancestral lands of the Von Zarovich family'; '321: Strahd leads the armies of Barovia against the Tergs to reclaim his ancestral lands'; '347: The defeated Tergs are driven from Barovia. Strahd claims the throne.' This is NOT I6 and NOT what the RoT box establishes; it is DoD retconning Strahd's origin into a heroic reclamation. CRUCIALLY: 'Dorian the Goblyn King' is NOT in DoD's timeline either — DoD names no Terg leader. So the 'Dorian' name was a FURTHER accretion added by the importer on top of DoD's already-invented Tergs; it has no home even in the product it was cited to. FINAL DISPOSITION: the entire Terg/Dorian/347-reclamation material is later-product invention, quarantined, used ONLY as an object of analysis (an example of the retconning this project documents), never as input to the I6/RoT-grounded reconstruction. DoD also gives its OWN contradictory chronology (Strahd born 299, not 306), confirming it is a separate invented scheme.",
-      "Dilisnya husband: settle invented-name vs spinster vs the 'Dorien/Dostron Dilisnya' name that appears in Drew's Timeline_A document.",
-      "Timeline_A reconciliation: ~22k-word document, largely Drew's own edits, disagrees with the ledger in places (marriage year 300 vs 304; Dorien/Dostron husband name; Tatyana surname 'Federovna') and contains unique material (Vasili von Zarovich grandfather; I,Strahd page citations; Dagmar Olavnya). Needs a three-way reconciliation report (this doc vs ledger vs sources), no silent merging. Substantial job, do fresh.",
+      "Dilisnya husband: settle invented-name vs spinster vs the 'Dorien/Dostron Dilisnya' name that appears in the author's Timeline_A document.",
+      "Timeline_A reconciliation: ~22k-word document, largely the author's own edits, disagrees with the ledger in places (marriage year 300 vs 304; Dorien/Dostron husband name; Tatyana surname 'Federovna') and contains unique material (Vasili von Zarovich grandfather; I,Strahd page citations; Dagmar Olavnya). Needs a three-way reconciliation report (this doc vs ledger vs sources), no silent merging. Substantial job, do fresh.",
       "I, Strahd (first novel) ingestion: decide how much of the cast/subplot to bring in; all of it carries maximal-unreliability (persecution_device flag).",
       "Second novel (War Against Azalin, 1998): owned but in storage; check whether it references the Tergs when accessible (can only confirm later propagation, not origin). Corpus gap for any future Strahd-Azalin / Darkon-formation work drawn from Strahd's POV.",
       "~160 eventless later-generation RoT names: optionally append for fully-populated 'who was alive' panels.",
       "Holy Symbol article: candidate for alignment pass to match the committed 346-orchestration reading (flag holy_symbol_lag).",
       "Claude Code build spec: vertical widening-descent widget in the Census/Account skin, reading this data file.",
       "DOMAIN FORMATION: read each darklord's RoT write-up (eye-read; ~235 pages across rotbl/p1-p3, OCR empty so must locate visually) to source each domain's founding CRIME + border-closing mechanism, then fill event.formation_todo -> a proper 'how and by whom' formation reading. Founders already named: Camille/Borca, Drakov/Falkovnia, Renier/Richemulot, d'Honaire/Dementlieu, N.Timothy/Arkandale, I.Dilisnya/Dorvinia, A.Timothy/Verbrek, Godefroy/Mordent.",
-      "DOMAIN FORMATION SOURCE FOUND: Drew uploaded 'Darklords.pdf' (29 pages, scanned/image — eye-read, OCR empty). It contains the darklord write-ups (page 1 = Strahd). NEXT SESSION: read the relevant darklord pages by EYE and source each domain's founding CRIME + border-closing mechanism, then fill the 'formation_todo' on each domain event (borca_684 Camille, falkovnia_690 Drakov, richemulot_694 Renier, dementlieu_707 d'Honaire, arkandale_708 N.Timothy, dorvinia_715 I.Dilisnya, verbrek_730 A.Timothy, mordent_entry_579 Godefroy). This is the clean targeted read the earlier task was waiting on — the 235-page RoT hunt is NO LONGER needed; use Darklords.pdf directly."
+      "DOMAIN FORMATION SOURCE FOUND: The author uploaded 'Darklords.pdf' (29 pages, scanned/image — eye-read, OCR empty). It contains the darklord write-ups (page 1 = Strahd). NEXT SESSION: read the relevant darklord pages by EYE and source each domain's founding CRIME + border-closing mechanism, then fill the 'formation_todo' on each domain event (borca_684 Camille, falkovnia_690 Drakov, richemulot_694 Renier, dementlieu_707 d'Honaire, arkandale_708 N.Timothy, dorvinia_715 I.Dilisnya, verbrek_730 A.Timothy, mordent_entry_579 Godefroy). This is the clean targeted read the earlier task was waiting on — the 235-page RoT hunt is NO LONGER needed; use Darklords.pdf directly."
     ],
     "tree_markers_note": "TREE MARKERS: (a) each person has a 'born_marker' {year,tier,known} — render a birth node; year=null => unknown, never 0. (b) mothers carry 'maternal_markers' [{type:'gave-birth-to', child, child_birth, father}] — render the maternal line distinctly from paternal parentage (matters where mother/father differ, e.g. Leo: born of Dorfniya, fathered by Gunther Cosco). (c) marriage events carry kind:'marriage', locked:true, roll_d6, and precede the first child (or, for childless couples, sit at wife age 18+1d6). (d) affair/unmarried unions carry unmarried:true and have NO marriage node.",
     "prime_material_exclusion": "Sturm's line escaped Barovia entirely and was NEVER drawn into the mists; his ~10-12 generational descendants live on the PRIME-MATERIAL Barovia (the restored ancestral home), NOT in the demiplane. They must be EXCLUDED from this (demiplane) timeline unless/until a hook draws one of them into the mists. If Sturm-descendant records are ever added, tag them line:'prime-material' and keep them off the demiplane event spine.",
     "birthplace_rule": "Birthplace is UNKNOWN by default. Asserted only when (a) a source states it (SOURCED), or (b) derived from the MOTHER'S known location at birth (INFER). Castle Ravenloft is reserved for the ROYAL LINES only (von Zarovich ruling house) and children of a castle-resident royal mother (e.g. Dorfniya's children). Court-attached (non-royal) families' children are born in BAROVIA at most, never the castle. Spouses who married in, and anyone whose mother's location at birth is not established, remain UNKNOWN (null; do not render as a place). Residence can change over time (see location_by_period) — birthplace is the fixed point at birth and is not altered by later side-taking or relocation.",
-    "dynasty_naming": "THE FAMILY & THE KINGDOM NAMES (reconstruction). FAMILY: true name DILISNYA; Barov assumed the royal style 'von Zarovich' on founding the kingdom; later record-keepers back-projected it through the ancestry (cf. Windsor), so sources read von Zarovich for the whole line though adopted at Barov. Source display forms are KEPT; strict patronymic convention (male 'Dilisnovich', female 'Dilisnya'; royal masc. '-ovich', fem. '-ovna') is noted but not applied, since the sources don't observe it. KINGDOM: the construction-support town below the castle was taken first in the siege and renamed 'Barov's town' in wartime; at the founding the realm took the town's name — BAROVIA (land of Barov) — suggested by Queen Raven (SPEC). This is why I6's village and kingdom share the name: the town was named first, the realm from it. The land's earlier name honoured an antecedent (Drew's own reconstruction). CASTLE: built by Artimus for the Endorovich king (I6); called 'Castle Ravenloft' only from Strahd's 347 naming — earlier births occur at 'the castle', not 'Castle Ravenloft'."
+    "dynasty_naming": "THE FAMILY & THE KINGDOM NAMES (reconstruction). FAMILY: true name DILISNYA; Barov assumed the royal style 'von Zarovich' on founding the kingdom; later record-keepers back-projected it through the ancestry (cf. Windsor), so sources read von Zarovich for the whole line though adopted at Barov. Source display forms are KEPT; strict patronymic convention (male 'Dilisnovich', female 'Dilisnya'; royal masc. '-ovich', fem. '-ovna') is noted but not applied, since the sources don't observe it. KINGDOM: the construction-support town below the castle was taken first in the siege and renamed 'Barov's town' in wartime; at the founding the realm took the town's name — BAROVIA (land of Barov) — suggested by Queen Raven (SPEC). This is why I6's village and kingdom share the name: the town was named first, the realm from it. The land's earlier name honoured an antecedent (the author's own reconstruction). CASTLE: built by Artimus for the Endorovich king (I6); called 'Castle Ravenloft' only from Strahd's 347 naming — earlier births occur at 'the castle', not 'Castle Ravenloft'."
   },
   "lines": [
     {
@@ -343,7 +343,7 @@ _build:
         }
       ],
       "on_event_spine": false,
-      "notes": "The parent of Duke Endor 'Dorian', and a child of Vasili von Zarovich — so the 'Dilisnya' branch shares Barov's grandfather. This is the join that makes the tree technically ONE (Von Zarovich and Dilisnya are the same stock; 'Dilisnya' is a Von Zarovich name per dilisnya_is_vonzarovich). Undated, SPEC. (Placeholder name; Drew may supply one.)",
+      "notes": "The parent of Duke Endor 'Dorian', and a child of Vasili von Zarovich — so the 'Dilisnya' branch shares Barov's grandfather. This is the join that makes the tree technically ONE (Von Zarovich and Dilisnya are the same stock; 'Dilisnya' is a Von Zarovich name per dilisnya_is_vonzarovich). Undated, SPEC. (Placeholder name; the author may supply one.)",
       "born_marker": {
         "year": null,
         "tier": "SPEC",
@@ -390,11 +390,11 @@ _build:
           ],
           "tier": "SPEC",
           "source": "VotO",
-          "note": "Father of Barov and Dorfniya. Drew's own notes call Barov 'first-born son of the Czar von Zarovich'."
+          "note": "Father of Barov and Dorfniya. The author's own notes call Barov 'first-born son of the Czar von Zarovich'."
         }
       ],
       "on_event_spine": false,
-      "notes": "The 'Czar von Zarovich' named in Drew's own (unpublished) notes as Barov's father (and Dorfniya's). Son of Vasili; father of the reigning branch. Undated, SPEC — the parent generation needed to root Barov and Dorfniya and to make the shared-grandfather cousin link to Endor work. | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two.",
+      "notes": "The 'Czar von Zarovich' named in the author's own (unpublished) notes as Barov's father (and Dorfniya's). Son of Vasili; father of the reigning branch. Undated, SPEC — the parent generation needed to root Barov and Dorfniya and to make the shared-grandfather cousin link to Endor work. | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two.",
       "born_marker": {
         "year": null,
         "tier": "SPEC",
@@ -418,7 +418,7 @@ _build:
         "year": null,
         "tier": "SPEC",
         "source": "VotO",
-        "note": "Undated. Claimed grandfather of Barov (Drew's own reconstruction). The shared root that unifies the family."
+        "note": "Undated. Claimed grandfather of Barov (the author's own reconstruction). The shared root that unifies the family."
       },
       "death": {
         "year": null,
@@ -439,7 +439,7 @@ _build:
         }
       ],
       "on_event_spine": false,
-      "notes": "Vasili von Zarovich — the CLAIMED grandfather of Barov (Drew's own reconstruction) and the shared dynastic root that makes the Von Zarovich and 'Dilisnya' lines ONE tree, not two. Undated. SPEC reconstruction; unifies the family per the dilisnya_is_vonzarovich reading. | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two.",
+      "notes": "Vasili von Zarovich — the CLAIMED grandfather of Barov (the author's own reconstruction) and the shared dynastic root that makes the Von Zarovich and 'Dilisnya' lines ONE tree, not two. Undated. SPEC reconstruction; unifies the family per the dilisnya_is_vonzarovich reading. | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two.",
       "born_marker": {
         "year": null,
         "tier": "SPEC",
@@ -506,7 +506,7 @@ _build:
           "note": "Father is the Czar von Zarovich (son of Vasili). Roots Barov/Dorfniya in the unified tree."
         }
       ],
-      "notes": "King of Barovia; the kingdom is named for him (though likely originally for an antecedent). Dies 346, before Strahd's return. PUB position: dead before the return, load-bearing for the succession. | Drew's own notes: Barov is first-born son of 'Czar von Zarovich'; his grandfather is CLAIMED to be Vasili von Zarovich (Drew's reconstruction; note the 'Czar/tsar' element supports the Zarovich='of the tsar' reading). | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two. | FOUNDER: Barov is DILISNYA by birth; he ASSUMES 'von Zarovich' on taking the throne (conquest of the Endorovich castle), as the legitimising royal name. This rhymes forward: his son Strahd later self-styles 'Count' to legitimise HIS seizure — both found rule on an assumed title.",
+      "notes": "King of Barovia; the kingdom is named for him (though likely originally for an antecedent). Dies 346, before Strahd's return. PUB position: dead before the return, load-bearing for the succession. | The author's own notes: Barov is first-born son of 'Czar von Zarovich'; his grandfather is CLAIMED to be Vasili von Zarovich (the author's reconstruction; note the 'Czar/tsar' element supports the Zarovich='of the tsar' reading). | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two. | FOUNDER: Barov is DILISNYA by birth; he ASSUMES 'von Zarovich' on taking the throne (conquest of the Endorovich castle), as the legitimising royal name. This rhymes forward: his son Strahd later self-styles 'Count' to legitimise HIS seizure — both found rule on an assumed title.",
       "born_marker": {
         "year": 283,
         "tier": "CORE",
@@ -939,7 +939,7 @@ _build:
           "source": "RoT"
         }
       ],
-      "notes": "Object of Strahd's passion (Note B). Falls from the castle walls in 351. Recurs thereafter (see returns): Marina 400, Olya 475, Ireena at I6's present. Only ever reincarnates in Barovia. | Drew's own reconstruction gives her full name as Tatyana Federovna, born in the village of Barovia (RoT prints only 'Tatyana').",
+      "notes": "Object of Strahd's passion (Note B). Falls from the castle walls in 351. Recurs thereafter (see returns): Marina 400, Olya 475, Ireena at I6's present. Only ever reincarnates in Barovia. | The author's own reconstruction gives her full name as Tatyana Federovna, born in the village of Barovia (RoT prints only 'Tatyana').",
       "born_marker": {
         "year": 333,
         "tier": "CORE",
@@ -950,7 +950,7 @@ _build:
         "place": "the village of Barovia",
         "tier": "SPEC",
         "known": true,
-        "note": "Drew's reconstruction; RoT prints only 'Tatyana Federovna'. Retained as flagged reconstruction, not bare assumption."
+        "note": "The author's reconstruction; RoT prints only 'Tatyana Federovna'. Retained as flagged reconstruction, not bare assumption."
       }
     },
     {
@@ -962,7 +962,7 @@ _build:
         "year": 322,
         "tier": "SPEC",
         "source": "VotO",
-        "note": "SPEC (Drew's reasoning). Pidlwik is I6 Crypt 9 'Fool of Dorfniya' — an INNOCENT fool (per Drew's own reasoning on fools: adopted for amusement, physically or mentally disadvantaged, not the astute professional-jester type, and NOT an advisor to the crown). So he is YOUNG, in his 20s as the court nears its end: born ~322, making him ~24 in 346. He does NOT carry the Duke's noble 280-349 dates; those belong to Endor. Distinct person."
+        "note": "SPEC (the author's reasoning). Pidlwik is I6 Crypt 9 'Fool of Dorfniya' — an INNOCENT fool (per the author's own reasoning on fools: adopted for amusement, physically or mentally disadvantaged, not the astute professional-jester type, and NOT an advisor to the crown). So he is YOUNG, in his 20s as the court nears its end: born ~322, making him ~24 in 346. He does NOT carry the Duke's noble 280-349 dates; those belong to Endor. Distinct person."
       },
       "death": {
         "year": 346,
@@ -981,7 +981,7 @@ _build:
         }
       ],
       "open_question": null,
-      "notes": "Pidlwik, 'Fool of Dorfniya' (I6 Crypt 9, primary — governing). An INNOCENT fool: kept for amusement, likely physically or mentally disadvantaged, NOT an advisor to the crown and NOT a noble. Therefore YOUNG and dependent, not a courtier: Drew places his birth ~322 (in his 20s as the court ends), death 346 with his mistress Dorfniya. SPEC, reasoned from the fool's role. DISTINCT from Duke Endor 'Dorian' Dilisnya, who holds the Bloodlines 280-349 dates; they are two people and must never be merged. RoT's reading of Pidlwik as Dorfniya's husband is the interpretive failure I6 corrects. | CORRECTED this session: death moved 351->346 to die with Dorfniya (his mistress), consistent with her corrected 346 death and the two-stage collapse. The adjacent crypts support a shared 346 death/interment.",
+      "notes": "Pidlwik, 'Fool of Dorfniya' (I6 Crypt 9, primary — governing). An INNOCENT fool: kept for amusement, likely physically or mentally disadvantaged, NOT an advisor to the crown and NOT a noble. Therefore YOUNG and dependent, not a courtier: The author places his birth ~322 (in his 20s as the court ends), death 346 with his mistress Dorfniya. SPEC, reasoned from the fool's role. DISTINCT from Duke Endor 'Dorian' Dilisnya, who holds the Bloodlines 280-349 dates; they are two people and must never be merged. RoT's reading of Pidlwik as Dorfniya's husband is the interpretive failure I6 corrects. | CORRECTED this session: death moved 351->346 to die with Dorfniya (his mistress), consistent with her corrected 346 death and the two-stage collapse. The adjacent crypts support a shared 346 death/interment.",
       "born_marker": {
         "year": 322,
         "tier": "SPEC",
@@ -1015,9 +1015,9 @@ _build:
           "year": 340,
           "source": "RoT",
           "tier": "CORE",
-          "reason": "RoT Bloodlines prints d340 — this is one of RoT's errors. Drew's genealogy carried it forward until corrected. She dies in 346 with the family at court, not 340."
+          "reason": "RoT Bloodlines prints d340 — this is one of RoT's errors. The author's genealogy carried it forward until corrected. She dies in 346 with the family at court, not 340."
         },
-        "note": "Dies 346 with the ruling circle at Castle Ravenloft (the catastrophe). The printed RoT d340 is WRONG (carried uncorrected into Drew's spreadsheet before this correction); she dies with her family at court in 346. Corrected per Drew."
+        "note": "Dies 346 with the ruling circle at Castle Ravenloft (the catastrophe). The printed RoT d340 is WRONG (carried uncorrected into the author's spreadsheet before this correction); she dies with her family at court in 346. Corrected per the author."
       },
       "location": "Castle Ravenloft",
       "relationships": [
@@ -1032,7 +1032,7 @@ _build:
           "type": "spouse",
           "with": "dilisnya_husband",
           "tier": "SPEC",
-          "note": "Duke Endor 'Dorian' Dilisnya. Her husband; father of the legitimate line. Drew's named reconstruction, not an invented placeholder.",
+          "note": "Duke Endor 'Dorian' Dilisnya. Her husband; father of the legitimate line. The author's named reconstruction, not an invented placeholder.",
           "source": "VotO"
         },
         {
@@ -1072,7 +1072,7 @@ _build:
         }
       ],
       "open_question": "dilisnya_husband",
-      "notes": "DILISNYA BY BIRTH AND MARRIAGE: Dorfniya is Barov's sister, born into the true family name DILISNYA (Barov assumed the royal 'von Zarovich' style; she did not). She also MARRIES her cousin Endor 'Dorian' Dilisnya, so she is Dilisnya by both routes — I6 Crypt 8 'Duchess Dorfniya Dilisnya' is correct and overdetermined. The KEY EVIDENCE for the one-family reading is this COUSIN-MARRIAGE (a royal duchess marrying a Dilisnya cousin only makes sense if the families are one), not the surname alone. Her 'heritage removed from the official records' (Drew's own phrasing) reads as the cost of reasserting the Dilisnya name over the crown's von Zarovich style. NOTE: an earlier pass mislabelled her 'von Zarovich' — reverted; I6 was right. | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two.",
+      "notes": "DILISNYA BY BIRTH AND MARRIAGE: Dorfniya is Barov's sister, born into the true family name DILISNYA (Barov assumed the royal 'von Zarovich' style; she did not). She also MARRIES her cousin Endor 'Dorian' Dilisnya, so she is Dilisnya by both routes — I6 Crypt 8 'Duchess Dorfniya Dilisnya' is correct and overdetermined. The KEY EVIDENCE for the one-family reading is this COUSIN-MARRIAGE (a royal duchess marrying a Dilisnya cousin only makes sense if the families are one), not the surname alone. Her 'heritage removed from the official records' (the author's own phrasing) reads as the cost of reasserting the Dilisnya name over the crown's von Zarovich style. NOTE: an earlier pass mislabelled her 'von Zarovich' — reverted; I6 was right. | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two.",
       "born_marker": {
         "year": 293,
         "tier": "CORE",
@@ -1375,7 +1375,7 @@ _build:
         }
       ],
       "open_question": "buchvold",
-      "notes": "RoT prints 'Ivan Buchvold'. Drew's own notes suspect 'Illya Buchvold' (Tome of Strahd, one iteration) may be a Strahd fabrication. Whether Ivan and Illya are the same figure is contested; see open question.",
+      "notes": "RoT prints 'Ivan Buchvold'. The author's own notes suspect 'Illya Buchvold' (Tome of Strahd, one iteration) may be a Strahd fabrication. Whether Ivan and Illya are the same figure is contested; see open question.",
       "born_marker": {
         "year": 311,
         "tier": "CORE",
@@ -1398,13 +1398,13 @@ _build:
         "year": 314,
         "tier": "SPEC",
         "source": "VotO",
-        "note": "Drew's own reconstruction places Illya as second son to the Buchvold family, on a row explicitly headed 'possible false entry and historical revisionism by Strahd von Zarovich'. So Drew dates him BUT flags the whole entry as possibly Strahd's fabrication (Tome of Strahd, one iteration only)."
+        "note": "The author's own reconstruction places Illya as second son to the Buchvold family, on a row explicitly headed 'possible false entry and historical revisionism by Strahd von Zarovich'. So the author dates him BUT flags the whole entry as possibly Strahd's fabrication (Tome of Strahd, one iteration only)."
       },
       "death": {
         "year": 347,
         "tier": "SPEC",
         "source": "VotO",
-        "note": "Drew's own reconstruction. Same caveat: dated by Drew but flagged possible-Strahd-fabrication. (This session's I,Strahd reading adds that Leo frames him and the whole arc may be Strahd's persecution device.)"
+        "note": "The author's own reconstruction. Same caveat: dated by the author but flagged possible-Strahd-fabrication. (This session's I,Strahd reading adds that Leo frames him and the whole arc may be Strahd's persecution device.)"
       },
       "location": "Castle Ravenloft (I,Strahd narration)",
       "relationships": [
@@ -1526,7 +1526,7 @@ _build:
         "year": 286,
         "tier": "SPEC",
         "source": "VotO",
-        "note": "Inherits the RoT Bloodlines Dilisnya-tree dates for the Duke (printed b280 d349, reconstructed here to 286/347): he IS the noble figure in the tree, Dorfniya's husband. Drew's own reconstruction names him Endor 'Dorian' Dilisnya. Distinct from Pidlwik the fool.",
+        "note": "Inherits the RoT Bloodlines Dilisnya-tree dates for the Duke (printed b280 d349, reconstructed here to 286/347): he IS the noble figure in the tree, Dorfniya's husband. The author's own reconstruction names him Endor 'Dorian' Dilisnya. Distinct from Pidlwik the fool.",
         "adjust_note": "Reconstruction date moved 4y later (280->284) to reduce the over-aged founding cohort. SPEC. | Male cohort moved a further +2y later, to 286."
       },
       "death": {
@@ -1539,7 +1539,7 @@ _build:
           "tier": "CORE",
           "reason": "RoT Bloodlines prints d349. The 347 reading is SPECULATION overriding it, not a confirmed correction."
         },
-        "note": "SPECULATION (Drew's reconstruction), NOT established. RoT prints d349; this floats 347 instead, on the reading that after the 346 royal deaths and Sturm's flight the Duke holds the castle and dies when Strahd arrives in 347. The Duke's ABSENCE from the I6 castle crypts (his wife Dorfniya is entombed there; he is not) is CONSISTENT WITH this but is not proof — a missing crypt has many possible causes. Marked SPEC; printed 349 preserved. Do not present as a finding."
+        "note": "SPECULATION (the author's reconstruction), NOT established. RoT prints d349; this floats 347 instead, on the reading that after the 346 royal deaths and Sturm's flight the Duke holds the castle and dies when Strahd arrives in 347. The Duke's ABSENCE from the I6 castle crypts (his wife Dorfniya is entombed there; he is not) is CONSISTENT WITH this but is not proof — a missing crypt has many possible causes. Marked SPEC; printed 349 preserved. Do not present as a finding."
       },
       "location": "Castle Ravenloft (holds it through the interregnum; dies there 347)",
       "relationships": [
@@ -1548,7 +1548,7 @@ _build:
           "with": "dorfniya",
           "tier": "SPEC",
           "source": "VotO",
-          "note": "Drew's own reconstruction."
+          "note": "The author's own reconstruction."
         },
         {
           "type": "parent-of",
@@ -1575,11 +1575,11 @@ _build:
           "with": "barov",
           "tier": "SPEC",
           "source": "VotO",
-          "note": "First cousins via the shared grandfather Vasili von Zarovich. The link that makes the two 'trees' one. (Drew's own notes: Endor and Barov 'possibly cousins'.)"
+          "note": "First cousins via the shared grandfather Vasili von Zarovich. The link that makes the two 'trees' one. (the author's own notes: Endor and Barov 'possibly cousins'.)"
         }
       ],
       "open_question": null,
-      "notes": "Duke Endor 'Dorian' Dilisnya. Dorfniya's husband and father of Reinhold, Gertrude, and Oleka. Drew's spreadsheet holds his dukedom open: inherited from his father, or awarded by King Barov for service, and notes Endor and Barov were possibly cousins. DISTINCT from Pidlwik: Pidlwik is Dorfniya's FOOL (I6 Crypt 9, primary, governing); Endor is her husband the Duke. They shared the same placeholder dates in an early draft but are two people. Endor's dates (286/347) are SPEC: best-guess reconstruction from the undated I6, fixed in time by the birth dates of his children. | DEATH 347, not the Bloodlines' 349: he holds the castle after the 346 deaths and Sturm's flight, and dies when Strahd arrives in 347. Supported by his ABSENCE from the I6 castle crypts (his wife Dorfniya is entombed there; the Duke is not). | Under the committed reading (dilisnya_is_vonzarovich), 'Dilisnya' is a Von Zarovich name, so Endor and the whole Dilisnya line are Von Zarovich BLOOD (consistent with Drew's 'possibly cousins' note — Endor a blood kinsman of Barov, not an outside house). No unusual name-taking: the name is royal to begin with. | NAME (revised this session): now Endor 'Dorian' Dilisnya. Everyone calls him Dorian. He is the lord Strahd claims to defeat in taking the castle (347); the later-edition 'Dorian the Goblyn King' is a corruption of THIS defeated Duke — the name is absorbed onto the Endor founder-root and given its true referent (Dorfniya's husband, last holder of the castle), while the Terg/Goblyn-King STORY remains excluded. | DORIAN'S ARC (reconstruction, coup-gone-wrong): Endor 'Dorian' Dilisnya, Dorfniya's husband, SURVIVES the 346 massacre (loses his wife), ensures Sturm and his family ESCAPE, then commits EVERYTHING left to a near-hopeless defence against the goblins. Strahd's fresh mercenary army exploits Dorian's all-in engagement: a TWO-DIRECTION assault (Dorian's exhausted defenders pinning them, Strahd's army delivering the killing blow) wipes the goblins out, and the momentum opens Dorian's PATH OF RETREAT to the castle. Strahd stays to 'clean up' the field, claim the SAVIOUR'S CREDIT for the whole victory (styling himself 'Count' — a self-assumed title for legitimacy, cf. the Count of Monte Cristo, since he was stripped of rank), and turns straight to BESIEGING the castle. But the castle is HOLLOW: Dorian spent its substance on the very battle that made Strahd a hero, so the siege Strahd prepares for a long haul COLLAPSES FAST — faster than Strahd, overprepared, expects. Dorian dies in the royal seat: the last loyal man of the old order, defeated by the dead king's disinherited son. His heroism is stolen TWICE (to make Strahd the saviour, and to make his own last stand hopeless) and INVERTED in the record — he will be remembered as a rebel/commoner/thief squatting in the royal seat, not the dutiful Duke, because everyone who could testify is dead or fled. The later-edition 'Dorian the Goblyn King' is the final layer of this slander. He is what the buried TRUTH looks like; Strahd is what the enthroned LIE looks like — the project's central theme in one figure-pair. | 346 INTERMENT (reconstruction): as the loyal authority holding the interregnum, Dorian handled the logistical INTERMENT of the 346 dead (incl. Dorfniya his wife, and her fool Pidlwik in the adjacent crypt), while Kir performed the religious rites and Ciril remained at the Holy Symbol crafting.",
+      "notes": "Duke Endor 'Dorian' Dilisnya. Dorfniya's husband and father of Reinhold, Gertrude, and Oleka. The author's spreadsheet holds his dukedom open: inherited from his father, or awarded by King Barov for service, and notes Endor and Barov were possibly cousins. DISTINCT from Pidlwik: Pidlwik is Dorfniya's FOOL (I6 Crypt 9, primary, governing); Endor is her husband the Duke. They shared the same placeholder dates in an early draft but are two people. Endor's dates (286/347) are SPEC: best-guess reconstruction from the undated I6, fixed in time by the birth dates of his children. | DEATH 347, not the Bloodlines' 349: he holds the castle after the 346 deaths and Sturm's flight, and dies when Strahd arrives in 347. Supported by his ABSENCE from the I6 castle crypts (his wife Dorfniya is entombed there; the Duke is not). | Under the committed reading (dilisnya_is_vonzarovich), 'Dilisnya' is a Von Zarovich name, so Endor and the whole Dilisnya line are Von Zarovich BLOOD (consistent with the author's 'possibly cousins' note — Endor a blood kinsman of Barov, not an outside house). No unusual name-taking: the name is royal to begin with. | NAME (revised this session): now Endor 'Dorian' Dilisnya. Everyone calls him Dorian. He is the lord Strahd claims to defeat in taking the castle (347); the later-edition 'Dorian the Goblyn King' is a corruption of THIS defeated Duke — the name is absorbed onto the Endor founder-root and given its true referent (Dorfniya's husband, last holder of the castle), while the Terg/Goblyn-King STORY remains excluded. | DORIAN'S ARC (reconstruction, coup-gone-wrong): Endor 'Dorian' Dilisnya, Dorfniya's husband, SURVIVES the 346 massacre (loses his wife), ensures Sturm and his family ESCAPE, then commits EVERYTHING left to a near-hopeless defence against the goblins. Strahd's fresh mercenary army exploits Dorian's all-in engagement: a TWO-DIRECTION assault (Dorian's exhausted defenders pinning them, Strahd's army delivering the killing blow) wipes the goblins out, and the momentum opens Dorian's PATH OF RETREAT to the castle. Strahd stays to 'clean up' the field, claim the SAVIOUR'S CREDIT for the whole victory (styling himself 'Count' — a self-assumed title for legitimacy, cf. the Count of Monte Cristo, since he was stripped of rank), and turns straight to BESIEGING the castle. But the castle is HOLLOW: Dorian spent its substance on the very battle that made Strahd a hero, so the siege Strahd prepares for a long haul COLLAPSES FAST — faster than Strahd, overprepared, expects. Dorian dies in the royal seat: the last loyal man of the old order, defeated by the dead king's disinherited son. His heroism is stolen TWICE (to make Strahd the saviour, and to make his own last stand hopeless) and INVERTED in the record — he will be remembered as a rebel/commoner/thief squatting in the royal seat, not the dutiful Duke, because everyone who could testify is dead or fled. The later-edition 'Dorian the Goblyn King' is the final layer of this slander. He is what the buried TRUTH looks like; Strahd is what the enthroned LIE looks like — the project's central theme in one figure-pair. | 346 INTERMENT (reconstruction): as the loyal authority holding the interregnum, Dorian handled the logistical INTERMENT of the 346 dead (incl. Dorfniya his wife, and her fool Pidlwik in the adjacent crypt), while Kir performed the religious rites and Ciril remained at the Holy Symbol crafting.",
       "born_marker": {
         "year": 286,
         "tier": "SPEC",
@@ -1603,7 +1603,7 @@ _build:
         "year": 322,
         "tier": "SPEC",
         "source": "VotO",
-        "note": "SPEC, from Drew's WORKING (unpublished) Holy Symbol analysis: Kir 'unlikely to be less than 24' (ordination followed years of training), birthdate 'could not be later than 323', and he is 'a contemporary of Sergei von Zarovich' (b324). Placed 322 on that reasoning (~25 at the 347 events; youngest High Priest; first holder of the Holy Symbol). NOTE: the source analysis is background working material, later revised for publication, so this rests on the REASONING's merits, not on a published position."
+        "note": "SPEC, from the author's WORKING (unpublished) Holy Symbol analysis: Kir 'unlikely to be less than 24' (ordination followed years of training), birthdate 'could not be later than 323', and he is 'a contemporary of Sergei von Zarovich' (b324). Placed 322 on that reasoning (~25 at the 347 events; youngest High Priest; first holder of the Holy Symbol). NOTE: the source analysis is background working material, later revised for publication, so this rests on the REASONING's merits, not on a published position."
       },
       "death": {
         "year": 350,
@@ -1642,14 +1642,14 @@ _build:
         "year": 256,
         "tier": "SPEC",
         "source": "VotO",
-        "note": "Drew's own reconstruction. SPEC. A teaching priest, not a high priest.",
+        "note": "The author's own reconstruction. SPEC. A teaching priest, not a high priest.",
         "adjust_note": "Reconstruction date moved 4y later (250->254) to reduce the over-aged founding cohort. SPEC. | Male cohort moved a further +2y later, to 256."
       },
       "death": {
         "year": 323,
         "tier": "SPEC",
         "source": "VotO",
-        "note": "Death moved to 323 to coincide with the reconstructed first-kill sequence (Strahd aged 17). 'Old Zarak' at 67. Under the reconstruction, Zarak is the strong candidate for Strahd's first Ba'al Verzi victim — the ritual (VotM) requires the first kill be 'someone the assassin knew', and a childhood tutor fits that requirement exactly. Date is Drew's to set; moved from the earlier 327."
+        "note": "Death moved to 323 to coincide with the reconstructed first-kill sequence (Strahd aged 17). 'Old Zarak' at 67. Under the reconstruction, Zarak is the strong candidate for Strahd's first Ba'al Verzi victim — the ritual (VotM) requires the first kill be 'someone the assassin knew', and a childhood tutor fits that requirement exactly. Date is the author's to set; moved from the earlier 327."
       },
       "location": "Barovia (church)",
       "relationships": [
@@ -1665,7 +1665,7 @@ _build:
         }
       ],
       "on_event_spine": false,
-      "notes": "Zarak Petrovic, a TEACHING priest, tutor to Strahd in his youth (Drew's reconstruction; b256 d323, SPEC). IMPORTANT SCOPE (per the published Holy Symbol article): Zarak is accepted ONLY as an ordinary teaching priest, NEVER as a high priest or most high priest, and is NOT part of the Holy Symbol succession (Ciril -> Kir). The article rejects the I,Strahd-derived claim that Zarak was a high-priest predecessor; it does not bar him existing as Strahd's tutor. His death in 323 puts him long dead before the 347 Holy Symbol events, exactly as the article requires. Do not promote him to high priest. | RECONSTRUCTION: strong candidate for Strahd's first Ba'al Verzi kill (~323). The VotM ritual (see event exile_323) requires the first victim be someone the assassin knew; Strahd's own tutor fits precisely. This is the speculative-victim layer within the exile reconstruction.",
+      "notes": "Zarak Petrovic, a TEACHING priest, tutor to Strahd in his youth (the author's reconstruction; b256 d323, SPEC). IMPORTANT SCOPE (per the published Holy Symbol article): Zarak is accepted ONLY as an ordinary teaching priest, NEVER as a high priest or most high priest, and is NOT part of the Holy Symbol succession (Ciril -> Kir). The article rejects the I,Strahd-derived claim that Zarak was a high-priest predecessor; it does not bar him existing as Strahd's tutor. His death in 323 puts him long dead before the 347 Holy Symbol events, exactly as the article requires. Do not promote him to high priest. | RECONSTRUCTION: strong candidate for Strahd's first Ba'al Verzi kill (~323). The VotM ritual (see event exile_323) requires the first victim be someone the assassin knew; Strahd's own tutor fits precisely. This is the speculative-victim layer within the exile reconstruction.",
       "born_marker": {
         "year": 256,
         "tier": "SPEC",
@@ -1688,7 +1688,7 @@ _build:
         "year": 280,
         "tier": "SPEC",
         "source": "VotO",
-        "note": "Drew's own reconstruction: Ciril Romulich Romanov, likely third-born to a man known as Roman, ordained/high priest. SPEC in the source (a reasoned birth, not printed in I6/RoT). Death 347 (crafting the Holy Symbol killed him). This is DREW'S dated reconstruction, not Claude's guess.",
+        "note": "The author's own reconstruction: Ciril Romulich Romanov, likely third-born to a man known as Roman, ordained/high priest. SPEC in the source (a reasoned birth, not printed in I6/RoT). Death 347 (crafting the Holy Symbol killed him). This is DREW'S dated reconstruction, not Claude's guess.",
         "adjust_note": "Reconstruction date moved 4y later (274->278) to reduce the over-aged founding cohort. SPEC. | Male cohort moved a further +2y later, to 280."
       },
       "death": {
@@ -1722,7 +1722,7 @@ _build:
         "year": 281,
         "tier": "SPEC",
         "source": "VotO",
-        "note": "Drew's own reconstruction: Stephan Gregorovich, First Counsellor to King Barov (I6 Crypt 25), d.346.",
+        "note": "The author's own reconstruction: Stephan Gregorovich, First Counsellor to King Barov (I6 Crypt 25), d.346.",
         "adjust_note": "Reconstruction date moved 4y later (275->279) to reduce the over-aged founding cohort. SPEC. | Male cohort moved a further +2y later, to 281."
       },
       "death": {
@@ -1756,7 +1756,7 @@ _build:
         "year": null,
         "tier": "INFER",
         "source": "VotO",
-        "note": "I6 Crypt 15 ('KHAZAN: His word was power'), court wizard, among the 346 dead. NOT dated in Drew's own (unpublished) working spreadsheet; birth year left open rather than invented. Died 346 with the ruling circle."
+        "note": "I6 Crypt 15 ('KHAZAN: His word was power'), court wizard, among the 346 dead. NOT dated in the author's own (unpublished) working spreadsheet; birth year left open rather than invented. Died 346 with the ruling circle."
       },
       "death": {
         "year": 345,
@@ -2794,7 +2794,7 @@ _build:
         "barov",
         "ravenia"
       ],
-      "notes": "Drew's own (unpublished) notes (para 76): the marriage of Barov and Ravenovia most likely occurred between 299 and 305; possibly 300/301 to mark the new century, but MOST LIKELY 304. Arranged, with a long betrothal from youth and years negotiating the contract; the van Roeyen wealth funded the von Zarovich wars (para 69). Window 299-305, preferred year 304.",
+      "notes": "The author's own (unpublished) notes (para 76): the marriage of Barov and Ravenovia most likely occurred between 299 and 305; possibly 300/301 to mark the new century, but MOST LIKELY 304. Arranged, with a long betrothal from youth and years negotiating the contract; the van Roeyen wealth funded the von Zarovich wars (para 69). Window 299-305, preferred year 304.",
       "source": "VotO",
       "window": {
         "from": 299,
@@ -2832,7 +2832,7 @@ _build:
         "strahd_war_fabrication",
         "istrahd_persecution_device"
       ],
-      "notes": "ANCHORS (firmer): Strahd trained/served as Ba'al Verzi and was long absent from youth (Drew's own unpublished notes); the Ba'al Verzi first-kill-must-be-an-intimate and skin-hilt-dagger ritual is VotM ('Skin and Steel', quoted in the Jander library scene) — NOT from Strahd's unreliable memoir, so it is a trusted source. Sturm survives and flees at 346 (VotM empty crypt) — consistent with his being the original witness who always knew what Strahd was. Sturm is heir-apparent despite Strahd's seniority — consistent with a disinheritance. RECONSTRUCTION (the connective narrative) is SPEC/INVENT and marked as such. | REVISED downstream: Strahd does not simply 'stay away' — his assassin's craft (disguise, stealth) lets him return to Barovia unseen throughout the exile to build his faction in person, and to be PRESENT (disguised) at the 346 coup. See massacre_346 (revised).",
+      "notes": "ANCHORS (firmer): Strahd trained/served as Ba'al Verzi and was long absent from youth (the author's own unpublished notes); the Ba'al Verzi first-kill-must-be-an-intimate and skin-hilt-dagger ritual is VotM ('Skin and Steel', quoted in the Jander library scene) — NOT from Strahd's unreliable memoir, so it is a trusted source. Sturm survives and flees at 346 (VotM empty crypt) — consistent with his being the original witness who always knew what Strahd was. Sturm is heir-apparent despite Strahd's seniority — consistent with a disinheritance. RECONSTRUCTION (the connective narrative) is SPEC/INVENT and marked as such. | REVISED downstream: Strahd does not simply 'stay away' — his assassin's craft (disguise, stealth) lets him return to Barovia unseen throughout the exile to build his faction in person, and to be PRESENT (disguised) at the 346 coup. See massacre_346 (revised).",
       "source": "VotO",
       "sequence": [
         {
@@ -3786,7 +3786,7 @@ _build:
       "present": [
         "dorfniya"
       ],
-      "notes": "Dies 346 with the ruling circle at Castle Ravenloft (the catastrophe). The printed RoT d340 is WRONG (carried uncorrected into Drew's spreadsheet before this correction); she dies with her family at court in 346. Corrected per Drew.",
+      "notes": "Dies 346 with the ruling circle at Castle Ravenloft (the catastrophe). The printed RoT d340 is WRONG (carried uncorrected into the author's spreadsheet before this correction); she dies with her family at court in 346. Corrected per the author.",
       "source": "VotO"
     },
     {
@@ -3982,7 +3982,7 @@ _build:
       "present": [
         "illya_buchvold"
       ],
-      "notes": "Drew's own reconstruction. Same caveat: dated by Drew but flagged possible-Strahd-fabrication. (This session's I,Strahd reading adds that Leo frames him and the whole arc may be Strahd's persecution device.)",
+      "notes": "The author's own reconstruction. Same caveat: dated by the author but flagged possible-Strahd-fabrication. (This session's I,Strahd reading adds that Leo frames him and the whole arc may be Strahd's persecution device.)",
       "source": "VotO"
     },
     {
@@ -4066,7 +4066,7 @@ _build:
       "present": [
         "dilisnya_husband"
       ],
-      "notes": "SPECULATION (Drew's reconstruction), NOT established. RoT prints d349; this floats 347 instead, on the reading that after the 346 royal deaths and Sturm's flight the Duke holds the castle and dies when Strahd arrives in 347. The Duke's ABSENCE from the I6 castle crypts (his wife Dorfniya is entombed there; he is not) is CONSISTENT WITH this but is not proof — a missing crypt has many possible causes. Marked SPEC; printed 349 preserved. Do not present as a finding.",
+      "notes": "SPECULATION (the author's reconstruction), NOT established. RoT prints d349; this floats 347 instead, on the reading that after the 346 royal deaths and Sturm's flight the Duke holds the castle and dies when Strahd arrives in 347. The Duke's ABSENCE from the I6 castle crypts (his wife Dorfniya is entombed there; he is not) is CONSISTENT WITH this but is not proof — a missing crypt has many possible causes. Marked SPEC; printed 349 preserved. Do not present as a finding.",
       "source": "VotO"
     },
     {
@@ -4122,7 +4122,7 @@ _build:
       "present": [
         "zarak_petrovic"
       ],
-      "notes": "Death moved to 323 to coincide with the reconstructed first-kill sequence (Strahd aged 17). 'Old Zarak' at 73 (b250). Under the reconstruction, Zarak is the strong candidate for Strahd's first Ba'al Verzi victim — the ritual (VotM) requires the first kill be 'someone the assassin knew', and a childhood tutor fits that requirement exactly. Date is Drew's to set; moved from the earlier 327.",
+      "notes": "Death moved to 323 to coincide with the reconstructed first-kill sequence (Strahd aged 17). 'Old Zarak' at 73 (b250). Under the reconstruction, Zarak is the strong candidate for Strahd's first Ba'al Verzi victim — the ritual (VotM) requires the first kill be 'someone the assassin knew', and a childhood tutor fits that requirement exactly. Date is the author's to set; moved from the earlier 327.",
       "source": "VotO"
     },
     {
@@ -4692,7 +4692,7 @@ _build:
       "date": "c.296",
       "tier": "SPEC",
       "source": "VotO",
-      "notes": "Barov (b283) and Ravenia (b286) are betrothed as children — a von Zarovich/van Roeyen alliance arranged well in advance (Drew's own notes: 'betrothed whilst young, with many intervening years of negotiating the marriage contract'). The betrothal CONTRACT commits the van Roeyen wealth, which is what later funds Barov's founding war — so the money is available regardless of when the wedding itself takes place. Date c.296 is nominal (both children); SPEC.",
+      "notes": "Barov (b283) and Ravenia (b286) are betrothed as children — a von Zarovich/van Roeyen alliance arranged well in advance (the author's own notes: 'betrothed whilst young, with many intervening years of negotiating the marriage contract'). The betrothal CONTRACT commits the van Roeyen wealth, which is what later funds Barov's founding war — so the money is available regardless of when the wedding itself takes place. Date c.296 is nominal (both children); SPEC.",
       "scope": "single",
       "line": "barovia",
       "present": [
@@ -4842,13 +4842,13 @@ _build:
     {
       "id": "rm4_markers",
       "title": "I6 itself prints a sanitised letter and a truthful one; the marker lives only in the truthful one",
-      "text": "VERIFIED against I6 page 9. I6 gives the players TWO burgomaster's letters. The first, handed over openly by the Vistana at the inn, is short and sanitised: 'I, a lowly servant of the township of Barovia, send honor to thee', pleading to save Ireena, with NO mention of the vampire and NO 'over 400 years'. The second, found on a dead villager in the Svalich woods, is the truthful account: 'I, the Burgomaster of Barovia send you honor with despair... For over 400 years he has drained this land of the life-blood of its people.' So the temporal marker appears ONLY in the truthful letter, and the truthful letter is literally taken off a corpse, while the sanitised version is the one delivered openly. This true-vs-false pair is I6's own 1983 design (the Hickmans), NOT an RM4 or RoT addition. RM4 page 64 reprints both letters and merely adds the explicit labels 'False Letter to the PCs' and 'Original Letter to the PCs' plus handling instructions; both markers survive in RM4 because both survive in I6. CORRECTION of two earlier working errors in this session: (1) RM4 does NOT strip I6's markers; (2) RM4 did NOT invent the false-vs-true framing. The genuine finding is I6's: the honest account with the deep-past marker is the one hidden on a dead man, the open plea has the history removed. This still chimes with the timeline's theme (erasure of the past marks the sanitised account) but it is the module's own move, not evidence about RoT/RM4. Drew's own 'RM4 has the same dating issues' note is therefore roughly right after all: RM4 is a faithful reprint including both letters and both markers.",
+      "text": "VERIFIED against I6 page 9. I6 gives the players TWO burgomaster's letters. The first, handed over openly by the Vistana at the inn, is short and sanitised: 'I, a lowly servant of the township of Barovia, send honor to thee', pleading to save Ireena, with NO mention of the vampire and NO 'over 400 years'. The second, found on a dead villager in the Svalich woods, is the truthful account: 'I, the Burgomaster of Barovia send you honor with despair... For over 400 years he has drained this land of the life-blood of its people.' So the temporal marker appears ONLY in the truthful letter, and the truthful letter is literally taken off a corpse, while the sanitised version is the one delivered openly. This true-vs-false pair is I6's own 1983 design (the Hickmans), NOT an RM4 or RoT addition. RM4 page 64 reprints both letters and merely adds the explicit labels 'False Letter to the PCs' and 'Original Letter to the PCs' plus handling instructions; both markers survive in RM4 because both survive in I6. CORRECTION of two earlier working errors in this session: (1) RM4 does NOT strip I6's markers; (2) RM4 did NOT invent the false-vs-true framing. The genuine finding is I6's: the honest account with the deep-past marker is the one hidden on a dead man, the open plea has the history removed. This still chimes with the timeline's theme (erasure of the past marks the sanitised account) but it is the module's own move, not evidence about RoT/RM4. The author's own 'RM4 has the same dating issues' note is therefore roughly right after all: RM4 is a faithful reprint including both letters and both markers.",
       "source": "VotO"
     },
     {
       "id": "truncation_continuity",
       "title": "The truncation gap misread as continuity",
-      "text": "RoT prints a truncation gap in the Von Zarovich line (a real break). Later writers missed it and assumed continuous descent between the top block and the 630s block. Drew's derivation of the gap: ~300 years / ~12 generations (INFER; the '12 generation' label on the scan is Drew's annotation, not RoT's).",
+      "text": "RoT prints a truncation gap in the Von Zarovich line (a real break). Later writers missed it and assumed continuous descent between the top block and the 630s block. The author's derivation of the gap: ~300 years / ~12 generations (INFER; the '12 generation' label on the scan is the author's annotation, not RoT's).",
       "source": "VotO"
     },
     {
@@ -4872,7 +4872,7 @@ _build:
     {
       "id": "holy_symbol_lag",
       "title": "The articles hold 346 open; the timeline commits — by design, not drift",
-      "text": "The published Holy Symbol article and Drew's own working notes hold the 346 question open ('both readings consistent with the evidence; neither can be confirmed') — because their job is SOURCE-ANALYSIS: showing what the evidence does and does not support. The timeline's job is different: it tells the committed STORY the evidence best supports, which is why it commits to the indirect-absent-Strahd coup reading where the article and notes hedge. This is NOT self-consistency drift; it is the two projects doing their proper work. The timeline's commitment is kept honest by TIER (SPEC), not by hedging. The article and notes cleared the ground; the timeline builds the reconstruction on it. [UPDATE: the timeline's committed 346 reading is now the coup-gone-wrong (Strahd present-disguised, the plan collapses, Ravenia killed unintentionally) — see flag coup_gone_wrong. Still a committed story marked SPEC, distinct from the articles' held-open caution.]",
+      "text": "The published Holy Symbol article and the author's own working notes hold the 346 question open ('both readings consistent with the evidence; neither can be confirmed') — because their job is SOURCE-ANALYSIS: showing what the evidence does and does not support. The timeline's job is different: it tells the committed STORY the evidence best supports, which is why it commits to the indirect-absent-Strahd coup reading where the article and notes hedge. This is NOT self-consistency drift; it is the two projects doing their proper work. The timeline's commitment is kept honest by TIER (SPEC), not by hedging. The article and notes cleared the ground; the timeline builds the reconstruction on it. [UPDATE: the timeline's committed 346 reading is now the coup-gone-wrong (Strahd present-disguised, the plan collapses, Ravenia killed unintentionally) — see flag coup_gone_wrong. Still a committed story marked SPEC, distinct from the articles' held-open caution.]",
       "source": "VotO"
     },
     {
@@ -4891,7 +4891,7 @@ _build:
       "id": "tergs_dod_invention",
       "title": "The Tergs are a Domains of Dread (1997) invention, not primary history",
       "source": "VotO",
-      "text": "ESTABLISHED PROVENANCE: 'The Tergs invade Barovia, conquering the ancestral lands' first appears in Domains of Dread (1997), on its timeline at 320 and its history page. The word 'Terg' is ABSENT from RoT (1990) and ABSENT from I, Strahd: The Memoirs of a Vampire (1993, checked in full: zero occurrences). So the Tergs are a late setting-era invention, not primary history and not Strahd's own account. THE SEAM THEY PATCH (established from I6 crypts): I6's crypts hold Barov, Ravenovia and the whole ruling circle -- Strahd's family, predating his lordship -- yet the setting framing casts Strahd as a conqueror who 'arrives' to claim the castle. If his family is already entombed there, it was already the family seat; he did not arrive as an outsider. The Terg invasion papers over exactly this: the ancestral lands are lost and reclaimed, so Strahd can be both returning heir and conqueror and the family can predate him. INFERRED INTENT (tier INFER): DoD's authors likely invented the Tergs to make Strahd's early history cohere, because goblins alone did not carry enough weight and the family-in-the-crypts contradiction needed resolving. Crucially they resolved it IN STRAHD'S FAVOUR (external enemy, heroic reclamation) -- the same direction Strahd's own narrative would want, which is itself weak support for the persecution-device reading. COMPETING RESOLUTION (VotO): the same seam is resolved more economically by the 346 coup reading -- the family were always resident at the castle and Strahd killed them from within (patricide/regicide disguised), requiring no invented people. Two patches for one documented contradiction; only DoD's requires manufacturing an uncorroborated nation. SECOND NOVEL: 'I, Strahd: The War Against Azalin' (Elrod, 1998) is owned by Drew but in storage and not currently accessible; it postdates DoD by a year, so even if it uses the Tergs it can only be later repetition, never the origin. The DoD-1997 origin is therefore stable regardless. NAMED WARLORD — DEBUNKED: 'Dorian the Goblyn King' is NOT in DoD's own Ravenloft Timeline (confirmed from the page image: DoD names the Tergs but gives their leader NO name). The 'Dorian' name came from imported secondary text (Timeline_A, not Drew's edit) that embroidered on DoD; it has no source even in DoD. Do not use it. DIRECT DoD CONFIRMATION (page image, DoD Ravenloft Timeline): '320 The Tergs invade Barovia, conquering the ancestral lands of the Von Zarovich family'; '321 Strahd leads the armies of Barovia against the Tergs to reclaim his ancestral lands'; '347 The defeated Tergs are driven from Barovia. Strahd claims the throne as his reward.' Also '1 The Nation of Barovia is founded on an unknown world by the ancestors of Strahd von Zarovich' — DoD manufacturing the ancient-ancestral legitimacy framing. NOTE DoD runs its OWN contradictory chronology (Strahd born 299, not the RoT/VotM 306), so it is a separate invented scheme, not a reading of I6 or RoT. EYE-CHECK (RoT page images, read directly, not OCR): the Tergs and the ancestral-lands-reclamation framing are ABSENT from BOTH RoT's Time Line of Events (which begins at 351 and has no pre-351 entries) AND RoT's Strahd darklord write-up (p2/38-40), which describes Strahd as a WARRIOR/CONQUEROR who won Barovia by the sword, growing old in war, NOT as a dispossessed heir reclaiming ancestral lands from named invaders. So RoT's Strahd is a bare conqueror; DoD's Terg-reclamation recasts that generic conquest as righteous reclamation (the returning-heir sanitising). NOTE this RoT 'conqueror' framing actually supports the VotO imposed-name / conqueror-dynasty reconstruction better than DoD's version does. CAVEAT: this eye-check covered RoT's timeline and Strahd write-up; a full page-by-page sweep of every RoT page was not done, so 'absent from all of RoT' is strongly supported but not exhaustively proven. STANDING DECISION (Dorian naming, revised & settled): We ADOPT 'Dorian' into our own structure rather than fight it as a perpetual counter-narrative. The Duke (Dorfniya's husband) is now 'Endor \\'Dorian\\' Dilisnya' — Endor -> Endorian -> Dorian — anchored on the primary-source Endor/Endorovich founder-root (I6 Crypts 7 & 19). Everyone calls him Dorian, and he is the lord Strahd names as the one he DEFEATS to take Castle Ravenloft in 347; this is how 'Dorian' entered the record, and the later-edition/3e 'Dorian the Goblyn King' is a CORRUPTION of this real defeated Duke. RATIONALE: absorbing the almost-familiar name onto a primary root, and giving it a true referent, is stronger than endless refutation — it explains and supersedes the contaminated version instead of leaving it alive as a thing to argue against. CRITICAL SCOPE: we adopt the NAME only; the Terg / reclaimed-ancestral-lands / Goblyn-King STORY remains excluded as later construction. (This reverses the earlier 'reject the etymology' note — the reversal is deliberate: capture the name, exclude the story.)"
+      "text": "ESTABLISHED PROVENANCE: 'The Tergs invade Barovia, conquering the ancestral lands' first appears in Domains of Dread (1997), on its timeline at 320 and its history page. The word 'Terg' is ABSENT from RoT (1990) and ABSENT from I, Strahd: The Memoirs of a Vampire (1993, checked in full: zero occurrences). So the Tergs are a late setting-era invention, not primary history and not Strahd's own account. THE SEAM THEY PATCH (established from I6 crypts): I6's crypts hold Barov, Ravenovia and the whole ruling circle -- Strahd's family, predating his lordship -- yet the setting framing casts Strahd as a conqueror who 'arrives' to claim the castle. If his family is already entombed there, it was already the family seat; he did not arrive as an outsider. The Terg invasion papers over exactly this: the ancestral lands are lost and reclaimed, so Strahd can be both returning heir and conqueror and the family can predate him. INFERRED INTENT (tier INFER): DoD's authors likely invented the Tergs to make Strahd's early history cohere, because goblins alone did not carry enough weight and the family-in-the-crypts contradiction needed resolving. Crucially they resolved it IN STRAHD'S FAVOUR (external enemy, heroic reclamation) -- the same direction Strahd's own narrative would want, which is itself weak support for the persecution-device reading. COMPETING RESOLUTION (VotO): the same seam is resolved more economically by the 346 coup reading -- the family were always resident at the castle and Strahd killed them from within (patricide/regicide disguised), requiring no invented people. Two patches for one documented contradiction; only DoD's requires manufacturing an uncorroborated nation. SECOND NOVEL: 'I, Strahd: The War Against Azalin' (Elrod, 1998) is owned by the author but in storage and not currently accessible; it postdates DoD by a year, so even if it uses the Tergs it can only be later repetition, never the origin. The DoD-1997 origin is therefore stable regardless. NAMED WARLORD — DEBUNKED: 'Dorian the Goblyn King' is NOT in DoD's own Ravenloft Timeline (confirmed from the page image: DoD names the Tergs but gives their leader NO name). The 'Dorian' name came from imported secondary text (Timeline_A, not the author's edit) that embroidered on DoD; it has no source even in DoD. Do not use it. DIRECT DoD CONFIRMATION (page image, DoD Ravenloft Timeline): '320 The Tergs invade Barovia, conquering the ancestral lands of the Von Zarovich family'; '321 Strahd leads the armies of Barovia against the Tergs to reclaim his ancestral lands'; '347 The defeated Tergs are driven from Barovia. Strahd claims the throne as his reward.' Also '1 The Nation of Barovia is founded on an unknown world by the ancestors of Strahd von Zarovich' — DoD manufacturing the ancient-ancestral legitimacy framing. NOTE DoD runs its OWN contradictory chronology (Strahd born 299, not the RoT/VotM 306), so it is a separate invented scheme, not a reading of I6 or RoT. EYE-CHECK (RoT page images, read directly, not OCR): the Tergs and the ancestral-lands-reclamation framing are ABSENT from BOTH RoT's Time Line of Events (which begins at 351 and has no pre-351 entries) AND RoT's Strahd darklord write-up (p2/38-40), which describes Strahd as a WARRIOR/CONQUEROR who won Barovia by the sword, growing old in war, NOT as a dispossessed heir reclaiming ancestral lands from named invaders. So RoT's Strahd is a bare conqueror; DoD's Terg-reclamation recasts that generic conquest as righteous reclamation (the returning-heir sanitising). NOTE this RoT 'conqueror' framing actually supports the VotO imposed-name / conqueror-dynasty reconstruction better than DoD's version does. CAVEAT: this eye-check covered RoT's timeline and Strahd write-up; a full page-by-page sweep of every RoT page was not done, so 'absent from all of RoT' is strongly supported but not exhaustively proven. STANDING DECISION (Dorian naming, revised & settled): We ADOPT 'Dorian' into our own structure rather than fight it as a perpetual counter-narrative. The Duke (Dorfniya's husband) is now 'Endor \\'Dorian\\' Dilisnya' — Endor -> Endorian -> Dorian — anchored on the primary-source Endor/Endorovich founder-root (I6 Crypts 7 & 19). Everyone calls him Dorian, and he is the lord Strahd names as the one he DEFEATS to take Castle Ravenloft in 347; this is how 'Dorian' entered the record, and the later-edition/3e 'Dorian the Goblyn King' is a CORRUPTION of this real defeated Duke. RATIONALE: absorbing the almost-familiar name onto a primary root, and giving it a true referent, is stronger than endless refutation — it explains and supersedes the contaminated version instead of leaving it alive as a thing to argue against. CRITICAL SCOPE: we adopt the NAME only; the Terg / reclaimed-ancestral-lands / Goblyn-King STORY remains excluded as later construction. (This reverses the earlier 'reject the etymology' note — the reversal is deliberate: capture the name, exclude the story.)"
     },
     {
       "id": "domain_dates_timeline_source",
@@ -4915,7 +4915,7 @@ _build:
       "id": "zarak_scope",
       "title": "Zarak is a teaching priest only, never a high priest (per the published Holy Symbol article)",
       "source": "VotO",
-      "text": "Drew's reconstruction includes a priest Zarak Petrovic (b256 d323) who TAUGHT Strahd in his youth. The published Holy Symbol article rejects one specific claim about him: that he was a HIGH PRIEST and a predecessor in the Holy Symbol succession (an I,Strahd-derived, Strahd-sourced, unreliable claim). It does NOT bar him existing as an ordinary teaching priest. So Zarak is retained, scoped strictly as a tutor to Strahd, dead by 323 (long before the 347 Holy Symbol events), and never as a high priest or part of the Ciril->Kir succession. The high-priest role belongs to Ciril then Kir; Zarak is only Strahd's early teacher."
+      "text": "The author's reconstruction includes a priest Zarak Petrovic (b256 d323) who TAUGHT Strahd in his youth. The published Holy Symbol article rejects one specific claim about him: that he was a HIGH PRIEST and a predecessor in the Holy Symbol succession (an I,Strahd-derived, Strahd-sourced, unreliable claim). It does NOT bar him existing as an ordinary teaching priest. So Zarak is retained, scoped strictly as a tutor to Strahd, dead by 323 (long before the 347 Holy Symbol events), and never as a high priest or part of the Ciril->Kir succession. The high-priest role belongs to Ciril then Kir; Zarak is only Strahd's early teacher."
     },
     {
       "id": "strahd_war_fabrication",

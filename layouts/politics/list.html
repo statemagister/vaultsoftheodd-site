@@ -6,18 +6,44 @@
       {{- with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
     </header>
 
-    {{- $pages := .Pages.ByWeight }}
-    {{- if $pages }}
-    <ol class="reading-list">
-      {{- range $pages }}
-      <li>
-        <h2 class="rl-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-        {{- with .Params.subtitle }}<p class="rl-sub">{{ . }}</p>{{ end }}
-        {{- with .Params.summary }}<p class="rl-lede">{{ . }}</p>{{ end }}
-      </li>
+    {{- /* Build series groups in a preferred order, then any ungrouped pages. */ -}}
+    {{- $order := slice (dict "key" "framework" "label" .Params.frameworkLabel "intro" .Params.frameworkIntro) (dict "key" "standalone" "label" .Params.standaloneLabel "intro" .Params.standaloneIntro) }}
+    {{- $groups := slice }}
+    {{- range $order }}
+      {{- $item := . }}
+      {{- $g := where $.Pages "Params.series" $item.key }}
+      {{- with $g }}{{ $groups = $groups | append (dict "label" $item.label "slug" ($item.key | urlize) "intro" $item.intro "pages" .) }}{{ end }}
+    {{- end }}
+    {{- $matched := where $.Pages "Params.series" "in" (slice "framework" "standalone") }}
+    {{- with ($.Pages | complement $matched) }}
+      {{- $groups = $groups | append (dict "label" "Other" "slug" "other" "intro" "" "pages" .) }}
+    {{- end }}
+
+    {{- if gt (len $groups) 1 }}
+    <div class="setting-tabs" role="tablist" aria-label="Choose a body of work">
+      {{- range $i, $g := $groups }}
+      <button class="setting-tab s-{{ $g.slug }}{{ if eq $i 0 }} is-active{{ end }}" type="button" role="tab" data-target="{{ $g.slug }}" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}">{{ $g.label }}</button>
       {{- end }}
-    </ol>
-    {{- else }}
+    </div>
+    {{- end }}
+
+    {{- range $i, $g := $groups }}
+    <section class="setting-section" data-set="{{ $g.slug }}" aria-label="{{ $g.label }}">
+      <h2 class="setting-heading s-{{ $g.slug }}">{{ $g.label }}</h2>
+      {{- with $g.intro }}<p class="rl-group-intro">{{ . }}</p>{{ end }}
+      <ol class="reading-list">
+        {{- range $g.pages }}
+        <li>
+          <h3 class="rl-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          {{- with .Params.subtitle }}<p class="rl-sub">{{ . }}</p>{{ end }}
+          {{- with .Params.summary }}<p class="rl-lede">{{ . }}</p>{{ end }}
+        </li>
+        {{- end }}
+      </ol>
+    </section>
+    {{- end }}
+
+    {{- if not $groups }}
     <p class="coming-soon">More from this vault is on the way.</p>
     {{- end }}
   </div>
@@ -34,4 +60,27 @@
     </div>
   </aside>
 </div>
+
+{{ if gt (len $groups) 1 }}
+<script>
+(function () {
+  var bar = document.querySelector('.setting-tabs');
+  var tabs = document.querySelectorAll('.setting-tab');
+  var panes = document.querySelectorAll('.setting-section');
+  if (!bar || tabs.length < 2) return;
+  bar.classList.add('ready');
+  document.querySelectorAll('.setting-section > .setting-heading').forEach(function (h) { h.hidden = true; });
+  function activate(slug) {
+    tabs.forEach(function (t) { var on = t.getAttribute('data-target') === slug; t.classList.toggle('is-active', on); t.setAttribute('aria-selected', on ? 'true' : 'false'); });
+    panes.forEach(function (p) { p.hidden = (p.getAttribute('data-set') !== slug); });
+    try { localStorage.setItem('vo-politics-series', slug); } catch (e) {}
+  }
+  tabs.forEach(function (t) { t.addEventListener('click', function () { activate(t.getAttribute('data-target')); }); });
+  var initial = tabs[0].getAttribute('data-target'), saved;
+  try { saved = localStorage.getItem('vo-politics-series'); } catch (e) {}
+  if (saved && Array.prototype.some.call(tabs, function (t) { return t.getAttribute('data-target') === saved; })) initial = saved;
+  activate(initial);
+})();
+</script>
+{{ end }}
 {{ end }}

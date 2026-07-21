@@ -4,6 +4,7 @@ subtitle: "The Community Wealth Building (Scotland) Act 2026"
 slug: "constructing-coordinating-machinery"
 date: 2026-06-13T10:00:00Z
 weight: 40
+series: "framework"
 summary: "A short analytical note using the Community Wealth Building (Scotland) Act 2026 as a worked example of what a devolved legislature can build within its existing competence — and of the gap between the capacity to legislate a framework and the capacity to operate one."
 pdf: "/papers/griffiths-constructing-coordinating-machinery-may-2026.pdf"
 prereq: "A worked example of the argument in [**A Framework for Welsh Constitutional Development**](/politics/welsh-constitutional-development-framework/). If you are new to this work, start there."

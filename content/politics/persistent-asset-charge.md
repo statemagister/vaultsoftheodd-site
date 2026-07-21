@@ -4,6 +4,7 @@ subtitle: "A recurring charge on the holding of assets, independent of income, g
 slug: "persistent-asset-charge"
 date: 2026-07-21T09:00:00Z
 weight: 60
+series: "standalone"
 summary: "A constitutional architecture for a recurring charge on the holding of concentrated assets, independent of income, gains, transfers or death, and immune to the legal form in which they are held. It sets out three governing principles, settles what follows from them, and separates what is architecture from what is a matter for Parliament and what only evidence can determine. A companion stress-testing pass tries to break the model and reports honestly what holds."
 pdf: "/papers/griffiths-persistent-asset-charge-july-2026.pdf"
 prereq: "This is the architecture pass — it sets out the model on its own terms. Its companion, the [**Stress-Testing Pass**](/politics/persistent-asset-charge-stress-test/), tries to break the model and reports honestly what holds and what doesn't. Read this paper first."

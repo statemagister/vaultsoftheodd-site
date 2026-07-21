@@ -4,6 +4,7 @@ subtitle: "Does the Architecture Survive Contact with Reality?"
 slug: "persistent-asset-charge-stress-test"
 date: 2026-07-21T09:05:00Z
 weight: 70
+series: "standalone"
 summary: "The adversarial companion to the architecture paper: an attempt to break the model and report honestly what breaks. It tests revenue sufficiency and human-rights durability first, since either failing would make the rest moot, then works through avoidance migration, capital flight, administrative feasibility and cumulative taxation. No test returns a fatal verdict, but two return serious but addressable, each with a specific, nameable condition."
 pdf: "/papers/griffiths-persistent-asset-charge-stress-test-july-2026.pdf"
 prereq: "This is the stress-testing companion to [**A Constitutional Model for the Persistent Taxation of Concentrated Asset Holdings**](/politics/persistent-asset-charge/). Read the architecture paper first; this pass takes the model as given and tries to break it."

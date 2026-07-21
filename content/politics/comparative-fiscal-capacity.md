@@ -4,6 +4,7 @@ subtitle: "What Each Constitutional Path Requires Wales to Build"
 slug: "comparative-fiscal-capacity"
 date: 2026-06-16T10:00:00Z
 weight: 45
+series: "framework"
 summary: "A comparative analysis of what each live constitutional path — the current settlement, enhanced devolution and independence — would require Wales to build in fiscal capacity, and how strong the evidence is for each requirement. Working through eleven mechanisms, from territorial funding and borrowing to currency, welfare and payment systems, it argues the paths are not steps on a single ladder of more or less power but different problems of capacity — and recommends none of them. A companion evidence annex carries the full method, mechanism dossiers and source log."
 pdf: "/papers/griffiths-comparative-fiscal-capacity-june-2026.pdf"
 annexpdf: "/papers/griffiths-comparative-fiscal-capacity-evidence-annex-june-2026.pdf"

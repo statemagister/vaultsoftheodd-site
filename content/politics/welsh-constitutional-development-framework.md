@@ -4,6 +4,7 @@ subtitle: "Strategic Priorities for the 2026–2030 Senedd Term"
 slug: "welsh-constitutional-development-framework"
 date: 2026-06-13T10:00:00Z
 weight: 10
+series: "framework"
 summary: "A strategic framework for Welsh constitutional development across the 2026–2030 Senedd term. Its thesis is that constitutional durability follows institutional capability rather than preceding it — that building governing capacity is itself constitutional work, and serves Wales under any of the futures identified by the Independent Commission on the Constitutional Future of Wales."
 pdf: "/papers/griffiths-welsh-constitutional-framework-may-2026.pdf"
 prereq: "**New to this work? This is the place to start.** The five companion papers all build on the argument set out here."

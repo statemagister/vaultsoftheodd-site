@@ -4,6 +4,7 @@ subtitle: "Building a permanent, self-financing Welsh institution to end the Uni
 slug: "welsh-income-protection-endowment"
 date: 2026-07-21T09:10:00Z
 weight: 55
+series: "standalone"
 summary: "A proposal for a permanent, largely self-financing Welsh capital institution that protects workers' incomes after redundancy or lost hours, funded by a temporary hypothecated penny on the Welsh basic rate of income tax. Once the fund's own investment returns cover claims and keep the corpus growing, the levy stops and the institution runs in perpetuity on its returns. Offered as analysis and a case for an independent actuarial feasibility study, not a finished plan."
 pdf: "/papers/griffiths-welsh-income-protection-endowment-july-2026.pdf"
 prereq: "A standalone discussion paper, not part of the Framework series above. It proposes a specific devolved-competence institution — a Welsh Income Protection Endowment — and reads independently of that work."

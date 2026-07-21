@@ -4,6 +4,7 @@ subtitle: "Legal possibility, scholarly disagreement, practical likelihood, and 
 slug: "representing-contested-constitutional-questions"
 date: 2026-06-13T10:00:00Z
 weight: 50
+series: "framework"
 summary: "A method paper on how to describe the contested questions around constitutional change — whether and how a nation might become a state — without letting a finding in one domain (law, scholarship, practice, politics) silently settle another. It argues for no outcome; it maps what is known, what is genuinely contested, and what is uncertain, and keeps them distinct."
 pdf: "/papers/griffiths-representing-contested-constitutional-questions-may-2026.pdf"
 prereq: "A methodological companion to [**A Framework for Welsh Constitutional Development**](/politics/welsh-constitutional-development-framework/). It reads well on its own, or last in the set. It sets out the careful, neutral method the other papers rely on."

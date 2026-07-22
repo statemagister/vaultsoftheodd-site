@@ -537,12 +537,22 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         {
           "type": "parent",
           "with": [
-            "czar_vz"
+            "czar_vz",
+            "barov_mother"
           ],
           "tier": "SPEC",
           "source": "VotO",
           "note": "Father is Duke Roman Dilisnya, son of Vasili — the link that roots Barov and Dorfniya in the one tree.",
-          "display": "Child of Roman Dilisnya."
+          "display": "Child of Roman Dilisnya and Katarina Dilisnya (Holtz)."
+        },
+        {
+          "type": "cousin",
+          "with": [
+            "dilisnya_husband"
+          ],
+          "tier": "INFER",
+          "source": "VotO",
+          "display": "Cousin of Endor Dilisnya."
         }
       ],
       "notes": "King of Barovia; the kingdom is named for him (though likely originally for an antecedent). Dies 346, before Strahd's return. PUB position: dead before the return, load-bearing for the succession. | Barov is the first-born son of Duke Roman Dilisnya; his grandfather is Vasili (reconstruction; note the 'Czar/tsar' element supports the Zarovich='of the tsar' reading). | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two. | FOUNDER: Barov is DILISNYA by birth; he ASSUMES 'von Zarovich' on taking the throne (conquest of the Endorovich castle), as the legitimising royal name. This rhymes forward: his son Strahd later self-styles 'Count' to legitimise HIS seizure — both found rule on an assumed title.",
@@ -614,6 +624,16 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "tier": "CORE",
           "source": "RoT",
           "display": "Parent of Strahd, Sturm and Sergei."
+        },
+        {
+          "type": "parent",
+          "with": [
+            "roeyen_father",
+            "roeyen_mother"
+          ],
+          "tier": "INFER",
+          "source": "VotO",
+          "display": "Child of Claude van Roeyen and Anna van Roeyen (Petronova)."
         }
       ],
       "name_variants": [
@@ -935,14 +955,13 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "display": "Married to Sturm von Zarovich."
         },
         {
-          "type": "parent-of",
+          "type": "parent",
           "with": [
             "elsa_fallona"
           ],
           "tier": "INFER",
-          "note": "Elsa Fallona named as Gisella's mother in the Holy Symbol article; relationship direction is mother-of-Gisella.",
           "source": "VotO",
-          "display": "Parent of Elsa Fallona."
+          "display": "Child of Elsa Fallona."
         }
       ],
       "notes": "Sturm's wife. Her mother Elsa Fallona (I6 Crypt 16) is among the 346 dead. | Escapes Barovia with Sturm; never drawn into the mists; part of the prime-material line that restores the abandoned valley (see Sturm).",
@@ -1319,12 +1338,13 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         {
           "type": "parent",
           "with": [
-            "czar_vz"
+            "czar_vz",
+            "barov_mother"
           ],
           "tier": "SPEC",
           "source": "VotO",
           "note": "Father is Duke Roman Dilisnya, son of Vasili — the link that roots Barov and Dorfniya in the one tree.",
-          "display": "Child of Roman Dilisnya."
+          "display": "Child of Roman Dilisnya and Katarina Dilisnya (Holtz)."
         }
       ],
       "open_question": "dilisnya_husband",
@@ -1663,6 +1683,15 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "tier": "CORE",
           "source": "RoT",
           "display": "Married to Gertrude Buchvold (Dilisnya)."
+        },
+        {
+          "type": "sibling",
+          "with": [
+            "illya_buchvold"
+          ],
+          "tier": "INFER",
+          "source": "VotO",
+          "display": "Sibling of Illya Buchvold."
         }
       ],
       "open_question": "buchvold",
@@ -2537,7 +2566,17 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "source": "RoT"
       },
       "location": "Borca",
-      "relationships": [],
+      "relationships": [
+        {
+          "type": "parent-of",
+          "with": [
+            "ivana_b"
+          ],
+          "tier": "INFER",
+          "source": "VotO",
+          "display": "Parent of Ivana Boritsi."
+        }
+      ],
       "notes": "First Lord of Borca. Poisoned her husband and his mistress in 684; a 698 killing spree pruned the tree; poisoned by her daughter Ivana in 711.",
       "born_marker": {
         "year": 662,
@@ -3223,6 +3262,16 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "tier": "CORE",
           "source": "RoT",
           "display": "Married to Boris Dilisnya."
+        },
+        {
+          "type": "parent-of",
+          "with": [
+            "ivan_dilisnya",
+            "kristina_dilisnya"
+          ],
+          "tier": "INFER",
+          "source": "VotO",
+          "display": "Parent of Ivan and Kristina."
         }
       ],
       "born_marker": {
@@ -3357,7 +3406,19 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "first_appearance": "VotO",
       "line": "barovia",
       "maiden_name": "Katarina Holtz",
-      "display_name": "Katarina Dilisnya (Holtz)"
+      "display_name": "Katarina Dilisnya (Holtz)",
+      "relationships": [
+        {
+          "type": "parent-of",
+          "with": [
+            "barov",
+            "dorfniya"
+          ],
+          "tier": "INFER",
+          "source": "VotO",
+          "display": "Parent of Barov von Zarovich and Dorfniya Dilisnya."
+        }
+      ]
     },
     {
       "id": "roeyen_father",
@@ -3402,7 +3463,18 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "vocation": "Noble",
       "role": "Head of the van Roeyen house",
       "first_appearance": "VotO",
-      "line": "barovia"
+      "line": "barovia",
+      "relationships": [
+        {
+          "type": "parent-of",
+          "with": [
+            "ravenia"
+          ],
+          "tier": "INFER",
+          "source": "VotO",
+          "display": "Parent of Ravenia von Zarovich (van Roeyen)."
+        }
+      ]
     },
     {
       "id": "roeyen_mother",
@@ -3450,7 +3522,18 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "first_appearance": "VotO",
       "line": "barovia",
       "maiden_name": "Anna Petronova",
-      "display_name": "Anna van Roeyen (Petronova)"
+      "display_name": "Anna van Roeyen (Petronova)",
+      "relationships": [
+        {
+          "type": "parent-of",
+          "with": [
+            "ravenia"
+          ],
+          "tier": "INFER",
+          "source": "VotO",
+          "display": "Parent of Ravenia von Zarovich (van Roeyen)."
+        }
+      ]
     },
     {
       "id": "ravenia_maid_of_honour",
@@ -4450,9 +4533,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "present": [
         "barov"
       ],
-      "notes": "Birth of Barov von Zarovich.",
+      "notes": "Birth of Barov von Zarovich. Firstborn of Duke Roman and heir to the duchy — the man who will make it a kingdom.",
       "source": "RoT",
-      "short_title": "born: Barov von Zarovich"
+      "short_title": "born: Barov von Zarovich",
+      "major": true
     },
     {
       "id": "death_barov",
@@ -4510,9 +4594,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "present": [
         "strahd"
       ],
-      "notes": "Birth of Strahd von Zarovich. | YEAR 306 — THE CONVERGENCE (the founding year). A single, exceptionally loaded year: the founding war ends, the keep falls, Barovia is founded, Barov is crowned KING and Ravenia QUEEN, the land-ritual binds the king to the realm, and STRAHD is born — the crown prince, and the first person born to the new von Zarovich name. For the new kingdom it is a year of continuous celebration, triumph upon triumph, with the heir born into the middle of it. THEMATIC CHARGE: Strahd enters the world at the family's absolute APEX — victory, throne, realm and heir all at once — which darkens the long arc by contrast: the man who will end the dynasty in blood and draw the realm into the mists is born in its golden hour, amid universal rejoicing over everything he will later ruin.",
+      "notes": "Birth of Strahd von Zarovich. | YEAR 306 — THE CONVERGENCE (the founding year). A single, exceptionally loaded year: the founding war ends, the keep falls, Barovia is founded, Barov is crowned KING and Ravenia QUEEN, the land-ritual binds the king to the realm, and STRAHD is born — the crown prince, and the first person born to the new von Zarovich name. For the new kingdom it is a year of continuous celebration, triumph upon triumph, with the heir born into the middle of it. THEMATIC CHARGE: Strahd enters the world at the family's absolute APEX — victory, throne, realm and heir all at once — which darkens the long arc by contrast: the man who will end the dynasty in blood and draw the realm into the mists is born in its golden hour, amid universal rejoicing over everything he will later ruin. Firstborn of King Barov and Queen Ravenia, born in the founding year — the first child born to the new von Zarovich name, and crown prince.",
       "source": "RoT",
-      "short_title": "born: Strahd von Zarovich"
+      "short_title": "born: Strahd von Zarovich",
+      "major": true
     },
     {
       "id": "death_strahd",
@@ -4540,9 +4625,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "present": [
         "sturm"
       ],
-      "notes": "Birth of Sturm von Zarovich.",
+      "notes": "Birth of Sturm von Zarovich. Second son of the king; crown prince from 323.",
       "source": "RoT",
-      "short_title": "born: Sturm von Zarovich"
+      "short_title": "born: Sturm von Zarovich",
+      "major": true
     },
     {
       "id": "death_sturm",
@@ -4600,9 +4686,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "present": [
         "sergei"
       ],
-      "notes": "Birth of Sergei von Zarovich.",
+      "notes": "Birth of Sergei von Zarovich. Third son of the king, born late to Ravenia.",
       "source": "RoT",
-      "short_title": "born: Sergei von Zarovich"
+      "short_title": "born: Sergei von Zarovich",
+      "major": true
     },
     {
       "id": "death_sergei",
@@ -4630,9 +4717,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "present": [
         "tatyana"
       ],
-      "notes": "Birth of Tatyana.",
+      "notes": "Birth of Tatyana. Not a noble birth, and the most consequential in the realm's history.",
       "source": "RoT",
-      "short_title": "born: Tatyana"
+      "short_title": "born: Tatyana",
+      "major": true
     },
     {
       "id": "death_tatyana",
@@ -4690,9 +4778,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "present": [
         "dorfniya"
       ],
-      "notes": "Birth of Dorfniya.",
+      "notes": "Birth of Dorfniya. Daughter of the ducal house; she will hold the duchy in her own right.",
       "source": "RoT",
-      "short_title": "born: Dorfniya"
+      "short_title": "born: Dorfniya",
+      "major": true
     },
     {
       "id": "death_dorfniya",
@@ -4780,9 +4869,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "present": [
         "reinhold"
       ],
-      "notes": "Birth of Reinhold Dilisnya.",
+      "notes": "Birth of Reinhold Dilisnya. Firstborn of Duchess Dorfniya and Endor; heir to the duchy.",
       "source": "RoT",
-      "short_title": "born: Reinhold Dilisnya"
+      "short_title": "born: Reinhold Dilisnya",
+      "major": true
     },
     {
       "id": "death_reinhold",
@@ -4990,9 +5080,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "present": [
         "dilisnya_husband"
       ],
-      "notes": "Birth of Duke Endor 'Dorian' Dilisnya.",
+      "notes": "Birth of Duke Endor 'Dorian' Dilisnya. Firstborn of the cadet Dilisnya branch.",
       "source": "VotO",
-      "short_title": "born: Duke Endor 'Dorian' Dilisnya"
+      "short_title": "born: Duke Endor 'Dorian' Dilisnya",
+      "major": true
     },
     {
       "id": "death_dilisnya_husband",
@@ -5759,11 +5850,15 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "date": "258",
       "tier": "SPEC",
       "source": "VotO",
-      "notes": "Father of Barov and Dorfniya; Duke of the Dilisnya house. SPEC.",
+      "notes": "Father of Barov and Dorfniya; Duke of the Dilisnya house. SPEC. Heir to Vasili; the Dilisnya ducal line passes through him.",
       "short_title": "born: Duke Roman Dilisnya",
       "scope": "single",
       "line": "barovia",
-      "kind": "birth"
+      "kind": "birth",
+      "major": true,
+      "present": [
+        "czar_vz"
+      ]
     },
     {
       "id": "death_roman",
@@ -5776,7 +5871,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "short_title": "died: Duke Roman Dilisnya",
       "scope": "single",
       "line": "barovia",
-      "kind": "death"
+      "kind": "death",
+      "present": [
+        "czar_vz"
+      ]
     },
     {
       "id": "birth_katarina",
@@ -5789,7 +5887,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "short_title": "born: Duchess Katarina Holtz",
       "scope": "single",
       "line": "barovia",
-      "kind": "birth"
+      "kind": "birth",
+      "present": [
+        "barov_mother"
+      ]
     },
     {
       "id": "death_katarina",
@@ -5802,7 +5903,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "short_title": "died: Duchess Katarina Holtz",
       "scope": "single",
       "line": "barovia",
-      "kind": "death"
+      "kind": "death",
+      "present": [
+        "barov_mother"
+      ]
     },
     {
       "id": "birth_claude_roeyen",
@@ -5815,7 +5919,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "short_title": "born: Claude van Roeyen",
       "scope": "single",
       "line": "barovia",
-      "kind": "birth"
+      "kind": "birth",
+      "present": [
+        "roeyen_father"
+      ]
     },
     {
       "id": "death_claude_roeyen",
@@ -5828,7 +5935,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "short_title": "died: Claude van Roeyen",
       "scope": "single",
       "line": "barovia",
-      "kind": "death"
+      "kind": "death",
+      "present": [
+        "roeyen_father"
+      ]
     },
     {
       "id": "birth_anna_petronova",
@@ -5841,7 +5951,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "short_title": "born: Anna Petronova",
       "scope": "single",
       "line": "barovia",
-      "kind": "birth"
+      "kind": "birth",
+      "present": [
+        "roeyen_mother"
+      ]
     },
     {
       "id": "death_anna_petronova",
@@ -5854,7 +5967,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "short_title": "died: Anna Petronova",
       "scope": "single",
       "line": "barovia",
-      "kind": "death"
+      "kind": "death",
+      "present": [
+        "roeyen_mother"
+      ]
     },
     {
       "id": "coronation_barov_306",
@@ -6284,6 +6400,55 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "ravenia"
       ],
       "notes": "With Strahd exiled, attainted and declared persona non grata, Sturm (11) is declared crown prince. He saw the killing and described it to their father; the inheritance passes to him by the same act that took it from his brother."
+    },
+    {
+      "id": "birth_ivan_dilisnya",
+      "title": "Born: Ivan Dilisnya",
+      "short_title": "born: Ivan Dilisnya",
+      "year": 689,
+      "date": "689",
+      "kind": "birth",
+      "tier": "PUB",
+      "source": "Realm of Terror",
+      "scope": "single",
+      "line": "barovia",
+      "present": [
+        "ivan_dilisnya"
+      ],
+      "notes": "Firstborn of Boris and Stefania; the future lord of Dorvinia.",
+      "major": true
+    },
+    {
+      "id": "birth_sasha",
+      "title": "Born: Alexi 'Sasha' Petrovich",
+      "short_title": "born: Sasha Petrovich",
+      "year": 475,
+      "date": "475",
+      "kind": "birth",
+      "tier": "VOTM",
+      "source": "Vampire of the Mists",
+      "scope": "single",
+      "line": "barovia",
+      "present": [
+        "sasha"
+      ],
+      "notes": "Born late in the year to a young Vistana and the Burgomeister's daughter — half-Vistani, and the Burgomeister's grandson."
+    },
+    {
+      "id": "birth_leisl",
+      "title": "Born: Leisl",
+      "short_title": "born: Leisl",
+      "year": 479,
+      "date": "479",
+      "kind": "birth",
+      "tier": "VOTM",
+      "source": "Vampire of the Mists",
+      "scope": "single",
+      "line": "barovia",
+      "present": [
+        "leisl"
+      ],
+      "notes": "Born in Vallaki. Orphaned by wolves in 486 and thieving from the age of seven."
     }
   ],
   "open_questions": [
@@ -6732,6 +6897,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     Object.keys(eventYears).forEach(function (yk) { var y = parseInt(yk, 10); var el = mk('tl-xev', field); el.textContent = y; el.style.left = px(xFor(y)); xLabels.push({ el: el, x: xFor(y) }); });
 
     evEls = {};
+    nameBars = [];
     ordered.forEach(function (l) {
       var spine = (l.kind === 'core-spine'), color = lineColor(l.id), isExp = !!expanded[l.id];
       var startX = xFor(spine ? minY : l.starts), rightX = xFor(maxY);
@@ -6820,9 +6986,17 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           bar.style.borderTopRightRadius = bar.style.borderBottomRightRadius = (d != null) ? '3px' : '0';
           if (b == null) bar.style.borderLeft = '2px dashed ' + hexToRgba(color, 0.95);
           if (d == null) bar.style.borderRight = '2px dashed ' + hexToRgba(color, 0.95);
-          var nameW = p.name.length * 5.6 + 10;
-          if (barW >= nameW + 6) { bar.textContent = p.name; }
-          else { var out = document.createElement('span'); out.className = 'lname-out'; out.textContent = p.name; bar.appendChild(out); }
+          // The label follows the year in view (name_by_period); size the bar
+          // for the longest form the name can take so the inside/outside choice
+          // doesn't flip as the reader scrubs across a name change.
+          var forms = [p.name];
+          if (p.name_by_period) p.name_by_period.forEach(function (per) { if (per.name) forms.push(per.name); });
+          var maxNameLen = forms.reduce(function (a, n) { return Math.max(a, n.length); }, 0);
+          var nameW = maxNameLen * 5.6 + 10;
+          var curName = nameAt(p, currentYear), labelEl;
+          if (barW >= nameW + 6) { bar.textContent = curName; labelEl = bar; }
+          else { var out = document.createElement('span'); out.className = 'lname-out'; out.textContent = curName; bar.appendChild(out); labelEl = out; }
+          if (p.name_by_period) nameBars.push({ p: p, el: labelEl });
           bar.title = p.name + ' (' + (b != null ? b : '?') + '–' + (d != null ? d : '?') + ') — select for full record';
           bar.style.cursor = 'pointer'; bar.setAttribute('role', 'button'); bar.tabIndex = 0;
           bar.addEventListener('click', function (ev) { ev.stopPropagation(); selectPerson(p); });
@@ -6887,6 +7061,11 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
 
   // ---- Panel (orientation-independent) ----
   var evEls = {};
+  // Lifebar labels for people whose name changes over time; refreshed to the
+  // reader's current year on every year change so the bar's name stays in step
+  // with the roster and panel title.
+  var nameBars = [];
+  function updateNameBars(yr) { for (var i = 0; i < nameBars.length; i++) { nameBars[i].el.textContent = nameAt(nameBars[i].p, yr); } }
   var panelBody = document.getElementById('tlPanelBody');
   var activeEl = null;
   function setActive(el) { if (activeEl) activeEl.classList.remove('is-active'); activeEl = el; if (el) el.classList.add('is-active'); }
@@ -7012,6 +7191,16 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     var per = periodAt(p.narrative_by_period, yr);
     return per ? per.text : '';
   }
+  // A person's name can change at a datable moment (name_by_period) -- a woman
+  // taking a married name, Barov adopting "von Zarovich" at the founding. The
+  // form shown follows the year in view; the static `name` is the fallback for
+  // anyone whose name never changes (or before the data is built). Relationship
+  // lines are identity statements, not year-bound, so they keep the composed
+  // display strings (married form with maiden in brackets) instead.
+  function nameAt(p, yr) {
+    var per = (yr != null) ? periodAt(p.name_by_period, yr) : null;
+    return (per && per.name) ? per.name : p.name;
+  }
 
   function personCard(p, yr) {
     var b = born(p), d = died(p), age = (b != null) ? (yr - b) : null;
@@ -7027,7 +7216,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     else if (trans && d != null && yr > d) ageText = 'age ' + age + ' &middot; undead since ' + d;
     else ageText = 'age ' + age + ' &middot; b. ' + b;
     var place = locationAt(p, yr);
-    var s = '<div class="tl-person"><p class="tl-pn">' + esc(p.name) + (ageText ? ' <span class="tl-age' + ((dies || becomesNow) ? ' tl-dies' : '') + '">' + ageText + '</span>' : '') + '</p>';
+    var s = '<div class="tl-person"><p class="tl-pn">' + esc(nameAt(p, yr)) + (ageText ? ' <span class="tl-age' + ((dies || becomesNow) ? ' tl-dies' : '') + '">' + ageText + '</span>' : '') + '</p>';
     if (p.role) s += '<p class="tl-role">' + esc(p.role) + '</p>';
     if (place) s += '<p class="tl-pl">' + esc(place) + '</p>';
     var narr = narrativeAt(p, yr);
@@ -7168,7 +7357,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     setFeedbackCtx(p.name, 'person', p.id, born(p));
     var h = '';
     h += '<p class="tl-pyear">' + esc(lineById[p.line] ? lineById[p.line].label : '') + ' line</p>';
-    h += '<h3 class="tl-ptitle" style="color:' + lineColor(p.line) + '">' + esc(p.name) + ' <span class="tl-tierword">(' + esc(tierWord(personTier(p))) + ')</span></h3>';
+    h += '<h3 class="tl-ptitle" style="color:' + lineColor(p.line) + '">' + esc(nameAt(p, currentYear)) + ' <span class="tl-tierword">(' + esc(tierWord(personTier(p))) + ')</span></h3>';
 
     var b = p.birth, d = p.death, bp = p.birthplace;
     h += '<div class="tl-sec-b"><span class="tl-sec">Birth</span>';
@@ -7273,7 +7462,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     if (evs.length) { reader.style.borderLeftColor = tierColor(evs[0].tier); readSub.textContent = evs.length > 1 ? (evs.length + ' events') : evs[0].title; }
     else { var living = livingIn(y).length; reader.style.borderLeftColor = 'var(--gold-bright)'; readSub.textContent = living + (living === 1 ? ' soul living' : ' souls living'); }
   }
-  function onScroll() { var y = yearFromScroll(); updateReader(y); if (y !== currentYear) { currentYear = y; renderYear(y); } }
+  function onScroll() { var y = yearFromScroll(); updateReader(y); if (y !== currentYear) { currentYear = y; updateNameBars(y); renderYear(y); } }
   stage.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; onScroll(); }); } });
   // The wheel moves time sideways.
   stage.addEventListener('wheel', function (ev) {

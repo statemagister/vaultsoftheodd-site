@@ -78,6 +78,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
 .tl-pyear { font-family: var(--display); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 0.2rem; }
 .tl-scope { color: var(--gold); }
 .tl-ptitle { font-family: var(--display); font-size: 1.05rem; color: var(--gold-bright); margin: 0 0 0.5rem; line-height: 1.25; }
+.tl-tierword { font-family: var(--body); font-size: 0.7rem; font-style: italic; color: var(--text-muted); font-weight: 400; }
 .tl-status { margin: 0 0 0.3rem; font-size: 0.9rem; color: var(--text-primary); }
 .tl-badge { display: inline-block; font-family: var(--display); font-size: 0.56rem; letter-spacing: 0.08em; color: #15120f; padding: 0.12rem 0.42rem; border-radius: 2px; margin-right: 0.4rem; vertical-align: middle; }
 .tl-gloss { font-size: 0.82rem; color: var(--text-muted); margin: 0 0 0.6rem; line-height: 1.55; }
@@ -96,6 +97,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
 .tl-flag p { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem; line-height: 1.55; }
 .tl-evlink { display: flex; align-items: center; gap: 0.5rem; width: 100%; text-align: left; background: transparent; border: 0; color: var(--text-primary); font-family: var(--body); font-size: 0.86rem; cursor: pointer; padding: 0.25rem 0; }
 .tl-evlink:hover { color: var(--gold-bright); }
+.tl-evlink.is-inline { display: inline; width: auto; padding: 0; color: var(--gold); text-decoration: underline; text-underline-offset: 2px; font-size: inherit; font-family: inherit; }
+.tl-evlink.is-inline:hover { color: var(--gold-bright); }
 .tl-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 0 2px var(--bg-card); }
 .tl-castwrap > summary { cursor: pointer; color: var(--gold); font-size: 0.85rem; margin-bottom: 0.4rem; }
 .tl-cast { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.4rem; }
@@ -359,7 +362,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "first_appearance": "VotO"
     },
     {
       "id": "czar_vz",
@@ -419,18 +423,21 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         {
           "from": 258,
           "to": 305,
-          "place": "the Dilisnya homeland (outside Barovia; exact place unrecorded)",
+          "place": "the Dilisnya seat (outside Barovia)",
           "tier": "INFER",
           "note": "Duke of the Dilisnya house, seated in the homeland."
         },
         {
           "from": 306,
           "to": 312,
-          "place": "OPEN — homeland or the Barovian court (see note)",
-          "tier": "OPEN",
-          "note": "Whether the elder generation relocated to Barovia after the founding, or remained at their own seats, is not settled."
+          "place": "the Dilisnya seat (retired to the old duchy)",
+          "tier": "SPEC",
+          "note": "Retires to the old ducal seat rather than joining his son's court. Consistent with the committed characterisation: the cautious patriarch who refused to pursue the ambition Barov chased, and who is diminished by the very ascent he refused — such a man moving in under his son's crown reads against type. (Katarina with her husband.)"
         }
-      ]
+      ],
+      "vocation": "Noble",
+      "role": "Duke of the Dilisnya house",
+      "first_appearance": "VotO"
     },
     {
       "id": "vasili_vz",
@@ -475,7 +482,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       },
-      "name_convention": "Displayed under the assumed royal name 'von Zarovich' (source convention). True birth family: Dilisnya. Strict patronymic would be masculine 'Dilisnovich' / royal masc. 'von Zarovich', fem. 'von Zarovna'."
+      "name_convention": "Displayed under the assumed royal name 'von Zarovich' (source convention). True birth family: Dilisnya. Strict patronymic would be masculine 'Dilisnovich' / royal masc. 'von Zarovich', fem. 'von Zarovna'.",
+      "first_appearance": "VotO"
     },
     {
       "id": "barov",
@@ -537,7 +545,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "note": "Explicit born-marker for the tree. year=null means birth year unknown (do not render as 0)."
       },
       "birthplace": {
-        "place": "the pre-conquest Dilisnya homeland (a land subject to the Endorovich king; exact place unrecorded)",
+        "place": "the pre-conquest Dilisnya seat (a land subject to the Endorovich king; exact place unrecorded)",
         "tier": "SPEC",
         "known": true,
         "note": "Born 277, decades before Barov's conquest of the Endorovich castle (post-marriage ~304+). NOT castle-born. The homeland is the land the construction-slaves came from — Barov's motive and base. Name unrecorded."
@@ -548,7 +556,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         {
           "from": 283,
           "to": 305,
-          "place": "the Dilisnya homeland (outside Barovia; exact place unrecorded)",
+          "place": "the Dilisnya seat (outside Barovia)",
           "tier": "INFER"
         },
         {
@@ -557,7 +565,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "place": "Barovia — the castle (the seat he took in 306)",
           "tier": "INFER"
         }
-      ]
+      ],
+      "vocation": "Noble",
+      "role": "King of Barovia; founder of the kingdom",
+      "first_appearance": "I6 Ravenloft"
     },
     {
       "id": "ravenia",
@@ -656,7 +667,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         {
           "from": 286,
           "to": 305,
-          "place": "the van Roeyen seat (outside Barovia; exact place unrecorded)",
+          "place": "the van Roeyen seat (outside Barovia)",
           "tier": "INFER",
           "note": "Of the van Roeyen house, outside Barovia; travels to Barov's Town for the wedding (305)."
         },
@@ -666,7 +677,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "place": "Barovia — the castle (Queen from 306)",
           "tier": "INFER"
         }
-      ]
+      ],
+      "vocation": "Noble",
+      "role": "Queen of Barovia",
+      "first_appearance": "I6 Ravenloft"
     },
     {
       "id": "strahd",
@@ -796,7 +810,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "tier": "SPEC",
           "text": "Undead lord of a sealed, decaying Barovia, draining the land and pursuing Tatyana through each rebirth."
         }
-      ]
+      ],
+      "vocation": "Noble",
+      "role": "Crown prince, later lord of Barovia",
+      "first_appearance": "I6 Ravenloft"
     },
     {
       "id": "sturm",
@@ -869,7 +886,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "note": "Castle-born (royal, castle-resident mother Ravenia). son of Ravenia, born 312, after the conquest. The name 'Castle Ravenloft' postdates 347; the physical seat is the same castle Barov took from the Endorovich line."
       },
       "name_convention": "Born von Zarovich — after Barov's adoption of the name, so this is a genuine BIRTH name, not an adopted style or back-projection.",
-      "birth_name": "Sturm von Zarovich"
+      "birth_name": "Sturm von Zarovich",
+      "vocation": "Noble",
+      "role": "Prince",
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "gisella",
@@ -931,7 +951,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "sergei",
@@ -1012,7 +1033,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "note": "Castle-born (royal, castle-resident mother Ravenia). son of Ravenia, born 324, after the conquest. The name 'Castle Ravenloft' postdates 347; the physical seat is the same castle Barov took from the Endorovich line."
       },
       "name_convention": "Born von Zarovich — after Barov's adoption of the name, so this is a genuine BIRTH name, not an adopted style or back-projection.",
-      "birth_name": "Sergei von Zarovich"
+      "birth_name": "Sergei von Zarovich",
+      "vocation": "Noble",
+      "role": "Prince; priest in training",
+      "first_appearance": "I6 Ravenloft"
     },
     {
       "id": "tatyana",
@@ -1154,7 +1178,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "place": "the village of Barovia (as Ireena Kolyana)",
           "tier": "FLAG"
         }
-      ]
+      ],
+      "vocation": "Villager",
+      "role": null,
+      "first_appearance": "I6 Ravenloft"
     },
     {
       "id": "pidlwik",
@@ -1196,7 +1223,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "vocation": "Fool",
+      "role": "Fool to Duchess Dorfniya",
+      "first_appearance": "I6 Ravenloft"
     },
     {
       "id": "dorfniya",
@@ -1275,7 +1305,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         }
       ],
       "open_question": "dilisnya_husband",
-      "notes": "DILISNYA BY BIRTH AND MARRIAGE: Dorfniya is Barov's sister, born into the true family name DILISNYA (Barov assumed the royal 'von Zarovich' style; she did not). She also MARRIES her cousin Endor 'Dorian' Dilisnya, so she is Dilisnya by both routes — I6 Crypt 8 'Duchess Dorfniya Dilisnya' is correct and overdetermined. The KEY EVIDENCE for the one-family reading is this COUSIN-MARRIAGE (a royal duchess marrying a Dilisnya cousin only makes sense if the families are one), not the surname alone. Her 'heritage removed from the official records' (the author's own phrasing) reads as the cost of reasserting the Dilisnya name over the crown's von Zarovich style. NOTE: an earlier pass mislabelled her 'von Zarovich' — reverted; I6 was right. | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two. | At the wedding (305, age 15) she attends as the GROOM'S SISTER and future duchess, and first formally meets Endor 'Dorian' (age 19, officer) — the seed of their marriage.",
+      "notes": "DILISNYA BY BIRTH AND MARRIAGE: Dorfniya is Barov's sister, born into the true family name DILISNYA (Barov assumed the royal 'von Zarovich' style; she did not). She also MARRIES her cousin Endor 'Dorian' Dilisnya, so she is Dilisnya by both routes — I6 Crypt 8 'Duchess Dorfniya Dilisnya' is correct and overdetermined. The KEY EVIDENCE for the one-family reading is this COUSIN-MARRIAGE (a royal duchess marrying a Dilisnya cousin only makes sense if the families are one), not the surname alone. Her 'heritage removed from the official records' (the author's own phrasing) reads as the cost of reasserting the Dilisnya name over the crown's von Zarovich style. NOTE: an earlier pass mislabelled her 'von Zarovich' — reverted; I6 was right. | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two. | At the wedding (305, age 15) she attends as the GROOM'S SISTER and future duchess, and first formally meets Endor 'Dorian' (age 19, officer) — the seed of their marriage. | NOT an adulterer: the reconstruction rejects RoT's Dorfniya-Cosco affair; all four children are Endor's (see Leo's override note).",
       "born_marker": {
         "year": 290,
         "tier": "CORE",
@@ -1308,13 +1338,13 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "gave-birth-to",
           "child": "leo",
           "child_birth": 320,
-          "father": "gunther_cosco",
-          "note": "Maternal 'gave birth to' marker, distinct from the paternal line. Leo: born of Dorfniya but FATHERED BY Gunther Cosco (affair), raised as Pidlwik's — the mother/father split matters here."
+          "father": "dilisnya_husband",
+          "note": "Maternal 'gave birth to' marker. Leo is the legitimate son of Dorfniya and Endor 'Dorian' Dilisnya (see override note on Leo)."
         }
       ],
       "house": "Dilisnya (true family name, by birth AND by marriage to her cousin Endor 'Dorian' Dilisnya)",
       "birthplace": {
-        "place": "the pre-conquest Dilisnya homeland (as Barov's sister; exact place unrecorded)",
+        "place": "the pre-conquest Dilisnya seat (as Barov's sister; exact place unrecorded)",
         "tier": "SPEC",
         "known": true,
         "note": "Born 289, before the conquest. NOT castle-born; born in the family's pre-conquest homeland like her brother Barov."
@@ -1325,7 +1355,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         {
           "from": 290,
           "to": 305,
-          "place": "the Dilisnya homeland (outside Barovia; exact place unrecorded)",
+          "place": "the Dilisnya seat (outside Barovia)",
           "tier": "INFER"
         },
         {
@@ -1334,7 +1364,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "place": "Barovia — the castle and the ducal household",
           "tier": "INFER"
         }
-      ]
+      ],
+      "vocation": "Noble",
+      "role": "Duchess",
+      "first_appearance": "I6 Ravenloft"
     },
     {
       "id": "gunther_cosco",
@@ -1371,7 +1404,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "source": "RoT"
         }
       ],
-      "notes": "The courtier 'who caught Dorfniya's eye'. Father of Leo by affair. Dies 351.",
+      "notes": "The courtier 'who caught Dorfniya's eye'. Dies 351. | NOTE: RoT makes him Leo's father by affair; the reconstruction rejects this (see Leo). No paternity attaches to him here.",
       "born_marker": {
         "year": 305,
         "tier": "CORE",
@@ -1383,7 +1416,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "vocation": "Courtier",
+      "role": null,
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "leo",
@@ -1403,26 +1439,30 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "location": "Barovia",
       "relationships": [
         {
-          "type": "raised-by",
+          "type": "mother",
           "with": "dorfniya",
-          "tier": "CORE",
-          "source": "RoT"
+          "tier": "SPEC",
+          "source": "VotO",
+          "display": "Mother: Dorfniya Dilisnya."
         },
         {
-          "type": "biological-parent",
-          "with": "gunther_cosco",
-          "tier": "CORE",
-          "source": "RoT"
+          "type": "father",
+          "with": "dilisnya_husband",
+          "tier": "SPEC",
+          "source": "VotO",
+          "note": "OVERRIDE of a printed source: RoT makes Leo the son of Dorfniya by an AFFAIR with Gunther Cosco, raised as Pidlwik's son. The reconstruction rejects this: Leo is the LEGITIMATE fourth child of Dorfniya and Endor 'Dorian' Dilisnya. Reasons: (1) Leo does not need illegitimacy as a motive, because he is not the traitor Strahd's memoir portrays — the grievance the bastardy supplies exists only to prop up a charge the reconstruction rejects; (2) it clears Dorfniya of adultery; (3) 'raised as Pidlwik's son' is downstream of the Black Box's misreading of Pidlwik the FOOL as Dorfniya's husband, the most consequential error in its Bloodlines chapter — removing the paternity removes the last trace of that error. A legitimate kinsman with no grievance also makes Strahd's frame more obviously a construction, not less.",
+          "display": "Father: Endor 'Dorian' Dilisnya."
         },
         {
           "type": "framed",
           "with": "illya_buchvold",
           "tier": "SPEC",
           "source": "IStrahd",
-          "note": "In Strahd's memoir, Leo killed Illya and framed him, and Leo is later shown to be the real traitor. All of this is Strahd's narration; treat as asserted-by-Strahd, not established."
+          "note": "In Strahd's memoir, Leo killed Illya and framed him, and Leo is later shown to be the real traitor. All of this is Strahd's narration; treat as asserted-by-Strahd, not established.",
+          "display": "Framed for the treason of Illya Buchvold."
         }
       ],
-      "notes": "Raised as Pidlwik's son; on Pidlwik's death learned his true blood and left the Dilisnya family (Note B). Root of the later Boritsi/Borca line. | I,Strahd: The memoir PRESENTS Leo as the true traitor and 'architect of the slaughter', framing Illya. But this reveal comes near the end, years later, and is itself Strahd's narration. It is NOT an external correction of the frame; it is the next layer of the same unreliable account. Do not treat Leo's guilt as the reliable bottom layer. (See flag istrahd_persecution_device.) | Under dilisnya_is_vonzarovich, Leo is Von Zarovich BLOOD. CRUCIAL: Leo is a 'traitor' ONLY in Strahd's narrative (I,Strahd) — there is no external source establishing his treachery. In the reconstruction he is most likely INNOCENT of the treason he is charged with (or at most a corrupted instrument), and the 'traitor' label is Strahd's construction: the royal kinsman SCAPEGOATED to carry the treason Strahd himself committed. Strahd needed a traitor who wasn't Strahd. See istrahd_persecution_device.",
+      "notes": "Legitimate fourth child of Dorfniya and Endor 'Dorian' Dilisnya. Root of the later Boritsi/Borca line. | OVERRIDE of a printed source: RoT makes Leo the son of Dorfniya by an AFFAIR with Gunther Cosco, raised as Pidlwik's son. The reconstruction rejects this: Leo is the LEGITIMATE fourth child of Dorfniya and Endor 'Dorian' Dilisnya. Reasons: (1) Leo does not need illegitimacy as a motive, because he is not the traitor Strahd's memoir portrays — the grievance the bastardy supplies exists only to prop up a charge the reconstruction rejects; (2) it clears Dorfniya of adultery; (3) 'raised as Pidlwik's son' is downstream of the Black Box's misreading of Pidlwik the FOOL as Dorfniya's husband, the most consequential error in its Bloodlines chapter — removing the paternity removes the last trace of that error. A legitimate kinsman with no grievance also makes Strahd's frame more obviously a construction, not less. | I,Strahd: The memoir PRESENTS Leo as the true traitor and 'architect of the slaughter', framing Illya. But this reveal comes near the end, years later, and is itself Strahd's narration. It is NOT an external correction of the frame; it is the next layer of the same unreliable account. Do not treat Leo's guilt as the reliable bottom layer. (See flag istrahd_persecution_device.) | Under dilisnya_is_vonzarovich, Leo is Von Zarovich BLOOD. CRUCIAL: Leo is a 'traitor' ONLY in Strahd's narrative (I,Strahd) — there is no external source establishing his treachery. In the reconstruction he is most likely INNOCENT of the treason he is charged with (or at most a corrupted instrument), and the 'traitor' label is Strahd's construction: the royal kinsman SCAPEGOATED to carry the treason Strahd himself committed. Strahd needed a traitor who wasn't Strahd. See istrahd_persecution_device.",
       "born_marker": {
         "year": 320,
         "tier": "CORE",
@@ -1434,7 +1474,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "INFER",
         "known": true,
         "note": "Royal line / castle-resident royal mother. child of Dorfniya, royal-line and castle-resident"
-      }
+      },
+      "vocation": "Noble",
+      "role": null,
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "reinhold",
@@ -1482,7 +1525,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "INFER",
         "known": true,
         "note": "Court-attached family; born in Barovia (not the castle: non-royal). Dilisnya court family (Barovia)"
-      }
+      },
+      "vocation": "Soldier",
+      "role": "Senior officer in Strahd's army",
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "nadia_yakimov",
@@ -1520,7 +1566,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "gertrude_d",
@@ -1567,7 +1614,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "INFER",
         "known": true,
         "note": "Court-attached family; born in Barovia (not the castle: non-royal). Dilisnya court family (Barovia)"
-      }
+      },
+      "vocation": "Noble",
+      "role": null,
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "ivan_buchvold",
@@ -1606,7 +1656,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "vocation": "Soldier",
+      "role": "Officer",
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "illya_buchvold",
@@ -1649,7 +1702,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "vocation": "Soldier",
+      "role": null,
+      "first_appearance": "I, Strahd"
     },
     {
       "id": "oleka",
@@ -1696,7 +1752,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "INFER",
         "known": true,
         "note": "Court-attached family; born in Barovia (not the castle: non-royal). Dilisnya court family (Barovia)"
-      }
+      },
+      "vocation": "Noble",
+      "role": null,
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "victor_wachter",
@@ -1734,7 +1793,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "vocation": "Soldier",
+      "role": "Officer",
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "dilisnya_husband",
@@ -1849,7 +1911,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         {
           "from": 286,
           "to": 303,
-          "place": "the Dilisnya homeland (outside Barovia; exact place unrecorded)",
+          "place": "the Dilisnya seat (outside Barovia)",
           "tier": "INFER"
         },
         {
@@ -1876,7 +1938,11 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "place": "the castle — the royal seat",
           "tier": "SPEC"
         }
-      ]
+      ],
+      "vocation": "Noble",
+      "role": "Duke; officer in Barov's army",
+      "first_appearance": "VotO",
+      "first_appearance_note": "Our own construction. The Endor/Endorovich name root is I6 (Crypts 7 and 19) and 'Dorian' is absorbed from later editions, but this person as constructed is ours."
     },
     {
       "id": "kir",
@@ -1915,7 +1981,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "vocation": "Priest",
+      "role": "High Priest of Barovia, from 347",
+      "first_appearance": "Vampire of the Mists"
     },
     {
       "id": "zarak_petrovic",
@@ -1926,7 +1995,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "year": 256,
         "tier": "SPEC",
         "source": "VotO",
-        "note": "The author's own reconstruction. SPEC. A teaching priest, not a high priest.",
+        "note": "The author's own reconstruction. SPEC. A priest and a teacher, not a high priest.",
         "adjust_note": "Reconstruction date moved 4y later (250->254) to reduce the over-aged founding cohort. SPEC. | Male cohort moved a further +2y later, to 256."
       },
       "death": {
@@ -1945,7 +2014,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           ],
           "tier": "SPEC",
           "source": "VotO",
-          "note": "A priest who TAUGHT Strahd (and likely Sturm) in their youth. Tutoring ends with Zarak's death in 323 — not because Strahd merely 'went off to war', but because Strahd's flight begins by murdering his own tutor (his first Ba'al Verzi kill, see exile_323); the 'war' is the cover story he broadcasts afterward, not what actually happened. NOT a high priest, NOT part of the Holy Symbol succession."
+          "note": "A priest who TAUGHT Strahd (and likely Sturm) in their youth. Tutoring ends with Zarak's death in 323 — not because Strahd merely 'went off to war', but because Strahd's flight begins by murdering his own tutor (his first Ba'al Verzi kill, see exile_323); the 'war' is the cover story he broadcasts afterward, not what actually happened. NOT a high priest, NOT part of the Holy Symbol succession.",
+          "display": "Tutor to the young Strahd and Sturm von Zarovich."
         }
       ],
       "on_event_spine": false,
@@ -1966,7 +2036,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         {
           "from": 256,
           "to": 305,
-          "place": "the Dilisnya homeland (outside Barovia; exact place unrecorded)",
+          "place": "the Dilisnya seat (outside Barovia)",
           "tier": "INFER",
           "note": "Priest to Roman's household in the homeland before the founding."
         },
@@ -1976,7 +2046,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "place": "Barovia — church (retained as tutor to the royal children)",
           "tier": "INFER"
         }
-      ]
+      ],
+      "vocation": "Priest",
+      "role": "Teacher to the royal children",
+      "first_appearance": "I, Strahd"
     },
     {
       "id": "ciril",
@@ -2015,7 +2088,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         {
           "from": 280,
           "to": 305,
-          "place": "the Dilisnya homeland (outside Barovia; exact place unrecorded)",
+          "place": "the Dilisnya seat (outside Barovia)",
           "tier": "INFER",
           "note": "Grew up alongside Barov in the clergy, in the homeland; becomes BAROVIAN clergy only from the founding."
         },
@@ -2025,7 +2098,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "place": "Barovia — chapel and church (High Priest from 306)",
           "tier": "INFER"
         }
-      ]
+      ],
+      "vocation": "Priest",
+      "role": "High Priest of Barovia",
+      "first_appearance": "I6 Ravenloft"
     },
     {
       "id": "gregorovich",
@@ -2064,7 +2140,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         {
           "from": 281,
           "to": 305,
-          "place": "the Dilisnya homeland (outside Barovia; exact place unrecorded)",
+          "place": "the Dilisnya seat (outside Barovia)",
           "tier": "INFER"
         },
         {
@@ -2073,7 +2149,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "place": "Barovia — the castle (First Counsellor from 306)",
           "tier": "INFER"
         }
-      ]
+      ],
+      "vocation": "Soldier",
+      "role": "First Counsellor to King Barov",
+      "first_appearance": "I6 Ravenloft"
     },
     {
       "id": "khazan",
@@ -2106,7 +2185,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "vocation": "Wizard",
+      "role": "Court wizard",
+      "first_appearance": "I6 Ravenloft"
     },
     {
       "id": "elsa_fallona",
@@ -2158,7 +2240,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "first_appearance": "I6 Ravenloft"
     },
     {
       "id": "byron_w",
@@ -2196,7 +2279,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "katherine_s",
@@ -2234,7 +2318,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "godefroy",
@@ -2284,7 +2369,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "vocation": "Noble",
+      "role": "Lord of Mordent",
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "estelle_w",
@@ -2339,7 +2427,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "lilia",
@@ -2380,7 +2469,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "camille",
@@ -2420,7 +2510,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "vocation": "Noble",
+      "role": "Lady of Borca",
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "ivana_b",
@@ -2461,7 +2554,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "claude_r",
@@ -2499,7 +2593,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "vocation": "Noble",
+      "role": "Lord of Richemulot",
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "isabelle_m",
@@ -2537,7 +2634,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "vlad_drakov",
@@ -2569,7 +2667,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "vocation": "Soldier",
+      "role": "Lord of Falkovnia",
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "germain_dh",
@@ -2607,7 +2708,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "alicia_c",
@@ -2645,7 +2747,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "dominic_dh",
@@ -2676,7 +2779,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "vocation": "Noble",
+      "role": "Lord of Dementlieu",
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "cain_t",
@@ -2714,7 +2820,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "elizabeth_t",
@@ -2752,7 +2859,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "nathan_t",
@@ -2783,7 +2891,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "vocation": "Riverman",
+      "role": "Lord of Arkandale",
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "alfred_t",
@@ -2821,7 +2932,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "vocation": "Priest",
+      "role": "Lord of Verbrek",
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "winifred_r",
@@ -2859,7 +2973,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "ivan_dilisnya",
@@ -2907,7 +3022,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "vocation": "Noble",
+      "role": "Lord of Dorvinia",
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "natalia_olszanik",
@@ -2948,7 +3066,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "boris_dilisnya",
@@ -3004,7 +3123,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "stefania_septow",
@@ -3059,7 +3179,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "kristina_dilisnya",
@@ -3107,7 +3228,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "OPEN",
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
-      }
+      },
+      "first_appearance": "Realm of Terror"
     },
     {
       "id": "barov_mother",
@@ -3139,19 +3261,22 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         {
           "from": 262,
           "to": 305,
-          "place": "the Dilisnya homeland (outside Barovia; exact place unrecorded)",
+          "place": "the Dilisnya seat (outside Barovia)",
           "tier": "INFER",
           "note": "Duchess consort in the homeland."
         },
         {
           "from": 306,
           "to": 316,
-          "place": "OPEN — homeland or the Barovian court (see note)",
-          "tier": "OPEN",
-          "note": "Whether the elder generation relocated to Barovia after the founding, or remained at their own seats, is not settled."
+          "place": "the Dilisnya seat (retired to the old duchy)",
+          "tier": "SPEC",
+          "note": "Retires with Duke Roman to the old ducal seat."
         }
       ],
-      "location": "varies by period (see location_by_period)"
+      "location": "varies by period (see location_by_period)",
+      "vocation": "Noble",
+      "role": "Duchess consort",
+      "first_appearance": "VotO"
     },
     {
       "id": "roeyen_father",
@@ -3181,7 +3306,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         {
           "from": 259,
           "to": 305,
-          "place": "the van Roeyen seat (outside Barovia; exact place unrecorded)",
+          "place": "the van Roeyen seat (outside Barovia)",
           "tier": "INFER",
           "note": "Head of the van Roeyen house."
         },
@@ -3193,7 +3318,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "note": "Whether the elder generation relocated to Barovia after the founding, or remained at their own seats, is not settled."
         }
       ],
-      "location": "varies by period (see location_by_period)"
+      "location": "varies by period (see location_by_period)",
+      "vocation": "Noble",
+      "role": "Head of the van Roeyen house",
+      "first_appearance": "VotO"
     },
     {
       "id": "roeyen_mother",
@@ -3224,7 +3352,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         {
           "from": 263,
           "to": 305,
-          "place": "the van Roeyen seat (outside Barovia; exact place unrecorded)",
+          "place": "the van Roeyen seat (outside Barovia)",
           "tier": "INFER",
           "note": "Of the van Roeyen house."
         },
@@ -3236,7 +3364,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "note": "Whether the elder generation relocated to Barovia after the founding, or remained at their own seats, is not settled."
         }
       ],
-      "location": "varies by period (see location_by_period)"
+      "location": "varies by period (see location_by_period)",
+      "vocation": "Noble",
+      "role": "Lady of the van Roeyen house",
+      "first_appearance": "VotO"
     },
     {
       "id": "ravenia_maid_of_honour",
@@ -3246,7 +3377,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "record_status": "PLACEHOLDER — role/structure node; not named in any source. Created to populate the wedding scene per medieval royal-wedding form.",
       "notes": "Senior unmarried noblewoman attending the bride (period 'maid of honour' / 'mother of the maids' oversaw the rest). Guards the bride and, by older custom, the dowry. Placeholder.",
-      "off_timeline": true
+      "off_timeline": true,
+      "first_appearance": "VotO"
     },
     {
       "id": "ravenia_ladies",
@@ -3256,7 +3388,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "record_status": "PLACEHOLDER — role/structure node; not named in any source. Created to populate the wedding scene per medieval royal-wedding form.",
       "notes": "Collective node: the bride's attendant noblewomen (period royal brides had several; dressed alike by older custom to confuse ill fortune). Placeholder for the group.",
-      "off_timeline": true
+      "off_timeline": true,
+      "first_appearance": "VotO"
     },
     {
       "id": "ravenia_chaperone",
@@ -3266,7 +3399,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "record_status": "PLACEHOLDER — role/structure node; not named in any source. Created to populate the wedding scene per medieval royal-wedding form.",
       "notes": "Older woman of the van Roeyen household attending the young bride. Placeholder.",
-      "off_timeline": true
+      "off_timeline": true,
+      "first_appearance": "VotO"
     },
     {
       "id": "wedding_clergy",
@@ -3276,7 +3410,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "record_status": "PLACEHOLDER — role/structure node; not named in any source. Created to populate the wedding scene per medieval royal-wedding form.",
       "notes": "Collective node: minor clergy of the church assisting the officiant (deacons/acolytes) at the royal rite. Placeholder.",
-      "off_timeline": true
+      "off_timeline": true,
+      "first_appearance": "VotO"
     },
     {
       "id": "barov_officers",
@@ -3286,7 +3421,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "record_status": "PLACEHOLDER — role/structure node; not named in any source. Created to populate the wedding scene per medieval royal-wedding form.",
       "notes": "Collective node: the senior officers of Barov's founding-war army present at the wedding. NOTE: the later named Dilisnya/Buchvold/Wachter officers are all born 310+, so are NOT yet born in 305 — this group is placeholder officers of the founding generation, NOT the later clan. (Endor 'Dorian', b286, IS present individually.)",
-      "off_timeline": true
+      "off_timeline": true,
+      "first_appearance": "VotO"
     },
     {
       "id": "wedding_nobles",
@@ -3296,7 +3432,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "record_status": "PLACEHOLDER — role/structure node; not named in any source. Created to populate the wedding scene per medieval royal-wedding form.",
       "notes": "Collective node: attending nobility and distinguished guests (period royal weddings were public spectacles of nobles, clergy, dignitaries). Placeholder.",
-      "off_timeline": true
+      "off_timeline": true,
+      "first_appearance": "VotO"
     },
     {
       "id": "wedding_household",
@@ -3306,7 +3443,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "record_status": "PLACEHOLDER — role/structure node; not named in any source. Created to populate the wedding scene per medieval royal-wedding form.",
       "notes": "Collective node: the feast household — cooks, servers, pages, and minstrels/trumpeters who process and perform (period feasts ran to ~200 servants and lasted up to three days). Placeholder.",
-      "off_timeline": true
+      "off_timeline": true,
+      "first_appearance": "VotO"
     },
     {
       "id": "court_officials",
@@ -3316,7 +3454,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "off_timeline": true,
       "record_status": "PLACEHOLDER — role/structure node; not named in any source.",
-      "notes": "Collective: the officials and household of the newly-founded kingdom present at the coronation. Placeholder."
+      "notes": "Collective: the officials and household of the newly-founded kingdom present at the coronation. Placeholder.",
+      "first_appearance": "VotO"
     },
     {
       "id": "realm_witnesses",
@@ -3326,7 +3465,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "off_timeline": true,
       "record_status": "PLACEHOLDER — role/structure node; not named in any source.",
-      "notes": "Collective: the assembled nobility and folk who witness the coronation and the land-binding (period royal rites were public, legitimising acts). Placeholder."
+      "notes": "Collective: the assembled nobility and folk who witness the coronation and the land-binding (period royal rites were public, legitimising acts). Placeholder.",
+      "first_appearance": "VotO"
     },
     {
       "id": "jander",
@@ -3335,6 +3475,9 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "tier": "VOTM",
       "source": "VotM",
       "notes": "Gold ('sunrise') elf of Toril (Forgotten Realms), made a vampire of the NORMAL (sun-lethal) kind — NOT a nosferatu (that is a later splatbook retcon; VotM states plainly that for Jander 'sunlight was lethal'). Drawn into Barovia through the Mists; devoted to Lathander the Morninglord despite his vampirism. Wields the Holy Symbol of Ravenkind against Strahd (c.500), maiming his own hand. Chooses death by the dawn; OUR READING: the Dark Powers deny him that death by making him a DHAMPIR (sealing his exit, not compelling him — his chaotic-good nature drives his continued helping freely). Wounded by the Holy Symbol, he regenerates only slowly over years. Chaotic Good.",
+      "vocation": "Elven warrior",
+      "role": null,
+      "first_appearance": "Vampire of the Mists",
       "line": "barovia"
     },
     {
@@ -3354,6 +3497,9 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "tier": "VOTM",
       "source": "VotM",
       "notes": "Barovian orphan raised from age seven by a thief named FOX (who kept a 'family' of orphans he taught to steal — hence her alias 'Little Fox'). A MASTER THIEF after twelve years' craft; deliberately nondescript ('the very incarnation of nondescript'), slender, mouse-brown hair, hazel eyes — unmemorable by design, her chief asset. Brave ('I can help you. I'm not afraid'). Sasha Petrovich's love and, by the novel's end, his FIANCEE. ~19 at the 500 climax. Survives; flees with the cell. SOURCE: VotM.",
+      "vocation": "Thief",
+      "role": "Master thief, known as Little Fox",
+      "first_appearance": "Vampire of the Mists",
       "line": "barovia"
     },
     {
@@ -3373,6 +3519,9 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "tier": "VOTM",
       "source": "VotM",
       "notes": "Barovian; as a boy of 10 his family was massacred by Strahd (486). Grew into a young PRIEST of the Morninglord. At the 500 confrontation he is with Jander; survives, and takes up the Holy Symbol of Ravenkind (the first KNOWING bearer since Kir), fulfilling Ciril's 'priest to priest' instruction. Betrothed to Leisl. Wields holy power (the flaming disk against the wolves). SOURCE: VotM.",
+      "vocation": "Priest",
+      "role": "Priest of the Morninglord",
+      "first_appearance": "Vampire of the Mists",
       "line": "barovia"
     }
   ],
@@ -3398,7 +3547,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "kind": "marriage",
       "locked": true,
       "roll_d6": null,
-      "superseded_note": "The single 'marriage 299-305' entry is now split: the BETROTHAL (c.296, childhood; commits the van Roeyen dowry that funds the war) and the WEDDING proper (c.304-305, during the war, van Roeyens holding Barov to the contract). Kept for continuity; use the two new events."
+      "superseded_note": "The single 'marriage 299-305' entry is now split: the BETROTHAL (c.296, childhood; commits the van Roeyen dowry that funds the war) and the WEDDING proper (c.304-305, during the war, van Roeyens holding Barov to the contract). Kept for continuity; use the two new events.",
+      "short_title": "marriage of Barov & Ravenia"
     },
     {
       "id": "exile_323",
@@ -3485,7 +3635,11 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "reading": "NO public explanation is given for Strahd's departure or Sturm's elevation. Into that silence Strahd broadcasts the noble lie of a 'war'. In truth: a skilled assassin, he funds a private army by RECRUITING MERCENARIES (his 'war' is words and ideas, worked through the sell-sword markets, not campaigning), returns to Barovia's town/city in disguise to corrupt family and clergy, and ENGINEERS THE GOBLIN THREAT itself through the guild and his agents — the manufactured menace that will justify the army, cover the coup, and let him return as 'saviour'."
         }
       ],
-      "sequence_note": "THE TIMELINE'S COMMITTED RECONSTRUCTION (tier SPEC/INVENT) — the deepest reconstruction in the timeline, so labelled most carefully. The RITUAL FRAMEWORK is VotM-sourced and trusted (first kill must be an intimate; dagger-hilt from the victim's flayed skin, self-crafted). The ANCHORS are given (Ba'al Verzi service + long youthful absence, published Part 1; Sturm's survival/flight, VotM; Sturm as heir despite juniority). The CONNECTIVE NARRATIVE — Zarak as the victim, Sturm as witness, the overheard alibi, Ravenia discovering the dagger, the flight from soldiers, the disinheritance, the official silence Strahd fills with the war-myth — is the story the timeline builds to make those anchors cohere, and is NOT attested. It explains, in one sequence: why Strahd (the eldest) was disinherited and Sturm made heir; the origin and FUNCTION of the 'war' fabrication (filling the crown's silence); why Sturm alone reads the 346 catastrophe correctly and flees (he was the original witness); Ravenia's devotion and Barov's hatred (she found the dagger yet saved him; Barov stripped and would have destroyed him). Marked so a reader never mistakes the reconstructed sequence for attested fact."
+      "sequence_note": "THE TIMELINE'S COMMITTED RECONSTRUCTION (tier SPEC/INVENT) — the deepest reconstruction in the timeline, so labelled most carefully. The RITUAL FRAMEWORK is VotM-sourced and trusted (first kill must be an intimate; dagger-hilt from the victim's flayed skin, self-crafted). The ANCHORS are given (Ba'al Verzi service + long youthful absence, published Part 1; Sturm's survival/flight, VotM; Sturm as heir despite juniority). The CONNECTIVE NARRATIVE — Zarak as the victim, Sturm as witness, the overheard alibi, Ravenia discovering the dagger, the flight from soldiers, the disinheritance, the official silence Strahd fills with the war-myth — is the story the timeline builds to make those anchors cohere, and is NOT attested. It explains, in one sequence: why Strahd (the eldest) was disinherited and Sturm made heir; the origin and FUNCTION of the 'war' fabrication (filling the crown's silence); why Sturm alone reads the 346 catastrophe correctly and flees (he was the original witness); Ravenia's devotion and Barov's hatred (she found the dagger yet saved him; Barov stripped and would have destroyed him). Marked so a reader never mistakes the reconstructed sequence for attested fact.",
+      "short_title": "Strahd's first kill and flight",
+      "role_labels": {
+        "zarak_petrovic": "Killed by Strahd"
+      }
     },
     {
       "id": "massacre_346",
@@ -3575,7 +3729,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         }
       ],
       "sequence_note": "THE TIMELINE'S COMMITTED RECONSTRUCTION (SPEC/INVENT) — REVISED to the coup-gone-wrong, the deepest reconstruction in the timeline, labelled most carefully. Strahd is PRESENT but DISGUISED (preserving the official 'away at war'). The catastrophe is a scheme that OUTRAN ITS AUTHOR: the real goblin assault arrived early and hard, wrecked the controlled coup, and killed the one person Strahd meant to save — his mother, in the chaos he unleashed, before his eyes. The survivors survive because Sturm (who saw through the disguise, as he saw the first kill in 323) got them out with Dorian's help. Strahd takes the throne in 347 only as false hero, the disaster having left no cleaner road. Anchors: Sturm's survival/empty crypt and heir-status (RoT/VotM); Ciril's divine imperative and the intact-castle 'something got inside' reading (published Holy Symbol article); the goblin assault of 346-347 (legitimate). The connective narrative — Strahd present-disguised, the coup's collapse, Ravenia's unintended death — is reconstruction, not attested.",
-      "mechanism_note": "REVISED. Strahd is PRESENT but DISGUISED (not absent): the disguise is what lets 'he was away at war' stand as the official history while he is in fact in the castle for the coup. The catastrophe is NOT a clean master-plan — it is a coup that OUTRAN ITS AUTHOR when the real goblin assault arrived early and hard, killing (among others) the one person Strahd meant to spare, his mother. He takes the throne in 347 as false hero because the disaster left no cleaner road. Triggered by Khazan's 345 murder (the suspicious vanishing forced the timetable). NOTE the siege is double-edged: it is what LETS him into the castle he could not otherwise enter, AND what wrecks the coup once inside. GOBLINS: the assault is Strahd's OWN manufactured threat (engineered via the guild/agents to justify the army and cover the coup) — but it escalated beyond his control, came early/hard, and wrecked the plan, making the whole catastrophe self-authored down to the weapon that undid him. | TIGHTER MECHANISM (reconstruction): the goblins attack in WAVES; Dorian musters what he can and defends the valley each time — successive ATTRITION that grinds down men and resources and hollows the castle wave by wave. Strahd orchestrated the waves as cover for an INSIDE coup, but the goblins escalated beyond his control and the internal seizure collapsed into the massacre — his own botched attempt, which killed his mother and let Sturm escape, devastating him. Crucially, the castle STILL STANDS, and Strahd CANNOT let his own rampaging goblins take it — that would destroy the prize (throne, seat, Khazan's library). So his later intervention is COMPELLED, not chosen: he must step in to save the castle from the threat he created, or lose everything."
+      "mechanism_note": "REVISED. Strahd is PRESENT but DISGUISED (not absent): the disguise is what lets 'he was away at war' stand as the official history while he is in fact in the castle for the coup. The catastrophe is NOT a clean master-plan — it is a coup that OUTRAN ITS AUTHOR when the real goblin assault arrived early and hard, killing (among others) the one person Strahd meant to spare, his mother. He takes the throne in 347 as false hero because the disaster left no cleaner road. Triggered by Khazan's 345 murder (the suspicious vanishing forced the timetable). NOTE the siege is double-edged: it is what LETS him into the castle he could not otherwise enter, AND what wrecks the coup once inside. GOBLINS: the assault is Strahd's OWN manufactured threat (engineered via the guild/agents to justify the army and cover the coup) — but it escalated beyond his control, came early/hard, and wrecked the plan, making the whole catastrophe self-authored down to the weapon that undid him. | TIGHTER MECHANISM (reconstruction): the goblins attack in WAVES; Dorian musters what he can and defends the valley each time — successive ATTRITION that grinds down men and resources and hollows the castle wave by wave. Strahd orchestrated the waves as cover for an INSIDE coup, but the goblins escalated beyond his control and the internal seizure collapsed into the massacre — his own botched attempt, which killed his mother and let Sturm escape, devastating him. Crucially, the castle STILL STANDS, and Strahd CANNOT let his own rampaging goblins take it — that would destroy the prize (throne, seat, Khazan's library). So his later intervention is COMPELLED, not chosen: he must step in to save the castle from the threat he created, or lose everything.",
+      "short_title": "the massacre at the castle"
     },
     {
       "id": "return_347",
@@ -3590,7 +3745,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "kir"
       ],
       "notes": "Strahd defeats the goblins in essentially one night ('Twelfth Moon, 347: the war is over'). Ciril completes the Holy Symbol at divine instruction, the act killing him; the church could not manage the 346 dead against resurrection, which the divine instruction answers. Kir finds Ciril dead and becomes High Priest. | REVISED: Strahd returns with a BOUGHT MERCENARY ARMY (raised over 20 years, funded by his assassin's trade) and breaks the goblins — his OWN manufactured threat — in ~one night, returning as 'saviour' of a crisis he authored. He arrives not as the disgraced exile but as commander of a force with a 20-year SAVIOUR reputation (built by resolving crises he secretly authored), which is why the realm accepts its rescuer. | In Strahd's conquest-story, the lord he defeats to take the castle is DORIAN (Endor 'Dorian' Dilisnya), Dorfniya's husband, who had held the castle through the interregnum. This is how the name 'Dorian' enters the record; later editions corrupt this defeated Duke into 'Dorian the Goblyn King'. | DORIAN & THE GOBLINS (reconstruction): the goblins are destroyed by a two-direction assault — Dorian commits everything to pin them, Strahd's fresh army finishes them — so Strahd can truthfully claim to have 'won', though Dorian's sacrifice made it possible. Strahd's arrival opens Dorian's retreat to the castle; Strahd cleans up, takes the saviour's credit (as the self-styled 'Count'), then besieges. The castle is HOLLOW (Dorian spent its resources on the goblin fight), and Strahd KNOWS the siege will be short — he engineered the very attrition (wave after wave) that emptied it, so there is no misjudgement: he knows how little Dorian has left. Strahd takes the castle and seizes Khazan's library over the bodies; Dorian, the loyal defeated Duke, is recorded as a rebel thief. | COMPELLED INTERVENTION (reconstruction): Strahd does not intervene as a hero but because he CANNOT let his own goblins destroy the castle (the prize). His intervention is timed to SPARE the castle — whether by luck or, more likely, by magic/sight knowingly timed to the exact moment that preserves it while maximising his saviour-credit. He breaks the goblins (with Dorian's attrition-spent defenders completing the pincer), then besieges the hollow castle he knows cannot hold. The 'saviour' is a man doing damage control on a disaster of his own making — forced to rescue the realm he tried to seize, from the threat he created, to preserve the throne his botched coup failed to take cleanly.",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "Strahd's return and seizure of the throne"
     },
     {
       "id": "transformation_351",
@@ -3614,7 +3770,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "carried_by": [
         "VotM",
         "RM4"
-      ]
+      ],
+      "short_title": "sergei murdered; Tatyana falls; Strahd transforms; the wedding-day massacre"
     },
     {
       "id": "return_marina_400",
@@ -3631,7 +3788,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "RoT",
       "carried_by": [
         "VotM"
-      ]
+      ],
+      "short_title": "Tatyana returns as Marina; killed; Strahd slays her family"
     },
     {
       "id": "return_olya_475",
@@ -3648,7 +3806,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "RoT",
       "carried_by": [
         "VotM"
-      ]
+      ],
+      "short_title": "Tatyana returns as Olya; Jander Sunstar arrives"
     },
     {
       "id": "jander_period",
@@ -3664,7 +3823,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "RoT",
       "carried_by": [
         "VotM"
-      ]
+      ],
+      "short_title": "Strahd massacres Sasha's family"
     },
     {
       "id": "jander_fall_500",
@@ -3680,7 +3840,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "RoT",
       "carried_by": [
         "VotM"
-      ]
+      ],
+      "short_title": "Jander's end at the dawn; Sasha survives"
     },
     {
       "id": "false_date_528",
@@ -3698,7 +3859,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "RoT",
       "carried_by": [
         "DoD"
-      ]
+      ],
+      "short_title": "roT/DoD date the I6 assault here"
     },
     {
       "id": "mordent_murder_578",
@@ -3716,7 +3878,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "godefroy_dating"
       ],
       "notes": "RoT Weathermay Note C. FLAG: collides with I10's magistrate records placing the murder ~four centuries before the adventure.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "godefroy murders his wife and daughter"
     },
     {
       "id": "mordent_entry_579",
@@ -3739,7 +3902,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "RoT",
       "founder": "Lord Wilfred Godefroy",
       "founding_reading": "Godefroy, an evil man of vile temper, killed his wife Estelle in a fit of rage and killed his little daughter when she tried to intervene, disguising it as a stable accident. Haunted by their spirits for a year, he took his own life. Mordent was NOT yet a domain — his activity had drawn the dark powers' attention, but it became a domain only when Strahd and Azalin's actions folded Mordentshire in; when they left, Godefroy was the most powerful spirit and became its ghost-lord. (Darklords.pdf, Godefroy write-up p19-20.)",
-      "founding_source": "Darklords.pdf (RoT-era darklord write-ups), read via image+OCR this session."
+      "founding_source": "Darklords.pdf (RoT-era darklord write-ups), read via image+OCR this session.",
+      "short_title": "mordent enters Ravenloft"
     },
     {
       "id": "borca_684",
@@ -3759,7 +3923,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "founder": "Camille Dilisnya",
       "formation_todo": "Camille Dilisnya's OWN founding crime not in Darklords.pdf; source from RoT boxset Borca entry or another darklords document next.",
       "founding_reading": "Camille Dilisnya became lord of Borca in 684 (a distant cousin of the Barovian Dilisnya line; she regarded other branches as 'the wrong side of the family tree' to be pruned). NOTE: Camille's OWN darklord write-up is NOT present in this Darklords.pdf; this detail is drawn from the Ivan Dilisnya write-up (p23). Her specific founding crime remains to be sourced from her own entry elsewhere (RoT boxset or another darklords source).",
-      "founding_source": "Ivan Dilisnya write-up (Darklords.pdf p23); Camille's own entry not in this source — founding crime still to be sourced."
+      "founding_source": "Ivan Dilisnya write-up (Darklords.pdf p23); Camille's own entry not in this source — founding crime still to be sourced.",
+      "short_title": "borca appears"
     },
     {
       "id": "falkovnia_690",
@@ -3778,7 +3943,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "RoT",
       "founder": "Vlad Drakov",
       "founding_reading": "Drakov, a mercenary warlord, entered the Mists and set out to conquer a slice of new land. His Talons sacked a village and he ordered a mass execution of the resisters, impaling them (his habit) in a 'garden of agony'. As he watched, the impaled dead rose as zombies and turned on his men; the Talons fled into the Mists and a new domain opened. He settled and named it Falkovnia. (Darklords.pdf, Drakov write-up p21-22.)",
-      "founding_source": "Darklords.pdf (RoT-era darklord write-ups), read via image+OCR this session."
+      "founding_source": "Darklords.pdf (RoT-era darklord write-ups), read via image+OCR this session.",
+      "short_title": "falkovnia appears"
     },
     {
       "id": "richemulot_694",
@@ -3797,7 +3963,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "RoT",
       "founder": "Claude Renier",
       "founding_reading": "The Renier wererat family, cornered in a labyrinth facing death by a glowing sword, chose a Mist-portal and entered Ravenloft on Falkovnia's borders, living beneath Silbervas. Years later Drakov, tired of their murders and pilfering, sent an expeditionary force through the sewers; the Reniers fled again into the Mists, which opened Richemulot for them. Claude (grandfather of the later lord Jacqueline) became its lord; Jacqueline murdered him in 726 to take the domain. (Darklords.pdf, Renier write-up p7-8.)",
-      "founding_source": "Darklords.pdf (RoT-era darklord write-ups), read via image+OCR this session."
+      "founding_source": "Darklords.pdf (RoT-era darklord write-ups), read via image+OCR this session.",
+      "short_title": "richemulot appears"
     },
     {
       "id": "arkandale_708",
@@ -3816,7 +3983,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "RoT",
       "founder": "Nathan Timothy",
       "founding_reading": "Nathan Timothy, a werewolf, left 'a trail of carcasses in his wake' and, with no place left to ravage and explore, entered the Mists; Arkandale was formed and he became its lord. He is a riverboat merchant who, by his own arrangement, lets no other boat pass safely on the River Musarde (werewolves attack other craft), so he can charge stiff shipping fees. (Darklords.pdf, Nathan Timothy write-up p6.)",
-      "founding_source": "Darklords.pdf (RoT-era darklord write-ups), read via image+OCR this session."
+      "founding_source": "Darklords.pdf (RoT-era darklord write-ups), read via image+OCR this session.",
+      "short_title": "arkandale appears"
     },
     {
       "id": "dementlieu_707",
@@ -3835,7 +4003,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "RoT",
       "founder": "Dominic d'Honaire",
       "founding_reading": "Dominic d'Honaire, grandson of Dr. Germain d'Honaire (a mesmerist present in Mordent when it entered Ravenloft). A 'bad seed', born with an evil core that killed his mother in childbirth; a subtle manipulator who could plant ideas so skillfully that others believed them their own, pitting people against each other for the chaos it caused. Became lord of Dementlieu (707). (Darklords.pdf, d'Honaire write-up p24.)",
-      "founding_source": "Darklords.pdf (RoT-era darklord write-ups), read via image+OCR this session."
+      "founding_source": "Darklords.pdf (RoT-era darklord write-ups), read via image+OCR this session.",
+      "short_title": "dementlieu appears"
     },
     {
       "id": "dorvinia_715",
@@ -3854,7 +4023,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "RoT",
       "founder": "Ivan Dilisnya",
       "founding_reading": "Ivan Dilisnya (son of Boris, grandson of Natalia Olszanik Dilisnya; the family fled Strahd's 351 wedding-massacre and were trapped in Ravenloft, later moving to Borca under cousin Camille). Born under a dark moon; cruel from childhood (torturing animals at 6). Ravenloft granted him the power to turn any object he touches to poison, and he keeps retainers alive on a daily antidote to enforce loyalty. He became lord of Dorvinia (domain takes shape 715). (Darklords.pdf, Ivan Dilisnya write-up p22-23.)",
-      "founding_source": "Darklords.pdf (RoT-era darklord write-ups), read via image+OCR this session."
+      "founding_source": "Darklords.pdf (RoT-era darklord write-ups), read via image+OCR this session.",
+      "short_title": "dorvinia takes shape"
     },
     {
       "id": "verbrek_730",
@@ -3873,7 +4043,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "RoT",
       "founder": "Alfred Timothy",
       "founding_reading": "Alfred Timothy despises his own human form and believes his bestial nature divine; high priest of a wolf god, inspired by tales of the Arkandale villagers to believe he could speak to the wolf god. Engulfed in the Mists, he became lord of Verbrek (domain opens 730); his dreams 'became reality'. He hates all intelligent creatures except werewolves and dire wolves. (Darklords.pdf, Alfred write-up p6.)",
-      "founding_source": "Darklords.pdf (RoT-era darklord write-ups), read via image+OCR this session."
+      "founding_source": "Darklords.pdf (RoT-era darklord write-ups), read via image+OCR this session.",
+      "short_title": "verbrek takes shape"
     },
     {
       "id": "campaign_present_735",
@@ -3886,7 +4057,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "single_source_calendar"
       ],
       "notes": "SETTING-WIDE: RoT records its timeline and 'campaigns begin' at 735. A setting-wide marker presupposes the demiplane, so it is a RoT construct by nature. 735-351=384 years, still short of I6's 'over 400'.",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "roT's 'campaigns begin'"
     },
     {
       "id": "branch_fail_752",
@@ -3901,7 +4073,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "rm4_markers"
       ],
       "notes": "From I6's own marker: 351+400=751 exactly, so the 'over 400 years' failure-state present falls no earlier than 752. Failure band plausibly 752-c.801 before the wording tips toward the 500 marker. The 100 spirits (undated, textual) evidence many prior runs of the branch.",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "earliest possible present of I6"
     },
     {
       "id": "branch_success_851",
@@ -3915,7 +4088,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "sergei"
       ],
       "notes": "From I6's optional ending 'after 500 years': 351+500=851. The success state where the recurrence ends. The bottom of the timeline.",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "The success horizon"
     },
     {
       "id": "marriage_dilisnya_husband_dorfniya",
@@ -3933,7 +4107,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "locked": true,
       "roll_d6": 3,
-      "eldest_child_birth": 310
+      "eldest_child_birth": 310,
+      "short_title": "marriage: Duke Endor 'Dorian' Dilisnya & Dorfniya"
     },
     {
       "id": "marriage_godefroy_estelle_w",
@@ -3951,7 +4126,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "locked": true,
       "roll_d6": 6,
-      "eldest_child_birth": 568
+      "eldest_child_birth": 568,
+      "short_title": "marriage: Lord Wilfred Godefroy & Estelle Weathermay"
     },
     {
       "id": "marriage_sturm_gisella",
@@ -3969,7 +4145,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "locked": true,
       "roll_d6": 3,
-      "wife_marriage_age": 21
+      "wife_marriage_age": 21,
+      "short_title": "marriage: Sturm Von Zarovich & Gisella Fallona"
     },
     {
       "id": "marriage_reinhold_nadia_yakimov",
@@ -3987,7 +4164,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "locked": true,
       "roll_d6": 6,
-      "wife_marriage_age": 24
+      "wife_marriage_age": 24,
+      "short_title": "marriage: Reinhold Dilisnya & Nadia Yakimov"
     },
     {
       "id": "marriage_ivan_buchvold_gertrude_d",
@@ -4005,7 +4183,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "locked": true,
       "roll_d6": 6,
-      "wife_marriage_age": 24
+      "wife_marriage_age": 24,
+      "short_title": "marriage: Ivan Buchvold & Gertrude Dilisnya"
     },
     {
       "id": "marriage_victor_wachter_oleka",
@@ -4023,7 +4202,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "locked": true,
       "roll_d6": 2,
-      "wife_marriage_age": 20
+      "wife_marriage_age": 20,
+      "short_title": "marriage: Victor Wachter & Oleka Dilisnya"
     },
     {
       "id": "marriage_byron_w_katherine_s",
@@ -4041,7 +4221,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "locked": true,
       "roll_d6": 6,
-      "wife_marriage_age": 24
+      "wife_marriage_age": 24,
+      "short_title": "marriage: Byron Weathermay & Katherine Sutherwaite"
     },
     {
       "id": "marriage_germain_dh_alicia_c",
@@ -4059,7 +4240,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "locked": true,
       "roll_d6": 1,
-      "wife_marriage_age": 19
+      "wife_marriage_age": 19,
+      "short_title": "marriage: Germain d'Honaire & Alicia Corgiat"
     },
     {
       "id": "marriage_cain_t_elizabeth_t",
@@ -4077,7 +4259,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "locked": true,
       "roll_d6": 1,
-      "wife_marriage_age": 19
+      "wife_marriage_age": 19,
+      "short_title": "marriage: Cain Timothy & Elizabeth Timothy"
     },
     {
       "id": "marriage_claude_r_isabelle_m",
@@ -4095,7 +4278,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "locked": true,
       "roll_d6": 3,
-      "wife_marriage_age": 21
+      "wife_marriage_age": 21,
+      "short_title": "marriage: Claude Renier & Isabelle Museau"
     },
     {
       "id": "marriage_alfred_t_winifred_r",
@@ -4113,7 +4297,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "locked": true,
       "roll_d6": 4,
-      "wife_marriage_age": 22
+      "wife_marriage_age": 22,
+      "short_title": "marriage: Alfred Timothy & Winifred Ratcliff"
     },
     {
       "id": "sturm_restoration",
@@ -4129,7 +4314,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "kind": "restoration",
       "notes": "SPEC reconstruction. Sturm's family, having escaped Barovia entirely in 346 and NEVER been drawn into the mists, live in exile on the prime material plane, discover the physical valley abandoned (the true Barovia taken into the demiplane), and return with friends and supporters to restore their ancestral home on the prime material plane. Year placed at Sturm's death (382) as a horizon marker only — the restoration is a process across his exile, not a dated event; adjust if a better peg emerges. The rightful line outlives the usurper's cursed domain.",
       "source": "VotO",
-      "undated_horizon": true
+      "undated_horizon": true,
+      "short_title": "sturm's line restores the abandoned valley on the prime material plane"
     },
     {
       "id": "birth_barov",
@@ -4143,7 +4329,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "barov"
       ],
       "notes": "Birth of Barov Von Zarovich.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Barov Von Zarovich"
     },
     {
       "id": "death_barov",
@@ -4157,7 +4344,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "barov"
       ],
       "notes": "Death of Barov Von Zarovich.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Barov Von Zarovich"
     },
     {
       "id": "birth_ravenia",
@@ -4171,7 +4359,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "ravenia"
       ],
       "notes": "Birth of Ravenia Van Roeyen.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Ravenia Van Roeyen"
     },
     {
       "id": "death_ravenia",
@@ -4185,7 +4374,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "ravenia"
       ],
       "notes": "Death of Ravenia Van Roeyen.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Ravenia Van Roeyen"
     },
     {
       "id": "birth_strahd",
@@ -4199,7 +4389,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "strahd"
       ],
       "notes": "Birth of Strahd Von Zarovich. | YEAR 306 — THE CONVERGENCE (the founding year). A single, exceptionally loaded year: the founding war ends, the keep falls, Barovia is founded, Barov is crowned KING and Ravenia QUEEN, the land-ritual binds the king to the realm, and STRAHD is born — the crown prince, and the first person born to the new von Zarovich name. For the new kingdom it is a year of continuous celebration, triumph upon triumph, with the heir born into the middle of it. THEMATIC CHARGE: Strahd enters the world at the family's absolute APEX — victory, throne, realm and heir all at once — which darkens the long arc by contrast: the man who will end the dynasty in blood and draw the realm into the mists is born in its golden hour, amid universal rejoicing over everything he will later ruin.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Strahd Von Zarovich"
     },
     {
       "id": "death_strahd",
@@ -4213,7 +4404,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "strahd"
       ],
       "notes": "NOT a true death — this is Strahd's TRANSFORMATION to undeath (vampire). He has no true end date (undead). 351 is preserved as the transformation/undeath marker and the calendar anchor. Render as 'became undead 351', not 'died 351'.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "becomes undead: Strahd Von Zarovich"
     },
     {
       "id": "birth_sturm",
@@ -4227,7 +4419,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "sturm"
       ],
       "notes": "Birth of Sturm Von Zarovich.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Sturm Von Zarovich"
     },
     {
       "id": "death_sturm",
@@ -4241,7 +4434,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "sturm"
       ],
       "notes": "Death of Sturm Von Zarovich.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Sturm Von Zarovich"
     },
     {
       "id": "birth_gisella",
@@ -4255,7 +4449,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "gisella"
       ],
       "notes": "Birth of Gisella Fallona.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Gisella Fallona"
     },
     {
       "id": "death_gisella",
@@ -4269,7 +4464,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "gisella"
       ],
       "notes": "Death of Gisella Fallona.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Gisella Fallona"
     },
     {
       "id": "birth_sergei",
@@ -4283,7 +4479,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "sergei"
       ],
       "notes": "Birth of Sergei Von Zarovich.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Sergei Von Zarovich"
     },
     {
       "id": "death_sergei",
@@ -4297,7 +4494,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "sergei"
       ],
       "notes": "Death of Sergei Von Zarovich.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Sergei Von Zarovich"
     },
     {
       "id": "birth_tatyana",
@@ -4311,7 +4509,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tatyana"
       ],
       "notes": "Birth of Tatyana.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Tatyana"
     },
     {
       "id": "death_tatyana",
@@ -4325,7 +4524,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tatyana"
       ],
       "notes": "RoT prints '351?' with a question mark; presumed dead the day of her wedding to Sergei.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Tatyana"
     },
     {
       "id": "birth_pidlwik",
@@ -4339,7 +4539,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "pidlwik"
       ],
       "notes": "Birth of Pidlwik.",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "born: Pidlwik"
     },
     {
       "id": "death_pidlwik",
@@ -4353,7 +4554,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "pidlwik"
       ],
       "notes": "Dies 346 in the catastrophe with his mistress Dorfniya.",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "died: Pidlwik"
     },
     {
       "id": "birth_dorfniya",
@@ -4367,7 +4569,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "dorfniya"
       ],
       "notes": "Birth of Dorfniya.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Dorfniya"
     },
     {
       "id": "death_dorfniya",
@@ -4381,7 +4584,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "dorfniya"
       ],
       "notes": "Dies 346 with the ruling circle at Castle Ravenloft (the catastrophe). The printed RoT d340 is WRONG (carried uncorrected into the author's spreadsheet before this correction); she dies with her family at court in 346 — the author's correction.",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "died: Dorfniya"
     },
     {
       "id": "birth_gunther_cosco",
@@ -4395,7 +4599,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "gunther_cosco"
       ],
       "notes": "Birth of Gunther Cosco.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Gunther Cosco"
     },
     {
       "id": "death_gunther_cosco",
@@ -4409,7 +4614,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "gunther_cosco"
       ],
       "notes": "Death of Gunther Cosco.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Gunther Cosco"
     },
     {
       "id": "birth_leo",
@@ -4423,7 +4629,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "leo"
       ],
       "notes": "Birth of Leo Dilisnya.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Leo Dilisnya"
     },
     {
       "id": "death_leo",
@@ -4437,7 +4644,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "leo"
       ],
       "notes": "Death of Leo Dilisnya.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Leo Dilisnya"
     },
     {
       "id": "birth_reinhold",
@@ -4451,7 +4659,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "reinhold"
       ],
       "notes": "Birth of Reinhold Dilisnya.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Reinhold Dilisnya"
     },
     {
       "id": "death_reinhold",
@@ -4465,7 +4674,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "reinhold"
       ],
       "notes": "Death of Reinhold Dilisnya.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Reinhold Dilisnya"
     },
     {
       "id": "birth_nadia_yakimov",
@@ -4479,7 +4689,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "nadia_yakimov"
       ],
       "notes": "Birth of Nadia Yakimov.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Nadia Yakimov"
     },
     {
       "id": "death_nadia_yakimov",
@@ -4493,7 +4704,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "nadia_yakimov"
       ],
       "notes": "Death of Nadia Yakimov.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Nadia Yakimov"
     },
     {
       "id": "birth_gertrude_d",
@@ -4507,7 +4719,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "gertrude_d"
       ],
       "notes": "Birth of Gertrude Dilisnya.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Gertrude Dilisnya"
     },
     {
       "id": "death_gertrude_d",
@@ -4521,7 +4734,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "gertrude_d"
       ],
       "notes": "Death of Gertrude Dilisnya.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Gertrude Dilisnya"
     },
     {
       "id": "birth_ivan_buchvold",
@@ -4535,7 +4749,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "ivan_buchvold"
       ],
       "notes": "Birth of Ivan Buchvold.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Ivan Buchvold"
     },
     {
       "id": "death_ivan_buchvold",
@@ -4549,7 +4764,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "ivan_buchvold"
       ],
       "notes": "Death of Ivan Buchvold.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Ivan Buchvold"
     },
     {
       "id": "birth_illya_buchvold",
@@ -4563,7 +4779,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "illya_buchvold"
       ],
       "notes": "Birth of Illya Buchvold.",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "born: Illya Buchvold"
     },
     {
       "id": "death_illya_buchvold",
@@ -4577,7 +4794,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "illya_buchvold"
       ],
       "notes": "The author's own reconstruction, though flagged as possible-Strahd-fabrication. (This session's I,Strahd reading adds that Leo frames him and the whole arc may be Strahd's persecution device.)",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "died: Illya Buchvold"
     },
     {
       "id": "birth_oleka",
@@ -4591,7 +4809,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "oleka"
       ],
       "notes": "Birth of Oleka Dilisnya.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Oleka Dilisnya"
     },
     {
       "id": "death_oleka",
@@ -4605,7 +4824,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "oleka"
       ],
       "notes": "Death of Oleka Dilisnya.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Oleka Dilisnya"
     },
     {
       "id": "birth_victor_wachter",
@@ -4619,7 +4839,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "victor_wachter"
       ],
       "notes": "Birth of Victor Wachter.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Victor Wachter"
     },
     {
       "id": "death_victor_wachter",
@@ -4633,7 +4854,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "victor_wachter"
       ],
       "notes": "Death of Victor Wachter.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Victor Wachter"
     },
     {
       "id": "birth_dilisnya_husband",
@@ -4647,7 +4869,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "dilisnya_husband"
       ],
       "notes": "Birth of Duke Endor 'Dorian' Dilisnya.",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "born: Duke Endor 'Dorian' Dilisnya"
     },
     {
       "id": "death_dilisnya_husband",
@@ -4661,7 +4884,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "dilisnya_husband"
       ],
       "notes": "SPECULATION (the author's reconstruction), NOT established. RoT prints d349; this floats 347 instead, on the reading that after the 346 royal deaths and Sturm's flight the Duke holds the castle and dies when Strahd arrives in 347. The Duke's ABSENCE from the I6 castle crypts (his wife Dorfniya is entombed there; he is not) is CONSISTENT WITH this but is not proof — a missing crypt has many possible causes. Marked SPEC; printed 349 preserved. Do not present as a finding.",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "died: Duke Endor 'Dorian' Dilisnya"
     },
     {
       "id": "birth_kir",
@@ -4675,7 +4899,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "kir"
       ],
       "notes": "Birth of Kir.",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "born: Kir"
     },
     {
       "id": "death_kir",
@@ -4689,7 +4914,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "kir"
       ],
       "notes": "Death of Kir.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Kir"
     },
     {
       "id": "birth_zarak_petrovic",
@@ -4703,7 +4929,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "zarak_petrovic"
       ],
       "notes": "Birth of Zarak Petrovic.",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "born: Zarak Petrovic"
     },
     {
       "id": "death_zarak_petrovic",
@@ -4717,7 +4944,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "zarak_petrovic"
       ],
       "notes": "Death moved to 323 to coincide with the reconstructed first-kill sequence (Strahd aged 17). 'Old Zarak' at 73 (b250). Under the reconstruction, Zarak is the strong candidate for Strahd's first Ba'al Verzi victim — the ritual (VotM) requires the first kill be 'someone the assassin knew', and a childhood tutor fits that requirement exactly. Date is the author's to set; moved from the earlier 327.",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "died: Zarak Petrovic"
     },
     {
       "id": "birth_ciril",
@@ -4731,7 +4959,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "ciril"
       ],
       "notes": "Birth of Prefect Ciril Romulich.",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "born: Prefect Ciril Romulich"
     },
     {
       "id": "death_ciril",
@@ -4745,7 +4974,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "ciril"
       ],
       "notes": "The crafting of the Holy Symbol killed him.",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "died: Prefect Ciril Romulich"
     },
     {
       "id": "birth_gregorovich",
@@ -4759,7 +4989,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "gregorovich"
       ],
       "notes": "Birth of Stephan Gregorovich.",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "born: Stephan Gregorovich"
     },
     {
       "id": "death_gregorovich",
@@ -4773,7 +5004,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "gregorovich"
       ],
       "notes": "Among the 346 ruling-circle dead.",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "died: Stephan Gregorovich"
     },
     {
       "id": "death_khazan",
@@ -4787,7 +5019,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "khazan"
       ],
       "notes": "SPEC, reasoned (I6 gives only 'His word was power', no date). REVISED: Khazan is Ravenia's secret COURIER to the exiled Strahd. In 345 he travels to meet Strahd and never returns — Strahd MURDERS HIM FOR HIS SPELLBOOKS, but a travelling wizard carries only his TRAVELLING book; the full library stays in the castle (taken only at the 347 return). The suspicious vanishing — last bound to meet the exiled prince — threatens to expose Strahd and FORCES the coup timetable (the trigger of 346). Ravenia can guess but cannot say, and dies in 346 still holding it. ALTERNATIVE era-reading (older Endorovich-era Khazan) preserved; birth null.",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "died: Khazan"
     },
     {
       "id": "birth_elsa_fallona",
@@ -4801,7 +5034,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "elsa_fallona"
       ],
       "notes": "Birth of Elsa Fallona.",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "born: Elsa Fallona"
     },
     {
       "id": "death_elsa_fallona",
@@ -4815,7 +5049,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "elsa_fallona"
       ],
       "notes": "Dies 346 with the ruling circle (I6 Crypt 16; among the 346 catastrophe dead).",
-      "source": "VotO"
+      "source": "VotO",
+      "short_title": "died: Elsa Fallona"
     },
     {
       "id": "birth_byron_w",
@@ -4829,7 +5064,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "byron_w"
       ],
       "notes": "Birth of Byron Weathermay.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Byron Weathermay"
     },
     {
       "id": "death_byron_w",
@@ -4843,7 +5079,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "byron_w"
       ],
       "notes": "Death of Byron Weathermay.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Byron Weathermay"
     },
     {
       "id": "birth_katherine_s",
@@ -4857,7 +5094,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "katherine_s"
       ],
       "notes": "Birth of Katherine Sutherwaite.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Katherine Sutherwaite"
     },
     {
       "id": "death_katherine_s",
@@ -4871,7 +5109,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "katherine_s"
       ],
       "notes": "Death of Katherine Sutherwaite.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Katherine Sutherwaite"
     },
     {
       "id": "birth_godefroy",
@@ -4885,7 +5124,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "godefroy"
       ],
       "notes": "Birth of Lord Wilfred Godefroy.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Lord Wilfred Godefroy"
     },
     {
       "id": "death_godefroy",
@@ -4899,7 +5139,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "godefroy"
       ],
       "notes": "NOT a true death — Godefroy murdered his family (578) and took his own life, becoming the GHOST-LORD of Mordent in 579. Undead thereafter, no true end date. 579 preserved as the undeath/ghost-lord marker. (His 578 suicide is the mortal end, but he persists as an undead darklord — render as 'becomes ghost-lord 579', not a simple death.)",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "becomes undead: Lord Wilfred Godefroy"
     },
     {
       "id": "birth_estelle_w",
@@ -4913,7 +5154,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "estelle_w"
       ],
       "notes": "Birth of Estelle Weathermay.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Estelle Weathermay"
     },
     {
       "id": "death_estelle_w",
@@ -4927,7 +5169,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "estelle_w"
       ],
       "notes": "Death of Estelle Weathermay.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Estelle Weathermay"
     },
     {
       "id": "birth_lilia",
@@ -4941,7 +5184,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "lilia"
       ],
       "notes": "Birth of Lilia Godefroy.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Lilia Godefroy"
     },
     {
       "id": "death_lilia",
@@ -4955,7 +5199,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "lilia"
       ],
       "notes": "Death of Lilia Godefroy.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Lilia Godefroy"
     },
     {
       "id": "birth_camille",
@@ -4969,7 +5214,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "camille"
       ],
       "notes": "Birth of Camille Dilisnya.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Camille Dilisnya"
     },
     {
       "id": "death_camille",
@@ -4983,7 +5229,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "camille"
       ],
       "notes": "Death of Camille Dilisnya.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Camille Dilisnya"
     },
     {
       "id": "birth_ivana_b",
@@ -4997,7 +5244,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "ivana_b"
       ],
       "notes": "Birth of Ivana Boritsi.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Ivana Boritsi"
     },
     {
       "id": "birth_claude_r",
@@ -5011,7 +5259,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "claude_r"
       ],
       "notes": "Birth of Claude Renier.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Claude Renier"
     },
     {
       "id": "death_claude_r",
@@ -5025,7 +5274,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "claude_r"
       ],
       "notes": "Death of Claude Renier.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Claude Renier"
     },
     {
       "id": "birth_isabelle_m",
@@ -5039,7 +5289,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "isabelle_m"
       ],
       "notes": "Birth of Isabelle Museau.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Isabelle Museau"
     },
     {
       "id": "death_isabelle_m",
@@ -5053,7 +5304,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "isabelle_m"
       ],
       "notes": "Death of Isabelle Museau.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Isabelle Museau"
     },
     {
       "id": "birth_vlad_drakov",
@@ -5067,7 +5319,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "vlad_drakov"
       ],
       "notes": "Birth of Vlad Drakov.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Vlad Drakov"
     },
     {
       "id": "birth_germain_dh",
@@ -5081,7 +5334,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "germain_dh"
       ],
       "notes": "Birth of Germain d'Honaire.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Germain d'Honaire"
     },
     {
       "id": "death_germain_dh",
@@ -5095,7 +5349,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "germain_dh"
       ],
       "notes": "Death of Germain d'Honaire.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Germain d'Honaire"
     },
     {
       "id": "birth_alicia_c",
@@ -5109,7 +5364,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "alicia_c"
       ],
       "notes": "Birth of Alicia Corgiat.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Alicia Corgiat"
     },
     {
       "id": "death_alicia_c",
@@ -5123,7 +5379,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "alicia_c"
       ],
       "notes": "Death of Alicia Corgiat.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Alicia Corgiat"
     },
     {
       "id": "birth_dominic_dh",
@@ -5137,7 +5394,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "dominic_dh"
       ],
       "notes": "Birth of Dominic d'Honaire.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Dominic d'Honaire"
     },
     {
       "id": "birth_cain_t",
@@ -5151,7 +5409,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "cain_t"
       ],
       "notes": "Birth of Cain Timothy.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Cain Timothy"
     },
     {
       "id": "death_cain_t",
@@ -5165,7 +5424,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "cain_t"
       ],
       "notes": "Death of Cain Timothy.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Cain Timothy"
     },
     {
       "id": "birth_elizabeth_t",
@@ -5179,7 +5439,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "elizabeth_t"
       ],
       "notes": "Birth of Elizabeth Timothy.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Elizabeth Timothy"
     },
     {
       "id": "death_elizabeth_t",
@@ -5193,7 +5454,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "elizabeth_t"
       ],
       "notes": "Death of Elizabeth Timothy.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Elizabeth Timothy"
     },
     {
       "id": "birth_nathan_t",
@@ -5207,7 +5469,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "nathan_t"
       ],
       "notes": "Birth of Nathan Timothy.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Nathan Timothy"
     },
     {
       "id": "death_nathan_t",
@@ -5221,7 +5484,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "nathan_t"
       ],
       "notes": "Death of Nathan Timothy.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Nathan Timothy"
     },
     {
       "id": "birth_alfred_t",
@@ -5235,7 +5499,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "alfred_t"
       ],
       "notes": "Birth of Alfred Timothy.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Alfred Timothy"
     },
     {
       "id": "death_alfred_t",
@@ -5249,7 +5514,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "alfred_t"
       ],
       "notes": "Death of Alfred Timothy.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Alfred Timothy"
     },
     {
       "id": "birth_winifred_r",
@@ -5263,7 +5529,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "winifred_r"
       ],
       "notes": "Birth of Winifred Ratcliff.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "born: Winifred Ratcliff"
     },
     {
       "id": "death_winifred_r",
@@ -5277,7 +5544,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "winifred_r"
       ],
       "notes": "Death of Winifred Ratcliff.",
-      "source": "RoT"
+      "source": "RoT",
+      "short_title": "died: Winifred Ratcliff"
     },
     {
       "id": "betrothal_barov_ravenia",
@@ -5292,7 +5560,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "present": [
         "barov",
         "ravenia"
-      ]
+      ],
+      "short_title": "the betrothal of Barov and Ravenia"
     },
     {
       "id": "barov_war_endor",
@@ -5306,7 +5575,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "line": "barovia",
       "present": [
         "barov"
-      ]
+      ],
+      "short_title": "Barov's war against the Endorovich keep"
     },
     {
       "id": "wedding_barov_ravenia",
@@ -5340,7 +5610,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "wedding_household"
       ],
       "form_note": "Guest list modelled on medieval royal-wedding form: procession, rite at the church by high clergy, the two families (parents ranking socially above the couple), formal attendants (maid of honour + ladies guarding the bride/dowry; best man as the groom's man), witnesses, and a feast with household and minstrels. Named figures are placed in period roles; unnamed structure is carried by PLACEHOLDER nodes. Notable meeting: Endor 'Dorian' (officer) and Dorfniya (groom's sister) first cross paths here.",
-      "location": "Barov's Town (the fortified siege-base below the Endorovich keep)"
+      "location": "Barov's Town (the fortified siege-base below the Endorovich keep)",
+      "short_title": "Barov and Ravenia's wedding, held during the war"
     },
     {
       "id": "fall_of_endor_founding",
@@ -5356,7 +5627,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "barov",
         "ravenia",
         "strahd"
-      ]
+      ],
+      "short_title": "the fall of the keep and the founding of Barovia"
     },
     {
       "id": "birth_roman",
@@ -5366,6 +5638,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "tier": "SPEC",
       "source": "VotO",
       "notes": "Father of Barov and Dorfniya; Duke of the Dilisnya house. SPEC.",
+      "short_title": "born: Duke Roman Dilisnya",
       "kind": "birth",
       "scope": "single",
       "line": "barovia",
@@ -5381,6 +5654,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "tier": "SPEC",
       "source": "VotO",
       "notes": "Dies ~54, having seen his ducal power subsumed by Barov's crown (306). SPEC.",
+      "short_title": "died: Duke Roman Dilisnya",
       "kind": "death",
       "scope": "single",
       "line": "barovia",
@@ -5396,6 +5670,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "tier": "SPEC",
       "source": "VotO",
       "notes": "Mother of Barov and Dorfniya; brings the Holtz name into the family. SPEC.",
+      "short_title": "born: Duchess Katarina Holtz",
       "kind": "birth",
       "scope": "single",
       "line": "barovia",
@@ -5411,6 +5686,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "tier": "SPEC",
       "source": "VotO",
       "notes": "The king's mother. SPEC.",
+      "short_title": "died: Duchess Katarina Holtz",
       "kind": "death",
       "scope": "single",
       "line": "barovia",
@@ -5426,6 +5702,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "tier": "SPEC",
       "source": "VotO",
       "notes": "Head of the van Roeyen house; father of Ravenia. SPEC.",
+      "short_title": "born: Claude van Roeyen",
       "kind": "birth",
       "scope": "single",
       "line": "barovia",
@@ -5441,6 +5718,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "tier": "SPEC",
       "source": "VotO",
       "notes": "The wealth behind the founding war. SPEC.",
+      "short_title": "died: Claude van Roeyen",
       "kind": "death",
       "scope": "single",
       "line": "barovia",
@@ -5456,6 +5734,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "tier": "SPEC",
       "source": "VotO",
       "notes": "Mother of Ravenia; brings the Petronova name into the family. SPEC.",
+      "short_title": "born: Anna Petronova",
       "kind": "birth",
       "scope": "single",
       "line": "barovia",
@@ -5471,6 +5750,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "tier": "SPEC",
       "source": "VotO",
       "notes": "SPEC.",
+      "short_title": "died: Anna Petronova",
       "kind": "death",
       "scope": "single",
       "line": "barovia",
@@ -5509,6 +5789,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "ravenia_ladies"
       ],
       "form_note": "Founding coronation on medieval form: crowning by the High Priest, the two founding families, the new court and assembled realm as witnesses (a public, legitimising act).",
+      "short_title": "the coronation",
       "scope": "single",
       "line": "barovia"
     },
@@ -5543,6 +5824,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "ravenia_ladies"
       ],
       "form_note": "Sovereignty rite on medieval form: the king bound to the land by the High Priest before the assembled realm; the founding families witness.",
+      "short_title": "the land ritual",
       "scope": "single",
       "line": "barovia"
     },
@@ -5559,6 +5841,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "jander",
         "leisl"
       ],
+      "short_title": "The Holy Symbol passes to Sasha and leaves the castle",
       "scope": "single",
       "line": "barovia"
     },
@@ -5575,6 +5858,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "sasha",
         "leisl"
       ],
+      "short_title": "The escape: the cell frees Strahd's food supply and goes into hiding",
       "scope": "single",
       "line": "barovia"
     }
@@ -6163,6 +6447,26 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
   function sourceGloss(code) { return (meta.sources && meta.sources[code]) ? meta.sources[code] : ''; }
   function srcLine(label, code) { var g = sourceGloss(code); return '<p class="tl-src"><strong>' + label + ':</strong> ' + esc(code) + (g ? ' <span class="tl-src-g">' + esc(g) + '</span>' : '') + '</p>'; }
 
+  // ---- Person panel display layer: notes/*.note fields are the working
+  // layer (argument, tier reasoning, source overrides) and are never
+  // rendered here; only the short structured display fields are.
+  var TIER_WORDS = { CORE: 'Core', PUB: 'Published', INFER: 'Inferred', SPEC: 'Speculation', INVENT: 'Invented', VOTM: 'Vampire of the Mists', FLAG: 'Flagged', OPEN: 'Open' };
+  function tierWord(code) { return TIER_WORDS[code] || code; }
+  function personTier(p) { return p.tier || (p.birth && p.birth.tier) || (p.death && p.death.tier) || ''; }
+  function article(word) { return /^[aeiouAEIOU]/.test(word) ? 'An' : 'A'; }
+  function lcFirst(s) { return s ? s.charAt(0).toLowerCase() + s.slice(1) : s; }
+  function personSourceLine(p) {
+    var fa = p.first_appearance;
+    if (!fa || fa === 'VotO' || fa === 'Vaults of the Odd') return 'Source: Vaults of the Odd.';
+    return 'Source: ' + fa + '. Vaults of the Odd.';
+  }
+  function relTypeLabel(t) { var s = String(t).replace(/-/g, ' '); return s.charAt(0).toUpperCase() + s.slice(1); }
+  function relDisplay(r) {
+    if (r.display) return r.display;
+    var who = Array.isArray(r.with) ? r.with.map(personName).join(', ') : personName(r.with);
+    return relTypeLabel(r.type) + ': ' + who + '.';
+  }
+
   // ---- Feedback: whatever's on screen (a year, an event, a person, a line)
   // is always one click away from being flagged as a suggestion or
   // correction. Posts straight to Formspree (no page navigation, no reader
@@ -6413,25 +6717,17 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     setFeedbackCtx(p.name, 'person', p.id, born(p));
     var h = '';
     h += '<p class="tl-pyear">' + esc(lineById[p.line] ? lineById[p.line].label : '') + ' line</p>';
-    h += '<h3 class="tl-ptitle" style="color:' + lineColor(p.line) + '">' + esc(p.name) + '</h3>';
+    h += '<h3 class="tl-ptitle" style="color:' + lineColor(p.line) + '">' + esc(p.name) + ' <span class="tl-tierword">(' + esc(tierWord(personTier(p))) + ')</span></h3>';
 
-    var b = p.birth, d = p.death;
+    var b = p.birth, d = p.death, bp = p.birthplace;
     h += '<div class="tl-sec-b"><span class="tl-sec">Birth</span>';
-    if (b && typeof b.year === 'number') {
-      h += '<p class="tl-status"><span class="tl-badge" style="background:' + tierColor(b.tier) + '">' + esc(b.tier) + '</span>Born ' + esc(b.year) + '</p>';
-      if (b.note) h += '<p class="tl-gloss">' + esc(b.note) + '</p>';
-      if (b.rot_printed != null) h += '<p class="tl-gloss">RoT prints ' + esc(b.rot_printed) + '; adjusted here to keep the founding cohort\'s ages plausible.</p>';
-      h += srcLine('Source', b.source);
-    } else {
-      h += '<p class="tl-gloss">Birth year unrecorded' + (b && b.note ? ': ' + esc(b.note) : '') + '.</p>';
-    }
-    var bp = p.birthplace;
-    if (bp && bp.known && bp.place) {
-      h += '<p class="tl-status"><span class="tl-badge" style="background:' + tierColor(bp.tier) + '">' + esc(bp.tier) + '</span>Born at ' + esc(bp.place) + '</p>';
-      if (bp.note) h += '<p class="tl-gloss">' + esc(bp.note) + '</p>';
-    } else if (bp) {
-      h += '<p class="tl-gloss">Birthplace unrecorded' + (bp.note ? ': ' + esc(bp.note) : '') + '.</p>';
-    }
+    var bLine = (b && typeof b.year === 'number') ? ('Born ' + b.year + '.') : 'Birth year not known.';
+    if (p.vocation && p.role) bLine += ' ' + article(p.vocation) + ' ' + lcFirst(p.vocation) + ', ' + lcFirst(p.role) + '.';
+    else if (p.vocation) bLine += ' ' + article(p.vocation) + ' ' + lcFirst(p.vocation) + '.';
+    else if (p.role) bLine += ' ' + p.role + (/[.?!]$/.test(p.role) ? '' : '.');
+    h += '<p class="tl-status">' + esc(bLine) + '</p>';
+    if (bp) h += '<p class="tl-gloss">' + (bp.known && bp.place ? 'Birthplace: ' + esc(bp.place) + '.' : 'Birthplace not known.') + '</p>';
+    h += '<p class="tl-src">' + esc(personSourceLine(p)) + '</p>';
     h += '</div>';
 
     if ((p.location_by_period && p.location_by_period.length) || (p.narrative_by_period && p.narrative_by_period.length)) {
@@ -6457,10 +6753,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       slices.forEach(function (sl) {
         var rangeLabel = (sl.to == null) ? (sl.from + '–') : (sl.from === sl.to ? String(sl.from) : sl.from + '–' + sl.to);
         h += '<div class="tl-phase"><p class="tl-phase-range">' + esc(rangeLabel) + '</p>';
-        if (sl.locPer) h += '<p class="tl-pl"><span class="tl-badge" style="background:' + tierColor(sl.locPer.tier) + '">' + esc(sl.locPer.tier) + '</span>' + esc(sl.locPer.place) + '</p>';
-        if (sl.locPer && sl.locPer.note) h += '<p class="tl-gloss">' + esc(sl.locPer.note) + '</p>';
-        if (sl.narPer) h += '<p class="tl-narr"><span class="tl-badge" style="background:' + tierColor(sl.narPer.tier) + '">' + esc(sl.narPer.tier) + '</span>' + esc(sl.narPer.text) + '</p>';
-        if (sl.narPer && sl.narPer.note) h += '<p class="tl-gloss">' + esc(sl.narPer.note) + '</p>';
+        if (sl.locPer) h += '<p class="tl-pl">' + esc(sl.locPer.place) + '</p>';
+        if (sl.narPer) h += '<p class="tl-narr">' + esc(sl.narPer.text) + '</p>';
         h += '</div>';
       });
       h += '</div>';
@@ -6468,46 +6762,49 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
 
     if (p.relationships && p.relationships.length) {
       h += '<div class="tl-sec-b"><span class="tl-sec">Relationships</span><ul>';
-      p.relationships.forEach(function (r) {
-        var who = Array.isArray(r.with) ? r.with.map(personName).join(', ') : personName(r.with);
-        h += '<li>' + esc(r.type) + ': ' + esc(who) + (r.note ? ' — ' + esc(r.note) : '') + '</li>';
-      });
+      p.relationships.forEach(function (r) { h += '<li>' + esc(relDisplay(r)) + '</li>'; });
       h += '</ul></div>';
     }
 
-    if (p.maternal_markers && p.maternal_markers.length) {
-      h += '<div class="tl-sec-b"><span class="tl-sec">Children (by birth)</span><ul>';
-      p.maternal_markers.forEach(function (mk) {
-        var child = personName(mk.child);
-        var father = mk.father ? personName(mk.father) : 'father unrecorded';
-        h += '<li>' + esc(child) + ' (b. ' + esc(mk.child_birth) + ') &mdash; father: ' + esc(father) + '</li>';
-      });
-      h += '</ul></div>';
-    }
-
+    // Merge personal events sharing a year and a role into one line (an
+    // explicit role_labels entry never merges with a plain-attendance one);
+    // the attendance stem varies by position -- first "At...", subsequent
+    // "Present again for...". Each underlying event stays its own clickable
+    // link even when several are merged into a single line.
     var pevs = personalEventsById[p.id];
     if (pevs && pevs.length) {
-      h += '<div class="tl-sec-b"><span class="tl-sec">Marriages &amp; personal events</span>';
-      pevs.forEach(function (e) { h += '<button type="button" class="tl-evlink" data-ev="' + esc(e.id) + '"><span class="tl-dot" style="background:' + tierColor(e.tier) + '"></span>' + esc(e.year) + ' — ' + esc(e.title) + '</button>'; });
-      h += '</div>';
+      var groups = [];
+      pevs.forEach(function (e) {
+        var roleLabel = e.role_labels && e.role_labels[p.id];
+        var roleKey = roleLabel || ' generic';
+        var last = groups[groups.length - 1];
+        var item = { id: e.id, text: roleLabel || e.short_title || e.title };
+        if (last && last.year === e.year && last.roleKey === roleKey) last.items.push(item);
+        else groups.push({ year: e.year, roleKey: roleKey, isExplicit: !!roleLabel, items: [item] });
+      });
+      var genericSeen = 0;
+      h += '<div class="tl-sec-b"><span class="tl-sec">Personal events</span><ul>';
+      groups.forEach(function (g) {
+        var stem;
+        if (g.isExplicit) stem = '';
+        else { genericSeen++; stem = (genericSeen === 1) ? 'At ' : 'Present again for '; }
+        var linksHtml = g.items.map(function (it, idx) {
+          var sep = idx === 0 ? '' : (idx === g.items.length - 1 ? ' and ' : ', ');
+          return sep + '<button type="button" class="tl-evlink is-inline" data-ev="' + esc(it.id) + '">' + esc(it.text) + '</button>';
+        }).join('');
+        h += '<li>' + esc(g.year + ' — ' + stem) + linksHtml + '.</li>';
+      });
+      h += '</ul></div>';
     }
 
     var isTrans = isTransformation(p);
-    h += '<div class="tl-sec-b"><span class="tl-sec">' + (isTrans ? 'Transformation' : 'Death') + '</span>';
     if (d && typeof d.year === 'number') {
       var deathLabel = isTrans ? 'Becomes undead ' : 'Died ';
-      h += '<p class="tl-status"><span class="tl-badge" style="background:' + tierColor(d.tier) + '">' + esc(d.tier) + '</span>' + deathLabel + esc(d.year) + (d.uncertain ? ' (printed with a question mark)' : '') + '</p>';
-      if (isTrans) h += '<p class="tl-gloss">No true death: this marks the transformation to undeath, not an end.</p>';
-      if (d.note) h += '<p class="tl-gloss">' + esc(d.note) + '</p>';
-      if (d.rot_printed != null) h += '<p class="tl-gloss">RoT prints ' + esc(d.rot_printed) + '; adjusted here to keep the founding cohort\'s ages plausible.</p>';
-      if (d.rejected) h += '<p class="tl-gloss">Rejected reading: ' + esc(d.rejected.year) + ' (' + esc(d.rejected.source) + ', ' + esc(d.rejected.tier) + ') — ' + esc(d.rejected.reason) + '</p>';
-      h += srcLine('Source', d.source);
-    } else {
-      h += '<p class="tl-gloss">' + (d && d.note ? esc(d.note) : 'Death year unrecorded, or left open by the source.') + '</p>';
+      h += '<div class="tl-sec-b"><span class="tl-sec">' + (isTrans ? 'Transformation' : 'Death') + '</span>';
+      h += '<p class="tl-status">' + esc(deathLabel + d.year + (d.uncertain ? ' (printed with a question mark)' : '')) + '</p>';
+      h += '</div>';
     }
-    h += '</div>';
 
-    if (p.notes) h += '<div class="tl-sec-b"><span class="tl-sec">Notes</span><p>' + esc(p.notes) + '</p></div>';
     panelBody.innerHTML = h; bindLinks();
   }
 

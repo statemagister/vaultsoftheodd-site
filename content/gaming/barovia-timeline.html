@@ -105,6 +105,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
 .tl-dies { color: #c0553a; }
 .tl-role { font-size: 0.75rem; color: var(--gold-bright); margin: 0.05rem 0; }
 .tl-pl { font-size: 0.76rem; color: var(--text-muted); font-style: italic; margin: 0.1rem 0; }
+.tl-narr { font-size: 0.78rem; color: var(--text-body); margin: 0.15rem 0 0; line-height: 1.4; }
+.tl-phase { margin-bottom: 0.7rem; }
+.tl-phase-range { font-family: var(--display); font-size: 0.68rem; letter-spacing: 0.06em; color: var(--gold); margin: 0 0 0.2rem; }
+.tl-phase .tl-pl { font-style: normal; }
 .tl-rel { margin: 0.2rem 0 0; padding-left: 1rem; }
 .tl-rel li { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.15rem; }
 .tl-seqtag { font-size: 0.78rem; color: var(--text-muted); margin: 0 0 0.4rem; }
@@ -663,7 +667,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         {
           "from": 306,
           "to": 322,
-          "place": "Castle Ravenloft (childhood, before the flight)",
+          "place": "the castle (not yet named Ravenloft) — childhood, before the flight",
           "tier": "INFER"
         },
         {
@@ -702,7 +706,52 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "note": "Born 306 as the siege ends: the family moves into the captured keep just in time for Ravenia to give birth. Strahd is thus the FIRST child born at the new seat — the crown prince born as the dynasty is founded. The castle is Endorovich's former keep (built by Artimus), being converted from a tyrant's stronghold into a home around the birth; the name 'Castle Ravenloft' postdates Strahd's 347 naming."
       },
       "name_convention": "Born von Zarovich (306) — the FIRST person actually born to the adopted name; born as the kingdom itself is founded.",
-      "birth_name": "Strahd von Zarovich"
+      "birth_name": "Strahd von Zarovich",
+      "narrative_by_period": [
+        {
+          "from": 306,
+          "to": 322,
+          "tier": "INFER",
+          "text": "Crown prince, born at the newly-taken castle in the founding year — the first child born to the adopted von Zarovich name. Raised as Barov's heir while the kingdom is built around him."
+        },
+        {
+          "from": 323,
+          "to": 323,
+          "tier": "SPEC",
+          "text": "Aged 17, kills his tutor Zarak in the Ba'al Verzi rite. Sturm witnesses it and tells their father. Disowned within the family and gone — but there is no public scandal: the realm is told only that the prince has gone to war."
+        },
+        {
+          "from": 324,
+          "to": 345,
+          "tier": "SPEC",
+          "text": "Abroad, building the assassin's trade and a mercenary army of his own, making the war-story true by becoming it. Slips into Barovia's towns in disguise to recruit and corrupt. Murders Khazan for his spellbooks (345)."
+        },
+        {
+          "from": 346,
+          "to": 346,
+          "tier": "SPEC",
+          "text": "In Barovia in disguise through the goblin siege. The coup from within collapses, Ravenia is killed, and he flees to his army broken by her death."
+        },
+        {
+          "from": 347,
+          "to": 350,
+          "tier": "PUB",
+          "text": "Returns openly with his army, breaks the goblins as the realm's saviour, and takes the throne — styling himself Count. Names the castle Ravenloft for his dead mother; seizes Khazan's library.",
+          "note": "Mixed provenance: the return, throne and naming are published; the 'manufactured saviour' framing is reconstruction."
+        },
+        {
+          "from": 351,
+          "to": 351,
+          "tier": "CORE",
+          "text": "Kills Sergei at the wedding; Tatyana falls from the tower. The pact is made, and Strahd becomes the undead lord of Barovia."
+        },
+        {
+          "from": 352,
+          "to": null,
+          "tier": "SPEC",
+          "text": "Undead lord of a sealed, decaying Barovia, draining the land and pursuing Tatyana through each rebirth."
+        }
+      ]
     },
     {
       "id": "sturm",
@@ -937,7 +986,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "note": "RoT prints '351?' with a question mark; presumed dead the day of her wedding to Sergei.",
         "source": "RoT"
       },
-      "location": "Castle Ravenloft",
+      "location": "Barovia — varies by period (see location_by_period)",
       "relationships": [
         {
           "type": "betrothed",
@@ -958,7 +1007,109 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "tier": "SPEC",
         "known": true,
         "note": "The author's reconstruction; RoT prints only 'Tatyana Federovna'. Retained as flagged reconstruction, not bare assumption."
-      }
+      },
+      "narrative_by_period": [
+        {
+          "from": 333,
+          "to": 350,
+          "tier": "CORE",
+          "text": "Grows up in the village of Barovia. Sergei's betrothed — and the object of Strahd's passion."
+        },
+        {
+          "from": 351,
+          "to": 351,
+          "tier": "CORE",
+          "text": "Marries Sergei. Strahd kills the groom; Tatyana falls from the castle walls. Dead on her wedding day."
+        },
+        {
+          "from": 352,
+          "to": 399,
+          "tier": "INFER",
+          "text": "No incarnation walks Barovia."
+        },
+        {
+          "from": 400,
+          "to": 400,
+          "tier": "PUB",
+          "text": "Returns as Marina. She is killed, and Strahd slaughters her family."
+        },
+        {
+          "from": 401,
+          "to": 474,
+          "tier": "INFER",
+          "text": "No incarnation walks Barovia."
+        },
+        {
+          "from": 475,
+          "to": 475,
+          "tier": "VOTM",
+          "text": "Returns as Olya. Strahd courts her; she dies of a fever that same night."
+        },
+        {
+          "from": 476,
+          "to": 734,
+          "tier": "INFER",
+          "text": "No incarnation walks Barovia."
+        },
+        {
+          "from": 735,
+          "to": null,
+          "tier": "FLAG",
+          "text": "Returns as Ireena Kolyana — the incarnation the adventurers find, and the one Strahd moves openly to claim.",
+          "note": "Tier FLAG follows the anchor event campaign_present_735: the YEAR is RoT's single-sourced 'campaigns begin' framing. The Ireena-as-Tatyana identification itself is published and firmer than the date. In a period-bounded field the date is the dominant claim, hence FLAG rather than PUB."
+        }
+      ],
+      "location_by_period": [
+        {
+          "from": 333,
+          "to": 350,
+          "place": "the village of Barovia",
+          "tier": "INFER",
+          "note": "Village birth is the author's reconstruction; RoT prints only 'Tatyana'."
+        },
+        {
+          "from": 351,
+          "to": 351,
+          "place": "Castle Ravenloft (the wedding; falls from the walls)",
+          "tier": "CORE"
+        },
+        {
+          "from": 352,
+          "to": 399,
+          "place": "Absent — no living incarnation",
+          "tier": "INFER"
+        },
+        {
+          "from": 400,
+          "to": 400,
+          "place": "Barovia (as Marina)",
+          "tier": "PUB"
+        },
+        {
+          "from": 401,
+          "to": 474,
+          "place": "Absent — no living incarnation",
+          "tier": "INFER"
+        },
+        {
+          "from": 475,
+          "to": 475,
+          "place": "Barovia (as Olya)",
+          "tier": "VOTM"
+        },
+        {
+          "from": 476,
+          "to": 734,
+          "place": "Absent — no living incarnation",
+          "tier": "INFER"
+        },
+        {
+          "from": 735,
+          "to": null,
+          "place": "the village of Barovia (as Ireena Kolyana)",
+          "tier": "FLAG"
+        }
+      ]
     },
     {
       "id": "pidlwik",
@@ -1765,7 +1916,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "year": null,
         "tier": "INFER",
         "source": "VotO",
-        "note": "I6 Crypt 15 ('KHAZAN: His word was power'), court wizard, among the 346 dead. NOT dated in the author's own (unpublished) working spreadsheet; birth year left open rather than invented. Died 346 with the ruling circle."
+        "note": "I6 Crypt 15 ('KHAZAN: His word was power'), court wizard. NOT dated in the author's own (unpublished) working spreadsheet; birth year left open rather than invented. Died 345, murdered by Strahd for his spellbooks."
       },
       "death": {
         "year": 345,
@@ -5846,20 +5997,29 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
   }
   function relBornBy(id, y) { var q = personById[id]; if (!q) return true; var b = born(q); return (b == null || b <= y); }
 
+  // A period's to:null means open-ended (runs to the end of the record).
+  function periodCovers(per, yr) { return per.from <= yr && (per.to == null || yr <= per.to); }
+  function periodAt(arr, yr) {
+    if (!arr) return null;
+    for (var i = 0; i < arr.length; i++) { if (periodCovers(arr[i], yr)) return arr[i]; }
+    return null;
+  }
+
   // A person's location can change year to year (location_by_period); fall back
   // to the static location field when no period covers the requested year.
   function locationAt(p, yr) {
-    if (p.location_by_period && p.location_by_period.length) {
-      for (var i = 0; i < p.location_by_period.length; i++) {
-        var per = p.location_by_period[i];
-        if (per.from <= yr && yr <= per.to) return per.place;
-      }
-    }
+    var per = periodAt(p.location_by_period, yr);
+    if (per) return per.place;
     // A birth year is not covered by an explicit period: use the explicit
     // birthplace record (per birthplace_rule) instead of assuming the
     // person's general/adult location was also their birthplace.
     if (yr === born(p)) return (p.birthplace && p.birthplace.known) ? p.birthplace.place : '';
     return p.location || '';
+  }
+  // What's happening to this person in year yr, if a narrative phase covers it.
+  function narrativeAt(p, yr) {
+    var per = periodAt(p.narrative_by_period, yr);
+    return per ? per.text : '';
   }
 
   function personCard(p, yr) {
@@ -5881,6 +6041,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     var s = '<div class="tl-person"><p class="tl-pn">' + esc(p.name) + (ageText ? ' <span class="tl-age' + ((dies || becomesNow) ? ' tl-dies' : '') + '">' + ageText + '</span>' : '') + '</p>';
     if (p.role) s += '<p class="tl-role">' + esc(p.role) + '</p>';
     if (place) s += '<p class="tl-pl">' + esc(place) + '</p>';
+    var narr = narrativeAt(p, yr);
+    if (narr) s += '<p class="tl-narr">' + esc(narr) + '</p>';
     if (p.relationships && p.relationships.length) {
       var items = [];
       p.relationships.forEach(function (r) {
@@ -6037,6 +6199,28 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       h += '<p class="tl-gloss">Birthplace unrecorded' + (bp.note ? ': ' + esc(bp.note) : '') + '.</p>';
     }
     h += '</div>';
+
+    if ((p.location_by_period && p.location_by_period.length) || (p.narrative_by_period && p.narrative_by_period.length)) {
+      var bounds = [];
+      (p.location_by_period || []).concat(p.narrative_by_period || []).forEach(function (per) { bounds.push(per.from); if (per.to != null) bounds.push(per.to + 1); });
+      bounds = bounds.filter(function (v, i, a) { return a.indexOf(v) === i; }).sort(function (a, b) { return a - b; });
+      h += '<div class="tl-sec-b"><span class="tl-sec">Life phases</span>';
+      for (var bi = 0; bi < bounds.length; bi++) {
+        var from = bounds[bi];
+        var to = (bi + 1 < bounds.length) ? (bounds[bi + 1] - 1) : null;
+        var locPer = periodAt(p.location_by_period, from);
+        var narPer = periodAt(p.narrative_by_period, from);
+        if (!locPer && !narPer) continue;
+        var rangeLabel = (to == null) ? (from + '–') : (from === to ? String(from) : from + '–' + to);
+        h += '<div class="tl-phase"><p class="tl-phase-range">' + esc(rangeLabel) + '</p>';
+        if (locPer) h += '<p class="tl-pl"><span class="tl-badge" style="background:' + tierColor(locPer.tier) + '">' + esc(locPer.tier) + '</span>' + esc(locPer.place) + '</p>';
+        if (locPer && locPer.note) h += '<p class="tl-gloss">' + esc(locPer.note) + '</p>';
+        if (narPer) h += '<p class="tl-narr"><span class="tl-badge" style="background:' + tierColor(narPer.tier) + '">' + esc(narPer.tier) + '</span>' + esc(narPer.text) + '</p>';
+        if (narPer && narPer.note) h += '<p class="tl-gloss">' + esc(narPer.note) + '</p>';
+        h += '</div>';
+      }
+      h += '</div>';
+    }
 
     if (p.relationships && p.relationships.length) {
       h += '<div class="tl-sec-b"><span class="tl-sec">Relationships</span><ul>';

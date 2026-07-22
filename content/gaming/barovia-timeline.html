@@ -5873,7 +5873,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     if (earliest < l.starts) linePre[l.id] = earliest;
   });
 
-  var PXX = 13, topGutter = 30;
+  var PXX = 13, topGutter = 40;
   var HEADERH = 26, BARH = 15, ROWGAP = 3, LANEH = 14, ROWPAD = 4;
   var fieldH = 560, padLeft = 300, focalX = 300;
   var expanded = {}, bandTops = {}, bandHs = {};
@@ -6121,17 +6121,22 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       if (e.scope === 'setting') { var sb = mk('tl-settingband', field); sb.style.left = px(xFor(e.year)); sb.style.height = px(fieldH); sb.style.borderLeftColor = color; }
     });
 
-    // Year labels are centered on their true x (translateX(-50%)); give each
-    // one a "box" sized to its own text so dense clusters (several events a
-    // year or two apart) push apart by however much room they actually need,
-    // rather than a flat gap too narrow for a 3-4 digit year to fit twice over.
+    // Year labels stay at their true x always -- moving one sideways to dodge
+    // a collision would leave it no longer above its own gridline, out of
+    // step with the reader/magnifier position. Instead, a label that would
+    // overlap the previous one on its row drops to the next row down; each
+    // row only needs to avoid collisions with itself, so density adds rows,
+    // never horizontal drift.
     xLabels.sort(function (a, b) { return a.x - b.x; });
-    var prevRight = -1e9, xGap = 4;
+    var xGap = 4, xRowH = 11, rowRight = [];
     xLabels.forEach(function (xl) {
       var w = String(xl.el.textContent).length * 5.6 + 6;
-      var left = Math.max(xl.x, prevRight + xGap + w / 2);
-      xl.el.style.left = px(left);
-      prevRight = left + w / 2;
+      var L = xl.x - w / 2;
+      var row = 0;
+      while (rowRight[row] != null && L < rowRight[row] + xGap) row++;
+      rowRight[row] = xl.x + w / 2;
+      xl.el.style.left = px(xl.x);
+      xl.el.style.top = px(2 + row * xRowH);
     });
   }
 

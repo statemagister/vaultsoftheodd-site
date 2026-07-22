@@ -6121,9 +6121,18 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       if (e.scope === 'setting') { var sb = mk('tl-settingband', field); sb.style.left = px(xFor(e.year)); sb.style.height = px(fieldH); sb.style.borderLeftColor = color; }
     });
 
+    // Year labels are centered on their true x (translateX(-50%)); give each
+    // one a "box" sized to its own text so dense clusters (several events a
+    // year or two apart) push apart by however much room they actually need,
+    // rather than a flat gap too narrow for a 3-4 digit year to fit twice over.
     xLabels.sort(function (a, b) { return a.x - b.x; });
-    var prevRight = -1e9;
-    xLabels.forEach(function (xl) { var left = xl.x; if (left < prevRight + 16) left = prevRight + 16; xl.el.style.left = px(left); prevRight = left; });
+    var prevRight = -1e9, xGap = 4;
+    xLabels.forEach(function (xl) {
+      var w = String(xl.el.textContent).length * 5.6 + 6;
+      var left = Math.max(xl.x, prevRight + xGap + w / 2);
+      xl.el.style.left = px(left);
+      prevRight = left + w / 2;
+    });
   }
 
   function toggleExpand(id) {

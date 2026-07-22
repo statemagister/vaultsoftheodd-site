@@ -213,7 +213,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     "model_note": "SOURCE is separate from TIER. TIER = how certain (CORE/INFER/SPEC/INVENT/PUB-as-status). SOURCE = which product/site asserts it. A date may carry an originating source plus an optional 'carried_by' list showing inheritance (e.g. RoT invents 351, VotM/DoD carry it). The widget derives its span from the data (min/max year present), so new products extend the axis automatically. New products append records and new source labels; no rebuild required. Cross-source contradictions (same subject, conflicting date, different sources) fire a flag.",
     "span_note": "Span is DERIVED from data at render time (earliest to latest year). The declared span is a hint only.",
     "open_tasks": [
-      "RESOLVED from DoD page image (Ravenloft Timeline, DoD 1997): The Terg sequence is confirmed DoD invention — '320: The Tergs invade Barovia, conquering the ancestral lands of the Von Zarovich family'; '321: Strahd leads the armies of Barovia against the Tergs to reclaim his ancestral lands'; '347: The defeated Tergs are driven from Barovia. Strahd claims the throne.' This is NOT I6 and NOT what the RoT box establishes; it is DoD retconning Strahd's origin into a heroic reclamation. CRUCIALLY: 'Dorian the Goblyn King' is NOT in DoD's timeline either — DoD names no Terg leader. So the 'Dorian' name was a FURTHER accretion added by the importer on top of DoD's already-invented Tergs; it has no home even in the product it was cited to. FINAL DISPOSITION: the entire Terg/Dorian/347-reclamation material is later-product invention, quarantined, used ONLY as an object of analysis (an example of the retconning this project documents), never as input to the I6/RoT-grounded reconstruction. DoD also gives its OWN contradictory chronology (Strahd born 299, not 306), confirming it is a separate invented scheme.",
+      "RESOLVED from DoD page image (Ravenloft Timeline, DoD 1997): The Terg sequence is confirmed DoD invention — '320: The Tergs invade Barovia, conquering the ancestral lands of the von Zarovich family'; '321: Strahd leads the armies of Barovia against the Tergs to reclaim his ancestral lands'; '347: The defeated Tergs are driven from Barovia. Strahd claims the throne.' This is NOT I6 and NOT what the RoT box establishes; it is DoD retconning Strahd's origin into a heroic reclamation. CRUCIALLY: 'Dorian the Goblyn King' is NOT in DoD's timeline either — DoD names no Terg leader. So the 'Dorian' name was a FURTHER accretion added by the importer on top of DoD's already-invented Tergs; it has no home even in the product it was cited to. FINAL DISPOSITION: the entire Terg/Dorian/347-reclamation material is later-product invention, quarantined, used ONLY as an object of analysis (an example of the retconning this project documents), never as input to the I6/RoT-grounded reconstruction. DoD also gives its OWN contradictory chronology (Strahd born 299, not 306), confirming it is a separate invented scheme.",
       "Timeline_A reconciliation: ~22k-word document, largely the author's own edits, disagrees with the ledger in places (marriage year 300 vs 304; Dorien/Dostron husband name; Tatyana surname 'Federovna') and contains unique material (Vasili von Zarovich grandfather; I,Strahd page citations; Dagmar Olavnya). Needs a three-way reconciliation report (this doc vs ledger vs sources), no silent merging. Substantial job, do fresh.",
       "I, Strahd (first novel) ingestion: decide how much of the cast/subplot to bring in; all of it carries maximal-unreliability (persecution_device flag).",
       "Second novel (War Against Azalin, 1998): owned but in storage; check whether it references the Tergs when accessible (can only confirm later propagation, not origin). Corpus gap for any future Strahd-Azalin / Darkon-formation work drawn from Strahd's POV.",
@@ -336,7 +336,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "vasili_vz"
           ],
           "tier": "SPEC",
-          "source": "VotO"
+          "source": "VotO",
+          "display": "Child of Vasili von Zarovich."
         },
         {
           "type": "parent-of",
@@ -345,11 +346,12 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           ],
           "tier": "SPEC",
           "source": "VotO",
-          "note": "Parent of Endor 'Dorian'. A child of Vasili, so Endor is Barov's first cousin — the link that fuses the 'Dilisnya' branch to the royal tree."
+          "note": "Parent of Endor 'Dorian'. A child of Vasili, so Endor is Barov's first cousin — the link that fuses the 'Dilisnya' branch to the royal tree.",
+          "display": "Parent of Endor Dilisnya."
         }
       ],
       "on_event_spine": false,
-      "notes": "The parent of Duke Endor 'Dorian', and a child of Vasili von Zarovich — so the 'Dilisnya' branch shares Barov's grandfather. This is the join that makes the tree technically ONE (Von Zarovich and Dilisnya are the same stock; 'Dilisnya' is a Von Zarovich name per dilisnya_is_vonzarovich). Undated, SPEC. (Placeholder name; the author's to assign.)",
+      "notes": "The parent of Duke Endor 'Dorian', and a child of Vasili von Zarovich — so the 'Dilisnya' branch shares Barov's grandfather. This is the join that makes the tree technically ONE (von Zarovich and Dilisnya are the same stock; 'Dilisnya' is a von Zarovich name per dilisnya_is_vonzarovich). Undated, SPEC. (Placeholder name; the author's to assign.)",
       "born_marker": {
         "year": null,
         "tier": "SPEC",
@@ -366,7 +368,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     },
     {
       "id": "czar_vz",
-      "name": "Duke Roman Dilisnya",
+      "name": "Roman Dilisnya",
       "family": "VonZarovich",
       "line": "barovia",
       "birth": {
@@ -389,7 +391,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "vasili_vz"
           ],
           "tier": "SPEC",
-          "source": "VotO"
+          "source": "VotO",
+          "display": "Child of Vasili von Zarovich."
         },
         {
           "type": "parent-of",
@@ -399,7 +402,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           ],
           "tier": "SPEC",
           "source": "VotO",
-          "note": "Father of Barov and Dorfniya."
+          "note": "Father of Barov and Dorfniya.",
+          "display": "Parent of Barov von Zarovich and Dorfniya Dilisnya."
         }
       ],
       "on_event_spine": false,
@@ -415,7 +419,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       },
-      "name_convention": "Born and dies Dilisnya. The record may style him 'von Zarovich' by back-projection, but he never bore the adopted name in life; he was a DUKE, not a king (there was no kingdom until Barov's conquest).",
+      "name_convention": "Roman Dilisnya. Duke, and Dilisnya all his life: 'von Zarovich' was adopted by his son Barov at the founding. Later record-keepers run the name back through the ancestry and style him von Zarovich; the timeline records what he was called in life.",
       "birth_name": "Roman Dilisnya",
       "title": "Duke (Dilisnya ducal house) — NOT a king",
       "location_by_period": [
@@ -464,11 +468,12 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           ],
           "tier": "SPEC",
           "source": "VotO",
-          "note": "His line splits into the reigning branch (through the Czar -> Barov/Dorfniya) and the branch carrying the Dilisnya name (through Endor 'Dorian'). Same stock, one tree."
+          "note": "His line splits into the reigning branch (through the Czar -> Barov/Dorfniya) and the branch carrying the Dilisnya name (through Endor 'Dorian'). Same stock, one tree.",
+          "display": "Parent of Roman Dilisnya and a Dilisnya of the elder generation."
         }
       ],
       "on_event_spine": false,
-      "notes": "Vasili von Zarovich — the CLAIMED grandfather of Barov (the author's own reconstruction) and the shared dynastic root that makes the Von Zarovich and 'Dilisnya' lines ONE tree, not two. Undated. SPEC reconstruction; unifies the family per the dilisnya_is_vonzarovich reading. | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two.",
+      "notes": "Vasili von Zarovich — the CLAIMED grandfather of Barov (the author's own reconstruction) and the shared dynastic root that makes the von Zarovich and 'Dilisnya' lines ONE tree, not two. Undated. SPEC reconstruction; unifies the family per the dilisnya_is_vonzarovich reading. | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two.",
       "born_marker": {
         "year": null,
         "tier": "SPEC",
@@ -486,7 +491,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     },
     {
       "id": "barov",
-      "name": "Barov Von Zarovich",
+      "name": "Barov von Zarovich",
       "family": "VonZarovich",
       "line": "barovia",
       "birth": {
@@ -507,7 +512,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "ravenia",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Ravenia von Zarovich (van Roeyen)."
         },
         {
           "type": "parent-of",
@@ -517,14 +523,16 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "sergei"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Parent of Strahd, Sturm and Sergei."
         },
         {
           "type": "sibling",
           "with": "dorfniya",
           "tier": "INFER",
-          "note": "Dorfniya likely a Von Zarovich, sister to Barov; parentage struck from RoT's Dilisnya tree.",
-          "source": "VotO"
+          "note": "Dorfniya likely a von Zarovich, sister to Barov; parentage struck from RoT's Dilisnya tree.",
+          "source": "VotO",
+          "display": "Sibling of Dorfniya Dilisnya."
         },
         {
           "type": "parent",
@@ -533,7 +541,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           ],
           "tier": "SPEC",
           "source": "VotO",
-          "note": "Father is Duke Roman Dilisnya, son of Vasili — the link that roots Barov and Dorfniya in the one tree."
+          "note": "Father is Duke Roman Dilisnya, son of Vasili — the link that roots Barov and Dorfniya in the one tree.",
+          "display": "Child of Roman Dilisnya."
         }
       ],
       "notes": "King of Barovia; the kingdom is named for him (though likely originally for an antecedent). Dies 346, before Strahd's return. PUB position: dead before the return, load-bearing for the succession. | Barov is the first-born son of Duke Roman Dilisnya; his grandfather is Vasili (reconstruction; note the 'Czar/tsar' element supports the Zarovich='of the tsar' reading). | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two. | FOUNDER: Barov is DILISNYA by birth; he ASSUMES 'von Zarovich' on taking the throne (conquest of the Endorovich castle), as the legitimising royal name. This rhymes forward: his son Strahd later self-styles 'Count' to legitimise HIS seizure — both found rule on an assumed title.",
@@ -571,7 +580,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     },
     {
       "id": "ravenia",
-      "name": "Ravenia Van Roeyen",
+      "name": "Ravenia van Roeyen",
       "family": "VonZarovich",
       "line": "barovia",
       "birth": {
@@ -592,7 +601,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "barov",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Barov von Zarovich."
         },
         {
           "type": "parent-of",
@@ -602,12 +612,13 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "sergei"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Parent of Strahd, Sturm and Sergei."
         }
       ],
       "name_variants": [
         {
-          "form": "Ravenia Van Roeyen",
+          "form": "Ravenia van Roeyen",
           "source": "RoT Bloodlines",
           "tier": "CORE",
           "source_product": "RoT"
@@ -679,11 +690,15 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       ],
       "vocation": "Noble",
       "role": "Queen of Barovia",
-      "first_appearance": "I6 Ravenloft"
+      "first_appearance": "I6 Ravenloft",
+      "maiden_name": "Ravenia van Roeyen",
+      "married_name": "Ravenia von Zarovich",
+      "display_name": "Ravenia von Zarovich (van Roeyen)",
+      "name_convention": "Ravenia von Zarovich, née van Roeyen. She married Barov in 305, when he was still Dilisnya, and he took 'von Zarovich' at the founding the following year — so unlike his parents she genuinely bore the name, for forty years. Not a back-projection."
     },
     {
       "id": "strahd",
-      "name": "Strahd Von Zarovich",
+      "name": "Strahd von Zarovich",
       "family": "VonZarovich",
       "line": "barovia",
       "birth": {
@@ -708,7 +723,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "ravenia"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Child of Barov von Zarovich and Ravenia von Zarovich (van Roeyen)."
         },
         {
           "type": "sibling",
@@ -717,7 +733,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "sergei"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Sibling of Sturm and Sergei."
         }
       ],
       "notes": "Firstborn of Barov and Ravenia. An assassin for hire, trained in the Ba'al Verzi discipline, who turned the trade into an engine: fees and guild connections bought a mercenary force, and the force made him worth hiring. Moving through Barovia's towns in disguise, never the court, he fed wealth and knowledge to the families he had grown up among — to their advantage and his, since every advantage left a debt. High deaths gave him leverage whether he had done them or merely knew who had, and the leverage bought more work, more money and a larger force, until the army he had assembled made his war story credible. Contradictory sightings kept it standing.\n\nIn 346 he orchestrated the goblin waves as cover for a coup from within. The waves ground down Endor's defence and then slipped his control: the coup collapsed, Sturm escaped, and Ravenia was killed in front of him in the chaos he had unleashed. With the castle still standing he could not let his own goblins take it, so his intervention was compelled rather than chosen — he broke them as the realm's saviour and besieged a seat he knew was hollow, having emptied it himself.\n\nRavenia's death is the loss he never recovers from; the coup's failure is not. He wanted her alive to see him crowned. She was the queen and the van Roeyen line, so his claim needed her, and she was arguably the only person he ever loved. He took the throne in 347 and lost the one witness whose seeing would have meant anything to him. It is the root of his grief at her tomb.\n\nHis death in 351 is a transformation, not an ending.",
@@ -816,7 +833,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     },
     {
       "id": "sturm",
-      "name": "Sturm Von Zarovich",
+      "name": "Sturm von Zarovich",
       "family": "VonZarovich",
       "line": "barovia",
       "birth": {
@@ -835,7 +852,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "gisella",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Gisella von Zarovich (Fallona)."
         },
         {
           "type": "parent",
@@ -844,7 +862,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "ravenia"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Child of Barov von Zarovich and Ravenia von Zarovich (van Roeyen)."
         },
         {
           "type": "sibling",
@@ -853,7 +872,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "sergei"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Sibling of Strahd and Sergei."
         }
       ],
       "notes": "Middle brother; next in succession after Strahd. SURVIVES with a natural lifespan and marries; his crypt in Castle Ravenloft is EMPTY (VotM ch.25). Reconstruction: the one man who understood Strahd's coup and fled, lacking the manpower to stop him or make an accusation stick. His survival is predicted evidence, not an anomaly. | ESCAPE & RESTORATION (SPEC reconstruction): Sturm and his family escape Barovia COMPLETELY and are NEVER drawn into the mists — when Barovia is taken into the demiplane, his line is already out, in exile on the PRIME MATERIAL PLANE. They later discover the physical valley ABANDONED (the true Barovia having been taken into the mists, leaving the prime-material valley empty) and RETURN with friends and supporters to restore their ancestral home on the prime material plane. So the rightful (disinherited) line survives, escapes the demiplane entirely, and reclaims the ORIGINAL Barovia — while the usurper Strahd is sealed in the mists with a hollow copy. This is the deepest reading of his empty crypt: he was never part of Strahd's Barovia at all. Anchors: empty crypt + natural lifespan (VotM); I6's restoration ending; the 'original Barovia it was taken from' language. | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two.",
@@ -911,7 +931,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "sturm",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Sturm von Zarovich."
         },
         {
           "type": "parent-of",
@@ -920,7 +941,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           ],
           "tier": "INFER",
           "note": "Elsa Fallona named as Gisella's mother in the Holy Symbol article; relationship direction is mother-of-Gisella.",
-          "source": "VotO"
+          "source": "VotO",
+          "display": "Parent of Elsa Fallona."
         }
       ],
       "notes": "Sturm's wife. Her mother Elsa Fallona (I6 Crypt 16) is among the 346 dead. | Escapes Barovia with Sturm; never drawn into the mists; part of the prime-material line that restores the abandoned valley (see Sturm).",
@@ -951,11 +973,14 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       },
-      "first_appearance": "Realm of Terror"
+      "first_appearance": "Realm of Terror",
+      "maiden_name": "Gisella Fallona",
+      "married_name": "Gisella von Zarovich",
+      "display_name": "Gisella von Zarovich (Fallona)"
     },
     {
       "id": "sergei",
-      "name": "Sergei Von Zarovich",
+      "name": "Sergei von Zarovich",
       "family": "VonZarovich",
       "line": "barovia",
       "birth": {
@@ -984,7 +1009,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "ravenia"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Child of Barov von Zarovich and Ravenia von Zarovich (van Roeyen)."
         },
         {
           "type": "sibling",
@@ -993,7 +1019,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "sturm"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Sibling of Strahd and Sturm."
         }
       ],
       "notes": "Youngest brother. Took the Priest's Pendant (the Holy Symbol, unrecognised) after Kir died in 350. Murdered by Strahd in 351 on his wedding day; Strahd blamed an unknown assassin, the birth of his 'easy way with falsehood' (VotM). | NAMING CONVENTION (onomastic note, reconstruction): The true family name is DILISNYA. 'von Zarovich' is the assumed royal style taken by Barov on founding the kingdom, then run BACK through the ancestry by later record-keepers (standard historiographical practice, cf. Saxe-Coburg->Windsor), so sources read 'von Zarovich' from Vasili onward though the name was adopted at Barov. '-ovich' is a MASCULINE patronymic form (a strict gendered system would give feminine 'von Zarovna'); by the same rule the male line would strictly be 'Dilisnovich' and the female 'Dilisnya' — the sources do NOT observe this (RoT names male Dilisnyas 'Dilisnya'), so we KEEP the source forms and only note where convention would have taken them. Whether von Zarovich reflects a genuine faded descent reactivated or a purely adopted style is left deliberately OPEN: the backward-projected record cannot distinguish the two.",
@@ -1258,14 +1285,16 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "with": "pidlwik",
           "tier": "PUB",
           "note": "Her court fool, not her husband.",
-          "source": "VotO"
+          "source": "VotO",
+          "display": "Fool: Pidlwik."
         },
         {
           "type": "spouse",
           "with": "dilisnya_husband",
           "tier": "SPEC",
           "note": "Duke Endor 'Dorian' Dilisnya. Her husband; father of the legitimate line. The author's named reconstruction, not an invented placeholder.",
-          "source": "VotO"
+          "source": "VotO",
+          "display": "Married to Endor Dilisnya."
         },
         {
           "type": "parent-of",
@@ -1276,14 +1305,16 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "leo"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Parent of Reinhold Dilisnya, Gertrude Buchvold (Dilisnya), Oleka Wachter (Dilisnya) and Leo Dilisnya."
         },
         {
           "type": "sibling",
           "with": "barov",
           "tier": "INFER",
-          "note": "Likely Von Zarovich, sister to Barov; parentage struck from RoT's tree (see flag).",
-          "source": "VotO"
+          "note": "Likely von Zarovich, sister to Barov; parentage struck from RoT's tree (see flag).",
+          "source": "VotO",
+          "display": "Sibling of Barov von Zarovich."
         },
         {
           "type": "parent",
@@ -1292,7 +1323,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           ],
           "tier": "SPEC",
           "source": "VotO",
-          "note": "Father is Duke Roman Dilisnya, son of Vasili — the link that roots Barov and Dorfniya in the one tree."
+          "note": "Father is Duke Roman Dilisnya, son of Vasili — the link that roots Barov and Dorfniya in the one tree.",
+          "display": "Child of Roman Dilisnya."
         }
       ],
       "open_question": "dilisnya_husband",
@@ -1358,7 +1390,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       ],
       "vocation": "Noble",
       "role": "Duchess in her own right",
-      "first_appearance": "I6 Ravenloft"
+      "first_appearance": "I6 Ravenloft",
+      "maiden_name": "Dorfniya Dilisnya",
+      "married_name": "Dorfniya Dilisnya",
+      "display_name": "Dorfniya Dilisnya"
     },
     {
       "id": "gunther_cosco",
@@ -1426,7 +1461,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "tier": "SPEC",
           "source": "VotO",
           "note": "OVERRIDE of a printed source: RoT makes Leo the son of Dorfniya by an AFFAIR with Gunther Cosco, raised as Pidlwik's son. The reconstruction rejects this: Leo is the LEGITIMATE fourth child of Dorfniya and Endor 'Dorian' Dilisnya. Reasons: (1) Leo does not need illegitimacy as a motive, because he is not the traitor Strahd's memoir portrays — the grievance the bastardy supplies exists only to prop up a charge the reconstruction rejects; (2) it clears Dorfniya of adultery; (3) 'raised as Pidlwik's son' is downstream of the Black Box's misreading of Pidlwik the FOOL as Dorfniya's husband, the most consequential error in its Bloodlines chapter — removing the paternity removes the last trace of that error. A legitimate kinsman with no grievance also makes Strahd's frame more obviously a construction, not less.",
-          "display": "Father: Endor 'Dorian' Dilisnya."
+          "display": "Father: Endor Dilisnya."
         },
         {
           "type": "framed",
@@ -1437,7 +1472,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "display": "Framed for the treason of Illya Buchvold."
         }
       ],
-      "notes": "Legitimate fourth child of Dorfniya and Endor 'Dorian' Dilisnya. Root of the later Boritsi/Borca line. | OVERRIDE of a printed source: RoT makes Leo the son of Dorfniya by an AFFAIR with Gunther Cosco, raised as Pidlwik's son. The reconstruction rejects this: Leo is the LEGITIMATE fourth child of Dorfniya and Endor 'Dorian' Dilisnya. Reasons: (1) Leo does not need illegitimacy as a motive, because he is not the traitor Strahd's memoir portrays — the grievance the bastardy supplies exists only to prop up a charge the reconstruction rejects; (2) it clears Dorfniya of adultery; (3) 'raised as Pidlwik's son' is downstream of the Black Box's misreading of Pidlwik the FOOL as Dorfniya's husband, the most consequential error in its Bloodlines chapter — removing the paternity removes the last trace of that error. A legitimate kinsman with no grievance also makes Strahd's frame more obviously a construction, not less. | I,Strahd: The memoir PRESENTS Leo as the true traitor and 'architect of the slaughter', framing Illya. But this reveal comes near the end, years later, and is itself Strahd's narration. It is NOT an external correction of the frame; it is the next layer of the same unreliable account. Do not treat Leo's guilt as the reliable bottom layer. (See flag istrahd_persecution_device.) | Under dilisnya_is_vonzarovich, Leo is Von Zarovich BLOOD. CRUCIAL: Leo is a 'traitor' ONLY in Strahd's narrative (I,Strahd) — there is no external source establishing his treachery. In the reconstruction he is most likely INNOCENT of the treason he is charged with (or at most a corrupted instrument), and the 'traitor' label is Strahd's construction: the royal kinsman SCAPEGOATED to carry the treason Strahd himself committed. Strahd needed a traitor who wasn't Strahd. See istrahd_persecution_device.",
+      "notes": "Legitimate fourth child of Dorfniya and Endor 'Dorian' Dilisnya. Root of the later Boritsi/Borca line. | OVERRIDE of a printed source: RoT makes Leo the son of Dorfniya by an AFFAIR with Gunther Cosco, raised as Pidlwik's son. The reconstruction rejects this: Leo is the LEGITIMATE fourth child of Dorfniya and Endor 'Dorian' Dilisnya. Reasons: (1) Leo does not need illegitimacy as a motive, because he is not the traitor Strahd's memoir portrays — the grievance the bastardy supplies exists only to prop up a charge the reconstruction rejects; (2) it clears Dorfniya of adultery; (3) 'raised as Pidlwik's son' is downstream of the Black Box's misreading of Pidlwik the FOOL as Dorfniya's husband, the most consequential error in its Bloodlines chapter — removing the paternity removes the last trace of that error. A legitimate kinsman with no grievance also makes Strahd's frame more obviously a construction, not less. | I,Strahd: The memoir PRESENTS Leo as the true traitor and 'architect of the slaughter', framing Illya. But this reveal comes near the end, years later, and is itself Strahd's narration. It is NOT an external correction of the frame; it is the next layer of the same unreliable account. Do not treat Leo's guilt as the reliable bottom layer. (See flag istrahd_persecution_device.) | Under dilisnya_is_vonzarovich, Leo is von Zarovich BLOOD. CRUCIAL: Leo is a 'traitor' ONLY in Strahd's narrative (I,Strahd) — there is no external source establishing his treachery. In the reconstruction he is most likely INNOCENT of the treason he is charged with (or at most a corrupted instrument), and the 'traitor' label is Strahd's construction: the royal kinsman SCAPEGOATED to carry the treason Strahd himself committed. Strahd needed a traitor who wasn't Strahd. See istrahd_persecution_device.",
       "born_marker": {
         "year": 320,
         "tier": "CORE",
@@ -1475,7 +1510,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "nadia_yakimov",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Nadia Dilisnya (Yakimov)."
         },
         {
           "type": "parent",
@@ -1485,7 +1521,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           ],
           "tier": "CORE",
           "note": "Legitimate child; father is the reconstructed early-widowed husband.",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Child of Dorfniya and Endor."
         }
       ],
       "notes": "Most senior officer in Strahd's Army (CORE). Dies 351 at the castle (Note A). Stance toward 346: PRIMARY reading deceived; alternatives complicit or coerced. His army seniority reads as earned loyalty (deceived), reward (complicit), or a leash (coerced).",
@@ -1526,7 +1563,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "reinhold",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Reinhold Dilisnya."
         }
       ],
       "notes": "Reinhold's wife; survives the 351 massacre (dies 367).",
@@ -1542,7 +1580,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       },
-      "first_appearance": "Realm of Terror"
+      "first_appearance": "Realm of Terror",
+      "maiden_name": "Nadia Yakimov",
+      "married_name": "Nadia Dilisnya",
+      "display_name": "Nadia Dilisnya (Yakimov)"
     },
     {
       "id": "gertrude_d",
@@ -1565,7 +1606,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "ivan_buchvold",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Ivan Buchvold."
         },
         {
           "type": "parent",
@@ -1574,7 +1616,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "dilisnya_husband"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Child of Dorfniya and Endor."
         }
       ],
       "notes": "Dies 351 at the castle (Note A).",
@@ -1592,7 +1635,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       },
       "vocation": "Noble",
       "role": null,
-      "first_appearance": "Realm of Terror"
+      "first_appearance": "Realm of Terror",
+      "maiden_name": "Gertrude Dilisnya",
+      "married_name": "Gertrude Buchvold",
+      "display_name": "Gertrude Buchvold (Dilisnya)"
     },
     {
       "id": "ivan_buchvold",
@@ -1615,7 +1661,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "gertrude_d",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Gertrude Buchvold (Dilisnya)."
         }
       ],
       "open_question": "buchvold",
@@ -1660,7 +1707,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "with": "ivan_buchvold",
           "tier": "INFER",
           "source": "IStrahd",
-          "note": "Younger brother of Ivan Buchvold, per I,Strahd. Ivan is RoT-Bloodlines; Illya is NOT in the Bloodlines at all."
+          "note": "Younger brother of Ivan Buchvold, per I,Strahd. Ivan is RoT-Bloodlines; Illya is NOT in the Bloodlines at all.",
+          "display": "Sibling of Ivan Buchvold."
         }
       ],
       "open_question": "buchvold",
@@ -1703,7 +1751,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "victor_wachter",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Victor Wachter."
         },
         {
           "type": "parent",
@@ -1712,7 +1761,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "dilisnya_husband"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Child of Dorfniya and Endor."
         }
       ],
       "notes": "Dies 351 at the castle (Note A).",
@@ -1730,7 +1780,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       },
       "vocation": "Noble",
       "role": null,
-      "first_appearance": "Realm of Terror"
+      "first_appearance": "Realm of Terror",
+      "maiden_name": "Oleka Dilisnya",
+      "married_name": "Oleka Wachter",
+      "display_name": "Oleka Wachter (Dilisnya)"
     },
     {
       "id": "victor_wachter",
@@ -1753,7 +1806,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "oleka",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Oleka Wachter (Dilisnya)."
         }
       ],
       "notes": "Oleka's husband; survives the massacre (dies 372).",
@@ -1804,7 +1858,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "with": "dorfniya",
           "tier": "SPEC",
           "source": "VotO",
-          "note": "The author's own reconstruction."
+          "note": "The author's own reconstruction.",
+          "display": "Married to Dorfniya Dilisnya."
         },
         {
           "type": "parent-of",
@@ -1816,7 +1871,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           ],
           "tier": "SPEC",
           "source": "VotO",
-          "note": "Father of the Dilisnya line: Reinhold, Gertrude, Oleka and Leo. RoT makes Leo the son of Dorfniya by an affair with Gunther Cosco; the reconstruction rejects this and Leo is the legitimate fourth child of Dorfniya and Endor (see the override note on Leo)."
+          "note": "Father of the Dilisnya line: Reinhold, Gertrude, Oleka and Leo. RoT makes Leo the son of Dorfniya by an affair with Gunther Cosco; the reconstruction rejects this and Leo is the legitimate fourth child of Dorfniya and Endor (see the override note on Leo).",
+          "display": "Parent of Reinhold Dilisnya, Gertrude Buchvold (Dilisnya), Oleka Wachter (Dilisnya) and Leo Dilisnya."
         },
         {
           "type": "parent",
@@ -1825,14 +1881,16 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           ],
           "tier": "SPEC",
           "source": "VotO",
-          "note": "Parent is a child of Vasili von Zarovich — so Endor shares Barov's grandfather."
+          "note": "Parent is a child of Vasili von Zarovich — so Endor shares Barov's grandfather.",
+          "display": "Child of a Dilisnya of the elder generation."
         },
         {
           "type": "cousin",
           "with": "barov",
           "tier": "SPEC",
           "source": "VotO",
-          "note": "First cousins via the shared grandfather Vasili von Zarovich. The link that makes the two 'trees' one. (the author's own notes: Endor and Barov 'possibly cousins'.)"
+          "note": "First cousins via the shared grandfather Vasili von Zarovich. The link that makes the two 'trees' one. (the author's own notes: Endor and Barov 'possibly cousins'.)",
+          "display": "Cousin of Barov von Zarovich."
         }
       ],
       "open_question": null,
@@ -1918,7 +1976,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "vocation": "Noble",
       "role": "Consort duke; officer in Barov's army",
       "first_appearance": "VotO",
-      "first_appearance_note": "Our own construction. The Endor/Endorovich name root is I6 (Crypts 7 and 19) and 'Dorian' is absorbed from later editions, but this person as constructed is ours."
+      "first_appearance_note": "Our own construction. The Endor/Endorovich name root is I6 (Crypts 7 and 19) and 'Dorian' is absorbed from later editions, but this person as constructed is ours.",
+      "short_name": "Endor Dilisnya"
     },
     {
       "id": "kir",
@@ -1991,7 +2050,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "tier": "SPEC",
           "source": "VotO",
           "note": "A priest who TAUGHT Strahd (and likely Sturm) in their youth. Tutoring ends with Zarak's death in 323 — not because Strahd merely 'went off to war', but because Strahd's flight begins by murdering his own tutor (his first Ba'al Verzi kill, see exile_323); the 'war' is the cover story he broadcasts afterward, not what actually happened. NOT a high priest, NOT part of the Holy Symbol succession.",
-          "display": "Tutor to the young Strahd and Sturm von Zarovich."
+          "display": "Tutor to the young Strahd and Sturm."
         }
       ],
       "on_event_spine": false,
@@ -2029,7 +2088,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     },
     {
       "id": "ciril",
-      "name": "Prefect Ciril Romulich",
+      "name": "Ciril Romulich",
       "family": "Church",
       "line": "barovia",
       "birth": {
@@ -2076,7 +2135,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         }
       ],
       "vocation": "Priest",
-      "role": "High Priest of Barovia",
+      "role": "Prefect; High Priest of Barovia",
       "first_appearance": "I6 Ravenloft"
     },
     {
@@ -2192,7 +2251,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "gisella"
           ],
           "tier": "INFER",
-          "source": "VotO"
+          "source": "VotO",
+          "display": "Parent of Gisella von Zarovich (Fallona)."
         }
       ],
       "notes": "Mother of Gisella Fallona, Sturm's mother-in-law (I6 Crypt 16). Among the 346 dead. | Present at the wedding (305) as a child of the court (age 10).",
@@ -2240,7 +2300,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "katherine_s",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Katherine Weathermay (Sutherwaite)."
         }
       ],
       "notes": "Lifelong resident of Mordent; age 57 when Mordent entered Ravenloft (Note A). 522+57=579 is the anchor that ties the entire Mordent line to the Barovian calendar THROUGH RoT alone.",
@@ -2279,7 +2340,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "byron_w",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Byron Weathermay."
         }
       ],
       "notes": "Byron's wife.",
@@ -2295,11 +2357,14 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       },
-      "first_appearance": "Realm of Terror"
+      "first_appearance": "Realm of Terror",
+      "maiden_name": "Katherine Sutherwaite",
+      "married_name": "Katherine Weathermay",
+      "display_name": "Katherine Weathermay (Sutherwaite)"
     },
     {
       "id": "godefroy",
-      "name": "Lord Wilfred Godefroy",
+      "name": "Wilfred Godefroy",
       "family": "Weathermay",
       "line": "mordent",
       "birth": {
@@ -2321,7 +2386,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "estelle_w",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Estelle Godefroy (Weathermay)."
         },
         {
           "type": "parent-of",
@@ -2329,7 +2395,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "lilia"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Parent of Lilia Godefroy."
         }
       ],
       "notes": "Murdered wife and daughter in 578; suicide one year later; became ghost-lord of Mordent in 579 (Note C). FLAG: RoT dates the murder to 578, but I10's Mordentshire magistrate records place it roughly four centuries before the adventure. Collides with I10 and Bibles Part 2.",
@@ -2371,7 +2438,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "godefroy",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Wilfred Godefroy."
         },
         {
           "type": "parent-of",
@@ -2379,7 +2447,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "lilia"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Parent of Lilia Godefroy."
         }
       ],
       "notes": "Murdered by Godefroy in 578.",
@@ -2404,7 +2473,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       },
-      "first_appearance": "Realm of Terror"
+      "first_appearance": "Realm of Terror",
+      "maiden_name": "Estelle Weathermay",
+      "married_name": "Estelle Godefroy",
+      "display_name": "Estelle Godefroy (Weathermay)"
     },
     {
       "id": "lilia",
@@ -2430,7 +2502,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "estelle_w"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Child of Wilfred Godefroy and Estelle Godefroy (Weathermay)."
         }
       ],
       "notes": "Murdered with her mother in 578, aged 10.",
@@ -2515,7 +2588,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "camille"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Child of Camille Dilisnya."
         }
       ],
       "notes": "Assumed lordship of Borca after poisoning her mother Camille in 711 (Note F).",
@@ -2554,10 +2628,11 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "isabelle_m",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Isabelle Renier (Museau)."
         }
       ],
-      "notes": "Lord of Richemulot 694-726 (Note A). Wererat. Renier line is Barovian-rooted via Von Zarovich (Gertrude Von Zarovich marries Roul Renier).",
+      "notes": "Lord of Richemulot 694-726 (Note A). Wererat. Renier line is Barovian-rooted via von Zarovich (Gertrude von Zarovich marries Roul Renier).",
       "born_marker": {
         "year": 654,
         "tier": "CORE",
@@ -2595,7 +2670,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "claude_r",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Claude Renier."
         }
       ],
       "notes": "Wererat. Her female descendants take Isabelle as a middle name (Note B).",
@@ -2611,7 +2687,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       },
-      "first_appearance": "Realm of Terror"
+      "first_appearance": "Realm of Terror",
+      "maiden_name": "Isabelle Museau",
+      "married_name": "Isabelle Renier",
+      "display_name": "Isabelle Renier (Museau)"
     },
     {
       "id": "vlad_drakov",
@@ -2669,7 +2748,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "alicia_c",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Alicia d'Honaire (Corgiat)."
         }
       ],
       "notes": "Head of the Mordent-linked d'Honaire line (dates in the Mordent band). Seeds Dementlieu via Dominic.",
@@ -2708,7 +2788,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "germain_dh",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Germain d'Honaire."
         }
       ],
       "notes": "Germain's wife.",
@@ -2724,7 +2805,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       },
-      "first_appearance": "Realm of Terror"
+      "first_appearance": "Realm of Terror",
+      "maiden_name": "Alicia Corgiat",
+      "married_name": "Alicia d'Honaire",
+      "display_name": "Alicia d'Honaire (Corgiat)"
     },
     {
       "id": "dominic_dh",
@@ -2781,7 +2865,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "elizabeth_t",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Elizabeth Timothy."
         }
       ],
       "notes": "Head of the Timothy line. RoT Note A places the Timothys 'a werewolf in Mordent' — the Mordent placement is TEXTUAL, not inferred. Seeds Arkandale and Verbrek.",
@@ -2820,7 +2905,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "cain_t",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Cain Timothy."
         }
       ],
       "notes": "Cain's wife.",
@@ -2893,7 +2979,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "winifred_r",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Winifred Timothy (Ratcliff)."
         }
       ],
       "notes": "Lord of Verbrek; married his distant cousin Winifred Ratcliff (Notes D/E).",
@@ -2934,7 +3021,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "alfred_t",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Alfred Timothy."
         }
       ],
       "notes": "Alfred's wife/cousin.",
@@ -2950,7 +3038,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       },
-      "first_appearance": "Realm of Terror"
+      "first_appearance": "Realm of Terror",
+      "maiden_name": "Winifred Ratcliff",
+      "married_name": "Winifred Timothy",
+      "display_name": "Winifred Timothy (Ratcliff)"
     },
     {
       "id": "ivan_dilisnya",
@@ -2977,13 +3068,15 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "stefania_septow"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Child of Boris Dilisnya and Stefania Dilisnya (Septow)."
         },
         {
           "type": "sibling",
           "with": "kristina_dilisnya",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Sibling of Kristina Dilisnya."
         }
       ],
       "born_marker": {
@@ -2992,7 +3085,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "known": true,
         "note": "~689, same day as Ivana."
       },
-      "notes": "Ivan Dilisnya — became Lord of Dorvinia in 715 (RoT Bloodlines Note D). Barovian-rooted Dilisnya stock (= Von Zarovich blood, per dilisnya_is_vonzarovich). Founder/darklord of Dorvinia. Founding crime to be sourced from the RoT darklord write-up.",
+      "notes": "Ivan Dilisnya — became Lord of Dorvinia in 715 (RoT Bloodlines Note D). Barovian-rooted Dilisnya stock (= von Zarovich blood, per dilisnya_is_vonzarovich). Founder/darklord of Dorvinia. Founding crime to be sourced from the RoT darklord write-up.",
       "birthplace": {
         "place": null,
         "tier": "OPEN",
@@ -3027,7 +3120,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "boris_dilisnya"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Parent of Boris Dilisnya."
         }
       ],
       "born_marker": {
@@ -3036,7 +3130,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "known": false,
         "note": "Birth year unknown."
       },
-      "notes": "Grandmother of the Dorvinian Dilisnya line; her distant relatives were the wedding guests at Strahd's castle in 351. | SOURCE: Ivan Dilisnya write-up, Darklords.pdf p23 (RoT-era). Under the committed dilisnya_is_vonzarovich reading, this is Von Zarovich blood under the Dilisnya name; RoT presents the Dilisnyas as a separate house (the layer that reading treats as elaboration). Recorded as RoT-sourced with that caveat.",
+      "notes": "Grandmother of the Dorvinian Dilisnya line; her distant relatives were the wedding guests at Strahd's castle in 351. | SOURCE: Ivan Dilisnya write-up, Darklords.pdf p23 (RoT-era). Under the committed dilisnya_is_vonzarovich reading, this is von Zarovich blood under the Dilisnya name; RoT presents the Dilisnyas as a separate house (the layer that reading treats as elaboration). Recorded as RoT-sourced with that caveat.",
       "birthplace": {
         "place": null,
         "tier": "OPEN",
@@ -3069,13 +3163,15 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "natalia_olszanik"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Child of Natalia Olszanik Dilisnya."
         },
         {
           "type": "spouse",
           "with": "stefania_septow",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Stefania Dilisnya (Septow)."
         },
         {
           "type": "parent-of",
@@ -3084,7 +3180,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "ivan_dilisnya"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Parent of Kristina and Ivan."
         }
       ],
       "born_marker": {
@@ -3093,7 +3190,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "known": false,
         "note": "Birth year unknown."
       },
-      "notes": "Ivan's father; grew up in Barovia; married Stefania Septow; children Kristina and Ivan (lord of Dorvinia). | SOURCE: Ivan Dilisnya write-up, Darklords.pdf p23 (RoT-era). Under the committed dilisnya_is_vonzarovich reading, this is Von Zarovich blood under the Dilisnya name; RoT presents the Dilisnyas as a separate house (the layer that reading treats as elaboration). Recorded as RoT-sourced with that caveat.",
+      "notes": "Ivan's father; grew up in Barovia; married Stefania Septow; children Kristina and Ivan (lord of Dorvinia). | SOURCE: Ivan Dilisnya write-up, Darklords.pdf p23 (RoT-era). Under the committed dilisnya_is_vonzarovich reading, this is von Zarovich blood under the Dilisnya name; RoT presents the Dilisnyas as a separate house (the layer that reading treats as elaboration). Recorded as RoT-sourced with that caveat.",
       "birthplace": {
         "place": null,
         "tier": "OPEN",
@@ -3124,7 +3221,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "spouse",
           "with": "boris_dilisnya",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Married to Boris Dilisnya."
         }
       ],
       "born_marker": {
@@ -3133,7 +3231,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "known": false,
         "note": "Birth year unknown."
       },
-      "notes": "Wife of Boris Dilisnya; mother of Kristina and Ivan. 'Under a dark moon, Stefania bore a second child, a boy, Ivan.' | SOURCE: Ivan Dilisnya write-up, Darklords.pdf p23 (RoT-era). Under the committed dilisnya_is_vonzarovich reading, this is Von Zarovich blood under the Dilisnya name; RoT presents the Dilisnyas as a separate house (the layer that reading treats as elaboration). Recorded as RoT-sourced with that caveat.",
+      "notes": "Wife of Boris Dilisnya; mother of Kristina and Ivan. 'Under a dark moon, Stefania bore a second child, a boy, Ivan.' | SOURCE: Ivan Dilisnya write-up, Darklords.pdf p23 (RoT-era). Under the committed dilisnya_is_vonzarovich reading, this is von Zarovich blood under the Dilisnya name; RoT presents the Dilisnyas as a separate house (the layer that reading treats as elaboration). Recorded as RoT-sourced with that caveat.",
       "maternal_markers": [
         {
           "type": "gave-birth-to",
@@ -3156,7 +3254,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "known": false,
         "note": "Birthplace unknown; no source states it and mother's location at birth not established. null = unknown (do not render)."
       },
-      "first_appearance": "Realm of Terror"
+      "first_appearance": "Realm of Terror",
+      "maiden_name": "Stefania Septow",
+      "married_name": "Stefania Dilisnya",
+      "display_name": "Stefania Dilisnya (Septow)"
     },
     {
       "id": "kristina_dilisnya",
@@ -3183,13 +3284,15 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
             "stefania_septow"
           ],
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Child of Boris Dilisnya and Stefania Dilisnya (Septow)."
         },
         {
           "type": "sibling",
           "with": "ivan_dilisnya",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Sibling of Ivan Dilisnya."
         }
       ],
       "born_marker": {
@@ -3198,7 +3301,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
         "known": false,
         "note": "Birth year unknown."
       },
-      "notes": "Daughter of Boris and Stefania; elder sibling of Ivan. | SOURCE: Ivan Dilisnya write-up, Darklords.pdf p23 (RoT-era). Under the committed dilisnya_is_vonzarovich reading, this is Von Zarovich blood under the Dilisnya name; RoT presents the Dilisnyas as a separate house (the layer that reading treats as elaboration). Recorded as RoT-sourced with that caveat.",
+      "notes": "Daughter of Boris and Stefania; elder sibling of Ivan. | SOURCE: Ivan Dilisnya write-up, Darklords.pdf p23 (RoT-era). Under the committed dilisnya_is_vonzarovich reading, this is von Zarovich blood under the Dilisnya name; RoT presents the Dilisnyas as a separate house (the layer that reading treats as elaboration). Recorded as RoT-sourced with that caveat.",
       "birthplace": {
         "place": null,
         "tier": "OPEN",
@@ -3209,7 +3312,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     },
     {
       "id": "barov_mother",
-      "name": "Duchess Katarina Holtz",
+      "name": "Katarina Holtz",
       "birth": {
         "year": 262,
         "tier": "SPEC",
@@ -3219,8 +3322,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "notes": "Born KATARINA HOLTZ (a name outside the Dilisnya/von Zarovich line — brings the Holtz name into the family). Wife of Duke Roman Dilisnya; Duchess consort, later 'the king's mother' after Barov's elevation. Mother of Barov and Dorfniya. Present at the wedding (305) as the groom's mother. SPEC dates.",
       "birth_name": "Katarina Holtz",
-      "married_name": "Katarina von Zarovich (by marriage)",
-      "name_convention": "Born Katarina Holtz; 'von Zarovich' by marriage to Roman.",
+      "married_name": "Katarina Dilisnya",
+      "name_convention": "Katarina Dilisnya, née Holtz. She married Roman Dilisnya and died in 316, so she never bore 'von Zarovich' in life — the name was adopted at her son's founding, not her husband's. Later record-keepers style the whole line von Zarovich by back-projection; the timeline does not follow them.",
       "title": "Duchess consort (by marriage to Duke Roman); later the king's mother",
       "death": {
         "year": 316,
@@ -3252,7 +3355,9 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "vocation": "Noble",
       "role": "Duchess consort",
       "first_appearance": "VotO",
-      "line": "barovia"
+      "line": "barovia",
+      "maiden_name": "Katarina Holtz",
+      "display_name": "Katarina Dilisnya (Holtz)"
     },
     {
       "id": "roeyen_father",
@@ -3311,7 +3416,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "source": "VotO",
       "notes": "Born ANNA PETRONOVA; wife of Claude van Roeyen (Anna van Roeyen by marriage); mother of Ravenia. The Petronova name enters the family through her. Present at the wedding (305) as the bride's mother. SPEC dates.",
       "birth_name": "Anna Petronova",
-      "married_name": "Anna van Roeyen (by marriage)",
+      "married_name": "Anna van Roeyen",
       "title": "Lady of the van Roeyen house",
       "death": {
         "year": 318,
@@ -3343,7 +3448,9 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "vocation": "Noble",
       "role": "Lady of the van Roeyen house",
       "first_appearance": "VotO",
-      "line": "barovia"
+      "line": "barovia",
+      "maiden_name": "Anna Petronova",
+      "display_name": "Anna van Roeyen (Petronova)"
     },
     {
       "id": "ravenia_maid_of_honour",
@@ -3485,7 +3592,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "vocation": "Thief",
       "role": "Master thief, known as Little Fox",
       "first_appearance": "Vampire of the Mists",
-      "line": "barovia"
+      "line": "barovia",
+      "short_name": "Leisl"
     },
     {
       "id": "sasha",
@@ -3507,7 +3615,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "vocation": "Priest",
       "role": "Priest of the Morninglord",
       "first_appearance": "Vampire of the Mists",
-      "line": "barovia"
+      "line": "barovia",
+      "short_name": "Sasha Petrovich"
     },
     {
       "id": "halstoy",
@@ -3524,7 +3633,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       },
       "tier": "INVENT",
       "source": "VotO",
-      "notes": "The name taken by the surviving Khazan — the clone activated on the original's death in 345 — who conceals his nature as a magic-user entirely. He holds a few KEYS which, used on certain doors, open onto other places within Barovia (never outside it; the Mists have sealed almost all those routes), letting fugitives cross from a searched district to one already searched or not yet reached. Asked about them, he says they were found by accident and collected over the years — the lie a hidden wizard tells, and the reason those he helps never learn what he is. He uses them never obviously, casually or carelessly, but with intent and good purpose, and he documents what he learns. It is also largely how he stays clear of Strahd, who knows some meddling force works against him but cannot make out what, the traces being so oblique.",
+      "notes": "The name taken by the surviving Khazan — the clone activated on the original's death in 345 — who conceals his nature as a magic-user entirely. He holds a few KEYS which, used on certain doors, open onto other places within Barovia (never outside it; the Mists have sealed almost all those routes), letting fugitives cross from a searched district to one already searched or not yet reached. Asked about them, he says they were found by accident and collected over the years — the lie a hidden wizard tells, and the reason those he helps never learn what he is. He uses them never obviously, casually or carelessly, but with intent and good purpose, and he documents what he learns. It is also largely how he stays clear of Strahd, who knows some meddling force works against him but cannot make out what, the traces being so oblique. Off-timeline: he is continuous from 345 and does not stop, so any lifebar derived from his events would assert a span he did not have. He appears through the events that invoke him.",
       "off_timeline": true
     }
   ],
@@ -3966,7 +4075,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "present": [
         "claude_r"
       ],
-      "notes": "RoT Time Line (p.11): '694 Richemulot appears'. Darklord Claude Renier (wererat); the Renier line is Barovian-rooted via Von Zarovich (Bloodlines). Domain appearance is RoT's dated event; the bloodline tracing is the reconstruction.",
+      "notes": "RoT Time Line (p.11): '694 Richemulot appears'. Darklord Claude Renier (wererat); the Renier line is Barovian-rooted via von Zarovich (Bloodlines). Domain appearance is RoT's dated event; the bloodline tracing is the reconstruction.",
       "source": "RoT",
       "founder": "Claude Renier",
       "founding_reading": "The Renier wererat family, cornered in a labyrinth facing death by a glowing sword, chose a Mist-portal and entered Ravenloft on Falkovnia's borders, living beneath Silbervas. Years later Drakov, tired of their murders and pilfering, sent an expeditionary force through the sewers; the Reniers fled again into the Mists, which opened Richemulot for them. Claude (grandfather of the later lord Jacqueline) became its lord; Jacqueline murdered him in 726 to take the domain. (Darklords.pdf, Renier write-up p7-8.)",
@@ -4148,7 +4257,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "scope": "single",
       "line": "barovia",
       "tier": "SPEC",
-      "title": "Marriage: Sturm Von Zarovich & Gisella Fallona (suggested)",
+      "title": "Marriage: Sturm von Zarovich & Gisella Fallona (suggested)",
       "present": [
         "sturm",
         "gisella"
@@ -4159,7 +4268,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "locked": true,
       "roll_d6": 3,
       "wife_marriage_age": 21,
-      "short_title": "marriage: Sturm Von Zarovich & Gisella Fallona"
+      "short_title": "marriage: Sturm von Zarovich & Gisella Fallona"
     },
     {
       "id": "marriage_reinhold_nadia_yakimov",
@@ -4337,13 +4446,13 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "line": "barovia",
       "tier": "CORE",
       "kind": "birth",
-      "title": "Born: Barov Von Zarovich",
+      "title": "Born: Barov von Zarovich",
       "present": [
         "barov"
       ],
-      "notes": "Birth of Barov Von Zarovich.",
+      "notes": "Birth of Barov von Zarovich.",
       "source": "RoT",
-      "short_title": "born: Barov Von Zarovich"
+      "short_title": "born: Barov von Zarovich"
     },
     {
       "id": "death_barov",
@@ -4352,13 +4461,13 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "line": "barovia",
       "tier": "CORE",
       "kind": "death",
-      "title": "Died: Barov Von Zarovich",
+      "title": "Died: Barov von Zarovich",
       "present": [
         "barov"
       ],
-      "notes": "Death of Barov Von Zarovich.",
+      "notes": "Death of Barov von Zarovich.",
       "source": "RoT",
-      "short_title": "died: Barov Von Zarovich"
+      "short_title": "died: Barov von Zarovich"
     },
     {
       "id": "birth_ravenia",
@@ -4367,13 +4476,13 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "line": "barovia",
       "tier": "CORE",
       "kind": "birth",
-      "title": "Born: Ravenia Van Roeyen",
+      "title": "Born: Ravenia van Roeyen",
       "present": [
         "ravenia"
       ],
-      "notes": "Birth of Ravenia Van Roeyen.",
+      "notes": "Birth of Ravenia van Roeyen.",
       "source": "RoT",
-      "short_title": "born: Ravenia Van Roeyen"
+      "short_title": "born: Ravenia van Roeyen"
     },
     {
       "id": "death_ravenia",
@@ -4382,13 +4491,13 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "line": "barovia",
       "tier": "CORE",
       "kind": "death",
-      "title": "Died: Ravenia Van Roeyen",
+      "title": "Died: Ravenia van Roeyen",
       "present": [
         "ravenia"
       ],
-      "notes": "Death of Ravenia Van Roeyen.",
+      "notes": "Death of Ravenia van Roeyen.",
       "source": "RoT",
-      "short_title": "died: Ravenia Van Roeyen"
+      "short_title": "died: Ravenia van Roeyen"
     },
     {
       "id": "birth_strahd",
@@ -4397,13 +4506,13 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "line": "barovia",
       "tier": "CORE",
       "kind": "birth",
-      "title": "Born: Strahd Von Zarovich — born into the founding year (306)",
+      "title": "Born: Strahd von Zarovich — born into the founding year (306)",
       "present": [
         "strahd"
       ],
-      "notes": "Birth of Strahd Von Zarovich. | YEAR 306 — THE CONVERGENCE (the founding year). A single, exceptionally loaded year: the founding war ends, the keep falls, Barovia is founded, Barov is crowned KING and Ravenia QUEEN, the land-ritual binds the king to the realm, and STRAHD is born — the crown prince, and the first person born to the new von Zarovich name. For the new kingdom it is a year of continuous celebration, triumph upon triumph, with the heir born into the middle of it. THEMATIC CHARGE: Strahd enters the world at the family's absolute APEX — victory, throne, realm and heir all at once — which darkens the long arc by contrast: the man who will end the dynasty in blood and draw the realm into the mists is born in its golden hour, amid universal rejoicing over everything he will later ruin.",
+      "notes": "Birth of Strahd von Zarovich. | YEAR 306 — THE CONVERGENCE (the founding year). A single, exceptionally loaded year: the founding war ends, the keep falls, Barovia is founded, Barov is crowned KING and Ravenia QUEEN, the land-ritual binds the king to the realm, and STRAHD is born — the crown prince, and the first person born to the new von Zarovich name. For the new kingdom it is a year of continuous celebration, triumph upon triumph, with the heir born into the middle of it. THEMATIC CHARGE: Strahd enters the world at the family's absolute APEX — victory, throne, realm and heir all at once — which darkens the long arc by contrast: the man who will end the dynasty in blood and draw the realm into the mists is born in its golden hour, amid universal rejoicing over everything he will later ruin.",
       "source": "RoT",
-      "short_title": "born: Strahd Von Zarovich"
+      "short_title": "born: Strahd von Zarovich"
     },
     {
       "id": "death_strahd",
@@ -4412,13 +4521,13 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "line": "barovia",
       "tier": "CORE",
       "kind": "transformation",
-      "title": "Becomes undead: Strahd Von Zarovich",
+      "title": "Becomes undead: Strahd von Zarovich",
       "present": [
         "strahd"
       ],
       "notes": "NOT a true death — this is Strahd's TRANSFORMATION to undeath (vampire). He has no true end date (undead). 351 is preserved as the transformation/undeath marker and the calendar anchor. Render as 'became undead 351', not 'died 351'.",
       "source": "RoT",
-      "short_title": "becomes undead: Strahd Von Zarovich"
+      "short_title": "becomes undead: Strahd von Zarovich"
     },
     {
       "id": "birth_sturm",
@@ -4427,13 +4536,13 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "line": "barovia",
       "tier": "CORE",
       "kind": "birth",
-      "title": "Born: Sturm Von Zarovich",
+      "title": "Born: Sturm von Zarovich",
       "present": [
         "sturm"
       ],
-      "notes": "Birth of Sturm Von Zarovich.",
+      "notes": "Birth of Sturm von Zarovich.",
       "source": "RoT",
-      "short_title": "born: Sturm Von Zarovich"
+      "short_title": "born: Sturm von Zarovich"
     },
     {
       "id": "death_sturm",
@@ -4442,13 +4551,13 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "line": "barovia",
       "tier": "CORE",
       "kind": "death",
-      "title": "Died: Sturm Von Zarovich",
+      "title": "Died: Sturm von Zarovich",
       "present": [
         "sturm"
       ],
-      "notes": "Death of Sturm Von Zarovich.",
+      "notes": "Death of Sturm von Zarovich.",
       "source": "RoT",
-      "short_title": "died: Sturm Von Zarovich"
+      "short_title": "died: Sturm von Zarovich"
     },
     {
       "id": "birth_gisella",
@@ -4487,13 +4596,13 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "line": "barovia",
       "tier": "CORE",
       "kind": "birth",
-      "title": "Born: Sergei Von Zarovich",
+      "title": "Born: Sergei von Zarovich",
       "present": [
         "sergei"
       ],
-      "notes": "Birth of Sergei Von Zarovich.",
+      "notes": "Birth of Sergei von Zarovich.",
       "source": "RoT",
-      "short_title": "born: Sergei Von Zarovich"
+      "short_title": "born: Sergei von Zarovich"
     },
     {
       "id": "death_sergei",
@@ -4502,13 +4611,13 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "line": "barovia",
       "tier": "CORE",
       "kind": "death",
-      "title": "Died: Sergei Von Zarovich",
+      "title": "Died: Sergei von Zarovich",
       "present": [
         "sergei"
       ],
-      "notes": "Death of Sergei Von Zarovich.",
+      "notes": "Death of Sergei von Zarovich.",
       "source": "RoT",
-      "short_title": "died: Sergei Von Zarovich"
+      "short_title": "died: Sergei von Zarovich"
     },
     {
       "id": "birth_tatyana",
@@ -6241,7 +6350,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "against": "Conflicts with I6 Crypt 30's 'Raven'."
         },
         {
-          "reading": "Ravenia Van Roeyen (RoT Bloodlines)",
+          "reading": "Ravenia van Roeyen (RoT Bloodlines)",
           "for": "RoT's full form with a maiden name.",
           "against": "RoT is later (1990); where it diverges from I6 it is the interpretive layer, not the authority. A third variant, not a tiebreaker."
         }
@@ -6279,7 +6388,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     {
       "id": "truncation_continuity",
       "title": "The truncation gap misread as continuity",
-      "text": "RoT prints a truncation gap in the Von Zarovich line (a real break). Later writers missed it and assumed continuous descent between the top block and the 630s block. The author's derivation of the gap: ~300 years / ~12 generations (INFER; the '12 generation' label on the scan is the author's annotation, not RoT's).",
+      "text": "RoT prints a truncation gap in the von Zarovich line (a real break). Later writers missed it and assumed continuous descent between the top block and the 630s block. The author's derivation of the gap: ~300 years / ~12 generations (INFER; the '12 generation' label on the scan is the author's annotation, not RoT's).",
       "source": "VotO"
     },
     {
@@ -6297,7 +6406,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     {
       "id": "dorfniya_parentage",
       "title": "Dorfniya's parentage omitted by RoT",
-      "text": "RoT's Dilisnya tree omits Dorfniya's parentage. Reconstruction supplies it (Von Zarovich, sister to Barov, disowned, records struck). This fills a printed blank; it is not a contradiction of RoT. INFER.",
+      "text": "RoT's Dilisnya tree omits Dorfniya's parentage. Reconstruction supplies it (von Zarovich, sister to Barov, disowned, records struck). This fills a printed blank; it is not a contradiction of RoT. INFER.",
       "source": "VotO"
     },
     {
@@ -6322,7 +6431,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "id": "tergs_dod_invention",
       "title": "The Tergs are a Domains of Dread (1997) invention, not primary history",
       "source": "VotO",
-      "text": "ESTABLISHED PROVENANCE: 'The Tergs invade Barovia, conquering the ancestral lands' first appears in Domains of Dread (1997), on its timeline at 320 and its history page. The word 'Terg' is ABSENT from RoT (1990) and ABSENT from I, Strahd: The Memoirs of a Vampire (1993, checked in full: zero occurrences). So the Tergs are a late setting-era invention, not primary history and not Strahd's own account. THE SEAM THEY PATCH (established from I6 crypts): I6's crypts hold Barov, Ravenovia and the whole ruling circle -- Strahd's family, predating his lordship -- yet the setting framing casts Strahd as a conqueror who 'arrives' to claim the castle. If his family is already entombed there, it was already the family seat; he did not arrive as an outsider. The Terg invasion papers over exactly this: the ancestral lands are lost and reclaimed, so Strahd can be both returning heir and conqueror and the family can predate him. INFERRED INTENT (tier INFER): DoD's authors likely invented the Tergs to make Strahd's early history cohere, because goblins alone did not carry enough weight and the family-in-the-crypts contradiction needed resolving. Crucially they resolved it IN STRAHD'S FAVOUR (external enemy, heroic reclamation) -- the same direction Strahd's own narrative would want, which is itself weak support for the persecution-device reading. COMPETING RESOLUTION (VotO): the same seam is resolved more economically by the 346 coup reading -- the family were always resident at the castle and Strahd killed them from within (patricide/regicide disguised), requiring no invented people. Two patches for one documented contradiction; only DoD's requires manufacturing an uncorroborated nation. SECOND NOVEL: 'I, Strahd: The War Against Azalin' (Elrod, 1998) is the author's copy, in storage and not currently accessible; it postdates DoD by a year, so even if it uses the Tergs it can only be later repetition, never the origin. The DoD-1997 origin is therefore stable regardless. NAMED WARLORD — DEBUNKED: 'Dorian the Goblyn King' is NOT in DoD's own Ravenloft Timeline (confirmed from the page image: DoD names the Tergs but gives their leader NO name). The 'Dorian' name came from imported secondary text (Timeline_A, not the author's edit) that embroidered on DoD; it has no source even in DoD. Do not use it. DIRECT DoD CONFIRMATION (page image, DoD Ravenloft Timeline): '320 The Tergs invade Barovia, conquering the ancestral lands of the Von Zarovich family'; '321 Strahd leads the armies of Barovia against the Tergs to reclaim his ancestral lands'; '347 The defeated Tergs are driven from Barovia. Strahd claims the throne as his reward.' Also '1 The Nation of Barovia is founded on an unknown world by the ancestors of Strahd von Zarovich' — DoD manufacturing the ancient-ancestral legitimacy framing. NOTE DoD runs its OWN contradictory chronology (Strahd born 299, not the RoT/VotM 306), so it is a separate invented scheme, not a reading of I6 or RoT. EYE-CHECK (RoT page images, read directly, not OCR): the Tergs and the ancestral-lands-reclamation framing are ABSENT from BOTH RoT's Time Line of Events (which begins at 351 and has no pre-351 entries) AND RoT's Strahd darklord write-up (p2/38-40), which describes Strahd as a WARRIOR/CONQUEROR who won Barovia by the sword, growing old in war, NOT as a dispossessed heir reclaiming ancestral lands from named invaders. So RoT's Strahd is a bare conqueror; DoD's Terg-reclamation recasts that generic conquest as righteous reclamation (the returning-heir sanitising). NOTE this RoT 'conqueror' framing actually supports the VotO imposed-name / conqueror-dynasty reconstruction better than DoD's version does. CAVEAT: this eye-check covered RoT's timeline and Strahd write-up; a full page-by-page sweep of every RoT page was not done, so 'absent from all of RoT' is strongly supported but not exhaustively proven. STANDING DECISION (Dorian naming, revised & settled): We ADOPT 'Dorian' into our own structure rather than fight it as a perpetual counter-narrative. The Duke (Dorfniya's husband) is now 'Endor \\'Dorian\\' Dilisnya' — Endor -> Endorian -> Dorian — anchored on the primary-source Endor/Endorovich founder-root (I6 Crypts 7 & 19). Everyone calls him Dorian, and he is the lord Strahd names as the one he DEFEATS to take Castle Ravenloft in 347; this is how 'Dorian' entered the record, and the later-edition/3e 'Dorian the Goblyn King' is a CORRUPTION of this real defeated Duke. RATIONALE: absorbing the almost-familiar name onto a primary root, and giving it a true referent, is stronger than endless refutation — it explains and supersedes the contaminated version instead of leaving it alive as a thing to argue against. CRITICAL SCOPE: we adopt the NAME only; the Terg / reclaimed-ancestral-lands / Goblyn-King STORY remains excluded as later construction. (This reverses the earlier 'reject the etymology' note — the reversal is deliberate: capture the name, exclude the story.)"
+      "text": "ESTABLISHED PROVENANCE: 'The Tergs invade Barovia, conquering the ancestral lands' first appears in Domains of Dread (1997), on its timeline at 320 and its history page. The word 'Terg' is ABSENT from RoT (1990) and ABSENT from I, Strahd: The Memoirs of a Vampire (1993, checked in full: zero occurrences). So the Tergs are a late setting-era invention, not primary history and not Strahd's own account. THE SEAM THEY PATCH (established from I6 crypts): I6's crypts hold Barov, Ravenovia and the whole ruling circle -- Strahd's family, predating his lordship -- yet the setting framing casts Strahd as a conqueror who 'arrives' to claim the castle. If his family is already entombed there, it was already the family seat; he did not arrive as an outsider. The Terg invasion papers over exactly this: the ancestral lands are lost and reclaimed, so Strahd can be both returning heir and conqueror and the family can predate him. INFERRED INTENT (tier INFER): DoD's authors likely invented the Tergs to make Strahd's early history cohere, because goblins alone did not carry enough weight and the family-in-the-crypts contradiction needed resolving. Crucially they resolved it IN STRAHD'S FAVOUR (external enemy, heroic reclamation) -- the same direction Strahd's own narrative would want, which is itself weak support for the persecution-device reading. COMPETING RESOLUTION (VotO): the same seam is resolved more economically by the 346 coup reading -- the family were always resident at the castle and Strahd killed them from within (patricide/regicide disguised), requiring no invented people. Two patches for one documented contradiction; only DoD's requires manufacturing an uncorroborated nation. SECOND NOVEL: 'I, Strahd: The War Against Azalin' (Elrod, 1998) is the author's copy, in storage and not currently accessible; it postdates DoD by a year, so even if it uses the Tergs it can only be later repetition, never the origin. The DoD-1997 origin is therefore stable regardless. NAMED WARLORD — DEBUNKED: 'Dorian the Goblyn King' is NOT in DoD's own Ravenloft Timeline (confirmed from the page image: DoD names the Tergs but gives their leader NO name). The 'Dorian' name came from imported secondary text (Timeline_A, not the author's edit) that embroidered on DoD; it has no source even in DoD. Do not use it. DIRECT DoD CONFIRMATION (page image, DoD Ravenloft Timeline): '320 The Tergs invade Barovia, conquering the ancestral lands of the von Zarovich family'; '321 Strahd leads the armies of Barovia against the Tergs to reclaim his ancestral lands'; '347 The defeated Tergs are driven from Barovia. Strahd claims the throne as his reward.' Also '1 The Nation of Barovia is founded on an unknown world by the ancestors of Strahd von Zarovich' — DoD manufacturing the ancient-ancestral legitimacy framing. NOTE DoD runs its OWN contradictory chronology (Strahd born 299, not the RoT/VotM 306), so it is a separate invented scheme, not a reading of I6 or RoT. EYE-CHECK (RoT page images, read directly, not OCR): the Tergs and the ancestral-lands-reclamation framing are ABSENT from BOTH RoT's Time Line of Events (which begins at 351 and has no pre-351 entries) AND RoT's Strahd darklord write-up (p2/38-40), which describes Strahd as a WARRIOR/CONQUEROR who won Barovia by the sword, growing old in war, NOT as a dispossessed heir reclaiming ancestral lands from named invaders. So RoT's Strahd is a bare conqueror; DoD's Terg-reclamation recasts that generic conquest as righteous reclamation (the returning-heir sanitising). NOTE this RoT 'conqueror' framing actually supports the VotO imposed-name / conqueror-dynasty reconstruction better than DoD's version does. CAVEAT: this eye-check covered RoT's timeline and Strahd write-up; a full page-by-page sweep of every RoT page was not done, so 'absent from all of RoT' is strongly supported but not exhaustively proven. STANDING DECISION (Dorian naming, revised & settled): We ADOPT 'Dorian' into our own structure rather than fight it as a perpetual counter-narrative. The Duke (Dorfniya's husband) is now 'Endor \\'Dorian\\' Dilisnya' — Endor -> Endorian -> Dorian — anchored on the primary-source Endor/Endorovich founder-root (I6 Crypts 7 & 19). Everyone calls him Dorian, and he is the lord Strahd names as the one he DEFEATS to take Castle Ravenloft in 347; this is how 'Dorian' entered the record, and the later-edition/3e 'Dorian the Goblyn King' is a CORRUPTION of this real defeated Duke. RATIONALE: absorbing the almost-familiar name onto a primary root, and giving it a true referent, is stronger than endless refutation — it explains and supersedes the contaminated version instead of leaving it alive as a thing to argue against. CRITICAL SCOPE: we adopt the NAME only; the Terg / reclaimed-ancestral-lands / Goblyn-King STORY remains excluded as later construction. (This reverses the earlier 'reject the etymology' note — the reversal is deliberate: capture the name, exclude the story.)"
     },
     {
       "id": "domain_dates_timeline_source",

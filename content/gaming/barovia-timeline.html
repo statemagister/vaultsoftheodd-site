@@ -236,8 +236,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
       "kind": "core-spine",
       "starts": 277,
       "tier": "CORE",
-      "note": "The continuous Barovian world. The only line that runs the full height.",
-      "source": "I6"
+      "note": "The continuous Barovian world, and the only line that runs the full height. Barovia enters Ravenloft in 351, when Strahd takes Death's bargain, becomes a vampire and murders the wedding party — everything before that year is the kingdom's own history on its own world. The line begins at 277 only because that is the earliest year the record reaches, not because anything happened to Barovia then.",
+      "source": "I6",
+      "enters_ravenloft": 351,
+      "starts_reason": "earliest recorded year, not an entry date"
     },
     {
       "id": "mordent",
@@ -7072,6 +7074,12 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
   var rowIndex = {}; ordered.forEach(function (l, i) { rowIndex[l.id] = i; });
   var n = ordered.length;
   function lineColor(id) { return LINE_PALETTE[(rowIndex[id] || 0) % LINE_PALETTE.length]; }
+  // The year a line entered Ravenloft is a matter of meaning, not drawing. For
+  // every domain it equals `starts` (formation = entry), which is why the two
+  // were conflated -- but Barovia's `starts` (277) is only the earliest year
+  // the record reaches; it does not enter the Mists until 351 (enters_ravenloft).
+  // Anything that reasons about "before Ravenloft" must use this, not `starts`.
+  function entersRav(l) { return (l && l.enters_ravenloft != null) ? l.enters_ravenloft : (l ? l.starts : null); }
 
   var linePre = {};
   ordered.forEach(function (l) {
@@ -7645,9 +7653,18 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     h += '<h3 class="tl-ptitle">' + esc(e.title) + '</h3>';
     h += '<p class="tl-status"><span class="tl-badge" style="background:' + tierColor(e.tier) + '">' + esc(e.tier) + '</span>' + esc(st.label) + '</p>';
     h += '<p class="tl-gloss">' + esc(st.blurb) + '</p>';
-    if (e.scope === 'single' && lineById[e.line] && e.year < lineById[e.line].starts) {
-      var ln = lineById[e.line];
-      h += '<p class="tl-pre-note" style="border-left-color:' + lineColor(e.line) + '">Before Ravenloft: this happens in ' + esc(ln.label) + '&rsquo;s own time, before it entered Ravenloft in ' + esc(ln.starts) + '. ' + esc(ln.label) + ' is the same-world-time-displaced exception; its history runs in parallel and joins the Barovian calendar at ' + esc(ln.starts) + '.</p>';
+    var preLn = lineById[e.line], preEntry = preLn ? entersRav(preLn) : null;
+    if (e.scope === 'single' && preLn && preEntry != null && e.year < preEntry) {
+      var preText;
+      if (preLn.kind === 'core-spine') {
+        // Barovia is the world itself, not a domain that joined from elsewhere.
+        preText = 'Before the Mists: this is the kingdom&rsquo;s own history, on its own world. Barovia does not enter Ravenloft until ' + esc(preEntry) + ', when Strahd&rsquo;s bargain turns him and the wedding falls &mdash; only then does the world become the first Domain of Dread. Everything before is history; everything after is the demiplane.';
+      } else if (preLn.kind === 'same-world-time-displaced') {
+        preText = 'Before Ravenloft: this happens in ' + esc(preLn.label) + '&rsquo;s own time. ' + esc(preLn.label) + ' is the same world displaced in time; its history runs in parallel and joins the Barovian calendar at ' + esc(preEntry) + '.';
+      } else {
+        preText = 'Before Ravenloft: this happens in ' + esc(preLn.label) + '&rsquo;s own time, before it entered Ravenloft in ' + esc(preEntry) + '; its line joins the Barovian calendar then.';
+      }
+      h += '<p class="tl-pre-note" style="border-left-color:' + lineColor(e.line) + '">' + preText + '</p>';
     }
     if (e.notes) h += '<div class="tl-sec-b"><span class="tl-sec">What this is</span><p>' + esc(e.notes) + '</p></div>';
     // Working layer (rule 10): an event's reasoning siblings are never rendered
@@ -7692,7 +7709,12 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     setFeedbackCtx(l.label + ' (domain)', 'line', id, null);
     var st = statusInfo(l.tier);
     var h = '';
-    h += '<p class="tl-pyear">Joins the timeline in ' + esc(l.starts) + ' &middot; <button type="button" class="tl-yearlink" data-year="' + esc(l.starts) + '">go to ' + esc(l.starts) + '</button></p>';
+    if (l.kind === 'core-spine') {
+      var slEntry = entersRav(l);
+      h += '<p class="tl-pyear">The continuous spine &middot; enters Ravenloft in ' + esc(slEntry) + ' &middot; <button type="button" class="tl-yearlink" data-year="' + esc(slEntry) + '">go to ' + esc(slEntry) + '</button></p>';
+    } else {
+      h += '<p class="tl-pyear">Joins the timeline in ' + esc(l.starts) + ' &middot; <button type="button" class="tl-yearlink" data-year="' + esc(l.starts) + '">go to ' + esc(l.starts) + '</button></p>';
+    }
     h += '<h3 class="tl-ptitle" style="color:' + lineColor(l.id) + '">' + esc(l.label) + ' line</h3>';
     h += '<p class="tl-status"><span class="tl-badge" style="background:' + tierColor(l.tier) + '">' + esc(l.tier) + '</span>' + esc(st.label) + '</p>';
     h += '<p class="tl-gloss">Kind: ' + esc(l.kind) + (linePre[l.id] != null ? '. Carries pre-Ravenloft history from ' + esc(linePre[l.id]) + '.' : '') + '</p>';

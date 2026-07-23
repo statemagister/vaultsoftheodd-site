@@ -417,6 +417,15 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "source": "VotO",
           "note": "Father of Barov and Dorfniya.",
           "display": "Parent of Barov von Zarovich and Dorfniya Dilisnya."
+        },
+        {
+          "type": "spouse",
+          "with": [
+            "barov_mother"
+          ],
+          "tier": "INFER",
+          "source": "VotO",
+          "display": "Married to Katarina Dilisnya (Holtz)."
         }
       ],
       "on_event_spine": false,
@@ -1152,7 +1161,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "with": "tatyana",
           "tier": "CORE",
           "note": "Marriage day = the 351 massacre; marriage never completed.",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Betrothed to Tatyana."
         },
         {
           "type": "parent",
@@ -1239,7 +1249,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "betrothed",
           "with": "sergei",
           "tier": "CORE",
-          "source": "RoT"
+          "source": "RoT",
+          "display": "Betrothed to Sergei von Zarovich."
         }
       ],
       "notes": "Object of Strahd's passion (Note B). Falls from the castle walls in 351. Recurs thereafter (see returns): Marina 400, Olya 475, Ireena at I6's present. Only ever reincarnates in Barovia. | The author's own reconstruction gives her full name as Tatyana Federovna, born in the village of Barovia (RoT prints only 'Tatyana').",
@@ -1385,7 +1396,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "with": "dorfniya",
           "tier": "PUB",
           "note": "I6 Crypt 9 'Fool of Dorfniya' = her court jester. NOT her husband. RoT misread this professional relationship as marriage.",
-          "source": "VotO"
+          "source": "VotO",
+          "display": "Fool to Dorfniya Dilisnya."
         }
       ],
       "open_question": null,
@@ -2230,7 +2242,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "type": "successor-to",
           "with": "ciril",
           "tier": "PUB",
-          "source": "VotO"
+          "source": "VotO",
+          "display": "Successor to Ciril Romulich."
         }
       ],
       "notes": "Young novice who found Ciril dead and became High Priest, first holder of the Holy Symbol. Used it in secret against the goblin king at Strahd's arrival; then hid it. Died suddenly in 350; Sergei took the pendant. (Holy Symbol article, VotM.) | 346 ROLE (reconstruction): Kir performed the funeral RITES for the 346 dead, because Ciril would not leave the god-commanded crafting of the Holy Symbol. This places Kir in a priestly role already in 346, foreshadowing his 347 succession as High Priest and first holder of the Holy Symbol.",
@@ -3739,6 +3752,15 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "tier": "INFER",
           "source": "VotO",
           "display": "Parent of Barov von Zarovich and Dorfniya Dilisnya."
+        },
+        {
+          "type": "spouse",
+          "with": [
+            "czar_vz"
+          ],
+          "tier": "INFER",
+          "source": "VotO",
+          "display": "Married to Roman Dilisnya."
         }
       ],
       "name_by_period": [
@@ -3810,6 +3832,15 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "tier": "INFER",
           "source": "VotO",
           "display": "Parent of Ravenia von Zarovich (van Roeyen)."
+        },
+        {
+          "type": "spouse",
+          "with": [
+            "roeyen_mother"
+          ],
+          "tier": "INFER",
+          "source": "VotO",
+          "display": "Married to Anna van Roeyen (Petronova)."
         }
       ]
     },
@@ -3869,6 +3900,15 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
           "tier": "INFER",
           "source": "VotO",
           "display": "Parent of Ravenia von Zarovich (van Roeyen)."
+        },
+        {
+          "type": "spouse",
+          "with": [
+            "roeyen_father"
+          ],
+          "tier": "INFER",
+          "source": "VotO",
+          "display": "Married to Claude van Roeyen."
         }
       ],
       "name_by_period": [
@@ -7618,6 +7658,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     if (p.relationships && p.relationships.length) {
       var items = [];
       p.relationships.forEach(function (r) {
+        // The authored display is the whole relationship stated once (rule 13);
+        // it names everyone and never drops a party. Only fall back to the
+        // year-filtered type+names line when a relationship carries no display.
+        if (r.display) { items.push('<li>' + esc(r.display) + '</li>'); return; }
         var ids = Array.isArray(r.with) ? r.with : [r.with];
         var vis = ids.filter(function (id) { return relBornBy(id, yr); });
         if (vis.length) items.push('<li>' + esc(r.type) + ': ' + esc(vis.map(personName).join(', ')) + '</li>');

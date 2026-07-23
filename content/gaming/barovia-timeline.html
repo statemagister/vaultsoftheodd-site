@@ -41,6 +41,14 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
 .tl-vguide { position: absolute; top: 0; width: 1px; background: rgba(201,162,75,0.06); z-index: 1; }
 .tl-vcentury { position: absolute; top: 0; width: 1px; background: rgba(201,162,75,0.2); z-index: 1; }
 .tl-settingband { position: absolute; top: 0; width: 0; border-left: 1px dashed; opacity: 0.6; z-index: 4; }
+/* The demiplane era: from the year Barovia enters the Mists onward, a red wash
+   marks the bloody age of Ravenloft. The boundary is the moment the world turns. */
+.tl-era-mists { position: absolute; top: 0; z-index: 0; pointer-events: none; background: linear-gradient(90deg, rgba(192,85,58,0.20), rgba(150,52,40,0.08) 42%, rgba(150,52,40,0.055)); }
+.tl-era-line { position: absolute; top: 0; width: 0; z-index: 5; border-left: 2px solid rgba(192,85,58,0.7); box-shadow: 0 0 12px rgba(192,85,58,0.45); pointer-events: none; }
+.tl-era-tag { position: absolute; top: 3px; transform: translateX(-50%); z-index: 15; font-family: var(--display); font-size: 0.55rem; letter-spacing: 0.06em; text-transform: uppercase; color: #e6a99b; background: var(--bg); padding: 2px 7px; border: 1px solid rgba(192,85,58,0.55); border-radius: 3px; white-space: nowrap; pointer-events: none; }
+.tl-readera { position: absolute; left: 0; top: 40px; transform: translateX(-50%); z-index: 21; font-family: var(--display); font-size: 0.55rem; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; padding: 1px 7px; border-radius: 3px; background: var(--bg); }
+.tl-readera.is-mists { color: #e6a99b; border: 1px solid rgba(192,85,58,0.55); }
+.tl-readera.is-world { color: var(--text-muted); border: 1px solid var(--rule); }
 .tl-xtick { position: absolute; top: 2px; transform: translateX(-50%); font-family: var(--display); font-size: 0.58rem; color: var(--text-muted); z-index: 6; }
 .tl-xev { position: absolute; top: 2px; transform: translateX(-50%); font-family: var(--display); font-size: 0.58rem; color: var(--gold); z-index: 6; }
 
@@ -7080,6 +7088,10 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
   // the record reaches; it does not enter the Mists until 351 (enters_ravenloft).
   // Anything that reasons about "before Ravenloft" must use this, not `starts`.
   function entersRav(l) { return (l && l.enters_ravenloft != null) ? l.enters_ravenloft : (l ? l.starts : null); }
+  // The year the world itself enters the Mists (the core spine's entry). The
+  // demiplane era runs from here; before it is the kingdom's own history.
+  var spineLine = null; ordered.forEach(function (l) { if (l.kind === 'core-spine') spineLine = l; });
+  var mistYear = spineLine ? entersRav(spineLine) : null;
 
   var linePre = {};
   ordered.forEach(function (l) {
@@ -7222,6 +7234,9 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
   var reader = document.getElementById('tlReader');
   var readTag = document.getElementById('tlReadTag');
   var readSub = document.getElementById('tlReadSub');
+  // A persistent era cue at the reader line: which side of the Mists you are on,
+  // always visible so it needn't be restated on every entry.
+  var readEra = document.createElement('div'); readEra.className = 'tl-readera'; reader.appendChild(readEra);
   function px(v) { return v + 'px'; }
   function mk(cls, parent) { var d = document.createElement('div'); if (cls) d.className = cls; if (parent) parent.appendChild(d); return d; }
 
@@ -7231,6 +7246,16 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     var fieldW = padLeft + (maxY - minY) * PXX + 120;
     field.style.width = px(fieldW); field.style.height = px(fieldH);
     reader.style.left = px(focalX);
+
+    // The demiplane era: a red wash from the Mists-entry year to the end, a
+    // boundary line at the moment the world turns, and a tag naming it. Says
+    // once, continuously and visibly, what the per-event pre-note was repeating.
+    if (mistYear != null) {
+      var mistX = xFor(mistYear);
+      var wash = mk('tl-era-mists', field); wash.style.left = px(mistX); wash.style.width = px(Math.max(0, fieldW - mistX)); wash.style.height = px(fieldH);
+      var eline = mk('tl-era-line', field); eline.style.left = px(mistX); eline.style.height = px(fieldH);
+      var etag = mk('tl-era-tag', field); etag.textContent = 'Enters the Mists · ' + mistYear; etag.style.left = px(mistX);
+    }
 
     var eventYears = {}; renderableEvents.forEach(function (e) { eventYears[e.year] = true; });
     var xLabels = [];
@@ -7653,13 +7678,13 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     h += '<h3 class="tl-ptitle">' + esc(e.title) + '</h3>';
     h += '<p class="tl-status"><span class="tl-badge" style="background:' + tierColor(e.tier) + '">' + esc(e.tier) + '</span>' + esc(st.label) + '</p>';
     h += '<p class="tl-gloss">' + esc(st.blurb) + '</p>';
+    // The core spine's pre-Mists era is shown continuously by the era wash and
+    // boundary at 351, so it is not restated per event. Other domains, whose
+    // pre-formation events are few, still get a one-line note.
     var preLn = lineById[e.line], preEntry = preLn ? entersRav(preLn) : null;
-    if (e.scope === 'single' && preLn && preEntry != null && e.year < preEntry) {
+    if (e.scope === 'single' && preLn && preLn.kind !== 'core-spine' && preEntry != null && e.year < preEntry) {
       var preText;
-      if (preLn.kind === 'core-spine') {
-        // Barovia is the world itself, not a domain that joined from elsewhere.
-        preText = 'Before the Mists: this is the kingdom&rsquo;s own history, on its own world. Barovia does not enter Ravenloft until ' + esc(preEntry) + ', when Strahd&rsquo;s bargain turns him and the wedding falls &mdash; only then does the world become the first Domain of Dread. Everything before is history; everything after is the demiplane.';
-      } else if (preLn.kind === 'same-world-time-displaced') {
+      if (preLn.kind === 'same-world-time-displaced') {
         preText = 'Before Ravenloft: this happens in ' + esc(preLn.label) + '&rsquo;s own time. ' + esc(preLn.label) + ' is the same world displaced in time; its history runs in parallel and joins the Barovian calendar at ' + esc(preEntry) + '.';
       } else {
         preText = 'Before Ravenloft: this happens in ' + esc(preLn.label) + '&rsquo;s own time, before it entered Ravenloft in ' + esc(preEntry) + '; its line joins the Barovian calendar then.';
@@ -7839,6 +7864,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
     var evs = renderableEvents.filter(function (e) { return e.year === y; });
     if (evs.length) { reader.style.borderLeftColor = tierColor(evs[0].tier); readSub.textContent = evs.length > 1 ? (evs.length + ' events') : evs[0].title; }
     else { var living = livingIn(y).length; reader.style.borderLeftColor = 'var(--gold-bright)'; readSub.textContent = living + (living === 1 ? ' soul living' : ' souls living'); }
+    if (mistYear != null) { var inMists = y >= mistYear; readEra.textContent = inMists ? 'In the Mists' : 'The kingdom’s world'; readEra.className = 'tl-readera ' + (inMists ? 'is-mists' : 'is-world'); readEra.hidden = false; }
+    else readEra.hidden = true;
   }
   function onScroll() { var y = yearFromScroll(); updateReader(y); if (y !== currentYear) { currentYear = y; updateNameBars(y); renderYear(y); } }
   stage.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; onScroll(); }); } });

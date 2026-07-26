@@ -11,7 +11,7 @@ pdf: "/papers/griffiths-welsh-income-protection-endowment-july-2026.pdf"
 prereq: "A standalone discussion paper, not part of the Framework series above. It proposes a specific devolved-competence institution — a Welsh Income Protection Endowment — and reads independently of that work."
 ---
 
-*This paper grounds its financial model in published Welsh labour-market data. All costings are illustrative and depend on the stated assumptions, above all the claim rate and the investment return, which are presented as ranges for an independent actuarial feasibility study to pin down. The purpose of this paper is to make the case for commissioning that study, not to fix a final design.*
+*This paper sets out the case for a permanent, largely self-financing Welsh capital institution to protect workers' incomes after redundancy or lost hours, and argues that its establishment should be tested through an independent actuarial feasibility study. It is offered as analysis and as a starting point for that examination, not as a finished plan.*
 
 ## 1. Executive summary
 

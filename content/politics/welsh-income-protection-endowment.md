@@ -3,6 +3,7 @@ title: "A Welsh Income Protection Endowment"
 subtitle: "Building a permanent, self-financing Welsh institution to end the Universal Credit cliff-edge"
 slug: "welsh-income-protection-endowment"
 date: 2026-07-21T09:10:00Z
+updated: 2026-07-26
 weight: 55
 series: "standalone"
 summary: "A proposal for a permanent, largely self-financing Welsh capital institution that protects workers' incomes after redundancy or lost hours, funded by a temporary hypothecated penny on the Welsh basic rate of income tax. Once the fund's own investment returns cover claims and keep the corpus growing, the levy stops and the institution runs in perpetuity on its returns. Offered as analysis and a case for an independent actuarial feasibility study, not a finished plan."
@@ -10,27 +11,27 @@ pdf: "/papers/griffiths-welsh-income-protection-endowment-july-2026.pdf"
 prereq: "A standalone discussion paper, not part of the Framework series above. It proposes a specific devolved-competence institution — a Welsh Income Protection Endowment — and reads independently of that work."
 ---
 
-*This paper sets out the case for a permanent, largely self-financing Welsh capital institution to protect workers' incomes after redundancy or lost hours, and argues that its establishment should be tested through an independent actuarial feasibility study. It is offered as analysis and as a starting point for that examination, not as a finished plan.*
-
-*Discussion paper — July 2026*
+*This paper grounds its financial model in published Welsh labour-market data. All costings are illustrative and depend on the stated assumptions, above all the claim rate and the investment return, which are presented as ranges for an independent actuarial feasibility study to pin down. The purpose of this paper is to make the case for commissioning that study, not to fix a final design.*
 
 ## 1. Executive summary
 
-This paper proposes a Welsh Income Protection Endowment: a permanent capital fund that pays a time-limited income top-up to Welsh workers who lose their job or their hours, so that an ordinary setback does not mean an immediate fall to Universal Credit.
+This paper proposes a **Welsh Income Protection Endowment**: a permanent capital fund that pays a time-limited income top-up to Welsh workers who lose their job or their hours, so that an ordinary setback does not mean an immediate fall to Universal Credit.
 
-The central claim is worth stating plainly at the outset. **This is not a permanent new tax.** It is a temporary levy that builds a permanent asset. A penny on the Welsh basic rate of income tax is collected only for as long as it takes to build the fund. Once the corpus is large enough that its investment income covers claims and keeps the fund growing, the levy stops, and the institution runs in perpetuity on its own returns. Workers pay in for a bounded period; the fund then protects every future generation without further contribution. It is the difference between renting a safety net forever and buying one once.
+**The central claim is worth stating plainly at the outset. This is not a permanent new tax. It is a temporary levy that builds a permanent asset.** A penny on the Welsh basic rate of income tax is collected only for as long as it takes to build the fund. Once the corpus is large enough that its investment income covers claims and keeps the fund growing, the levy stops, and the institution runs in perpetuity on its own returns. Workers pay in for a bounded period; the fund then protects every future generation without further contribution. It is the difference between renting a safety net forever and buying one once.
 
-Help is immediate, not deferred. From its first year, after a short qualifying period, the fund pays income bridges to workers who lose their job or hours, meeting them in the early years from the levy, the seed's income and modest capital drawdown. The core protection the scheme exists to provide is available from the start. What builds over time is only the end-of-working-life reward, which cannot be paid before there is surplus to pay it from. No one waits years for the help itself.
+**Help is immediate, not deferred.** From its first year, after a short qualifying period, the fund pays income bridges to workers who lose their job or hours, meeting them in the early years from the levy, the seed's income and modest capital drawdown. The core protection the scheme exists to provide is available from the start. What builds over time is only the end-of-working-life reward, which cannot be paid before there is surplus to pay it from. No one waits years for the help itself.
 
-The design is shaped by the single structural fact that constrains Welsh policy: Wales controls its own income tax rate, its primary legislation and its public bodies, but not National Insurance, large-scale borrowing, or the wider tax base. This scheme needs none of those reserved powers. It is therefore as much a proposal about institution building as about social security: it uses the powers Wales has to create a permanent, independent, self-financing national financial institution.
+The design is shaped by the single structural fact that constrains Welsh policy: Wales controls its own income tax rate, its primary legislation and its public bodies, but not National Insurance, large-scale borrowing, or the wider tax base. This scheme needs none of those reserved powers. It is therefore as much a proposal about **institution building** as about social security: it uses the powers Wales has to create a permanent, independent, self-financing national financial institution.
 
 The fund passes through three milestones, each a level of accumulated capital rather than a fixed date:
 
 1. **Income covers claims**, at a corpus of around £4.2bn. From here the fund's own returns meet the cost of claims.
-2. **The levy can stop**, at around £6.3bn. From here income covers claims and still leaves enough to keep the fund growing in step with the economy, so contributions are no longer needed.
-3. **The target is reached.** The size the fund is built to before the levy stops sets the perpetual reward paid to lifelong contributors: a modest fund of around £12bn supports a reward worth roughly a third of average earnings; a larger fund of around £20bn supports the maximum reward, capped at 75–80% of average earnings.
+2. **The levy can stop.** The average-case break-even, where income covers claims and keeps the fund growing in step with the economy, is around £6.3bn. Because the fund's promise is to grow through bad times and not only average ones, the level at which the levy can safely and permanently stop is higher, by a reserve the feasibility study must size; that reserve, not the break-even, is the true stopping point.
+3. **The target is reached.** The size the fund is built to before the levy stops sets the perpetual reward paid to lifelong contributors: a modest fund of around £12bn supports a reward worth roughly a third of average earnings; a larger fund of around £20bn supports the maximum reward, capped at 75-80% of average earnings.
 
-How fast the fund climbs through these milestones, and therefore how long the levy lasts, depends on five policy levers set out in Section 5: the initial capital seed, the contribution rate and its duration, the investment return, the claim rate, and the target size. On conservative central assumptions, a single penny with a £1bn seed reaches the point where the levy can stop within about four decades; a larger seed or a temporary second penny compresses that to around two decades, comfortably within a single working generation.
+How fast the fund climbs through these milestones, and therefore how long the levy lasts, depends on five policy levers set out in section 5: the initial capital seed, the contribution rate and its duration, the investment return, the claim rate, and the target size. On conservative central assumptions, a single penny with a £1bn seed reaches the point where the levy can stop within about four decades; a larger seed or a temporary second penny compresses that to around two decades, comfortably within a single working generation.
+
+---
 
 ## 2. The problem this solves
 
@@ -38,9 +39,13 @@ The Welsh Government's own evidence base points to the failure this addresses. T
 
 The UK's contributory safety net has thinned. Universal Credit provides a flat, low, means-tested floor with little relationship to what a person earned or contributed. There is no meaningful earnings-related unemployment insurance of the kind common in Denmark, Germany or France. Wales cannot rebuild that through National Insurance, because NI is reserved. It can, however, build a devolved equivalent using the lever it does control.
 
+---
+
 ## 3. The proposal in one paragraph
 
 A statutory Welsh Income Protection Fund is built by a hypothecated penny of the Welsh basic rate of income tax, collected temporarily. During the build phase the fund pays a capped, tapering, time-limited top-up above Universal Credit to workers who lose hours or their job after a qualifying contribution period, and retains everything else to grow. Once the corpus is large enough that investment income covers claims and keeps the fund growing, the levy ends. Thereafter the fund runs in perpetuity on its returns, under a strict rule that payouts always stay below income so the corpus continues to grow. Beyond meeting claims, the fund returns a share of its surplus, at the end of each member's working life, to those who contributed throughout but claimed least, capped so no individual reward can ever reach a destabilising size. Entitlement is earned by contribution and involuntary loss of work, not by holding a Universal Credit claim.
+
+---
 
 ## 4. How it works: the design pillars
 
@@ -50,83 +55,85 @@ A statutory Welsh Income Protection Fund is built by a hypothecated penny of the
 
 **Entitlement earned by contribution, not by a Universal Credit claim.** Eligibility follows the qualifying event, involuntary loss of work together with the contribution record, not a live UC award. A contributor barred from UC by savings or a partner's earnings, or who chooses not to claim, still receives the fund's own top-up portion. The fund never fills the UC layer a person has not claimed, so its liability per person is identical in every case and the cost model is unchanged; only the number who can claim is affected.
 
-**Protect immediately, reward modestly then generously.** The fund pays income bridges from its first year, after the short qualifying period, so the core protection is immediate rather than deferred, met early on from the levy, the seed's income and modest capital drawdown. What builds over time is the end-of-working-life reward. Even that need not be nothing at first: the fund can pay a small, capped reward during the build phase and raise it as the corpus matures. Retaining the larger share of surplus while building is what grows the fund fastest, so there is a genuine trade-off between early reward generosity and speed to self-funding, and the illustrative build times in Section 5 assume full retention and would lengthen somewhat if a larger early reward were chosen. The earliest cohorts still receive the smallest reward, the honest cost of any funded scheme starting from zero, which is the main reason the initial seed matters.
+**Protect immediately, reward modestly then generously.** The fund pays income bridges from its first year, after the short qualifying period, so the core protection is immediate rather than deferred, met early on from the levy, the seed's income and modest capital drawdown. What builds over time is the end-of-working-life reward. Even that need not be nothing at first: the fund can pay a small, capped reward during the build phase and raise it as the corpus matures. Retaining the larger share of surplus while building is what grows the fund fastest, so there is a genuine trade-off between early reward generosity and speed to self-funding, and the illustrative build times in section 5 assume full retention and would lengthen somewhat if a larger early reward were chosen. The earliest cohorts still receive the smallest reward, the honest cost of any funded scheme starting from zero, which is the main reason the initial seed matters.
 
 **Payouts always below income, so the fund always grows.** Once mature, the fund follows a simple rule: total payments out, claims plus reward, never exceed the fund's income, so the corpus grows every year. Because claims are indexed to earnings and therefore rise at roughly 1.2% a year in real terms, the fund must retain more than that to genuinely pull ahead of its liabilities; a token retention is overtaken by rising claims. Retaining above the claim-growth rate produces the compounding, accelerating growth the institution depends on, and is comfortably achievable once the fund is large.
 
-**A capped reward for lifelong contribution.** A share of the mature fund's surplus is returned at the end of each member's working life, weighted so lifelong non-claimers receive the most. No one's contributions are returned; what is returned is a share of the interest the capital earned. The individual reward is capped at 75–80% of average earnings, indexed, so it can never grow into a destabilising windfall however large the fund becomes. Any surplus above the cap is retained in the corpus by default, which is itself part of what keeps the fund growing.
+**A capped reward for lifelong contribution.** A share of the mature fund's surplus is returned at the end of each member's working life, weighted so lifelong non-claimers receive the most. No one's contributions are returned; what is returned is a share of the interest the capital earned. The individual reward is capped at 75-80% of average earnings, indexed, so it can never grow into a destabilising windfall however large the fund becomes. Any surplus above the cap is retained in the corpus by default, which is itself part of what keeps the fund growing.
 
 **Coverage for the gig economy.** Self-employed and gig workers earning above the personal allowance already pay Welsh income tax and are inside the pool. For those below the threshold, a flat voluntary contribution modelled on voluntary Class 2 National Insurance lets them buy in and preserve entitlement.
+
+---
 
 ## 5. The costed model: three milestones and five levers
 
 The model runs in constant 2026 pounds, on inputs drawn from published Welsh administrative data:
 
-**Table 1. Core model inputs, drawn from published Welsh administrative data**
-
 | Input | Value | Source |
-| --- | --- | --- |
+|---|---|---|
 | Welsh taxpayers | 1.6 million | HMRC / National Audit Office |
-| People in employment in Wales | approx. 1.47 million | Welsh Govt, Annual Population Survey |
+| People in employment in Wales | approx 1.47 million | Welsh Govt, Annual Population Survey |
 | Median full-time gross earnings | £35,796 / year | ASHE 2025 |
 | Basic-rate share of taxpayers | 89% | National Audit Office |
-| Revenue from 1p on the basic rate | approx. £300 million/year (conservative) | Welsh Govt / HMRC ready reckoner 2026–27 |
+| Revenue from 1p on the basic rate | approx £300 million/year (conservative) | Welsh Govt / HMRC ready reckoner 2026-27 |
 
-The revenue figure warrants a word. The current Welsh Government and HMRC ready reckoner for 2026–27 estimates that a penny on the basic rate raises about £311 million, a figure corroborated by the Institute for Fiscal Studies. This paper adopts a deliberately conservative £300 million, slightly below the official estimate, and notes that this is an OBR-based forecast a downturn would reduce; the contribution is therefore itself a parameter the feasibility study should keep under review.
+The revenue figure warrants a word. The current Welsh Government and HMRC ready reckoner for 2026-27 estimates that a penny on the basic rate raises about £311 million, a figure corroborated by the Institute for Fiscal Studies. This paper adopts a deliberately conservative £300 million, slightly below the official estimate, and notes that this is an OBR-based forecast a downturn would reduce; the contribution is therefore itself a parameter the feasibility study should keep under review.
 
 Two inputs are assumptions rather than published facts, and they dominate the result, so both are treated as ranges for the study to settle:
 
-- The **qualifying-claim rate**, the share of covered workers making a valid claim in a normal year, modelled across 3% to 5%, with 4% as the central case. This is the single most important number in the model.
-- The **real investment return**, modelled across 3.5% to 5.5% real (roughly 6% to 8% nominal), with the conservative 3.5% to 4% real as the planning case, for reasons given below.
+- **The qualifying-claim rate**, the share of covered workers making a valid claim in a normal year, modelled across **3% to 5%**, with 4% as the central case. This is the single most important number in the model.
+- **The real investment return**, modelled across **3.5% to 5.5% real** (roughly 6% to 8% nominal), with the conservative **3.5% to 4% real** as the planning case, for reasons given below.
 
-How to read the figures that follow (described here in place of the original charts, which are reproduced in the downloadable PDF). Two things are held fixed as modelling assumptions, the claim rate and the return, shown at their central values unless stated. Everything the figures then vary — the seed, the contribution rate and its duration, and the build target — is a policy choice, illustrating the range available to ministers rather than recommending a figure.
+**How to read the figures that follow** (described here in place of the original charts, which are reproduced in the downloadable PDF). Two things are held fixed as modelling assumptions, the claim rate and the return, shown at their central values unless stated. Everything the charts then vary, the seed, the contribution rate and its duration, and the build target, is a policy choice, shown to illustrate the range available to ministers rather than to recommend a figure. Each figure caption states which is which.
 
 ### The three milestones
 
-*Figure 1 (see PDF): the corrected design — a temporary levy builds the fund, then stops. Each line is a policy choice of seed and contribution; all are modelled on the central assumptions (4% claims, 3.5% real return).*
+*Figure 1 (see PDF): The corrected design: a temporary levy builds the fund, then stops. Each line is a policy choice of seed and contribution; all are modelled on the central assumptions (4% claims, 3.5% real return).*
 
-The fund is not built to a single self-financing date but through three levels of capital. Investment income first covers claims at a corpus of around £4.2bn. The levy can stop at around £6.3bn, the point at which income covers claims and still leaves enough to keep the fund growing in step with earnings-indexed claims. Below that level the levy cannot safely stop, because income alone cannot both meet claims and keep pace with their growth. The third milestone, the size the fund is built to before stopping, sets the perpetual reward.
+The fund is not built to a single self-financing date but through three levels of capital. Investment income first covers claims at a corpus of around **£4.2bn**. The levy can stop at around **£6.3bn**, the point at which income covers claims and still leaves enough to keep the fund growing in step with earnings-indexed claims. That figure, though, is a break-even computed under average conditions, and the fund's promise is stronger than an average: that it keeps growing through bad sequences, not only typical ones. A threshold meant to guarantee growth in adverse conditions cannot be derived from average-case arithmetic, so the level at which the levy can safely and permanently stop is higher than £6.3bn by a reserve margin, plausibly several billion pounds, though the figure depends on how sharply claims rise with unemployment through a prolonged downturn, which only the feasibility study can establish. That reserve is the one the governance waterfall already names (section 8) but does not size. The third milestone, the size the fund is built to before stopping, sets the perpetual reward, and is therefore constrained by solvency as well as by generosity: the target must be at least large enough to hold through adverse sequences, which may place the prudent minimum above the modest illustrative target used here.
 
 ### The five levers
 
 The date the levy ends is set by five choices, each a policy variable rather than a fixed number, and each shown to the feasibility study as a range with the conservative end as the planning case.
 
-The **initial seed** has disproportionate power, because it compounds from year one across the fund's entire life, whereas a penny collected late compounds only briefly. A larger seed clears the milestones sooner, raises the base for all subsequent compounding, and brings forward the point at which the fund's growth outruns its claims. It is the single most effective lever, bounded only by what the government can commit as capital. Its returns diminish at the top end, so there is a sweet spot rather than an unlimited case for more.
+**The initial seed** has disproportionate power, because it compounds from year one across the fund's entire life, whereas a penny collected late compounds only briefly. A larger seed clears the milestones sooner, raises the base for all subsequent compounding, and brings forward the point at which the fund's growth outruns its claims. It is the single most effective lever, bounded only by what the government can commit as capital. Its returns diminish at the top end, so there is a sweet spot rather than an unlimited case for more.
 
-The **contribution rate and its duration** set how fast the fund climbs. A single penny is the modest, politically easy version but implies a long levy; a temporary second or third penny compresses the build sharply at the cost of a heavier, more regressive contribution while it lasts.
+**The contribution rate and its duration** set how fast the fund climbs. A single penny is the modest, politically easy version but implies a long levy; a temporary second or third penny compresses the build sharply at the cost of a heavier, more regressive contribution while it lasts.
 
-The **investment return** is powerful but must be assumed conservatively, addressed below.
+**The investment return** is powerful but must be assumed conservatively, addressed below.
 
-The **claim rate** is the dominant uncertainty: at 3% the fund matures far sooner, at 5% far later.
+**The claim rate** is the dominant uncertainty: at 3% the fund matures far sooner, at 5% far later.
 
-The **build target** sets the reward: around £12bn supports a reward of roughly a third of average earnings; around £20bn supports the 75–80% maximum.
+**The build target** sets the reward: around £12bn supports a reward of roughly a third of average earnings; around £20bn supports the 75-80% maximum.
 
-*Figure 2 (see PDF): levers — years of contribution before the levy can stop. The seed and contribution rate are policy choices; the years shown are modelled outcomes on the central assumptions.*
+*Figure 2 (see PDF): Levers: years of contribution before the levy can stop. The seed and contribution rate are policy choices; the years shown are modelled outcomes on the central assumptions.*
 
-Building a £12bn fund and then stopping the levy takes about 39 years on a single penny with a £1bn seed, about 29 years with a £3bn seed, about 21 years with a £5bn seed, and about 19 years on a temporary second penny. The generous 75–80% reward, which needs a larger fund of around £20bn, takes correspondingly longer or a heavier contribution. This is the honest trade-off at the heart of the design: a larger perpetual reward requires a larger fund, which requires more contribution, whether a higher penny or a longer levy. There is no version in which a small, brief contribution yields a large permanent reward, because the reward is simply the income earned on accumulated capital.
+Building a £12bn fund and then stopping the levy takes about 39 years on a single penny with a £1bn seed, about 29 years with a £3bn seed, about 21 years with a £5bn seed, and about 19 years on a temporary second penny. The generous 75-80% reward, which needs a larger fund of around £20bn, takes correspondingly longer or a heavier contribution. This is the honest trade-off at the heart of the design: a larger perpetual reward requires a larger fund, which requires more contribution, whether a higher penny or a longer levy. There is no version in which a small, brief contribution yields a large permanent reward, because the reward is simply the income earned on accumulated capital.
 
 ### Why the return must be assumed conservatively
 
-A higher return helps considerably: at 4.5% real the fund reaches any given milestone sooner and the generous reward needs a smaller build. But the return cannot be planned at the optimistic end, for three linked reasons. Returns are volatile, and lost decades happen. The years returns fail are the recession years, which are the high-claim years, so the downturn that halves returns is the same downturn that doubles claims. And reliably chasing 8% nominal requires an equity-heavy, higher-risk portfolio, which is the wrong risk profile for a fund that must pay out most in downturns; Norway's sovereign fund plans on roughly 3% real, not 5.5%. The prudent course is to plan on 3.5 to 4% real and treat anything above as upside that ends the levy sooner or funds a larger reward, never as a load-bearing assumption.
+A higher return helps considerably: at 4.5% real the fund reaches any given milestone sooner and the generous reward needs a smaller build. But the return cannot be planned at the optimistic end, for three linked reasons. Returns are volatile, and lost decades happen. The interaction with claims is also worse than a single bad year would suggest, though not in the obvious way: equity markets lead the economic cycle while unemployment lags, so a crash tends to arrive before claims rise and markets recover while unemployment is still elevated. The fund therefore meets a stretch of high claims not out of one bad year's return but out of capital lost in an earlier fall, across the several years of recovery during which unemployment stays high. It is that overlap of a multi-year drawdown with multi-year elevated claims, rather than a single coincident year, that a conservative return assumption guards against. And reliably chasing 8% nominal requires an equity-heavy, higher-risk portfolio, which is the wrong risk profile for a fund that must pay out most in downturns; Norway's sovereign fund plans on roughly 3% real, not 5.5%. The prudent course is to plan on 3.5 to 4% real and treat anything above as upside that ends the levy sooner or funds a larger reward, never as a load-bearing assumption.
+
+---
 
 ## 6. Stress testing
 
 The corrected design faces a harder test than a permanent levy would, because once the penny stops a recession must be absorbed by investment income and the fund itself, with no contribution coming in. The model was run against four severe scenarios, with the shocks deliberately placed after the levy has ended.
 
-*Figure 3 (see PDF): stress tests on the corrected design. Illustrative modelling on the stated assumptions, not a policy choice; the shocks are placed after the levy has ended, which is the harder test.*
+*Figure 3 (see PDF): Stress tests on the corrected design. Illustrative modelling on the stated assumptions, not a policy choice; the shocks are placed after the levy has ended, which is the harder test.*
 
-Under the deterministic assumptions used here, the corpus stays positive and claims remain payable throughout each illustrative scenario. It dips and recovers rather than failing, because by the time the levy stops the fund is large enough that claims, even doubled in a recession, are small against the corpus, and the reward is discretionary, so it falls to zero in a bad year and absorbs the shock while claims continue to be paid. This is a result within a deterministic model, not a probabilistic guarantee; establishing a confidence level requires the stochastic modelling described in Appendix D.
-
-**Table 2. Illustrative stress-test scenarios and outcomes (corrected build-then-stop design)**
+*Under the deterministic assumptions used here, the corpus stays positive and claims remain payable throughout each illustrative scenario. It dips and recovers rather than failing, because by the time the levy stops the fund is large enough that claims, even doubled in a recession, are small against the corpus, and the reward is discretionary, so it falls to zero in a bad year and absorbs the shock while claims continue to be paid. This is a result within a deterministic model, not a probabilistic guarantee; establishing a confidence level requires the stochastic modelling described in Appendix D.*
 
 | Scenario | What was modelled | Result |
-| --- | --- | --- |
+|---|---|---|
 | 2008-scale | A five-year deep recession with a market crash, a decade after the levy ended | Corpus stays positive; claims payable; recovers and grows |
 | COVID-scale | A single sharp claims spike with a market fall and rebound, after the levy ended | Corpus stays positive; claims payable |
 | Prolonged stagnation | A decade of elevated claims and low returns, after the levy ended | Corpus stays positive; claims payable |
 | Depression after stop | A deep multi-year depression striking the year the levy ended, the hardest case | Corpus stays positive; claims payable |
 
 As before, this demonstrates that the design's mechanisms respond as intended under the assumptions used; it does not prove real-world survival, which depends on the claim rate and recession parameters an actuarial study must test against genuine historical data. A by-product worth noting: because the reward is capped, the surplus above the cap keeps compounding once the fund is mature, so the corpus continues to grow well past its build target over the long run, which is what gives the institution its resilience.
+
+---
 
 ## 7. Why capitalise an endowment rather than spend the money
 
@@ -136,6 +143,8 @@ Conventional spending is consumed. One billion pounds spent in the ordinary way 
 
 In the temporary-levy design the seed does even more work, because its effect compounds across the fund's whole life and pulls forward the moment the fund's growth outruns its claims and the levy can end. A larger seed does not merely add its own value; it shortens the period for which any Welsh worker has to pay the penny at all. The honest counterweight is that the seed is capital the government must find up front against a fixed budget, and that in year one the alternative uses of that money deliver visible services while the fund delivers little. The case rests on the long horizon, and on the fact that, uniquely among spending choices, the asset is retained.
 
+---
+
 ## 8. Governance: rules, not discretion
 
 A protected capital fund lives or dies by its governance, because the proposition depends on the corpus surviving decades of political and economic pressure. The design borrows from central banking: the hardest decisions are governed by pre-legislated automatic rules rather than ministerial discretion.
@@ -144,7 +153,7 @@ A protected capital fund lives or dies by its governance, because the propositio
 
 **Protection from raiding.** The corpus is ring-fenced in statute, drawable only against defined, published triggers, and never for general spending. Diversion would require primary legislation and an affirmative Senedd vote, making a raid a visible, debated act rather than a quiet transfer. Because the fund is members' money held in trust, governed by independent trustees with a duty to resist diversion, and reported annually to the Senedd, a raid is not a budget adjustment but the confiscation of identifiable citizens' entitlements, which is what actually deters it. No statute is absolutely raid-proof against a determined majority; the defences make a raid slow, visible, and politically costly rather than impossible.
 
-**The waterfall.** Surplus is applied in strict order: claims first and in full; then the growth retention that keeps the corpus rising at least in step with earnings-indexed claims; then a reserve; and only the residual to member rewards, subject to the individual cap. The corpus itself is never capped at a set size, because a fund prevented from growing has no headroom to absorb sustained pressure. What is capped is the reward.
+**The waterfall.** Surplus is applied in strict order: claims first and in full; then the growth retention that keeps the corpus rising at least in step with earnings-indexed claims; then a reserve; and only the residual to member rewards, subject to the individual cap. The reserve is what makes the fund's growth robust rather than merely average-case. Because the promise is that the corpus keeps growing through bad sequences and not only typical ones, the reserve must be sized by the same criterion as the guarantee it provides, against adverse runs rather than against a mean-case break-even. Its size, and with it the true level at which the levy can permanently stop, is a central question for the feasibility study rather than something this paper fixes. The corpus itself is never capped at a set size, because a fund prevented from growing has no headroom to absorb sustained pressure. What is capped is the reward.
 
 **Two phases, two rules.** During the build phase the fund pays claims in full from the first year and retains the larger share of remaining surplus to reach its target as fast as possible, paying at most a small, capped reward. In the mature phase it pays the full capped reward and retains the rest, always keeping payouts below income so the fund continues to grow. The transition between them, the end of the levy, is itself a rules-based trigger: the levy ends automatically once the corpus has cleared the stopping milestone and income demonstrably covers claims and growth.
 
@@ -152,18 +161,20 @@ A protected capital fund lives or dies by its governance, because the propositio
 
 **Latent capacity to expand.** The institution may in future take on related contributory risks, such as sickness or parental-leave income, but only tier by tier, each new risk arriving with its own dedicated, ring-fenced contribution and its own walled account, never by diverting the existing corpus. Expansion by accretion is permitted; expansion by dilution is not. This expandability is itself part of the fund's durability, because it gives a future government a legitimate, in-structure way to do more, and so reduces the pressure to raid.
 
+---
+
 ## 9. Comparison with existing approaches
 
-**Table 3. The Endowment compared with the current approach**
-
 | Universal Credit and general welfare | Welsh Income Protection Endowment |
-| --- | --- |
+|---|---|
 | Funded from annual expenditure, forever | Built by a temporary levy, then self-funding in perpetuity |
 | Treasury-funded without end | The state's role is a bounded levy and a one-off seed, not a recurring cost |
 | Vulnerable to cuts in every fiscal round | Corpus legally protected, drawable only against defined triggers |
 | Pure redistribution: this year's taxes fund this year's payments | Collective insurance plus investment: contributions accumulate as permanent capital |
 | A flat floor unrelated to contribution | Earnings-related bridge, contributory principle restored, capped reward for lifelong contribution |
 | No asset is built | A permanent, growing national capital asset accrues to the people of Wales |
+
+---
 
 ## 10. Constitutional dimension: this is institution building
 
@@ -173,26 +184,30 @@ Every mechanism sits within existing devolved competence. The contribution uses 
 
 The one genuine constraint is distributional and is stated plainly. Because around 89% of Welsh taxpayers are basic-rate payers and Wales cannot vary thresholds, the basic rate is the only lever that raises meaningful sums, so the levy falls on lower earners too. This is mitigated by the fact that it is temporary, that contributors and beneficiaries are substantially the same population, and that higher earners pay the penny while claiming proportionately less.
 
+---
+
 ## 11. Honest risks and limitations
 
 **The levy is temporary, but temporary still means decades.** On a single penny with a modest seed the fund reaches the point where the levy can stop in around four decades, within a working lifetime; a larger seed or a temporary second penny shortens this to around two decades. It is bounded and finite, but it is not quick.
 
 **The early cohorts get the smallest reward.** Income bridges are paid from the first year, so the core protection is immediate for everyone. What the earliest cohorts receive least of is the end-of-working-life reward, which is smallest while the corpus is young and grows as it matures. How much reward to pay early is a genuine trade-off against build speed, since every pound paid early is a pound not retained and so lengthens the levy. A modest early reward can be afforded at some cost to the build time; the seed is the main remedy.
 
-**The generous reward needs a large fund.** A reward at 75–80% of earnings requires building to around £20bn, which on a penny alone is a multi-generational project. The realistic reward on a single penny is closer to a third of average earnings. The 75–80% figure is a ceiling that prevents runaway, not a promise.
+**The generous reward needs a large fund.** A reward at 75-80% of earnings requires building to around £20bn, which on a penny alone is a multi-generational project. The realistic reward on a single penny is closer to a third of average earnings. The 75-80% figure is a ceiling that prevents runaway, not a promise.
 
 **Discipline is essential.** The whole design depends on the political will to end the levy at the right point, to retain surplus rather than distribute it, and never to raid the corpus. The statutory rules exist precisely because these choices are hard.
 
-**A depression could still stretch the fund.** Ordinary recessions are absorbed under the model's assumptions, as the stress tests show. A prolonged depression would reduce the reward to zero and draw on capital; the fund keeps claims payable by cutting its discretionary reward, but it does not abolish economic risk.
+**A depression could still stretch the fund.** Ordinary recessions are absorbed under the model's assumptions, as the stress tests show. The harder case is a prolonged one, in which a multi-year market drawdown overlaps several years of elevated claims; the fund would reduce the reward to zero and draw on capital, keeping claims payable by cutting its discretionary reward. This is precisely the case the stopping-point reserve exists to absorb, and the reason that reserve must be sized against adverse sequences rather than average ones. The fund protects itself by reducing what it pays, but it does not abolish economic risk.
 
 **Two numbers govern everything.** The claim rate and the investment return determine the whole timeline, and both are currently reasoned assumptions. Grounding them in official data is the essential next step before any figure here is relied upon.
+
+---
 
 ## 12. Implementation: from today to year one
 
 Before the operational machinery, three feasibility questions matter most. The scheme is legally feasible, since every mechanism sits within devolved competence. It is financially feasible on the terms of the model, built by a temporary penny and thereafter self-funding. And it is deliverable without a new bureaucracy, because it reuses HMRC for the contribution and contribution record and the Department for Work and Pensions for the income-loss determination, with the new fund handling only the top-up payment and the corpus. On that basis the sequence is:
 
 1. Publish this discussion paper.
-2. Commission the independent actuarial feasibility study (Section 13).
+2. Commission the independent actuarial feasibility study (section 13).
 3. If confirmed, introduce the Bill establishing the fund, trustees, mandate, rules-based triggers, hypothecation, and the automatic end of the levy.
 4. Royal Assent; appoint trustees; incorporate and staff the fund; agree the HMRC and DWP delivery arrangements.
 5. Transfer the seed; begin the levy at the following Budget.
@@ -200,13 +215,13 @@ Before the operational machinery, three feasibility questions matter most. The s
 
 The operational detail is set out in Appendix C.
 
+---
+
 ## 13. What this paper is actually asking for
 
 The endpoint is not an immediate request for legislation. It is a request to test the idea rigorously. The pathway is staged: publish this paper; commission an independent actuarial feasibility study; build the model on official HMRC, DWP and Welsh Government data, replacing this paper's assumed claim rate and return with real distributions; and only then, if the study confirms the broad picture, draft legislation and consult on the final parameters, above all the target size and the length of the levy.
 
 The Welsh Government is not being asked to accept one person's model. It is being asked to test, using data it alone can access, whether a scheme this promising is viable. If it is, the debate shifts from whether the idea is serious to how big to build the fund and how long to levy the penny. The prize is a permanent, self-funding Welsh institution that ends the Universal Credit cliff-edge for working people, rebuilds the contributory principle Wales was denied when National Insurance stayed reserved, rewards a lifetime of self-reliance, and leaves the Welsh balance sheet holding a lasting and growing national asset, all for a levy that one day ends.
-
-*Prepared as a discussion draft. The financial model behind every figure is available and can be re-run for any assumption the Welsh Government wishes to test.*
 
 <details class="annex" id="annex-a">
 <summary>Appendix A — Model assumptions</summary>

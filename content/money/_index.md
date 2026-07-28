@@ -1,6 +1,10 @@
 ---
 title: "Money"
 description: "A plain-language series about money — what it is for, how it behaves, and how to think about it when money is tight. A new article every Monday."
+# Money-specific social-share banner, cascaded to every article in the section.
+cascade:
+  images:
+    - /images/og-money.png
 # Reading order (weight 1-8) with each article's scheduled release date. The
 # list renders every entry as a dated teaser; once an article's date has
 # passed it is built and the entry becomes a live link. Titles/teasers here

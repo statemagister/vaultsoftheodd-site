@@ -117,6 +117,24 @@ body.theme-politics {
   --display: var(--body); /* restrained: drop the decorative display face */
 }
 
+/* ---- Money: sober "banker's green" on cool off-white — a coordinated
+   counterpart to Politics' slate-blue: same restrained, analytical register,
+   a different serious colour. Deep emerald reads as money and stays clear of
+   Stories' warm olive and Mythology's bright moss. ---- */
+body.theme-money {
+  --bg: #edf2ee;
+  --bg-alt: #e1eae3;
+  --bg-card: #ffffff;
+  --text-primary: #17251d;
+  --text-body: #24332b;
+  --text-muted: #566b60;
+  --gold: #2f6b53;
+  --gold-bright: #1f5540;
+  --rule: rgba(47, 107, 83, 0.30);
+  --rule-soft: rgba(23, 37, 29, 0.12);
+  --display: var(--body); /* restrained, like Politics — no decorative face */
+}
+
 /* ---- Stories: the light reverse of Mythology — pale olive parchment, deep moss ---- */
 body.theme-stories {
   --bg: #eef0e1;
@@ -203,6 +221,7 @@ h1, h2, h3, h4 { font-family: var(--display); color: var(--text-primary); line-h
 body.theme-gaming .post-title, body.theme-gaming .list-title,
 body.theme-stories .post-title, body.theme-stories .list-title,
 body.theme-mythology .post-title, body.theme-mythology .list-title,
+body.theme-money .post-title, body.theme-money .list-title,
 body.theme-politics .post-title, body.theme-politics .list-title { color: var(--gold); }
 
 img { max-width: 100%; height: auto; }

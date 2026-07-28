@@ -6,24 +6,36 @@
       {{- with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
     </header>
 
-    {{- /* Read in order: the list is sorted by weight (reading order), not by
-           publication date. Future-dated posts are not built, so the series
-           simply fills in toward 1-8 as each Monday's article goes live. Cards
-           use the article's own `description` as the teaser, never the body. */ -}}
-    {{- with .Pages.ByWeight }}
+    {{- /* Driven by the `schedule` (reading order, weight 1-8). Each entry is
+           a dated teaser; once its article's date has passed the page is built,
+           so we find it by slug and render the real, linked card instead. No
+           future content is built, listed in RSS, or indexed for search -- only
+           the title, teaser and date show ahead of time. */ -}}
+    {{- with .Params.schedule }}
     <ol class="reading-list">
       {{- range . }}
+      {{- $page := "" }}
+      {{- with (where site.RegularPages "RelPermalink" (printf "/money/%s/" .slug)) }}{{ $page = index . 0 }}{{ end }}
       <li>
-        <h3 class="rl-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-        {{- with .Params.subtitle }}<p class="rl-sub">{{ . }}</p>{{ end }}
-        {{- with .Description }}<p class="rl-lede">{{ . }}</p>{{ end }}
-        <p class="rl-date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
+        {{- if $page }}
+        <h3 class="rl-title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+        {{- with $page.Params.subtitle }}<p class="rl-sub">{{ . }}</p>{{ end }}
+        {{- with $page.Description }}<p class="rl-lede">{{ . }}</p>{{ end }}
+        <p class="rl-date"><time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "2 January 2006" }}</time></p>
+        {{- else }}
+        <h3 class="rl-title rl-upcoming">{{ .title }}</h3>
+        {{- with .subtitle }}<p class="rl-sub">{{ . }}</p>{{ end }}
+        {{- with .teaser }}<p class="rl-lede">{{ . }}</p>{{ end }}
+        <p class="rl-date rl-scheduled">Publishes {{ dateFormat "2 January 2006" .date }}</p>
+        {{- end }}
       </li>
       {{- end }}
     </ol>
-    {{- else }}
-    <p class="coming-soon">The first articles arrive on Monday 3 August 2026, and a new one appears every Monday after that.</p>
     {{- end }}
+
+    <aside class="money-questions">
+      <strong>Questions?</strong> There are no comments here &mdash; if something needs explaining or looks wrong, email <a href="mailto:contact&#64;vaultsoftheodd.com">contact&#64;vaultsoftheodd.com</a> and I&rsquo;ll read it.
+    </aside>
   </div>
 
   <aside class="post-aside" aria-label="Vault information">

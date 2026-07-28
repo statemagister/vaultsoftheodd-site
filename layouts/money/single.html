@@ -18,6 +18,10 @@
       <p class="fan-disclaimer">General information, not financial advice &mdash; see the note on <a href="/money/">the Money vault</a>. Rules and figures change; check the official sources linked in each article before acting.</p>
     </article>
 
+    <aside class="money-questions">
+      <strong>Questions?</strong> There are no comments here &mdash; if something needs explaining or looks wrong, email <a href="mailto:contact&#64;vaultsoftheodd.com">contact&#64;vaultsoftheodd.com</a> and I&rsquo;ll read it.
+    </aside>
+
     {{- /* Previous / next follow WEIGHT (reading order), never publication date:
            publication order is not reading order here. site.RegularPages omits
            future-dated posts, so the links point only to articles already live
@@ -41,8 +45,6 @@
       {{- with .Site.GetPage "/money" }}<a class="button ghost" href="{{ .RelPermalink }}">Back to {{ .Title }}</a>{{ end }}
       <a class="button ghost" href="/">Home</a>
     </div>
-
-    {{ partial "comments.html" . }}
   </div>
 
   <aside class="post-aside" aria-label="Article information">

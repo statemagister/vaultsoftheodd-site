@@ -12,12 +12,8 @@
     <nav id="site-nav" class="site-nav" aria-label="Primary">
       <ul>
         {{- range .Site.Menus.main }}
-        {{- if and (eq .Identifier "money") (not (where site.RegularPages "Section" "money")) }}
-        {{- /* Money stays out of the nav until its first article publishes (3 Aug 2026) */ -}}
-        {{- else }}
         {{- $active := or (eq $.RelPermalink .URL) (and (ne .URL "/") (hasPrefix $.RelPermalink .URL)) }}
         <li><a href="{{ .URL }}"{{ if $active }} class="active"{{ end }}>{{ .Name }}</a></li>
-        {{- end }}
         {{- end }}
       </ul>
     </nav>

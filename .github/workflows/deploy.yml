@@ -4,6 +4,13 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # Monday-morning rebuilds so scheduled posts publish on their date without
+    # a push. Hugo omits future-dated content, so a post appears at the first
+    # build after its timestamp. Two times cover UK daylight saving:
+    #   07:05 UTC = 08:05 BST (summer)   08:05 UTC = 08:05 GMT (winter)
+    - cron: '5 7 * * 1'
+    - cron: '5 8 * * 1'
 
 permissions:
   contents: read

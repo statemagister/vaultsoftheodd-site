@@ -3,6 +3,8 @@ languageCode = "en-gb"
 title = "Vaults of the ODD"
 enableRobotsTXT = true
 enableEmoji = false
+# UK site: fixes local-time display and how the future-content cutoff is read.
+timeZone = "Europe/London"
 
 # British English prose, American English slugs (search friendliness).
 # Slugs are set per-page in front matter; titles preserve British spelling.
@@ -76,10 +78,18 @@ enableEmoji = false
     name = "Politics"
     url = "/politics/"
     weight = 6
+  # Hidden by the header until the Money vault has its first published
+  # article (3 Aug 2026); future-dated posts aren't built, so the count is 0
+  # until then. See layouts/partials/header.html.
+  [[menus.main]]
+    identifier = "money"
+    name = "Money"
+    url = "/money/"
+    weight = 7
   [[menus.main]]
     name = "About"
     url = "/about/"
-    weight = 7
+    weight = 8
 
   [[menus.footer]]
     name = "About"

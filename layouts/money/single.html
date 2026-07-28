@@ -1,0 +1,88 @@
+{{ define "main" }}
+<div class="post-layout wrap">
+  <div class="post-main">
+    <article class="post">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a>{{- with .Site.GetPage "/money" }}<span class="sep" aria-hidden="true">&rsaquo;</span><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{- end }}</nav>
+      <header class="post-header">
+        <h1 class="post-title">{{ .Title }}</h1>
+        {{- with .Params.subtitle }}<p class="post-subtitle">{{ . }}</p>{{- end }}
+        {{- $byline := .Params.byline | default .Site.Params.author }}
+        <p class="post-meta">By {{ $byline }}{{ if not .Date.IsZero }} &middot; <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>{{ end }}</p>
+        {{ partial "listen.html" . }}
+      </header>
+
+      <div class="post-body" data-listen-content>
+        {{ .Content }}
+      </div>
+
+      <p class="fan-disclaimer">General information, not financial advice &mdash; see the note on <a href="/money/">the Money vault</a>. Rules and figures change; check the official sources linked in each article before acting.</p>
+    </article>
+
+    {{- /* Previous / next follow WEIGHT (reading order), never publication date:
+           publication order is not reading order here. site.RegularPages omits
+           future-dated posts, so the links point only to articles already live
+           and fill in toward 1-8 as each Monday's article publishes. */ -}}
+    {{- $series := (where site.RegularPages "Section" "money").ByWeight }}
+    {{- $prev := false }}{{- $next := false }}
+    {{- range $i, $p := $series }}
+      {{- if eq $p.RelPermalink $.RelPermalink }}
+        {{- if gt $i 0 }}{{ $prev = index $series (sub $i 1) }}{{ end }}
+        {{- if lt (add $i 1) (len $series) }}{{ $next = index $series (add $i 1) }}{{ end }}
+      {{- end }}
+    {{- end }}
+    {{- if or $prev $next }}
+    <nav class="post-nav" aria-label="More in this series">
+      {{- if $prev }}<a class="post-nav-link prev" href="{{ $prev.RelPermalink }}"><span class="post-nav-dir">&larr; Previous</span><span class="post-nav-title">{{ $prev.Title }}</span></a>{{ else }}<span></span>{{ end }}
+      {{- if $next }}<a class="post-nav-link next" href="{{ $next.RelPermalink }}"><span class="post-nav-dir">Next &rarr;</span><span class="post-nav-title">{{ $next.Title }}</span></a>{{ else }}<span></span>{{ end }}
+    </nav>
+    {{- end }}
+
+    <div class="post-actions">
+      {{- with .Site.GetPage "/money" }}<a class="button ghost" href="{{ .RelPermalink }}">Back to {{ .Title }}</a>{{ end }}
+      <a class="button ghost" href="/">Home</a>
+    </div>
+
+    {{ partial "comments.html" . }}
+  </div>
+
+  <aside class="post-aside" aria-label="Article information">
+    <div class="aside-inner">
+
+      {{ partial "search.html" . }}
+
+      {{- with .Params.tags }}
+      <section class="aside-block">
+        <h2 class="aside-title">Tags</h2>
+        <div class="aside-tags">
+          {{- range . }}<a class="tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+        </div>
+      </section>
+      {{- end }}
+
+      {{- /* The series so far, in reading order (weight), current one marked. */ -}}
+      {{- if gt (len $series) 1 }}
+      <section class="aside-block">
+        <details class="aside-folder" open>
+          <summary>The series <span class="folder-count">{{ len $series }}</span></summary>
+          <ul>
+            {{- range $series }}
+            <li{{ if eq .RelPermalink $.RelPermalink }} class="current"{{ end }}>
+              {{- if eq .RelPermalink $.RelPermalink }}<span>{{ .Title }}</span>{{ else }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+            </li>
+            {{- end }}
+          </ul>
+        </details>
+      </section>
+      {{- end }}
+
+      {{- with .Site.Params.buymeacoffee }}
+      <section class="aside-block">
+        <h2 class="aside-title">Support</h2>
+        <a class="coffee" href="{{ . }}" rel="noopener" target="_blank"><span class="cup">&#9749;</span> Buy me a coffee</a>
+      </section>
+      {{- end }}
+
+    </div>
+  </aside>
+</div>
+{{ end }}

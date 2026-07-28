@@ -8,9 +8,15 @@ This site is the personal publishing home of Drew Griffiths. It began with Dunge
 
 The aim throughout is to pay serious attention to the original material and be honest about what it actually contains.
 
-Alongside the gaming work, the site gathers other writing into separate vaults, from fiction to Welsh mythology and constitutional questions, and it is the home of the Vaults of the ODD journal range.
+Alongside the gaming work, the site gathers other writing into separate vaults. There is original fiction; a strand on Welsh mythology; the Politics vault, which collects longer analytical papers on constitutional and social-policy questions; and Money, a plain-language series about personal finance written for people for whom money is often tight rather than for those who already have plenty. The site is also the home of the Vaults of the ODD journal range.
+
+Each vault has its own character, but the intention behind all of them is the same: to take the subject seriously, show the working, and be honest about what the material actually says.
 
 Written and edited by Drew Griffiths. If you find the work useful, you can support it at [buymeacoffee.com/drewgriffiths](https://buymeacoffee.com/drewgriffiths).
+
+## On the money writing
+
+The Money vault is general information, not personal financial advice. Drew Griffiths is not a regulated financial adviser, and nothing on the site is a personal recommendation or a suggestion to buy, sell or hold any particular product or investment. Rules and figures change; check the current position against the official sources linked in each article before acting on anything, and for a decision about your own circumstances consider a regulated adviser.
 
 ## On sources and copyright
 

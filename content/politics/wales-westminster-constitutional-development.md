@@ -397,7 +397,7 @@ The practical significance of the reforms examined throughout this paper therefo
 
 ---
 
-**Document status:** Circulation draft, May 2026. Five-stage review pass complete.
+**Document status:** May 2026.
 
 ## How this connects
 

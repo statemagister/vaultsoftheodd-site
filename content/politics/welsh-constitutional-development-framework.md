@@ -650,7 +650,7 @@ Wyn Jones, R. and Scully, R. (2012). *Wales Says Yes: Devolution and the 2011 We
 
 ---
 
-**Document status:** Draft 6.6, May 2026. A working paper offered for discussion among political, academic, and civil society audiences engaged with Welsh constitutional development. Welcomes critical engagement, criticism, and revision.
+**Document status:** May 2026. A working paper offered for discussion among political, academic, and civil society audiences engaged with Welsh constitutional development. Welcomes critical engagement, criticism, and revision.
 
 ## How this connects
 

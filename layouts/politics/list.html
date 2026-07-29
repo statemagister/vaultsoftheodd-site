@@ -6,33 +6,40 @@
       {{- with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
     </header>
 
-    {{- /* Build series groups in a preferred order, then any ungrouped pages. */ -}}
-    {{- $order := slice (dict "key" "framework" "label" .Params.frameworkLabel "intro" .Params.frameworkIntro) (dict "key" "standalone" "label" .Params.standaloneLabel "intro" .Params.standaloneIntro) }}
+    {{- /* Sections are declared in this vault's front matter (`sections`), each
+           with a key, label and intro. A section renders when it has published
+           papers (joined by their `series` key, sorted by weight) or when it
+           carries a `note` that holds its place until the first paper lands.
+           Any paper whose series matches no declared section falls into Other. */ -}}
     {{- $groups := slice }}
-    {{- range $order }}
-      {{- $item := . }}
-      {{- $g := where $.Pages "Params.series" $item.key }}
-      {{- with $g }}{{ $groups = $groups | append (dict "label" $item.label "slug" ($item.key | urlize) "intro" $item.intro "pages" .) }}{{ end }}
+    {{- $keys := slice }}
+    {{- range .Params.sections }}
+      {{- $keys = $keys | append .key }}
+      {{- $pages := where $.Pages "Params.series" .key }}
+      {{- if or $pages .note }}
+        {{- $groups = $groups | append (dict "key" .key "label" .label "intro" .intro "note" .note "pages" $pages) }}
+      {{- end }}
     {{- end }}
-    {{- $matched := where $.Pages "Params.series" "in" (slice "framework" "standalone") }}
+    {{- $matched := where $.Pages "Params.series" "in" $keys }}
     {{- with ($.Pages | complement $matched) }}
-      {{- $groups = $groups | append (dict "label" "Other" "slug" "other" "intro" "" "pages" .) }}
+      {{- $groups = $groups | append (dict "key" "other" "label" "Other" "intro" "" "note" "" "pages" .) }}
     {{- end }}
 
     {{- if gt (len $groups) 1 }}
     <div class="setting-tabs" role="tablist" aria-label="Choose a body of work">
       {{- range $i, $g := $groups }}
-      <button class="setting-tab s-{{ $g.slug }}{{ if eq $i 0 }} is-active{{ end }}" type="button" role="tab" data-target="{{ $g.slug }}" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}">{{ $g.label }}</button>
+      <button class="setting-tab s-{{ $g.key }}{{ if eq $i 0 }} is-active{{ end }}" type="button" role="tab" data-target="{{ $g.key }}" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}">{{ $g.label }}</button>
       {{- end }}
     </div>
     {{- end }}
 
     {{- range $i, $g := $groups }}
-    <section class="setting-section" data-set="{{ $g.slug }}" aria-label="{{ $g.label }}">
-      <h2 class="setting-heading s-{{ $g.slug }}">{{ $g.label }}</h2>
+    <section class="setting-section" data-set="{{ $g.key }}" aria-label="{{ $g.label }}">
+      <h2 class="setting-heading s-{{ $g.key }}">{{ $g.label }}</h2>
       {{- with $g.intro }}<p class="rl-group-intro">{{ . }}</p>{{ end }}
+      {{- with $g.pages }}
       <ol class="reading-list">
-        {{- range $g.pages }}
+        {{- range . }}
         <li>
           <h3 class="rl-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
           {{- with .Params.subtitle }}<p class="rl-sub">{{ . }}</p>{{ end }}
@@ -40,6 +47,9 @@
         </li>
         {{- end }}
       </ol>
+      {{- else }}
+      {{- with $g.note }}<p class="rl-group-note">{{ . }}</p>{{ end }}
+      {{- end }}
     </section>
     {{- end }}
 

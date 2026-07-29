@@ -1,18 +1,18 @@
 ---
 title: "Post-Election Commentary"
-subtitle: "Preface to A Framework for Welsh Constitutional Development"
+subtitle: "The framework read against the 8 May 2026 Senedd result"
 slug: "post-election-commentary"
 date: 2026-06-13T10:00:00Z
-weight: 20
+weight: 50
 series: "framework"
-summary: "A short preface to the Framework, written after the 8 May 2026 Senedd election. The framework was substantially complete before the result and its core argument didn't depend on it; this note reads the new political environment against it — where the result strengthens or complicates particular sections, and what it means for sequencing the recommendations."
+summary: "Written after the 8 May 2026 Senedd election, this note applies the completed framework to a real political moment. The framework was substantially complete before the result and its core argument didn't depend on it; here that architecture is read against the new environment — where the result strengthens or complicates particular sections, and what it means for sequencing the recommendations."
 pdf: "/papers/griffiths-post-election-commentary-may-2026.pdf"
-prereq: "This is a preface to [**A Framework for Welsh Constitutional Development**](/politics/welsh-constitutional-development-framework/). Read the Framework first; this note updates its political context for the 2026 result rather than changing its argument."
+prereq: "The closing paper of the Welsh Framework Series: it applies the completed framework to the 8 May 2026 Senedd result. Read the Framework and its companions first; this note reads the new political context against the architecture rather than changing its argument."
 ---
 
 This framework was substantially complete before the 8 May 2026 Senedd election. It was developed across the early months of 2026 as an independent contribution to Welsh constitutional thinking, drawing on the Independent Commission on the Constitutional Future of Wales (2024) and the broader academic literature on Welsh devolution. Its core argument — that constitutional durability follows institutional capability rather than preceding it — was established before any election result was known, and remains its central thesis.
 
-The 8 May result has changed the political environment within which the framework will be read, but not the analytical substance of what it proposes. This brief preface notes how the result maps onto the framework's assumptions, where the political environment now strengthens or complicates particular sections, and which dimension of the result matters most for how the framework's recommendations should be sequenced through the 2026-2030 term.
+The 8 May result has changed the political environment within which the framework will be read, but not the analytical substance of what it proposes. This note sets out how the result maps onto the framework's assumptions, where the political environment now strengthens or complicates particular sections, and which dimension of the result matters most for how the framework's recommendations should be sequenced through the 2026-2030 term.
 
 ## The result and the framework
 
@@ -60,7 +60,7 @@ The framework is offered as a contribution to a conversation that should happen 
 
 ## How this connects
 
-This is the preface to [**A Framework for Welsh Constitutional Development**](/politics/welsh-constitutional-development-framework/), written after the 8 May 2026 Senedd election. It doesn't alter the framework's argument; it reads the new political environment against it — flagging which sections gain urgency under the new Plaid-led minority government, and which need recalibrating. Read the Framework first, then this.
+This is the closing paper of the Welsh Framework Series, written after the 8 May 2026 Senedd election. It doesn't alter the framework's argument; it applies the completed architecture to the new political environment — flagging which sections gain urgency under the new Plaid-led minority government, and which need recalibrating. Read the [**Framework**](/politics/welsh-constitutional-development-framework/) and its companions first, then this.
 
 ## Sources
 

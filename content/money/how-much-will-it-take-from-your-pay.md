@@ -7,19 +7,19 @@ description: "The number on the student loan statement and the number that comes
 tags: ["student finance", "getting started"]
 ---
 
-One day, years from now, a payslip arrives with a line on it that nobody in the family put there.
+There are two important numbers in a student loan.
 
-It is usually a surprise, even to people who knew it was coming, because almost nothing about the paperwork prepares you for how the figure is arrived at.
+One is the balance on the statement. The other is the amount taken from your pay.
 
-Ask most people what decides that number and they will say the same thing: how much was borrowed. It is a reasonable answer. It is how every other debt any of us has ever had works, from the car finance to the credit card.
+Most people assume the second depends on the first. It does not, which is surprising, because that is how almost every other debt works, from car finance to a credit card.
 
-It is not how this one works, and the gap between those two ideas is where families make expensive decisions.
+The gap between those two ideas is where families make expensive decisions.
 
-This one covers the whole UK, because the answer is different in each part of it, and most people have never been told which part applies to them.
+This article covers the whole UK because the answer depends on which repayment plan applies, and that depends on where you normally lived before the course.
 
 ## The balance and the payslip are two different questions
 
-How much was borrowed decides the balance.
+How much was borrowed decides the starting balance.
 
 How much is earned decides the deduction.
 

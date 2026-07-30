@@ -65,7 +65,7 @@ Same job. Same pay. Nothing between them except where they happened to live befo
 
 The written-off date differs too, running from 25 years after repayment was due at one end to 40 at the other, so the plan you are on also decides how long this follows you. The interest differs by plan as well, and on Plan 2 it varies with what you earn. Both are on the GOV.UK page linked at the end.
 
-If you are funded by Wales, there is one more thing worth knowing, because it is money rather than admin. Welsh support arrives as a mixture of grant, which is never repaid, and loan, which is. The Welsh Government will also cancel up to £1,500 of a first maintenance loan once repayment begins, and the trigger can be a single voluntary payment of £5 rather than waiting for a salary. Read the current rules properly, because it is a rare case where doing something small and early changes the number.
+If you are funded by Wales, there is one more thing worth knowing, because it is money rather than admin. Welsh support arrives as a mixture of grant, which is never repaid, and loan, which is. The Welsh Government will also cancel up to £1,500 of a first maintenance loan, and it is applied once the student starts repaying. It is worth reading the eligibility rules properly, because starting repayment does not necessarily mean waiting for a salary, and this is a rare case where something small and early can change the number.
 
 ## What this is called
 

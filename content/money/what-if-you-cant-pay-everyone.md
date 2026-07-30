@@ -67,7 +67,7 @@ Not everything you owe behaves like a credit card.
 
 Rent and mortgage arrears, council tax, energy debt and court fines can be enforced in ways ordinary borrowing cannot. Falling behind on those is not a matter of interest. It can mean losing your home or your supply. They come first, and this article is not the right tool for them.
 
-Agreeing to pay less than the contractual amount also usually goes on your credit file, and it can stay there for years. That matters if you expect to need a mortgage, a tenancy reference or a car on finance in the near future. It did not matter to me, because the alternative was worse, and for many people it is the same calculation. But it should be a decision rather than a surprise.
+Agreeing to pay less than the contractual amount also usually goes on your credit file, recorded as an arrangement to pay, and it can stay there for up to six years. That matters if you expect to need a mortgage, a tenancy reference or a car on finance in the near future. It did not matter to me, because the alternative was worse, and for many people it is the same calculation. But it should be a decision rather than a surprise.
 
 Some creditors say no. Mine did, and it worked anyway, but not everybody's arithmetic leaves room for that.
 
@@ -86,3 +86,5 @@ You may find, as I did, that the number is smaller than anybody had asked for an
 ## Useful links
 
 - [MoneyHelper: find free debt advice](https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt/debt-advice-locator) for free and confidential help, online, by phone or near where you live. They will do everything described here for nothing.
+- [StepChange Debt Charity](https://www.stepchange.org/) for free debt advice and help setting up an arrangement, online or by phone.
+- [Citizens Advice: debt and money](https://www.citizensadvice.org.uk/debt-and-money/) for free help working out what to deal with first and what your options are.

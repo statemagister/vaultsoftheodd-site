@@ -47,6 +47,12 @@
         <span class="vault-status">Open now</span>
       </a>
 
+      <a class="vault-card live" href="/money/">
+        <h3 class="vault-name">Money</h3>
+        <p class="vault-desc">Plain-language writing about money and personal finance, for people for whom money is often tight. A new article every Monday.</p>
+        <span class="vault-status">Open now</span>
+      </a>
+
     </div>
   </div>
 </section>
@@ -55,7 +61,7 @@
   <div class="wrap">
     <h2 class="section-heading">Latest from the Vaults</h2>
     <ul class="post-list">
-      {{- range slice "gaming" "politics" "stories" }}
+      {{- range slice "gaming" "politics" "stories" "money" }}
       {{- with (where $.Site.RegularPages "Section" .).ByDate.Reverse }}
       {{- $p := index . 0 }}
       <li class="post-list-item">

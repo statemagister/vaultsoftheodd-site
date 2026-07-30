@@ -355,6 +355,13 @@ hr { border: 0; height: 1px; background: var(--rule); margin: 2.4rem auto; max-w
 .setting-heading { font-family: var(--display); font-size: 1.5rem; color: var(--gold); letter-spacing: 0.04em; margin: 1.6rem 0 0.2rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--rule); }
 .setting-heading.s-greyhawk { color: #8fb3dd; border-bottom-color: rgba(143, 179, 221, 0.4); }
 .setting-heading.s-ravenloft { color: #c9a24b; border-bottom-color: rgba(201, 162, 75, 0.4); }
+/* Politics vault: compact section selector. The shared setting-tabs styling is
+   sized for the gaming setting picker and reads as too heavy for four sections,
+   so scope a smaller, tighter set of tabs to this vault only. */
+body.theme-politics .setting-tabs { gap: 0.35rem; margin: 1.3rem 0 2rem; flex-wrap: nowrap; }
+body.theme-politics .setting-tab { font-size: 0.72rem; letter-spacing: 0.04em; padding: 0.42rem 0.85rem; border-radius: 4px; white-space: nowrap; }
+@media (max-width: 620px) { body.theme-politics .setting-tabs { flex-wrap: wrap; } }
+body.theme-politics .setting-tab.is-active { box-shadow: inset 0 0 0 1px var(--gold); }
 
 /* In-world catalogue entry that closes an artefact piece */
 .catalogue { margin: 2.8rem 0 0.5rem; padding: 1.1rem 1.3rem; border: 1px solid var(--rule); border-radius: 4px; background: var(--bg-alt); }

@@ -18,10 +18,6 @@ sections:
   - key: standalone
     label: "Standalone Papers"
     intro: "Independent work that shares standards of analysis but not subject matter with the constitutional programme above. These are institutional design studies and policy architecture papers on questions outside Welsh constitutional development. Each is fully self-contained."
-  - key: future
-    label: "Future Work"
-    intro: "Planned publications. Papers listed here are in development and have not yet been published."
-    note: "Titles will appear here as they are scheduled."
 ---
 
 Analysis and proposals on constitutional development, public institutions and fiscal policy.

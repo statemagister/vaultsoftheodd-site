@@ -50,7 +50,7 @@ Not everything leaving your account is a leak. Rent is not a leak. Insurance you
 
 And a small amount kept back can still be the right call while you are borrowing, which sounds like the opposite of what I just said. If you have nothing at all within reach, the next thing that breaks goes straight back onto the card and the leak reopens. Interrupting that pattern can matter more than the arithmetic. That is what the next article is about.
 
-Finally, if you looked and found nothing worth stopping, that is not a failure and it does not mean the last article was aimed at somebody else. It means your money is already committed, which is information rather than a verdict.
+Finally, if you looked and found nothing worth stopping, that is not a failure and it does not mean any of this was aimed at somebody else. It means your money is already committed, which is information rather than a verdict.
 
 ## One small thing before the next one
 

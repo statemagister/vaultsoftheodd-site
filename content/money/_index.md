@@ -44,6 +44,14 @@ schedule:
     title: "What Will Your Employer Add?"
     teaser: "There is money attached to your job that only appears once you have put some of your own down. Most people have never found out how much."
     date: "2026-09-14"
+  - slug: "save-it-or-pay-off-debt"
+    title: "Save It, or Pay Off Debt?"
+    teaser: "You have found thirty pounds a month. You owe four different people. Splitting it four ways feels fair, and it is the thing to resist."
+    date: "2026-09-21"
+  - slug: "what-if-you-cant-pay-everyone"
+    title: "What If You Can't Pay Everyone?"
+    teaser: "I asked each of them what they would accept. That turned out to be the wrong question."
+    date: "2026-09-28"
 ---
 
 A series about money in plain language — what it is for, how it behaves, and how to think about it — written for people for whom money is often tight, not for those who already have plenty.

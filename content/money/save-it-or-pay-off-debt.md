@@ -11,7 +11,7 @@ You have cancelled two subscriptions and freed up about thirty pounds a month.
 
 You also have a loan and three credit cards. You pay all four of them every month, on time, without fail. And the balances are still going up.
 
-So the thirty pounds has two obvious homes. It could go into savings, where at least it would be yours. Or it could go at the debt, in which case the fair thing is presumably to split it four ways.
+So the thirty pounds has two obvious homes. It could go into savings, where at least it would be yours. Or it could go at the debt, and if it does, splitting it four ways feels like the fair thing.
 
 Both of those instincts are reasonable, and both are usually wrong.
 
@@ -21,7 +21,7 @@ Start with why the balances are climbing while you are paying them.
 
 A minimum payment is not designed to clear a debt. It is designed to keep the account in good standing, and on some cards it is barely more than the interest being added that month. Pay it, and almost all of it goes on the interest. What comes off the balance is the change left over.
 
-Do that for a year on a card that is also being used occasionally, and the balance is higher in December than it was in January, even though you never missed a payment.
+Do that for a year on a card that is also being used occasionally, and the balance is higher at the end of the year than it was at the start, even though you never missed a payment.
 
 That is not a failure of discipline. It is what the arrangement does, and it is why the thirty pounds matters more than it looks.
 
@@ -39,7 +39,7 @@ That is the whole difference. Spread money changes nothing you can see. Concentr
 
 When a debt disappears, so does its minimum payment.
 
-That payment does not vanish into the air. It becomes yours again, every month, for as long as you live. And the money you can now aim at the next debt is the thirty pounds plus whatever that cleared debt was taking.
+That payment does not disappear. It becomes yours again, every month, from then on. And the money you can now aim at the next debt is the thirty pounds plus whatever that cleared debt was taking.
 
 Then the next one goes faster. And when that clears, the money grows again.
 
@@ -49,7 +49,7 @@ But if you are servicing six or seven payments and you have thirty pounds, the m
 
 I did this myself, years ago, with more debts than I care to write down. The ones I cleared first were not the expensive ones. They were the ones I could finish in a few months rather than in years, and each one that went released its payment into the next. Getting six or seven down to five, then four, meant the money distributed better every time. The big expensive ones took me nearly four years, and I only reached them with the money that the small ones had handed back.
 
-That is usually described as a motivational trick, a way of feeling like you are winning. It is not. It is a cash flow decision, and the money you get back is real.
+That gets described as a motivational trick, a way of feeling like you are winning. It is not. It is a cash flow decision, and the money you get back is real.
 
 ## So save it or pay the debt?
 
@@ -83,8 +83,48 @@ Write down what you owe, in one place, with two numbers beside each one. What it
 
 Then ask the question this article is about: which of these could I actually finish, and what would it hand back to me when I did?
 
-You are not committing to anything by knowing. Most people carrying several debts have never seen them all on one page, and the page is usually less frightening than the not knowing.
+You are not committing to anything by knowing. It is easy to carry several debts for years without ever seeing them all on one page, and the page is usually less frightening than the not knowing.
 
 ## Useful links
 
 - [MoneyHelper: find free debt advice](https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt/debt-advice-locator) if the total is beyond what small amounts can touch, if payments are being missed, or if anything on your list is rent, council tax, energy or a court fine. Free and confidential, online, by phone or near where you live.
+
+<!--
+NOTES FOR DREW, DELETE BEFORE PUBLISHING
+
+About 1,100 words. First draft, not passed yet: it still needs the precision pass, the
+naturalness pass and a read for anything borrowed from another article's world. Those are
+September work; nothing about them will change the architecture.
+
+WHAT THIS ARTICLE IS ACTUALLY ABOUT: releasing monthly cash flow, not debt. The heart of it is
+that a debt disappearing hands its payment back to you. Everything before that exists to reach it,
+everything after exists to stop it being applied unsafely.
+
+THE LENS FOR THE NATURALNESS PASS: read it once asking of every paragraph, does this either
+explain why cash flow grows, or stop somebody misapplying the idea? Nothing currently fails that,
+but it is the test to use rather than a general tidy.
+
+COMMISSIONING ANSWERS
+  1. Ordinary experience: thirty pounds freed up, four debts, balances rising anyway.
+  2. Reasonable assumption: split it evenly, or save it.
+  3. Hidden mechanism: minimums barely clear the interest, and every debt that clears hands back
+     its payment.
+  4. Habit: ask what clearing this one hands back to you, not just what it is costing you.
+
+YOUR CALL ON THE PERSONAL PARAGRAPH. It is deliberately low resolution: more debts than you care
+to write down, small ones first, nearly four years for the big ones. No amounts, no creditors, no
+mention of hunger, homelessness or family, all of which belong to the decision you have not made
+yet about article 10. If you want this article to carry more, it can, but it should not carry that
+material by accident.
+
+TERMS: none introduced. There is no "What this is called" section because there is nothing here
+worth naming that the reader does not already have a word for.
+
+THE PRIORITY DEBTS GATE is a short section here rather than a separate article, on the grounds
+that a reader with rent arrears must not be optimising card balances. If it ever becomes its own
+piece, this section shrinks to two sentences and a link.
+
+CHECK BEFORE PUBLISHING: that the early repayment charge point is fairly stated for loans, and
+that nothing here contradicts Why Leave Money Doing Nothing?, which says a small amount within
+reach can matter even while debt exists. It is meant to agree with it.
+-->

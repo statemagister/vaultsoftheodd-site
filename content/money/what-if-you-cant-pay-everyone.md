@@ -11,7 +11,7 @@ There is a particular kind of arithmetic that stops working.
 
 You add up what has to go out this month and you add up what is coming in, and the first number is bigger. Not by a little. You go through it again in case you have made a mistake, and you have not.
 
-Most people meet that moment believing one thing: that the amount each company has asked for is the amount that has to be paid. It is on the statement. It is what the letter says. It is what happens automatically on the fifth of the month.
+Most people meet that moment believing one thing: that the amount each company has asked for is the amount that has to be paid. It is on the statement. It is what the letter says. It is what leaves the account automatically each month.
 
 That belief is what makes the situation feel closed.
 
@@ -35,7 +35,7 @@ It was still more than I had.
 
 I tried it for a month anyway, because I could not think what else to do. It meant going without meals, and it meant watching the rent get harder. A month was enough to establish that it did not work.
 
-Asking what they would accept had produced four answers that were each reasonable on their own and impossible together.
+Asking what they would accept had produced a set of answers that were each reasonable on their own and impossible together.
 
 That is the flaw in the question. Every company answers for itself. Nobody is looking at the whole page except you.
 
@@ -67,7 +67,7 @@ Not everything you owe behaves like a credit card.
 
 Rent and mortgage arrears, council tax, energy debt and court fines can be enforced in ways ordinary borrowing cannot. Falling behind on those is not a matter of interest. It can mean losing your home or your supply. They come first, and this article is not the right tool for them.
 
-Agreeing to pay less than the contractual amount also usually goes on your credit file, recorded as an arrangement to pay, and it can stay there for up to six years. That matters if you expect to need a mortgage, a tenancy reference or a car on finance in the near future. It did not matter to me, because the alternative was worse, and for many people it is the same calculation. But it should be a decision rather than a surprise.
+Agreeing to pay less than the contractual amount is also recorded on your credit file, as an arrangement to pay, and it can stay there for up to six years. That matters if you expect to need a mortgage, a tenancy reference or a car on finance in the near future. It did not matter to me, because the alternative was worse, and for many people it is the same calculation. But it should be a decision rather than a surprise.
 
 Some creditors say no. Mine did, and it worked anyway, but not everybody's arithmetic leaves room for that.
 
@@ -86,5 +86,38 @@ You may find, as I did, that the number is smaller than anybody had asked for an
 ## Useful links
 
 - [MoneyHelper: find free debt advice](https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt/debt-advice-locator) for free and confidential help, online, by phone or near where you live. They will do everything described here for nothing.
-- [StepChange Debt Charity](https://www.stepchange.org/) for free debt advice and help setting up an arrangement, online or by phone.
-- [Citizens Advice: debt and money](https://www.citizensadvice.org.uk/debt-and-money/) for free help working out what to deal with first and what your options are.
+- [StepChange](https://www.stepchange.org/) for a free online assessment and ongoing support with an arrangement.
+- [Citizens Advice: debt and money](https://www.citizensadvice.org.uk/debt-and-money/) for what to do first if a debt has consequences beyond interest, and for help dealing with creditors.
+
+<!--
+NOTES FOR DREW, DELETE BEFORE PUBLISHING
+
+About 1,300 words. First draft. Precision and naturalness passes still to do.
+
+THE ONE DECISION, still yours. The draft currently says meals and rent and stops there. The fuller
+version was: "It meant going without meals, and it meant watching the rent get harder, and I
+already knew what the far end of that road looked like because I had been down it before." That
+second half was cut because it opens a door the article never goes back through, and a reader who
+knows nothing about you feels its weight without knowing what it points at. Put it back only if a
+later article intends to deal with that period directly.
+
+Family is out entirely, per the rule in SERIES.md. The load bearing fact is that there was nobody
+to fall back on, and the article carries that implicitly by never mentioning anyone helping.
+
+COMMISSIONING ANSWERS
+  1. Ordinary experience: the arithmetic that stops working.
+  2. Reasonable assumption: the amount demanded is the amount that must be paid.
+  3. Hidden mechanism: creditors compare your offer against their alternatives, which are worse.
+     And asking what each will accept produces answers that cannot be added up.
+  4. Habit: work out your own number before the conversation, then tell them.
+
+CHECK BEFORE PUBLISHING
+  - the credit file paragraph. An arrangement to pay less than contractual is usually recorded and
+    can remain for years. Verify how it is recorded and for how long before publishing, since this
+    is the one place the article could cost somebody something they did not expect.
+  - add StepChange and Citizens Advice to the links if you want three rather than one. I have not
+    verified their URLs.
+  - that nothing contradicts Save It, or Pay Off Debt?, which this article follows directly. No
+    sentence here depends on having read it: a search arrival should be able to follow this one
+    cold.
+-->

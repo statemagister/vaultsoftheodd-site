@@ -1,7 +1,7 @@
 ---
 title: "What Will Your Employer Add?"
-date: 2026-09-14T08:00:00+01:00
-weight: 8
+date: 2026-09-21T08:00:00+01:00
+weight: 90
 draft: false
 description: "There is money attached to your job that only appears once you have put some of your own down. Most people have never found out how much."
 tags: ["getting started", "workplace pension"]

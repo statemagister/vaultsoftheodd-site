@@ -1,7 +1,7 @@
 ---
 title: "Save It, or Pay Off Debt?"
-date: 2026-09-21T08:00:00+01:00
-weight: 9
+date: 2026-09-28T08:00:00+01:00
+weight: 100
 draft: true
 description: "You have found thirty pounds a month. You owe four different people. Splitting it four ways feels fair, and it is the thing to resist."
 tags: ["getting started", "debt"]

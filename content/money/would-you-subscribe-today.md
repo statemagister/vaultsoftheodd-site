@@ -1,7 +1,7 @@
 ---
 title: "Would You Subscribe Today?"
 date: 2026-08-17T08:00:00+01:00
-weight: 2
+weight: 20
 draft: false
 description: "A subscription keeps taking money until you stop it. One question can help you decide whether it is still worth paying for."
 tags: ["getting started", "subscriptions"]

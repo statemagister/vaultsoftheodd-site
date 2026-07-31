@@ -5,11 +5,13 @@ description: "A plain-language series about money — what it is for, how it beh
 cascade:
   images:
     - /images/og-money.png
-# Reading order (weight 1-8) with each article's scheduled release date. The
-# list renders every entry as a dated teaser; once an article's date has
-# passed it is built and the entry becomes a live link. Titles/teasers here
-# are only shown before an article publishes — after that its own front matter
-# is used — so the schedule need only carry the eight in reading order.
+# Reading order (weight, spaced in tens) with each article's scheduled release
+# date. The list renders every entry as a dated teaser; once an article's date
+# has passed and it is no longer a draft it is built, and the entry becomes a
+# live link. Titles/teasers here are only shown before an article publishes —
+# after that its own front matter is used. An entry with no date renders as a
+# plain upcoming title. Publication now follows reading order apart from the two
+# seasonal student pieces, pulled forward to 3 August.
 schedule:
   - slug: "why-invest"
     title: "Why Invest?"
@@ -32,6 +34,11 @@ schedule:
     title: "Where Should I Keep It?"
     teaser: "If the money is only sitting there waiting, why not put it wherever it earns the most?"
     date: "2026-09-07"
+  - slug: "how-much-is-enough"
+    title: "How Much Is Enough?"
+    subtitle: "Enough is a number, not a feeling."
+    teaser: "Every time you get closer to enough, it seems to move. There is a reason for that, and it is not greed."
+    date: "2026-09-14"
   - slug: "how-much-money-will-actually-arrive"
     title: "How Much Money Will Actually Arrive?"
     teaser: "Before anyone worries about repaying a student loan, there is a nearer question, and most families have not been told the answer."
@@ -43,15 +50,19 @@ schedule:
   - slug: "what-will-your-employer-add"
     title: "What Will Your Employer Add?"
     teaser: "There is money attached to your job that only appears once you have put some of your own down. Most people have never found out how much."
-    date: "2026-09-14"
+    date: "2026-09-21"
   - slug: "save-it-or-pay-off-debt"
     title: "Save It, or Pay Off Debt?"
     teaser: "You have found thirty pounds a month. You owe four different people. Splitting it four ways feels fair, and it is the thing to resist."
-    date: "2026-09-21"
+    date: "2026-09-28"
   - slug: "what-if-you-cant-pay-everyone"
     title: "What If You Can't Pay Everyone?"
     teaser: "I asked each of them what they would accept. That turned out to be the wrong question."
-    date: "2026-09-28"
+    date: "2026-10-05"
+  - slug: "who-else-is-responsible"
+    title: "Who Else Is Responsible If a Purchase Goes Wrong?"
+    teaser: "The airline went bust while we were abroad. It turned out the flights were not only between us and them."
+    date: "2026-10-12"
 ---
 
 A series about money in plain language — what it is for, how it behaves, and how to think about it — written for people for whom money is often tight, not for those who already have plenty.

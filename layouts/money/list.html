@@ -26,7 +26,7 @@
         <h3 class="rl-title rl-upcoming">{{ .title }}</h3>
         {{- with .subtitle }}<p class="rl-sub">{{ . }}</p>{{ end }}
         {{- with .teaser }}<p class="rl-lede">{{ . }}</p>{{ end }}
-        <p class="rl-date rl-scheduled">Publishes {{ dateFormat "2 January 2006" .date }}</p>
+        {{- with .date }}<p class="rl-date rl-scheduled">Publishes {{ dateFormat "2 January 2006" . }}</p>{{ else }}<p class="rl-date">Coming later in the series</p>{{ end }}
         {{- end }}
       </li>
       {{- end }}

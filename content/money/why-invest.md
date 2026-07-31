@@ -2,7 +2,7 @@
 title: "Why Invest?"
 subtitle: "You already do."
 date: 2026-08-10T08:00:00+01:00
-weight: 1
+weight: 10
 draft: false
 description: "Time with your loved ones, family and friends is investing. Let me explain how."
 tags: ["getting started"]

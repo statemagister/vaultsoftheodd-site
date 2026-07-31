@@ -1,7 +1,7 @@
 ---
 title: "How Much Money Will Actually Arrive?"
 date: 2026-08-03T08:01:00+01:00
-weight: 6
+weight: 70
 draft: false
 description: "Before anyone worries about repaying a student loan, there is a nearer question, and most families have not been told the answer."
 tags: ["student finance", "getting started"]

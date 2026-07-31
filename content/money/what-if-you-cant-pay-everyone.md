@@ -1,7 +1,7 @@
 ---
 title: "What If You Can't Pay Everyone?"
-date: 2026-09-28T08:00:00+01:00
-weight: 10
+date: 2026-10-05T08:00:00+01:00
+weight: 110
 draft: true
 description: "I asked each of them what they would accept. That turned out to be the wrong question."
 tags: ["debt"]

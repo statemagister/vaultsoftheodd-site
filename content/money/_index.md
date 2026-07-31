@@ -72,7 +72,7 @@ schedule:
     title: "Should I Pay My Student Loan Off Early?"
     subtitle: "I did, for a while. Then I worked out what it was buying me."
     teaser: "Before sending them extra money, there is one question worth answering. It is not the obvious one."
-    date: "2026-11-30"
+    date: "2026-11-16"
   - slug: "what-will-your-employer-add"
     title: "What Will Your Employer Add?"
     teaser: "There is money attached to your job that only appears once you have put some of your own down. Most people have never found out how much."

@@ -1,0 +1,134 @@
+---
+title: "Who Chose Your Pension Investments?"
+subtitle: "Somebody did, and they have never met you."
+date: 2026-11-02T08:00:00+00:00
+weight: 95
+draft: true
+description: "Your pension is invested in something. You almost certainly did not pick it, and it is following a plan you have never seen."
+tags: ["workplace pension"]
+---
+
+Nobody drives off in a hire car without moving the seat.
+
+You do it without thinking. The seat is where the last person left it, the mirrors are set for their head, and none of it is wrong exactly, it is just set up for somebody who is not you. Thirty seconds and it is fixed.
+
+Your pension arrived the same way, and the seat is still where they left it.
+
+## The screen after the one you looked at
+
+If you have a workplace pension, money is going into it and something is being bought with that money.
+
+You probably did not choose what. There is a fund it goes into by default, because a scheme has to have one, and unless you actively picked something else, that is where every contribution you have ever made has gone.
+
+That fund is not a bad thing and I want to be clear about that early. It is put together by people who do this professionally, it is spread across a lot of different investments rather than concentrated in a few, and what it can charge you is capped. It is a considered answer to a real question.
+
+The question it answers is: what should we do with money belonging to somebody we know almost nothing about?
+
+That is a genuinely difficult question, and the answer they have arrived at is a reasonable one. It is just not an answer about you.
+
+## The part that is never announced
+
+Here is the thing I did not know for years, and it is more consequential than which fund you are in.
+
+Most default arrangements do not stay the same. They are built around a date, and as that date approaches they gradually move your money out of things that grow and into things that wobble less. The idea is sensible. A large fall in the year before you need the money is a catastrophe, and a large fall thirty years out is a Tuesday.
+
+Two things about that are worth knowing.
+
+The first is that it starts earlier than you would expect, commonly somewhere between five and fifteen years before the date, and it happens automatically. There is no letter. Nothing on a statement announces that your pension has begun changing what it is doing.
+
+The second is the date itself. Your scheme has one for you. It may have asked you once, years ago, or it may simply have assumed. If you are planning to work longer than that date, or to take the money gradually rather than all at once, then the plan your pension is quietly following is built around a version of your retirement that is not the one you are having.
+
+That is not a scandal. Nobody is doing anything to you. It is just that a decision about your money is being made on a schedule, by an arrangement that has never met you, and you can see it in about ten minutes if you look.
+
+## What I did, and what it does not prove
+
+When I first paid proper attention to mine, I deleted the funds it had put me in and chose my own.
+
+I did not know they would do better. I suspected they might, and over the years they did, which is a different sentence from saying I knew what I was doing.
+
+I would be telling you the same story either way. If they had done worse I would still have been somebody who read the page and made a choice, and the choice would have been just as considered and considerably less flattering. That is worth remembering about anybody describing their own investment results, including me.
+
+What I would defend is not the outcome. It is that I looked.
+
+There is a second half to it, and I did not see it coming.
+
+Because I had picked my own funds, the scheme never applied its own gradual move into safer things to them. Nothing was quietly repositioned as any date approached, because I had stepped outside the arrangement that does that. I did not know at the time that this was even a consequence.
+
+By the time I understood it, it had turned out to be what I wanted. I am not planning to buy an annuity. I intend to draw the money gradually and leave the rest invested, so I want it to stay invested rather than be made safe on a schedule built for somebody buying something on a fixed date. Looking properly also told me the age my scheme lets me start, which is earlier than the age usually quoted.
+
+That is luck as much as judgement, and it is worth saying so. Somebody in exactly my position who planned to take the whole lot on a fixed date would have wanted the opposite, and by choosing their own funds they would have quietly switched off the thing that was protecting them.
+
+## Where this stops applying
+
+This is the part that matters more than the rest of the article, because the wrong lesson here is expensive.
+
+**Nothing above is a reason to switch funds.** A default is a reasonable answer for somebody with no strong view, and moving out of one on the strength of an article you read once is a much worse idea than staying in one you have never examined.
+
+**Leaving the default can turn off the automatic part.** If you pick your own funds, the gradual move into safer things as you approach the date may stop happening, and it becomes your job to remember, in twenty years, that it was ever a thing. Plenty of people who switched have not thought about it since.
+
+**More risk is not the same as more return.** Money that has decades ahead of it can survive a fall and recover. Money that is needed soon cannot. The reason the default gets more cautious near the end is not timidity, it is arithmetic, and anybody telling a fifty-eight year old to move everything into shares is not giving advice, they are giving an opinion with your money.
+
+**And nobody knows what will do well.** Not me, not the default, not the person on the internet with the chart. What you can know is your own dates and your own plans, which is the one piece of information the scheme genuinely does not have.
+
+## One thing to do
+
+Log in to your pension, which for many of us is a website we have never visited.
+
+Find two things, and the second is the one I never thought to check.
+
+What your money is currently invested in. Not to change it, just to know it is a specific thing rather than a vague sense that your pension exists somewhere.
+
+And what retirement date the scheme is using for you. That is the date the whole plan is built around, and if it is wrong, it is wrong quietly for years.
+
+If that date does not match what you intend to do, that is worth a conversation, either with the scheme or with somebody qualified to advise you. Not because the default is bad, but because it is following a map to a destination you may not be going to.
+
+<!--
+NOTES FOR DREW, DELETE BEFORE PUBLISHING
+
+About 1,250 words. Precision, naturalness and territory passes done 28 July. Territory clean: the hire car is this article's own.
+Weight 95, after What Will Your Employer Add? at 90, because it assumes the reader knows money is
+going in. Proposed date 2 November. This is the last of the eighteen.
+
+THE ARTICLE CHANGED at the research stage. It was going to be about which fund you are in. The
+more useful mechanism turned out to be that the default is a schedule keyed to a retirement date
+the scheme has guessed, and that it starts moving your money years in advance without telling you.
+That is the thing almost nobody knows, and it is checkable in ten minutes.
+
+COMMISSIONING ANSWERS
+  1. Ordinary experience: a hire car with the seat set for the last driver.
+  2. Reasonable assumption: if there is a default, somebody must have decided it is right.
+  3. Hidden mechanism: it is right for somebody the scheme knows nothing about, and it is following
+     a date it may have guessed.
+  4. Habit: ask what date your money thinks you are retiring.
+
+YOUR MATERIAL is handled as it was in What Will Your Employer Add?: you deleted the presets and
+chose your own, you did not know they would do better, and the article says outright that you would
+be telling the same story if they had done worse. Do not let a later pass strengthen that into a
+recommendation.
+
+FACTS, checked 28 July against several pension and provider sources rather than one
+  - auto enrolment workplace schemes must have a default arrangement
+  - defaults are diversified, professionally constructed, and charge capped
+  - most use lifestyling or a glide path: a gradual move from growth assets into lower risk ones as
+    the target date approaches, commonly beginning five to fifteen years before it
+  - the target date is the scheme's, and may have been assumed rather than chosen
+  - lifestyling was designed around buying an annuity, so it can de-risk too early for somebody
+    planning to draw the money gradually instead
+  - leaving the default can mean losing the automatic de-risking
+  NO PERCENTAGES, as everywhere else. The charge cap is described as capped rather than named.
+
+TERRITORY: the wardrobe belongs to What Will Your Employer Add?. This one owns the hire car.
+
+DREW'S SECOND HALF, added after the first draft. Picking his own funds meant the scheme never
+applied its glide path, which he did not realise at the time and which turned out to suit him
+because he intends to draw down and stay invested rather than buy an annuity. The article uses it
+to show both sides of the same fact rather than as a recommendation, and says plainly that somebody
+planning to take the lot on a fixed date would have lost something they needed. His scheme also
+lets him start earlier than the age most people assume; that is referred to without explaining the
+rule behind it, deliberately, since it is specific to particular schemes and would need its own
+verification to teach.
+
+NOT USED HERE: that he intends to draw down less each year than the average annual growth excluding
+contributions. That is about how much you take, not about what it is invested in, and it belongs to
+a later article on drawing an income. Recorded in SERIES.md.
+-->

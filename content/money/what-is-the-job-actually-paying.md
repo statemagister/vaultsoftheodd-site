@@ -3,7 +3,7 @@ title: "What Is the Job Actually Paying?"
 subtitle: "The salary is one item on a much longer list."
 date: 2026-12-21T08:00:00+00:00
 weight: 16
-draft: false
+draft: true
 description: "Two jobs, two salaries, and the comparison people make is between those two numbers. Most of the difference is somewhere else."
 tags: ["pay", "getting started"]
 ---

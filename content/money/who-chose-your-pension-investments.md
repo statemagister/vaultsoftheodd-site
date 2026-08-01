@@ -3,7 +3,7 @@ title: "Who Chose Your Pension Investments?"
 subtitle: "Somebody did, and they have never met you."
 date: 2026-11-23T08:00:00+00:00
 weight: 95
-draft: true
+draft: false
 description: "Your pension is invested in something. You almost certainly did not pick it, and it is following a plan you have never seen."
 tags: ["workplace pension"]
 ---
@@ -86,54 +86,3 @@ If that date does not match what you intend to do, that is worth a conversation,
 
 - [MoneyHelper: pension investment options](https://www.moneyhelper.org.uk/en/pensions-and-retirement/building-your-retirement-pot/pension-investment-options-an-overview.html) for how a scheme invests your money, how to check whether you are in the default fund, and what to weigh before changing it.
 - [Pension Wise](https://www.moneyhelper.org.uk/en/pensions-and-retirement/pension-wise) for a free, impartial, government-backed appointment about taking money from a defined contribution pension. Available online from age 50, and earlier if you are taking a pension early because of ill health.
-
-<!--
-NOTES FOR DREW, DELETE BEFORE PUBLISHING
-
-About 1,250 words. Precision, naturalness and territory passes done 28 July. Territory clean: the hire car is this article's own.
-Weight 95, after What Will Your Employer Add? at 90, because it assumes the reader knows money is
-going in. Proposed date 2 November. This is the last of the eighteen.
-
-THE ARTICLE CHANGED at the research stage. It was going to be about which fund you are in. The
-more useful mechanism turned out to be that the default is a schedule keyed to a retirement date
-the scheme has guessed, and that it starts moving your money years in advance without telling you.
-That is the thing almost nobody knows, and it is checkable in ten minutes.
-
-COMMISSIONING ANSWERS
-  1. Ordinary experience: a hire car with the seat set for the last driver.
-  2. Reasonable assumption: if there is a default, somebody must have decided it is right.
-  3. Hidden mechanism: it is right for somebody the scheme knows nothing about, and it is following
-     a date it may have guessed.
-  4. Habit: ask what date your money thinks you are retiring.
-
-YOUR MATERIAL is handled as it was in What Will Your Employer Add?: you deleted the presets and
-chose your own, you did not know they would do better, and the article says outright that you would
-be telling the same story if they had done worse. Do not let a later pass strengthen that into a
-recommendation.
-
-FACTS, checked 28 July against several pension and provider sources rather than one
-  - auto enrolment workplace schemes must have a default arrangement
-  - defaults are diversified, professionally constructed, and charge capped
-  - most use lifestyling or a glide path: a gradual move from growth assets into lower risk ones as
-    the target date approaches, commonly beginning five to fifteen years before it
-  - the target date is the scheme's, and may have been assumed rather than chosen
-  - lifestyling was designed around buying an annuity, so it can de-risk too early for somebody
-    planning to draw the money gradually instead
-  - leaving the default can mean losing the automatic de-risking
-  NO PERCENTAGES, as everywhere else. The charge cap is described as capped rather than named.
-
-TERRITORY: the wardrobe belongs to What Will Your Employer Add?. This one owns the hire car.
-
-DREW'S SECOND HALF, added after the first draft. Picking his own funds meant the scheme never
-applied its glide path, which he did not realise at the time and which turned out to suit him
-because he intends to draw down and stay invested rather than buy an annuity. The article uses it
-to show both sides of the same fact rather than as a recommendation, and says plainly that somebody
-planning to take the lot on a fixed date would have lost something they needed. His scheme also
-lets him start earlier than the age most people assume; that is referred to without explaining the
-rule behind it, deliberately, since it is specific to particular schemes and would need its own
-verification to teach.
-
-NOT USED HERE: that he intends to draw down less each year than the average annual growth excluding
-contributions. That is about how much you take, not about what it is invested in, and it belongs to
-a later article on drawing an income. Recorded in SERIES.md.
--->

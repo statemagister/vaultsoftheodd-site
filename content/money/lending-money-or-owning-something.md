@@ -3,7 +3,7 @@ title: "What Are You Actually Buying?"
 subtitle: "Most ordinary saving and investing is either lending or owning."
 date: 2026-10-12T08:00:00+01:00
 weight: 57
-draft: true
+draft: false
 description: "Shares, bonds, gilts and funds sound like different things to learn. Underneath them are two arrangements: lending and owning."
 tags: ["getting started", "investing"]
 ---
@@ -82,62 +82,4 @@ That single question sorts most ordinary ways of saving and investing, and it te
 
 ## Useful links
 
-- [MoneyHelper: types of investment](https://www.moneyhelper.org.uk/en/savings/types-of-savings/different-types-of-investments) for what each of these arrangements looks like in practice, and the words you will meet alongside them.
-
-<!--
-NOTES FOR DREW, DELETE BEFORE PUBLISHING
-
-Body is about 1,050 words. Precision, naturalness and territory passes done, and the one-time
-verification of the definitions passes with them.
-Weight 57, between What Does an ISA Actually Protect? at 55 and How Much Is Enough? at 60. Date
-7 December, the next free Monday after the run ends.
-
-WHY THIS ARTICLE EXISTS: nineteen articles and none of them says what a share is. Article 10
-mentions owning a small piece of a business, article 55 wraps things it never names. A reader
-finishing the whole series still did not know the difference between a share and a bond.
-
-COMMISSIONING ANSWERS
-  1. Ordinary experience: two neighbours, one who wants a loan and one who offers a share.
-  2. Reasonable assumption: shares, bonds and gilts are three different products to learn.
-  3. Hidden mechanism: they are two arrangements. Everything else is a variation on lending or
-     owning.
-  4. Habit: ask which of the two this is.
-
-TERMS: five taught inside the two arrangements, savings account and bond and gilt under lending,
-share and dividend under owning, plus fund introduced briefly as a sixth and explicitly deferred.
-Far above the house limit of one, and justified because they are not six topics, they are the names
-for positions inside two arrangements. Keep gilt: it translates "government bond" into the word a
-UK reader will actually meet.
-
-DREW'S MATERIAL: buying companies he already used, then noticing some paid more than savings. The
-article defends it as a starting point and says plainly it is a bad place to stay, which is the
-honest version and is what stops it reading as advice to do the same.
-
-NOT IN HERE, deliberately: funds in any detail, diversification as a named concept, anything about
-how to buy, any platform, any named company. Risk appears twice as an ordinary word but is not
-taught as a concept; that belongs to the next article.
-
-HELD FOR THE NEXT ARTICLE, and no longer anywhere in this one: Drew noticing that some holdings paid
-him more than his savings account did, and the inflation realisation that followed. Also the whole
-argument that accepting uncertainty is compensated, which kept reappearing here in different
-sentences and was removed three times. If it turns up again in a later pass, it is this article
-reaching for the next one's conclusion.
-
-VERIFY BEFORE PUBLISHING: the article contains no figures or thresholds, but its definitions and
-its broad claims about how these arrangements behave need a one-time primary-source check, because
-teaching what the words mean is the whole point of it. Once verified the maintenance burden should
-be near zero.
-
-Two things that first draft got wrong and a check should confirm rather than reintroduce. Lending
-does not mean a fixed return: savings rates move, some bonds have floating or inflation-linked
-payments, and market value changes before repayment. The DMO's own split between conventional and
-index-linked gilts is the clearest example. And owning does agree something at the start, the
-rights attached to the share; what is not agreed is the return. The article now says obligation
-versus uncertain outcome rather than fixed versus not fixed.
-
-TERRITORY WITH THE NEXT ARTICLE. The first draft made the next article's argument three times: that
-owning has tended to produce more, that dividends beat the savings account, and the inflation
-point. All three are now removed or handed forward by name. This article explains why the two
-arrangements behave differently. Whether accepting the uncertainty has been worth it belongs to the
-next one, and so does Drew's inflation realisation.
--->
+- [MoneyHelper: types of investment](https://www.moneyhelper.org.uk/en/savings/investing/popular-investments-at-a-glance) for what each of these arrangements looks like in practice, and the words you will meet alongside them.

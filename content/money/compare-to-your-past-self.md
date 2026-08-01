@@ -3,7 +3,7 @@ title: "Am I Actually Doing Better?"
 subtitle: "There is only one comparison with any information in it."
 date: 2026-11-02T08:00:00+00:00
 weight: 65
-draft: true
+draft: false
 description: "Comparing your money to other people's tells you nothing, for a reason that has nothing to do with envy."
 tags: ["getting started"]
 ---
@@ -65,41 +65,3 @@ Think of one thing you decided about money a year ago. Any decision, however sma
 Then ask what it actually produced. Not how it felt at the time, and not whether it was the cleverest thing you could have done. What is different now because of it.
 
 That question does two things at once. It tells you whether that kind of decision is worth making again, which is the practical use comparison has. And it puts you in the habit of measuring against the one person whose starting point you actually know.
-
-<!--
-NOTES FOR DREW, DELETE BEFORE PUBLISHING
-
-About 1,100 words. Precision, naturalness and territory passes done 28 July. Territory clean.
-
-KEPT ON PURPOSE: "moods are expensive to act on". It is more aphoristic than the prose around it,
-and it earns the place, because acting on a mood with money is literally what it costs you.
-Weight 65, after How Much Is Enough? at 60, because both are about which number deserves your
-attention. Proposed date 26 October.
-
-TITLE changed from the working one. Compare to Your Past Self is an instruction rather than a
-question, and every other title in the series is the reader's own question. Am I Actually Doing
-Better? is what somebody would type or ask aloud.
-
-TERRITORY, and this was the difficult part. Drew's three examples for this article, the student
-loan, the pension and the investing, all belong to other pieces: 85, 90 and 60 respectively. So
-the article does not retell any of them. It names each in a single clause as evidence for a
-different point, which is that the decisions that mattered did not feel significant at the time.
-That claim belongs to no other article. Do not let a later pass expand any of those clauses into
-a story; the stories exist elsewhere.
-
-The hill is this article's own image. The doorframe was the obvious choice and belongs to Why
-Didn't My Pay Rise Feel Like One?
-
-COMMISSIONING ANSWERS
-  1. Ordinary experience: a hill you used to stop on and no longer do.
-  2. Reasonable assumption: other people are the benchmark.
-  3. Hidden mechanism: that comparison has no inputs in it, so it cannot guide a decision. Your own
-     past has all of them.
-  4. Habit: ask what a decision you made a year ago actually produced.
-
-CHECK: the line about being able to stop working earlier than expected is a public statement about
-your own position. It is at the same resolution as How Much Is Enough? and says explicitly that it
-is not wealth. Read it once as a stranger.
-
-No external facts in this one either.
--->

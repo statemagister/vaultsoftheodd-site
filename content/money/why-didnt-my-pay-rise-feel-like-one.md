@@ -3,7 +3,7 @@ title: "Why Didn't My Pay Rise Feel Like One?"
 subtitle: "Nobody raised your tax rate."
 date: 2026-08-24T08:00:00+01:00
 weight: 17
-draft: true
+draft: false
 description: "The pay went up and the month felt the same. There are two reasons for that, and only one of them gets talked about."
 tags: ["pay", "tax"]
 ---
@@ -84,49 +84,3 @@ That is not a number you can recover. It is a number worth knowing, because the 
 
 - [GOV.UK: Income Tax rates and Personal Allowances](https://www.gov.uk/income-tax-rates) for where the lines currently sit, and whether they have moved since this was written.
 - [GOV.UK: Income Tax in Scotland](https://www.gov.uk/scottish-income-tax) if you live in Scotland, where the bands are set separately and are not the same.
-
-<!--
-NOTES FOR DREW, DELETE BEFORE PUBLISHING
-
-About 1,200 words. Precision, naturalness and territory passes done 28 July. Territory: the doorframe is this article's own and the payslip is mentioned once in passing rather than doing any explanatory work, which belongs to Why Is My Pay Less Than I Was Told? and How Much Will It Take From Your Pay?
-Weight 17, beside Why Is My Pay Less Than I Was Told?, because both are about the gap between what
-you are told you earn and what reaches you. Proposed date 23 November, chosen to sit near the
-autumn fiscal event; move it if the event moves.
-
-COMMISSIONING ANSWERS
-  1. Ordinary experience: a career of pay rises that did not feel like rises.
-  2. Reasonable assumption: it is all the cost of living.
-  3. Hidden mechanism: the tax lines used to move with prices and stopped in 2021.
-  4. Habit: ask which number failed to move.
-
-YOUR MATERIAL is used as the opening feeling rather than as evidence for fiscal drag, because your
-observation is about prices and this article is about tax. The article says so explicitly rather
-than letting the two blur. The detail that only step changes were ever noticed, a job role change
-or an unexpected bonus, is yours and is the best line in that section.
-
-WRITTEN SO THE MECHANISM OUTLIVES THE POLICY. The explanation of what happens when lines are held
-still is deliberately timeless and uses no dates. The dates and figures are quarantined into two
-places, the paragraph beginning "As things stand" and the worked example, and the breaks section
-tells the reader outright that the policy is the part that dates. If a Budget changes the freeze,
-those two passages need rewriting and nothing else does.
-
-THE PUBLICATION PASS on this one is a Budget reconciliation rather than a proofread. Go through
-the subtitle, the anchored paragraph, the worked example, the Scotland paragraph and the closing
-calculation in order, and ask of each: would I still write this today?
-
-FIGURES, checked earlier in July 2026 and ALL TO BE RECHECKED BEFORE PUBLISHING, since a Budget
-falls between drafting and the proposed date
-  - tax free allowance £12,570, frozen since April 2021; higher rate threshold £50,270
-  - freeze extended at the November 2025 Budget to April 2031
-  - inflation adjusted allowance for 2025/26 would have been about £15,480 (ICAEW)
-  - the arithmetic: £35,000 minus £12,570 is £22,430, tax £4,486. Minus £15,480 is £19,520, tax
-    £3,904. Difference £582
-  - the OBR put the 2030/31 gap at about £4,920 on the allowance and £20,120 on the higher rate
-    threshold, which is not in the article but is the source for the paragraph about people
-    reaching the higher rate without a promotion
-  - Scotland sets its own bands; Wales in line with England and Northern Ireland for 2026/27
-
-NO PERCENTAGES, as everywhere else. The share of taxpayers now paying the higher rate is a strong
-figure and is deliberately left out for that reason; if you want it, express it as one in seven
-becoming nearly one in four.
--->

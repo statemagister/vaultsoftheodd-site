@@ -3,7 +3,7 @@ title: "Should I Pay My Student Loan Off Early?"
 subtitle: "I did, for a while. Then I worked out what it was buying me."
 date: 2026-11-09T08:00:00+00:00
 weight: 85
-draft: true
+draft: false
 description: "Before sending them extra money, there is one question worth answering. It is not the obvious one."
 tags: ["student finance", "debt"]
 ---
@@ -87,39 +87,3 @@ If it is genuinely too close to call, do nothing yet. The write-off date is not 
 - [GOV.UK: repaying your student loan](https://www.gov.uk/repaying-your-student-loan/what-you-pay) for which plan you are on, what comes out of your pay, and the current thresholds.
 - [Student loan refunds](https://gettingarefund.campaign.gov.uk/) if you may have repaid below the threshold, on the wrong plan, too early, or after already clearing the loan.
 - [MoneyHelper: find free debt advice](https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt/debt-advice-locator) if student loan deductions are the least of it and other debts are the real pressure.
-
-<!--
-NOTES FOR DREW, DELETE BEFORE PUBLISHING
-
-About 1,150 words. Precision, naturalness and territory passes done 28 July. Territory clean: no image here belongs to another article.
-Weight 85, after How Much Will It Take From Your Pay? at 80, because it assumes the reader knows
-the deduction follows earnings rather than the balance. Proposed date 30 November.
-
-PERSONAL MATERIAL at the resolution you set. "Left university partway through, needing work
-quickly" and "later I had to reduce my hours" carry the story. Your father's illness and your
-diagnosis are both out: neither is needed for the mechanism, and one of them is not only your life
-to publish. If you ever want either in, they go back in one sentence each and nothing else changes.
-
-COMMISSIONING ANSWERS
-  1. Ordinary experience: a balance on a statement that behaves like a debt.
-  2. Reasonable assumption: attack it like any other debt.
-  3. Hidden mechanism: the deduction follows earnings, not the balance, so overpaying only helps
-     somebody who will clear the whole thing before it is written off.
-  4. Habit: ask whether you will ever repay it in full before paying anything extra.
-
-CHECK BEFORE PUBLISHING
-  - voluntary repayments non-refundable: VERIFIED 28 July, from the Student Loans Company's own
-    payment service, which states that a repayment made in addition to those taken through salary
-    or Self Assessment is a voluntary repayment and is non-refundable. mygov.scot says the same.
-  - the refundable cases are the opposite and are now in the article: below the threshold, wrong
-    plan, started too early, or paid after the loan was already cleared. Source is the government
-    student loan refunds service, linked.
-  - the write-off periods by plan, currently described only as "a set number of years" and left to
-    the GOV.UK link. If you want them named, verify all four rather than the two I checked in July.
-  - the Welsh partial cancellation rule, which is also referenced in How Much Will It Take From
-    Your Pay? and was confirmed on gov.wales on 28 July.
-
-TERRITORY: the balance versus the deduction belongs to How Much Will It Take From Your Pay?. This
-article restates it in one paragraph as a premise rather than re-teaching it, which is deliberate,
-because a reader arriving here from a search will not have read that one.
--->

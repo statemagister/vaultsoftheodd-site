@@ -3,7 +3,7 @@ title: "Why Is My Pay Less Than I Was Told?"
 subtitle: "The number you were quoted is not the number that arrives."
 date: 2026-08-17T08:00:00+01:00
 weight: 15
-draft: true
+draft: false
 description: "You were told a rate. Something else arrived. Both numbers are correct, and nobody explains why."
 tags: ["getting started", "pay"]
 ---
@@ -83,43 +83,3 @@ Because the gap before the first payment is where new jobs go wrong, and it is m
 - [GOV.UK: check your Income Tax for the current year](https://www.gov.uk/check-income-tax-current-year) to see your tax code, what HMRC thinks you earn, and to correct it if the details are out of date.
 - [GOV.UK: check how to claim a tax refund](https://www.gov.uk/claim-tax-refund) to find out what to do if you have paid too much, including for a previous year.
 - [Acas: final pay when someone leaves a job](https://www.acas.org.uk/final-pay-when-someone-leaves-a-job) for what should be in a final payslip, including pay for holiday you earned and did not take.
-
-<!--
-NOTES FOR DREW, DELETE BEFORE PUBLISHING
-
-About 1,250 words. Precision, naturalness and territory passes done 28 July. Territory came back
-clean: no image here belongs to another article. Weight 15, between Why Invest? and Would You
-Subscribe Today?, because you cannot plan from money until you know what actually lands. Dated
-19 October, the next free Monday.
-
-COMMISSIONING ANSWERS
-  1. Ordinary experience: being told a rate and doing sums on the way home.
-  2. Reasonable assumption: what you were told is roughly what will arrive.
-  3. Hidden mechanism: a rate and a result are different kinds of number, produced by several rules
-     that behave differently from each other.
-  4. Habit: plan from what lands, never from what you were quoted.
-
-TERRITORY: the payslip belongs to How Much Will It Take From Your Pay?, so that article keeps the
-student loan line and this one keeps the tax code and the quoted rate. Do not let either drift
-into the other's ground.
-
-THE PERSONAL MATERIAL is at the resolution you set: "rebuilding a life from a much lower starting
-point" carries the contrast without opening the story. Read it once as a stranger, since it is
-more explicit than the equivalent line in What If You Can't Pay Everyone?
-
-CHECKED 28 July against GOV.UK and its guidance
-  - emergency codes appear as 1257L with W1, M1 or X; BR and 0T are related cases
-  - triggered when HMRC lacks details, for example a first job or a new job without a P45
-  - the P45 or the starter checklist is the fix
-  - corrected in-year, payroll recalculates and refunds through wages; after year end HMRC
-    reconciles and issues a calculation, and the refund can be claimed online
-  - the extra payslip and the tax refund are two separate events, from two different places, weeks
-    and months apart. The payslip came from the employer a few weeks after Drew went back to
-    school and covered untaken holiday. The refund came from the Revenue by cheque about six
-    months later. An earlier draft merged them and a second draft got the timing wrong. Do not let
-    a later pass compress them back together for tidiness.
-  - untaken statutory holiday: VERIFIED 28 July. Acas states employers must pay in lieu for any
-    untaken statutory holiday a worker has accrued when they leave, and the legal basis is
-    regulation 14 of the Working Time Regulations 1998. The article states it only as your own
-    experience, which is now backed by the rule rather than resting on memory.
--->

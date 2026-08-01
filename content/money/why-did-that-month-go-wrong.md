@@ -3,7 +3,7 @@ title: "Why Did That Month Go Wrong?"
 subtitle: "It usually is not overspending."
 date: 2026-09-21T08:00:00+01:00
 weight: 45
-draft: true
+draft: false
 description: "Nothing unusual happened. You did not buy anything you regret. The month broke anyway, and there is normally a reason that has nothing to do with willpower."
 tags: ["getting started"]
 ---
@@ -69,32 +69,3 @@ One column for when money arrives. One column for when money leaves, every regul
 Then look for two things. Anything that lands before your pay does rather than after. And any week where three or four things arrive together.
 
 You are not budgeting. You are looking at the shape of your own month, which most of us have never seen written down, and which explains a surprising number of months that went wrong for no apparent reason.
-
-<!--
-NOTES FOR DREW, DELETE BEFORE PUBLISHING
-
-About 1,150 words. Precision, naturalness and territory passes done 28 July. Territory clean.
-Weight 45, after Why Leave Money Doing Nothing? at 40, because it assumes the reader has thought
-about having something set aside. Proposed date 9 November.
-
-THE BRIEF CHANGED during commissioning. It was going to be about annual costs pretending to be
-monthly ones. Drew's material reframed it: the month breaks because several schedules collide,
-and the sharpest case is two correct decisions made months apart that were incompatible with each
-other. The annual costs point survives as one paragraph in the breaks section rather than as the
-subject.
-
-COMMISSIONING ANSWERS
-  1. Ordinary experience: a month that came apart with nothing unusual in it.
-  2. Reasonable assumption: I overspent and was not paying attention.
-  3. Hidden mechanism: a month is not a container, it is where several schedules overlap, and
-     instructions set up at different times do not know about each other.
-  4. Habit: ask what happened when, not what you bought.
-
-PERSONAL MATERIAL: three of Drew's, all his own. The holiday and the forgotten new payment, the
-pay landing the wrong side of a large bill, and the direct debit set to clear a card in full
-colliding with a twenty-four month interest free offer. No amounts, no provider named.
-
-CHECK BEFORE PUBLISHING: nothing factual needs verifying, which makes this the only article in the
-series with no external claims in it at all. That is worth preserving; do not let a later pass add
-a rule or a threshold.
--->

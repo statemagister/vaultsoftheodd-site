@@ -1,7 +1,7 @@
 ---
 title: "Why Is My Pay Less Than I Was Told?"
 subtitle: "The number you were quoted is not the number that arrives."
-date: 2026-10-19T08:00:00+01:00
+date: 2026-08-17T08:00:00+01:00
 weight: 15
 draft: true
 description: "You were told a rate. Something else arrived. Both numbers are correct, and nobody explains why."
@@ -77,6 +77,12 @@ If it ends in W1, M1 or X, or if it is BR or starts with 0T, something temporary
 Then, if you are starting a job rather than already in one, ask one more question before you accept. When is the first payday, and does it cover the whole period since I started?
 
 Because the gap before the first payment is where new jobs go wrong, and it is much easier to plan for in advance than to survive in retrospect.
+
+## Useful links
+
+- [GOV.UK: check your Income Tax for the current year](https://www.gov.uk/check-income-tax-current-year) to see your tax code, what HMRC thinks you earn, and to correct it if the details are out of date.
+- [GOV.UK: check how to claim a tax refund](https://www.gov.uk/claim-tax-refund) to find out what to do if you have paid too much, including for a previous year.
+- [Acas: final pay when someone leaves a job](https://www.acas.org.uk/final-pay-when-someone-leaves-a-job) for what should be in a final payslip, including pay for holiday you earned and did not take.
 
 <!--
 NOTES FOR DREW, DELETE BEFORE PUBLISHING

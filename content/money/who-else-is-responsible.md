@@ -1,8 +1,8 @@
 ---
 title: "Who Else Is Responsible If a Purchase Goes Wrong?"
-date: 2026-10-12T08:00:00+01:00
+date: 2026-12-14T08:00:00+00:00
 weight: 120
-draft: true
+draft: false
 description: "The airline went bust while we were abroad. It turned out the flights were not only between us and them."
 tags: ["consumer protection"]
 ---
@@ -71,36 +71,3 @@ If you would be on your own, and you can clear the balance, paying at least the 
 
 - [MoneyHelper: how you're protected when you pay by card](https://www.moneyhelper.org.uk/en/everyday-money/credit/how-youre-protected-when-you-pay-by-card) for what Section 75 and chargeback each cover, the limits, and how to make a claim.
 - [Financial Ombudsman: problems with goods and services](https://www.financial-ombudsman.org.uk/consumers/complaints-can-help/credit-borrowing-money/goods-services-bought-credit) for what happens if the card provider turns your claim down, and what they consider when they look at it.
-
-<!--
-NOTES FOR DREW, DELETE BEFORE PUBLISHING
-
-About 1,150 words. First draft. Precision and naturalness passes still to do.
-
-COMMISSIONING ANSWERS
-  1. Ordinary experience: abroad when the airline collapsed.
-  2. Reasonable assumption: this is now between me and a company that no longer exists.
-  3. Hidden mechanism: there were three parties to the purchase, not two, and the card provider is
-     equally liable.
-  4. Habit: ask who else would be responsible if the supplier disappeared before delivery.
-
-THE BOUNDARY is in the fourth and fifth paragraphs, deliberately before the story resumes, because
-this article follows two weeks of telling people to be careful with cards. Do not let a later pass
-move it further down for the sake of a cleaner opening. It is worded so that it works for somebody
-arriving cold from a search as well as for somebody reading in order: no article numbers, no
-reference to what came before.
-
-FIGURES AND FACTS, checked 28 July 2026 against MoneyHelper and the Financial Ombudsman
-  - more than £100 and no more than £30,000, per item or set, not per bill
-  - exactly £100 does not qualify
-  - partial payment counts: a deposit on the card can bring the whole purchase in
-  - equal liability for breach of contract, misrepresentation, or supplier failure
-  - debit cards get chargeback instead: scheme rules rather than law, any value, roughly 120 days
-  - the family ticket versus individual tickets point is MoneyHelper's own example
-  - intermediaries and marketplaces can break the chain
-
-YOUR CALL: the story says the card company offered to arrange replacement flights and you found
-cheaper ones yourselves. Official guidance says reasonable additional costs can sometimes be
-covered too, which is a stronger claim than the article makes. It is left out because your
-experience does not evidence it and it varies. Add it only if you want to research it properly.
--->

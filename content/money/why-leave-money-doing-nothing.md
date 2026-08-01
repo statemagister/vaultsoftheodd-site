@@ -1,6 +1,6 @@
 ---
 title: "Why Leave Money Doing Nothing?"
-date: 2026-08-31T08:00:00+01:00
+date: 2026-09-14T08:00:00+01:00
 weight: 40
 draft: false
 description: "Money sitting in an account looks like money doing nothing. That is not quite what is happening."

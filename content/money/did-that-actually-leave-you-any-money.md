@@ -1,6 +1,6 @@
 ---
 title: "Did That Actually Leave You Any Money?"
-date: 2026-08-24T08:00:00+01:00
+date: 2026-09-07T08:00:00+01:00
 weight: 30
 draft: false
 description: "Sometimes you cancel something and nothing seems to change. That does not mean nothing happened."

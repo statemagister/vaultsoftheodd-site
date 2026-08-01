@@ -1,8 +1,8 @@
 ---
 title: "Save It, or Pay Off Debt?"
-date: 2026-09-28T08:00:00+01:00
+date: 2026-11-30T08:00:00+00:00
 weight: 100
-draft: true
+draft: false
 description: "You have found thirty pounds a month. You owe four different people. Splitting it four ways feels fair, and it is the thing to resist."
 tags: ["getting started", "debt"]
 ---
@@ -88,43 +88,3 @@ You are not committing to anything by knowing. It is easy to carry several debts
 ## Useful links
 
 - [MoneyHelper: find free debt advice](https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt/debt-advice-locator) if the total is beyond what small amounts can touch, if payments are being missed, or if anything on your list is rent, council tax, energy or a court fine. Free and confidential, online, by phone or near where you live.
-
-<!--
-NOTES FOR DREW, DELETE BEFORE PUBLISHING
-
-About 1,100 words. First draft, not passed yet: it still needs the precision pass, the
-naturalness pass and a read for anything borrowed from another article's world. Those are
-September work; nothing about them will change the architecture.
-
-WHAT THIS ARTICLE IS ACTUALLY ABOUT: releasing monthly cash flow, not debt. The heart of it is
-that a debt disappearing hands its payment back to you. Everything before that exists to reach it,
-everything after exists to stop it being applied unsafely.
-
-THE LENS FOR THE NATURALNESS PASS: read it once asking of every paragraph, does this either
-explain why cash flow grows, or stop somebody misapplying the idea? Nothing currently fails that,
-but it is the test to use rather than a general tidy.
-
-COMMISSIONING ANSWERS
-  1. Ordinary experience: thirty pounds freed up, four debts, balances rising anyway.
-  2. Reasonable assumption: split it evenly, or save it.
-  3. Hidden mechanism: minimums barely clear the interest, and every debt that clears hands back
-     its payment.
-  4. Habit: ask what clearing this one hands back to you, not just what it is costing you.
-
-YOUR CALL ON THE PERSONAL PARAGRAPH. It is deliberately low resolution: more debts than you care
-to write down, small ones first, nearly four years for the big ones. No amounts, no creditors, no
-mention of hunger, homelessness or family, all of which belong to the decision you have not made
-yet about article 10. If you want this article to carry more, it can, but it should not carry that
-material by accident.
-
-TERMS: none introduced. There is no "What this is called" section because there is nothing here
-worth naming that the reader does not already have a word for.
-
-THE PRIORITY DEBTS GATE is a short section here rather than a separate article, on the grounds
-that a reader with rent arrears must not be optimising card balances. If it ever becomes its own
-piece, this section shrinks to two sentences and a link.
-
-CHECK BEFORE PUBLISHING: that the early repayment charge point is fairly stated for loans, and
-that nothing here contradicts Why Leave Money Doing Nothing?, which says a small amount within
-reach can matter even while debt exists. It is meant to agree with it.
--->

@@ -1,7 +1,7 @@
 ---
 title: "Am I Actually Doing Better?"
 subtitle: "There is only one comparison with any information in it."
-date: 2026-10-26T08:00:00+00:00
+date: 2026-11-02T08:00:00+00:00
 weight: 65
 draft: true
 description: "Comparing your money to other people's tells you nothing, for a reason that has nothing to do with envy."

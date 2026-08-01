@@ -1,7 +1,7 @@
 ---
 title: "Who Chose Your Pension Investments?"
 subtitle: "Somebody did, and they have never met you."
-date: 2026-11-02T08:00:00+00:00
+date: 2026-11-23T08:00:00+00:00
 weight: 95
 draft: true
 description: "Your pension is invested in something. You almost certainly did not pick it, and it is following a plan you have never seen."
@@ -30,7 +30,7 @@ That is a genuinely difficult question, and the answer they have arrived at is a
 
 Here is the thing I did not know for years, and it is more consequential than which fund you are in.
 
-Most default arrangements do not stay the same. They are built around a date, and as that date approaches they gradually move your money out of things that grow and into things that wobble less. The idea is sensible. A large fall in the year before you need the money is a catastrophe, and a large fall thirty years out is a Tuesday.
+Most default arrangements do not stay the same. They are built around a date, and as that date approaches they gradually move your money out of things that grow and into things that wobble less. The idea is sensible. A large fall shortly before you need the money can be a catastrophe. Decades earlier, a recoverable fall may have time to recover.
 
 Two things about that are worth knowing.
 
@@ -66,7 +66,7 @@ This is the part that matters more than the rest of the article, because the wro
 
 **Leaving the default can turn off the automatic part.** If you pick your own funds, the gradual move into safer things as you approach the date may stop happening, and it becomes your job to remember, in twenty years, that it was ever a thing. Plenty of people who switched have not thought about it since.
 
-**More risk is not the same as more return.** Money that has decades ahead of it can survive a fall and recover. Money that is needed soon cannot. The reason the default gets more cautious near the end is not timidity, it is arithmetic, and anybody telling a fifty-eight year old to move everything into shares is not giving advice, they are giving an opinion with your money.
+**More risk is not the same as more return.** Money not needed for decades may have time to recover from a recoverable fall. Money needed soon may not. Time creates room, not a guarantee. The reason the default gets more cautious near the end is not timidity, it is arithmetic, and anybody telling a fifty-eight year old to move everything into shares is not giving advice, they are giving an opinion with your money.
 
 **And nobody knows what will do well.** Not me, not the default, not the person on the internet with the chart. What you can know is your own dates and your own plans, which is the one piece of information the scheme genuinely does not have.
 
@@ -81,6 +81,11 @@ What your money is currently invested in. Not to change it, just to know it is a
 And what retirement date the scheme is using for you. That is the date the whole plan is built around, and if it is wrong, it is wrong quietly for years.
 
 If that date does not match what you intend to do, that is worth a conversation, either with the scheme or with somebody qualified to advise you. Not because the default is bad, but because it is following a map to a destination you may not be going to.
+
+## Useful links
+
+- [MoneyHelper: pension investment options](https://www.moneyhelper.org.uk/en/pensions-and-retirement/building-your-retirement-pot/pension-investment-options-an-overview.html) for how a scheme invests your money, how to check whether you are in the default fund, and what to weigh before changing it.
+- [Pension Wise](https://www.moneyhelper.org.uk/en/pensions-and-retirement/pension-wise) for a free, impartial, government-backed appointment about taking money from a defined contribution pension. Available online from age 50, and earlier if you are taking a pension early because of ill health.
 
 <!--
 NOTES FOR DREW, DELETE BEFORE PUBLISHING

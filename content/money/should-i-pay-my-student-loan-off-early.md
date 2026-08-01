@@ -1,7 +1,7 @@
 ---
 title: "Should I Pay My Student Loan Off Early?"
 subtitle: "I did, for a while. Then I worked out what it was buying me."
-date: 2026-11-16T08:00:00+00:00
+date: 2026-11-09T08:00:00+00:00
 weight: 85
 draft: true
 description: "Before sending them extra money, there is one question worth answering. It is not the obvious one."

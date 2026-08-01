@@ -1,6 +1,6 @@
 ---
 title: "What Will Your Employer Add?"
-date: 2026-09-21T08:00:00+01:00
+date: 2026-11-16T08:00:00+00:00
 weight: 90
 draft: false
 description: "There is money attached to your job that only appears once you have put some of your own down. Most people have never found out how much."
@@ -41,9 +41,7 @@ My employer matched what I put in, and the preset was not the ceiling.
 
 I found that out on day one. I knew there would be a portal, I assumed there would be a ceiling somewhere, and I sat and moved my own contribution up and down until I found the point where their side stopped moving with it. Ten minutes, sitting at a desk. I set it there and left it.
 
-The same thing was true one screen further in. The money was going into a set of funds somebody else had picked as the default. I deleted those and chose my own.
-
-I did not know they would do better. I suspected they might, and over the years they did, which is a different sentence from saying I knew what I was doing.
+One screen further in was another default, this time for what the pension bought with the money. That is a different decision and I come back to it in a later article.
 
 Plenty of people I worked alongside never touched theirs.
 
@@ -67,7 +65,7 @@ Money in a pension is normally locked away until you are 55, and that rises to 5
 
 If you are dealing with debt you cannot manage, the arithmetic can also come out differently, and that is a conversation to have with a free debt adviser rather than with an article.
 
-Be careful with the second half of my story, too. Changing the funds worked out for me and it might not have, and I would be telling you the same story either way if it had gone the other direction, which is worth remembering about anybody describing their own results. A default fund is chosen to be a reasonable answer for somebody the scheme knows nothing about. That is not the same as being the wrong answer, and it is a perfectly sensible place to leave your money. If you do go looking at that screen, understand what you are changing before you change it rather than afterwards.
+Nothing here is a reason to go and change what your pension is invested in. A default fund is chosen to be a reasonable answer for somebody the scheme knows nothing about, which is not the same as being the wrong answer, and it is a sensible place to leave money. That decision has an article of its own.
 
 Your employer's help has an edge to it too. Most will match you only up to a point, and above that you are on your own. Contributing more than that point can still be a reasonable thing to do, but you should know you are doing it without company.
 

@@ -1,9 +1,9 @@
 ---
 title: "How Much Is Enough?"
-date: 2026-09-14T08:00:00+01:00
+date: 2026-10-26T08:00:00+00:00
 subtitle: "Enough is a number, not a feeling."
 weight: 60
-draft: true
+draft: false
 description: "Every time you get closer to enough, it seems to move. There is a reason for that, and it is not greed."
 tags: ["getting started"]
 ---
@@ -71,36 +71,3 @@ Pick one thing you are quietly worried about. A month without work. Christmas. T
 Then give it a figure. Not the right figure, because there is no way to know that yet. Just a number, written down, that you can be above or below.
 
 You will have converted a worry into a question, and a question is something you can actually answer.
-
-<!--
-NOTES FOR DREW, DELETE BEFORE PUBLISHING
-
-About 1,050 words. First draft. No date and no place in the running order yet: it is a foundation
-article and belongs early in reading order rather than at weight 12, which is where it will sit
-until the weights are respaced.
-
-TITLE: question in house style, with the better sentence as the subtitle, the way Why Invest? uses
-"You already do." Check the theme renders `subtitle`; Why Invest? proves it does.
-
-COMMISSIONING ANSWERS
-  1. Ordinary experience: the target moves every time you get near it.
-  2. Reasonable assumption: you will know enough when you feel it.
-  3. Hidden mechanism: as a pot, the question is unanswerable, so it stays a feeling and the
-     feeling attaches itself to wherever you are. As an income, it becomes a comparison against a
-     month you already know.
-  4. Habit: what number would let you stop worrying about this particular thing?
-
-YOUR CALL, and it is a real one. "I still am not certain it is enough" is a permanent public
-statement, made while you are still working and approaching a decision about when to stop. It is
-also the best paragraph in the article and the reason it is not another piece of goal-setting
-advice. Read it as a stranger would before publishing.
-
-WORLD: the horizon, chosen because it moves for a reason rather than out of greed, and because it
-cannot be crossed, which is what a finish line image would have implied. Nothing else in the
-series uses it.
-
-OVERLAP TO WATCH: Why Invest? already mentions in passing that money you set aside now pays an
-income. This article makes that the subject rather than an aside, and uses different words for it.
-If the naturalness pass finds them reading alike, this one keeps it, since it is the point here
-and only colour there.
--->

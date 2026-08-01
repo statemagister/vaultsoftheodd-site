@@ -1,7 +1,7 @@
 ---
 title: "Why Didn't My Pay Rise Feel Like One?"
 subtitle: "Nobody raised your tax rate."
-date: 2026-11-23T08:00:00+00:00
+date: 2026-08-24T08:00:00+01:00
 weight: 17
 draft: true
 description: "The pay went up and the month felt the same. There are two reasons for that, and only one of them gets talked about."
@@ -79,6 +79,11 @@ Work out your own version of the number above.
 Take what you earn, subtract £12,570, and note the tax on what is left. Then do it again subtracting £15,480 instead. The difference between the two figures is yours, and it is the cost of the doorframe standing still.
 
 That is not a number you can recover. It is a number worth knowing, because the next time somebody says taxes have not gone up, you will know exactly which question to ask.
+
+## Useful links
+
+- [GOV.UK: Income Tax rates and Personal Allowances](https://www.gov.uk/income-tax-rates) for where the lines currently sit, and whether they have moved since this was written.
+- [GOV.UK: Income Tax in Scotland](https://www.gov.uk/scottish-income-tax) if you live in Scotland, where the bands are set separately and are not the same.
 
 <!--
 NOTES FOR DREW, DELETE BEFORE PUBLISHING

@@ -1,8 +1,8 @@
 ---
 title: "What If You Can't Pay Everyone?"
-date: 2026-10-05T08:00:00+01:00
+date: 2026-12-07T08:00:00+00:00
 weight: 110
-draft: true
+draft: false
 description: "I asked each of them what they would accept. That turned out to be the wrong question."
 tags: ["debt"]
 ---
@@ -88,36 +88,3 @@ You may find, as I did, that the number is smaller than anybody had asked for an
 - [MoneyHelper: find free debt advice](https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt/debt-advice-locator) for free and confidential help, online, by phone or near where you live. They will do everything described here for nothing.
 - [StepChange](https://www.stepchange.org/) for a free online assessment and ongoing support with an arrangement.
 - [Citizens Advice: debt and money](https://www.citizensadvice.org.uk/debt-and-money/) for what to do first if a debt has consequences beyond interest, and for help dealing with creditors.
-
-<!--
-NOTES FOR DREW, DELETE BEFORE PUBLISHING
-
-About 1,300 words. First draft. Precision and naturalness passes still to do.
-
-THE ONE DECISION, still yours. The draft currently says meals and rent and stops there. The fuller
-version was: "It meant going without meals, and it meant watching the rent get harder, and I
-already knew what the far end of that road looked like because I had been down it before." That
-second half was cut because it opens a door the article never goes back through, and a reader who
-knows nothing about you feels its weight without knowing what it points at. Put it back only if a
-later article intends to deal with that period directly.
-
-Family is out entirely, per the rule in SERIES.md. The load bearing fact is that there was nobody
-to fall back on, and the article carries that implicitly by never mentioning anyone helping.
-
-COMMISSIONING ANSWERS
-  1. Ordinary experience: the arithmetic that stops working.
-  2. Reasonable assumption: the amount demanded is the amount that must be paid.
-  3. Hidden mechanism: creditors compare your offer against their alternatives, which are worse.
-     And asking what each will accept produces answers that cannot be added up.
-  4. Habit: work out your own number before the conversation, then tell them.
-
-CHECK BEFORE PUBLISHING
-  - the credit file paragraph. An arrangement to pay less than contractual is usually recorded and
-    can remain for years. Verify how it is recorded and for how long before publishing, since this
-    is the one place the article could cost somebody something they did not expect.
-  - add StepChange and Citizens Advice to the links if you want three rather than one. I have not
-    verified their URLs.
-  - that nothing contradicts Save It, or Pay Off Debt?, which this article follows directly. No
-    sentence here depends on having read it: a search arrival should be able to follow this one
-    cold.
--->

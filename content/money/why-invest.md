@@ -72,7 +72,7 @@ When even a small amount is genuinely spare, it can start helping you later.
 
 ## What it looked like for me
 
-I have been doing this with part of my pay for roughly two decades.
+I have been doing this with part of my pay for about twenty-five years.
 
 Some of the money left before I saw it. Some went out by standing order.
 

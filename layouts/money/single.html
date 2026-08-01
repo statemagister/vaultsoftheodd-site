@@ -16,6 +16,11 @@
       </div>
 
       <p class="fan-disclaimer">General information, not financial advice &mdash; see the note on <a href="/money/">the Money vault</a>. Rules and figures change; check the official sources linked in each article before acting.</p>
+      {{- /* Route-out for articles that touch debt in passing. Suppressed on the
+             debt pieces that already carry this exact link in their own body. */ -}}
+      {{- if not (strings.Contains .RawContent "debt-advice-locator") }}
+      <p class="debt-help">Worried about debt now? Free, confidential help is available through <a href="https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt/debt-advice-locator">MoneyHelper&rsquo;s debt advice locator</a>.</p>
+      {{- end }}
     </article>
 
     <aside class="money-questions">

@@ -3,7 +3,7 @@ title: "What Do You Do When You Don't Know?"
 subtitle: "Have a default that does not require you to know."
 date: 2026-12-28T08:00:00+00:00
 weight: 59
-draft: false
+draft: true
 description: "Is now a good time? Should I put this back or spend it? Most money questions arrive without enough information to answer them, and waiting is itself an answer."
 tags: ["getting started", "investing"]
 ---
@@ -56,11 +56,11 @@ Everything it paid out went back in. Every dividend, for twenty-five years, with
 
 That is the entire method. Two defaults, running for twenty-five years, removing the need to make repeated decisions about timing.
 
-## And this September both of them change
+## And then both of them stopped
 
-The monthly investing stops, and so does the reinvesting, and neither is because they failed.
+The monthly investing has stopped, and so has the reinvesting, and neither is because they failed.
 
-They stop because they finished. What they were building is now the thing I am going to live on, so the dividends start coming to me instead of going back in. Money that had no job for twenty-five years has one now, which is exactly the condition the default always carried.
+They stopped because they finished. What they were building is now the thing I live on, so the dividends come to me instead of going back in. Money that had no job for twenty-five years has one now, which is exactly the condition the default always carried.
 
 Getting there was not tidy. To move towards holdings that paid a higher income, I sold some things at a loss, and the ones I bought have not done well since. Judged on what they are worth, that decision looks poor and still does.
 
@@ -70,7 +70,7 @@ Which is the thing worth taking from it rather than the outcome. Whether somethi
 
 There is one more change, and it is the part I did not expect.
 
-I will keep putting something in, smaller than before, and it is doing a different job. An income does not stay still on its own. Prices rise, so what it buys shrinks. Dividends get cut, which I have had happen. So putting a bit back in is no longer building anything. It is holding it level.
+I still put something in, smaller than before, and it is doing a different job. An income does not stay still on its own. Prices rise, so what it buys shrinks. Dividends get cut, which I have had happen. So putting a bit back in is no longer building anything. It is holding it level.
 
 Same action, three different jobs across twenty-five years, and the only thing that changed each time was what the money was for.
 

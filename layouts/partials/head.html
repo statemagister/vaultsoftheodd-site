@@ -43,9 +43,10 @@
     <link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
   {{- end }}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  {{- /* Fonts are self-hosted (see @font-face at the top of main.css), so there is no
+         render-blocking third-party request. Preload only the hero display face, which
+         is the home/landing-page LCP element. */ -}}
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/cinzel-latin.woff2" crossorigin>
 
   {{- $css := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint -}}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">

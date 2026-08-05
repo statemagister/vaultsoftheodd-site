@@ -61,12 +61,7 @@
   <aside class="post-aside" aria-label="Vault information">
     <div class="aside-inner">
       {{ partial "search.html" . }}
-      {{- with .Site.Params.buymeacoffee }}
-      <section class="aside-block">
-        <h2 class="aside-title">Support</h2>
-        <a class="coffee" href="{{ . }}" rel="noopener" target="_blank"><span class="cup">&#9749;</span> Buy me a coffee</a>
-      </section>
-      {{- end }}
+      {{- /* No tip jar in the Politics vault — it reads oddly against serious analytical work. */ -}}
     </div>
   </aside>
 </div>

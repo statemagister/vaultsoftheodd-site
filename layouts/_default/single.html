@@ -79,12 +79,13 @@
       </section>
       {{- end }}
 
-      {{- with .Site.Params.buymeacoffee }}
+      {{- /* No tip jar on the Politics papers — it reads oddly against serious analytical work. */ -}}
+      {{- if ne .Section "politics" }}{{- with .Site.Params.buymeacoffee }}
       <section class="aside-block">
         <h2 class="aside-title">Support</h2>
         <a class="coffee" href="{{ . }}" rel="noopener" target="_blank"><span class="cup">&#9749;</span> Buy me a coffee</a>
       </section>
-      {{- end }}
+      {{- end }}{{- end }}
 
       {{- if and .Site.Params.ebay (eq .Section "gaming") }}
       <section class="aside-block">

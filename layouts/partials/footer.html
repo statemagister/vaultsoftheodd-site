@@ -6,9 +6,9 @@
         {{- range .Site.Menus.footer }}
         <li><a href="{{ .URL }}">{{ .Name }}</a></li>
         {{- end }}
-        {{- with .Site.Params.buymeacoffee }}
+        {{- if ne .Section "politics" }}{{- with .Site.Params.buymeacoffee }}
         <li><a href="{{ . }}" rel="noopener">Buy me a coffee</a></li>
-        {{- end }}
+        {{- end }}{{- end }}
       </ul>
     </nav>
     <p class="footer-fine">&copy; {{ now.Year }} {{ .Site.Params.author }}. An independent publishing site. Trademarks remain the property of their respective rights-holders.</p>

@@ -10,21 +10,17 @@ tags: ["getting started"]
 
 Think about an evening with friends, or a day with someone you love.
 
-You enjoy being together. When it ends, you still have the memory of it and the way it made you feel. Often, you are already looking forward to doing it again.
+You enjoy being together, and when it ends you still have the memory of it and the way it made you feel.
 
-A holiday with the family. A friend you have known since school. A wedding, a birthday, an ordinary afternoon nobody planned and everybody remembers. Good times, and the feelings that outlast them.
+But that is only half of it. The same people turn up when things go badly, and they come because of everything that went before. Nobody can arrange that in a week.
 
-But that is only half of it.
+The time has gone. What it gave you has not.
 
-The same people turn up when things go badly. The bad news, the hospital visit, the job that ended without warning. They come because of everything that went before, and nobody can arrange that in a week.
+That is not a comparison. It is the same word for the same thing. We say we invest time in a friendship, effort in a place we keep going back to, years in learning something. Nobody expects the return on Tuesday because they put the work in on Monday, and nobody thinks the time was wasted while they waited.
 
-You do the same for them. When a friendship is worth keeping, you do not stop turning up because someone is having a hard year, or because things have become difficult. That is often the point at which all the ordinary time you put in turns out to have been worth something.
+Money is one more thing you can invest, for the same reason, and it can be just as rewarding. It is only unusual because we talk about it as though it were a different act entirely.
 
-The time has gone, but what it gave you has not.
-
-Money can do something similar.
-
-The rest of this article is about how. It starts much earlier than buying shares, and it matters most when there is not much of it.
+The rest of this article is about what that looks like with money. It starts much earlier than buying shares, and it matters most when there is not much of it.
 
 ## Some spending ends. Some keeps helping.
 
@@ -54,13 +50,13 @@ One of those is not always better than another. The point is to know what you ar
 
 Time cannot be stored. There is no jar to put it in.
 
-Once it has passed, it has gone. What you did with it may still matter years later, but you cannot save part of today and use it next month.
+Those evenings are gone. What they built is not, but the hours themselves cannot be saved up and spent later. You cannot keep back part of today and use it next month.
 
 Money can wait.
 
 The work is done and the day has passed, but some of the pay can remain. Money from one pay packet can stay until the next. Together, those amounts can pay for something that neither pay packet could have managed alone.
 
-Work you did last year can pay for something next year, or in twenty years.
+Work you did last year can pay for something next year, or in decades.
 
 For many of us, little or none of our pay is free to wait. Rent, food, energy, travel and debt can use the money almost as soon as it arrives.
 

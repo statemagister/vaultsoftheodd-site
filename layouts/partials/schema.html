@@ -1,0 +1,29 @@
+{{- /* ScholarlyArticle structured data for the Politics papers, so search
+       engines read them as authored analytical work rather than generic pages.
+       Scoped to politics single pages; built as a dict and jsonify'd. safeJS
+       stops html/template re-escaping the JSON inside the <script>. No prose is
+       touched — this is metadata only. */ -}}
+{{- if and .IsPage (eq .Section "politics") -}}
+  {{- $desc := (or .Description .Summary .Site.Params.description) | plainify | truncate 200 -}}
+  {{- $img := site.Params.ogImage -}}
+  {{- with .Params.images }}{{ $img = index . 0 }}{{ end -}}
+  {{- if not (hasPrefix $img "http") }}{{ $img = ($img | absURL) }}{{ end -}}
+  {{- $mod := .Lastmod -}}
+  {{- with .Params.updated }}{{ $mod = . }}{{ end -}}
+  {{- $schema := dict
+      "@context" "https://schema.org"
+      "@type" "ScholarlyArticle"
+      "headline" .Title
+      "description" $desc
+      "inLanguage" (.Site.LanguageCode | default "en-GB")
+      "datePublished" .Date
+      "dateModified" $mod
+      "url" .Permalink
+      "mainEntityOfPage" .Permalink
+      "image" $img
+      "keywords" .Params.tags
+      "author" (dict "@type" "Person" "name" (or .Params.byline .Site.Params.author))
+      "publisher" (dict "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL)
+  -}}
+  <script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>
+{{- end -}}

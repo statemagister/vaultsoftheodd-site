@@ -43,6 +43,8 @@
     <link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
   {{- end }}
 
+  {{ partial "schema.html" . }}
+
   {{- /* Fonts are self-hosted (see @font-face at the top of main.css), so there is no
          render-blocking third-party request. Preload only the hero display face, which
          is the home/landing-page LCP element. */ -}}

@@ -1,5 +1,6 @@
 ---
 title: "The Politics Vault"
+description: "Constitutional development, fiscal architecture and institutional design. A published analytical corpus by Drew Griffiths. Nine papers, no advocacy, no party line."
 # The vault is organised into sections, rendered in the order below. A section
 # appears when it has published papers, or when it carries a `note` (used to
 # hold a place for a section whose first paper is still to come). Papers join a

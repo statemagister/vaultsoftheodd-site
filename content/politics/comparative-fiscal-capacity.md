@@ -6,6 +6,8 @@ date: 2026-06-16T10:00:00Z
 weight: 40
 series: "framework"
 summary: "A comparative analysis of what each live constitutional path — the current settlement, enhanced devolution and independence — would require Wales to build in fiscal capacity, and how strong the evidence is for each requirement. Working through eleven mechanisms, from territorial funding and borrowing to currency, welfare and payment systems, it argues the paths are not steps on a single ladder of more or less power but different problems of capacity — and recommends none of them. A companion evidence annex carries the full method, mechanism dossiers and source log."
+description: "What each constitutional path requires Wales to build in fiscal capacity. Eleven mechanisms mapped across three paths, recommending none. Drew Griffiths, June 2026."
+tags: ["Welsh devolution", "fiscal capacity", "fiscal policy", "fiscal architecture", "Welsh constitutional development", "comparative analysis", "evidence-based policy", "institutional capability", "Wales", "United Kingdom"]
 pdf: "/papers/griffiths-comparative-fiscal-capacity-june-2026.pdf"
 annexpdf: "/papers/griffiths-comparative-fiscal-capacity-evidence-annex-june-2026.pdf"
 prereq: "A comparative companion to [**A Framework for Welsh Constitutional Development**](/politics/welsh-constitutional-development-framework/). It applies the Framework's distinction between competence and capacity across the three live constitutional paths — the current settlement, enhanced devolution and independence — in the fiscal domain. Read the Framework first."

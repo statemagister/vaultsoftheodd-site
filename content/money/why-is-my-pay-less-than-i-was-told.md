@@ -4,27 +4,29 @@ subtitle: "The number you were quoted is not the number that arrives."
 date: 2026-08-17T08:00:00+01:00
 weight: 15
 draft: false
-description: "You were told a rate. Something else arrived. Both numbers are correct, and nobody explains why."
+description: "You were told what the job pays. Something smaller arrived. Both numbers are correct, and nobody explains why."
 tags: ["getting started", "pay"]
 ---
 
-Somebody tells you the number.
+You get offered a job.
 
-An hourly rate in an interview, or a salary in an offer letter, or a figure in a job advert that made you apply in the first place. And on the way home you do the arithmetic. Times the hours, or divided by twelve. You work out what the rent leaves, what a week looks like, whether the car is possible.
+They tell you what it pays. Maybe an hourly rate, maybe a yearly salary. So you work out what that means for you: what the rent leaves, what a week looks like, whether the car is possible.
 
-Then the money arrives and it is less. Not slightly less. Less enough that the sums you did on the way home no longer describe your life.
+Then your first pay arrives, and there is less money than you expected.
 
-Nothing about the way the number is quoted warns you about this, and the two conclusions people reach afterwards are both wrong. Either something has gone wrong with the pay, or something is wrong with them for having been naive about it.
+You have not necessarily been paid the wrong amount. The number you were given was before tax and other things came off. What reaches your bank account is what is left.
 
-Neither. You were told a rate, and what arrives is a result, and nobody mentioned they were different kinds of number.
+Nobody explained the difference.
 
-## Why the two numbers are different
+## What comes off before you are paid
 
-The rate is what the job is worth. It is the number before anything happens to it.
+Before you are paid, your employer may take off Income Tax, National Insurance, pension contributions and student loan repayments.
 
-What lands is that number after several things have come off, and they do not behave the same way as each other. Some take a proportion of everything you earn. Some take nothing until you pass a certain line, so they are invisible on a small month and noticeable on a large one. Some are a fixed amount. And at least one of them, if you are in a pension, is not a deduction at all in the sense the others are. It is your money going somewhere you cannot reach rather than money leaving.
+They do not all work the same way, and some may not apply to you at all.
 
-That is why you cannot work out what will land by taking a percentage off the number you were told. The rate is a single number. What arrives is the outcome of four or five different rules interacting, and the only reliable way to know it is to look at it after it has happened.
+Your payslip shows what came off and what you were actually paid. That last number is the one you can spend.
+
+Pension money is slightly different. It has not really gone. It is still yours, but it has been put into your pension instead of your bank account.
 
 ## The first time it did not matter
 
@@ -32,51 +34,53 @@ My first payslip was for summer work while I was still at school.
 
 I did not look at it. The money went into the bank and I was pleased to have any, and it never occurred to me that the amount that arrived might be different from the amount I had been told. It genuinely did not matter. It was money on top of a life that somebody else was paying for.
 
-What I did not know was that I had been put on an emergency tax code, which is what happens when the tax office does not yet have enough information about you. A first job is the clearest possible example. There is nothing to go on, so it taxes each pay period as though it stands alone, and it takes more than it should.
+What I did not know was that HMRC did not yet know enough about what I was earning, so I had been put on an emergency tax code and too much tax was coming off.
 
-I found out because two separate things turned up, weeks and then months apart, long after the job had ended.
+I only found out because two things arrived after the job had ended.
 
 The first was an extra payslip, a few weeks after I had gone back to school. It was for holiday I had earned and not taken, which I had never thought to ask about and would not have known to.
 
 The second arrived about six months later. A letter with a cheque attached, refunding tax I had overpaid, once somebody had looked at the year properly.
 
-Different sources, different reasons, and I had not known either existed. Both were mine, and neither had needed me to do anything.
+Different sources, different reasons, and I had not known either existed. Both were mine.
 
 ## The time it mattered enormously
 
 Years later I was rebuilding a life from a much lower starting point, and the same document meant something completely different.
 
-What arrived after deductions was not pocket money on top of anything. It was the entire basis of the month. Rent came out of it, food came out of it, and whether the week worked came out of it. The gap between what I had been told and what I received was no longer an administrative curiosity. It was the difference between the month working and not working.
+What arrived after deductions was not pocket money on top of anything. It was the entire basis of the month. Rent came out of it, food came out of it, and whether the week worked came out of it.
 
-The hardest part was that most of it could not be argued with. You can look at those deductions as long as you like and they do not move. Being told to accept that is useless advice, and I am not going to give it.
+Most of the deductions were correct. Knowing that did not make the rent any cheaper.
 
-What I will say is what I wish somebody had told me at the beginning. Plan from what lands. Never from what you were quoted. The quoted number is real, but it is not the number your life is built out of.
+What I wish somebody had told me was simpler: plan from what reaches your bank account, not from the salary you were quoted.
 
 ## What this is called
 
-The instruction telling your employer how much tax to take off is your tax code. It is on your payslip, usually near your national insurance number, and it is a few numbers and a letter.
+Your tax code tells your employer how much Income Tax to take. You can find it on your payslip.
 
-When the tax office does not have enough information about you yet, it issues a temporary one, called an emergency tax code. On a payslip it usually looks like 1257L followed by W1, M1 or X. It means each pay period is taxed on its own, without reference to what you have already earned this year, which normally means too much comes off.
+If HMRC does not have enough information about you yet, you may be given an emergency tax code. W1, M1 or X at the end can be a sign of one.
 
-It is temporary and it is fixable. Giving a new employer your P45, or filling in the starter checklist they hand you, is what usually resolves it. Once the right code is in place, payroll works out what you overpaid and it comes back through your wages. If the tax year has already ended, the tax office reconciles it and sends a calculation, and the refund can be claimed online.
+That does not mean your employer has done anything wrong. It means HMRC is working with limited information. Once it has the right information, the code can be corrected and tax you overpaid can be returned.
+
+Giving a new employer your P45, or filling in a starter checklist if you do not have one, helps them get this right.
 
 ## Where this stops being useful
 
-Most of what comes off your pay is not a mistake and cannot be changed. Knowing why it is there does not put it back in your pocket, and an article that implied otherwise would be selling you something.
+Most deductions on a payslip are supposed to be there. Checking them does not mean you can make them disappear.
 
-Being on the correct tax code is not a saving either. It is the absence of being overcharged, which is a different feeling and a smaller one, but it is worth having and it is worth checking.
+But you should not be paying too much tax because your tax code is wrong.
 
 And if you are ever owed a refund, claim it yourself. There are companies that will do it for a share of your money, and the thing they are charging you for is a form.
 
 ## One thing to do
 
-Find your tax code on your most recent payslip and look at the end of it.
+Find your tax code on your most recent payslip.
 
-If it ends in W1, M1 or X, or if it is BR or starts with 0T, something temporary is in place and it is probably taking more than it should. That is worth ten minutes with your employer or with the tax office, and it is the one line on a payslip that is sometimes wrong in a way you can fix.
+If you do not understand it, use the GOV.UK checker below. It will tell you what the code means, and it lets you tell HMRC if what they have about you is wrong.
 
 Then, if you are starting a job rather than already in one, ask one more question before you accept. When is the first payday, and does it cover the whole period since I started?
 
-Because the gap before the first payment is where new jobs go wrong, and it is much easier to plan for in advance than to survive in retrospect.
+A long gap before your first pay is much easier to deal with when you know it is coming.
 
 ## Useful links
 

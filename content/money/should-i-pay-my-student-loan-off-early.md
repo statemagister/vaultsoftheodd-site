@@ -54,7 +54,7 @@ I looked at the whole thing again then, expecting something to have changed, and
 
 That is not resignation and it is not a clever trick. It is the outcome of asking the right question and accepting the answer it gave, which happened to be different from the answer my instincts had produced when I was twenty-something and frightened of a big number.
 
-## Where this stops applying
+## Where this stops working
 
 This is the point where I have to be careful, because the wrong lesson is easy to take from it.
 

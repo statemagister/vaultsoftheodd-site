@@ -64,7 +64,7 @@ That does not mean your employer has done anything wrong. It means HMRC is worki
 
 Giving a new employer your P45, or filling in a starter checklist if you do not have one, helps them get this right.
 
-## Where this stops being useful
+## Where this stops working
 
 Most deductions on a payslip are supposed to be there. Checking them does not mean you can make them disappear.
 

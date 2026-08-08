@@ -50,7 +50,7 @@ So every time you change something, an offer, a new plan, a switched provider, a
 
 Mine did not, and the system did exactly what I had told it to do.
 
-## Where this stops applying
+## Where this stops working
 
 Sometimes it really is overspending, and an article that never says so is not being honest. If the same month goes wrong repeatedly with nothing unusual in it, the shape of the outgoings is the problem rather than their timing.
 

@@ -58,7 +58,7 @@ By the time I understood it, it had turned out to be what I wanted. I am not pla
 
 That is luck as much as judgement, and it is worth saying so. Somebody in exactly my position who planned to take the whole lot on a fixed date would have wanted the opposite, and by choosing their own funds they would have quietly switched off the thing that was protecting them.
 
-## Where this stops applying
+## Where the analogy breaks
 
 This is the part that matters more than the rest of the article, because the wrong lesson here is expensive.
 

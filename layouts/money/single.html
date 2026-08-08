@@ -7,7 +7,10 @@
         <h1 class="post-title">{{ .Title }}</h1>
         {{- with .Params.subtitle }}<p class="post-subtitle">{{ . }}</p>{{- end }}
         {{- $byline := .Params.byline | default .Site.Params.author }}
-        <p class="post-meta">By {{ $byline }}{{ if not .Date.IsZero }} &middot; <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>{{ end }}</p>
+        {{- /* "Last updated" shows only when Hugo's lastmod differs from the publication
+               date — i.e. only when a real, dated update has been made (a moved figure, a
+               corrected fact), never on day one. lastmod also feeds the sitemap. */ -}}
+        <p class="post-meta">By {{ $byline }}{{ if not .Date.IsZero }} &middot; <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>{{ end }}{{ if ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02") }} &middot; <span class="post-updated">Last updated <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "2 January 2006" }}</time></span>{{ end }}</p>
         {{ partial "listen.html" . }}
       </header>
 

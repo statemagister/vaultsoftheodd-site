@@ -74,7 +74,7 @@ I still put something in, smaller than before, and it is doing a different job. 
 
 Same action, three different jobs across twenty-five years, and the only thing that changed each time was what the money was for.
 
-## Where this stops working
+## Where the analogy breaks
 
 **A default is not a prediction, and it is not free money either.** If you already have a lump sum, investing it at once has historically done better than feeding it in gradually, for the simple reason that more of it spends more time invested. Regular investing solves a different problem: most of us do not have the whole sum today, we have some of it every month, and putting a whole sum in at once is hard to do even when the arithmetic says you should.
 

@@ -58,7 +58,7 @@ That is why the answer to "should I invest this" is mostly not about your appeti
 
 Getting the date wrong creates one clear avoidable failure: being forced to sell after a fall.
 
-## Where this stops applying
+## Where the analogy breaks
 
 **None of this means owning always wins.** The argument is only that ownership has a chance to keep up. Some investments will not, and some will fail completely.
 

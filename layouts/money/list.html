@@ -6,6 +6,32 @@
       {{- with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
     </header>
 
+    {{- /* "New this week": every live money article sharing the most recent
+           publication date. Two on the seasonal launch Monday (both 3 August),
+           one every Monday after -- it keys off the newest date rather than a
+           fixed count, so it needs no special-casing. This surfaces the latest
+           without reordering the reading list below: position one stays where a
+           new reader starts. $newLinks feeds the "New" marker on the matching
+           list entries so the two views agree. */ -}}
+    {{- $live := (where site.RegularPages "Section" "money").ByDate.Reverse }}
+    {{- $newLinks := slice }}
+    {{- if gt (len $live) 0 }}
+      {{- $newest := (index $live 0).Date.Format "2006-01-02" }}
+      {{- $newThisWeek := slice }}
+      {{- range $live }}{{ if eq (.Date.Format "2006-01-02") $newest }}{{ $newThisWeek = $newThisWeek | append . }}{{ $newLinks = $newLinks | append .RelPermalink }}{{ end }}{{ end }}
+    <section class="new-this-week" aria-label="Just published">
+      <p class="ntw-eyebrow">New this week</p>
+      {{- range $newThisWeek }}
+      <article class="ntw-card">
+        <h2 class="ntw-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        {{- with .Params.subtitle }}<p class="ntw-sub">{{ . }}</p>{{ end }}
+        {{- with .Description }}<p class="ntw-lede">{{ . }}</p>{{ end }}
+        <p class="ntw-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>
+      </article>
+      {{- end }}
+    </section>
+    {{- end }}
+
     {{- /* Driven by the `schedule` (reading order, weight 1-8). Each entry is
            a dated teaser; once its article's date has passed the page is built,
            so we find it by slug and render the real, linked card instead. No
@@ -18,7 +44,7 @@
       {{- with (where site.RegularPages "RelPermalink" (printf "/money/%s/" .slug)) }}{{ $page = index . 0 }}{{ end }}
       <li>
         {{- if $page }}
-        <h3 class="rl-title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+        <h3 class="rl-title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>{{ if in $newLinks $page.RelPermalink }} <span class="rl-new">New</span>{{ end }}</h3>
         {{- with $page.Params.subtitle }}<p class="rl-sub">{{ . }}</p>{{ end }}
         {{- with $page.Description }}<p class="rl-lede">{{ . }}</p>{{ end }}
         <p class="rl-date"><time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "2 January 2006" }}</time></p>

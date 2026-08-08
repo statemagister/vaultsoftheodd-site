@@ -675,6 +675,22 @@ figcaption, .wp-element-caption { display: table-caption; caption-side: bottom; 
 /* Money vault: not-yet-published entries read as dated teasers, not links. */
 .reading-list .rl-title.rl-upcoming { color: var(--text-muted); }
 .reading-list .rl-date.rl-scheduled { color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.72rem; }
+/* Money vault: "New this week" highlight above the reading list. Holds every
+   article sharing the newest publication date -- two on the launch Monday, one
+   thereafter -- so a returning reader finds the latest without hunting the
+   weight-ordered list. The list itself is never reordered. */
+.new-this-week { max-width: var(--maxw); margin: 0 auto 2.2rem; padding: 1.15rem 1.4rem 1.35rem; background: var(--bg-card); border: 1px solid var(--rule); border-left: 3px solid var(--gold); border-radius: 4px; }
+.ntw-eyebrow { font-family: var(--display); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.72rem; font-weight: 600; color: var(--gold); margin: 0 0 0.85rem; }
+.ntw-card + .ntw-card { margin-top: 1.1rem; padding-top: 1.1rem; border-top: 1px solid var(--rule-soft); }
+.ntw-title { font-family: var(--display); font-size: 1.5rem; margin: 0 0 0.2rem; }
+.ntw-title a { color: var(--text-primary); }
+.ntw-title a:hover { color: var(--gold); }
+.ntw-sub { color: var(--gold); font-style: italic; font-size: 1rem; margin: 0 0 0.5rem; }
+.ntw-lede { color: var(--text-body); margin: 0; font-size: 1rem; line-height: 1.55; }
+.ntw-meta { color: var(--text-muted); font-size: 0.82rem; margin: 0.5rem 0 0; letter-spacing: 0.02em; }
+/* "New" marker on the matching entry in the reading list below. Gold chip with
+   page-background text reads clearly against every vault theme. */
+.reading-list .rl-new { display: inline-block; margin-left: 0.5rem; font-family: var(--display); font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: var(--bg); background: var(--gold); padding: 0.12rem 0.42rem; border-radius: 3px; vertical-align: middle; }
 .money-questions { margin: 1.8rem 0 0; padding: 0.9rem 1.1rem; border: 1px solid var(--rule); border-left: 3px solid var(--gold); border-radius: 4px; background: var(--bg-alt); font-size: 0.95rem; line-height: 1.5; }
 .money-questions a { color: var(--gold); font-weight: 600; }
 

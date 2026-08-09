@@ -9,6 +9,10 @@
   </button>
   <button class="listen-stop" type="button" aria-label="Stop reading" title="Stop">&#10005;</button>
 </div>
+{{- /* iOS routes text-to-speech through the ring/silent switch, so read-aloud
+       is silent when the phone is. No web API can override that, so we simply
+       tell iPhone/iPad readers why. Shown only on iOS, only while playing. */ -}}
+<p class="listen-hint" data-listen-hint hidden role="note">No sound? On iPhone and iPad, read-aloud follows the silent switch &mdash; turn silent mode off to hear it.</p>
 <script>
 (function () {
   function init() {
@@ -22,8 +26,12 @@
     var stopBtn = root.querySelector('.listen-stop');
     var label = root.querySelector('.listen-label');
     var icon = root.querySelector('.listen-icon');
+    var hint = document.querySelector('[data-listen-hint]');
     var state = 'idle', userPaused = false, queue = [], qi = 0, current = null, keepTimer = null, startTimer = null;
     var isChromium = /Chrome|Chromium|Edg\//.test(navigator.userAgent) && !/CriOS|EdgiOS|FxiOS|OPiOS/.test(navigator.userAgent);
+    // iOS (incl. iPadOS, which reports as Macintosh but is touch-capable) mutes
+    // speech synthesis when the device's silent switch is on; the hint explains it.
+    var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
     function gatherText() {
       var clone = content.cloneNode(true);
@@ -100,6 +108,7 @@
       synth.cancel();
       queue = buildChunks(text); qi = 0; userPaused = false;
       setState('playing');
+      if (isIOS && hint) hint.hidden = false;
       speakNext();
       keepAlive();
       // Some browsers (e.g. Brave) block the Web Speech API for privacy:
@@ -110,7 +119,7 @@
         if (state === 'playing' && qi <= 1 && !synth.speaking && !synth.pending) stopAll();
       }, 2500);
     }
-    function stopAll() { setState('idle'); userPaused = false; clearTimeout(keepTimer); clearTimeout(startTimer); current = null; synth.cancel(); }
+    function stopAll() { setState('idle'); userPaused = false; clearTimeout(keepTimer); clearTimeout(startTimer); current = null; if (hint) hint.hidden = true; synth.cancel(); }
 
     btn.addEventListener('click', function () {
       if (state === 'idle') start();

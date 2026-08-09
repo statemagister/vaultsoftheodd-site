@@ -420,6 +420,10 @@ hr { border: 0; height: 1px; background: var(--rule); margin: 2.4rem auto; max-w
 .listen-stop { display: none; align-items: center; justify-content: center; width: 1.7rem; height: 1.7rem; background: transparent; border: none; color: var(--text-muted); cursor: pointer; font-size: 0.85rem; line-height: 1; border-radius: 999px; }
 .listen-stop:hover { color: var(--gold); }
 .listen.is-active .listen-stop { display: inline-flex; }
+/* Shown (via JS) only on iOS while read-aloud is playing: iOS mutes speech
+   synthesis when the silent switch is on, which no web API can override. */
+.listen-hint { margin: 0.5rem 0 0; font-size: 0.78rem; font-style: italic; color: var(--text-muted); max-width: 32rem; }
+.listen-hint[hidden] { display: none; }
 .coming-soon { text-align: center; color: var(--text-muted); font-style: italic; }
 .empty-vault { text-align: center; max-width: var(--maxw); margin: 1.5rem auto 0; }
 .empty-vault .coming-soon { margin-bottom: 1.8rem; }

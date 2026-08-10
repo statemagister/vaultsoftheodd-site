@@ -1,7 +1,7 @@
 ---
 title: "Why Take the Risk at All?"
 subtitle: "Because the safe option is not as safe as it looks."
-date: 2026-10-19T08:00:00+01:00
+date: 2026-10-19T07:00:00+01:00
 weight: 58
 draft: false
 description: "A savings balance can hold steady in pounds and still buy less. That quiet loss is one reason money needed years from now may need a chance to grow."

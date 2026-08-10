@@ -1,6 +1,6 @@
 ---
 title: "Where Should I Keep It?"
-date: 2026-09-28T08:00:00+01:00
+date: 2026-09-28T07:00:00+01:00
 weight: 50
 draft: false
 description: "If the money is only sitting there waiting, why not put it wherever it earns the most?"

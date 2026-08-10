@@ -1,7 +1,7 @@
 ---
 title: "What Are You Actually Buying?"
 subtitle: "Most ordinary saving and investing is either lending or owning."
-date: 2026-10-12T08:00:00+01:00
+date: 2026-10-12T07:00:00+01:00
 weight: 57
 draft: false
 description: "Shares, bonds, gilts and funds sound like different things to learn. Underneath them are two arrangements: lending and owning."

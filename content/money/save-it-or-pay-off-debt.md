@@ -1,6 +1,6 @@
 ---
 title: "Save It, or Pay Off Debt?"
-date: 2026-11-30T08:00:00+00:00
+date: 2026-11-30T07:00:00+00:00
 weight: 100
 draft: false
 description: "You have found thirty pounds a month. You owe four different people. Splitting it four ways feels fair, and it is the thing to resist."

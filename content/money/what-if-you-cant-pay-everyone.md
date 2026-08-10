@@ -1,6 +1,6 @@
 ---
 title: "What If You Can't Pay Everyone?"
-date: 2026-12-07T08:00:00+00:00
+date: 2026-12-07T07:00:00+00:00
 weight: 110
 draft: false
 description: "I asked each of them what they would accept. That turned out to be the wrong question."

@@ -1,7 +1,7 @@
 ---
 title: "What Does an ISA Actually Protect?"
 subtitle: "It does not change what is inside it."
-date: 2026-10-05T08:00:00+01:00
+date: 2026-10-05T07:00:00+01:00
 weight: 55
 draft: false
 description: "An ISA is closer to a label than a kind of account, and labels only change how something is handled."

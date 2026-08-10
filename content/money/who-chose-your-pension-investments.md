@@ -1,7 +1,7 @@
 ---
 title: "Who Chose Your Pension Investments?"
 subtitle: "Somebody did, and they have never met you."
-date: 2026-11-23T08:00:00+00:00
+date: 2026-11-23T07:00:00+00:00
 weight: 95
 draft: false
 description: "Your pension is invested in something. You almost certainly did not pick it, and it is following a plan you have never seen."

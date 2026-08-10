@@ -1,7 +1,7 @@
 ---
 title: "Why Is My Pay Less Than I Was Told?"
 subtitle: "The number you were quoted is not the number that arrives."
-date: 2026-08-17T08:00:00+01:00
+date: 2026-08-17T07:00:00+01:00
 weight: 15
 draft: false
 description: "You were told what the job pays. Something smaller arrived. Both numbers are correct, and nobody explains why."

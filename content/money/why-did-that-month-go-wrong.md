@@ -1,7 +1,7 @@
 ---
 title: "Why Did That Month Go Wrong?"
 subtitle: "It usually is not overspending."
-date: 2026-09-21T08:00:00+01:00
+date: 2026-09-21T07:00:00+01:00
 weight: 45
 draft: false
 description: "Nothing unusual happened. You did not buy anything you regret. The month broke anyway, and there is normally a reason that has nothing to do with willpower."

@@ -1,7 +1,7 @@
 ---
 title: "How Do You Take a Pension?"
 subtitle: "For decades it is one thing. Then it stops being one thing."
-date: 2027-01-04T08:00:00+00:00
+date: 2027-01-04T07:00:00+00:00
 weight: 97
 draft: true
 description: "You spend your working life being told to put money into a pension. What happens when you are finally allowed to take it out is a different decision."

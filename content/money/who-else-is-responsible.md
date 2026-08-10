@@ -1,6 +1,6 @@
 ---
 title: "Who Else Is Responsible If a Purchase Goes Wrong?"
-date: 2026-12-14T08:00:00+00:00
+date: 2026-12-14T07:00:00+00:00
 weight: 120
 draft: false
 description: "The airline went bust while we were abroad. It turned out the flights were not only between us and them."

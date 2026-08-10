@@ -1,6 +1,6 @@
 ---
 title: "How Much Is Enough?"
-date: 2026-10-26T08:00:00+00:00
+date: 2026-10-26T07:00:00+00:00
 subtitle: "Enough is a number, not a feeling."
 weight: 60
 draft: false

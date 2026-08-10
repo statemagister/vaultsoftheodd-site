@@ -126,7 +126,7 @@ schedule:
 
 A series about money in plain language — what it is for, how it behaves, and how to think about it — written for people for whom money is often tight, not for those who already have plenty.
 
-Each article builds on the one before, so the numbers are the reading order. A **new article publishes every Monday at 08:00**; the ones still to come are listed below with their dates, and each becomes a link on the day it goes live.
+Each article builds on the one before, so the numbers are the reading order. A **new article publishes every Monday morning**; the ones still to come are listed below with their dates, and each becomes a link on the day it goes live.
 
 ## Not financial advice
 

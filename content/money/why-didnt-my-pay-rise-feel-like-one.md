@@ -1,7 +1,7 @@
 ---
 title: "Why Didn't My Pay Rise Feel Like One?"
 subtitle: "Nobody raised your tax rate."
-date: 2026-08-24T08:00:00+01:00
+date: 2026-08-24T07:00:00+01:00
 weight: 17
 draft: false
 description: "The pay went up and the month felt the same. There are two reasons for that, and only one of them gets talked about."

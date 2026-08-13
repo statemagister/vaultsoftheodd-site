@@ -78,9 +78,9 @@ timeZone = "Europe/London"
     name = "Politics"
     url = "/politics/"
     weight = 6
-  # Hidden by the header until the Money vault has its first published
-  # article (3 Aug 2026); future-dated posts aren't built, so the count is 0
-  # until then. See layouts/partials/header.html.
+  # The Money vault launched 3 Aug 2026 and is shown like any other. The header
+  # renders every menu item, so a not-yet-launched vault should be added here
+  # only once it has published content (see HANDOFF.md, "Adding a new vault").
   [[menus.main]]
     identifier = "money"
     name = "Money"

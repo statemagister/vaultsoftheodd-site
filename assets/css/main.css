@@ -695,6 +695,9 @@ figcaption, .wp-element-caption { display: table-caption; caption-side: bottom; 
 /* "New" marker on the matching entry in the reading list below. Gold chip with
    page-background text reads clearly against every vault theme. */
 .reading-list .rl-new { display: inline-block; margin-left: 0.5rem; font-family: var(--display); font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: var(--bg); background: var(--gold); padding: 0.12rem 0.42rem; border-radius: 3px; vertical-align: middle; }
+/* "Published" marks older live entries -- a quiet outline chip, so the gold
+   "New" still stands out while every live article confirms its status. */
+.reading-list .rl-published { display: inline-block; margin-left: 0.5rem; font-family: var(--display); font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.09em; color: var(--text-muted); background: transparent; border: 1px solid var(--rule); padding: 0.06rem 0.36rem; border-radius: 3px; vertical-align: middle; }
 .money-questions { margin: 1.8rem 0 0; padding: 0.9rem 1.1rem; border: 1px solid var(--rule); border-left: 3px solid var(--gold); border-radius: 4px; background: var(--bg-alt); font-size: 0.95rem; line-height: 1.5; }
 .money-questions a { color: var(--gold); font-weight: 600; }
 

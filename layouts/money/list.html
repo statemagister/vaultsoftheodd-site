@@ -44,7 +44,11 @@
       {{- with (where site.RegularPages "RelPermalink" (printf "/money/%s/" .slug)) }}{{ $page = index . 0 }}{{ end }}
       <li>
         {{- if $page }}
-        <h3 class="rl-title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>{{ if in $newLinks $page.RelPermalink }} <span class="rl-new">New</span>{{ end }}</h3>
+        {{- /* Every live entry carries a status: the newest publication date is
+               "New", any older live article is "Published". Upcoming entries get
+               a "Publishes [date]" label instead (below), so each of the three
+               states -- new, published, forthcoming -- reads at a glance. */ -}}
+        <h3 class="rl-title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>{{ if in $newLinks $page.RelPermalink }} <span class="rl-new">New</span>{{ else }} <span class="rl-published">Published</span>{{ end }}</h3>
         {{- with $page.Params.subtitle }}<p class="rl-sub">{{ . }}</p>{{ end }}
         {{- with $page.Description }}<p class="rl-lede">{{ . }}</p>{{ end }}
         <p class="rl-date"><time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "2 January 2006" }}</time></p>

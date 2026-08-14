@@ -10,17 +10,17 @@ tags: ["pay", "getting started"]
 
 Somebody once tried to hire me and I had decided to say no.
 
-The salary was better than what I was on, but not by enough to move for. I liked where I was, I knew the people, and I had done the sum everybody does: their number against my number, difference in my favour, not worth uprooting a working life for.
+The salary was better than what I was on, but not by enough to move for. I liked where I was, I knew the people, and I had done the sum everybody does: their salary against my salary, a bit more in my favour, not worth uprooting a working life for.
 
 Then they went through what came with it, and the answer changed in about four minutes.
 
 Not because the salary went up. Because the salary turned out to be one item on a list, and the list contained things my job at the time did not have at all. Dental. Optical. Health cover. A scheme for buying shares in the company at a discount, and more shares on top of that.
 
-I had been comparing one number against one number, and almost all of the difference was somewhere I had not looked.
+I had been comparing my pay against their salary. Almost everything that made the offer worth taking was in the benefits, which I had never thought to look at.
 
-## The number they tell you is not the number
+## Your salary is not the whole of what a job pays you
 
-A salary is the one figure that gets advertised, discussed and negotiated, so it feels like the thing being compared. It is one component of a total, and the other components are unpriced because nobody puts them on the offer letter as money.
+The salary is the figure that gets advertised, discussed and negotiated, so it feels like the thing to compare. It is one part of what the job actually gives you. The other parts are worth money and nobody puts a price on them in the offer letter.
 
 Some of them are worth a lot. What an employer adds to your pension is real money going somewhere you own, and the difference between one employer's contribution and another's can dwarf a difference in salary. Buying shares at a discount means paying less than other buyers for something you were free to buy anyway.
 

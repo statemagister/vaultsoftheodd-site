@@ -1,6 +1,6 @@
 ---
 title: "Why Is My Pay Less Than I Was Told?"
-subtitle: "The number you were quoted is not the number that arrives."
+subtitle: "Your salary is not what you get paid."
 date: 2026-08-17T07:00:00+01:00
 weight: 15
 draft: false

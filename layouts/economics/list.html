@@ -1,0 +1,39 @@
+{{ define "main" }}
+<div class="post-layout wrap">
+  <div class="post-main">
+    <header class="list-header">
+      <h1 class="list-title">{{ .Title }}</h1>
+      {{- /* The one Money/Economics distinction sentence lives in _index.md and
+             is stated here, once (build spec, decision 4). */ -}}
+      {{- with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
+    </header>
+
+    {{- /* A flat catalogue, newest first. Format is metadata on each entry, never
+           a navigation category (decision 3): no format subsections. No method
+           statement (decision 5) — the sequence demonstrates it. If the corpus
+           ever outgrows chronological browsing, subdivide by SUBJECT, not format. */ -}}
+    {{- $labels := dict "essay" "Essay" "discussion-paper" "Discussion paper" "policy-paper" "Policy paper" "written-evidence" "Written evidence" }}
+    {{- with .Pages.ByDate.Reverse }}
+    <ol class="reading-list">
+      {{- range . }}
+      {{- $fmt := index $labels .Params.format | default (.Params.format | humanize) }}
+      <li>
+        <h3 class="rl-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p class="rl-date">{{ $fmt }}{{ with .Params.venue }} &middot; {{ . }}{{ end }} &middot; {{ .Date.Format "2006" }}</p>
+        {{- with .Params.description }}<p class="rl-lede">{{ . }}</p>{{ end }}
+      </li>
+      {{- end }}
+    </ol>
+    {{- else }}
+    <p class="coming-soon">This section is being prepared.</p>
+    {{- end }}
+  </div>
+
+  <aside class="post-aside" aria-label="Vault information">
+    <div class="aside-inner">
+      {{ partial "search.html" . }}
+      {{- /* No tip jar here — matches the Politics vault's restraint on analytical work. */ -}}
+    </div>
+  </aside>
+</div>
+{{ end }}

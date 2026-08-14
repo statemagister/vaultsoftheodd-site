@@ -148,6 +148,21 @@ and they should not be committed.
    `content/money/_index.md` does.
 6. Add articles as `.md` files with front matter, commit, and push.
 
+### Economics — scaffolded but deliberately not launched
+
+`content/economics/_index.md` (currently `draft: true`) and
+`layouts/economics/{list,single}.html` already exist as a **hidden scaffold**:
+the catalogue layout, the entry rendering for `html` and `pdf` doctypes, and the
+front-matter data model (`format`, `doctype`, `venue`, `status`, `pdf`,
+`abstract`, …) are built and render-tested, but nothing is public and there is no
+menu entry. **Leave it draft** until launch. To launch: flip `_index.md` to
+`draft: false`, add the `[menus.main]` entry, add the confirmed entry pages, and
+settle whether the three Economics papers now under `/politics/` (WIPE, the
+Persistent Asset Charge, and its Stress-Test) move across — with Hugo `aliases`
+from the old URLs to preserve indexing — or stay in Politics and are cross-linked.
+The section's fixed data model and rules live in a build spec Drew holds; it is
+not in the repo.
+
 ## Things not to "helpfully" fix
 
 - **Reading order ≠ publication order** in Money (and the two seasonal articles

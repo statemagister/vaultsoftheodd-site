@@ -4,55 +4,55 @@ subtitle: "Your salary is not what you get paid."
 date: 2026-08-17T07:00:00+01:00
 weight: 15
 draft: false
-description: "You were told what the job pays. Something smaller arrived. Both numbers are correct, and nobody explains why."
+description: "You were told what the job pays. Your payslip says something different. Both the numbers are correct, but it isn’t always explained why."
 tags: ["getting started", "pay"]
 ---
 
-You get offered a job.
+You get offered a job. It’s a good offer and you take it.
 
-They tell you what it pays. Maybe an hourly rate, maybe a yearly salary. So you work out what that means for you: what the rent leaves, what a week looks like, whether the car is possible.
+You’re told what it pays. An hourly rate, or an annual salary. You try and work out what that means for the month: will it cover the rent or mortgage, will it cover all the other bills, the food shop, and a few nights out with your friends or loved ones, with maybe a little something left over at the end of the month.
 
-Then your first pay arrives, and there is less money than you expected.
+But then the money arrives in the bank less than expected and your first pay slip tells you what you earned but also what was deducted.
 
-You have not necessarily been paid the wrong amount. The number you were given was before tax and other things came off. What reaches your bank account is what is left.
+It’s not that you have been paid the wrong amount. Just that the offer you accepted was before any tax and other items in your pay that changed what you were expecting. So what actually reached your bank account is what is left after those deductions.
 
-Nobody explained the difference.
+Nobody had really ever explained the difference between the two amounts.
 
-## What comes off before you are paid
+## What usually comes off before you are paid
 
-Before you are paid, your employer may take off Income Tax, National Insurance, pension contributions and student loan repayments.
+Before you even receive your pay, your employer may take off Income Tax, National Insurance, pension contributions and student loan repayments, plus potentially taxable benefits.
 
-They do not all work the same way, and some may not apply to you at all.
+Those deductions do not all work the same way, and some may not apply to you at all.
 
-Your payslip shows what came off and what you were actually paid. That last number is the one you can spend.
+So your payslip shows what had to come off first and what you had left is what you were paid, and the paid part, after the deductions is what you can spend.
 
-Pension money is slightly different. It has not really gone. It is still yours, but it has been put into your pension instead of your bank account.
+The pension deduction if any is slightly different in that it hasn’t really gone. It is still yours, but it has been put into a pension scheme instead of your bank account.
 
-## The first time it did not matter
+## The first time I was paid it did not matter so much
 
-My first payslip was for summer work while I was still at school.
+My first payslip was for summer work whilst I was still at school.
 
-I did not look at it. The money went into the bank and I was pleased to have any, and it never occurred to me that the amount that arrived might be different from the amount I had been told. It genuinely did not matter. It was money on top of a life that somebody else was paying for.
+I didn’t even look at it. The money went into my bank account and I was happy to have any money at all. It never occurred to me that the amount that arrived might be different from the amount I had been told. To be honest I don’t even remember if I was told and it genuinely didn’t matter. It was extra money for me that meant I didn’t rely on my family for the first time. I had financial independence.
 
-What I did not know was that HMRC did not yet know enough about what I was earning, so I had been put on an emergency tax code and too much tax was coming off.
+What I didn’t know was that HMRC did not yet know enough about me, so I had been put on an emergency tax code and was being taxed too much.
 
-I only found out because two things arrived after the job had ended.
+I eventually found out because two things arrived after the summer job had ended.
 
-The first was an extra payslip, a few weeks after I had gone back to school. It was for holiday I had earned and not taken, which I had never thought to ask about and would not have known to.
+The first was an extra payslip, which I finally looked at as it was unexpected, it had arrived a few weeks after I’d gone back to school. It was for the holiday pay I had accrued and not taken, which I had never thought to ask about and wouldn’t have known to.
 
-The second arrived about six months later. A letter with a cheque attached, refunding tax I had overpaid, once somebody had looked at the year properly.
+The second element arrived about six months later. It was a letter with a cheque attached from HMRC, a refund as I had overpaid my tax. I assume once somebody had looked at the year properly and corrected the tax code.
 
-Different sources, different reasons, and I had not known either existed. Both were mine.
+Different elements of my pay with different reasons, both of which I’d not known existed.
 
 ## The time it mattered enormously
 
-Years later I was rebuilding a life from a much lower starting point, and the same document meant something completely different.
+A few years later I was rebuilding my life from a much lower starting point, and the pay, and the payslip meant something completely different.
 
-What arrived after deductions was not pocket money on top of anything. It was the entire basis of the month. Rent came out of it, food came out of it, and whether the week worked came out of it.
+What arrived after deductions was not pocket money on top of my family supporting me. It was my entire basis of how to survive the month. It had to cover the rent, food, and everything else that had to be paid from it, and so whether the month worked at all was dependent on what arrived in the bank and what that payslip said.
 
-Most of the deductions were correct. Knowing that did not make the rent any cheaper.
+Most of the deductions were correct. Knowing that didn’t make the decisions of what actually got paid and what didn’t any easier.
 
-What I wish somebody had told me was simpler: plan from what reaches your bank account, not from the salary you were quoted.
+What I wish somebody had told me was: plan for what reaches your bank account, not the salary or pay you were quoted.
 
 ## What this is called
 
@@ -60,17 +60,17 @@ Your tax code tells your employer how much Income Tax to take. You can find it o
 
 If HMRC does not have enough information about you yet, you may be given an emergency tax code. W1, M1 or X at the end can be a sign of one.
 
-That does not mean your employer has done anything wrong. It means HMRC is working with limited information. Once it has the right information, the code can be corrected and tax you overpaid can be returned.
+That doesn’t mean your employer has done anything wrong. It means HMRC is working with limited information. Once it has the right information, the code can be corrected and the tax you overpaid can be returned.
 
 Giving a new employer your P45, or filling in a starter checklist if you do not have one, helps them get this right.
 
 ## Where this stops working
 
-Most deductions on a payslip are supposed to be there. Checking them does not mean you can make them disappear.
+Most deductions on a payslip are supposed to be there. Checking them doesn’t mean you can make them disappear.
 
-But you should not be paying too much tax because your tax code is wrong.
+But you shouldn’t be paying too much tax because your tax code is wrong.
 
-And if you are ever owed a refund, claim it yourself. There are companies that will do it for a share of your money, and the thing they are charging you for is a form.
+And if you are ever owed a refund, claim it back yourself. There are companies out there that will do it for you for a fee, the thing they are charging you for is to fill out the form for you.
 
 ## One thing to do
 
@@ -78,9 +78,9 @@ Find your tax code on your most recent payslip.
 
 If you do not understand it, use the GOV.UK checker below. It will tell you what the code means, and it lets you tell HMRC if what they have about you is wrong.
 
-Then, if you are starting a job rather than already in one, ask one more question before you accept. When is the first payday, and does it cover the whole period since I started?
+Then, if you’re starting a job rather than already in one, ask one more question before you accept. When is the first payday, and does it cover the whole period since I started?
 
-A long gap before your first pay is much easier to deal with when you know it is coming.
+A long gap before your first pay may be a little easier to deal with if you know it is coming.
 
 ## Useful links
 

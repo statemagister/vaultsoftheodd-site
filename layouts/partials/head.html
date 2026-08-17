@@ -46,9 +46,11 @@
   {{ partial "schema.html" . }}
 
   {{- /* Fonts are self-hosted (see @font-face at the top of main.css), so there is no
-         render-blocking third-party request. Preload only the hero display face, which
-         is the home/landing-page LCP element. */ -}}
+         render-blocking third-party request. Preload the hero display face (home/landing
+         LCP) and the body face, so EB Garamond is present before first paint and its
+         font-display:optional resolves without a swap reflow (avoids layout shift). */ -}}
   <link rel="preload" as="font" type="font/woff2" href="/fonts/cinzel-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/ebgaramond-latin.woff2" crossorigin>
 
   {{- $css := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint -}}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">

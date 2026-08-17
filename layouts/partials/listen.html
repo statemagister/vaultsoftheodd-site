@@ -1,8 +1,9 @@
 {{- /* Free, client-side "Listen" control using the browser's Web Speech API.
        Reads the page's main text aloud with the visitor's own device voices —
-       no API keys, no cost, nothing leaves the browser. Hidden automatically
-       where speech synthesis is unavailable. */ -}}
-<div class="listen" data-listen hidden>
+       no API keys, no cost, nothing leaves the browser. Rendered visible so it
+       occupies its space from first paint (no layout shift); JS collapses it
+       only where speech synthesis is unavailable. */ -}}
+<div class="listen" data-listen>
   <button class="listen-btn" type="button" aria-pressed="false">
     <span class="listen-icon" aria-hidden="true">&#9658;</span>
     <span class="listen-label">Listen to this</span>
@@ -20,7 +21,7 @@
     if (!root) return;
     var synth = window.speechSynthesis;
     var content = document.querySelector('[data-listen-content]');
-    if (!synth || typeof SpeechSynthesisUtterance === 'undefined' || !content) return;
+    if (!synth || typeof SpeechSynthesisUtterance === 'undefined' || !content) { root.hidden = true; return; }
 
     var btn = root.querySelector('.listen-btn');
     var stopBtn = root.querySelector('.listen-stop');
@@ -130,8 +131,6 @@
     window.addEventListener('beforeunload', function () { synth.cancel(); });
     window.addEventListener('pagehide', function () { synth.cancel(); });
     if (synth.getVoices().length === 0 && synth.addEventListener) { synth.addEventListener('voiceschanged', function () {}); }
-
-    root.hidden = false;
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();

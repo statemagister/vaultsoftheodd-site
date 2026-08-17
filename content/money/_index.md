@@ -13,8 +13,8 @@ cascade:
 # except the two seasonal student pieces pulled forward to 3 August.
 schedule:
   - slug: "why-invest"
-    title: "Why Invest?"
-    subtitle: "You already do."
+    title: "You’re Already Invested!"
+    subtitle: "You just don’t realise it."
     teaser: "Time with your loved ones, family and friends is investing. Let me explain how."
     date: "2026-08-10"
   - slug: "why-is-my-pay-less-than-i-was-told"

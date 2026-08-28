@@ -1,4 +1,35 @@
+# Search engines (Googlebot, Bingbot, …) and AI answer engines that cite
+# sources are welcome — discoverability matters. AI *training* crawlers and
+# known aggressive scrapers are opted out below.
+#
+# Note: this only binds bots that honour robots.txt. The unidentified
+# scrapers (e.g. the headless traffic from China) ignore it entirely and can
+# only be slowed at the network edge (a proxy/WAF such as Cloudflare).
 User-agent: *
 Allow: /
+
+# --- AI training crawlers and aggressive scrapers: opt out ---
+# (Google-Extended / Applebot-Extended are AI-training tokens only; they do
+#  NOT affect Googlebot or Applebot search indexing.)
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+User-agent: Claude-Web
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+User-agent: Bytespider
+User-agent: PetalBot
+User-agent: Amazonbot
+User-agent: Meta-ExternalAgent
+User-agent: FacebookBot
+User-agent: Diffbot
+User-agent: Omgilibot
+User-agent: omgili
+User-agent: ImagesiftBot
+User-agent: Timpibot
+User-agent: YouBot
+User-agent: cohere-ai
+Disallow: /
 
 Sitemap: {{ "sitemap.xml" | absURL }}

@@ -41,7 +41,7 @@ The strength of a constitutional paper lies partly in refusing to answer questio
 
 The United Kingdom's taxes on wealth and its transfer are event-driven: Capital Gains Tax fires on disposal, Inheritance Tax on death or a gift within seven years of death, Stamp Duty on purchase. Because the triggering event is generally within the taxpayer's control, the tax can be deferred, timed, disguised, or escaped by not triggering it:
 
-- **Lock-in:** CGT is paid only on sale, so disposals are deferred and gains extinguished at death. The rational strategy is never to sell.
+- **Lock-in:** CGT is paid only on sale, so disposals are deferred and gains extinguished at death. The incentive is to defer realisation, and where an asset can be held until death, not to sell it at all.
 - **Timing:** realisations are rushed or delayed around announced changes.
 - **Disguise:** one form of event is dressed as another.
 - **Non-triggering:** "buy, borrow, die" realises no taxable event across a lifetime.
@@ -216,7 +216,19 @@ The originality is the shift from event-driven, single-owner wealth taxation to 
 
 This is the architecture pass, presenting the model on its own terms. It settles what follows from the principles, labels what remains a legislative choice (the interaction rule, scope exemptions including pension schemes and charities, the allowance-versus-entry-threshold question, the rate), and reserves what only evidence can settle (revenue and rate modelling, threshold justification against UK wealth distribution, behavioural and avoidance response, treaty interaction, transition, and constitutional and human-rights durability) for a separate stress-testing pass. Keeping those three categories distinct is the paper's method, not an evasion of its harder questions.
 
+## Sources
+
+**§1 The problem.** CGT arises on disposal, and gains are extinguished at death by the uplift to probate value: Taxation of Chargeable Gains Act 1992, s.62. Inheritance Tax on death and on gifts within seven years (potentially exempt transfers): Inheritance Tax Act 1984. Stamp Duty Land Tax on purchase: Finance Act 2003. The lock-in / deferral incentive: the public-finance literature on realisation behaviour (among others Poterba 1987; Auten 1979).
+
+**§4.3 and §7 Legal durability.** The two safeguards the reciprocal-purchase election must contain, drawn from A1P1 and Article 6: *Hentrich v France* (1994).
+
+**§7 Revenue sufficiency.** Combined CGT and IHT receipts of £32.8bn for 2025-26: HMRC (detailed in the companion stress-testing pass).
+
 ## Changes in this version
+
+**Version 3, 29 August 2026.** One prose narrowing, and a reference apparatus.
+
+Section 1's lock-in point previously read "the rational strategy is never to sell." The public-finance literature supports lock-in as a strong incentive and tendency, not a universal, so the sentence is narrowed to the incentive it describes. A Sources section has been added. No other claim changes.
 
 **Version 2, 29 August 2026.** One substantive change, and two consequential updates.
 

@@ -54,15 +54,15 @@ The two series corroborate that reading independently. Liabilities assessed on 2
 
 The base rests on two anchors of very different strength, and honesty requires separating them.
 
-The first anchor is the population count: independent estimates converge on roughly 20,000 to 32,000 individuals with personal net wealth above £10m. This figure is reasonably robust — several sources reach the same region by different routes — and can be leaned on.
+The first anchor is the population count: independent estimates put the population at around 20,000 individuals with personal net wealth above £10m. This figure is reasonably robust — several sources reach the same region by different routes — and can be leaned on.
 
 The second anchor is the aggregate wealth that population holds, and it is much softer. The Wealth Tax Commission and subsequent analyses imply that the excess of this group's wealth above the £10m threshold aggregates to approximately £1.0–1.2 trillion. But this figure is derived by back-solving from advocacy estimates — that a charge of around 2 per cent on the excess would raise about £24bn implies an excess base of about £1.2 trillion — and those estimates rest partly on survey data known to under-capture wealth at the very top. Using a figure in that region to then test this model is therefore a consistency check against the advocacy numbers, not an independent measurement. The circularity is disclosed rather than hidden: the true base could be materially larger (top-end under-capture would mean more wealth than the surveys show, helping revenue) or the effective base materially smaller (behavioural response and valuation disputes could shrink it, hurting revenue). No weight should be placed on the precise trillion figure; the honest claim is only that the base is of an order that makes the model worth testing, not that it is known.
 
-The proposed model is a cliff, not an allowance: once the threshold is crossed, the full averaged value is charged, not merely the excess. This adds back the first £10m for each liable person — roughly £200–320bn across the population, this increment resting on the more robust population count — giving a personal cliff base of the order of £1.2–1.5 trillion, subject to the same disclosed softness in the underlying wealth figure, and before the entity layer is counted at all.
+The proposed model is a cliff, not an allowance: once the threshold is crossed, the full averaged value is charged, not merely the excess. This adds back the first £10m for each liable person — roughly £200bn across the population, this increment resting on the more robust population count — giving a personal cliff base of the order of £1.2–1.4 trillion, subject to the same disclosed softness in the underlying wealth figure, and before the entity layer is counted at all.
 
 ### 1.3 The arithmetic against the ceiling
 
-On the mid-estimate personal cliff base of £1.3 trillion, with three behavioural haircuts of 10 per cent (optimistic), 20 per cent (central, the Wealth Tax Commission's working assumption) and 35 per cent (pessimistic, reflecting a first-of-its-kind annual charge with no exemptions):
+On the mid-estimate personal cliff base of £1.3 trillion, with three behavioural haircuts of 10 per cent (optimistic), 20 per cent (central — this pass's own assumption at the tested rates, set above the Wealth Tax Commission's 7–17 per cent base-reduction range for a 1 per cent rate because this is a first-of-its-kind annual charge at 2–3 per cent) and 35 per cent (pessimistic, with no exemptions):
 
 | rate | gross | net at 10% | net at 20% | net at 35% |
 |---|---|---|---|---|
@@ -104,11 +104,11 @@ What follows from those three findings is a question this pass cannot settle and
 
 > **Classification: serious but addressable**, with one component (reciprocal purchase) that is conditionally survivable only if specific safeguards from the case-law are built in. Without those safeguards it is fatal to that mechanism; with them it is defensible.
 
-*(Sections 2.1 to 2.5 are unchanged from version 1. The architecture paper has since adopted both conditions at its Section 4.3, which is recorded in the correction note at the end of this document; the finding itself is unaltered.)*
+*(The Hentrich analysis at Sections 2.3 to 2.5 is unchanged from version 1. Sections 2.1 and 2.2 were revised in version 3 — see the change note. The architecture paper has since adopted both conditions at its Section 4.3, which is recorded in the correction note at the end of this document; the durability finding itself is unaltered.)*
 
 ### 2.1 The favourable baseline
 
-The starting position is more favourable than instinct suggests. Under Article 1 of Protocol 1 (A1P1, protection of property), the European Court of Human Rights affords the legislature a wide margin of appreciation in tax matters. Few cases succeed under Article 1 in the tax field; where they do, there is an element of clear arbitrariness, and they have almost all arisen in the enforcement field rather than the imposition of a charge. There is no general principle against even retrospective taxation. An annual wealth charge, as such, is well within the margin the Court allows. So the existence of the charge is not the problem.
+The starting position is more favourable than instinct suggests. Under Article 1 of Protocol 1 (A1P1, protection of property), the European Court of Human Rights affords the legislature a wide margin of appreciation in tax matters. Few cases succeed under Article 1 in the tax field, and where they do the burden is a high one. Successful challenges have arisen both to the enforcement of tax and to its imposition: in *N.K.M. v Hungary* (2013) a 98 per cent charge on part of a severance payment was held to breach A1P1 as a disproportionate individual burden. There is no general principle against even retrospective taxation. An annual wealth charge, as such, is well within the margin the Court allows. So the existence of the charge is not the problem.
 
 ### 2.2 The operative constraint: individual and excessive burden
 
@@ -116,6 +116,8 @@ The binding A1P1 constraint is the requirement of a fair balance between the gen
 
 - **The cliff.** Charging the full value once the threshold is crossed, rather than the excess, produces a discontinuity that could, at the margin, be argued to impose an excessive individual burden on someone just over the line. This is manageable (see Test 3) but should be understood as the model's most exposed ordinary feature.
 - **The illiquid holder.** A person whose averaged wealth exceeds the threshold but who lacks the cash to pay — the private-company or farm owner — is the classic "excessive burden" claimant if forced to sell to pay an annual charge. The architecture's answer (liability determined normally, but payment deferrable with interest) is the correct one and is close to essential for A1P1 compliance; it should be treated not as an optional kindness but as a durability requirement.
+
+That the Court will strike a tax measure down on individual-and-excessive-burden grounds, and not only for procedural arbitrariness, is shown by *N.K.M. v Hungary* (2013): the 98 per cent charge there failed as a disproportionate individual burden. It is the clearest authority that the exposure identified here is real.
 
 ### 2.3 Reciprocal purchase and the Hentrich problem
 
@@ -189,7 +191,7 @@ The residual is portable financial wealth — listed securities and cash — whi
 
 > **Classification: serious but addressable; a multi-year build with real cost.**
 
-A continuously-maintained register of beneficial ownership and standing values across 20,000–32,000 liable persons, plus entities, plus those near the threshold who must file, is a substantial institutional undertaking. The Wealth Tax Commission estimated setup costs of the order of £580m for a conventional annual wealth tax; this model, with its register, valuation function, reciprocal-purchase capability, and disposal machinery, is at least as demanding and probably more so.
+A continuously-maintained register of beneficial ownership and standing values across around 20,000 liable persons, plus entities, plus those near the threshold who must file, is a substantial institutional undertaking. The Wealth Tax Commission estimated setup costs of the order of £580m for a conventional annual wealth tax; this model, with its register, valuation function, reciprocal-purchase capability, and disposal machinery, is at least as demanding and probably more so.
 
 Two specific requirements are load-bearing rather than incidental:
 
@@ -265,11 +267,29 @@ Two tests returned "serious but addressable" on the load-bearing question of dur
 
 The revenue test returns an outcome of a different kind, and this pass keeps it distinct. **The model does not clear the full-replacement ceiling on current receipts.** That ceiling was chosen by this pass as a deliberately severe adversarial condition, not asserted by the architecture, which presents replacement as a possibility and reserves sufficiency as an open question. Failing it withdraws a strong piece of evidence; it does not establish that the model raises too little, and on the personal base at the tested rates the model raises of the order of £13bn to £23bn net. What it does establish is that the distance between the model's demonstrated revenue capacity and full replacement is larger than this pass originally reported, and that closing it runs through parameters the model's other tests make harder to defend.
 
-The honest one-sentence verdict, suitable for someone deciding whether to put their name to it: on the evidence available to this review, this is a serious, original and defensible model that is not disqualified on any of the grounds that usually disqualify wealth taxes, and that does not, at the rates tested, establish the full replacement of Capital Gains Tax and Inheritance Tax that this pass set as its own ceiling — provided it is presented with its conditions and limits intact, never oversold beyond them, and understood to await the government costing and counsel's opinion that only they can supply.
+The honest one-sentence verdict, suitable for someone deciding whether to put their name to it: on the evidence available to this review, this is a serious, original and defensible model that is not disqualified on any of the grounds this pass has tested — revenue, human-rights durability, the cliff, avoidance migration, capital flight, administrative feasibility and cumulative taxation — and that does not, at the rates tested, establish the full replacement of Capital Gains Tax and Inheritance Tax that this pass set as its own ceiling — provided it is presented with its conditions and limits intact, never oversold beyond them, and understood to await the government costing and counsel's opinion that only they can supply.
 
 This pass used public data: HMRC receipts and OBR forecasts for the replacement ceiling; the Wealth Tax Commission and subsequent analyses for the base; and the European Court of Human Rights case-law, principally *Hentrich v France* (1994), for the durability tests. It is an order-of-magnitude and legal-principle assessment, not a costing or a legal opinion. A government costing requires taxpayer-level data this pass does not have; a definitive human-rights assessment requires counsel's opinion.
 
+## Sources
+
+This pass uses public data; the sources below support the figures and the legal propositions, section by section. It remains an order-of-magnitude and legal-principle assessment, not a costing or a legal opinion.
+
+**§1 Revenue.** CGT and IHT receipts (2023-24 to 2025-26) and CGT liabilities for 2024-25 (£24.2bn, +89 per cent, 584,000 taxpayers): HMRC, *Capital Gains Tax statistics* commentary, and the HMRC annual report and accounts (9 July 2026). CGT forecast to £34.9bn by 2030-31 on higher equity prices: OBR, *Economic and Fiscal Outlook*, March 2026. Population above £10m (~20,000) and the £579m administration estimate: Wealth Tax Commission, *A Wealth Tax for the UK* (2020) and *The costs of administering a wealth tax* (BP126). Behavioural response (a 10 per cent tax gap and a 7–17 per cent base reduction at 1 per cent): Wealth Tax Commission, *Behavioural responses to a wealth tax* (EP5); the 20 per cent central haircut at the higher tested rates is this pass's own. The 2 per cent / £24bn advocacy figure: Tax Justice UK and others.
+
+**§2 Human-rights durability.** The wide margin of appreciation in tax and the individual-and-excessive-burden test: European Court of Human Rights case-law; ECHR, *Taxation* factsheet. Pre-emption at a declared value, and the non-selectivity and expeditious-resolution conditions: *Hentrich v France* (1994), App. 13616/88. Strike-down of a tax on imposition for excessive burden: *N.K.M. v Hungary* (2013), App. 66529/11.
+
+**§6 Administrative feasibility.** The £580m setup estimate: Wealth Tax Commission, *The costs of administering a wealth tax* (BP126).
+
 ## Changes in this version
+
+**Version 3, 29 August 2026.** Corrections from a source-referencing pass, and a reference apparatus added.
+
+*A legal characterisation withdrawn.* Section 2.1 previously stated that successful Article 1 challenges in the tax field "have almost all arisen in the enforcement field rather than the imposition of a charge." That clause is **withdrawn**: it overstated the pattern, and *N.K.M. v Hungary* (2013) — a successful challenge to the imposition of a 98 per cent charge — contradicts it. Section 2.1 now states the counterexample without asserting a replacement pattern, and Section 2.2 cites *N.K.M.* as authority for the excessive-burden exposure it identifies. The version-1 and version-2 wording of that clause is in circulation and is superseded.
+
+*A misattribution corrected.* Section 1.3 attributed the 20 per cent central behavioural haircut to "the Wealth Tax Commission's working assumption." That is **not the Commission's figure**: its modelling assumes a 10 per cent tax gap and a 7–17 per cent base reduction at a 1 per cent rate. The 20 per cent is this pass's own central assumption at the higher tested rates, and is now attributed as such. The correction is made in full, rather than in passing, because the Commission is named as a source.
+
+*Section 10* narrows "any of the grounds that usually disqualify wealth taxes" to the grounds this pass actually tested. *The population count* is now stated as around 20,000 (the Wealth Tax Commission's figure); the earlier 20,000–32,000 range is dropped, its upper bound being unsourced and bearing on no result — the Section 1.2 add-back and cliff base move to around £200bn and £1.2–1.4 trillion accordingly, and the £1.3 trillion mid-estimate the revenue arithmetic uses is unchanged. *A Sources section* has been added.
 
 **Version 2, 29 August 2026.** Two changes, one of them material.
 

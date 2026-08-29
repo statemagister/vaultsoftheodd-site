@@ -5,6 +5,7 @@ slug: "the-long-asset"
 date: 2026-08-29T09:01:00Z
 weight: 10
 format: "discussion-paper"
+series: "uk"
 summary: "Constitutional architecture for a UK sovereign endowment held against rising pension costs. It designs an institution to convert borrowing into a growing public asset — a balance-sheet fund rather than an income fund — and to protect a decades-long accumulation from much shorter political and fiscal cycles. Conditional on the financial findings of its companion, The Arithmetic of Patience."
 description: "Constitutional architecture for a UK sovereign endowment: how to hold a long-duration public asset against rising pension costs, and protect it from political time."
 tags: ["fiscal architecture", "institutional design", "constitutional design", "fiscal policy", "United Kingdom"]

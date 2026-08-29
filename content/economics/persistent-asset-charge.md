@@ -6,6 +6,7 @@ date: 2026-07-21T09:00:00Z
 updated: 2026-08-29
 weight: 30
 format: "discussion-paper"
+series: "uk"
 summary: "A constitutional architecture for a recurring charge on the holding of concentrated assets, independent of income, gains, transfers or death, and immune to the legal form in which they are held. It sets out three governing principles, settles what follows from them, and separates what is architecture from what is a matter for Parliament and what only evidence can determine. A companion stress-testing pass tries to break the model and reports honestly what holds."
 description: "A recurring charge on concentrated asset holdings, independent of income, gains and transfers, immune to the legal form in which assets are held. Architecture paper."
 tags: ["asset taxation", "fiscal policy", "constitutional design", "fiscal architecture", "institutional design", "United Kingdom"]

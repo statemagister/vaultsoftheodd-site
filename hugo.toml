@@ -78,19 +78,18 @@ timeZone = "Europe/London"
     name = "Politics"
     url = "/politics/"
     weight = 6
-  # The Money vault launched 3 Aug 2026 and is shown like any other. The header
-  # renders every menu item, so a not-yet-launched vault should be added here
-  # only once it has published content (see HANDOFF.md, "Adding a new vault").
+  # The header renders every menu item, so a not-yet-launched vault should be
+  # added here only once it has published content (see HANDOFF.md). Economics
+  # sits just before Money as its complement — Money is the choices available
+  # to you; Economics is the system those choices are made in.
+  [[menus.main]]
+    name = "Economics"
+    url = "/economics/"
+    weight = 7
   [[menus.main]]
     identifier = "money"
     name = "Money"
     url = "/money/"
-    weight = 7
-  # Economics launched 29 Aug 2026. Serious analytical papers (fiscal
-  # architecture, institutional design); some re-homed from Politics.
-  [[menus.main]]
-    name = "Economics"
-    url = "/economics/"
     weight = 8
   [[menus.main]]
     name = "About"

@@ -6,6 +6,7 @@ date: 2026-07-21T09:05:00Z
 updated: 2026-08-29
 weight: 40
 format: "discussion-paper"
+series: "uk"
 summary: "The adversarial companion to the architecture paper: an attempt to break the model and report honestly what breaks. It tests revenue sufficiency and human-rights durability first, since either failing would make the rest moot, then works through avoidance migration, capital flight, administrative feasibility and cumulative taxation. No test returns a fatal verdict, but two return serious but addressable, each with a specific, nameable condition."
 description: "The adversarial companion: an attempt to break the persistent asset charge model and report honestly what breaks. No fatal verdict; two serious-but-addressable."
 tags: ["asset taxation", "fiscal policy", "stress testing", "fiscal architecture", "institutional design", "United Kingdom"]

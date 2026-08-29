@@ -232,6 +232,24 @@ body.theme-money {
   --display: var(--body); /* restrained, like Politics — no decorative face */
 }
 
+/* ---- Economics: Money's complement. Money is the choices available to you;
+   Economics is the system those choices are made in. A deeper, cooler
+   pine-green sibling of Money's banker's emerald — the same restrained
+   analytical register, paired by colour, distinguished by depth. ---- */
+body.theme-economics {
+  --bg: #e9efec;
+  --bg-alt: #dde7e2;
+  --bg-card: #ffffff;
+  --text-primary: #142320;
+  --text-body: #20302b;
+  --text-muted: #506560;
+  --gold: #266a5d;
+  --gold-bright: #17544a;
+  --rule: rgba(38, 106, 93, 0.30);
+  --rule-soft: rgba(20, 35, 31, 0.12);
+  --display: var(--body); /* restrained, like Money and Politics */
+}
+
 /* ---- Stories: the light reverse of Mythology — pale olive parchment, deep moss ---- */
 body.theme-stories {
   --bg: #eef0e1;
@@ -319,7 +337,8 @@ body.theme-gaming .post-title, body.theme-gaming .list-title,
 body.theme-stories .post-title, body.theme-stories .list-title,
 body.theme-mythology .post-title, body.theme-mythology .list-title,
 body.theme-money .post-title, body.theme-money .list-title,
-body.theme-politics .post-title, body.theme-politics .list-title { color: var(--gold); }
+body.theme-politics .post-title, body.theme-politics .list-title,
+body.theme-economics .post-title, body.theme-economics .list-title { color: var(--gold); }
 
 img { max-width: 100%; height: auto; }
 

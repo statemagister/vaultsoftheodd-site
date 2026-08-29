@@ -8,25 +8,55 @@
       {{- with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
     </header>
 
-    {{- /* A flat catalogue in reading order (weight), so paired papers stay
-           adjacent with the primary first. Format is metadata on each entry,
-           never a navigation category (decision 3): no format subsections, and
-           no method statement (decision 5) — the sequence demonstrates it. If the
-           corpus ever outgrows a single list, subdivide by SUBJECT, not format. */ -}}
-    {{- $labels := dict "essay" "Essay" "discussion-paper" "Discussion paper" "policy-paper" "Policy paper" "written-evidence" "Written evidence" }}
-    {{- with .Pages.ByWeight }}
-    <ol class="reading-list">
-      {{- range . }}
-      {{- $fmt := index $labels .Params.format | default (.Params.format | humanize) }}
-      <li>
-        <h3 class="rl-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-        <p class="rl-date">{{ $fmt }}{{ with .Params.venue }} &middot; {{ . }}{{ end }} &middot; {{ .Date.Format "2006" }}</p>
-        {{- with .Params.description }}<p class="rl-lede">{{ . }}</p>{{ end }}
-      </li>
+    {{- /* Subdivided by SUBJECT (jurisdiction), never by format (build spec,
+           decision 3). Sections are declared in this vault's front matter
+           (`sections`), each with a key, label and intro; a paper joins one
+           through its front-matter `series` key and sorts within it by weight.
+           A section renders when it has published papers or carries a `note`. */ -}}
+    {{- $groups := slice }}
+    {{- $keys := slice }}
+    {{- range .Params.sections }}
+      {{- $keys = $keys | append .key }}
+      {{- $pages := where $.Pages "Params.series" .key }}
+      {{- if or $pages .note }}
+        {{- $groups = $groups | append (dict "key" .key "label" .label "intro" .intro "note" .note "pages" $pages) }}
       {{- end }}
-    </ol>
-    {{- else }}
-    <p class="coming-soon">This section is being prepared.</p>
+    {{- end }}
+    {{- $matched := where $.Pages "Params.series" "in" $keys }}
+    {{- with ($.Pages | complement $matched) }}
+      {{- $groups = $groups | append (dict "key" "other" "label" "Other" "intro" "" "note" "" "pages" .) }}
+    {{- end }}
+
+    {{- if gt (len $groups) 1 }}
+    <div class="setting-tabs" role="tablist" aria-label="Choose a jurisdiction">
+      {{- range $i, $g := $groups }}
+      <button class="setting-tab s-{{ $g.key }}{{ if eq $i 0 }} is-active{{ end }}" type="button" role="tab" data-target="{{ $g.key }}" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}">{{ $g.label }}</button>
+      {{- end }}
+    </div>
+    {{- end }}
+
+    {{- range $i, $g := $groups }}
+    <section class="setting-section" data-set="{{ $g.key }}" aria-label="{{ $g.label }}">
+      <h2 class="setting-heading s-{{ $g.key }}">{{ $g.label }}</h2>
+      {{- with $g.intro }}<p class="rl-group-intro">{{ . }}</p>{{ end }}
+      {{- with $g.pages }}
+      <ol class="reading-list">
+        {{- range . }}
+        <li>
+          <h3 class="rl-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          {{- with .Params.subtitle }}<p class="rl-sub">{{ . }}</p>{{ end }}
+          {{- with .Params.summary }}<p class="rl-lede">{{ . }}</p>{{ end }}
+        </li>
+        {{- end }}
+      </ol>
+      {{- else }}
+      {{- with $g.note }}<p class="rl-group-note">{{ . }}</p>{{ end }}
+      {{- end }}
+    </section>
+    {{- end }}
+
+    {{- if not $groups }}
+    <p class="coming-soon">More from this vault is on the way.</p>
     {{- end }}
   </div>
 
@@ -37,4 +67,27 @@
     </div>
   </aside>
 </div>
+
+{{ if gt (len $groups) 1 }}
+<script>
+(function () {
+  var bar = document.querySelector('.setting-tabs');
+  var tabs = document.querySelectorAll('.setting-tab');
+  var panes = document.querySelectorAll('.setting-section');
+  if (!bar || tabs.length < 2) return;
+  bar.classList.add('ready');
+  document.querySelectorAll('.setting-section > .setting-heading').forEach(function (h) { h.hidden = true; });
+  function activate(slug) {
+    tabs.forEach(function (t) { var on = t.getAttribute('data-target') === slug; t.classList.toggle('is-active', on); t.setAttribute('aria-selected', on ? 'true' : 'false'); });
+    panes.forEach(function (p) { p.hidden = (p.getAttribute('data-set') !== slug); });
+    try { localStorage.setItem('vo-economics-series', slug); } catch (e) {}
+  }
+  tabs.forEach(function (t) { t.addEventListener('click', function () { activate(t.getAttribute('data-target')); }); });
+  var initial = tabs[0].getAttribute('data-target'), saved;
+  try { saved = localStorage.getItem('vo-economics-series'); } catch (e) {}
+  if (saved && Array.prototype.some.call(tabs, function (t) { return t.getAttribute('data-target') === saved; })) initial = saved;
+  activate(initial);
+})();
+</script>
+{{ end }}
 {{ end }}

@@ -5,6 +5,7 @@ slug: "the-arithmetic-of-patience"
 date: 2026-08-29T09:00:00Z
 weight: 20
 format: "discussion-paper"
+series: "uk"
 summary: "The evidential companion to The Long Asset. It tests whether the UK could convert sustained fiscal capacity into a long-duration financial asset, and finds the answer turns entirely on which objective the fund is given: an income fund fails at any plausible contribution path, a balance-sheet fund survives. Run against every complete rolling window since 1871, and written to falsify its own working hypothesis as hard as to confirm it."
 description: "Whether the UK could turn sustained fiscal capacity into a long-duration asset, tested against every rolling window since 1871. The evidence companion to The Long Asset."
 tags: ["fiscal architecture", "fiscal policy", "institutional design", "evidence-based policy", "United Kingdom"]

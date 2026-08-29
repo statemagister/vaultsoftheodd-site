@@ -8,12 +8,13 @@
       {{- with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
     </header>
 
-    {{- /* A flat catalogue, newest first. Format is metadata on each entry, never
-           a navigation category (decision 3): no format subsections. No method
-           statement (decision 5) — the sequence demonstrates it. If the corpus
-           ever outgrows chronological browsing, subdivide by SUBJECT, not format. */ -}}
+    {{- /* A flat catalogue in reading order (weight), so paired papers stay
+           adjacent with the primary first. Format is metadata on each entry,
+           never a navigation category (decision 3): no format subsections, and
+           no method statement (decision 5) — the sequence demonstrates it. If the
+           corpus ever outgrows a single list, subdivide by SUBJECT, not format. */ -}}
     {{- $labels := dict "essay" "Essay" "discussion-paper" "Discussion paper" "policy-paper" "Policy paper" "written-evidence" "Written evidence" }}
-    {{- with .Pages.ByDate.Reverse }}
+    {{- with .Pages.ByWeight }}
     <ol class="reading-list">
       {{- range . }}
       {{- $fmt := index $labels .Params.format | default (.Params.format | humanize) }}

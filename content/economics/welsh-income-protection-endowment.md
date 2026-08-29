@@ -4,13 +4,13 @@ subtitle: "The institutional architecture for a permanent, self-financing Welsh 
 slug: "welsh-income-protection-endowment"
 date: 2026-07-21T09:10:00Z
 updated: 2026-07-26
-weight: 55
-series: "standalone"
+weight: 50
+format: "discussion-paper"
 summary: "A design for a permanent, largely self-financing Welsh capital institution that would protect workers' incomes after redundancy or lost hours, funded by a temporary hypothecated penny on the Welsh basic rate of income tax, after which the fund's own investment returns cover claims and the levy stops. Whether Wales presently has the constitutional authority to establish such an institution is unresolved and requires an independent legal opinion; even a favourable one would leave a second, political gateway. Offered as an institutional design study — how it would operate if those gateways were passed — and a case for testing it, not a scheme Wales can enact today."
 description: "Design for a permanent, self-financing Welsh institution to protect workers' incomes after redundancy, funded by a temporary hypothecated tax. Institutional design."
 tags: ["institutional design", "income protection", "fiscal policy", "Welsh devolution", "fiscal architecture", "Wales"]
 pdf: "/papers/griffiths-welsh-income-protection-endowment-july-2026.pdf"
-prereq: "A standalone discussion paper, not part of the Framework series above. It proposes a specific Welsh public institution — a Welsh Income Protection Endowment — and reads independently of that work."
+aliases: ["/politics/welsh-income-protection-endowment/"]
 ---
 
 *This paper develops the architecture for a permanent, largely self-financing Welsh capital institution to protect workers' incomes after redundancy or lost hours, and argues that its establishment should be tested, first through an independent constitutional opinion and then through actuarial feasibility work. It is offered as an institutional design study and a starting point for that examination, not as a finished plan or a scheme Wales can necessarily enact today.*

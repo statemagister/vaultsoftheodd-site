@@ -6,7 +6,7 @@
         {{- range .Site.Menus.footer }}
         <li><a href="{{ .URL }}">{{ .Name }}</a></li>
         {{- end }}
-        {{- if ne .Section "politics" }}{{- with .Site.Params.buymeacoffee }}
+        {{- if and (ne .Section "politics") (ne .Section "economics") }}{{- with .Site.Params.buymeacoffee }}
         <li><a href="{{ . }}" rel="noopener">Buy me a coffee</a></li>
         {{- end }}{{- end }}
       </ul>

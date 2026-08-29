@@ -3,13 +3,15 @@ title: "A Constitutional Model for the Persistent Taxation of Concentrated Asset
 subtitle: "A recurring charge on the holding of assets, independent of income, gains, and transfers"
 slug: "persistent-asset-charge"
 date: 2026-07-21T09:00:00Z
-weight: 60
-series: "standalone"
+updated: 2026-08-29
+weight: 30
+format: "discussion-paper"
 summary: "A constitutional architecture for a recurring charge on the holding of concentrated assets, independent of income, gains, transfers or death, and immune to the legal form in which they are held. It sets out three governing principles, settles what follows from them, and separates what is architecture from what is a matter for Parliament and what only evidence can determine. A companion stress-testing pass tries to break the model and reports honestly what holds."
 description: "A recurring charge on concentrated asset holdings, independent of income, gains and transfers, immune to the legal form in which assets are held. Architecture paper."
 tags: ["asset taxation", "fiscal policy", "constitutional design", "fiscal architecture", "institutional design", "United Kingdom"]
-pdf: "/papers/griffiths-persistent-asset-charge-july-2026.pdf"
-prereq: "This is the architecture pass — it sets out the model on its own terms. Its companion, the [**Stress-Testing Pass**](/politics/persistent-asset-charge-stress-test/), tries to break the model and reports honestly what holds and what doesn't. Read this paper first."
+pdf: "/papers/griffiths-persistent-asset-charge-august-2026.pdf"
+prereq: "The architecture pass — it sets out the model on its own terms. Its companion, the [**Stress-Testing Pass**](/economics/persistent-asset-charge-stress-test/), tries to break the model and reports honestly what holds and what doesn't. Read this paper first."
+aliases: ["/politics/persistent-asset-charge/"]
 ---
 
 The proposed charge is imposed on qualifying liable persons by reference to the aggregate net standing value of the taxable assets attributable to them under the charging legislation. Liability does not depend upon income, profits, gains, transfers or death, and it is not avoided by the adoption of a different legal form for holding those assets. This paper sets out the constitutional architecture of such a charge on its own terms. It settles what follows from the model's principles, marks what remains a matter for Parliament, and reserves what only evidence can determine for a later stress-testing pass. It does not argue that wealth ought to be taxed; its contribution is the mechanism, not the politics.
@@ -43,7 +45,7 @@ The United Kingdom's taxes on wealth and its transfer are event-driven: Capital 
 - **Disguise:** one form of event is dressed as another.
 - **Non-triggering:** "buy, borrow, die" realises no taxable event across a lifetime.
 
-Each manipulates the event. A charge that accrues through time, on the holding of assets rather than on any transaction, has no realisation event to manipulate. That is the core of the model, and it makes the design structurally resistant to realisation-based avoidance — the largest single class. It does not end avoidance as such; Section 7 sets out honestly where avoidance migrates instead.
+Each manipulates the event. A charge that accrues through time, on the holding of assets rather than on any transaction, has no realisation event to manipulate. That is the core of the model, and it makes the design structurally resistant to realisation-based avoidance. It does not end avoidance as such; Section 7 sets out honestly where avoidance migrates instead.
 
 A second, connected weakness of conventional design is that it can often be escaped by changing the legal form in which assets are held — moving wealth into a company, trust, or foundation so that no natural person appears to hold it. This model closes that route not by hunting for the "ultimate" owner, but by making every liable person that holds concentrated assets independently liable, so that there is no form into which assets can be moved to escape the charge.
 
@@ -113,11 +115,16 @@ A standing value is credible only if it cannot simply be declared low. The disci
 
 Honest qualifications, each stated rather than glossed:
 
-- It is not perfect symmetry. The state, seeing the declaration, chooses whether to buy, and acquires only what is useful; the taxpayer bears the downside of understatement regardless. It is a credible putative-sale condition attached to a taxpayer-initiated downward valuation, with procedural protections — not symmetry.
-- It disciplines understatement only. It does not resolve state over-valuation, disputes over what rights are included, minority discounts, control premiums, contingent liabilities, or transfer restrictions. Declaring a tax value is not volunteering to sell; that is why the election route is separate from ordinary challenge.
-- It transacts in the asset as valued, net of attached liabilities. If a £15m property carries a genuine £10m secured debt, the equity interest's standing value is £5m; a £4m substitute election exposes the equity — subject to the £10m debt — to purchase at £4m (total state exposure £14m), not a debt-free property for £4m.
-- It is available only where economic equivalence can be preserved. Where an interest cannot be transferred on equivalent terms — personal guarantees, bespoke loans, non-transferable licences, change-of-control triggers that would destroy value — reciprocal purchase cannot operate simply, and an alternative valuation discipline applies. It works cleanly for land, securities, and transferable property; for operating companies it targets the ownership interest, not the operating assets, with continuity protections; where transfer is legally impossible it does not apply.
-- It is state-only, not assignable. Assignability would create a market in purchase rights — speculation, hostile acquisition, collusion — destroying the legitimacy the mechanism draws from being the state relying on the taxpayer's own figure.
+- **It is not perfect symmetry.** The state, seeing the declaration, chooses whether to buy, and acquires only what is useful; the taxpayer bears the downside of understatement regardless. It is a credible putative-sale condition attached to a taxpayer-initiated downward valuation, with procedural protections — not symmetry.
+- **It disciplines understatement only.** It does not resolve state over-valuation, disputes over what rights are included, minority discounts, control premiums, contingent liabilities, or transfer restrictions. Declaring a tax value is not volunteering to sell; that is why the election route is separate from ordinary challenge.
+- **It transacts in the asset as valued, net of attached liabilities.** If a £15m property carries a genuine £10m secured debt, the equity interest's standing value is £5m; a £4m substitute election exposes the equity — subject to the £10m debt — to purchase at £4m (total state exposure £14m), not a debt-free property for £4m.
+- **It is available only where economic equivalence can be preserved.** Where an interest cannot be transferred on equivalent terms — personal guarantees, bespoke loans, non-transferable licences, change-of-control triggers that would destroy value — reciprocal purchase cannot operate simply, and an alternative valuation discipline applies. It works cleanly for land, securities, and transferable property; for operating companies it targets the ownership interest, not the operating assets, with continuity protections; where transfer is legally impossible it does not apply.
+- **It is state-only, not assignable.** Assignability would create a market in purchase rights — speculation, hostile acquisition, collusion — destroying the legitimacy the mechanism draws from being the state relying on the taxpayer's own figure.
+
+**Two conditions the charging legislation must contain.** The companion stress-testing pass finds that this mechanism is capable of being made compliant with Article 1 of Protocol 1 and Article 6 of the European Convention, but that it is not compliant on the strength of the description above alone. Two safeguards, drawn from *Hentrich v France* (1994), are requirements rather than refinements, and a version of the charge lacking either would fail:
+
+1. **Non-selectivity, with an effective route to challenge.** The power must operate under clear, general, published rules applying uniformly to every person who makes a substitute-value election, never as a discretionary power the state directs at chosen individuals. The design starts from a stronger position than *Hentrich*, because the power is triggered by the taxpayer's own election rather than by the state selecting a target, but the rules governing when and how the state may exercise the resulting option must themselves be general and transparent.
+2. **Expeditious resolution.** Because the charge accrues on a contested value while a dispute runs (Section 4.4), a challenge or purchase process that is merely slow is not merely inconvenient. In *Hentrich* the Court found a violation of Article 6 on the length of proceedings alone. The legislation must therefore guarantee timely resolution, and this condition is independent of the first: a perfectly non-selective mechanism could still fail on delay.
 
 The power is an integrity mechanism, not an acquisition programme: it exists to keep declared values honest, and where declarations are realistic it will seldom be used. Its credibility depends on the state genuinely having funded capacity to buy and to manage disposal (Section 7); without that, the discipline is decorative.
 
@@ -168,7 +175,7 @@ The architecture establishes that such bodies and arrangements are capable of ho
 
 ## 7. Honest limitations
 
-Stated at architecture level; the stress-testing pass will quantify them.
+Stated at architecture level; the stress-testing pass quantifies them where it can.
 
 **Avoidance shifts, it does not disappear.** Removing realisation-based avoidance pushes effort toward: concealment of beneficial ownership; manipulation of debt; fragmentation among connected persons; disputes over situs and asset classification; threshold planning; movement of portable financial wealth; and non-compliance with the register. The model is resistant to the realisation-based class specifically, and claims only that.
 
@@ -182,9 +189,9 @@ Stated at architecture level; the stress-testing pass will quantify them.
 
 **Cumulative taxation.** Income tax falls on receipts as a flow; this charge falls on the holding of a large stock of assets. A critic may object that the same resources are taxed as income and again as held assets. The answer is not to deny cumulative taxation but to locate it: the charges fall on different persons or bases for different purposes, and — per Section 3 — cumulative liability across liable persons is a designed feature of the base. Whether the resulting burden is justified is part of the contested political question the paper does not claim to settle.
 
-**Revenue sufficiency.** If the charge replaces CGT and IHT, it forgoes roughly £22–23bn of current annual revenue; whether it raises at least as much depends on rate, captured base, and behaviour — an empirical question, genuinely open, for the stress-testing pass.
+**Revenue sufficiency.** If the charge were to replace CGT and IHT, it would forgo their combined receipts, which on 2025-26 figures are of the order of £30bn and rising. Whether it raises at least as much depends on rate, captured base, and behaviour. The companion pass adopts full replacement as a deliberately severe test and reports that, on current receipts, the tested rates do not clear it. That is a finding about a condition the pass set for itself; this paper does not assert full replacement as an objective, and revenue sufficiency at any given rate remains an empirical question for government costing.
 
-**Legal durability.** The state-set-value, pay-throughout structure and the purchase election must satisfy procedural-fairness, proportionality, and property-rights standards, including under the European Convention on Human Rights. The challenge/election separation, retrospective correction with interest, and hardship deferral are designed with this in mind, but the analysis is for the dedicated pass.
+**Legal durability.** The state-set-value, pay-throughout structure and the purchase election must satisfy procedural-fairness, proportionality, and property-rights standards, including under the European Convention on Human Rights. The companion pass has now examined this. Its finding is that the charge itself sits comfortably within the margin of appreciation the European Court of Human Rights allows in tax, and that the reciprocal-purchase election is capable of being made compliant, but only if the two conditions at Section 4.3 are written into the charging legislation. Those conditions are stated there as requirements for that reason.
 
 ## 8. What the model claims
 
@@ -196,6 +203,8 @@ It does not claim the mechanisms follow deductively from the principles — the 
 
 It does not claim the system is airtight — avoidance shifts to other channels, catalogued in Section 7.
 
+It does not claim to replace Capital Gains Tax and Inheritance Tax — that is a possibility the model permits, not an objective it asserts, and the companion pass reports that it is not established at the rates tested.
+
 It does not claim record-keeping generates the tax — the charge is an independent choice a register makes possible, not one it entails.
 
 What it does claim is this: if Parliament chooses to charge concentrated wealth, that charge can be imposed on every liable person holding aggregate taxable assets above a threshold, by reference to a continuously maintained standing value rather than to realisation events — removing realisation-based avoidance at its root, closing the legal-form escape by making every qualifying holder independently liable, and anchoring the base against flight for immovable wealth — at the accepted cost of an entry-threshold discontinuity, cumulative liability across liable persons, and the residual international and opacity limits no single jurisdiction escapes.
@@ -206,6 +215,12 @@ The originality is the shift from event-driven, single-owner wealth taxation to 
 
 This is the architecture pass, presenting the model on its own terms. It settles what follows from the principles, labels what remains a legislative choice (the interaction rule, scope exemptions including pension schemes and charities, the allowance-versus-entry-threshold question, the rate), and reserves what only evidence can settle (revenue and rate modelling, threshold justification against UK wealth distribution, behavioural and avoidance response, treaty interaction, transition, and constitutional and human-rights durability) for a separate stress-testing pass. Keeping those three categories distinct is the paper's method, not an evasion of its harder questions.
 
-## How this connects
+## Changes in this version
 
-This paper is one half of a pair. It sets out the model's constitutional architecture; its companion, the [**Stress-Testing Pass**](/politics/persistent-asset-charge-stress-test/), tries to break the model and reports honestly what holds and what doesn't — starting with the two questions most likely to be fatal: does it raise the money, and does it survive legal challenge. Read this paper first, then that one.
+**Version 2, 29 August 2026.** One substantive change, and two consequential updates.
+
+The companion stress-testing pass found that the reciprocal-purchase election is capable of being made compliant with Article 1 of Protocol 1 and Article 6, but that this paper did not contain the safeguards on which that finding depends: rules making the power non-selective and generally applicable, and a guarantee that challenge and purchase are resolved expeditiously, given that the charge accrues on a contested value while a dispute runs. A version lacking either would fail on *Hentrich v France*. Section 4.3 previously described the mechanism with its procedural protections and deferred the legal analysis, which was accurate when written and is no longer sufficient now the companion has reported, particularly since readers are directed to this paper first. **Section 4.3 now states both conditions and marks them as requirements rather than refinements.**
+
+Consequentially, Section 7 has been updated in two places. *Legal durability* now reports the companion's finding rather than deferring to it. *Revenue sufficiency* now uses current receipts, which are materially higher than the figure given in version 1, and states that full replacement is a test the companion set rather than an objective this paper asserts. Section 8 gains one line making the same point.
+
+No other claim in this paper is changed by this correction.

@@ -8,6 +8,39 @@
       {{- with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
     </header>
 
+    {{- /* Front door: how the papers relate. Four papers, two instruments, each
+           companion nested inside its instrument, never listed as a peer (the
+           layout must mirror the note, not contradict it). Links resolve to the
+           canonical paper pages via RelPermalink, never to a versioned PDF, so
+           this block does not go stale when a paper is revised. */ -}}
+    {{- $charge := .Site.GetPage "/economics/persistent-asset-charge" }}
+    {{- $stress := .Site.GetPage "/economics/persistent-asset-charge-stress-test" }}
+    {{- $longAsset := .Site.GetPage "/economics/the-long-asset" }}
+    {{- $arith := .Site.GetPage "/economics/the-arithmetic-of-patience" }}
+    {{- $note := .Site.GetPage "/economics/two-instruments" }}
+    {{- if and $charge $stress $longAsset $arith }}
+    <section class="instruments" aria-label="How the papers relate">
+      <p class="instruments-lead">Four papers sit alongside each other, forming <strong>two instruments</strong> — each a design with its companion. They address adjacent constraints, and are offered together for that reason and no other.</p>
+      <ol class="instrument-list">
+        <li class="instrument">
+          <a class="instrument-primary" href="{{ $charge.RelPermalink }}">The Persistent Asset Charge</a>
+          <span class="instrument-gloss">a recurring charge on the holding of concentrated assets</span>
+          <ul class="instrument-companion">
+            <li><span class="companion-tag">with its stress-testing companion</span> <a href="{{ $stress.RelPermalink }}">Stress-Testing the Persistent Asset Charge</a></li>
+          </ul>
+        </li>
+        <li class="instrument">
+          <a class="instrument-primary" href="{{ $longAsset.RelPermalink }}">The Long Asset</a>
+          <span class="instrument-gloss">a constitutional architecture for a UK sovereign endowment</span>
+          <ul class="instrument-companion">
+            <li><span class="companion-tag">with its evidential companion</span> <a href="{{ $arith.RelPermalink }}">The Arithmetic of Patience</a></li>
+          </ul>
+        </li>
+      </ol>
+      {{- with $note }}<p class="instruments-more"><a href="{{ .RelPermalink }}">Read the note — what each answers, what none of them does, and what would settle the rest →</a></p>{{ end }}
+    </section>
+    {{- end }}
+
     {{- /* Subdivided by SUBJECT (jurisdiction), never by format (build spec,
            decision 3). Sections are declared in this vault's front matter
            (`sections`), each with a key, label and intro; a paper joins one
@@ -23,7 +56,9 @@
       {{- end }}
     {{- end }}
     {{- $matched := where $.Pages "Params.series" "in" $keys }}
-    {{- with ($.Pages | complement $matched) }}
+    {{- /* The front-door note (frontdoor: true) is not a paper — keep it out of the listings. */ -}}
+    {{- $others := where ($.Pages | complement $matched) "Params.frontdoor" "!=" true }}
+    {{- with $others }}
       {{- $groups = $groups | append (dict "key" "other" "label" "Other" "intro" "" "note" "" "pages" .) }}
     {{- end }}
 

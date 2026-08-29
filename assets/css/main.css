@@ -700,6 +700,24 @@ figcaption, .wp-element-caption { display: table-caption; caption-side: bottom; 
    shown for a section whose first paper has not yet been published. */
 .rl-group-intro { max-width: var(--maxw); margin: 0.6rem auto 1.4rem; color: var(--text-body); font-size: 1rem; line-height: 1.6; }
 .rl-group-note { max-width: var(--maxw); margin: 0.6rem auto 1.4rem; color: var(--text-muted); font-style: italic; font-size: 0.95rem; }
+
+/* ---- Economics front door: four papers, two instruments, companions nested ----
+   Each instrument is a block; its companion is indented under it with a left rule
+   and a small tag, so a companion never reads as a peer of the paper it companions. */
+.instruments { max-width: var(--maxw); margin: 0.4rem auto 2.8rem; padding: 1.5rem 1.6rem 1.6rem; border: 1px solid var(--rule); border-radius: 6px; background: var(--rule-soft); }
+.instruments-lead { margin: 0 0 1.3rem; color: var(--text-primary); font-size: 1.02rem; line-height: 1.62; }
+.instruments-lead strong { color: var(--gold); }
+.instrument-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.4rem; }
+.instrument-primary { font-family: var(--display); font-size: 1.22rem; color: var(--text-primary); text-decoration: none; }
+.instrument-primary:hover { color: var(--gold); }
+.instrument-gloss { display: block; color: var(--text-muted); font-style: italic; font-size: 0.95rem; margin: 0.15rem 0 0; }
+.instrument-companion { list-style: none; margin: 0.55rem 0 0; padding: 0.1rem 0 0.1rem 1.1rem; border-left: 2px solid var(--rule); }
+.instrument-companion .companion-tag { color: var(--text-muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; margin-right: 0.45rem; }
+.instrument-companion a { color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--rule); }
+.instrument-companion a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+.instruments-more { margin: 1.4rem 0 0; }
+.instruments-more a { color: var(--gold); font-size: 0.95rem; text-decoration: none; }
+.instruments-more a:hover { border-bottom: 1px solid var(--gold); }
 /* Money vault: not-yet-published entries read as dated teasers, not links. */
 .reading-list .rl-title.rl-upcoming { color: var(--text-muted); }
 .reading-list .rl-date.rl-scheduled { color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.72rem; }

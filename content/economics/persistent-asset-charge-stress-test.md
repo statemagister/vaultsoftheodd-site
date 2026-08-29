@@ -7,8 +7,8 @@ updated: 2026-08-29
 weight: 40
 format: "discussion-paper"
 series: "uk"
-summary: "The adversarial companion to the architecture paper: an attempt to break the model and report honestly what breaks. It tests revenue sufficiency and human-rights durability first, since either failing would make the rest moot, then works through avoidance migration, capital flight, administrative feasibility and cumulative taxation. No test returns a fatal verdict, but two return serious but addressable, each with a specific, nameable condition."
-description: "The adversarial companion: an attempt to break the persistent asset charge model and report honestly what breaks. No fatal verdict; two serious-but-addressable."
+summary: "The adversarial companion to the architecture paper: an attempt to break the model and report honestly what breaks. It leads with revenue sufficiency and human-rights durability, since either failing would make the rest moot, then works through avoidance migration, capital flight, administrative feasibility and cumulative taxation. No test returns a fatal verdict, and two return serious but addressable. The revenue test now reports that, on current receipts, the model does not clear full replacement of Capital Gains Tax and Inheritance Tax — a ceiling this pass set for itself, not one the architecture claims."
+description: "The adversarial companion: an attempt to break the persistent asset charge model and report honestly what breaks. No fatal verdict; two serious-but-addressable, and a self-imposed replacement ceiling it no longer clears."
 tags: ["asset taxation", "fiscal policy", "stress testing", "fiscal architecture", "institutional design", "United Kingdom"]
 pdf: "/papers/griffiths-persistent-asset-charge-stress-test-august-2026.pdf"
 prereq: "The stress-testing companion to [**A Constitutional Model for the Persistent Taxation of Concentrated Asset Holdings**](/economics/persistent-asset-charge/). Read the architecture paper first; this pass takes the model as given and tries to break it."

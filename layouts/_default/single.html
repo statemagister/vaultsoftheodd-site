@@ -95,6 +95,12 @@
       {{- end }}
 
       {{- $siblings := where .Site.RegularPages "Section" .Section }}
+      {{- /* Detect whether this vault's pages are dated. Some vaults (e.g. Mythology)
+             are ordered by depth, not chronology; grouping those by date would collapse
+             every undated page into "January 0001". */ -}}
+      {{- $dated := false }}
+      {{- range $siblings }}{{ if not .Date.IsZero }}{{ $dated = true }}{{ end }}{{ end }}
+      {{- if $dated }}
       {{- if gt (len $siblings) 1 }}
       <section class="aside-block">
         <h2 class="aside-title">{{ with .Site.GetPage (printf "/%s" .Section) }}{{ .Title }}{{ else }}In this vault{{ end }}</h2>
@@ -112,6 +118,24 @@
         </details>
         {{- end }}
       </section>
+      {{- end }}
+      {{- else }}
+      {{- /* Undated vault: list this figure's pages in reading order (by weight), no date header. */ -}}
+      {{- with .CurrentSection }}
+      {{- $figurePages := .RegularPages.ByWeight }}
+      {{- if gt (len $figurePages) 1 }}
+      <section class="aside-block">
+        <h2 class="aside-title">{{ .LinkTitle }}</h2>
+        <ul class="aside-siblings">
+          {{- range $figurePages }}
+          <li{{ if eq .RelPermalink $.RelPermalink }} class="current"{{ end }}>
+            {{- if eq .RelPermalink $.RelPermalink }}<span>{{ .Title }}</span>{{ else }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+          </li>
+          {{- end }}
+        </ul>
+      </section>
+      {{- end }}
+      {{- end }}
       {{- end }}
 
     </div>

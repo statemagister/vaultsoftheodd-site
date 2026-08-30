@@ -78,7 +78,7 @@
       <ol class="reading-list">
         {{- range . }}
         <li>
-          <h3 class="rl-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ if eq .Params.format "submission" }} <span class="rl-tag">Written Submission</span>{{ end }}</h3>
+          <h3 class="rl-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ if eq .Params.format "submission" }} <span class="rl-tag">Written Submission</span>{{ else if eq .Params.format "commentary" }} <span class="rl-tag">Commentary</span>{{ else if .Params.pdf }} <span class="rl-tag">Policy Paper</span>{{ end }}</h3>
           {{- with .Params.subtitle }}<p class="rl-sub">{{ . }}</p>{{ end }}
           {{- with .Params.summary }}<p class="rl-lede">{{ . }}</p>{{ end }}
         </li>

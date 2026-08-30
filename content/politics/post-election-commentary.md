@@ -5,6 +5,7 @@ slug: "post-election-commentary"
 date: 2026-06-13T10:00:00Z
 weight: 50
 series: "framework"
+format: "commentary"
 summary: "Written after the 8 May 2026 Senedd election, this note applies the completed framework to a real political moment. The framework was substantially complete before the result and its core argument didn't depend on it; here that architecture is read against the new environment — where the result strengthens or complicates particular sections, and what it means for sequencing the recommendations."
 description: "The constitutional framework read against the 8 May 2026 Senedd election result. Where the result strengthens or complicates the analysis. Drew Griffiths, 2026."
 tags: ["Welsh devolution", "Senedd 2026", "Welsh constitutional development", "constitutional analysis", "Wales"]

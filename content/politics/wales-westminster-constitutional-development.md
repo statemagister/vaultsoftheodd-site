@@ -8,7 +8,7 @@ series: "framework"
 summary: "The Westminster-facing companion to the Framework. It examines where the present devolution settlement creates problems — institutional coherence, accountability, intergovernmental friction, constitutional asymmetry — and where reform would serve both Welsh and UK Government interests. It argues no single constitutional endpoint."
 description: "Where the Welsh devolution settlement creates friction and where reform would serve both Welsh and UK interests. Mutual-benefit analysis. Drew Griffiths, May 2026."
 tags: ["Welsh devolution", "intergovernmental relations", "Sewel Convention", "Crown Estate", "justice devolution", "broadcasting devolution", "fiscal capacity", "constitutional analysis", "Wales", "United Kingdom"]
-pdf: "/papers/griffiths-wales-westminster-constitutional-development-may-2026.pdf"
+pdf: "/papers/griffiths-wales-westminster-constitutional-development-june-2026.pdf"
 prereq: "The Westminster-side companion to [**A Framework for Welsh Constitutional Development**](/politics/welsh-constitutional-development-framework/). Read the Framework first."
 ---
 

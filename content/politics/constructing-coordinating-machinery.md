@@ -8,7 +8,7 @@ series: "framework"
 summary: "A short analytical note using the Community Wealth Building (Scotland) Act 2026 as a worked example of what a devolved legislature can build within its existing competence — and of the gap between the capacity to legislate a framework and the capacity to operate one."
 description: "How a devolved legislature can build institutional coordination within existing powers, using the Scottish Community Wealth Building Act 2026 as a worked example."
 tags: ["Welsh devolution", "community wealth building", "institutional capability", "Scottish devolution", "comparative analysis", "institutional design", "Wales", "Scotland", "United Kingdom"]
-pdf: "/papers/griffiths-constructing-coordinating-machinery-may-2026.pdf"
+pdf: "/papers/griffiths-constructing-coordinating-machinery-june-2026.pdf"
 prereq: "A worked example of the argument in [**A Framework for Welsh Constitutional Development**](/politics/welsh-constitutional-development-framework/). If you are new to this work, start there."
 ---
 

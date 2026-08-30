@@ -4,6 +4,10 @@ title: "Economics"
 # formerly under /politics/ (WIPE, the Persistent Asset Charge and its
 # Stress-Test) was re-homed here, with aliases redirecting the old URLs.
 description: "Analytical writing on economic systems — what they distribute, incentivise, or fail to provide. Discussion papers on fiscal architecture and institutional design by Drew Griffiths."
+# Economics-specific social-share banner, cascaded to every paper in the section.
+cascade:
+  images:
+    - /images/og-economics.png
 sections:
   - key: uk
     label: "United Kingdom"

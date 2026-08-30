@@ -15,7 +15,7 @@
       </header>
 
       {{- with .Params.summary }}<p class="post-lede">{{ . }}</p>{{- end }}
-      {{- if .Params.pdf }}{{- $dl := "paper" }}{{ if eq .Params.format "written-evidence" }}{{ $dl = "evidence" }}{{ else if eq .Params.format "policy-submission" }}{{ $dl = "submission" }}{{ end }}<p class="paper-download"><a class="button" href="{{ .Params.pdf }}" download>Download the {{ $dl }} (PDF)</a>{{ with .Params.annexpdf }} <a class="button ghost" href="{{ . }}" download>Download the evidence annex (PDF)</a>{{ end }}</p>{{- end }}
+      {{- if .Params.pdf }}{{- $dl := "paper" }}{{ if or (eq .Params.format "written-evidence") (eq .Params.format "policy-submission") }}{{ $dl = "submission" }}{{ end }}<p class="paper-download"><a class="button" href="{{ .Params.pdf }}" download>Download the {{ $dl }} (PDF)</a>{{ with .Params.annexpdf }} <a class="button ghost" href="{{ . }}" download>Download the evidence annex (PDF)</a>{{ end }}</p>{{- end }}
       {{- with .Params.prereq }}<aside class="read-first">{{ . | markdownify }}</aside>{{- end }}
 
       <div class="post-body" data-listen-content>

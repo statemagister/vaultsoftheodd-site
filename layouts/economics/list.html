@@ -50,7 +50,7 @@
     {{- $keys := slice }}
     {{- range .Params.sections }}
       {{- $keys = $keys | append .key }}
-      {{- $pages := where $.Pages "Params.series" .key }}
+      {{- $pages := (where $.Pages "Params.series" .key).ByWeight }}
       {{- if or $pages .note }}
         {{- $groups = $groups | append (dict "key" .key "label" .label "intro" .intro "note" .note "pages" $pages) }}
       {{- end }}

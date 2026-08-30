@@ -2,7 +2,7 @@
 title: "Data Centres in Wales"
 subtitle: "Conditions that should apply to consent for large-scale data centre development"
 slug: "data-centres-in-wales"
-date: 2026-08-20T09:00:00Z
+date: 2026-08-13T09:00:00Z
 weight: 65
 format: "policy-submission"
 series: "wales"

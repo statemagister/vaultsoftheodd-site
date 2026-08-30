@@ -47,6 +47,12 @@
         <span class="vault-status">Open now</span>
       </a>
 
+      <a class="vault-card live" href="/economics/">
+        <h3 class="vault-name">Economics</h3>
+        <p class="vault-desc">Discussion papers on fiscal architecture and institutional design — a persistent charge on concentrated wealth, a sovereign endowment, and the adversarial and evidential work that tests each. The system-level companion to Money.</p>
+        <span class="vault-status">Open now</span>
+      </a>
+
       <a class="vault-card live" href="/money/">
         <h3 class="vault-name">Money</h3>
         <p class="vault-desc">Plain-language writing about money and personal finance, for people for whom money is often tight. A new article every Monday.</p>
@@ -61,7 +67,7 @@
   <div class="wrap">
     <h2 class="section-heading">Latest from the Vaults</h2>
     <ul class="post-list">
-      {{- range slice "gaming" "politics" "stories" "money" }}
+      {{- range slice "gaming" "politics" "stories" "economics" "money" }}
       {{- with (where $.Site.RegularPages "Section" .).ByDate.Reverse }}
       {{- $p := index . 0 }}
       <li class="post-list-item">

@@ -3,6 +3,7 @@ title: "Four Papers, Two Instruments"
 subtitle: "What the papers answer, what they do not, and what would settle the rest"
 slug: "two-instruments"
 date: 2026-08-29T08:00:00Z
+weight: 5
 format: "note"
 frontdoor: true
 description: "How the four Economics papers relate — two instruments, each with a companion — what each establishes, what none of them does, and what external work would settle the rest."

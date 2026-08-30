@@ -3,6 +3,7 @@ title: "Reading Math through Truth"
 subtitle: "An Interpretive Proposal on the Fourth Branch"
 weight: 30
 description: "The full interpretive paper: does reading Math through truth account for more of the surviving portrait, with fewer assumptions, than the alternatives? Textual evidence, reconstruction and limits."
+pdf: "/papers/griffiths-reading-math-through-truth-august-2026.pdf"
 ---
 
 

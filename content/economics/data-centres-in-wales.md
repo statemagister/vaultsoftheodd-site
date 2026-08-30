@@ -1,6 +1,6 @@
 ---
-title: "Data Centres in Wales"
-subtitle: "Submission to the Local Government, Housing and Planning Committee"
+title: "Submission to the Local Government, Housing and Planning Committee"
+subtitle: "Data Centres in Wales"
 slug: "data-centres-in-wales"
 date: 2026-08-10T09:00:00Z
 weight: 55

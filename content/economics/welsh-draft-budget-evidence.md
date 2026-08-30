@@ -1,6 +1,6 @@
 ---
-title: "Welsh Income Protection Endowment"
-subtitle: "Submission to the Senedd Finance Committee"
+title: "Submission to the Senedd Finance Committee"
+subtitle: "Welsh Income Protection Endowment"
 slug: "welsh-draft-budget-evidence"
 date: 2026-08-11T09:00:00Z
 weight: 60

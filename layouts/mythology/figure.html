@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{- /* The figure landing: the STORY is the page. It must never open with an
+       explanation of what the reader is about to read — the descent to the
+       argument lives in the content, at the foot. So this template renders the
+       header and the story body only: no lede, no summary, no download. */ -}}
+<div class="post-layout wrap">
+  <div class="post-main">
+    <article class="post figure-story">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep" aria-hidden="true">&rsaquo;</span><a href="/mythology/">Mythology</a></nav>
+      <header class="post-header">
+        <h1 class="post-title">{{ .Title }}</h1>
+        {{- with .Params.subtitle }}<p class="post-subtitle">{{ . }}</p>{{- end }}
+        {{- $byline := .Params.byline | default .Site.Params.author }}
+        <p class="post-meta">By {{ $byline }}</p>
+        {{ partial "listen.html" . }}
+      </header>
+
+      <div class="post-body" data-listen-content>
+        {{ .Content }}
+      </div>
+    </article>
+  </div>
+
+  <aside class="post-aside" aria-label="Vault information">
+    <div class="aside-inner">
+      {{ partial "search.html" . }}
+    </div>
+  </aside>
+</div>
+{{ end }}

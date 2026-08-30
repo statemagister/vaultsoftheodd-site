@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="post-layout wrap">
+  <div class="post-main">
+    <header class="list-header">
+      <h1 class="list-title">{{ .Title }}</h1>
+      {{- /* Section framing may explain the structure; the design rule against
+             preamble applies to the figure (story) pages, not this index. */ -}}
+      {{- with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
+    </header>
+
+    {{- /* One entry per figure (a sub-section), never per document. Depth runs
+           downward inside each figure, reached from the story's foot. */ -}}
+    {{- with .Sections.ByWeight }}
+    <ol class="figure-list">
+      {{- range . }}
+      <li class="figure">
+        <h2 class="figure-name"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        {{- with .Params.subtitle }}<p class="figure-sub">{{ . }}</p>{{ end }}
+        {{- with .Params.blurb }}<p class="figure-blurb">{{ . }}</p>{{ end }}
+        <p class="figure-enter"><a href="{{ .RelPermalink }}">Read the story &rarr;</a></p>
+      </li>
+      {{- end }}
+    </ol>
+    {{- else }}
+    <p class="coming-soon">The first figures are on the way.</p>
+    {{- end }}
+  </div>
+
+  <aside class="post-aside" aria-label="Vault information">
+    <div class="aside-inner">
+      {{ partial "search.html" . }}
+    </div>
+  </aside>
+</div>
+{{ end }}

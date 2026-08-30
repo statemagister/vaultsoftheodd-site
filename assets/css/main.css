@@ -742,6 +742,24 @@ figcaption, .wp-element-caption { display: table-caption; caption-side: bottom; 
 .reading-list .rl-published { display: inline-block; margin-left: 0.5rem; font-family: var(--display); font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.09em; color: var(--text-muted); background: transparent; border: 1px solid var(--rule); padding: 0.06rem 0.36rem; border-radius: 3px; vertical-align: middle; }
 /* Document-type tag in a reading list (e.g. a committee submission), styled like the Money "Published" tag. */
 .reading-list .rl-tag { display: inline-block; margin-left: 0.5rem; font-family: var(--display); font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.09em; color: var(--text-muted); background: transparent; border: 1px solid var(--rule); padding: 0.06rem 0.36rem; border-radius: 3px; vertical-align: middle; white-space: nowrap; }
+
+/* Mythology section index: one entry per figure (the story is its own page). */
+.figure-list { list-style: none; max-width: var(--maxw); margin: 0 auto; padding: 0; }
+.figure-list > li { padding: 1.6rem 0; border-bottom: 1px solid var(--rule-soft); }
+.figure-name { font-family: var(--display); font-size: 1.5rem; margin: 0 0 0.25rem; }
+.figure-name a { color: var(--text-primary); }
+.figure-name a:hover { color: var(--gold); }
+.figure-sub { color: var(--gold); font-style: italic; font-size: 1rem; margin: 0 0 0.5rem; }
+.figure-blurb { color: var(--text-body); margin: 0 0 0.7rem; line-height: 1.6; }
+.figure-enter { margin: 0; }
+.figure-enter a { font-family: var(--display); font-size: 0.85rem; letter-spacing: 0.04em; color: var(--gold); text-decoration: none; }
+.figure-enter a:hover { border-bottom: 1px solid var(--gold); }
+
+/* Goldmark footnote block: give it a heading (source docs no longer carry a manual one). */
+.post-body .footnotes { margin-top: 2.4rem; font-size: 0.92rem; color: var(--text-muted); }
+.post-body .footnotes::before { content: "Notes"; display: block; font-family: var(--display); font-size: 1.3rem; color: var(--text-primary); margin: 0 0 0.4rem; }
+.post-body .footnotes hr { display: none; }
+.post-body .footnotes li { margin: 0.35rem 0; }
 .money-questions { margin: 1.8rem 0 0; padding: 0.9rem 1.1rem; border: 1px solid var(--rule); border-left: 3px solid var(--gold); border-radius: 4px; background: var(--bg-alt); font-size: 0.95rem; line-height: 1.5; }
 .money-questions a { color: var(--gold); font-weight: 600; }
 

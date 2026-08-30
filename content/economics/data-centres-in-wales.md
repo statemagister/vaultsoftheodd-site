@@ -1,22 +1,20 @@
 ---
 title: "Data Centres in Wales"
-subtitle: "Conditions that should apply to consent for large-scale data centre development"
+subtitle: "Submission to the Local Government, Housing and Planning Committee"
 slug: "data-centres-in-wales"
-date: 2026-08-13T09:00:00Z
-weight: 65
-format: "policy-submission"
+date: 2026-08-10T09:00:00Z
+weight: 55
+format: "submission"
 series: "wales"
-summary: "A written submission to Senedd committees on large-scale data centre development in Wales. It does not oppose the industry but argues that development at the scale now proposed should not be consented without binding, testable conditions on power, water and monitoring. It sets out six conditions, each drafted to be delivered through devolved planning powers — chief among them hourly matching against additional Welsh renewable generation rather than annual certificate netting, and a prohibition on unabated fossil generation on site."
-description: "A written submission on large-scale data centre development in Wales: six binding, testable conditions on power, water and monitoring, deliverable through devolved planning powers."
-tags: ["planning policy", "energy", "data centres", "policy submission", "Wales", "devolution"]
+summary: "A submission to Senedd committees on large-scale data centre development in Wales. It does not oppose the industry but argues that development at the scale now proposed should not be consented without binding, testable conditions on power, water and monitoring. It sets out six conditions, each drafted to be delivered through devolved planning powers — chief among them hourly matching against additional Welsh renewable generation rather than annual certificate netting, and a prohibition on unabated fossil generation on site."
+description: "A submission on large-scale data centre development in Wales: six binding, testable conditions on power, water and monitoring, deliverable through devolved planning powers."
+tags: ["planning policy", "energy", "data centres", "committee submission", "Wales", "devolution"]
 pdf: "/papers/griffiths-data-centres-in-wales-august-2026.pdf"
 ---
 
-*Written submission, August 2026.*
+Also submitted to the Economy, Energy and Connectivity Committee.
 
-> This submission does not oppose data centre development in Wales. It argues that development at the scale now proposed should not be consented without binding, testable conditions on how each site is powered, how much water it draws, and how its performance is monitored. It sets out six such conditions, each drafted to be delivered through devolved planning powers.
-
-**Route of submission.** This response is submitted by email to contact@senedd.wales because the online submission forms were unavailable at the time of writing. It is offered to the Economy, Energy and Connectivity Committee and to the Local Government, Housing and Planning Committee of the Seventh Senedd, both of which are currently seeking views on their priorities, and to Senedd Research as a response to its briefing of 31 July 2026. I would be grateful if it could be directed accordingly.
+*This submission does not oppose data centre development in Wales. It argues that development at the scale now proposed should not be consented without binding, testable conditions on how each site is powered, how much water it draws, and how its performance is monitored. It sets out six such conditions, each drafted to be delivered through devolved planning powers.*
 
 ## 1. Summary
 
@@ -30,7 +28,7 @@ The submission makes three claims. First, that the scale of the current pipeline
 
 The Department for Science, Innovation and Technology estimated Welsh data centre capacity at 154 MW in 2024, the highest outside London in Great Britain. The proposals now in the pipeline are of a different order.
 
-**Table 1. Proposed Welsh developments, with indicative annual consumption and the local generation each would imply**
+**Table 1.** Proposed Welsh developments, with indicative annual consumption and the local generation each would imply
 
 | Proposed development | Capacity | Indicative annual use | Pen y Cymoedd equivalents |
 |---|---|---|---|
@@ -64,8 +62,7 @@ Data centres should be named in Planning Policy Wales and in the National Develo
 
 ### Condition 2: hourly matched, additional renewable supply
 
-Consumption must be matched to renewable generation on an hourly basis, not netted annually. This is the single provision that distinguishes genuine renewable operation from certificate purchasing.
-
+- Consumption must be matched to renewable generation on an hourly basis, not netted annually. This is the single provision that distinguishes genuine renewable operation from certificate purchasing.
 - Matched generation must be newly commissioned capacity in Wales, commissioned for the development. Reassigning output from existing Welsh wind by contract should not qualify, since it displaces other consumers rather than adding supply.
 - Where hourly matching cannot be met from generation, it may be met from co-located or contracted storage, sized against the modelled shortfall and secured at consent.
 - Grid supply should be permitted as a genuine fallback, with an annual cap on unmatched hours declared at application and enforced by condition.
@@ -99,7 +96,7 @@ The UK Government projects around 3,400 jobs in the North Wales AI Growth Zone a
 - A community benefit fund on the model already established for Welsh onshore wind, with duration matched to the operational life of the site.
 - Biodiversity net benefit consistent with Welsh statutory biodiversity targets.
 
-**Table 2. The six conditions, and what each is designed to prevent**
+**Table 2.** The six conditions, and what each is designed to prevent
 
 | Condition | Failure it is drafted to prevent |
 |---|---|
@@ -124,25 +121,25 @@ The Cabinet Minister has said that Wales should not merely host this infrastruct
 
 Specifically, I ask that a committee take up data centre consenting as an early inquiry topic in the Seventh Senedd, and that the inquiry address:
 
-1. Whether Planning Policy Wales and the National Development Framework should name data centres, and at what capacity threshold a proposal becomes a Development of National Significance.
-2. Whether hourly matching against additional Welsh generation can be secured by planning condition, and what evidence an applicant should be required to produce to demonstrate it.
-3. What monitoring and publication regime should attach to consent, and which body should hold and enforce it.
-4. What the cumulative electricity and water demand of the current pipeline implies for Welsh carbon budgets and for water resource management plans, assessed together rather than application by application.
+- Whether Planning Policy Wales and the National Development Framework should name data centres, and at what capacity threshold a proposal becomes a Development of National Significance.
+- Whether hourly matching against additional Welsh generation can be secured by planning condition, and what evidence an applicant should be required to produce to demonstrate it.
+- What monitoring and publication regime should attach to consent, and which body should hold and enforce it.
+- What the cumulative electricity and water demand of the current pipeline implies for Welsh carbon budgets and for water resource management plans, assessed together rather than application by application.
 
 The pipeline is being determined now. Policy written after these consents are granted will apply to a much smaller share of the industry than policy written before, and conditions cannot be retrofitted to a permission already granted. That timing, rather than any objection to the industry itself, is the reason for making this submission at this point.
 
 ## Sources
 
-1. Senedd Research, *Data centres in Wales: How will Wales manage a rapidly growing industry?*, 31 July 2026, and the accompanying research briefing.
-2. Department for Science, Innovation and Technology, *Estimate of data centre capacity, Great Britain, 2024*.
-3. Department for Energy Security and Net Zero, *Energy Trends, June 2026: data centre electricity consumption in Great Britain, 2020 to 2024*.
-4. House of Commons Library, research briefing CBP-10315, data centres.
-5. Ofgem, *Demand Connections Call for Input*, February 2026.
-6. Welsh Government, *Energy generation and use in Wales: first combined report*.
-7. Parliamentary Office of Science and Technology, POSTnote 0762, data centre energy and water use.
-8. Vattenfall and Natural Resources Wales, published operating data for the Pen y Cymoedd wind energy project.
-9. Action to Protect Rural Scotland, jobs and data centres, March 2026.
-10. Brookings Institution, new evidence on data center employment effects.
-11. UK Government, AI Growth Zone announcements for North Wales and South Wales.
+- Senedd Research, *Data centres in Wales: How will Wales manage a rapidly growing industry?*, 31 July 2026, and the accompanying research briefing.
+- Department for Science, Innovation and Technology, Estimate of data centre capacity, Great Britain, 2024.
+- Department for Energy Security and Net Zero, *Energy Trends*, June 2026: data centre electricity consumption in Great Britain, 2020 to 2024.
+- House of Commons Library, research briefing CBP-10315, data centres.
+- Ofgem, Demand Connections Call for Input, February 2026.
+- Welsh Government, Energy generation and use in Wales: first combined report.
+- Parliamentary Office of Science and Technology, POSTnote 0762, data centre energy and water use.
+- Vattenfall and Natural Resources Wales, published operating data for the Pen y Cymoedd wind energy project.
+- Action to Protect Rural Scotland, jobs and data centres, March 2026.
+- Brookings Institution, new evidence on data center employment effects.
+- UK Government, AI Growth Zone announcements for North Wales and South Wales.
 
 *Prepared as an individual written submission. Capacity and consumption figures are drawn from the published sources listed above; the annual consumption and generation equivalents in Table 1 are the author's own calculations from those figures, at a stated load assumption, and are indicative rather than an engineering assessment of any specific site.*

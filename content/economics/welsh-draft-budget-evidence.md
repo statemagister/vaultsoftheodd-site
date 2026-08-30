@@ -1,27 +1,26 @@
 ---
-title: "Written Evidence: the 2027-28 Welsh Draft Budget"
-subtitle: "Whether Wales should hold an instrument that converts a period of taxation into a permanent public asset"
+title: "Welsh Income Protection Endowment"
+subtitle: "Submission to the Senedd Finance Committee"
 slug: "welsh-draft-budget-evidence"
 date: 2026-08-11T09:00:00Z
-weight: 55
-format: "written-evidence"
+weight: 60
+format: "submission"
 series: "wales"
-summary: "Written evidence to the Senedd Finance Committee on the 2027-28 Draft Budget, addressing its strategic questions on Wales's tax-raising powers, preventative investment and economic growth. It puts one proposition: that the annual budget frame cannot build lasting assets, and that Wales may benefit from an instrument — funded by the temporary, hypothecated use of a tax power it already holds — that converts a period of taxation into a permanent public endowment. Offered as analysis, not a costed proposal, with the constitutional-competence question flagged as the first gate."
-description: "Written evidence to the Senedd Finance Committee on the 2027-28 Draft Budget: whether Wales should hold an instrument that converts temporary taxation into a permanent public asset."
-tags: ["fiscal policy", "written evidence", "institutional design", "Wales", "devolution"]
+summary: "A submission to the Senedd Finance Committee, applying the Welsh Income Protection Endowment proposition to the Committee's call for information on the 2027-28 Draft Budget: whether a temporary, hypothecated use of a Welsh tax power could convert a period of taxation into a permanent public asset. It addresses the Committee's strategic questions on tax-raising powers, preventative investment and economic growth. Offered as analysis, not a costed proposal, with the constitutional-competence question flagged as the first gate."
+description: "A submission to the Senedd Finance Committee: whether a temporary, hypothecated use of a Welsh tax power could convert a period of taxation into a permanent public asset."
+tags: ["fiscal policy", "committee submission", "institutional design", "Wales", "devolution"]
 pdf: "/papers/griffiths-welsh-draft-budget-evidence-august-2026.pdf"
-prereq: "Written evidence to the Senedd Finance Committee. The fuller discussion paper it refers to is [**A Welsh Income Protection Endowment**](/economics/welsh-income-protection-endowment/), which develops the worked illustration in full."
 ---
 
-*Individual written submission to the Senedd Finance Committee — 11 August 2026.*
+*Written evidence applying the Welsh Income Protection Endowment proposition to the Committee's call for information: whether a temporary, hypothecated use of a Welsh tax power could convert a period of taxation into a permanent public asset. Offered as analysis, not as a costed proposal for 2027-28.*
 
-> A strategic proposition for the Committee's consideration: whether Wales should hold an instrument that converts a period of taxation into a permanent public asset. Offered as analysis, not as a costed proposal for 2027-28.
+Based on the [Welsh Income Protection Endowment discussion paper](/economics/welsh-income-protection-endowment/) published in this section.
 
 ## Introduction
 
-This submission responds to the Committee's call for information on the 2027-28 Draft Budget. It does not comment on individual departmental allocations. It addresses the strategic and overarching questions the Committee has invited views on, in particular question 4 (the use of Wales's tax-raising powers), question 8 (shifting allocations toward preventative investment), and question 6 (actions to support economic growth), with a briefer note on question 3 (efficient allocation).
+This submission applies the Welsh Income Protection Endowment proposition to the strategic and overarching questions the Committee has invited views on: questions 4 (the use of Wales's tax-raising powers), 8 (shifting allocations toward preventative investment), and 6 (actions to support economic growth), with a briefer note on question 3 (efficient allocation). It does not comment on individual departmental allocations.
 
-Its purpose is to put one strategic proposition before the Committee. The annual budget round, by its nature, treats Welsh public finance almost entirely as a yearly flow: resource is raised and spent within the year. Wales currently holds no instrument for converting a period of taxation into a permanent public asset. This submission sets out why that may be a gap worth the Committee's strategic attention, and offers one worked illustration of what an instrument to fill it could look like. A fuller discussion paper developing the illustration is available on request; this submission is written to stand on its own.
+Its purpose is to put one strategic proposition before the Committee. The annual budget round, by its nature, treats Welsh public finance almost entirely as a yearly flow: resource is raised and spent within the year. Wales currently holds no instrument for converting a period of taxation into a permanent public asset. The Welsh Income Protection Endowment, developed at length in a separate discussion paper available on request, is one worked example of such an instrument; this submission uses it to illustrate a more general point about how the tax power could be used.
 
 ## Question 4: the use of Wales's tax-raising powers
 
@@ -39,7 +38,7 @@ Question 8 asks whether budget allocations should shift toward preventative init
 
 Preventative spending on services seeks to reduce a future call on the budget by acting earlier. A capital endowment does the same thing structurally: it uses resource now to build an asset whose returns permanently offset a liability the budget would otherwise meet from annual taxation indefinitely. Where preventative health spending reduces future demand for treatment, a capital fund reduces the future recurrent cost of whatever it is built to finance, by meeting that cost from investment income rather than from each year's revenue.
 
-One worked illustration, developed in the background paper, is a contributory Welsh income-protection fund: a temporary levy building a permanent endowment that pays a time-limited income top-up to workers who lose their job or hours, easing the sharp fall to Universal Credit that the Welsh Government's own Basic Income for Care Leavers evaluation identified as the most damaging moment for those leaving support. The illustration is offered not as a costed proposal for 2027-28, but as a concrete example of the general principle the Committee's question invites: building an asset once to reduce a recurring future cost, rather than funding that cost annually and without end.
+The worked illustration is a contributory Welsh income-protection fund: a temporary levy building a permanent endowment that pays a time-limited income top-up to workers who lose their job or hours, easing the sharp fall to Universal Credit that the Welsh Government's own Basic Income for Care Leavers evaluation identified as the most damaging moment for those leaving support. It is offered not as a costed proposal for 2027-28, but as a concrete example of the general principle: building an asset once to reduce a recurring future cost, rather than funding that cost annually and without end.
 
 ## Question 6: supporting economic growth
 
@@ -55,8 +54,6 @@ Any instrument of this kind raises a prior question that this submission does no
 
 ## What is offered for the Committee's consideration
 
-This submission does not ask the Committee to endorse any specific scheme. It offers one strategic proposition: that the annual budget frame necessarily cannot build lasting assets, and that Wales may benefit from at least one instrument that can, funded by the temporary and hypothecated use of a tax power it already holds. The worked illustration is provided to make the idea concrete. The fuller paper behind it identifies its own open questions, above all the constitutional one and the actuarial assumptions that only administrative data can settle, and proposes that these be tested through independent legal and feasibility work rather than asserted.
+This submission does not ask the Committee to endorse any specific scheme. It offers one strategic proposition: that the annual budget frame necessarily cannot build lasting assets, and that Wales may benefit from at least one instrument that can, funded by the temporary and hypothecated use of a tax power it already holds. The Welsh Income Protection Endowment is provided to make the idea concrete. The fuller paper behind it identifies its own open questions, above all the constitutional one and the actuarial assumptions that only administrative data can settle, and proposes that these be tested through independent legal and feasibility work rather than asserted.
 
 The Committee's strategic, overarching perspective is precisely the vantage from which such a question can be asked. I would be glad to provide the background paper, or any further detail, should it assist the Committee's scrutiny.
-
-*Drew Griffiths*

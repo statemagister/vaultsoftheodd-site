@@ -5,7 +5,7 @@ subtitle: "A story from the Mabinogion"
 layout: "figure"
 weight: 10
 blurb: "Reality cannot lie to him, and he cannot make reality lie. A god the Mabinogion remembered as a king — and the story of how that shows."
-description: "Math, God of Truth: a retelling from the Fourth Branch of the Mabinogi. Reality cannot lie to him, and he cannot make reality lie."
+description: "Reality cannot lie to him, and he cannot make reality lie. Math, God of Truth — from the Fourth Branch of the Mabinogi."
 ---
 
 Before men made laws about truth, there was Math.

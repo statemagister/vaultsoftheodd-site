@@ -98,6 +98,21 @@
   <aside class="post-aside" aria-label="Vault information">
     <div class="aside-inner">
       {{ partial "search.html" . }}
+
+      {{- /* Browse the vault by topic. Tags come from live articles only
+             (site.RegularPages excludes future-dated posts), so every chip
+             links to a tag page that has content. Mirrors the Money vault. */ -}}
+      {{- $tags := slice }}
+      {{- range (where site.RegularPages "Section" "economics") }}{{ range .Params.tags }}{{ $tags = $tags | append . }}{{ end }}{{ end }}
+      {{- with (uniq $tags) }}
+      <section class="aside-block">
+        <h2 class="aside-title">Browse by topic</h2>
+        <div class="aside-tags">
+          {{- range (sort .) }}<a class="tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+        </div>
+      </section>
+      {{- end }}
+
       {{- /* No tip jar here — matches the Politics vault's restraint on analytical work. */ -}}
     </div>
   </aside>

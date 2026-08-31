@@ -22,7 +22,7 @@ But a lie was another thing.
 
 He kept a house, and it was not an ordinary one.
 
-His nephew Gwydion lived in it, and Gwydion was the cleverest thing anyone had ever met. He could make twelve horses out of toadstools and put gold on their bridles. He could make a ship out of seaweed and a fleet out of nothing at all. He could walk into a room wearing another man's face and walk out again with what he came for.
+His nephew Gwydion lived in it, and Gwydion was the cleverest person anyone had ever met. He could make twelve horses out of toadstools and put gold on their bridles. He could make a ship out of seaweed and a fleet out of nothing at all. He could walk into a room wearing another man's face and walk out again with what he came for.
 
 His niece Aranrhod lived in it too, and strange things happened around her, and more will be said of that.
 

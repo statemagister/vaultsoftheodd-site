@@ -59,7 +59,7 @@ None is an implementation detail. No fiscal costing or legislative drafting can 
 
 ### 2.1 Two policies have collided
 
-The full new state pension rose 4.8% to £12,547.60 a year in April 2026, against a personal allowance frozen at £12,570 and now frozen until April 2031. The gap is £22. From 2027/28 the state pension exceeds the allowance for the first time, and the triple lock's 2.5% floor makes this unavoidable.
+The full new state pension rose 4.8% to £241.30 a week in April 2026. For income tax it is assessed on entitlement accruing in the year rather than on payments received, which for 2026/27 is one week at the old rate and fifty-one at the new: £12,536.55. That is set against a personal allowance frozen at £12,570 and now frozen until April 2031. The gap is £33. From 2027/28 the state pension exceeds the allowance for the first time, and the triple lock's 2.5% floor makes this unavoidable.
 
 The result is a system in which a person whose sole income is the state pension receives a tax bill. This is not a policy anyone chose. It is the arithmetic consequence of two independently popular commitments running in opposite directions.
 
@@ -92,7 +92,7 @@ A single figure, referred to here as the Floor, is set in legislation. In the co
 - The full new state pension is paid at the Floor.
 - The income tax personal allowance is equal to the Floor.
 
-Because the allowance is set at the current level rather than the current pension level, commencement involves a small uplift to the state pension (£22) and no reduction in anyone's allowance. Nobody is cash worse off on day one.
+Because the allowance is set at the current level rather than the current pension level, commencement involves a small uplift to the state pension (£33 on the taxable entitlement) and no reduction in anyone's allowance. Nobody is cash worse off on day one.
 
 ### 3.2 The uprating rule
 

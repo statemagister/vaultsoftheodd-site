@@ -85,7 +85,8 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
 
 .tl-tip { position: fixed; pointer-events: none; background: var(--bg-card); border: 1px solid var(--gold); color: var(--text-primary); font-size: 0.72rem; line-height: 1.35; padding: 0.3rem 0.5rem; border-radius: 3px; z-index: 60; max-width: 230px; }
 
-.tl-panel { width: 352px; flex: 0 0 352px; height: 100%; overflow-y: auto; background: var(--bg-card); border: 1px solid var(--rule); border-radius: 4px; padding: 1rem 1.1rem 1.4rem; }
+.tl-panel { width: 352px; flex: 0 0 352px; height: 100%; display: flex; flex-direction: column; overflow: hidden; background: var(--bg-card); border: 1px solid var(--rule); border-radius: 4px; padding: 1rem 1.1rem 1.4rem; }
+#tlPanelBody { flex: 1 1 auto; min-height: 0; overflow-y: auto; }
 .tl-pyear { font-family: var(--display); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 0.2rem; }
 .tl-scope { color: var(--gold); }
 .tl-ptitle { font-family: var(--display); font-size: 1.05rem; color: var(--gold-bright); margin: 0 0 0.5rem; line-height: 1.25; }
@@ -136,7 +137,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
 .tl-seqwho { display: block; font-family: var(--display); font-size: 0.74rem; color: var(--text-primary); margin-bottom: 0.15rem; }
 .tl-seqread { font-size: 0.82rem; color: var(--text-body); line-height: 1.5; margin: 0; }
 
-.tl-feedback { border-top: 1px solid var(--rule); margin-top: 0.9rem; padding-top: 0.7rem; }
+.tl-feedback { flex: 0 0 auto; border-top: 1px solid var(--rule); margin-top: 0.9rem; padding-top: 0.7rem; }
 .tl-feedback .tl-gloss { margin-bottom: 0.4rem; }
 .tl-feedback #tlFbCtxLabel { color: var(--gold); font-style: italic; }
 .tl-fbtext, .tl-fbemail { width: 100%; box-sizing: border-box; background: var(--bg); color: var(--text-primary); border: 1px solid var(--rule); border-radius: 3px; font-family: var(--body); font-size: 0.82rem; padding: 0.4rem 0.5rem; margin-bottom: 0.5rem; }
@@ -151,7 +152,7 @@ description: "An interactive, scrollable chronology of Barovia and the domains t
 @media (max-width: 900px) {
   .tl-layout { display: block; height: auto; }
   .tl-stagewrap { height: 54vh; }
-  .tl-panel { width: auto; flex: none; height: auto; max-height: 56vh; margin-top: 0.9rem; }
+  .tl-panel { width: auto; flex: none; height: 56vh; margin-top: 0.9rem; }
 }
 </style>
 

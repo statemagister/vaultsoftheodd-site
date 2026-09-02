@@ -77,8 +77,14 @@ if (accept || provisional) {
   const status = accept ? 'accepted' : 'provisional';
   const sel = accept || provisional;
   let targets;
-  if (status === 'provisional' && sel === 'all') targets = recon;
-  else { const a = resolve(sel); if (!a) { console.error(`not a reconstructed asset: ${sel}`); process.exit(1); } targets = [a]; }
+  if (status === 'provisional' && sel === 'all') {
+    // Grandfather ONLY assets that carry no registry record yet. Never overwrite
+    // an existing entry — this must not downgrade an 'accepted' asset (e.g. Ward)
+    // to 'provisional', and it keeps re-runs idempotent.
+    const skipped = recon.filter((a) => reg.get(a.sha256));
+    targets = recon.filter((a) => !reg.get(a.sha256));
+    console.log(`--provisional all: ${targets.length} to seed, ${skipped.length} already recorded (left untouched: ${skipped.map((a) => reg.get(a.sha256).status).join(', ') || 'none'})`);
+  } else { const a = resolve(sel); if (!a) { console.error(`not a reconstructed asset: ${sel}`); process.exit(1); } targets = [a]; }
 
   for (const a of targets) {
     assetPathOnDisk(a); // verifies file present and matches DB hash before recording

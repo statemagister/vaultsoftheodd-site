@@ -1,0 +1,9 @@
+# gygax-v2-reconstructed-acceptance.jsonl — sha256-keyed acceptance registry for
+# RECONSTRUCTED evidence assets (asset_type='stitched' OR joins >1 source).
+# One JSON object per line; the LAST record for a given sha256 wins.
+# status: "accepted" = a human compared the reconstructed asset to the source
+#         and confirmed no source content was omitted/obscured;
+#         "provisional" = pre-existing reconstruction acknowledged, eyes-on pending.
+# Notes must NOT quote verbatim testimony — this file is version-controlled.
+# Written by scripts/gygax-v2-accept-reconstructed.mjs; read by the build gate.
+{"sha256":"fc256e990927e3c4452aa07471d4022ebf5b1422ccfe53175e0a102d78a6d7d9","asset_path":"evidence/social-media/ward/greyhawk2/ward_greyhawk2_complete.png","unit_id":547,"asset_type":"stitched","reasons":["asset_type=stitched","joins 2 sources"],"status":"accepted","by":"statemagister@gmail.com","at":"2026-09-02T20:07:05.869Z","note":"Eyes-on: full asset + 4x-magnified join band compared to source. Text is continuous across the two-page join; the run dropped at the v2 join is present in v3. OCR missing-runs are the two removed Facebook URL footers (preservation artefacts) plus minor OCR noise, not dropped testimony.","ocr":{"available":true,"coverage":0.714,"missing_runs":4}}

@@ -12,3 +12,7 @@
 *.sqlite-shm
 gygax_enworld*.sqlite
 /scripts/gygax-build-log.txt
+
+# Tesseract.js OCR language models — developer-time dependency for the
+# reconstruction acceptance workflow; never committed (large, downloaded on demand).
+*.traineddata

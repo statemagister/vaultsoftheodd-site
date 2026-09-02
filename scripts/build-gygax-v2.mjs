@@ -28,6 +28,7 @@ import { readFileSync, writeFileSync, rmSync, mkdtempSync, mkdirSync, existsSync
 import { tmpdir } from 'node:os';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { listReconstructed, loadAcceptance, gateAsset, ACCEPTANCE_PATH } from './gygax-v2-reconstruction.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO = resolve(HERE, '..');
@@ -41,6 +42,7 @@ const takeFlag = (n) => { const i = args.indexOf(n); if (i < 0) return null; if 
 const EVID = takeFlag('--evidence-dir');
 const OUTDIR = takeFlag('--out-dir') || join(REPO, 'static/research/gygax/v2');
 const ALLOW_WEAK = args.includes('--allow-weak');
+const REQUIRE_ACCEPTED = args.includes('--require-accepted'); // strict: provisional not enough
 const DB_PATH = args.filter((a) => !a.startsWith('--'))[0];
 if (!DB_PATH) { console.error('Usage: node --experimental-sqlite scripts/build-gygax-v2.mjs <v2.sqlite> [--evidence-dir d] [--out-dir d]'); process.exit(2); }
 
@@ -139,6 +141,33 @@ function header(kind, comp, salt, iv) {
       WHERE NOT EXISTS (SELECT 1 FROM coverage v WHERE v.object_id=o.id)`).get().c);
 
   if (fail) { db.close(); rmSync(tmp, { recursive: true, force: true }); die(`verification failed at "${fail}" — no assets produced.`); }
+
+  // ---- reconstruction acceptance gate (reconstructed assets only) ----------
+  // A reconstructed asset (stitched OR joins >1 source) can silently omit or
+  // obscure source content while its hash still verifies. It may not become
+  // canonical until a human has compared it to the source and recorded an
+  // acceptance keyed to this exact SHA-256. Ordinary source-native crops are
+  // NOT in this set and pass through untouched — the existing integrity,
+  // provenance and reconciliation controls govern them.
+  const reconstructed = listReconstructed(db);
+  const reg = loadAcceptance();
+  console.log(`\nReconstruction acceptance gate (${reconstructed.length} reconstructed assets; source-native crops exempt):`);
+  const blocked = [];
+  let accepted = 0, provisional = 0;
+  for (const a of reconstructed) {
+    const g = gateAsset(reg.get(a.sha256), { requireAccepted: REQUIRE_ACCEPTED });
+    if (!g.ok) { blocked.push({ a, reason: g.reason }); continue; }
+    if (g.status === 'accepted') accepted++; else provisional++;
+  }
+  console.log(`  accepted ${accepted} · provisional ${provisional}${REQUIRE_ACCEPTED ? ' (strict: provisional would block)' : ''} · blocked ${blocked.length}`);
+  if (blocked.length) {
+    console.log('  BLOCKED reconstructed assets (no valid acceptance for their current SHA-256):');
+    for (const b of blocked.slice(0, 20)) console.log(`    - ${b.a.asset_path}  (${b.a.reasons.join('; ')}) — ${b.reason}`);
+    if (blocked.length > 20) console.log(`    …and ${blocked.length - 20} more`);
+    db.close(); rmSync(tmp, { recursive: true, force: true });
+    die(`${blocked.length} reconstructed asset(s) lack acceptance. Run scripts/gygax-v2-accept-reconstructed.mjs\n`
+      + `           (--review then --accept, or --provisional to acknowledge). Registry: ${ACCEPTANCE_PATH}`);
+  }
 
   // ---- passphrase + single key derivation ---------------------------------
   const pass = await promptPassphrase();

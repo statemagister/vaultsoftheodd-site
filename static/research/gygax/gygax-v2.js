@@ -237,6 +237,7 @@ function renderUnit(id, h, q) {
     <p class="who">${esc(u.speaker || 'Unattributed')} · ${esc(REL_LABEL[u.evidence_relationship] || u.evidence_relationship)}${u.subject ? ` <span class="axis a-info">subject: ${esc(u.subject)}</span>` : ''}</p>
     <p class="where">${esc(u.family)} · ${esc(u.obj_title)}${num}${date}</p>
     <div class="axes">${axes}</div>
+    ${u.source_locator ? `<p class="prov">Source locator: ${esc(u.source_locator)}</p>` : ''}
     ${ctx.map((c) => `<div class="ctx"><b>${esc(c.context_type.replace(/_/g, ' '))}${c.who ? ' — ' + esc(c.who) : ''}:</b> ${esc(c.text)}</div>`).join('')}
     <div class="snip">${body}</div>
     ${tags.length ? `<div class="tags">${tags.map((t) => `<span class="tag${h.tags.includes(t) ? ' hit' : ''}">${esc(t)}</span>`).join('')}</div>` : ''}

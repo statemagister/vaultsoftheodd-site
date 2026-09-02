@@ -12,7 +12,15 @@
  *   - transcript stays EMPTY and transcript_status = 'untranscribed'. The
  *     manifest's PDF text layer is extraction, not verified transcription;
  *   - all extracted text goes to discovery_text only;
- *   - post numbers are retained with unit_number_status = 'inferred';
+ *   - the manifest's post_number values are SOURCE-LOCAL printable-view
+ *     positions that restart within each preserved Part (Part I 38-715,
+ *     Part II 2-378, Part VIII 3-403; 121 values shared across Parts). They are
+ *     not ENWorld thread post numbers, so they are NOT written to the historical
+ *     unit_number even as 'inferred' — an inference must be about the right
+ *     variable. They are preserved verbatim in source_locator as
+ *     "printable-view position N", and unit_number stays NULL with
+ *     unit_number_status = 'unknown' until an independent source (e.g. a live
+ *     page showing #892) establishes the real thread number;
  *   - discourse_mode is left 'unknown' — never manufactured;
  *   - transcript completeness is 'unknown' (there is no transcription yet); the
  *     manifest's "complete" describes the CARD, which is a different property;
@@ -92,10 +100,13 @@ console.log(`  card images      : ${recs.length} present, all SHA-256 matching t
 recs.sort((a, b) => a.thread_part - b.thread_part || a.post_number - b.post_number || a.id - b.id);
 let seq = db.prepare(`SELECT COALESCE(MAX(sequence_in_object),0) m FROM testimony_units WHERE object_id=?`).get(obj.id).m;
 
+// unit_number is the HISTORICAL ENWorld thread number. The manifest gives a
+// printable-view position, a different variable, so the historical number is
+// left NULL / 'unknown' and the position is preserved in source_locator.
 const insUnit = db.prepare(`INSERT INTO testimony_units
   (object_id,sequence_in_object,unit_number,unit_number_status,date_display,date_value,date_precision,date_timezone,
    speaker_id,evidence_relationship,discourse_mode,transcript,transcript_status,completeness,source_type,source_locator)
-  VALUES (?,?,?,'inferred',?,?,?,NULL,?,'direct','unknown','','untranscribed','unknown','pdf_text_extraction',?)`);
+  VALUES (?,?,NULL,'unknown',?,?,?,NULL,?,'direct','unknown','','untranscribed','unknown','pdf_text_extraction',?)`);
 const insAsset = db.prepare(`INSERT INTO evidence_assets(unit_id,asset_path,display_order,asset_type,sha256) VALUES (?,?,1,?,?)`);
 const insSrc = db.prepare(`INSERT INTO evidence_sources(asset_id,original_locator,original_type) VALUES (?,?,'pdf_page')`);
 const insDisc = db.prepare(`INSERT INTO discovery_text(object_id,segment_label,source_type,source_locator,text,unit_id) VALUES (?,?,'pdf_text_extraction',?,?,?)`);
@@ -108,8 +119,11 @@ for (const r of recs) {
   const label = 'Part ' + (ROMAN[r.thread_part] || r.thread_part);
   const d = parseDate(r.post_date);
   d.value ? stats.dateParsed++ : stats.dateUnparsed++;
-  const uid = Number(insUnit.run(obj.id, ++seq, r.post_number, r.post_date || null, d.value, d.precision,
-    speaker.id, r.source_locator || null).lastInsertRowid);
+  // Preserve the manifest's printable-view position as a locator, labelled as
+  // what it is. It is not a thread post number and must not read as one.
+  const locator = `${r.source_document} PDF pages ${r.source_start_page}-${r.source_end_page}; printable-view position ${r.post_number} (${label})`;
+  const uid = Number(insUnit.run(obj.id, ++seq, r.post_date || null, d.value, d.precision,
+    speaker.id, locator).lastInsertRowid);
   stats.units++;
 
   // evidence: one derivative per card; multi-page cards are stitched and carry
@@ -131,7 +145,7 @@ for (const r of recs) {
   // extraction -> discovery only. question_context is extraction too, so it is
   // NOT written to unit_context (that table may hold verified text only).
   const text = (r.full_rendered_text || r.gygax_text || '').trim();
-  if (text) { insDisc.run(obj.id, label, r.source_locator || null, text, uid); stats.discovery++; }
+  if (text) { insDisc.run(obj.id, label, locator, text, uid); stats.discovery++; }
   else stats.noText++;
   if (r.tags) stats.tagsSkipped++;
   if ((r.question_context || '').trim()) stats.contextSkipped++;
@@ -146,8 +160,8 @@ const after = {
   discovery: db.prepare('SELECT count(*) c FROM discovery_text').get().c,
 };
 const q = (s) => db.prepare(s).get().c;
-const crossPart = q(`SELECT count(*) c FROM (SELECT unit_number FROM testimony_units
-  WHERE unit_number IS NOT NULL GROUP BY unit_number HAVING count(*)>1)`);
+const unknownNums = q(`SELECT count(*) c FROM testimony_units WHERE unit_number IS NULL AND unit_number_status='unknown'`);
+const anyNumber = q(`SELECT count(*) c FROM testimony_units WHERE unit_number IS NOT NULL`);
 const L = [];
 const P = (s) => { console.log(s); L.push(s); };
 P('\nReconciliation report');
@@ -167,10 +181,14 @@ P(`  counts before : units ${before.units}, assets ${before.assets}, provenance 
 P(`  counts after  : units ${after.units}, assets ${after.assets}, provenance ${after.sources}, discovery ${after.discovery}`);
 P('');
 P('  CURATION STATES (reported, not failures):');
-P(`    inferred numbers shared by >1 record : ${crossPart}`);
-P('      The manifest numbers are per-PDF printable-view positions and restart');
-P('      in each Part, so they are NOT ENWorld thread numbers. They are retained');
-P('      as inferred and must be confirmed against live pages before promotion.');
+P(`    units with historical post number unknown : ${unknownNums}`);
+P(`    units carrying any historical post number : ${anyNumber}`);
+P('      The manifest post_number values are source-local printable-view');
+P('      positions that restart within each preserved Part. They are a different');
+P('      variable from the ENWorld thread number, so they are preserved only as');
+P('      locators ("printable-view position N") and the historical unit_number is');
+P('      NULL / unknown until an independent source establishes it. A live-page');
+P('      observation such as #892 can then replace unknown as a genuine observed number.');
 P(`    units with evidence but no transcript: ${q(`SELECT count(DISTINCT u.id) c FROM testimony_units u JOIN evidence_assets e ON e.unit_id=u.id WHERE u.transcript_status='untranscribed'`)}`);
 P(`    units with unknown discourse_mode    : ${q(`SELECT count(*) c FROM testimony_units WHERE discourse_mode='unknown'`)}`);
 
@@ -181,7 +199,10 @@ ok('exactly 532 source cards accounted for', stats.units === recs.length && recs
 ok('one evidence asset per card', after.assets - before.assets === recs.length);
 ok('no transcript text written', q(`SELECT count(*) c FROM testimony_units WHERE transcript<>''`) === 0);
 ok('all ingested units untranscribed', q(`SELECT count(*) c FROM testimony_units WHERE transcript_status<>'untranscribed'`) === 0);
-ok('all ingested numbers marked inferred', q(`SELECT count(*) c FROM testimony_units WHERE unit_number IS NOT NULL AND unit_number_status<>'inferred'`) === 0);
+ok('no historical unit_number asserted (all NULL / unknown)',
+   q(`SELECT count(*) c FROM testimony_units WHERE unit_number IS NOT NULL OR unit_number_status<>'unknown'`) === 0);
+ok('printable-view positions preserved as locators',
+   q(`SELECT count(*) c FROM testimony_units WHERE source_locator LIKE '%printable-view position %'`) === after.units);
 ok('no unit_context rows created', q('SELECT count(*) c FROM unit_context') === 0);
 ok('no tags created', q('SELECT count(*) c FROM tags') === 0);
 // The insert trigger indexes every unit, including untranscribed ones. Those

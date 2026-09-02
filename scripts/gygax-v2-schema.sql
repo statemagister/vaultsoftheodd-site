@@ -65,7 +65,10 @@ CREATE TABLE documentary_objects (
 CREATE TABLE testimony_units (
   id                 INTEGER PRIMARY KEY,
   object_id          INTEGER NOT NULL REFERENCES documentary_objects(id),
-  sequence_in_object INTEGER NOT NULL,   -- position within the documentary object
+  sequence_in_object INTEGER NOT NULL,   -- ORDERING KEY only: fixes display order and one-per-slot
+                                         -- uniqueness within the object. NOT a claim about the unit's
+                                         -- historical position in the complete thread. Any detected or
+                                         -- preservation position lives, labelled, in source_locator.
   unit_number        INTEGER NULL,       -- ENWorld #, letter item no., etc.
   unit_number_status TEXT NOT NULL DEFAULT 'unknown' CHECK (unit_number_status IN
                        ('observed','independently_confirmed','inferred','unknown')),

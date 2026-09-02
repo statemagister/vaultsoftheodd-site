@@ -8,5 +8,5 @@
 # tests, then update this hash in the same commit so the change is explicit and
 # reviewable. Never update this hash to silence an abort.
 schema_version = v2.0
-frozen_on      = 2026-09-02
-sha256         = cd8fde2ff804a6caa1ad9a9b5e7b06e46b6948fa7ca298725246b9ad9dc223d5
+frozen_on      = 2026-09-02 (re-frozen: sequence_in_object comment clarified; DDL structure unchanged)
+sha256         = 5376e72e619d105eaf624582c942319a65df2a6b53c2c26ff40a34c6a750305f

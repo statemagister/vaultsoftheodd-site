@@ -166,12 +166,25 @@ function runSearch() {
         JOIN testimony_units u ON u.id=c.unit_id
         WHERE context_fts MATCH $q ${f} LIMIT 200`,
       bind: b, rowMode: 'object', callback: (r) => need(r.id).context.push(r) });
-    // 4. discovery text (not units)
-    DB.exec({ sql: `SELECT d.segment_label, d.source_locator, d.source_type,
-        snippet(discovery_fts,0,'${OPEN}','${CLOSE}',' … ',24) snip
-        FROM discovery_fts JOIN discovery_text d ON d.id=discovery_fts.rowid
-        WHERE discovery_fts MATCH $q LIMIT 50`,
-      rowMode: 'object', bind: { $q: q }, callback: (r) => discovery.push(r) });
+    // 4. discovery text (not units). When a unit-scope filter is active, restrict
+    // discovery to rows attributable to a matching unit — so "direct only" (or a
+    // speaker/family filter) does not surface, say, an eyewitness's words. With no
+    // filter, all discovery is shown, including v1 unit-less discovery.
+    if (filtering) {
+      const db4 = { $q: q }; const f4 = filterSql(db4);
+      DB.exec({ sql: `SELECT d.segment_label, d.source_locator, d.source_type,
+          snippet(discovery_fts,0,'${OPEN}','${CLOSE}',' … ',24) snip
+          FROM discovery_fts JOIN discovery_text d ON d.id=discovery_fts.rowid
+          JOIN testimony_units u ON u.id=d.unit_id
+          WHERE discovery_fts MATCH $q ${f4} LIMIT 50`,
+        rowMode: 'object', bind: db4, callback: (r) => discovery.push(r) });
+    } else {
+      DB.exec({ sql: `SELECT d.segment_label, d.source_locator, d.source_type,
+          snippet(discovery_fts,0,'${OPEN}','${CLOSE}',' … ',24) snip
+          FROM discovery_fts JOIN discovery_text d ON d.id=discovery_fts.rowid
+          WHERE discovery_fts MATCH $q LIMIT 50`,
+        rowMode: 'object', bind: { $q: q }, callback: (r) => discovery.push(r) });
+    }
   } catch (err) {
     out.innerHTML = ''; msg.className = 'msg err';
     msg.textContent = 'Search not understood. Try a word, a "quoted phrase", AND / OR / NOT, or a prefix such as Grey*.';

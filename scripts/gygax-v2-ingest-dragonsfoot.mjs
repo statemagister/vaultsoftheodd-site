@@ -120,9 +120,13 @@ const insDisc = db.prepare(`INSERT INTO discovery_text(object_id,segment_label,s
 
 const stats = { units: 0, assets: 0, sources: 0, discovery: 0, crop: 0, stitched: 0 };
 recs.sort((a, b) => a.sequence_in_preserved_slice - b.sequence_in_preserved_slice);
+// sequence_in_object is an ordering key, so assign it densely (1..N) in
+// preservation order. The source's gapped detection position is not a historical
+// index and is retained only in the locator text.
+let seq = db.prepare(`SELECT COALESCE(MAX(sequence_in_object),0) m FROM testimony_units WHERE object_id=?`).get(obj.id).m;
 for (const r of recs) {
   const locator = `${SOURCE_PDF} p.${r.source_start_page}-${r.source_end_page}; preserved slice position ${r.sequence_in_preserved_slice} (batch 01)`;
-  const uid = Number(insUnit.run(obj.id, r.sequence_in_preserved_slice,
+  const uid = Number(insUnit.run(obj.id, ++seq,
     r.timestamp_display, parseStamp(r.timestamp_display), r.timestamp_precision || 'unknown',
     r.timestamp_timezone || null, speaker.id, locator).lastInsertRowid);
   stats.units++;
@@ -166,9 +170,10 @@ P(`  counts before : units ${before.units}, assets ${before.assets}, provenance 
 P(`  counts after  : units ${after.units}, assets ${after.assets}, provenance ${after.sources}, discovery ${after.discovery}, objects ${after.objects}, families ${after.families}`);
 P('');
 P('  ASSUMPTIONS DECLARED:');
-P('    - slice positions (1,3,6,7,15…29, with gaps) are preservation order only;');
-P('      they are stored as sequence_in_object within this object and in the');
-P('      locator text, and assert nothing about thread post numbering;');
+P('    - the source slice positions (1,3,6,7,15…29, with gaps) are detection');
+P('      positions in the preserved material, not historical thread positions.');
+P('      They are retained only in the locator text; sequence_in_object is a');
+P('      dense ordering key (1..N) and asserts no historical position;');
 P('    - the thread extends beyond the preserved slice ("Page 1 of 23" vs 19');
 P('      preserved PDF pages); coverage records the segment as partial.');
 

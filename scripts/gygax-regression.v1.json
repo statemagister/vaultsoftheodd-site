@@ -1,0 +1,17 @@
+{
+  "corpus_version": "v1",
+  "generated": "2026-09-02",
+  "note": "Corpus-specific expected results for the Gary Gygax ENWorld Q&A corpus v1. These counts describe v1 only. When the canonical corpus is replaced (v2+), regenerate this file deliberately with: node --experimental-sqlite scripts/build-gygax-corpus.mjs <canonical.sqlite> --regen-expectations",
+  "search_expectations": {
+    "Greyhawk": 305,
+    "\"Indian, Burmese\"": 2,
+    "Tamoachan": 0,
+    "Olman": 0,
+    "Amedio": 0,
+    "Greyhawk AND culture": 9,
+    "Aztec OR Mayan OR Inca": 3,
+    "Greyhawk NOT culture": 296,
+    "Grey*": 324
+  },
+  "required_capabilities": ["fts5", "bm25", "snippet"]
+}

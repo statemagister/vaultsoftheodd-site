@@ -3,3 +3,12 @@
 /resources/_gen/
 /.hugo_build.lock
 .DS_Store
+
+# Gygax research corpus — PLAINTEXT SQLite must NEVER be committed.
+# Only the encrypted asset (static/research/gygax/gygax_enworld.enc) is deployable.
+# Covers the canonical database, the derived rollback deployment copy, and WAL/SHM sidecars.
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+gygax_enworld*.sqlite
+/scripts/gygax-build-log.txt

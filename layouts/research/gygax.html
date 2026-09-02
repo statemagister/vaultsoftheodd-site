@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Gygax ENWorld Q&amp;A — Research Corpus</title>
+<style>
+  :root{
+    --bg:#f7f6f3; --panel:#ffffff; --ink:#1c1c1c; --muted:#5b6570; --slate:#23445f;
+    --rule:#d9d5cc; --rule-soft:#e8e4db; --gold:#8a6d18;
+    --a3:#2e6b3e; --a3bg:#eaf4ec; --a2:#8a6d18; --a2bg:#f6f0dd; --a1:#9a3412; --a1bg:#fbeae2;
+    --warn:#9a3412; --warnbg:#fbeae2; --warnrule:#e6b8a3;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14171a; --panel:#1c2024; --ink:#e7e6e2; --muted:#9aa4ad; --slate:#9cc2e6;
+      --rule:#333a41; --rule-soft:#2a2f34; --gold:#d9b64e;
+      --a3:#8fd7a2; --a3bg:#16281b; --a2:#d9b64e; --a2bg:#2a2410; --a1:#f0a488; --a1bg:#2e1811;
+      --warn:#f0a488; --warnbg:#2e1811; --warnrule:#5a2f22;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-text-size-adjust:100%;padding:max(env(safe-area-inset-top),12px) 16px 64px;}
+  .wrap{max-width:900px;margin:0 auto}
+  h1{font-size:1.35rem;margin:.2rem 0 .1rem;color:var(--slate)}
+  .sub{color:var(--muted);font-size:.9rem;margin:0 0 1.2rem}
+  .card{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:16px;margin:0 0 16px}
+  label{font-size:.8rem;color:var(--muted);display:block;margin:0 0 4px;text-transform:uppercase;letter-spacing:.04em}
+  input[type=search],input[type=password],select{
+    width:100%;font-size:1.05rem;padding:12px 14px;border:1px solid var(--rule);border-radius:8px;background:var(--bg);color:var(--ink);}
+  input:focus,select:focus{outline:2px solid var(--slate);outline-offset:1px}
+  button{font-size:1rem;padding:12px 18px;border:0;border-radius:8px;background:var(--slate);color:#fff;cursor:pointer;-webkit-appearance:none}
+  button:disabled{opacity:.5;cursor:default}
+  .row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end}
+  .row>.grow{flex:1 1 260px;min-width:0}
+  .row>.f{flex:0 1 200px;min-width:150px}
+  .hint{font-size:.82rem;color:var(--muted);margin:8px 0 0}
+  .msg{font-size:.92rem;margin:10px 0 0;min-height:1.2em}
+  .msg.err{color:var(--warn)}
+  .status{font-size:.85rem;color:var(--muted);margin:4px 0 14px}
+  .hidden{display:none !important}
+
+  /* results */
+  .rescount{font-size:.85rem;color:var(--muted);margin:0 0 10px}
+  .res{border:1px solid var(--rule);border-radius:10px;padding:14px 16px;margin:0 0 12px;background:var(--panel)}
+  .res .meta{font-size:.78rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 12px;margin:0 0 8px}
+  .res .meta b{color:var(--ink);font-weight:600}
+  .snip{font-size:1rem;line-height:1.6}
+  .snip mark{background:rgba(138,109,24,.22);color:inherit;padding:0 .1em;border-radius:2px}
+  .badge{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.02em;padding:2px 8px;border-radius:999px;white-space:nowrap}
+  .a3{color:var(--a3);background:var(--a3bg)}
+  .a2{color:var(--a2);background:var(--a2bg)}
+  .a1{color:var(--a1);background:var(--a1bg)}
+  .ocrwarn{margin:10px 0 0;padding:8px 12px;border:1px solid var(--warnrule);background:var(--warnbg);color:var(--warn);
+    border-radius:8px;font-size:.85rem;font-weight:600}
+  .nomatch{border:1px dashed var(--rule);border-radius:10px;padding:18px;background:var(--panel)}
+  .nomatch h3{margin:.1rem 0 .4rem;color:var(--slate);font-size:1.05rem}
+  .nomatch p{margin:.3rem 0;font-size:.92rem;color:var(--muted)}
+  .nomatch a{color:var(--slate)}
+
+  /* legend + coverage */
+  details{border:1px solid var(--rule);border-radius:10px;background:var(--panel);margin:0 0 16px}
+  summary{cursor:pointer;padding:12px 16px;font-weight:600;color:var(--slate);list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"▸ ";color:var(--muted)}
+  details[open] summary::before{content:"▾ "}
+  .details-body{padding:0 16px 16px}
+  .legend p{margin:.35rem 0;font-size:.86rem;color:var(--muted)}
+  table{border-collapse:collapse;width:100%;font-size:.85rem;margin-top:4px}
+  th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+  th{color:var(--slate);font-size:.75rem;text-transform:uppercase;letter-spacing:.04em}
+  td.loss{color:var(--a1);font-weight:600}
+  .foot{font-size:.78rem;color:var(--muted);margin-top:24px;border-top:1px solid var(--rule-soft);padding-top:12px}
+  @media (min-width:700px){ body{padding-top:28px} h1{font-size:1.6rem} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Gary Gygax ENWorld Q&amp;A — Research Corpus</h1>
+  <p class="sub">Private research instrument. Full-text search of the recovered corpus. Absence from the corpus is not evidence that Gygax never said it — see corpus coverage.</p>
+
+  <!-- Password gate -->
+  <div class="card" id="gate">
+    <form id="gate-form" autocomplete="off">
+      <label for="pw">Passphrase</label>
+      <input type="password" id="pw" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Enter the corpus passphrase">
+      <div class="row" style="margin-top:12px">
+        <button type="submit" id="unlock">Unlock corpus</button>
+      </div>
+      <p class="msg" id="gate-msg" role="status" aria-live="polite"></p>
+      <p class="hint">The passphrase decrypts the corpus in your browser. It is never stored or transmitted, and the decrypted database is held only in memory for this session.</p>
+    </form>
+  </div>
+
+  <!-- Search UI (revealed after unlock) -->
+  <div id="app" class="hidden">
+    <div class="card">
+      <div class="row">
+        <div class="grow">
+          <label for="q">Search the corpus</label>
+          <input type="search" id="q" placeholder="e.g. Greyhawk, &quot;Hidden Shrine&quot;, Aztec OR Mayan, Grey*" enterkeyhint="search" autocapitalize="off" autocorrect="off" spellcheck="false">
+        </div>
+        <div class="f">
+          <label for="part">Q&amp;A part</label>
+          <select id="part"><option value="">All parts</option></select>
+        </div>
+        <div class="f">
+          <label for="auth">Source status</label>
+          <select id="auth">
+            <option value="1">All (incl. unverified OCR)</option>
+            <option value="2">Manual + PDF only (≥ authority 2)</option>
+            <option value="3">Direct PDF only (authority 3)</option>
+          </select>
+        </div>
+      </div>
+      <p class="hint">Supports ordinary terms, "quoted phrases", <b>AND</b> / <b>OR</b> / <b>NOT</b>, and prefix search such as <b>Grey*</b>.</p>
+      <p class="msg" id="search-msg" role="status" aria-live="polite"></p>
+    </div>
+
+    <p class="status" id="corpus-status"></p>
+    <p class="rescount" id="rescount"></p>
+    <div id="results"></div>
+
+    <details class="legend">
+      <summary>Evidential authority levels</summary>
+      <div class="details-body legend">
+        <p><span class="badge a3">Authority 3</span> Direct text extracted from an archived PDF.</p>
+        <p><span class="badge a2">Authority 2</span> Manually transcribed from a screenshot.</p>
+        <p><span class="badge a1">Authority 1</span> Unverified machine OCR from a screenshot — discovery only. <b>The original screenshot must be checked before quotation.</b></p>
+      </div>
+    </details>
+
+    <details id="coverage-panel">
+      <summary>Corpus coverage — what is present, partial and missing</summary>
+      <div class="details-body">
+        <p class="hint" style="margin-top:0">A zero-result search means only that the term was not found in the recovered corpus. It is not evidence that Gygax never made the statement.</p>
+        <div id="coverage-table"></div>
+        <p class="hint" id="coverage-stats"></p>
+      </div>
+    </details>
+  </div>
+
+  <p class="foot">Recovered corpus only; incomplete by design. The source PDFs and screenshots remain the underlying evidence and are maintained separately. Quoted source text is preserved verbatim and is never normalised or corrected.</p>
+</div>
+
+<script type="module" src="/research/gygax/gygax-search.js"></script>
+</body>
+</html>

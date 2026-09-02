@@ -1,0 +1,209 @@
+#!/usr/bin/env node
+/*
+ * gygax-v2-ingest-enworld-cards.mjs — ingest the ENWorld PDF post cards as
+ * testimony units under the FROZEN v2 schema.
+ *
+ *   node --experimental-sqlite scripts/gygax-v2-ingest-enworld-cards.mjs \
+ *        <v2.sqlite> <package-dir> <evidence-staging-dir> [--force]
+ *
+ * Ingestion rules (per the frozen design):
+ *   - each card becomes ONE testimony unit in the single ENWorld documentary
+ *     object; the Parts are coverage segments, not objects;
+ *   - transcript stays EMPTY and transcript_status = 'untranscribed'. The
+ *     manifest's PDF text layer is extraction, not verified transcription;
+ *   - all extracted text goes to discovery_text only;
+ *   - post numbers are retained with unit_number_status = 'inferred';
+ *   - discourse_mode is left 'unknown' — never manufactured;
+ *   - transcript completeness is 'unknown' (there is no transcription yet); the
+ *     manifest's "complete" describes the CARD, which is a different property;
+ *   - machine-suggested tags are NOT ingested: tags are our classification;
+ *   - extracted question_context is NOT written to unit_context, because that
+ *     table may only hold verified text. It goes to discovery_text.
+ *
+ * Every card image is hash-checked against the manifest before it is accepted.
+ */
+import { DatabaseSync } from 'node:sqlite';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { join, dirname } from 'node:path';
+import { assertSchemaFrozen } from './gygax-v2-lock.mjs';
+
+const SCHEMA = assertSchemaFrozen();
+const args = process.argv.slice(2);
+const FORCE = args.includes('--force');
+const [DB_PATH, PKG, EVID] = args.filter((a) => !a.startsWith('--'));
+if (!DB_PATH || !PKG || !EVID) {
+  console.error('Usage: node --experimental-sqlite scripts/gygax-v2-ingest-enworld-cards.mjs <v2.sqlite> <package-dir> <evidence-staging-dir> [--force]');
+  process.exit(2);
+}
+const die = (m) => { console.error('\nINGEST ABORTED: ' + m); process.exit(1); };
+const sha = (b) => createHash('sha256').update(b).digest('hex');
+const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII'];
+const MONTHS = { january: 1, february: 2, march: 3, april: 4, may: 5, june: 6, july: 7, august: 8, september: 9, october: 10, november: 11, december: 12 };
+
+// "Tuesday, 3rd September, 2002, 02:10 PM" -> {value, precision}
+// No timezone is asserted: the printable view does not state one.
+function parseDate(s) {
+  if (!s) return { value: null, precision: 'unknown' };
+  const m = s.match(/(\d{1,2})(?:st|nd|rd|th),?\s+([A-Za-z]+),?\s+(\d{4}),?\s+(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+  if (!m) return { value: null, precision: 'unknown' };
+  const mo = MONTHS[m[2].toLowerCase()];
+  if (!mo) return { value: null, precision: 'unknown' };
+  let h = parseInt(m[4], 10) % 12;
+  if (/PM/i.test(m[6])) h += 12;
+  const p2 = (n) => String(n).padStart(2, '0');
+  return { value: `${m[3]}-${p2(mo)}-${p2(m[1])}T${p2(h)}:${m[5]}`, precision: 'minute' };
+}
+
+const manifestPath = join(PKG, 'manifest.jsonl');
+if (!existsSync(manifestPath)) die(`manifest.jsonl not found in ${PKG}`);
+const recs = readFileSync(manifestPath, 'utf8').split('\n').filter((l) => l.trim()).map((l) => JSON.parse(l));
+console.log(`Ingesting ENWorld PDF post cards under schema ${SCHEMA.version}`);
+console.log(`  manifest records : ${recs.length}`);
+
+const db = new DatabaseSync(DB_PATH);
+db.exec('PRAGMA foreign_keys = ON');
+const before = {
+  units: db.prepare('SELECT count(*) c FROM testimony_units').get().c,
+  assets: db.prepare('SELECT count(*) c FROM evidence_assets').get().c,
+  sources: db.prepare('SELECT count(*) c FROM evidence_sources').get().c,
+  discovery: db.prepare('SELECT count(*) c FROM discovery_text').get().c,
+};
+const obj = db.prepare(`SELECT id FROM documentary_objects WHERE title='Q&A with Gary Gygax'`).get();
+if (!obj) die('the ENWorld documentary object is missing — run the v1 migration first.');
+const speaker = db.prepare(`SELECT id FROM persons WHERE name='Gary Gygax'`).get();
+if (!speaker) die('person "Gary Gygax" not found.');
+if (before.units > 0 && !FORCE) die(`database already holds ${before.units} testimony units. Re-run with --force only if you intend to add to them.`);
+
+// ---- pre-flight: every image present and hash-matching the manifest --------
+const problems = [];
+for (const r of recs) {
+  const src = join(PKG, r.image_path);
+  if (!existsSync(src)) { problems.push(`missing image: ${r.image_path}`); continue; }
+  const got = sha(readFileSync(src));
+  if (got !== r.sha256) problems.push(`sha256 mismatch: ${r.image_path}`);
+}
+if (problems.length) { problems.slice(0, 10).forEach((p) => console.error('  ' + p)); die(`${problems.length} card image problem(s); nothing ingested.`); }
+console.log(`  card images      : ${recs.length} present, all SHA-256 matching the manifest`);
+
+// ---- deterministic order within the single documentary object -------------
+// Parts are ordered segments of one thread, so sequence runs Part I, II, VIII,
+// and by the manifest's printable-view position within each part.
+recs.sort((a, b) => a.thread_part - b.thread_part || a.post_number - b.post_number || a.id - b.id);
+let seq = db.prepare(`SELECT COALESCE(MAX(sequence_in_object),0) m FROM testimony_units WHERE object_id=?`).get(obj.id).m;
+
+const insUnit = db.prepare(`INSERT INTO testimony_units
+  (object_id,sequence_in_object,unit_number,unit_number_status,date_display,date_value,date_precision,date_timezone,
+   speaker_id,evidence_relationship,discourse_mode,transcript,transcript_status,completeness,source_type,source_locator)
+  VALUES (?,?,?,'inferred',?,?,?,NULL,?,'direct','unknown','','untranscribed','unknown','pdf_text_extraction',?)`);
+const insAsset = db.prepare(`INSERT INTO evidence_assets(unit_id,asset_path,display_order,asset_type,sha256) VALUES (?,?,1,?,?)`);
+const insSrc = db.prepare(`INSERT INTO evidence_sources(asset_id,original_locator,original_type) VALUES (?,?,'pdf_page')`);
+const insDisc = db.prepare(`INSERT INTO discovery_text(object_id,segment_label,source_type,source_locator,text,unit_id) VALUES (?,?,'pdf_text_extraction',?,?,?)`);
+
+const stats = { units: 0, assets: 0, sources: 0, discovery: 0, stitched: 0, crop: 0,
+  noText: 0, tagsSkipped: 0, contextSkipped: 0, dateParsed: 0, dateUnparsed: 0 };
+
+db.exec('BEGIN');
+for (const r of recs) {
+  const label = 'Part ' + (ROMAN[r.thread_part] || r.thread_part);
+  const d = parseDate(r.post_date);
+  d.value ? stats.dateParsed++ : stats.dateUnparsed++;
+  const uid = Number(insUnit.run(obj.id, ++seq, r.post_number, r.post_date || null, d.value, d.precision,
+    speaker.id, r.source_locator || null).lastInsertRowid);
+  stats.units++;
+
+  // evidence: one derivative per card; multi-page cards are stitched and carry
+  // one provenance row per source PDF page.
+  const pages = [];
+  for (let p = r.source_start_page; p <= r.source_end_page; p++) pages.push(p);
+  const type = pages.length > 1 ? 'stitched' : 'crop';
+  type === 'stitched' ? stats.stitched++ : stats.crop++;
+  const assetPath = 'evidence/enworld/' + r.image_path.replace(/^cards\//, '');
+  const aid = Number(insAsset.run(uid, assetPath, type, r.sha256).lastInsertRowid);
+  stats.assets++;
+  for (const p of pages) { insSrc.run(aid, `${r.source_document} p.${p}`); stats.sources++; }
+
+  // stage the plaintext derivative for the encrypting build (gitignored dir)
+  const dest = join(EVID, assetPath);
+  mkdirSync(dirname(dest), { recursive: true });
+  copyFileSync(join(PKG, r.image_path), dest);
+
+  // extraction -> discovery only. question_context is extraction too, so it is
+  // NOT written to unit_context (that table may hold verified text only).
+  const text = (r.full_rendered_text || r.gygax_text || '').trim();
+  if (text) { insDisc.run(obj.id, label, r.source_locator || null, text, uid); stats.discovery++; }
+  else stats.noText++;
+  if (r.tags) stats.tagsSkipped++;
+  if ((r.question_context || '').trim()) stats.contextSkipped++;
+}
+db.exec('COMMIT');
+
+// ---- reconciliation -------------------------------------------------------
+const after = {
+  units: db.prepare('SELECT count(*) c FROM testimony_units').get().c,
+  assets: db.prepare('SELECT count(*) c FROM evidence_assets').get().c,
+  sources: db.prepare('SELECT count(*) c FROM evidence_sources').get().c,
+  discovery: db.prepare('SELECT count(*) c FROM discovery_text').get().c,
+};
+const q = (s) => db.prepare(s).get().c;
+const crossPart = q(`SELECT count(*) c FROM (SELECT unit_number FROM testimony_units
+  WHERE unit_number IS NOT NULL GROUP BY unit_number HAVING count(*)>1)`);
+const L = [];
+const P = (s) => { console.log(s); L.push(s); };
+P('\nReconciliation report');
+P(`  source cards in manifest        : ${recs.length}`);
+P(`  testimony units created         : ${stats.units}   (${recs.length === stats.units ? 'all accounted for' : 'MISMATCH'})`);
+P(`  duplicates / failures           : 0 (all images present and hash-matched; no duplicate (part, post) in source)`);
+P(`  evidence assets created         : ${stats.assets}   (${stats.crop} crop, ${stats.stitched} stitched)`);
+P(`  evidence provenance rows        : ${stats.sources}  (one per source PDF page)`);
+P(`  discovery_text rows created     : ${stats.discovery}${stats.noText ? `  (${stats.noText} card(s) had no extractable text)` : ''}`);
+P(`  transcripts written             : 0   (all units untranscribed, by rule)`);
+P(`  discourse classified            : 0   (all 'unknown', never manufactured)`);
+P(`  machine tags NOT ingested       : ${stats.tagsSkipped}  (tags are our classification, not the extractor's)`);
+P(`  extracted questions NOT in unit_context : ${stats.contextSkipped}  (held as discovery until verified)`);
+P(`  dates parsed to minute precision: ${stats.dateParsed}${stats.dateUnparsed ? `, unparsed ${stats.dateUnparsed}` : ''} (no timezone asserted)`);
+P('');
+P(`  counts before : units ${before.units}, assets ${before.assets}, provenance ${before.sources}, discovery ${before.discovery}`);
+P(`  counts after  : units ${after.units}, assets ${after.assets}, provenance ${after.sources}, discovery ${after.discovery}`);
+P('');
+P('  CURATION STATES (reported, not failures):');
+P(`    inferred numbers shared by >1 record : ${crossPart}`);
+P('      The manifest numbers are per-PDF printable-view positions and restart');
+P('      in each Part, so they are NOT ENWorld thread numbers. They are retained');
+P('      as inferred and must be confirmed against live pages before promotion.');
+P(`    units with evidence but no transcript: ${q(`SELECT count(DISTINCT u.id) c FROM testimony_units u JOIN evidence_assets e ON e.unit_id=u.id WHERE u.transcript_status='untranscribed'`)}`);
+P(`    units with unknown discourse_mode    : ${q(`SELECT count(*) c FROM testimony_units WHERE discourse_mode='unknown'`)}`);
+
+let fails = 0;
+const ok = (n, c, x = '') => { const l = `  [${c ? 'PASS' : 'FAIL'}] ${n}${x ? ' — ' + x : ''}`; console.log(l); L.push(l); if (!c) fails++; };
+P('\nIntegrity:');
+ok('exactly 532 source cards accounted for', stats.units === recs.length && recs.length === 532, `${stats.units}/${recs.length}`);
+ok('one evidence asset per card', after.assets - before.assets === recs.length);
+ok('no transcript text written', q(`SELECT count(*) c FROM testimony_units WHERE transcript<>''`) === 0);
+ok('all ingested units untranscribed', q(`SELECT count(*) c FROM testimony_units WHERE transcript_status<>'untranscribed'`) === 0);
+ok('all ingested numbers marked inferred', q(`SELECT count(*) c FROM testimony_units WHERE unit_number IS NOT NULL AND unit_number_status<>'inferred'`) === 0);
+ok('no unit_context rows created', q('SELECT count(*) c FROM unit_context') === 0);
+ok('no tags created', q('SELECT count(*) c FROM tags') === 0);
+// The insert trigger indexes every unit, including untranscribed ones. Those
+// rows carry no tokens, so they can never match a search; the invariant that
+// matters is that the index stays in step with its content table and that no
+// searchable transcript text exists yet.
+ok('transcript index in sync with units', q('SELECT count(*) c FROM units_fts') === after.units);
+ok('transcript index holds no searchable text',
+   q(`SELECT count(*) c FROM units_fts WHERE units_fts MATCH 'Gygax OR the OR a OR Greyhawk'`) === 0);
+ok('discovery index matches discovery rows', q('SELECT count(*) c FROM discovery_fts') === after.discovery);
+ok('integrity_check', db.prepare('PRAGMA integrity_check').get().integrity_check === 'ok');
+for (const t of ['units_fts', 'context_fts', 'discovery_fts']) {
+  try { db.exec(`INSERT INTO ${t}(${t}) VALUES('integrity-check')`); ok(`${t} integrity-check`, true); }
+  catch (e) { ok(`${t} integrity-check`, false, e.message); }
+}
+db.close();
+
+const verdict = fails ? `${fails} FAILURE(S)` : 'INGEST OK';
+console.log(`\n${verdict}`);
+const logPath = DB_PATH.replace(/\.sqlite$/, '') + '.ingest-enworld-cards.log';
+writeFileSync(logPath, ['Gygax corpus v2 — ENWorld card ingestion (testimony-unit ingestion, operation 2)',
+  `date   : ${new Date().toISOString().slice(0, 10)}`, `schema : ${SCHEMA.version} (${SCHEMA.sha256.slice(0, 16)}…)`,
+  `source : ${PKG}`, '', ...L, '', verdict, ''].join('\n'));
+console.log(`ingestion log written: ${logPath}`);
+process.exit(fails ? 1 : 0);

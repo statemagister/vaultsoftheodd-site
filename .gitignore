@@ -3,3 +3,11 @@
 /resources/_gen/
 /.hugo_build.lock
 .DS_Store
+
+# Local databases and their WAL/SHM sidecars — never committed.
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+
+# Large model/data files pulled down at development time, not part of the site.
+*.traineddata

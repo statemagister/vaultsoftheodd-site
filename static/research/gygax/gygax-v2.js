@@ -78,6 +78,11 @@ function onUnlocked() {
   const sel = $('speaker');
   DB.exec({ sql: `SELECT p.id,p.name FROM persons p WHERE EXISTS(SELECT 1 FROM testimony_units u WHERE u.speaker_id=p.id) ORDER BY p.name`,
     rowMode: 'object', callback: (r) => { const o = document.createElement('option'); o.value = r.id; o.textContent = r.name; sel.appendChild(o); } });
+  const fsel = $('family');
+  DB.exec({ sql: `SELECT DISTINCT f.id,f.name FROM source_families f
+      JOIN documentary_objects o ON o.family_id=f.id
+      JOIN testimony_units u ON u.object_id=o.id ORDER BY f.name`,
+    rowMode: 'object', callback: (r) => { const o = document.createElement('option'); o.value = r.id; o.textContent = r.name; fsel.appendChild(o); } });
   const s = DB.selectObject(`SELECT (SELECT count(*) FROM testimony_units) u,
     (SELECT count(*) FROM testimony_units WHERE transcript_status='verified') v,
     (SELECT count(*) FROM evidence_assets) a, (SELECT count(*) FROM discovery_text) d`);
@@ -85,7 +90,7 @@ function onUnlocked() {
     `${s.u} testimony units (${s.v} with verified transcription) · ${s.a} evidence assets · ${s.d} discovery-text records.`;
   renderCoverage();
   $('q').focus();
-  for (const id of ['q', 'scope', 'speaker', 'tstatus'])
+  for (const id of ['q', 'scope', 'family', 'speaker', 'tstatus'])
     $(id).addEventListener(id === 'q' ? 'input' : 'change', debounce(runSearch, 180));
 }
 
@@ -105,6 +110,7 @@ const MODE_LABEL = { commentary: 'Commentary', retrospective_commentary: 'Retros
 function filterSql(bind) {
   let s = '';
   if ($('scope').value === 'direct') s += ` AND u.evidence_relationship='direct'`;
+  if ($('family').value) { s += ' AND u.object_id IN (SELECT id FROM documentary_objects WHERE family_id=$fam)'; bind.$fam = parseInt($('family').value, 10); }
   if ($('speaker').value) { s += ' AND u.speaker_id=$sp'; bind.$sp = parseInt($('speaker').value, 10); }
   if ($('tstatus').value) { s += ' AND u.transcript_status=$ts'; bind.$ts = $('tstatus').value; }
   return s;
@@ -123,7 +129,7 @@ function runSearch() {
   // Browse mode: with no query but an active filter, list the matching records.
   // This is how "what we hold but have not yet verified" stays visible, since an
   // untranscribed unit has no verified text and so matches no search dimension.
-  const filtering = $('scope').value === 'direct' || $('speaker').value || $('tstatus').value;
+  const filtering = $('scope').value === 'direct' || $('family').value || $('speaker').value || $('tstatus').value;
   if (!q) {
     if (!filtering) { out.innerHTML = ''; return; }
     const b = {}; const f = filterSql(b);
@@ -212,7 +218,8 @@ function renderUnit(id, h, q) {
 
   const num = u.unit_number == null ? '' :
     ` · #${u.unit_number}${u.unit_number_status === 'observed' || u.unit_number_status === 'independently_confirmed' ? '' : ` <span class="axis a-warn">${esc(u.unit_number_status)}</span>`}`;
-  const date = u.date_display ? ` · ${esc(u.date_display)}${u.date_timezone ? ' ' + esc(u.date_timezone) : ''}` +
+  const tzSuffix = u.date_timezone && !(u.date_display || '').includes(u.date_timezone) ? ' ' + esc(u.date_timezone) : '';
+  const date = u.date_display ? ` · ${esc(u.date_display)}${tzSuffix}` +
     (u.date_precision && u.date_precision !== 'minute' && u.date_precision !== 'day' ? ` <span class="axis a-info">${esc(u.date_precision)} precision</span>` : '') : '';
 
   const verified = u.transcript_status === 'verified';
@@ -324,9 +331,12 @@ function renderNoMatch(q) {
 
 function renderCoverage() {
   const rows = [];
-  DB.exec({ sql: `SELECT o.title obj, c.segment_label, c.coverage_status, c.known_loss, c.detail,
+  // Object titles can legitimately collide across families ("Q&A with Gary
+  // Gygax" exists on both ENWorld and Dragonsfoot), so qualify by family.
+  DB.exec({ sql: `SELECT (f.name || ' · ' || o.title) obj, c.segment_label, c.coverage_status, c.known_loss, c.detail,
       c.number_from, c.number_to FROM coverage c JOIN documentary_objects o ON o.id=c.object_id
-      ORDER BY o.title, c.sort_order, c.segment_label`, rowMode: 'object', callback: (r) => rows.push(r) });
+      JOIN source_families f ON f.id=o.family_id
+      ORDER BY f.name, o.title, c.sort_order, c.segment_label`, rowMode: 'object', callback: (r) => rows.push(r) });
   $('coverage-table').innerHTML = `<table><thead><tr><th>Object</th><th>Segment</th><th>Status</th><th>Loss</th><th>Detail</th></tr></thead><tbody>${
     rows.map((r) => `<tr><td>${esc(r.obj)}</td><td>${esc(r.segment_label)}${r.number_from ? ` (#${r.number_from}–${r.number_to || '?'})` : ''}</td>
       <td>${esc(r.coverage_status)}</td><td class="${r.known_loss ? 'loss' : ''}">${r.known_loss ? 'known loss' : '—'}</td>

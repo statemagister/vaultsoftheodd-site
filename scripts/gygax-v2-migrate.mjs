@@ -16,11 +16,13 @@
  * Units arrive later, one at a time, as transcriptions are verified.
  */
 import { DatabaseSync } from 'node:sqlite';
-import { readFileSync, rmSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, rmSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { assertSchemaFrozen } from './gygax-v2-lock.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
+const SCHEMA = assertSchemaFrozen();   // the v2 schema is frozen; refuse if it drifted
 const [V1, OUT] = process.argv.slice(2);
 if (!V1 || !OUT) {
   console.error('Usage: node --experimental-sqlite scripts/gygax-v2-migrate.mjs <v1.sqlite> <out-v2.sqlite>');
@@ -93,15 +95,50 @@ const n = (t) => db.prepare(`SELECT count(*) c FROM ${t}`).get().c;
 const v1Chunks = src.prepare('SELECT count(*) c FROM chunks').get().c;
 const v1Cov = src.prepare('SELECT count(*) c FROM coverage').get().c;
 
-console.log('v1 -> v2 migration');
-console.log(`  documentary objects : ${n('documentary_objects')}  (the whole thread is ONE object)`);
-console.log(`  coverage segments   : ${n('coverage')}  (v1 had ${v1Cov} parts)`);
-console.log(`  discovery_text rows : ${n('discovery_text')}  (v1 had ${v1Chunks} chunks)`);
-console.log(`  testimony units     : ${n('testimony_units')}  (nothing in v1 is verified transcription)`);
-console.log(`  evidence assets     : ${n('evidence_assets')}`);
+// ---- migration log --------------------------------------------------------
+// OPERATION 1 of 2. This migrates the v1 DISCOVERY corpus only. Ingesting
+// testimony units (e.g. the 532 ENWorld evidence cards) is a SEPARATE, later
+// operation. These two numbers describe different things and must never be
+// read as one becoming the other.
+const LOG = [
+  'Gygax corpus v2 — migration log',
+  `date            : ${new Date().toISOString().slice(0, 10)}`,
+  `schema          : ${SCHEMA.version} (frozen, sha256 ${SCHEMA.sha256.slice(0, 16)}…)`,
+  `source          : ${V1}`,
+  '',
+  'OPERATION: v1 discovery-corpus migration (operation 1 of 2)',
+  '  What this operation does: carries the v1 page/chunk corpus across as',
+  '  DISCOVERY TEXT, and records the ENWorld Parts as coverage segments of the',
+  '  single "Q&A with Gary Gygax" documentary object.',
+  '',
+  `  documentary objects : ${n('documentary_objects')}  (the whole thread is ONE object)`,
+  `  coverage segments   : ${n('coverage')}  (from ${v1Cov} v1 parts; Parts are segments, not objects)`,
+  `  discovery_text rows : ${n('discovery_text')}  (from ${v1Chunks} v1 page chunks, 1:1)`,
+  `  testimony units     : ${n('testimony_units')}  (correct: nothing in v1 is verified transcription)`,
+  `  evidence assets     : ${n('evidence_assets')}`,
+  '',
+  '  NOT DONE BY THIS OPERATION: no testimony units are created here. v1 holds',
+  '  PDF page chunks, not posts; converting them into units would let extraction',
+  '  quality masquerade as verified transcript.',
+  '',
+  'OPERATION 2 of 2 (separate, later): testimony-unit ingestion.',
+  '  The 532 ENWorld evidence cards are the first testimony-unit ingestion set.',
+  '  They enter as untranscribed units with inferred post numbers, their',
+  '  extracted text as additional discovery_text, and their crops as encrypted',
+  '  evidence assets.',
+  '',
+  `  ${v1Chunks} discovery chunks and 532 evidence cards are DIFFERENT SETS,`,
+  '  counted in different tables, produced by different operations. Neither',
+  '  number becomes the other. Do not read "1,559 records became 532".',
+];
+console.log(LOG.join('\n'));
 
 let fails = 0;
-const ok = (name, cond, extra = '') => { console.log(`  [${cond ? 'PASS' : 'FAIL'}] ${name}${extra ? ' — ' + extra : ''}`); if (!cond) fails++; };
+const VERIFY = [];
+const ok = (name, cond, extra = '') => {
+  const line = `  [${cond ? 'PASS' : 'FAIL'}] ${name}${extra ? ' — ' + extra : ''}`;
+  console.log(line); VERIFY.push(line); if (!cond) fails++;
+};
 console.log('\nVerification:');
 ok('all v1 chunks carried into discovery_text', n('discovery_text') === v1Chunks);
 ok('all v1 parts carried into coverage segments', n('coverage') === v1Cov);
@@ -121,5 +158,12 @@ const g = db.prepare(`SELECT count(*) c FROM discovery_fts WHERE discovery_fts M
 ok('discovery search still finds Greyhawk', g > 0, `${g} matches`);
 
 src.close(); db.close();
-console.log(`\n${fails ? fails + ' FAILURE(S)' : 'MIGRATION OK'}`);
+const verdict = fails ? `${fails} FAILURE(S)` : 'MIGRATION OK';
+console.log(`\n${verdict}`);
+
+// Persist the log next to the output so the operation stays auditable and the
+// discovery/testimony distinction survives beyond this terminal session.
+const logPath = OUT.replace(/\.sqlite$/, '') + '.migration.log';
+writeFileSync(logPath, [...LOG, '', 'Verification:', ...VERIFY, '', verdict, ''].join('\n'));
+console.log(`migration log written: ${logPath}`);
 process.exit(fails ? 1 : 0);

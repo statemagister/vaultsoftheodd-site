@@ -1,0 +1,12 @@
+# Gygax corpus v2 — FROZEN SCHEMA
+#
+# The v2 schema is frozen as of 2026-09-02. Any database created from a schema
+# file whose SHA-256 differs from this value is a different schema and must not
+# be built or ingested into by accident.
+#
+# To change the schema deliberately: edit gygax-v2-schema.sql, re-run the schema
+# tests, then update this hash in the same commit so the change is explicit and
+# reviewable. Never update this hash to silence an abort.
+schema_version = v2.0
+frozen_on      = 2026-09-02
+sha256         = cd8fde2ff804a6caa1ad9a9b5e7b06e46b6948fa7ca298725246b9ad9dc223d5

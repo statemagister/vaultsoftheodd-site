@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Gygax commentary &amp; testimony corpus</title>
+<style>
+  :root{
+    --bg:#f7f6f3; --panel:#fff; --ink:#1c1c1c; --muted:#5b6570; --slate:#23445f;
+    --rule:#d9d5cc; --soft:#e8e4db;
+    --ok:#2e6b3e; --okbg:#eaf4ec; --warn:#9a3412; --warnbg:#fbeae2; --warnrule:#e6b8a3;
+    --amber:#8a6d18; --amberbg:#f6f0dd; --violet:#5b3a86; --violetbg:#efe9f7;
+  }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+    --bg:#14171a; --panel:#1c2024; --ink:#e7e6e2; --muted:#9aa4ad; --slate:#9cc2e6;
+    --rule:#333a41; --soft:#2a2f34;
+    --ok:#8fd7a2; --okbg:#16281b; --warn:#f0a488; --warnbg:#2e1811; --warnrule:#5a2f22;
+    --amber:#d9b64e; --amberbg:#2a2410; --violet:#c4a7e7; --violetbg:#241a33; } }
+  *{box-sizing:border-box} html,body{margin:0}
+  body{background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-text-size-adjust:100%;padding:max(env(safe-area-inset-top),12px) 16px 64px}
+  .wrap{max-width:960px;margin:0 auto}
+  h1{font-size:1.35rem;margin:.2rem 0 .1rem;color:var(--slate)}
+  .sub{color:var(--muted);font-size:.9rem;margin:0 0 1.2rem}
+  .card{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:16px;margin:0 0 16px}
+  label{font-size:.78rem;color:var(--muted);display:block;margin:0 0 4px;text-transform:uppercase;letter-spacing:.04em}
+  input[type=search],input[type=password],select{width:100%;font-size:1.05rem;padding:12px 14px;
+    border:1px solid var(--rule);border-radius:8px;background:var(--bg);color:var(--ink)}
+  input:focus,select:focus{outline:2px solid var(--slate);outline-offset:1px}
+  button{font-size:1rem;padding:11px 16px;border:0;border-radius:8px;background:var(--slate);color:#fff;cursor:pointer;-webkit-appearance:none}
+  button.ghost{background:transparent;color:var(--slate);border:1px solid var(--rule)}
+  button:disabled{opacity:.5}
+  .row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end}
+  .row>.grow{flex:1 1 260px;min-width:0} .row>.f{flex:0 1 190px;min-width:150px}
+  .hint{font-size:.82rem;color:var(--muted);margin:8px 0 0}
+  .msg{font-size:.92rem;margin:10px 0 0;min-height:1.2em} .msg.err{color:var(--warn)}
+  .hidden{display:none!important}
+  .status{font-size:.85rem;color:var(--muted);margin:4px 0 14px}
+
+  .dim{margin:0 0 26px}
+  .dimhead{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+    border-bottom:1px solid var(--soft);padding-bottom:6px;margin:0 0 12px}
+  .dimhead b{color:var(--slate)}
+  .res{border:1px solid var(--rule);border-radius:10px;padding:14px 16px;margin:0 0 12px;background:var(--panel)}
+  .who{font-size:.95rem;font-weight:600;color:var(--slate);margin:0 0 2px}
+  .where{font-size:.78rem;color:var(--muted);margin:0 0 8px}
+  .axes{display:flex;flex-wrap:wrap;gap:6px 10px;font-size:.75rem;margin:0 0 10px}
+  .axis{display:inline-block;padding:2px 8px;border-radius:999px;font-weight:700;white-space:nowrap}
+  .a-ok{color:var(--ok);background:var(--okbg)} .a-warn{color:var(--warn);background:var(--warnbg)}
+  .a-info{color:var(--slate);background:var(--soft)} .a-amber{color:var(--amber);background:var(--amberbg)}
+  .a-violet{color:var(--violet);background:var(--violetbg)}
+  .ctx{border-left:3px solid var(--rule);padding:4px 0 4px 12px;margin:0 0 10px;color:var(--muted);font-size:.9rem}
+  .ctx b{color:var(--ink);font-weight:600}
+  .snip{font-size:1rem;line-height:1.6} .snip mark{background:rgba(138,109,24,.22);color:inherit;padding:0 .1em;border-radius:2px}
+  .tags{margin:10px 0 0;display:flex;flex-wrap:wrap;gap:6px}
+  .tag{font-size:.75rem;padding:2px 9px;border-radius:999px;background:var(--soft);color:var(--muted)}
+  .tag.hit{background:var(--amberbg);color:var(--amber);font-weight:700}
+  .why{font-size:.78rem;color:var(--muted);margin:8px 0 0;font-style:italic}
+  .acts{margin:12px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+  .prov{font-size:.76rem;color:var(--muted);margin:8px 0 0}
+  .warnbox{margin:10px 0 0;padding:8px 12px;border:1px solid var(--warnrule);background:var(--warnbg);
+    color:var(--warn);border-radius:8px;font-size:.85rem;font-weight:600}
+  .full{margin:10px 0 0;padding:12px;border:1px solid var(--soft);border-radius:8px;background:var(--bg);white-space:pre-wrap;font-size:.95rem}
+  .shots{margin:10px 0 0;display:flex;flex-direction:column;gap:10px}
+  .shots figure{margin:0} .shots img{max-width:100%;border:1px solid var(--rule);border-radius:6px;image-rendering:pixelated}
+  .shots figcaption{font-size:.75rem;color:var(--muted);margin-top:4px}
+  .nomatch{border:1px dashed var(--rule);border-radius:10px;padding:18px;background:var(--panel)}
+  .nomatch h3{margin:.1rem 0 .4rem;color:var(--slate);font-size:1.05rem}
+  .nomatch p{margin:.3rem 0;font-size:.92rem;color:var(--muted)}
+  details{border:1px solid var(--rule);border-radius:10px;background:var(--panel);margin:0 0 16px}
+  summary{cursor:pointer;padding:12px 16px;font-weight:600;color:var(--slate);list-style:none}
+  summary::-webkit-details-marker{display:none} summary::before{content:"▸ ";color:var(--muted)}
+  details[open] summary::before{content:"▾ "}
+  .dbody{padding:0 16px 16px}
+  table{border-collapse:collapse;width:100%;font-size:.85rem}
+  th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--soft);vertical-align:top}
+  th{color:var(--slate);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em}
+  td.loss{color:var(--warn);font-weight:600}
+  .foot{font-size:.78rem;color:var(--muted);margin-top:24px;border-top:1px solid var(--soft);padding-top:12px}
+  @media(min-width:700px){body{padding-top:28px} h1{font-size:1.6rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Gygax commentary &amp; testimony corpus</h1>
+  <p class="sub">Private research instrument. Absence from the recovered corpus is not evidence that something was never said — see corpus coverage.</p>
+
+  <div class="card" id="gate">
+    <form id="gate-form" autocomplete="off">
+      <label for="pw">Passphrase</label>
+      <input type="password" id="pw" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Enter the corpus passphrase">
+      <div class="row" style="margin-top:12px"><button type="submit" id="unlock">Unlock corpus</button></div>
+      <p class="msg" id="gate-msg" role="status" aria-live="polite"></p>
+      <p class="hint">Decrypted in your browser. The passphrase is never stored or transmitted; the database is held only in memory for this session, and evidence images are fetched and decrypted only when you open them.</p>
+    </form>
+  </div>
+
+  <div id="app" class="hidden">
+    <div class="card">
+      <div class="row">
+        <div class="grow">
+          <label for="q">Search the corpus</label>
+          <input type="search" id="q" placeholder='word, "quoted phrase", AND / OR / NOT, prefix*' enterkeyhint="search" autocapitalize="off" autocorrect="off" spellcheck="false">
+        </div>
+        <div class="f">
+          <label for="scope">Scope</label>
+          <select id="scope">
+            <option value="all">All speakers &amp; relationships</option>
+            <option value="direct">Direct testimony only</option>
+          </select>
+        </div>
+        <div class="f">
+          <label for="speaker">Speaker</label>
+          <select id="speaker"><option value="">Any speaker</option></select>
+        </div>
+        <div class="f">
+          <label for="tstatus">Transcript</label>
+          <select id="tstatus">
+            <option value="">Any status</option>
+            <option value="verified">Verified only</option>
+            <option value="untranscribed">Untranscribed only</option>
+          </select>
+        </div>
+      </div>
+      <p class="hint">Matches are reported in four separate dimensions: <b>verified transcript</b> (what was actually said), <b>topic tag</b> (our classification, matched exactly), <b>question / context</b> (words in the question, not the answer), and <b>discovery text</b> (unverified extraction, a finding aid only).</p>
+      <p class="msg" id="search-msg" role="status" aria-live="polite"></p>
+    </div>
+
+    <p class="status" id="corpus-status"></p>
+    <div id="results"></div>
+
+    <details class="legend">
+      <summary>How to read a result</summary>
+      <div class="dbody">
+        <p class="hint" style="margin-top:0"><b>Speaker · relationship</b> — who produced the testimony and how it reaches us: <i>direct</i>, <i>direct quotation by intermediary</i>, <i>attributed report / paraphrase</i>, <i>eyewitness account</i>, <i>secondary interpretation</i>, <i>editorial or authorial inference</i>, <i>unattributed institutional statement</i>, <i>discovery only</i>.</p>
+        <p class="hint"><b>Transcript</b> — <i>Verified</i> (checked against the evidence) or <i>Untranscribed</i>. Machine text is never transcript.</p>
+        <p class="hint"><b>Evidence</b> — the derivative shown by <i>View source</i>: direct screenshot, PDF reproduction, derivative crop, stitched derivative or scan. <i>Original capture</i> identifies the untouched original, which is held offline.</p>
+        <p class="hint"><b>Discourse</b> — commentary, retrospective commentary, in-world, or rules/game text.</p>
+        <p class="hint">A number shown as <i>(inferred)</i> was reconstructed from sequence and is not primary evidence.</p>
+      </div>
+    </details>
+
+    <details id="coverage-panel">
+      <summary>Corpus coverage — what is present, partial and missing</summary>
+      <div class="dbody">
+        <p class="hint" style="margin-top:0">A zero-result search means only that the term was not found in the recovered corpus. It is not evidence that the statement was never made.</p>
+        <div id="coverage-table"></div>
+        <p class="hint" id="coverage-stats"></p>
+      </div>
+    </details>
+  </div>
+
+  <p class="foot">Evidence images and original captures are held outside this site. Quoted source text is preserved verbatim and is never normalised or corrected. Tags are finding aids, not statements of fact.</p>
+</div>
+
+<script type="module" src="/research/gygax/gygax-v2.js"></script>
+</body>
+</html>

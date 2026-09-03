@@ -160,8 +160,29 @@ asset hashes were unchanged. Post-rebuild: schema tests all pass; build gate
    historical judgement, not a code decision.
 </details>
 
-6. **ENWorld screenshot recapture** still to be reconciled against the older Part III
-   preservation material. *(Last remaining pre-operational item.)*
+6. **ENWorld Part III screenshot recapture — OPEN, blocked on capture.**
+   *(Last remaining pre-operational item.)* The recapture material verified so far is
+   **not sufficient** to package as a Part III reconciliation, and must not be applied
+   as a partial replacement presented as a completed one.
+
+   Verified upstream (material held outside this repo, not independently checkable
+   here): 12 unique screenshots, IMG_1534–IMG_1546 with IMG_1538 absent; IMG_1545_2
+   and IMG_1546_2 are byte-for-byte duplicates of IMG_1545/IMG_1546 and add no
+   coverage. The run reaches roughly post **#992 → #1020**, ending on thread page 102.
+
+   Corroborating detail from the corpus side: the existing Part III coverage row
+   records the old preservation as *"Selected screenshots around ENWorld pages
+   103-110 plus manual transcriptions; remainder absent"*. The recapture therefore
+   currently stops **immediately before** the old segment begins — there is **no
+   overlap at all** with the material it is meant to supersede. With no overlap,
+   nothing can yet be classified as superseded versus newly recovered, which is a
+   stronger blocker than mere incompleteness.
+
+   **Needed:** a continuous capture from thread page 103 / post #1021 onward, past the
+   old segment's endpoint around #1100. Then the standard treatment applies — preserve
+   and hash, establish exact coverage, compare against the old Part III preservation,
+   separate superseded from newly recovered, prepare the evidence/update package,
+   verify eyes-on, and only then hand it to ingestion.
 
 ## Schema amendment v2.1 — source-scoped pseudonymous identity
 

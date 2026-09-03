@@ -141,7 +141,7 @@ const insAsset = db.prepare(`INSERT INTO evidence_assets(unit_id,asset_path,disp
 const insSrc = db.prepare(`INSERT INTO evidence_sources(asset_id,original_locator,original_type) VALUES (?,?,'pdf_page')`);
 const insDisc = db.prepare(`INSERT INTO discovery_text(object_id,segment_label,source_type,source_locator,text,unit_id) VALUES (?,?,'pdf_text_extraction',?,?,?)`);
 
-const stats = { units: 0, assets: 0, sources: 0, discovery: 0, stitched: 0, crop: 0, regularized: 0, rangeCorrected: [],
+const stats = { units: 0, assets: 0, sources: 0, discovery: 0, stitched: 0, crop: 0, regularized: 0, rangeCorrected: [], locatorCorrected: 0,
   noText: 0, tagsSkipped: 0, contextSkipped: 0, dateParsed: 0, dateUnparsed: 0 };
 
 db.exec('BEGIN');
@@ -151,7 +151,16 @@ for (const r of recs) {
   d.value ? stats.dateParsed++ : stats.dateUnparsed++;
   // Preserve the manifest's printable-view position as a locator, labelled as
   // what it is. It is not a thread post number and must not read as one.
-  const locator = `${r.source_document} PDF pages ${r.source_start_page}-${r.source_end_page}; printable-view position ${r.post_number} (${label})`;
+  // The page range in this locator is an ARCHIVAL LOCATOR, not historical testimony
+  // metadata. Where the regularisation overlay established that the old range
+  // included pages not belonging to the unit, the locator states the corrected range
+  // so it agrees with the evidence asset and its provenance. Superseded values remain
+  // recoverable through Git and the reconciliation record. Nothing else changes.
+  const rrLoc = REPL.get(r.sha256);
+  const locStart = rrLoc ? rrLoc.corrected_source_start_page : r.source_start_page;
+  const locEnd = rrLoc ? rrLoc.corrected_source_end_page : r.source_end_page;
+  if (rrLoc && (locStart !== r.source_start_page || locEnd !== r.source_end_page)) stats.locatorCorrected++;
+  const locator = `${r.source_document} PDF pages ${locStart}-${locEnd}; printable-view position ${r.post_number} (${label})`;
   const uid = Number(insUnit.run(obj.id, ++seq, r.post_date || null, d.value, d.precision,
     speaker.id, locator).lastInsertRowid);
   stats.units++;
@@ -222,12 +231,11 @@ P(`  evidence provenance rows        : ${stats.sources}  (one per source PDF pag
 if (REG) {
   P(`  regularised assets              : ${stats.regularized} replaced from the overlay`);
   P(`  source-page ranges corrected    : ${stats.rangeCorrected.length}`);
-  // Rules §17 / instruction: the unit-level source_locator embeds the ORIGINAL
-  // "PDF pages A-B" range from the base manifest. Where the overlay corrected that
-  // range, the unit locator now states an obsolete range. Historical metadata is
-  // NOT changed here — this is reported for a separate decision.
-  P(`  REPORT — unit-level source_locator now states an obsolete page range for these`);
-  P(`           ${stats.rangeCorrected.length} unit(s). Historical metadata deliberately left unchanged:`);
+  // Archival-locator reconciliation: the unit-level source_locator now states the
+  // CORRECTED page range so it agrees with the evidence asset and its provenance.
+  // Superseded values stay recoverable through Git and the reconciliation record.
+  // No testimony identity, date, discovery text, context or discourse mode changes.
+  P(`  archival locators corrected     : ${stats.locatorCorrected} unit source_locator page range(s)`);
   for (const s of stats.rangeCorrected.slice(0, 8)) P(`             ${s}`);
   if (stats.rangeCorrected.length > 8) P(`             …and ${stats.rangeCorrected.length - 8} more`);
 }

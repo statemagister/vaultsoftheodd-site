@@ -1,0 +1,103 @@
+# Gygax Corpus — Retrospective Conformance Record
+
+**Audit date:** 3 September 2026
+**Rules applied:** [`gygax-corpus-evidence-ingestion-rules.md`](./gygax-corpus-evidence-ingestion-rules.md) (v1.2, 3 September 2026)
+**Operational baseline:** `9dc1292` (Gamasutra). First post-baseline expansion: `4b868f6` (Wargamer's Digest 1974).
+**Audit tool:** `scripts/gygax-v2-conformance-audit.mjs` (read-only; re-runnable)
+
+## Purpose
+
+Sources ingested before Rules v1.2 were written down are **not** rewritten and **not**
+re-ingested merely because the rules now exist. This record answers, per documentary
+object, the governing question:
+
+> Is this already represented correctly under the frozen v2 model and the current
+> Evidence Ingestion Rules?
+
+Conformant objects are certified and left alone. Non-conformant objects are fixed at
+source and re-run through the normal gate. This record does not claim that earlier
+ingestions *happened under* v1.2 — only whether they *conform to* it now.
+
+## Result
+
+| # | Source | Status | Open items |
+|---|---|---|---|
+| 1 | ENWorld Q&A (Stage A) | **Conformant**, with known debt | 186 provisional reconstructions (§6); completeness `unknown` corpus-wide (§12 review) |
+| 2 | Dragonsfoot batch 01 | **Conformant**, with known debt | 9 provisional reconstructions (§6); completeness `unknown` (§12 review) |
+| 3 | Ward "Greyhawk #2" | **Conformant** *(defect fixed, see below)* | — |
+| 4 | GameSpy Interview Part I | **Conformant**, pending review | 7 units carry paired ordered assets (§5) — recorded debt: should become continuous stitched cards |
+| 5 | Cyclopeatron | **Conformant** | — |
+| 6 | Gamasutra 2002 | **Conformant** | 6 stitched cards accepted; whitespace seams are presentation refinement, not evidentiary defect |
+| 7 | Wargamer's Digest 1974 | **Conformant**, pending review | 2 multi-asset units (§5) — confirmed correct: long testimony over substantial pages |
+
+**Corpus-wide checks: all pass.** Integrity check; FTS sync and queryability for
+`units_fts` / `context_fts` / `discovery_fts`; transcript structural purity (§7); no
+context text indexed as speaker testimony (§8); all 607 staged evidence files hash
+to their database records (§15).
+
+**Summary: 7 objects · 0 defects · 195 grandfathered debt items · 4 review items.**
+
+## Defect found and fixed
+
+**Ward "Greyhawk #2" had no coverage segment (§3).** Every documentary object must
+state what survives. Fixed at source in `scripts/gygax-v2-ingest-ward-greyhawk2.mjs`
+(not by patching the derived database), then applied by a full pipeline rebuild. The
+segment records completeness **as preserved** and explicitly declines to equate that
+with historical completeness, per §3.
+
+## Reproducibility verification
+
+The fix was applied by rebuilding the entire corpus from the v1 source plus all seven
+evidence packages, in ingestion order. The rebuilt corpus was compared against the
+previous canonical database on id-independent content hashes:
+
+- **Identical:** testimony units, evidence assets, provenance rows, unit context,
+  discovery text, documentary objects.
+- **Sole difference:** the added Ward coverage segment (18 → 19 coverage rows).
+
+This confirms the ingestion pipeline is deterministic and that the corpus is
+genuinely reproducible from its packages, not only incrementally accumulated. The
+sha256-keyed reconstruction acceptance registry remained valid throughout, since
+asset hashes were unchanged. Post-rebuild: schema tests all pass; build gate
+`accepted 7 · provisional 195 · blocked 0`; 607 assets round-trip verified.
+
+## Known debt (tracked, not blocking)
+
+1. **GameSpy paired assets → continuous stitched cards.** Seven compact answers split
+   by pagination are currently paired ordered assets. §18 records the preferred final
+   representation as one continuous stitched card each. Requires upstream evidence
+   preparation plus eyes-on acceptance of seven new joins.
+2. **195 provisional reconstructions.** ENWorld (186) and Dragonsfoot (9) predate the
+   reconstruction control and are grandfathered. Provisional status is
+   **grandfathering only, not evidentiary certification** (§6). An eyes-on
+   accept/reject pass is still owed. The OCR sweep found no Ward-type loss signal, but
+   OCR certifies nothing.
+3. **ENWorld screenshot recapture** still to be reconciled against the older Part III
+   preservation material.
+
+## Not auditable by code (historical judgement)
+
+Recorded so these are not mistaken for certified:
+
+- §4 whether a preserved block really is one historical testimony unit
+- §11 whether `discourse_mode` reflects the passage rather than filling a field
+- §2 inclusion/exclusion of authored game material as testimony
+- §20 whether external verification was actually performed for pre-baseline sources
+  (formally recorded only from Wargamer's Digest onward)
+
+## Prepared but not yet in the operational corpus
+
+Verified absent from the corpus by inventory; these go through the full
+one-source-at-a-time process (§16) when their packages are ready: **22 Questions**,
+**Kyngdoms / Sacco interview**, **Alarums & Excursions July 1975 letter**, **Ward
+"Gary Gygax Things"**, and the **ENWorld Page 39 update**.
+
+---
+
+Re-run the audit at any time with:
+
+```
+node --experimental-sqlite scripts/gygax-v2-conformance-audit.mjs <v2.sqlite> --evidence-dir <dir>
+```
+
+It exits non-zero on any defect or corpus-wide failure.

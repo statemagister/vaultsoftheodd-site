@@ -129,6 +129,13 @@ copyFileSync(cardFile, dest);
 const text = (rec.discovery_text || '').trim();
 if (text) db.prepare(`INSERT INTO discovery_text(object_id,segment_label,source_type,source_locator,text,unit_id) VALUES (?, 'Greyhawk #2','screenshot_ocr',?,?,?)`)
   .run(obj.id, locator, text, uid);
+// Coverage: every documentary object states what survives (Rules §3). This object
+// is a single post; "complete as preserved" is preservation metadata and is NOT
+// silently equated with historical completeness — the distinction lives in detail.
+db.prepare(`INSERT INTO coverage(object_id,segment_label,segment_kind,coverage_status,known_loss,detail,sort_order)
+  VALUES (?, 'Single post (Greyhawk #2)','other','complete',0, ?, 1)`).run(
+  obj.id, 'Complete AS PRESERVED in the received PDF: the whole post as received is represented by one continuous canonical card. Not independently verified against the live post, so this is preservation completeness, not an established claim of historical completeness. Received PDF held offline.');
+
 db.prepare(`INSERT INTO annotations(unit_id,annotation_type,note) VALUES (?, 'preservation', ?)`).run(
   uid, `Manifest completeness = "${rec.completeness}": complete as preserved, NOT independently verified against the live post. The received PDF paginates the post across ${pages.length} pages; that pagination is a preservation artefact and the canonical evidence is one continuous card traced to both pages. External record number "${rec.external_record_number}" is the post's own label.`);
 db.exec('COMMIT');

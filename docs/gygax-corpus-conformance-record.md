@@ -102,7 +102,38 @@ asset hashes were unchanged. Post-rebuild: schema tests all pass; build gate
    > Evidentiary regularisation has more than one axis, and the reconstruction count
    > must not become a proxy for overall evidentiary cleanliness. Embedded
    > quote/context attribution (below) remains open and is the more consequential axis.
-3. **Embedded quote/context attribution — OPEN, and the most consequential item.**
+3. **Embedded quote/context attribution — ENWorld RESOLVED 3 September 2026; Dragonsfoot open.**
+   ENWorld Stage A is done: 485 affected units separated into a Gygax-reply discovery
+   extraction plus **645 quoted prompts**, each carrying a structural
+   `unit_context` row typed `quoted_question` (used in its **functional** sense —
+   the prompt Gygax selected and answered, not a punctuation test — so **no schema
+   amendment was required**). Speaker populated for the 485 segments the source names
+   (186 forum-handle person records created, handles preserved exactly, no real-world
+   identity inferred, no merging) and left **NULL for the 160** the source does not
+   name. Context text stays empty/untranscribed; quoted wording lives in clearly
+   labelled discovery rows. Applied fail-closed on the triple key
+   (part, printable-view position, header-inclusive baseline SHA-256): **485/485**.
+
+   Adversarial retrieval purity, measured with valid probes: **643/643** quoted
+   segments matched a quoted-prompt row, **0 leaked into Gygax transcript FTS**, and
+   **0 leaked into a Gygax-reply discovery row**; **482/482** Gygax reply phrases
+   remained discoverable. The 47 unaffected units and all other objects' context rows
+   were untouched.
+
+   **Still open:** Dragonsfoot quote-back attribution (13 of 14 units, 4 with nested
+   quotation) — materially harder and requiring source-by-source judgement rather
+   than mechanical application of the ENWorld rule.
+
+4. **Discovery-text NUL defect — FIXED 3 September 2026.** A failed PDF glyph
+   extracted as U+0000; SQLite binds TEXT as NUL-terminated, so the remainder was
+   silently truncated. One Stage A record was affected (Part II locator 101),
+   losing **346 characters including an entire quoted prompt**. The ENWorld ingester
+   now sanitises U+0000 to U+FFFD before insertion — preserving every surviving
+   character without guessing the failed glyph. Found only because a fail-closed
+   baseline hash refused to match.
+
+<details><summary>Original finding (superseded by the resolution above)</summary>
+
    Another poster's words are carried inside units attributed to Gygax: 432 ENWorld
    Stage A units contain explicit quoted prompts, 377 of them with another person's
    words embedded in the staging `gygax_text`; 13 of 14 Dragonsfoot units carry
@@ -117,7 +148,9 @@ asset hashes were unchanged. Post-rebuild: schema tests all pass; build gate
    is retrieval attribution, and it matters for search and any downstream synthesis.
    Boundary decisions between Gygax's newly authored reply and quoted material are a
    historical judgement, not a code decision.
-4. **ENWorld screenshot recapture** still to be reconciled against the older Part III
+</details>
+
+6. **ENWorld screenshot recapture** still to be reconciled against the older Part III
    preservation material.
 
 ## Not auditable by code (historical judgement)

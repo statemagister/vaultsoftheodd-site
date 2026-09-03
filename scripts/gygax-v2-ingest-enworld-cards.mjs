@@ -43,13 +43,20 @@ const FORCE = args.includes('--force');
 // packages replace erroneous derived assets THROUGH the reproducible pipeline).
 // Keyed by the OLD asset sha256; fails closed if any key is unused or ambiguous.
 const REG = (() => { const i = args.indexOf('--regularization'); return (i >= 0 && args[i + 1] && !args[i + 1].startsWith('--')) ? args[i + 1] : null; })();
-const [DB_PATH, PKG, EVID] = args.filter((a) => !a.startsWith('--') && a !== REG);
+// Optional quoted-question regularisation overlay: separates the prior-speaker
+// material Gygax quoted back from the words he newly authored, so quoted wording
+// is never indexed as Gygax-authored. quoted_question is used in its FUNCTIONAL
+// sense (the prompt Gygax selected and answered), not as a punctuation test.
+const QQ = (() => { const i = args.indexOf('--quoted-questions'); return (i >= 0 && args[i + 1] && !args[i + 1].startsWith('--')) ? args[i + 1] : null; })();
+const [DB_PATH, PKG, EVID] = args.filter((a) => !a.startsWith('--') && a !== REG && a !== QQ);
 if (!DB_PATH || !PKG || !EVID) {
   console.error('Usage: node --experimental-sqlite scripts/gygax-v2-ingest-enworld-cards.mjs <v2.sqlite> <package-dir> <evidence-staging-dir> [--force]');
   process.exit(2);
 }
 const die = (m) => { console.error('\nINGEST ABORTED: ' + m); process.exit(1); };
 const sha = (b) => createHash('sha256').update(b).digest('hex');
+const NUL = String.fromCharCode(0);
+const REPLACEMENT = String.fromCharCode(0xfffd);
 const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII'];
 const MONTHS = { january: 1, february: 2, march: 3, april: 4, may: 5, june: 6, july: 7, august: 8, september: 9, october: 10, november: 11, december: 12 };
 
@@ -99,6 +106,48 @@ if (REG) {
   console.log(`  regularisation   : ${REPL.size} replacements (${rrs.filter((r) => r.reconstructed).length} stitched, ${rrs.filter((r) => !r.reconstructed).length} single-source crops)`);
 }
 
+// ---- quoted-question overlay: Gygax reply vs quoted prompt ------------------
+// FAIL CLOSED on the triple key (thread_part, printable-view position, exact
+// header-inclusive baseline discovery SHA-256 over the SANITISED text).
+// Natural-key-only fallback is NOT authorised.
+const QREPL = new Map();      // "part/pos" -> replacement record
+const QSEGS = new Map();      // "part/pos" -> ordered segment records
+if (QQ) {
+  const key = (p, n) => `${p}/${n}`;
+  const rd = (f) => readFileSync(join(QQ, f), 'utf8').split('\n').filter((l) => l.trim()).map((l) => JSON.parse(l));
+  const bad = [];
+  for (const r of rd('discovery_replacements.jsonl')) {
+    if (QREPL.has(key(r.thread_part, r.locator_post_number))) bad.push(`duplicate replacement ${key(r.thread_part, r.locator_post_number)}`);
+    QREPL.set(key(r.thread_part, r.locator_post_number), r);
+  }
+  for (const s of rd('context_segments.jsonl')) {
+    const k = key(s.thread_part, s.locator_post_number);
+    if (!QSEGS.has(k)) QSEGS.set(k, []);
+    QSEGS.get(k).push(s);
+  }
+  for (const arr of QSEGS.values()) arr.sort((a, b) => a.segment_sequence_in_post - b.segment_sequence_in_post);
+
+  // every replacement must correspond to exactly one base record whose SANITISED
+  // baseline text hashes to the package's baseline hash
+  const byKey = new Map();
+  for (const r of recs) {
+    const k = key(r.thread_part, r.post_number);
+    if (!byKey.has(k)) byKey.set(k, []); byKey.get(k).push(r);
+  }
+  for (const [k, r] of QREPL) {
+    const hits = byKey.get(k) || [];
+    if (hits.length !== 1) { bad.push(`${k}: matches ${hits.length} base records, expected exactly 1`); continue; }
+    const baseline = (hits[0].full_rendered_text || hits[0].gygax_text || '').split(NUL).join(REPLACEMENT).trim();
+    if (sha(baseline) !== r.baseline_discovery_text_sha256)
+      bad.push(`${k}: baseline discovery SHA-256 mismatch (corpus ${sha(baseline).slice(0, 12)} vs package ${r.baseline_discovery_text_sha256.slice(0, 12)})`);
+    if (!(r.replacement_discovery_text || '').trim()) bad.push(`${k}: empty Gygax-reply replacement text`);
+  }
+  for (const k of QSEGS.keys()) if (!QREPL.has(k)) bad.push(`${k}: context segments with no discovery replacement`);
+  if (bad.length) { bad.slice(0, 15).forEach((b) => console.error('  ' + b)); die(`${bad.length} quoted-question problem(s); FAILING CLOSED, nothing ingested.`); }
+  const segCount = [...QSEGS.values()].reduce((n, a) => n + a.length, 0);
+  console.log(`  quoted-question  : ${QREPL.size} affected units, ${segCount} quoted prompts — all baselines matched exactly (fail-closed)`);
+}
+
 const db = new DatabaseSync(DB_PATH);
 db.exec('PRAGMA foreign_keys = ON');
 const before = {
@@ -140,8 +189,32 @@ const insUnit = db.prepare(`INSERT INTO testimony_units
 const insAsset = db.prepare(`INSERT INTO evidence_assets(unit_id,asset_path,display_order,asset_type,sha256) VALUES (?,?,1,?,?)`);
 const insSrc = db.prepare(`INSERT INTO evidence_sources(asset_id,original_locator,original_type) VALUES (?,?,'pdf_page')`);
 const insDisc = db.prepare(`INSERT INTO discovery_text(object_id,segment_label,source_type,source_locator,text,unit_id) VALUES (?,?,'pdf_text_extraction',?,?,?)`);
+// Structural quoted-prompt context. text stays EMPTY/untranscribed: the wording is
+// unverified extraction and unit_context may hold verified text only.
+const insCtx = db.prepare(`INSERT INTO unit_context(unit_id,context_type,speaker_id,text,text_status,sequence) VALUES (?,'quoted_question',?, '', 'untranscribed', ?)`);
+// persons is the historical participant/speaker table, not a register of famous
+// real names: an explicitly rendered forum handle is an evidentially supported
+// speaker identity. Handles are preserved exactly as the source gives them; no
+// real-world identity is inferred and no handles are merged.
+const findPerson = db.prepare('SELECT id FROM persons WHERE name = ?');
+const addPerson = db.prepare('INSERT INTO persons(name,notes) VALUES (?,?)');
+const personCache = new Map();
+function personIdForHandle(handle) {
+  if (personCache.has(handle)) return personCache.get(handle);
+  const found = findPerson.get(handle);
+  let id;
+  if (found) id = found.id;
+  else {
+    id = Number(addPerson.run(handle,
+      'ENWorld forum handle, recorded exactly as the source renders it. Pseudonymous: the real-world identity is unverified and is NOT inferred. Not merged with any similar handle or named individual absent independent evidence.').lastInsertRowid);
+    stats.handlesCreated++;
+  }
+  personCache.set(handle, id);
+  return id;
+}
 
 const stats = { units: 0, assets: 0, sources: 0, discovery: 0, stitched: 0, crop: 0, regularized: 0, rangeCorrected: [], locatorCorrected: 0,
+  nulSanitised: 0, nulUnits: [], qUnits: 0, qSegments: 0, qWithSpeaker: 0, qNoSpeaker: 0, handlesCreated: 0,
   noText: 0, tagsSkipped: 0, contextSkipped: 0, dateParsed: 0, dateUnparsed: 0 };
 
 db.exec('BEGIN');
@@ -202,8 +275,37 @@ for (const r of recs) {
 
   // extraction -> discovery only. question_context is extraction too, so it is
   // NOT written to unit_context (that table may hold verified text only).
-  const text = (r.full_rendered_text || r.gygax_text || '').trim();
-  if (text) { insDisc.run(obj.id, label, locator, text, uid); stats.discovery++; }
+  //
+  // A failed glyph in the PDF text layer can extract as U+0000. SQLite binding
+  // treats TEXT as NUL-terminated, so an unsanitised NUL SILENTLY TRUNCATES the
+  // rest of the extracted text (this cost 346 characters, including a whole
+  // quoted prompt, at Part II locator 101). Replace it with U+FFFD: that is a
+  // preservation-safe repair of a transport defect — it keeps every surviving
+  // character and does NOT guess what the failed glyph was.
+  const raw = r.full_rendered_text || r.gygax_text || '';
+  const nulls = raw.split(NUL).length - 1;
+  if (nulls) { stats.nulSanitised += nulls; stats.nulUnits.push(`Part ${label.replace('Part ', '')} position ${r.post_number} (${nulls} NUL)`); }
+  const text = raw.split(NUL).join(REPLACEMENT).trim();
+  const qk = `${r.thread_part}/${r.post_number}`;
+  const qrep = QREPL.get(qk);
+  if (qrep) {
+    // Gygax's newly authored words only — the quoted prompt is removed from this row
+    insDisc.run(obj.id, label, `${locator}; Gygax reply (newly authored)`, qrep.replacement_discovery_text.trim(), uid);
+    stats.discovery++; stats.qUnits++;
+    // each quoted prompt: a structural context row (speaker where the source names
+    // one, NULL where it does not) plus its wording as clearly-labelled discovery
+    let seqNo = 0;
+    for (const s of QSEGS.get(qk) || []) {
+      seqNo++;
+      const handle = s.explicit_speaker_name || null;
+      const pid = handle ? personIdForHandle(handle) : null;
+      insCtx.run(uid, pid, seqNo);
+      const who = handle ? handle : 'speaker not named in this quote-back';
+      insDisc.run(obj.id, label, `${locator}; quoted prompt ${seqNo} — ${who} (quoted by Gygax, NOT Gygax-authored)`, (s.text || '').split(NUL).join(REPLACEMENT).trim(), uid);
+      stats.discovery++; stats.qSegments++;
+      if (handle) stats.qWithSpeaker++; else stats.qNoSpeaker++;
+    }
+  } else if (text) { insDisc.run(obj.id, label, locator, text, uid); stats.discovery++; }
   else stats.noText++;
   if (r.tags) stats.tagsSkipped++;
   if ((r.question_context || '').trim()) stats.contextSkipped++;
@@ -239,6 +341,13 @@ if (REG) {
   for (const s of stats.rangeCorrected.slice(0, 8)) P(`             ${s}`);
   if (stats.rangeCorrected.length > 8) P(`             …and ${stats.rangeCorrected.length - 8} more`);
 }
+if (stats.nulSanitised) { P(`  NUL bytes sanitised to U+FFFD   : ${stats.nulSanitised}  (prevents silent SQLite truncation of the remaining extracted text)`); for (const u of stats.nulUnits) P(`             ${u}`); }
+if (QQ) {
+  P(`  quoted-question separation      : ${stats.qUnits} units split into Gygax-reply + ${stats.qSegments} quoted prompt(s)`);
+  P(`    quoted prompts with a named speaker : ${stats.qWithSpeaker}`);
+  P(`    quoted prompts left speaker NULL    : ${stats.qNoSpeaker}  (source does not name one; not inherited)`);
+  P(`    forum-handle person records created : ${stats.handlesCreated}`);
+}
 P(`  discovery_text rows created     : ${stats.discovery}${stats.noText ? `  (${stats.noText} card(s) had no extractable text)` : ''}`);
 P(`  transcripts written             : 0   (all units untranscribed, by rule)`);
 P(`  discourse classified            : 0   (all 'unknown', never manufactured)`);
@@ -272,7 +381,22 @@ ok('no historical unit_number asserted (all NULL / unknown)',
    q(`SELECT count(*) c FROM testimony_units WHERE unit_number IS NOT NULL OR unit_number_status<>'unknown'`) === 0);
 ok('printable-view positions preserved as locators',
    q(`SELECT count(*) c FROM testimony_units WHERE source_locator LIKE '%printable-view position %'`) === after.units);
-ok('no unit_context rows created', q('SELECT count(*) c FROM unit_context') === 0);
+if (QQ) {
+  // With the quoted-question overlay, structural context rows are created on
+  // purpose — one per quoted prompt — but they must stay empty/untranscribed,
+  // be typed quoted_question, and never carry Gygax as the context speaker.
+  ok(`unit_context holds exactly one row per quoted prompt (${stats.qSegments})`,
+     q('SELECT count(*) c FROM unit_context') === stats.qSegments);
+  ok('every context row is quoted_question, empty and untranscribed',
+     q(`SELECT count(*) c FROM unit_context WHERE context_type<>'quoted_question' OR text<>'' OR text_status<>'untranscribed'`) === 0);
+  ok('no quoted prompt is attributed to Gygax',
+     q(`SELECT count(*) c FROM unit_context WHERE speaker_id=${speaker.id}`) === 0);
+  ok(`speaker populated only where the source names one (${stats.qWithSpeaker} named, ${stats.qNoSpeaker} NULL)`,
+     q('SELECT count(*) c FROM unit_context WHERE speaker_id IS NOT NULL') === stats.qWithSpeaker &&
+     q('SELECT count(*) c FROM unit_context WHERE speaker_id IS NULL') === stats.qNoSpeaker);
+  ok('no quoted wording left in the Gygax-reply discovery rows',
+     q(`SELECT count(*) c FROM discovery_text WHERE source_locator LIKE '%Gygax reply (newly authored)%' AND text LIKE '%Originally posted by%'`) === 0);
+} else ok('no unit_context rows created', q('SELECT count(*) c FROM unit_context') === 0);
 ok('no tags created', q('SELECT count(*) c FROM tags') === 0);
 // The insert trigger indexes every unit, including untranscribed ones. Those
 // rows carry no tokens, so they can never match a search; the invariant that

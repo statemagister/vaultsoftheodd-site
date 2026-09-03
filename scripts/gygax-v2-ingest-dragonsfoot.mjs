@@ -232,7 +232,11 @@ ok('no historical unit_number asserted in this object',
 ok('UTC + minute precision on every unit in this object',
    g(`SELECT count(*) c FROM testimony_units WHERE object_id=? AND date_timezone='UTC' AND date_precision='minute' AND date_value IS NOT NULL`, obj.id).c === recs.length);
 ok('no transcript text anywhere', g(`SELECT count(*) c FROM testimony_units WHERE transcript<>''`).c === 0);
-ok('unit_context still empty', g('SELECT count(*) c FROM unit_context').c === 0);
+// Scoped to THIS object: other sources may legitimately hold context rows (e.g.
+// ENWorld's quoted-question separation). Dragonsfoot's own quote-back attribution
+// is a separate, still-pending pass, so its units must carry no context yet.
+ok('unit_context still empty for this object',
+   g('SELECT count(*) c FROM unit_context WHERE unit_id IN (SELECT id FROM testimony_units WHERE object_id=?)', obj.id).c === 0);
 ok('tags still empty', g('SELECT count(*) c FROM tags').c === 0);
 ok('transcript index in sync with units', g('SELECT count(*) c FROM units_fts').c === after.units);
 ok('transcript index holds no searchable text', g(`SELECT count(*) c FROM units_fts WHERE units_fts MATCH 'the OR a OR Gygax'`).c === 0);

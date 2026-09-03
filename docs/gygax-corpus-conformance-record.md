@@ -29,13 +29,14 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 | 5 | Cyclopeatron | **Conformant** | — |
 | 6 | Gamasutra 2002 | **Conformant** | 6 stitched cards accepted; whitespace seams are presentation refinement, not evidentiary defect |
 | 7 | Wargamer's Digest 1974 | **Conformant**, pending review | 2 multi-asset units (§5) — confirmed correct: long testimony over substantial pages |
+| 8 | A&E #15 Gygax letter | **Conformant**, pending review | 1 multi-asset unit (§5) — confirmed correct: 3-page letter. Corpus's 2nd verified transcript, 1st from primary page images |
 
 **Corpus-wide checks: all pass.** Integrity check; FTS sync and queryability for
 `units_fts` / `context_fts` / `discovery_fts`; transcript structural purity (§7); no
 context text indexed as speaker testimony (§8); all 600 staged evidence files hash
 to their database records (§15).
 
-**Summary: 7 objects · 0 defects · 0 grandfathered debt items · 3 review items.**
+**Summary: 8 objects · 0 defects · 0 grandfathered debt items · 4 review items.**
 
 ## Defect found and fixed
 

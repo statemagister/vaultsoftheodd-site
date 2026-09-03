@@ -25,17 +25,17 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 | 1 | ENWorld Q&A (Stage A) | **Conformant**, with known debt | 186 provisional reconstructions (§6); completeness `unknown` corpus-wide (§12 review) |
 | 2 | Dragonsfoot batch 01 | **Conformant**, with known debt | 9 provisional reconstructions (§6); completeness `unknown` (§12 review) |
 | 3 | Ward "Greyhawk #2" | **Conformant** *(defect fixed, see below)* | — |
-| 4 | GameSpy Interview Part I | **Conformant**, pending review | 7 units carry paired ordered assets (§5) — recorded debt: should become continuous stitched cards |
+| 4 | GameSpy Interview Part I | **Conformant** *(debt resolved 2026-09-03)* | — |
 | 5 | Cyclopeatron | **Conformant** | — |
 | 6 | Gamasutra 2002 | **Conformant** | 6 stitched cards accepted; whitespace seams are presentation refinement, not evidentiary defect |
 | 7 | Wargamer's Digest 1974 | **Conformant**, pending review | 2 multi-asset units (§5) — confirmed correct: long testimony over substantial pages |
 
 **Corpus-wide checks: all pass.** Integrity check; FTS sync and queryability for
 `units_fts` / `context_fts` / `discovery_fts`; transcript structural purity (§7); no
-context text indexed as speaker testimony (§8); all 607 staged evidence files hash
+context text indexed as speaker testimony (§8); all 600 staged evidence files hash
 to their database records (§15).
 
-**Summary: 7 objects · 0 defects · 195 grandfathered debt items · 4 review items.**
+**Summary: 7 objects · 0 defects · 195 grandfathered debt items · 3 review items.**
 
 ## Defect found and fixed
 
@@ -63,10 +63,16 @@ asset hashes were unchanged. Post-rebuild: schema tests all pass; build gate
 
 ## Known debt (tracked, not blocking)
 
-1. **GameSpy paired assets → continuous stitched cards.** Seven compact answers split
-   by pagination are currently paired ordered assets. §18 records the preferred final
-   representation as one continuous stitched card each. Requires upstream evidence
-   preparation plus eyes-on acceptance of seven new joins.
+1. ~~**GameSpy paired assets → continuous stitched cards.**~~ **Resolved 3 September
+   2026.** A reconciliation package supplied seven continuous stitched cards for the
+   compact exchanges split by pagination (q06, q08, q11, q15, q20, q24, q27). Applied
+   through the reproducible pipeline as a `--reconciliation` overlay on the GameSpy
+   ingester, so the superseded pairing is never produced rather than deleted after the
+   fact. All seven joins were independently eyes-on verified and accepted. GameSpy:
+   35 → 28 assets (21 single-source crops + 7 stitched), provenance unchanged at 35
+   (each stitched card retains ordered provenance to both contributing pages).
+   Testimony-unit identity and historical metadata were not touched — units, context,
+   discovery and coverage compared IDENTICAL before/after.
 2. **195 provisional reconstructions.** ENWorld (186) and Dragonsfoot (9) predate the
    reconstruction control and are grandfathered. Provisional status is
    **grandfathering only, not evidentiary certification** (§6). An eyes-on

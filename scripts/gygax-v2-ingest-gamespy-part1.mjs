@@ -46,9 +46,15 @@ import { assertSchemaFrozen } from './gygax-v2-lock.mjs';
 const SCHEMA = assertSchemaFrozen();
 const args = process.argv.slice(2);
 const FORCE = args.includes('--force');
-const [DB_PATH, PKG, EVID] = args.filter((a) => !a.startsWith('--'));
+// Optional reconciliation overlay (Rules §17: corrected packages replace erroneous
+// derived assets THROUGH the reproducible pipeline). When supplied, the compact
+// cross-page exchanges named in the overlay are produced as ONE continuous stitched
+// card with ordered provenance to both contributing pages, instead of the earlier
+// paired ordered crops. The superseded pairing is then simply never produced.
+const RECON = (() => { const i = args.indexOf('--reconciliation'); return (i >= 0 && args[i + 1] && !args[i + 1].startsWith('--')) ? args[i + 1] : null; })();
+const [DB_PATH, PKG, EVID] = args.filter((a) => !a.startsWith('--') && a !== RECON);
 if (!DB_PATH || !PKG || !EVID) {
-  console.error('Usage: node --experimental-sqlite scripts/gygax-v2-ingest-gamespy-part1.mjs <v2.sqlite> <package-dir> <evidence-staging-dir> [--force]');
+  console.error('Usage: node --experimental-sqlite scripts/gygax-v2-ingest-gamespy-part1.mjs <v2.sqlite> <package-dir> <evidence-staging-dir> [--reconciliation <dir>] [--force]');
   process.exit(2);
 }
 const die = (m) => { console.error('\nINGEST ABORTED: ' + m); process.exit(1); };
@@ -98,7 +104,29 @@ const pdfSha = existsSync(join(PKG, 'source.pdf')) ? shaFile(join(PKG, 'source.p
 const provByAsset = new Map(prov.map((r) => [r.asset_id, r]));
 for (const a of assets) if (!provByAsset.has(a.asset_id)) problems.push(`${a.asset_id}: no provenance row`);
 
+// ---- reconciliation overlay: compact cross-page exchanges -> one stitched card
+const replacement = new Map();   // testimony_id -> replacement asset record
+if (RECON) {
+  const repl = jsonl(join(RECON, 'replacement_assets.jsonl'));
+  for (const r of repl) {
+    if (r.asset_type !== 'stitched') problems.push(`reconciliation ${r.asset_id}: asset_type ${r.asset_type}, expected stitched`);
+    const f = join(RECON, r.path);
+    if (!existsSync(f)) { problems.push(`reconciliation: missing card ${r.path}`); continue; }
+    if (shaFile(f) !== r.sha256) problems.push(`reconciliation ${r.asset_id}: sha256 mismatch`);
+    if (!Array.isArray(r.contributors) || r.contributors.length < 2)
+      problems.push(`reconciliation ${r.asset_id}: a stitched card must record every contributing source portion`);
+    // the superseded pair it replaces must be exactly what the base package holds
+    for (const c of r.contributors) {
+      const prior = assets.find((a) => a.asset_id === c.prior_asset_id);
+      if (!prior) problems.push(`reconciliation ${r.asset_id}: superseded asset ${c.prior_asset_id} not in the base package`);
+      else if (prior.sha256 !== c.prior_asset_sha256) problems.push(`reconciliation ${r.asset_id}: superseded ${c.prior_asset_id} sha differs from the base package`);
+    }
+    replacement.set(r.testimony_id, r);
+  }
+}
+
 if (problems.length) { problems.slice(0, 20).forEach((p) => console.error('  ' + p)); die(`${problems.length} package problem(s); nothing ingested.`); }
+if (RECON) console.log(`  reconciliation overlay: ${replacement.size} compact exchange(s) -> one continuous stitched card each (superseded pairs never produced)`);
 console.log(`GameSpy "Gary Gygax Interview - Part I" — package verified under schema ${SCHEMA.version}`);
 console.log(`  ${testimony.length} units · ${assets.length} crops · ${prov.length} provenance rows · received PDF ${pdfSha.slice(0, 16)}… (offline)`);
 
@@ -172,7 +200,20 @@ for (const rec of testimony) {
   if (atext) db.prepare(`INSERT INTO discovery_text(object_id,unit_id,segment_label,source_type,source_locator,text) VALUES (?,?,?,'pdf_text_extraction',?,?)`)
     .run(obj.id, uid, 'Part I', `Gygax answer — ${loc}`, atext);
 
-  // evidence: ordered per-unit source-native crops
+  // evidence: ONE continuous stitched card where the compact exchange was split by
+  // pagination (reconciliation overlay), otherwise ordered per-unit source-native crops
+  const rep = replacement.get(rec.testimony_id);
+  if (rep) {
+    const assetPath = 'evidence/gamespy/part1/' + basename(rep.path);
+    const aid = Number(db.prepare(`INSERT INTO evidence_assets(unit_id,asset_path,display_order,asset_type,sha256) VALUES (?,?,1,'stitched',?)`)
+      .run(uid, assetPath, rep.sha256).lastInsertRowid);
+    for (const c of [...rep.contributors].sort((x, y) => x.order - y.order))
+      db.prepare(`INSERT INTO evidence_sources(asset_id,original_locator,original_type,original_sha256,capture_date_precision) VALUES (?,?,'pdf_page',?, 'unknown')`)
+        .run(aid, `GameSpy rendered PDF page ${c.source_page} of 9 (stitch order ${c.order}), crop box ${JSON.stringify(c.crop_box_pixels)} on the page render; PDF + renders held offline`, c.source_sha256);
+    const dest = join(EVID, assetPath); mkdirSync(dirname(dest), { recursive: true });
+    copyFileSync(join(RECON, rep.path), dest);
+    continue;   // the superseded pair is not produced
+  }
   for (const a of assetsByUnit.get(rec.testimony_id) || []) {
     const assetPath = 'evidence/gamespy/part1/' + basename(a.path);
     const aid = Number(db.prepare(`INSERT INTO evidence_assets(unit_id,asset_path,display_order,asset_type,sha256) VALUES (?,?,?,'crop',?)`)
@@ -222,9 +263,14 @@ P('\nReconciliation report — GameSpy "Gary Gygax Interview - Part I"');
 P(`  documentary objects (this)  : ${g('SELECT count(*) c FROM documentary_objects WHERE id=?', oid).c} (interview)`);
 P(`  testimony units             : ${g('SELECT count(*) c FROM testimony_units WHERE object_id=?', oid).c} (expected 28)`);
 P(`  unit_context rows           : ${g('SELECT count(*) c FROM unit_context WHERE unit_id IN (SELECT id FROM testimony_units WHERE object_id=?)', oid).c} (interviewer_question, Rausch, structural)`);
-P(`  evidence assets (crops)     : ${g('SELECT count(*) c FROM evidence_assets WHERE unit_id IN (SELECT id FROM testimony_units WHERE object_id=?)', oid).c} (expected 35)`);
-P(`  units with 2 ordered crops  : ${g('SELECT count(*) c FROM (SELECT unit_id FROM evidence_assets WHERE unit_id IN (SELECT id FROM testimony_units WHERE object_id=?) GROUP BY unit_id HAVING count(*)=2)', oid).c} (expected 7)`);
-P(`  provenance rows             : ${g('SELECT count(*) c FROM evidence_sources WHERE asset_id IN (SELECT id FROM evidence_assets WHERE unit_id IN (SELECT id FROM testimony_units WHERE object_id=?))', oid).c} (expected 35, one page each)`);
+const nRep = replacement.size;                       // 0 = base package, 7 = reconciled
+const expAssets = 35 - nRep * 2 + nRep;              // each pair (2) becomes one card
+const expProv = 35 - nRep * 2 + nRep * 2;            // stitched cards keep both pages
+P(`  evidence assets             : ${g('SELECT count(*) c FROM evidence_assets WHERE unit_id IN (SELECT id FROM testimony_units WHERE object_id=?)', oid).c} (expected ${expAssets}${nRep ? ` = ${35 - nRep * 2} crop + ${nRep} stitched` : ''})`);
+P(`  ${nRep ? 'continuous stitched cards  ' : 'units with 2 ordered crops '}: ${nRep
+    ? g(`SELECT count(*) c FROM evidence_assets WHERE unit_id IN (SELECT id FROM testimony_units WHERE object_id=?) AND asset_type='stitched'`, oid).c
+    : g('SELECT count(*) c FROM (SELECT unit_id FROM evidence_assets WHERE unit_id IN (SELECT id FROM testimony_units WHERE object_id=?) GROUP BY unit_id HAVING count(*)=2)', oid).c} (expected ${nRep || 7})`);
+P(`  provenance rows             : ${g('SELECT count(*) c FROM evidence_sources WHERE asset_id IN (SELECT id FROM evidence_assets WHERE unit_id IN (SELECT id FROM testimony_units WHERE object_id=?))', oid).c} (expected ${expProv})`);
 P(`  discovery_text rows         : ${g('SELECT count(*) c FROM discovery_text WHERE object_id=?', oid).c} (expected 56 = 28 answers + 28 questions)`);
 P(`  coverage segments           : ${g('SELECT count(*) c FROM coverage WHERE object_id=?', oid).c} (Part I, complete)`);
 P(`  before: units ${before.units} ctx ${before.context} assets ${before.assets} disc ${before.discovery}`);
@@ -235,11 +281,14 @@ const ok = (n, c, x = '') => { const l = `  [${c ? 'PASS' : 'FAIL'}] ${n}${x ? '
 P('\nConfirmations:');
 ok('28 Gygax answer units, all speaker Gary Gygax, evidence_relationship=direct',
    g(`SELECT count(*) c FROM testimony_units WHERE object_id=? AND speaker_id=? AND evidence_relationship='direct'`, oid, gygax.id).c === 28);
-ok('35 evidence assets, all asset_type=crop, single-source',
-   g(`SELECT count(*) c FROM evidence_assets WHERE unit_id IN (SELECT id FROM testimony_units WHERE object_id=?) AND asset_type='crop'`, oid).c === 35 &&
-   g(`SELECT count(*) c FROM (SELECT asset_id FROM evidence_sources WHERE asset_id IN (SELECT id FROM evidence_assets WHERE unit_id IN (SELECT id FROM testimony_units WHERE object_id=?)) GROUP BY asset_id HAVING count(*)>1)`, oid).c === 0);
-ok('no stitched/reconstructed asset in this object (gate-exempt)',
-   g(`SELECT count(*) c FROM evidence_assets WHERE unit_id IN (SELECT id FROM testimony_units WHERE object_id=?) AND asset_type='stitched'`, oid).c === 0);
+ok(`${expAssets} evidence assets (${35 - nRep * 2} single-source crops + ${nRep} stitched)`,
+   g(`SELECT count(*) c FROM evidence_assets WHERE unit_id IN (SELECT id FROM testimony_units WHERE object_id=?) AND asset_type='crop'`, oid).c === 35 - nRep * 2 &&
+   g(`SELECT count(*) c FROM evidence_assets WHERE unit_id IN (SELECT id FROM testimony_units WHERE object_id=?) AND asset_type='stitched'`, oid).c === nRep);
+ok('every crop is single-source; every stitched card keeps ordered provenance to both pages',
+   g(`SELECT count(*) c FROM (SELECT asset_id FROM evidence_sources WHERE asset_id IN (SELECT id FROM evidence_assets WHERE unit_id IN (SELECT id FROM testimony_units WHERE object_id=?) AND asset_type='crop') GROUP BY asset_id HAVING count(*)>1)`, oid).c === 0 &&
+   g(`SELECT count(*) c FROM (SELECT asset_id FROM evidence_sources WHERE asset_id IN (SELECT id FROM evidence_assets WHERE unit_id IN (SELECT id FROM testimony_units WHERE object_id=?) AND asset_type='stitched') GROUP BY asset_id HAVING count(*)=2)`, oid).c === nRep);
+ok('one evidence card per unit where the exchange was reconciled (no superseded pairs)',
+   nRep === 0 || g(`SELECT count(*) c FROM (SELECT unit_id FROM evidence_assets WHERE unit_id IN (SELECT id FROM testimony_units WHERE object_id=?) GROUP BY unit_id HAVING count(*)>1)`, oid).c === 0);
 ok('all transcripts empty/untranscribed',
    g(`SELECT count(*) c FROM testimony_units WHERE object_id=? AND (transcript<>'' OR transcript_status<>'untranscribed')`, oid).c === 0);
 ok('interviewer questions attributed to Rausch in unit_context, none to Gygax',

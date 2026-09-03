@@ -1,12 +1,32 @@
 # Gygax corpus v2 — FROZEN SCHEMA
 #
-# The v2 schema is frozen as of 2026-09-02. Any database created from a schema
+# The v2 schema is frozen as of 2026-09-02; amended 2026-09-03 (v2.1, see below). Any database created from a schema
 # file whose SHA-256 differs from this value is a different schema and must not
 # be built or ingested into by accident.
 #
 # To change the schema deliberately: edit gygax-v2-schema.sql, re-run the schema
 # tests, then update this hash in the same commit so the change is explicit and
 # reviewable. Never update this hash to silence an abort.
-schema_version = v2.0
-frozen_on      = 2026-09-02 (re-frozen: sequence_in_object comment clarified; DDL structure unchanged)
-sha256         = 5376e72e619d105eaf624582c942319a65df2a6b53c2c26ff40a34c6a750305f
+schema_version = v2.1
+frozen_on      = 2026-09-03 (v2.1 amendment: source-scoped pseudonymous identity)
+#
+# AMENDMENT v2.1 — 2026-09-03, under Rules §19 (evidence-driven, not preference).
+#
+# Evidence: the Dragonsfoot quote-back attribution pass produced the handles
+# "Bregh" and "gideon_thorne", which already existed as ENWorld handles. Under
+# UNIQUE(name) the corpus could only merge them (asserting that identical handle
+# strings on independent forums are the same human), rename them (falsifying the
+# source label), or discard known attribution. All three are semantic loss.
+#
+# Change: persons gains identity_scope. NULL = a globally identified historical
+# person; a set value = a pseudonymous handle attested within that source family.
+# UNIQUE(name) is replaced by two partial unique indexes so global names stay
+# unique among globals and handles stay unique within their scope.
+#
+# Scope is identity metadata, never display text: name still holds the literal
+# source label. Two same-named rows in different scopes are two UNRESOLVED source
+# identities, NOT a claim that two different people existed.
+#
+# Affected prior objects: the 186 ENWorld Stage A handle rows acquire
+# identity_scope 'ENWorld Q&A'; their names are unchanged.
+sha256         = d1e1da90293158314f54e1e1aae6291fc21aa9ffebed905767b1c7d190fc549b

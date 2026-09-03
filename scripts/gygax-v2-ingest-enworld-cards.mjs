@@ -196,17 +196,21 @@ const insCtx = db.prepare(`INSERT INTO unit_context(unit_id,context_type,speaker
 // real names: an explicitly rendered forum handle is an evidentially supported
 // speaker identity. Handles are preserved exactly as the source gives them; no
 // real-world identity is inferred and no handles are merged.
-const findPerson = db.prepare('SELECT id FROM persons WHERE name = ?');
-const addPerson = db.prepare('INSERT INTO persons(name,notes) VALUES (?,?)');
+// Identity is SOURCE-SCOPED (schema v2.1): the handle is looked up and created
+// within THIS source family only. An identical handle string in another forum is
+// a different, unresolved source identity — never silently merged with this one.
+const HANDLE_SCOPE = 'ENWorld Q&A';
+const findPerson = db.prepare('SELECT id FROM persons WHERE name = ? AND identity_scope = ?');
+const addPerson = db.prepare('INSERT INTO persons(name,identity_scope,notes) VALUES (?,?,?)');
 const personCache = new Map();
 function personIdForHandle(handle) {
   if (personCache.has(handle)) return personCache.get(handle);
-  const found = findPerson.get(handle);
+  const found = findPerson.get(handle, HANDLE_SCOPE);
   let id;
   if (found) id = found.id;
   else {
-    id = Number(addPerson.run(handle,
-      'ENWorld forum handle, recorded exactly as the source renders it. Pseudonymous: the real-world identity is unverified and is NOT inferred. Not merged with any similar handle or named individual absent independent evidence.').lastInsertRowid);
+    id = Number(addPerson.run(handle, HANDLE_SCOPE,
+      'Forum handle, recorded exactly as the source renders it; the scope, not the name, records where it is attested. Pseudonymous: the real-world identity is unverified and is NOT inferred. An identical handle in another source family is a separate unresolved identity until sameness is independently established.').lastInsertRowid);
     stats.handlesCreated++;
   }
   personCache.set(handle, id);

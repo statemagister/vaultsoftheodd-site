@@ -1,6 +1,6 @@
 # Gygax Historical Testimony Corpus — Evidence Ingestion Rules
 
-**Working control document** · Version 1.2 · 3 September 2026
+**Working control document** · Version 1.3 · 3 September 2026
 
 > **Status.** Corpus-wide rules already established through ENWorld, Dragonsfoot,
 > Ward, GameSpy, Cyclopeatron and Gamasutra work. This document governs future
@@ -84,6 +84,16 @@
 - Use `speaker_id`, `subject_person_id` and evidence relationship independently.
 - Eyewitness testimony about Gygax is not rewritten as Gygax testimony.
 - Intermediary quotation is not silently promoted to primary direct testimony.
+- `quoted_question` is **functional**, not grammatical: it is the material the speaker
+  selected and responded to — question, prompt, proposition, comment, joke or
+  acknowledgement — whether or not it contains a question mark.
+- **Source-scoped identity (v2.1).** A source handle identifies a speaker within the
+  source context in which it is attested. Matching handle strings across independent
+  source families do NOT establish personal identity. Cross-source identity must be
+  independently established before identities are merged. Scope is identity metadata,
+  never display text: the name holds the literal source label with no platform
+  qualifier appended. Two same-named rows in different scopes are two *unresolved*
+  source identities — not a positive claim that two different people existed.
 
 ## 9. Evidence relationships
 
@@ -207,6 +217,16 @@ changing the corpus model.
 Amendments append here with a reason and the prior objects affected (§19). The
 filename stays unversioned; this log and the header date carry the revision state.
 
+- **v1.3 — 3 September 2026.** §8 amended for attribution, driven by evidence, under
+  §19. (a) `quoted_question` recorded as a functional category, which removed a
+  proposed `quoted_context` schema amendment as unnecessary. (b) **Source-scoped
+  identity** added after the Dragonsfoot quote-back pass produced the handles `Bregh`
+  and `gideon_thorne`, already attested on ENWorld. Under `UNIQUE(name)` the corpus
+  could only merge them (asserting identical strings on independent forums are the
+  same human), rename them (falsifying the source label), or discard known
+  attribution — all semantic loss. Schema amended to v2.1: `persons.identity_scope`,
+  with scope-aware uniqueness. Affected prior objects: the 186 ENWorld Stage A handle
+  rows acquire `ENWorld Q&A` scope; their names are unchanged.
 - **v1.2 — 3 September 2026.** Consolidated corpus-wide rules as established through
   ENWorld, Dragonsfoot, Ward, GameSpy, Cyclopeatron and Gamasutra. Canonical form
   committed to the repository so ingestion commits resolve their own rule references.

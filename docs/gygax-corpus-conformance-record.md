@@ -1,7 +1,7 @@
 # Gygax Corpus — Retrospective Conformance Record
 
 **Audit date:** 3 September 2026
-**Rules applied:** [`gygax-corpus-evidence-ingestion-rules.md`](./gygax-corpus-evidence-ingestion-rules.md) (v1.2, 3 September 2026)
+**Rules applied:** [`gygax-corpus-evidence-ingestion-rules.md`](./gygax-corpus-evidence-ingestion-rules.md) (v1.3, 3 September 2026) · **Schema v2.1**
 **Operational baseline:** `9dc1292` (Gamasutra). First post-baseline expansion: `4b868f6` (Wargamer's Digest 1974).
 **Audit tool:** `scripts/gygax-v2-conformance-audit.mjs` (read-only; re-runnable)
 
@@ -120,9 +120,19 @@ asset hashes were unchanged. Post-rebuild: schema tests all pass; build gate
    remained discoverable. The 47 unaffected units and all other objects' context rows
    were untouched.
 
-   **Still open:** Dragonsfoot quote-back attribution (13 of 14 units, 4 with nested
-   quotation) — materially harder and requiring source-by-source judgement rather
-   than mechanical application of the ENWorld rule.
+   **Dragonsfoot resolved 3 September 2026.** 13 of 14 units, **28 functional
+   quoted_question segments**, curated source-by-source rather than by applying the
+   ENWorld layout rule: nested prior-Gygax quotations excluded from the questioner's
+   searchable wording (seq 3, 7, 16); malformed `Col_Pladoh wrote:` markup resolved
+   against earlier posts in the same preserved thread (seq 17 gideon_thorne, seq 18
+   Bregh); and seq 28 split three ways as Lothar TVNI → Lenard Lakofka → Lothar TVNI
+   so Lakofka's words are not attributed to Lothar. Applied fail-closed on sequence +
+   baseline discovery SHA-256 + **current evidence-asset SHA-256** (13/13), the asset
+   key proving it could not be applied to the superseded cards.
+
+   Adversarial purity, both forums, probes validated: ENWorld **643/643 live, 0
+   leaks**; Dragonsfoot **28/28 live, 0 leaks**; Gygax reply phrases **482/482** and
+   **13/13** still discoverable. Sequence 1 and all other objects untouched.
 
 4. **Discovery-text NUL defect — FIXED 3 September 2026.** A failed PDF glyph
    extracted as U+0000; SQLite binds TEXT as NUL-terminated, so the remainder was
@@ -151,7 +161,32 @@ asset hashes were unchanged. Post-rebuild: schema tests all pass; build gate
 </details>
 
 6. **ENWorld screenshot recapture** still to be reconciled against the older Part III
-   preservation material.
+   preservation material. *(Last remaining pre-operational item.)*
+
+## Schema amendment v2.1 — source-scoped pseudonymous identity
+
+Applied 3 September 2026 under Rules §19, driven by evidence rather than preference.
+
+The Dragonsfoot attribution pass produced the handles `Bregh` and `gideon_thorne`,
+already attested as ENWorld handles. Under `UNIQUE(name)` the corpus could only merge
+them (asserting identical strings on independent forums are the same human), rename
+them (falsifying the source label), or discard known attribution — each a semantic
+loss, so the architecture reopened narrowly.
+
+`persons` gains `identity_scope`: NULL for a globally identified historical person,
+otherwise the source family in which a pseudonymous handle is attested. `UNIQUE(name)`
+is replaced by two partial unique indexes, because SQLite treats NULLs as distinct and
+a plain `UNIQUE(name, identity_scope)` would silently permit duplicate global persons.
+
+Result: 200 persons — 5 global (Gygax, Ward, Smith, Rausch, Lenard Lakofka), 186
+scoped `ENWorld Q&A`, 9 scoped `Dragonsfoot`. `Bregh` and `gideon_thorne` each exist
+as two distinct source identities with **identical, unqualified names**. Existing
+ENWorld handle names were **not** renamed. Twelve schema tests cover the new
+constraint.
+
+Scope records only that sameness across sources has **not been established**. It is
+not a claim that two different people existed; if evidence later establishes identity,
+that is an explicit reconciliation, never inferred from matching strings.
 
 ## Not auditable by code (historical judgement)
 

@@ -20,11 +20,40 @@
 PRAGMA foreign_keys = ON;
 
 -- ---------------------------------------------------------------- people
+-- Identity is SOURCE-SCOPED for pseudonymous handles (v2.1 amendment).
+--
+--   A source handle identifies a speaker within the source context in which it
+--   is attested. Matching handle strings across independent source families do
+--   NOT establish personal identity. Cross-source identity must be
+--   independently established before identities are merged.
+--
+-- identity_scope NULL  = a globally identified historical person (Gary Gygax,
+--                        James M. Ward, Harvey Smith, Allen Rausch, Lenard
+--                        Lakofka): the identity is established independently of
+--                        any one source.
+-- identity_scope SET   = a pseudonymous handle attested within that source
+--                        family only (e.g. 'ENWorld Q&A', 'Dragonsfoot').
+--
+-- Two rows sharing a name across scopes are TWO UNRESOLVED SOURCE IDENTITIES.
+-- That is NOT a positive claim that two different people existed; it records
+-- only that sameness has not been established. If evidence later establishes
+-- they are the same person, that is an explicit identity reconciliation — never
+-- inferred from matching strings.
+--
+-- The scope is identity metadata, never display text: `name` always holds the
+-- literal source label, with no "(ENWorld)" style qualifier appended.
 CREATE TABLE persons (
-  id    INTEGER PRIMARY KEY,
-  name  TEXT NOT NULL UNIQUE,
-  notes TEXT
+  id             INTEGER PRIMARY KEY,
+  name           TEXT NOT NULL,
+  identity_scope TEXT,             -- NULL = global; else the source family
+  notes          TEXT
 );
+
+-- Uniqueness must be scope-aware. SQLite treats NULLs as DISTINCT in a plain
+-- UNIQUE(name, identity_scope), which would silently permit duplicate global
+-- persons, so the two cases are indexed separately.
+CREATE UNIQUE INDEX ux_persons_global ON persons(name) WHERE identity_scope IS NULL;
+CREATE UNIQUE INDEX ux_persons_scoped ON persons(name, identity_scope) WHERE identity_scope IS NOT NULL;
 
 -- -------------------------------------------------------- source family
 CREATE TABLE source_families (

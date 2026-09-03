@@ -36,7 +36,11 @@ const FORCE = args.includes('--force');
 // replace erroneous derived assets THROUGH the reproducible pipeline. Keyed by the
 // OLD asset sha256; fails closed on any unused, duplicate or ambiguous key.
 const REG = (() => { const i = args.indexOf('--regularization'); return (i >= 0 && args[i + 1] && !args[i + 1].startsWith('--')) ? args[i + 1] : null; })();
-const [DB_PATH, PKG, EVID] = args.filter((a) => !a.startsWith('--') && a !== REG);
+// Optional quote-back attribution overlay: separates the prompt Gygax quoted from
+// the words he newly authored. quoted_question is functional (the material Gary is
+// responding to), not a punctuation test.
+const QQ = (() => { const i = args.indexOf('--quoted-questions'); return (i >= 0 && args[i + 1] && !args[i + 1].startsWith('--')) ? args[i + 1] : null; })();
+const [DB_PATH, PKG, EVID] = args.filter((a) => !a.startsWith('--') && a !== REG && a !== QQ);
 if (!DB_PATH || !PKG || !EVID) {
   console.error('Usage: node --experimental-sqlite scripts/gygax-v2-ingest-dragonsfoot.mjs <v2.sqlite> <package-dir> <evidence-staging-dir> [--force]');
   process.exit(2);
@@ -100,9 +104,49 @@ if (REG) {
   }
 }
 
+// ---- quote-back attribution overlay ----------------------------------------
+// FAIL CLOSED on sequence + baseline discovery SHA-256 + CURRENT evidence-asset
+// SHA-256. The asset key means this cannot be applied to pre-regularisation cards.
+const QREPL = new Map(), QSEGS = new Map();
+let QPOLICY = null;
+if (QQ) {
+  const rd = (f) => readFileSync(join(QQ, f), 'utf8').split('\n').filter((l) => l.trim()).map((l) => JSON.parse(l));
+  QPOLICY = JSON.parse(readFileSync(join(QQ, 'speaker_policy.json'), 'utf8'));
+  for (const r of rd('discovery_replacements.jsonl')) {
+    if (QREPL.has(r.sequence_in_preserved_slice)) problems.push(`duplicate replacement for seq ${r.sequence_in_preserved_slice}`);
+    QREPL.set(r.sequence_in_preserved_slice, r);
+  }
+  for (const s of rd('context_segments.jsonl')) {
+    const k = s.sequence_in_preserved_slice;
+    if (!QSEGS.has(k)) QSEGS.set(k, []);
+    QSEGS.get(k).push(s);
+  }
+  for (const a of QSEGS.values()) a.sort((x, y) => x.context_sequence - y.context_sequence);
+  const known = new Set([...(QPOLICY.forum_handles || []), ...(QPOLICY.named_quoted_source || [])]);
+  for (const [seq, r] of QREPL) {
+    const base = recs.filter((x) => x.sequence_in_preserved_slice === seq);
+    if (base.length !== 1) { problems.push(`seq ${seq}: matches ${base.length} base records, expected 1`); continue; }
+    if (sha(readFileSync(join(PKG, base[0].image_file))) !== base[0].image_sha256) problems.push(`seq ${seq}: base image hash drift`);
+    // the package must target the CURRENT (post-regularisation) asset
+    const expectAsset = REPL.get(base[0].image_sha256)?.new_sha256 || base[0].image_sha256;
+    if (r.evidence_asset_sha256 !== expectAsset)
+      problems.push(`seq ${seq}: evidence_asset_sha256 does not match the current card (expected ${expectAsset.slice(0, 12)})`);
+    if (!(r.replacement_discovery_text || '').trim()) problems.push(`seq ${seq}: empty Gygax-reply replacement`);
+  }
+  for (const [seq, arr] of QSEGS) {
+    if (!QREPL.has(seq)) problems.push(`seq ${seq}: context segments with no discovery replacement`);
+    for (const s of arr) {
+      if (s.context_type !== 'quoted_question') problems.push(`seq ${seq}/${s.context_sequence}: context_type ${s.context_type}`);
+      if ((s.unit_context_text || '') !== '') problems.push(`seq ${seq}/${s.context_sequence}: unit_context_text must be empty (unverified)`);
+      if (s.speaker_label && !known.has(s.speaker_label)) problems.push(`seq ${seq}/${s.context_sequence}: speaker "${s.speaker_label}" not declared in speaker_policy.json`);
+    }
+  }
+}
+
 if (problems.length) { problems.slice(0, 10).forEach((p) => console.error('  ' + p)); die(`${problems.length} problem(s); nothing ingested.`); }
 console.log(`  card images      : ${recs.length} present, all SHA-256 matching the manifest`);
 if (REG) console.log(`  regularisation   : ${REPL.size} replacement(s), all matched exactly one base record`);
+if (QQ) console.log(`  quote attribution: ${QREPL.size} affected units, ${[...QSEGS.values()].reduce((n, a) => n + a.length, 0)} quoted prompts`);
 
 const db = new DatabaseSync(DB_PATH);
 db.exec('PRAGMA foreign_keys = ON');
@@ -143,9 +187,40 @@ const insUnit = db.prepare(`INSERT INTO testimony_units
   VALUES (?,?,NULL,'unknown',?,?,?,?,?,'direct','unknown','','untranscribed','unknown','pdf_text_extraction',?)`);
 const insAsset = db.prepare(`INSERT INTO evidence_assets(unit_id,asset_path,display_order,asset_type,sha256) VALUES (?,?,1,?,?)`);
 const insSrc = db.prepare(`INSERT INTO evidence_sources(asset_id,original_locator,original_type) VALUES (?,?,'pdf_page')`);
+// Structural quoted-prompt context; wording stays unverified so text is empty.
+const insCtx = db.prepare(`INSERT INTO unit_context(unit_id,context_type,speaker_id,text,text_status,sequence) VALUES (?,'quoted_question',?, '', 'untranscribed', ?)`);
+// Speaker identity (schema v2.1). A pseudonymous forum handle is scoped to THIS
+// source family: an identical handle on another forum is a separate, unresolved
+// identity and is never merged. A person the source names as a real individual
+// (e.g. Lenard Lakofka, quoted inside another poster's prompt) is a GLOBAL
+// identity, resolved to an existing row if one already exists.
+const HANDLE_SCOPE = 'Dragonsfoot';
+const findScoped = db.prepare('SELECT id FROM persons WHERE name = ? AND identity_scope = ?');
+const findGlobal = db.prepare('SELECT id FROM persons WHERE name = ? AND identity_scope IS NULL');
+const addPerson = db.prepare('INSERT INTO persons(name,identity_scope,notes) VALUES (?,?,?)');
+const personCache = new Map();
+function personIdForSpeaker(label) {
+  if (personCache.has(label)) return personCache.get(label);
+  const isHandle = (QPOLICY?.forum_handles || []).includes(label);
+  let id;
+  if (isHandle) {
+    const f = findScoped.get(label, HANDLE_SCOPE);
+    id = f ? f.id : Number(addPerson.run(label, HANDLE_SCOPE,
+      'Forum handle, recorded exactly as the source renders it; the scope, not the name, records where it is attested. Pseudonymous: the real-world identity is unverified and is NOT inferred. An identical handle in another source family is a separate unresolved identity until sameness is independently established.').lastInsertRowid);
+    if (!f) stats.handlesCreated++;
+  } else {
+    const f = findGlobal.get(label);
+    id = f ? f.id : Number(addPerson.run(label, null,
+      'Named individual as identified by the source. Quoted inside another poster\'s prompt; no biographical identity beyond the name is asserted here.').lastInsertRowid);
+    if (!f) stats.namedCreated++;
+  }
+  personCache.set(label, id);
+  return id;
+}
 const insDisc = db.prepare(`INSERT INTO discovery_text(object_id,segment_label,source_type,source_locator,text,unit_id) VALUES (?,?,'pdf_text_extraction',?,?,?)`);
 
-const stats = { units: 0, assets: 0, sources: 0, discovery: 0, crop: 0, stitched: 0, regularized: 0 };
+const stats = { units: 0, assets: 0, sources: 0, discovery: 0, crop: 0, stitched: 0, regularized: 0,
+  qUnits: 0, qSegments: 0, qWithSpeaker: 0, qNoSpeaker: 0, handlesCreated: 0, namedCreated: 0 };
 recs.sort((a, b) => a.sequence_in_preserved_slice - b.sequence_in_preserved_slice);
 // sequence_in_object is an ordering key, so assign it densely (1..N) in
 // preservation order. The source's gapped detection position is not a historical
@@ -184,8 +259,31 @@ for (const r of recs) {
   const dest = join(EVID, assetPath);
   mkdirSync(dirname(dest), { recursive: true });
   copyFileSync(srcFile, dest);
-  const text = (r.discovery_text || '').trim();
-  if (text) { insDisc.run(obj.id, SEGMENT, locator, text, uid); stats.discovery++; }
+  const qrep = QREPL.get(r.sequence_in_preserved_slice);
+  if (qrep) {
+    // fail closed on the baseline discovery text we are about to replace
+    const baseline = (r.discovery_text || '').trim();
+    if (sha(baseline) !== qrep.baseline_discovery_text_sha256) {
+      db.exec('ROLLBACK');
+      die(`seq ${r.sequence_in_preserved_slice}: baseline discovery SHA-256 mismatch; FAILING CLOSED.`);
+    }
+    insDisc.run(obj.id, SEGMENT, `${locator}; Gygax reply (newly authored)`, qrep.replacement_discovery_text.trim(), uid);
+    stats.discovery++; stats.qUnits++;
+    let n = 0;
+    for (const s of QSEGS.get(r.sequence_in_preserved_slice) || []) {
+      n++;
+      const pid = s.speaker_label ? personIdForSpeaker(s.speaker_label) : null;
+      insCtx.run(uid, pid, n);
+      const who = s.speaker_label || 'speaker not identified in this quote-back';
+      insDisc.run(obj.id, SEGMENT, `${locator}; quoted prompt ${n} — ${who} (quoted by Gygax, NOT Gygax-authored)`,
+        (s.discovery_text || '').trim(), uid);
+      stats.discovery++; stats.qSegments++;
+      if (pid) stats.qWithSpeaker++; else stats.qNoSpeaker++;
+    }
+  } else {
+    const text = (r.discovery_text || '').trim();
+    if (text) { insDisc.run(obj.id, SEGMENT, locator, text, uid); stats.discovery++; }
+  }
 }
 db.exec('COMMIT');
 
@@ -206,6 +304,13 @@ P(`  duplicates / failures           : 0 (hashes matched; no duplicate slice pos
 P(`  evidence assets created         : ${stats.assets}   (${stats.crop} crop, ${stats.stitched} stitched)`);
 P(`  evidence provenance rows        : ${stats.sources}  (one per source PDF page/portion of "${SOURCE_PDF}")`);
 if (REG) P(`  regularised assets              : ${stats.regularized} rebuilt continuous card(s) from the overlay`);
+if (QQ) {
+  P(`  quote-back attribution          : ${stats.qUnits} units split into Gygax-reply + ${stats.qSegments} quoted prompt(s)`);
+  P(`    prompts with an identified speaker : ${stats.qWithSpeaker}`);
+  P(`    prompts with speaker unidentified  : ${stats.qNoSpeaker}`);
+  P(`    Dragonsfoot-scoped handles created : ${stats.handlesCreated}`);
+  P(`    globally-identified persons created: ${stats.namedCreated}  (named individuals, not handles)`);
+}
 P(`  discovery_text rows created     : ${stats.discovery}`);
 P(`  transcripts written             : 0   |  unit_context rows : 0 (questions await visual verification)`);
 P(`  discourse classified            : 0   (all 'unknown')`);
@@ -235,7 +340,19 @@ ok('no transcript text anywhere', g(`SELECT count(*) c FROM testimony_units WHER
 // Scoped to THIS object: other sources may legitimately hold context rows (e.g.
 // ENWorld's quoted-question separation). Dragonsfoot's own quote-back attribution
 // is a separate, still-pending pass, so its units must carry no context yet.
-ok('unit_context still empty for this object',
+if (QQ) {
+  const inObj = 'unit_id IN (SELECT id FROM testimony_units WHERE object_id=' + obj.id + ')';
+  ok(`unit_context holds one row per quoted prompt (${stats.qSegments})`,
+     g(`SELECT count(*) c FROM unit_context WHERE ${inObj}`).c === stats.qSegments);
+  ok('every context row is quoted_question, empty and untranscribed',
+     g(`SELECT count(*) c FROM unit_context WHERE ${inObj} AND (context_type<>'quoted_question' OR text<>'' OR text_status<>'untranscribed')`).c === 0);
+  ok('no quoted prompt attributed to Gygax',
+     g(`SELECT count(*) c FROM unit_context WHERE ${inObj} AND speaker_id=?`, speaker.id).c === 0);
+  ok('handles are Dragonsfoot-scoped, never merged with another forum\'s handle',
+     g(`SELECT count(*) c FROM unit_context uc JOIN persons p ON p.id=uc.speaker_id WHERE ${inObj} AND p.identity_scope IS NOT NULL AND p.identity_scope<>'Dragonsfoot'`).c === 0);
+  ok('no quoted wording left in the Gygax-reply discovery rows',
+     g(`SELECT count(*) c FROM discovery_text WHERE source_locator LIKE '%Gygax reply (newly authored)%' AND source_locator LIKE '%preserved slice%' AND (text LIKE '%wrote:%' OR text LIKE '%Quote:%')`).c === 0);
+} else ok('unit_context still empty for this object',
    g('SELECT count(*) c FROM unit_context WHERE unit_id IN (SELECT id FROM testimony_units WHERE object_id=?)', obj.id).c === 0);
 ok('tags still empty', g('SELECT count(*) c FROM tags').c === 0);
 ok('transcript index in sync with units', g('SELECT count(*) c FROM units_fts').c === after.units);

@@ -133,6 +133,28 @@ rejects('duplicate segment label in same object rejected', () => db.prepare(
 rejects('bad coverage_status rejected', () => db.prepare(
   `INSERT INTO coverage(object_id,segment_label,coverage_status) VALUES (1,'Part IV','mostly')`).run());
 
+// ---- v2.1: source-scoped pseudonymous identity ----------------------------
+// A source handle identifies a speaker within the source context in which it is
+// attested. Matching handle strings across independent source families do NOT
+// establish personal identity.
+const insP = (n, s) => () => db.prepare('INSERT INTO persons(name,identity_scope) VALUES (?,?)').run(n, s);
+accepts('global person (identity_scope NULL)', insP('FIXTURE Global Person', null));
+rejects('duplicate global person rejected', insP('FIXTURE Global Person', null));
+accepts('handle scoped to one source family', insP('FIXTURE Handle', 'FIXTURE Family A'));
+accepts('SAME handle string scoped to a DIFFERENT source family',
+        insP('FIXTURE Handle', 'FIXTURE Family B'));
+rejects('duplicate handle within the same scope rejected', insP('FIXTURE Handle', 'FIXTURE Family A'));
+accepts('a global person may share a name with a scoped handle', insP('FIXTURE Handle', null));
+rejects('duplicate global for that name still rejected', insP('FIXTURE Handle', null));
+ok('scope is identity metadata, never appended to the display name',
+   db.prepare(`SELECT count(*) c FROM persons WHERE name LIKE '%(%'`).get().c === 0);
+ok('two same-named rows in different scopes are two distinct identities',
+   db.prepare(`SELECT count(*) c FROM persons WHERE name='FIXTURE Handle' AND identity_scope IS NOT NULL`).get().c === 2);
+// unit_context may point at a scoped identity
+accepts('context speaker may be a scoped handle', () => db.prepare(
+  `INSERT INTO unit_context(unit_id,context_type,speaker_id,text,text_status,sequence)
+   VALUES (1,'quoted_question',(SELECT id FROM persons WHERE name='FIXTURE Handle' AND identity_scope='FIXTURE Family A'),'','untranscribed',900)`).run());
+
 db.close();
 console.log(`\n${fails ? fails + ' FAILURE(S)' : 'ALL PASS'}`);
 process.exit(fails ? 1 : 0);

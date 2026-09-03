@@ -23,7 +23,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 | # | Source | Status | Open items |
 |---|---|---|---|
 | 1 | ENWorld Q&A (Stage A) | **Conformant** *(reconstructions regularised 2026-09-03)* | completeness `unknown` corpus-wide (§12 review) |
-| 2 | Dragonsfoot batch 01 | **Conformant**, with known debt | 9 provisional reconstructions (§6); completeness `unknown` (§12 review) |
+| 2 | Dragonsfoot batch 01 | **Conformant** *(reconstructions regularised 2026-09-03)* | completeness `unknown` (§12 review) |
 | 3 | Ward "Greyhawk #2" | **Conformant** *(defect fixed, see below)* | — |
 | 4 | GameSpy Interview Part I | **Conformant** *(debt resolved 2026-09-03)* | — |
 | 5 | Cyclopeatron | **Conformant** | — |
@@ -35,7 +35,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 context text indexed as speaker testimony (§8); all 600 staged evidence files hash
 to their database records (§15).
 
-**Summary: 7 objects · 0 defects · 9 grandfathered debt items · 3 review items.**
+**Summary: 7 objects · 0 defects · 0 grandfathered debt items · 3 review items.**
 
 ## Defect found and fixed
 
@@ -91,8 +91,33 @@ asset hashes were unchanged. Post-rebuild: schema tests all pass; build gate
    and a cross-part sample of joins was inspected. The remaining stitched joins rest
    on the preparer's recorded eyes-on.
 
-   **Still owed:** the 9 Dragonsfoot provisional reconstructions.
-3. **ENWorld screenshot recapture** still to be reconciled against the older Part III
+   **Dragonsfoot resolved 3 September 2026.** All 9 were rebuilt from the preserved
+   19-page slice and remain correctly stitched compact posts; provenance unchanged at
+   18 ordered portions (no net row change). Independently verified: `Col_Pladoh`
+   author header and timestamp matching the manifest on every card, each post complete
+   through its sign-off, joins continuous. **Reconstruction gate now reads
+   accepted 183 · provisional 0 · blocked 0.**
+
+   > **Reconstruction debt is cleared. The corpus is NOT thereby fully regularised.**
+   > Evidentiary regularisation has more than one axis, and the reconstruction count
+   > must not become a proxy for overall evidentiary cleanliness. Embedded
+   > quote/context attribution (below) remains open and is the more consequential axis.
+3. **Embedded quote/context attribution — OPEN, and the most consequential item.**
+   Another poster's words are carried inside units attributed to Gygax: 432 ENWorld
+   Stage A units contain explicit quoted prompts, 377 of them with another person's
+   words embedded in the staging `gygax_text`; 13 of 14 Dragonsfoot units carry
+   `X wrote:` quoted context, 4 with nested quotation. 445 candidate units.
+
+   Current containment, measured: the quoted wording sits in the unit-scoped
+   **discovery** layer, which has no speaker separation, so a discovery search returns
+   it against a Gygax unit. Probes for phrases demonstrably belonging to other posters
+   ("Christopher Lee" — 3RD21ST; "Mississauga" — Bregh; "Marine Corps Ball" —
+   KewlMarine32) each return a Dragonsfoot Gygax unit in discovery while returning
+   **0 hits in Gygax transcript FTS**. Transcript purity therefore holds; the exposure
+   is retrieval attribution, and it matters for search and any downstream synthesis.
+   Boundary decisions between Gygax's newly authored reply and quoted material are a
+   historical judgement, not a code decision.
+4. **ENWorld screenshot recapture** still to be reconciled against the older Part III
    preservation material.
 
 ## Not auditable by code (historical judgement)

@@ -26,13 +26,17 @@
 import { DatabaseSync } from 'node:sqlite';
 import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
-import { join, dirname } from 'node:path';
+import { join, dirname, basename } from 'node:path';
 import { assertSchemaFrozen } from './gygax-v2-lock.mjs';
 
 const SCHEMA = assertSchemaFrozen();
 const args = process.argv.slice(2);
 const FORCE = args.includes('--force');
-const [DB_PATH, PKG, EVID] = args.filter((a) => !a.startsWith('--'));
+// Optional reconstruction-regularisation overlay (Rules §17): corrected packages
+// replace erroneous derived assets THROUGH the reproducible pipeline. Keyed by the
+// OLD asset sha256; fails closed on any unused, duplicate or ambiguous key.
+const REG = (() => { const i = args.indexOf('--regularization'); return (i >= 0 && args[i + 1] && !args[i + 1].startsWith('--')) ? args[i + 1] : null; })();
+const [DB_PATH, PKG, EVID] = args.filter((a) => !a.startsWith('--') && a !== REG);
 if (!DB_PATH || !PKG || !EVID) {
   console.error('Usage: node --experimental-sqlite scripts/gygax-v2-ingest-dragonsfoot.mjs <v2.sqlite> <package-dir> <evidence-staging-dir> [--force]');
   process.exit(2);
@@ -74,8 +78,31 @@ for (const r of recs) {
   if (sha(readFileSync(f)) !== r.image_sha256) problems.push(`sha256 mismatch: ${r.image_file}`);
   if (!parseStamp(r.timestamp_display)) problems.push(`unparseable timestamp on seq ${r.sequence_in_preserved_slice}: ${r.timestamp_display}`);
 }
+// ---- regularisation overlay: keyed by OLD asset sha256, fail closed ---------
+const REPL = new Map();
+if (REG) {
+  const rp = join(REG, 'replacement_manifest.jsonl');
+  if (!existsSync(rp)) die(`replacement_manifest.jsonl not found in ${REG}`);
+  for (const rr of readFileSync(rp, 'utf8').split('\n').filter((l) => l.trim()).map((l) => JSON.parse(l))) {
+    if (REPL.has(rr.old_sha256)) problems.push(`duplicate old_sha256 ${rr.old_sha256.slice(0, 12)}`);
+    const hits = recs.filter((r) => r.image_sha256 === rr.old_sha256);
+    if (hits.length !== 1) problems.push(`old_sha256 ${rr.old_sha256.slice(0, 12)} matches ${hits.length} base records, expected exactly 1`);
+    else if (Number(hits[0].sequence_in_preserved_slice) !== Number(rr.sequence_in_preserved_slice))
+      problems.push(`sequence key mismatch for ${rr.old_asset_path}`);
+    const nf = join(REG, rr.new_asset_file);
+    if (!existsSync(nf)) problems.push(`missing replacement asset ${rr.new_asset_file}`);
+    else if (sha(readFileSync(nf)) !== rr.new_sha256) problems.push(`replacement sha mismatch ${rr.new_asset_file}`);
+    if ((rr.representation === 'stitched_compact_pagination') !== !!rr.reconstructed)
+      problems.push(`${rr.new_asset_file}: representation/reconstructed disagree`);
+    if (rr.reconstructed && rr.source_portions.length < 2)
+      problems.push(`${rr.new_asset_file}: stitched with ${rr.source_portions.length} portion(s)`);
+    REPL.set(rr.old_sha256, rr);
+  }
+}
+
 if (problems.length) { problems.slice(0, 10).forEach((p) => console.error('  ' + p)); die(`${problems.length} problem(s); nothing ingested.`); }
 console.log(`  card images      : ${recs.length} present, all SHA-256 matching the manifest`);
+if (REG) console.log(`  regularisation   : ${REPL.size} replacement(s), all matched exactly one base record`);
 
 const db = new DatabaseSync(DB_PATH);
 db.exec('PRAGMA foreign_keys = ON');
@@ -118,7 +145,7 @@ const insAsset = db.prepare(`INSERT INTO evidence_assets(unit_id,asset_path,disp
 const insSrc = db.prepare(`INSERT INTO evidence_sources(asset_id,original_locator,original_type) VALUES (?,?,'pdf_page')`);
 const insDisc = db.prepare(`INSERT INTO discovery_text(object_id,segment_label,source_type,source_locator,text,unit_id) VALUES (?,?,'pdf_text_extraction',?,?,?)`);
 
-const stats = { units: 0, assets: 0, sources: 0, discovery: 0, crop: 0, stitched: 0 };
+const stats = { units: 0, assets: 0, sources: 0, discovery: 0, crop: 0, stitched: 0, regularized: 0 };
 recs.sort((a, b) => a.sequence_in_preserved_slice - b.sequence_in_preserved_slice);
 // sequence_in_object is an ordering key, so assign it densely (1..N) in
 // preservation order. The source's gapped detection position is not a historical
@@ -130,16 +157,33 @@ for (const r of recs) {
     r.timestamp_display, parseStamp(r.timestamp_display), r.timestamp_precision || 'unknown',
     r.timestamp_timezone || null, speaker.id, locator).lastInsertRowid);
   stats.units++;
-  const pages = []; for (let p = r.source_start_page; p <= r.source_end_page; p++) pages.push(p);
-  const type = pages.length > 1 ? 'stitched' : 'crop';
+  const rr = REPL.get(r.image_sha256);
+  let assetPath, type, srcFile;
+  if (rr) {
+    // regularised: rebuilt continuous card, representation declared by the overlay,
+    // provenance = the corrected ordered source_portions.
+    type = rr.reconstructed ? 'stitched' : 'crop';
+    assetPath = 'evidence/dragonsfoot/t10004/' + basename(rr.new_asset_file);
+    srcFile = join(REG, rr.new_asset_file);
+    const aid0 = Number(insAsset.run(uid, assetPath, type, rr.new_sha256).lastInsertRowid);
+    for (const p of [...rr.source_portions].sort((a, b) => a.order - b.order)) {
+      insSrc.run(aid0, `${SOURCE_PDF} p.${p.source_page} (clip ${JSON.stringify(p.clip_pdf_points)}${rr.reconstructed ? `, stitch order ${p.order}` : ''})`);
+      stats.sources++;
+    }
+    stats.regularized++;
+  } else {
+    const pages = []; for (let p = r.source_start_page; p <= r.source_end_page; p++) pages.push(p);
+    type = pages.length > 1 ? 'stitched' : 'crop';
+    assetPath = 'evidence/dragonsfoot/t10004/' + r.image_file;
+    srcFile = join(PKG, r.image_file);
+    const aid0 = Number(insAsset.run(uid, assetPath, type, r.image_sha256).lastInsertRowid);
+    for (const p of pages) { insSrc.run(aid0, `${SOURCE_PDF} p.${p}`); stats.sources++; }
+  }
   type === 'stitched' ? stats.stitched++ : stats.crop++;
-  const assetPath = 'evidence/dragonsfoot/t10004/' + r.image_file;
-  const aid = Number(insAsset.run(uid, assetPath, type, r.image_sha256).lastInsertRowid);
   stats.assets++;
-  for (const p of pages) { insSrc.run(aid, `${SOURCE_PDF} p.${p}`); stats.sources++; }
   const dest = join(EVID, assetPath);
   mkdirSync(dirname(dest), { recursive: true });
-  copyFileSync(join(PKG, r.image_file), dest);
+  copyFileSync(srcFile, dest);
   const text = (r.discovery_text || '').trim();
   if (text) { insDisc.run(obj.id, SEGMENT, locator, text, uid); stats.discovery++; }
 }
@@ -160,7 +204,8 @@ P(`  source cards in manifest        : ${recs.length}`);
 P(`  testimony units created         : ${stats.units}   (${stats.units === recs.length ? 'all accounted for' : 'MISMATCH'})`);
 P(`  duplicates / failures           : 0 (hashes matched; no duplicate slice positions)`);
 P(`  evidence assets created         : ${stats.assets}   (${stats.crop} crop, ${stats.stitched} stitched)`);
-P(`  evidence provenance rows        : ${stats.sources}  (one per source PDF page of "${SOURCE_PDF}")`);
+P(`  evidence provenance rows        : ${stats.sources}  (one per source PDF page/portion of "${SOURCE_PDF}")`);
+if (REG) P(`  regularised assets              : ${stats.regularized} rebuilt continuous card(s) from the overlay`);
 P(`  discovery_text rows created     : ${stats.discovery}`);
 P(`  transcripts written             : 0   |  unit_context rows : 0 (questions await visual verification)`);
 P(`  discourse classified            : 0   (all 'unknown')`);

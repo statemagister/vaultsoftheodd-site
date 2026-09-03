@@ -33,13 +33,17 @@
 import { DatabaseSync } from 'node:sqlite';
 import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
-import { join, dirname } from 'node:path';
+import { join, dirname, basename } from 'node:path';
 import { assertSchemaFrozen } from './gygax-v2-lock.mjs';
 
 const SCHEMA = assertSchemaFrozen();
 const args = process.argv.slice(2);
 const FORCE = args.includes('--force');
-const [DB_PATH, PKG, EVID] = args.filter((a) => !a.startsWith('--'));
+// Optional Stage A reconstruction-regularisation overlay (Rules §17: corrected
+// packages replace erroneous derived assets THROUGH the reproducible pipeline).
+// Keyed by the OLD asset sha256; fails closed if any key is unused or ambiguous.
+const REG = (() => { const i = args.indexOf('--regularization'); return (i >= 0 && args[i + 1] && !args[i + 1].startsWith('--')) ? args[i + 1] : null; })();
+const [DB_PATH, PKG, EVID] = args.filter((a) => !a.startsWith('--') && a !== REG);
 if (!DB_PATH || !PKG || !EVID) {
   console.error('Usage: node --experimental-sqlite scripts/gygax-v2-ingest-enworld-cards.mjs <v2.sqlite> <package-dir> <evidence-staging-dir> [--force]');
   process.exit(2);
@@ -68,6 +72,32 @@ if (!existsSync(manifestPath)) die(`manifest.jsonl not found in ${PKG}`);
 const recs = readFileSync(manifestPath, 'utf8').split('\n').filter((l) => l.trim()).map((l) => JSON.parse(l));
 console.log(`Ingesting ENWorld PDF post cards under schema ${SCHEMA.version}`);
 console.log(`  manifest records : ${recs.length}`);
+
+// ---- Stage A reconstruction-regularisation overlay -------------------------
+// Replacements are keyed by the OLD asset sha256. Each key must match exactly one
+// base-manifest record; unused or ambiguous keys abort (fail closed).
+const REPL = new Map();
+if (REG) {
+  const rp = join(REG, 'replacement_manifest.jsonl');
+  if (!existsSync(rp)) die(`replacement_manifest.jsonl not found in ${REG}`);
+  const rrs = readFileSync(rp, 'utf8').split('\n').filter((l) => l.trim()).map((l) => JSON.parse(l));
+  const bad = [];
+  for (const rr of rrs) {
+    if (REPL.has(rr.old_sha256)) bad.push(`duplicate old_sha256 ${rr.old_sha256.slice(0, 12)}`);
+    const hits = recs.filter((r) => r.sha256 === rr.old_sha256);
+    if (hits.length !== 1) bad.push(`old_sha256 ${rr.old_sha256.slice(0, 12)} (${rr.old_asset_path}) matches ${hits.length} base records, expected exactly 1`);
+    const nf = join(REG, rr.new_asset_file);
+    if (!existsSync(nf)) bad.push(`missing replacement asset ${rr.new_asset_file}`);
+    else if (sha(readFileSync(nf)) !== rr.new_sha256) bad.push(`replacement sha mismatch ${rr.new_asset_file}`);
+    const isStitch = rr.representation === 'stitched_compact_pagination';
+    if (isStitch !== !!rr.reconstructed) bad.push(`${rr.new_asset_file}: representation/reconstructed disagree`);
+    if (!isStitch && rr.source_portions.length !== 1) bad.push(`${rr.new_asset_file}: single_source_crop with ${rr.source_portions.length} portions`);
+    if (isStitch && rr.source_portions.length < 2) bad.push(`${rr.new_asset_file}: stitched with ${rr.source_portions.length} portion(s)`);
+    REPL.set(rr.old_sha256, rr);
+  }
+  if (bad.length) { bad.slice(0, 15).forEach((b) => console.error('  ' + b)); die(`${bad.length} regularisation problem(s); nothing ingested.`); }
+  console.log(`  regularisation   : ${REPL.size} replacements (${rrs.filter((r) => r.reconstructed).length} stitched, ${rrs.filter((r) => !r.reconstructed).length} single-source crops)`);
+}
 
 const db = new DatabaseSync(DB_PATH);
 db.exec('PRAGMA foreign_keys = ON');
@@ -111,7 +141,7 @@ const insAsset = db.prepare(`INSERT INTO evidence_assets(unit_id,asset_path,disp
 const insSrc = db.prepare(`INSERT INTO evidence_sources(asset_id,original_locator,original_type) VALUES (?,?,'pdf_page')`);
 const insDisc = db.prepare(`INSERT INTO discovery_text(object_id,segment_label,source_type,source_locator,text,unit_id) VALUES (?,?,'pdf_text_extraction',?,?,?)`);
 
-const stats = { units: 0, assets: 0, sources: 0, discovery: 0, stitched: 0, crop: 0,
+const stats = { units: 0, assets: 0, sources: 0, discovery: 0, stitched: 0, crop: 0, regularized: 0, rangeCorrected: [],
   noText: 0, tagsSkipped: 0, contextSkipped: 0, dateParsed: 0, dateUnparsed: 0 };
 
 db.exec('BEGIN');
@@ -128,19 +158,38 @@ for (const r of recs) {
 
   // evidence: one derivative per card; multi-page cards are stitched and carry
   // one provenance row per source PDF page.
-  const pages = [];
-  for (let p = r.source_start_page; p <= r.source_end_page; p++) pages.push(p);
-  const type = pages.length > 1 ? 'stitched' : 'crop';
+  const rr = REPL.get(r.sha256);
+  let assetPath, type, srcFile;
+  if (rr) {
+    // regularised: representation is declared by the overlay, not inferred from a
+    // page range, and provenance is the corrected ordered source_portions.
+    type = rr.reconstructed ? 'stitched' : 'crop';
+    assetPath = 'evidence/enworld/' + basename(rr.new_asset_file);
+    srcFile = join(REG, rr.new_asset_file);
+    const aid0 = Number(insAsset.run(uid, assetPath, type, rr.new_sha256).lastInsertRowid);
+    for (const p of [...rr.source_portions].sort((a, b) => a.order - b.order)) {
+      insSrc.run(aid0, `${p.source_document} p.${p.source_page} (clip ${JSON.stringify(p.clip_pdf_points)}${rr.reconstructed ? `, stitch order ${p.order}` : ''})`);
+      stats.sources++;
+    }
+    stats.regularized++;
+    if (rr.old_source_start_page !== rr.corrected_source_start_page || rr.old_source_end_page !== rr.corrected_source_end_page)
+      stats.rangeCorrected.push(`Part ${rr.thread_part} locator ${rr.locator_post_number}: pages ${rr.old_source_start_page}-${rr.old_source_end_page} -> ${rr.corrected_source_start_page}-${rr.corrected_source_end_page}`);
+  } else {
+    const pages = [];
+    for (let p = r.source_start_page; p <= r.source_end_page; p++) pages.push(p);
+    type = pages.length > 1 ? 'stitched' : 'crop';
+    assetPath = 'evidence/enworld/' + r.image_path.replace(/^cards\//, '');
+    srcFile = join(PKG, r.image_path);
+    const aid0 = Number(insAsset.run(uid, assetPath, type, r.sha256).lastInsertRowid);
+    for (const p of pages) { insSrc.run(aid0, `${r.source_document} p.${p}`); stats.sources++; }
+  }
   type === 'stitched' ? stats.stitched++ : stats.crop++;
-  const assetPath = 'evidence/enworld/' + r.image_path.replace(/^cards\//, '');
-  const aid = Number(insAsset.run(uid, assetPath, type, r.sha256).lastInsertRowid);
   stats.assets++;
-  for (const p of pages) { insSrc.run(aid, `${r.source_document} p.${p}`); stats.sources++; }
 
   // stage the plaintext derivative for the encrypting build (gitignored dir)
   const dest = join(EVID, assetPath);
   mkdirSync(dirname(dest), { recursive: true });
-  copyFileSync(join(PKG, r.image_path), dest);
+  copyFileSync(srcFile, dest);
 
   // extraction -> discovery only. question_context is extraction too, so it is
   // NOT written to unit_context (that table may hold verified text only).
@@ -169,7 +218,19 @@ P(`  source cards in manifest        : ${recs.length}`);
 P(`  testimony units created         : ${stats.units}   (${recs.length === stats.units ? 'all accounted for' : 'MISMATCH'})`);
 P(`  duplicates / failures           : 0 (all images present and hash-matched; no duplicate (part, post) in source)`);
 P(`  evidence assets created         : ${stats.assets}   (${stats.crop} crop, ${stats.stitched} stitched)`);
-P(`  evidence provenance rows        : ${stats.sources}  (one per source PDF page)`);
+P(`  evidence provenance rows        : ${stats.sources}  (one per source PDF page/portion)`);
+if (REG) {
+  P(`  regularised assets              : ${stats.regularized} replaced from the overlay`);
+  P(`  source-page ranges corrected    : ${stats.rangeCorrected.length}`);
+  // Rules §17 / instruction: the unit-level source_locator embeds the ORIGINAL
+  // "PDF pages A-B" range from the base manifest. Where the overlay corrected that
+  // range, the unit locator now states an obsolete range. Historical metadata is
+  // NOT changed here — this is reported for a separate decision.
+  P(`  REPORT — unit-level source_locator now states an obsolete page range for these`);
+  P(`           ${stats.rangeCorrected.length} unit(s). Historical metadata deliberately left unchanged:`);
+  for (const s of stats.rangeCorrected.slice(0, 8)) P(`             ${s}`);
+  if (stats.rangeCorrected.length > 8) P(`             …and ${stats.rangeCorrected.length - 8} more`);
+}
 P(`  discovery_text rows created     : ${stats.discovery}${stats.noText ? `  (${stats.noText} card(s) had no extractable text)` : ''}`);
 P(`  transcripts written             : 0   (all units untranscribed, by rule)`);
 P(`  discourse classified            : 0   (all 'unknown', never manufactured)`);

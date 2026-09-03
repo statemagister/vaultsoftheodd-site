@@ -22,7 +22,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 | # | Source | Status | Open items |
 |---|---|---|---|
-| 1 | ENWorld Q&A (Stage A) | **Conformant**, with known debt | 186 provisional reconstructions (§6); completeness `unknown` corpus-wide (§12 review) |
+| 1 | ENWorld Q&A (Stage A) | **Conformant** *(reconstructions regularised 2026-09-03)* | completeness `unknown` corpus-wide (§12 review) |
 | 2 | Dragonsfoot batch 01 | **Conformant**, with known debt | 9 provisional reconstructions (§6); completeness `unknown` (§12 review) |
 | 3 | Ward "Greyhawk #2" | **Conformant** *(defect fixed, see below)* | — |
 | 4 | GameSpy Interview Part I | **Conformant** *(debt resolved 2026-09-03)* | — |
@@ -35,7 +35,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 context text indexed as speaker testimony (§8); all 600 staged evidence files hash
 to their database records (§15).
 
-**Summary: 7 objects · 0 defects · 195 grandfathered debt items · 3 review items.**
+**Summary: 7 objects · 0 defects · 9 grandfathered debt items · 3 review items.**
 
 ## Defect found and fixed
 
@@ -73,11 +73,25 @@ asset hashes were unchanged. Post-rebuild: schema tests all pass; build gate
    (each stitched card retains ordered provenance to both contributing pages).
    Testimony-unit identity and historical metadata were not touched — units, context,
    discovery and coverage compared IDENTICAL before/after.
-2. **195 provisional reconstructions.** ENWorld (186) and Dragonsfoot (9) predate the
-   reconstruction control and are grandfathered. Provisional status is
-   **grandfathering only, not evidentiary certification** (§6). An eyes-on
-   accept/reject pass is still owed. The OCR sweep found no Ward-type loss signal, but
-   OCR certifies nothing.
+2. **Provisional reconstructions — ENWorld resolved 3 September 2026; 9 remain.**
+   All 186 grandfathered ENWorld Stage A reconstructions were resolved upstream from
+   the preserved PDFs and applied as a `--regularization` overlay on the ENWorld
+   ingester (fail-closed on the old asset SHA-256; every key matched exactly one
+   asset). 160 were genuine compact posts split by pagination and are now accepted
+   continuous stitched cards; **26 were not genuine cross-page units at all** — their
+   ranges had been enlarged by preservation/navigation/quoted-text matching — and are
+   now ordinary single-source crops, gate-exempt. 33 page ranges were corrected and 38
+   extraneous provenance rows removed (821 → 783). Reconstructions 209 → 183;
+   accepted 14 → 174; provisional 195 → **9 (Dragonsfoot only)**.
+
+   Independent verification beyond the preparer's recorded eyes-on: the author header
+   was confirmed as Gygax's `Col_Pladoh` on **all 186** replacements (covering the
+   wrong-poster failure class the package itself disclosed and corrected at Part I
+   locator 204), the four same-minute-timestamp risk cases were inspected directly,
+   and a cross-part sample of joins was inspected. The remaining stitched joins rest
+   on the preparer's recorded eyes-on.
+
+   **Still owed:** the 9 Dragonsfoot provisional reconstructions.
 3. **ENWorld screenshot recapture** still to be reconciled against the older Part III
    preservation material.
 

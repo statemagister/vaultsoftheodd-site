@@ -22,7 +22,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 | # | Source | Status | Open items |
 |---|---|---|---|
-| 1 | ENWorld Q&A (Stage A + **Part III**) | **Conformant** *(reconstructions regularised 2026-09-03; Part III added 2026-09-04)* | 532 → **686** units: the complete Part III segment closed a preservation gap the object had carried since v1. completeness `unknown` corpus-wide (§12 review) |
+| 1 | ENWorld Q&A (Stage A + **Parts III–IV**) | **Conformant** *(reconstructions regularised 2026-09-03; Parts III and IV added 2026-09-04)* | 532 → **803** units. Both segments closed preservation gaps carried since v1; Parts V–VII and XIII remain missing. completeness `unknown` corpus-wide (§12 review) |
 | 2 | Dragonsfoot batch 01 | **Conformant** *(reconstructions regularised 2026-09-03)* | completeness `unknown` (§12 review) |
 | 3 | Ward "Greyhawk #2" | **Conformant** *(defect fixed, see below)* | — |
 | 4 | GameSpy Interview Part I | **Conformant** *(debt resolved 2026-09-03)* | — |
@@ -37,7 +37,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 **Corpus-wide checks: all pass.** Integrity check; FTS sync and queryability for
 `units_fts` / `context_fts` / `discovery_fts`; transcript structural purity (§7); no
-context text indexed as speaker testimony (§8); all 907 staged evidence files hash
+context text indexed as speaker testimony (§8); all 1,024 staged evidence files hash
 to their database records (§15).
 
 **Summary: 12 objects · 0 defects · 0 grandfathered debt items · 9 review items.**
@@ -403,6 +403,48 @@ silently truncates the rest of the row — the defect that cost 346 characters a
 locator 101. Repaired upstream to U+FFFD, which keeps every surviving character and
 guesses nothing about the failed glyph.
 
+## Part IV, and why U+FFFD is wrong inside a handle
+
+Part IV (4 September 2026) added 117 Gygax posts out of the segment's 267 printable-view
+posts, P04:post0002 to post0265, 22 July to 9 December 2003 — continuing the same
+afternoon Part III ends. The ENWorld object reaches **803** units.
+
+The package was refused on one point, and it is worth recording because the repair was
+*correct in general and wrong in this position*. Three participant handles carried
+U+FFFD where the PDF text layer had failed to extract a first letter: `�rthurQ`,
+`�ndrew D. Gable`, `�hyron1144`. Substituting U+FFFD is exactly right for a failed glyph
+in prose — it preserves every surviving character and guesses nothing, which is why it
+was the agreed repair for the Part III control characters. But a handle becomes a
+`persons` row, i.e. an **identity**, and `khyron1144` also appeared INTACT elsewhere in
+the same package. Ingesting as supplied would have created two identities for one person
+inside a single segment.
+
+The glyphs are legible on the evidence cards — the text layer failed, not the rendering
+— so they were read there and corrected upstream. That is the corpus's own standing
+principle: the preservation image is authoritative and the text layer is discovery only.
+Inference would have got one wrong; `khyron1144` begins with a lowercase k, not the
+capital its neighbours suggest. The Part IV ingester now fails closed on any U+FFFD in a
+handle, and that check was confirmed against the superseded package before use.
+
+## Derived ingesters inherit assertions that cannot fire
+
+Both ENWorld segment ingesters failed their own checks on first run, and in every case
+the data was clean and the assertion was wrong:
+
+- Part III used `LIKE '%' || char(0) || '%'` to look for NUL. SQLite's `char(0)` returns
+  an **empty string**, so the pattern degenerates to `'%%'` and matches every row.
+- Part III's furniture check `LIKE '%Page % of %'` matched Gygax's own prose —
+  "equi**ppage** a girdle **of** storm giant strength".
+- Part IV, derived from Part III, inherited an assertion that exactly **two** rows carry
+  U+FFFD (true of Part III, false of Part IV, whose three were corrected upstream) and an
+  FTS probe on the phrase "nonintelligent undead", which is Part III text and can never
+  appear in a Part IV row.
+
+The pattern: an assertion that cannot fail and an assertion that cannot pass are the same
+defect, and mechanical derivation between segments propagates both. Segment-specific
+probes are now taken from the segment's own data at run time rather than hardcoded, and
+text-shape checks are done in JS against the rows rather than in SQL `LIKE`.
+
 ## Observed limitation: OCR reconciliation over-reaches on units carrying context cards
 
 Oerth Journal #12 produced four `INSPECT` warnings (Q2, Q8, Q15, Q23). All four trace to
@@ -441,9 +483,9 @@ Recorded so these are not mistaken for certified:
 Verified absent from the corpus by inventory; these go through the full
 one-source-at-a-time process (§16) when their packages are ready:
 **Alarums & Excursions July 1975 letter**, **Ward "Gary Gygax Things"**,
-and the **ENWorld Page 39 update**. ENWorld **Part III is no longer outstanding** —
-the complete segment was ingested 4 September 2026; Parts IV-VII and XIII remain
-missing.
+and the **ENWorld Page 39 update**. ENWorld **Parts III and IV are no longer
+outstanding** — both complete segments were ingested 4 September 2026; **Parts V, VI,
+VII and XIII** remain missing.
 
 ---
 

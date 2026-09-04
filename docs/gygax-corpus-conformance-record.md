@@ -30,13 +30,14 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 | 6 | Gamasutra 2002 | **Conformant** | 6 stitched cards accepted; whitespace seams are presentation refinement, not evidentiary defect |
 | 7 | Wargamer's Digest 1974 | **Conformant**, pending review | 2 multi-asset units (§5) — confirmed correct: long testimony over substantial pages |
 | 8 | A&E #15 Gygax letter | **Conformant**, pending review | 1 multi-asset unit (§5) — confirmed correct: 3-page letter. Corpus's 2nd verified transcript, 1st from primary page images |
+| 9 | White Dwarf #14 interview | **Conformant** | 19 verified transcripts + corpus's **first verified `unit_context`**; 3 stitched cards accepted. Evidence-card defect caught pre-ingestion and corrected upstream |
 
 **Corpus-wide checks: all pass.** Integrity check; FTS sync and queryability for
 `units_fts` / `context_fts` / `discovery_fts`; transcript structural purity (§7); no
-context text indexed as speaker testimony (§8); all 600 staged evidence files hash
+context text indexed as speaker testimony (§8); all 622 staged evidence files hash
 to their database records (§15).
 
-**Summary: 8 objects · 0 defects · 0 grandfathered debt items · 4 review items.**
+**Summary: 9 objects · 0 defects · 0 grandfathered debt items · 4 review items.**
 
 ## Defect found and fixed
 
@@ -209,6 +210,20 @@ constraint.
 Scope records only that sameness across sources has **not been established**. It is
 not a claim that two different people existed; if evidence later establishes identity,
 that is an explicit reconciliation, never inferred from matching strings.
+
+## Failure class found: ordinary crops are gate-exempt but not self-verifying
+
+White Dwarf #14 (4 September 2026) exposed a control gap. Four ordinary crops sliced
+the initial glyph of every line and one stitched card clipped its final word. Ordinary
+single-source crops are deliberately exempt from the reconstruction acceptance gate
+(§6), so **no automated control would have caught this**: byte hashes prove the
+prepared bytes are unchanged, not that a crop contains all of the source text — the
+crop-level analogue of the Ward lesson about stitching.
+
+Caught by pre-ingestion review, corrected upstream from the source pages, and
+re-verified: the five corrected cards changed and the other fourteen were byte-
+identical, with transcripts, questions and unit identities unchanged. Practical rule:
+derived crop cards need eyes-on review before ingestion even when gate-exempt.
 
 ## Not auditable by code (historical judgement)
 

@@ -33,13 +33,14 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 | 9 | White Dwarf #14 interview | **Conformant** | 19 verified transcripts + corpus's **first verified `unit_context`**; 3 stitched cards accepted. Evidence-card defect caught pre-ingestion and corrected upstream |
 | 10 | 22 Questions on Tharizdun | **Conformant** | 22 Kasparian questions separated upstream after this gate refused the first package; 8 stitched cards accepted; no date value recorded (§ below). completeness `unknown` (§12 review) |
 | 11 | Oerth Journal #12 (Stormberg) | **Conformant** | First source using **four** context kinds (question / editorial_framing / headnote / caption) and the first with **unattributed** context; 8 reconstructions accepted; game-text sections deliberately excluded. 4 multi-asset units (§5) — confirmed correct: context cards, not testimony continuation. completeness `unknown` (§12 review) |
+| 12 | Sacco / Dungeons.it "Ultimate Interview" | **Conformant** | Largest source in the corpus: **60** Gygax units (50 replies + his own introduction + 9 interstitials); 35 reconstructions over **50 joins** accepted; dated only where the source evidences a year. 10 multi-asset units (§5) — confirmed correct: context cards. completeness `unknown` (§12 review) |
 
 **Corpus-wide checks: all pass.** Integrity check; FTS sync and queryability for
 `units_fts` / `context_fts` / `discovery_fts`; transcript structural purity (§7); no
-context text indexed as speaker testimony (§8); all 679 staged evidence files hash
+context text indexed as speaker testimony (§8); all 753 staged evidence files hash
 to their database records (§15).
 
-**Summary: 11 objects · 0 defects · 0 grandfathered debt items · 7 review items.**
+**Summary: 12 objects · 0 defects · 0 grandfathered debt items · 9 review items.**
 
 ## Defect found and fixed
 
@@ -315,6 +316,49 @@ discovery text with a unit annotation naming it as Stormberg's and giving its ch
 offsets. The frozen schema has no ordered mixed-speaker discovery segment; recorded, not
 amended.
 
+## Four gate rounds on one source: Sacco / Dungeons.it
+
+The "Ultimate Interview" (4 September 2026) is the largest source in the corpus — 60
+Gygax units — and took four packages to pass. Recording the sequence, because each
+round failed on a different axis and none of them was the evidence itself:
+
+1. **Metadata and attribution.** Family kind `website` is outside the frozen
+   vocabulary; the page-one headnote merged The Kyngdoms' third-person republisher
+   preface ("presented here with **his** permission") into Sacco's first-person
+   introduction under one row attributed to Sacco, dropping the heading between them;
+   two printed headings were unrepresented while nine others were carried.
+2. **Dating.** All 60 units were stamped `2003`. The source contradicts that: one
+   answer says "later this year, in 2003", another places a Comdex demonstration "this
+   November" *before* an alpha test expected "early in 2003", so it was written before
+   November 2002 — matching Gygax's own "in bits and pieces over a period of weeks".
+3. **Card readability**, found upstream and rebuilt at a larger render.
+4. **A manifest that described files it did not ship.** `source_portions[]` named 110
+   derivative assets of which **85 did not exist**, and all 25 that did carried a
+   `source_asset_sha256` matching nothing — while `clip_pdf_points`, the coordinates
+   that make a card independently re-derivable, had been dropped to make room for them.
+
+The final package fixes all four. Dating is now stronger than proposed: rather than
+stamping the span on every unit, only the **two units that date themselves** carry a
+year, the other 58 carry none, and `2002-2003` sits on the documentary object.
+
+**Verification worth reusing.** The manifest-repair round changed exactly two files
+(`cards/manifest.jsonl` and `SHA256SUMS.txt`); the other 107 were byte-identical to the
+package already reviewed, so the card work carried over intact. The restored clip boxes
+were then checked against the source rather than against the earlier package they were
+said to come from — they differ from it by 1-6 pt, being new boxes cut for the
+re-rendered cards — and **all 110 reproduce their card band with a zero-pixel
+ink-bounding-box delta when rendered from the PDF at 3.0×**. That is a stronger
+guarantee than provenance coordinates have carried anywhere else in the corpus: every
+card is independently re-derivable from the preserved PDF.
+
+**Sixty units, not fifty.** Besides the 50 replies, Gygax wrote his own introduction
+and nine interstitial statements under Sacco's section headings — under "GARY GYGAX,
+THE MAN" he writes "Does that mean you think I have grown up? Wrong!" Those are his
+words and sit in the Gygax layer; the headings above them are context, credited to
+nobody. Neither the republisher nor a printed heading is a person and the schema has no
+non-person speaker, so those identifications live in provenance labels rather than in
+invented `persons` rows — the same restraint applied to the Oerth Journal captions.
+
 ## Observed limitation: OCR reconciliation over-reaches on units carrying context cards
 
 Oerth Journal #12 produced four `INSPECT` warnings (Q2, Q8, Q15, Q23). All four trace to
@@ -330,6 +374,14 @@ anything (§6) — but any future source carrying context cards will raise the s
 false signal, so the warning must be read with that in mind rather than treated as an
 omission finding.
 
+**Recurred on Sacco, as predicted.** Of 35 reconstructions, 34 read clean and one —
+the Gygax introduction card — reported 44.4% coverage, because the control compared it
+against 2,991 characters including the republisher preface, Sacco's whole introduction
+and two headings, all of which live on separate cards. Scoped to the 1,377 characters
+actually printed on that card: **95.6% coverage, zero missing runs.** Two sources in a
+row now, so the fix is worth making when convenient: scope the reconciliation to the
+discovery rows whose evidence is that asset.
+
 ## Not auditable by code (historical judgement)
 
 Recorded so these are not mistaken for certified:
@@ -343,8 +395,8 @@ Recorded so these are not mistaken for certified:
 ## Prepared but not yet in the operational corpus
 
 Verified absent from the corpus by inventory; these go through the full
-one-source-at-a-time process (§16) when their packages are ready: **Kyngdoms / Sacco
-interview**, **Alarums & Excursions July 1975 letter**, **Ward "Gary Gygax Things"**,
+one-source-at-a-time process (§16) when their packages are ready:
+**Alarums & Excursions July 1975 letter**, **Ward "Gary Gygax Things"**,
 and the **ENWorld Page 39 update**. ENWorld **Part III** stays behind until a
 continuous recapture from thread page 103 / post #1021 onward is available.
 

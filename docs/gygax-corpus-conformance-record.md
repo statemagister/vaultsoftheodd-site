@@ -22,7 +22,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 | # | Source | Status | Open items |
 |---|---|---|---|
-| 1 | ENWorld Q&A (Stage A) | **Conformant** *(reconstructions regularised 2026-09-03)* | completeness `unknown` corpus-wide (§12 review) |
+| 1 | ENWorld Q&A (Stage A + **Part III**) | **Conformant** *(reconstructions regularised 2026-09-03; Part III added 2026-09-04)* | 532 → **686** units: the complete Part III segment closed a preservation gap the object had carried since v1. completeness `unknown` corpus-wide (§12 review) |
 | 2 | Dragonsfoot batch 01 | **Conformant** *(reconstructions regularised 2026-09-03)* | completeness `unknown` (§12 review) |
 | 3 | Ward "Greyhawk #2" | **Conformant** *(defect fixed, see below)* | — |
 | 4 | GameSpy Interview Part I | **Conformant** *(debt resolved 2026-09-03)* | — |
@@ -37,7 +37,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 **Corpus-wide checks: all pass.** Integrity check; FTS sync and queryability for
 `units_fts` / `context_fts` / `discovery_fts`; transcript structural purity (§7); no
-context text indexed as speaker testimony (§8); all 753 staged evidence files hash
+context text indexed as speaker testimony (§8); all 907 staged evidence files hash
 to their database records (§15).
 
 **Summary: 12 objects · 0 defects · 0 grandfathered debt items · 9 review items.**
@@ -359,6 +359,50 @@ nobody. Neither the republisher nor a printed heading is a person and the schema
 non-person speaker, so those identifications live in provenance labels rather than in
 invented `persons` rows — the same restraint applied to the Oerth Journal captions.
 
+## Extending an object rather than creating one: ENWorld Part III
+
+Part III (4 September 2026) is the first ingestion that **grows an object the corpus
+already held**, and it closed a gap carried since v1: the Part III coverage row
+described "selected screenshots around ENWorld pages 103-110 plus manual
+transcriptions", while the v2 corpus in fact held **zero** Part III units. It now holds
+154 Gygax posts out of the segment's 351 printable-view posts, P03:post0004 to
+post0349, 6 April to 22 July 2003. The ENWorld object goes 532 → 686 units and the
+coverage row was **rewritten, not added**.
+
+The structural risk here was duplication, not attribution, and the ingester refuses
+rather than guesses: it aborts unless the existing family and object are found, aborts
+if any Part III unit already exists, and aborts if any held unit falls inside the
+segment's date window. Verified before the run: Part II ends 2003-04-06T14:19 and this
+segment opens 2003-04-06T18:29, with no overlapping text and no overlapping dates.
+
+**Three preparations were needed, and the second two were caught by different checks.**
+
+1. The first named family "EN World" and object "Gary Gygax Q&A" — neither matching the
+   corpus. Applied literally that would have split the corpus's largest thread into a
+   duplicate object. It also carried `&gt;` undecoded inside a forum handle, printable
+   -view navigation furniture inside context text, and a two-quote post whose second,
+   *unattributed* quote had been attributed to the first quote's author.
+2. The second was correct except that one card (P03:post0164) stitched a page-44
+   portion containing **no ink at all** — the post ends on page 43. A reconstruction
+   that reconstructs nothing still enters the acceptance gate and still records a
+   provenance row for a page that contributed nothing. Found by rendering every clip
+   box and comparing ink bounding boxes: 199 of 200 matched their card band exactly and
+   the 200th was blank. Corrected upstream to a single-portion crop, with the other 153
+   card files left byte-identical so their verification carried over.
+
+**Gygax's words are often non-contiguous here.** A single post may carry several quote
+boxes with his replies between them — one has six. Whole-unit text matching therefore
+fails legitimately; matching line by line, all 1,199 lines are verbatim in the source.
+161 prompts were separated across 133 units, attributed to the handle the source names
+and left with **no speaker** on the three quote-backs it does not attribute. Handles
+stay source-scoped: 22 already-held ENWorld identities were reused and 33 created.
+
+**Two control characters** (U+0000, U+0001) survived the PDF text layer as failed
+glyphs in two context rows. Left raw, the NUL binds to SQLite TEXT as a terminator and
+silently truncates the rest of the row — the defect that cost 346 characters at Part II
+locator 101. Repaired upstream to U+FFFD, which keeps every surviving character and
+guesses nothing about the failed glyph.
+
 ## Observed limitation: OCR reconciliation over-reaches on units carrying context cards
 
 Oerth Journal #12 produced four `INSPECT` warnings (Q2, Q8, Q15, Q23). All four trace to
@@ -397,8 +441,9 @@ Recorded so these are not mistaken for certified:
 Verified absent from the corpus by inventory; these go through the full
 one-source-at-a-time process (§16) when their packages are ready:
 **Alarums & Excursions July 1975 letter**, **Ward "Gary Gygax Things"**,
-and the **ENWorld Page 39 update**. ENWorld **Part III** stays behind until a
-continuous recapture from thread page 103 / post #1021 onward is available.
+and the **ENWorld Page 39 update**. ENWorld **Part III is no longer outstanding** —
+the complete segment was ingested 4 September 2026; Parts IV-VII and XIII remain
+missing.
 
 ---
 

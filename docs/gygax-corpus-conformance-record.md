@@ -32,13 +32,14 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 | 8 | A&E #15 Gygax letter | **Conformant**, pending review | 1 multi-asset unit (§5) — confirmed correct: 3-page letter. Corpus's 2nd verified transcript, 1st from primary page images |
 | 9 | White Dwarf #14 interview | **Conformant** | 19 verified transcripts + corpus's **first verified `unit_context`**; 3 stitched cards accepted. Evidence-card defect caught pre-ingestion and corrected upstream |
 | 10 | 22 Questions on Tharizdun | **Conformant** | 22 Kasparian questions separated upstream after this gate refused the first package; 8 stitched cards accepted; no date value recorded (§ below). completeness `unknown` (§12 review) |
+| 11 | Oerth Journal #12 (Stormberg) | **Conformant** | First source using **four** context kinds (question / editorial_framing / headnote / caption) and the first with **unattributed** context; 8 reconstructions accepted; game-text sections deliberately excluded. 4 multi-asset units (§5) — confirmed correct: context cards, not testimony continuation. completeness `unknown` (§12 review) |
 
 **Corpus-wide checks: all pass.** Integrity check; FTS sync and queryability for
 `units_fts` / `context_fts` / `discovery_fts`; transcript structural purity (§7); no
-context text indexed as speaker testimony (§8); all 644 staged evidence files hash
+context text indexed as speaker testimony (§8); all 679 staged evidence files hash
 to their database records (§15).
 
-**Summary: 10 objects · 0 defects · 0 grandfathered debt items · 5 review items.**
+**Summary: 11 objects · 0 defects · 0 grandfathered debt items · 7 review items.**
 
 ## Defect found and fixed
 
@@ -269,6 +270,65 @@ Q19 is a source-formatting exception worth recording: the republication sets bot
 question and answer bold, where the other 21 answers carry a blockquote rule. The
 split follows the visible source boundary — the prefixed three-line question ends
 "she develop Tsojcanthʼs research?" — not the styling.
+
+## The source that states its own attribution key: Oerth Journal #12
+
+Stormberg's article (4 September 2026) prints its convention in the headnote: *"Text
+in bold indicates my line of questioning and the italic Author's Notes identify my
+observations and comments on Gary's answers."* The ingestion follows that sentence
+rather than an inference — 31 `interviewer_question`, 6 [PJS] notes and 1 transition as
+`editorial_framing`, all Stormberg's, none of it Gygax testimony.
+
+It is the first source to use **four** context kinds, and the first with **unattributed
+context**: the three illustration captions are credited to nobody in the issue, so their
+`unit_context.speaker_id` is NULL rather than assigned to Stormberg or Gygax — the same
+treatment as the 160 unnamed ENWorld quote segments. The package's
+`Oerth Journal (unattributed editorial caption)` label is carried as a provenance
+locator, not as a person row: the corpus does not invent an author to fill a column.
+
+Three representation decisions worth recording, all made because the alternative would
+have asserted something the source does not:
+
+- **No unit numbers.** The article prints every question as a bare `Q:`. The Q1..Q31
+  keys are preparation sequence, so `unit_number` is NULL and `unit_number_status` is
+  `unknown`; order lives in `sequence_in_object`, which §5 defines as an ordering key
+  and not a historical claim.
+- **Publication dated, testimony not.** Unlike 22 Questions, the publication dates ARE
+  known — Spring 2001 preview, August 2001 revision, July 2002 recompilation — so the
+  object carries `2001`–`2002-07` at year precision. The underlying emails are undated
+  and every unit keeps `date_value` NULL.
+- **Family typed by what it is.** The package declared `source_kind: questionnaire`.
+  Oerth Journal is a periodical that happens to carry a questionnaire, so the declared
+  kind was placed on the *object* (`object_type='questionnaire'`) and the family typed
+  `periodical`, matching White Dwarf and A&E. Typing the fanzine itself a questionnaire
+  would have misdescribed every future article from it.
+
+**Excluded by design:** the Dorgha Torgu and Greyhawk Gods / Rentaq game-text sections.
+The issue calls the Greyhawk Gods sourcebook a collaboration without allocating
+authorship, so classifying it as Gygax testimony would infer what the source withholds.
+Recorded as a coverage segment; preserved unchanged in the source PDF.
+
+**Q31 inline interpolation.** Gygax's printed answer contains Stormberg's bracketed
+identification "[the obscure clue in module C1 by Harold Johnson and Jeff R. Leason]".
+It cannot be separated without departing from the source, so it stays verbatim in the
+discovery text with a unit annotation naming it as Stormberg's and giving its character
+offsets. The frozen schema has no ordered mixed-speaker discovery segment; recorded, not
+amended.
+
+## Observed limitation: OCR reconciliation over-reaches on units carrying context cards
+
+Oerth Journal #12 produced four `INSPECT` warnings (Q2, Q8, Q15, Q23). All four trace to
+`sourceTextForUnit()` concatenating *every* discovery row bound to a unit — including
+caption and transition context whose evidence lives on a separate card or outside the
+crop — and then looking for that text in the testimony card's OCR, where it correctly is
+not. Re-reconciled against only the text actually printed on each card, the same four
+read 95.2% / 99.5% / 99.7% / 97.6% coverage with **zero** missing runs.
+
+No evidence was dropped; the control's scope is simply wider than the asset it inspects.
+Left as-is because OCR reconciliation is warning-only by design and never certifies
+anything (§6) — but any future source carrying context cards will raise the same
+false signal, so the warning must be read with that in mind rather than treated as an
+omission finding.
 
 ## Not auditable by code (historical judgement)
 

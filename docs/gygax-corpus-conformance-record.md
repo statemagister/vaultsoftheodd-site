@@ -1,6 +1,6 @@
 # Gygax Corpus — Retrospective Conformance Record
 
-**Audit date:** 3 September 2026
+**Audit date:** 4 September 2026
 **Rules applied:** [`gygax-corpus-evidence-ingestion-rules.md`](./gygax-corpus-evidence-ingestion-rules.md) (v1.3, 3 September 2026) · **Schema v2.1**
 **Operational baseline:** `9dc1292` (Gamasutra). First post-baseline expansion: `4b868f6` (Wargamer's Digest 1974).
 **Audit tool:** `scripts/gygax-v2-conformance-audit.mjs` (read-only; re-runnable)
@@ -31,13 +31,14 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 | 7 | Wargamer's Digest 1974 | **Conformant**, pending review | 2 multi-asset units (§5) — confirmed correct: long testimony over substantial pages |
 | 8 | A&E #15 Gygax letter | **Conformant**, pending review | 1 multi-asset unit (§5) — confirmed correct: 3-page letter. Corpus's 2nd verified transcript, 1st from primary page images |
 | 9 | White Dwarf #14 interview | **Conformant** | 19 verified transcripts + corpus's **first verified `unit_context`**; 3 stitched cards accepted. Evidence-card defect caught pre-ingestion and corrected upstream |
+| 10 | 22 Questions on Tharizdun | **Conformant** | 22 Kasparian questions separated upstream after this gate refused the first package; 8 stitched cards accepted; no date value recorded (§ below). completeness `unknown` (§12 review) |
 
 **Corpus-wide checks: all pass.** Integrity check; FTS sync and queryability for
 `units_fts` / `context_fts` / `discovery_fts`; transcript structural purity (§7); no
-context text indexed as speaker testimony (§8); all 622 staged evidence files hash
+context text indexed as speaker testimony (§8); all 644 staged evidence files hash
 to their database records (§15).
 
-**Summary: 9 objects · 0 defects · 0 grandfathered debt items · 4 review items.**
+**Summary: 10 objects · 0 defects · 0 grandfathered debt items · 5 review items.**
 
 ## Defect found and fixed
 
@@ -225,6 +226,50 @@ re-verified: the five corrected cards changed and the other fourteen were byte-
 identical, with transcripts, questions and unit identities unchanged. Practical rule:
 derived crop cards need eyes-on review before ingestion even when gate-exempt.
 
+## A source with no date value at all: 22 Questions on Tharizdun
+
+The questionnaire (4 September 2026) is the first object ingested with **no date value
+in any queryable column** — object and all 22 units carry `date_precision='unknown'`
+and NULL date values.
+
+What is known is a *terminus ante quem*: an Internet Archive capture attests the
+Greyhawk Codex page by 2000-10-13. What is not known is when Gygax answered. The
+schema has no field that keeps that distinction — writing 2000-10-13 into
+`date_to_value` would make the bound indistinguishable from a dated endpoint to every
+query and every display. The bound is therefore recorded as prose: object `notes`, the
+unit `source_locator`s, and a `date_limitation` annotation carrying the archived URL.
+
+The two republication dates that *are* precisely known — Bannock's 2016-06-09
+neuronphaser.com publication and the 2018-03-31 PDF capture — are held as provenance
+(object citation, `evidence_sources.capture_date_value`), never as testimony dates.
+Consistent with §12: precision is recorded, never manufactured. The cost is that the
+bound is not queryable; that is a known schema gap, recorded rather than amended.
+
+## Attribution gate refusing a package: the 22 Questions first cut
+
+The first cleaned 22 Questions package passed integrity, crop completeness, stitch
+continuity, date handling and transcript status — and was still refused, because all
+22 of Michael Kasparian's questions were merged into Gygax-scoped `discovery_text`.
+That is the same §8 defect regularised out of ENWorld (645 prompts) and Dragonsfoot
+(28) days earlier, and it would have made this the only source where interviewer
+wording sits inside Gygax's testimony. Q15 made the harm concrete: the parenthetical
+speculations "a Suel Mage of Power, an Elven arch-mage…" are Kasparian's, while
+Gygax's answer opens "Once more, I have no file of data dealing with Tsojcanth."
+
+Corrected upstream, not in code. The replacement package supplies 22 separate
+`quoted_question` segments, and the split was verified **lossless**: question + newline
++ answer reproduces the earlier merged text byte-for-byte in all 22 units, and every
+evidence asset SHA-256 is unchanged, so the pre-ingestion eyes-on acceptance of the
+cards carried over without re-review. Two vocabulary values outside the frozen schema
+(`republished_text_attributed_to_gygax`; `historical_web_republication` as a family
+name) and a `plaintext_sha256` field that in fact hashed the PNG were corrected in the
+same pass.
+
+Q19 is a source-formatting exception worth recording: the republication sets both
+question and answer bold, where the other 21 answers carry a blockquote rule. The
+split follows the visible source boundary — the prefixed three-line question ends
+"she develop Tsojcanthʼs research?" — not the styling.
+
 ## Not auditable by code (historical judgement)
 
 Recorded so these are not mistaken for certified:
@@ -238,9 +283,10 @@ Recorded so these are not mistaken for certified:
 ## Prepared but not yet in the operational corpus
 
 Verified absent from the corpus by inventory; these go through the full
-one-source-at-a-time process (§16) when their packages are ready: **22 Questions**,
-**Kyngdoms / Sacco interview**, **Alarums & Excursions July 1975 letter**, **Ward
-"Gary Gygax Things"**, and the **ENWorld Page 39 update**.
+one-source-at-a-time process (§16) when their packages are ready: **Kyngdoms / Sacco
+interview**, **Alarums & Excursions July 1975 letter**, **Ward "Gary Gygax Things"**,
+and the **ENWorld Page 39 update**. ENWorld **Part III** stays behind until a
+continuous recapture from thread page 103 / post #1021 onward is available.
 
 ---
 

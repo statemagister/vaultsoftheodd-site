@@ -22,7 +22,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 | # | Source | Status | Open items |
 |---|---|---|---|
-| 1 | ENWorld Q&A (Stage A + **Parts III–VII, XIII-A/B**) | **Conformant** *(reconstructions regularised 2026-09-03; Parts III–VII and XIII-A/B added 2026-09-04/05)* | 532 → **1,678** units. Part XIII is **partial**: batches A and B held (P13:post0001–1080), C to follow. **Stage A attributions need reconciliation**, and **Part IV carries a confirmed `Flekor`/`Flexor` fragmentation** (§ below). completeness `unknown` corpus-wide (§12 review) |
+| 1 | ENWorld Q&A (Stage A + **Parts III–VII, XIII complete**) | **Conformant** *(reconstructions regularised 2026-09-03; Parts III–VII and XIII-A/B/C added 2026-09-04/05)* | 532 → **1,885** units. Part XIII is **complete**: A+B+C held, P13:post0001–1594, **666 Gygax posts, zero uncovered**. **Stage A attributions need reconciliation**, and **Part IV carries a confirmed `Flekor`/`Flexor` fragmentation** (§ below). completeness `unknown` corpus-wide (§12 review) |
 | 2 | Dragonsfoot batch 01 | **Conformant** *(reconstructions regularised 2026-09-03)* | completeness `unknown` (§12 review) |
 | 3 | Ward "Greyhawk #2" | **Conformant** *(defect fixed, see below)* | — |
 | 4 | GameSpy Interview Part I | **Conformant** *(debt resolved 2026-09-03)* | — |
@@ -37,7 +37,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 **Corpus-wide checks: all pass.** Integrity check; FTS sync and queryability for
 `units_fts` / `context_fts` / `discovery_fts`; transcript structural purity (§7); no
-context text indexed as speaker testimony (§8); all 1,899 staged evidence files hash
+context text indexed as speaker testimony (§8); all 2,106 staged evidence files hash
 to their database records (§15).
 
 **Summary: 12 objects · 0 defects · 0 grandfathered debt items · 9 review items.**
@@ -778,3 +778,98 @@ node --experimental-sqlite scripts/gygax-v2-conformance-audit.mjs <v2.sqlite> --
 ```
 
 It exits non-zero on any defect or corpus-wide failure.
+
+## Part XIII-C: the segment closes, and the label rule is sharpened
+
+Part XIII-C added **207 units** (sequence 1679–1885), taking the ENWorld object to
+**1,885** and closing the Part XIII preservation segment. Coverage moved from
+`partial` to **`complete`** over `P13:post0001`–`P13:post1594`.
+
+**Coverage was verified independently of the package, and without ordinals.** A first
+attempt numbered posts from their header lines, recovered 1,598 of the declared 1,606,
+and therefore drifted; its position-level output (141 "missing", 142 "extra") was
+discarded as an artefact of that drift rather than reported. Completeness is a question
+about sets, not order, so the second attempt matched on `(byline, timestamp)`:
+
+- **665** `Col_Pladoh` post headers parse from the source PDF
+- **459** already held from XIII-A+B, **207** supplied by XIII-C → **666**
+- **zero** source posts uncovered; nothing by Gygax after `P13:post1594`
+
+The single held post that matches no source header is
+`Saturday, 13th October, 2007, 12:01 AM` — the XIII-B unit whose header is damaged in
+the text layer and was restored from the rendered card. Its absence from the parsed set
+is caused by exactly the damage that restoration repaired, so this independently
+corroborates that earlier correction.
+
+### The label rule, sharpened
+
+The first XIII-C package declared **19** antecedent/quote-label divergences and
+classified all of them as damage to the **rendered** quote label. Reading the labels off
+the cards showed that held for only twelve. In the other seven the card renders the
+handle **complete and identical to the antecedent**, and the PDF text layer alone had
+failed:
+
+| unit | antecedent | first declared as | card actually renders |
+|---|---|---|---|
+| 010 | Prince of Happiness | `Prince of \rappiness` | Prince of Happiness |
+| 011 | rossik | `rossi` | rossik |
+| 014 | Raven Crowking | `Raven Crow` | Raven Crowking |
+| 038 | T. Foster | `T<FFFD> Foster` | T. Foster |
+| 111 | Roland55 | `Roland<FFFD>` | Roland55 |
+| 139 | Brace Cormaeril | `Bra` | Brace Cormaeril |
+| 175 | FATDRAGONGAMES | `F<FFFD>TDRAGONGAMES` | FATDRAGONGAMES |
+
+The field named `rendered_quote_label_fragment` in fact held **text-layer output**: 14 of
+the 19 matched the text layer exactly or up to whitespace and marker normalisation, and
+the remaining 5 were that same extraction truncated at the first failed glyph. Ingesting
+as declared would have made the corpus assert, in a provenance locator, that a label
+"reads `Bra`" when the card plainly reads `Brace Cormaeril`.
+
+Corrected upstream, the package now separates **7 restorations** from **12 genuine
+rendering-damage** cases, with **0** identity disagreements, and keeps the text-layer
+fragments as audit metadata. After ingestion exactly **12** provenance rows carry a
+quote-label mismatch note; the seven restored handles carry clean attributions.
+
+**The evidence itself was never in question** — across all three XIII-C packages the 207
+card PNGs, the source PDF and the 24 review sheets are byte-identical, and all 262
+portions re-render from `clip_pdf_points` at 2.0× pixel-identically to their cards.
+
+### Two further defects, and the check gaps that hid them
+
+Running the verbatim control — which had not been run on the first package — surfaced
+two more, both predating the label correction:
+
+- **`ENW_P13C_086`** carried `?ttu Island in ?laska` (U+FFFD) where the card renders
+  **Attu Island in Alaska** plainly. Not cosmetic: context text reaches `discovery_fts`,
+  so a search for "Attu" would have missed the exchange while Gygax's own reply in the
+  *same unit* ("Attu and Kiska") matched. Both now return one hit each.
+- **`ENW_P13C_120`** recorded a discovery line matching neither the sorted text layer nor
+  the card. It was **not** a hand reordering as first characterised — it was the *no-sort*
+  layout extraction, a legitimate mode, but not the one the control compared against. The
+  corrected line preserves reading order across the break and infers no word; the card is
+  genuinely damaged there (`la  r    elicited`), and the unreadable word was left alone.
+
+Three check gaps were closed in the XIII-C ingester as a result:
+
+1. **U+FFFD was tested in handles and Gygax discovery but never in context prose.**
+2. **Control characters were tested on `text` columns but never on `source_locator`** —
+   the first package's raw U+000D would have gone into a provenance locator unchallenged.
+3. **The inherited date-window duplicate guard is unsound for this thread** and is no
+   longer fatal: Parts VII and VIII genuinely overlap Part XIII in time, so a unit inside
+   the window may be legitimately concurrent. The printable-view locator guard is the real
+   test and stays fatal.
+
+Counts in the ingester are now routed through a single `EXPECT` block, after several
+earlier ingesters inherited stale constants from the batch they were copied from.
+
+### Result
+
+`INGEST OK` first run, **21/21 confirmations**. +207 units, +206 contexts, +413 discovery
+rows, +207 assets, +262 provenance rows, +22 new handles (30 reused), +6 annotations,
+0 new objects or families. 55 stitched cards accepted eyes-on against the six join review
+sheets. Audit **12 objects · 0 defects**; build gate strict **accepted 605 · provisional 0
+· blocked 0**; an independent re-ingest from the pre-XIII-C snapshot reproduced content
+hash `3e9d2e2d…` over 15,837 rows.
+
+Corpus: **12 objects · 2,079 units · 2,423 context rows · 2,106 assets · 453 persons ·
+80 annotations**. The primary ENWorld preservation run is closed.

@@ -1,0 +1,66 @@
+[
+ {
+  "part": "Part I",
+  "locator": "enweggqa01.pdf PDF pages 13-13; printable-view position 60 (Part I)",
+  "stored_speaker": "Fourecks",
+  "quote_label": "Fourecks",
+  "antecedent_byline": "DDK",
+  "antecedent_page": 4
+ },
+ {
+  "part": "Part I",
+  "locator": "enweggqa01.pdf PDF pages 189-189; printable-view position 623 (Part I)",
+  "stored_speaker": "Baraendur",
+  "quote_label": "Baraendur",
+  "antecedent_byline": "Darrin Drader",
+  "antecedent_page": 187
+ },
+ {
+  "part": "Part II",
+  "locator": "enweggqa02.pdf PDF pages 2-2; printable-view position 7 (Part II)",
+  "stored_speaker": "Baraendur",
+  "quote_label": "Baraendur",
+  "antecedent_byline": "Darrin Drader",
+  "antecedent_page": 1
+ },
+ {
+  "part": "Part II",
+  "locator": "enweggqa02.pdf PDF pages 9-10; printable-view position 38 (Part II)",
+  "stored_speaker": "Baraendur",
+  "quote_label": "Baraendur",
+  "antecedent_byline": "Darrin Drader",
+  "antecedent_page": 8
+ },
+ {
+  "part": "Part II",
+  "locator": "enweggqa02.pdf PDF pages 10-10; printable-view position 39 (Part II)",
+  "stored_speaker": "Baraendur",
+  "quote_label": "Baraendur",
+  "antecedent_byline": "Darrin Drader",
+  "antecedent_page": 8
+ },
+ {
+  "part": "Part II",
+  "locator": "enweggqa02.pdf PDF pages 41-41; printable-view position 147 (Part II)",
+  "stored_speaker": "Tallarn",
+  "quote_label": "Tallarn",
+  "antecedent_byline": "Mathew_Freeman",
+  "antecedent_page": 41
+ },
+ {
+  "part": "Part II",
+  "locator": "enweggqa02.pdf PDF pages 46-46; printable-view position 161 (Part II)",
+  "stored_speaker": "Baraendur",
+  "quote_label": "Baraendur",
+  "antecedent_byline": "Darrin Drader",
+  "antecedent_page": 44
+ },
+ {
+  "part": "Part VIII",
+  "locator": "enweggqa08.pdf PDF pages 68-68; printable-view position 232 (Part VIII)",
+  "stored_speaker": "Jodjod",
+  "quote_label": "Jodjod",
+  "antecedent_byline": "Captain NeMo",
+  "antecedent_page": 68
+ }
+]

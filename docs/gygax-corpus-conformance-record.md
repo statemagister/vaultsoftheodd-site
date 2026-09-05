@@ -908,9 +908,12 @@ A side effect worth recording: the rebuild also **consolidated the staged eviden
 which had become split across two directories. All 2,106 assets now live in one tree and
 were verified present and hash-correct against the database.
 
-### The handle scan now returns one open case
+### The handle scan is now clear
 
 Re-run over the corrected corpus, the single-character-edit scan across all **434**
-ENWorld-scoped handles returns exactly one candidate: **`coz` (1 prompt, Part I) beside
-`BOZ` (28)**. It cannot be settled without the Part I source and therefore belongs to the
-Stage A reconciliation rather than to this correction.
+ENWorld-scoped handles returned exactly one candidate: `coz` (1 prompt, Part I) beside
+`BOZ` (28). With the Stage A source bundle supplied, that case is **settled from source
+evidence: they are distinct handles and no merge is warranted.** `coz` occurs twice in
+Part I and `BOZ` never; the second occurrence is `coz`'s own post byline (p.36, 5
+September 2002), and the quote label Gygax carries on p.38 agrees with it. See
+[the Stage A scope record](./gygax-stagea-reconciliation-scope.md).

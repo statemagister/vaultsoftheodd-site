@@ -22,7 +22,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 | # | Source | Status | Open items |
 |---|---|---|---|
-| 1 | ENWorld Q&A (Stage A + **Parts III–VII, XIII complete**) | **Conformant** *(reconstructions regularised 2026-09-03; Parts III–VII and XIII-A/B/C added 2026-09-04/05)* | 532 → **1,885** units. Part XIII is **complete**: A+B+C held, P13:post0001–1594, **666 Gygax posts, zero uncovered**. **Stage A attributions need reconciliation**, and **Part IV carries a confirmed `Flekor`/`Flexor` fragmentation** (§ below). completeness `unknown` corpus-wide (§12 review) |
+| 1 | ENWorld Q&A (Stage A + **Parts III–VII, XIII complete**) | **Conformant** *(reconstructions regularised 2026-09-03; Parts III–VII and XIII-A/B/C added 2026-09-04/05; Part IV identity reconciled 2026-09-05)* | 532 → **1,885** units. Part XIII is **complete**: A+B+C held, P13:post0001–1594, **666 Gygax posts, zero uncovered**. Part IV `Flekor`→`Flexor` **resolved**. **Stage A attributions still need reconciliation**, including the open `coz`/`BOZ` case (§ below). completeness `unknown` corpus-wide (§12 review) |
 | 2 | Dragonsfoot batch 01 | **Conformant** *(reconstructions regularised 2026-09-03)* | completeness `unknown` (§12 review) |
 | 3 | Ward "Greyhawk #2" | **Conformant** *(defect fixed, see below)* | — |
 | 4 | GameSpy Interview Part I | **Conformant** *(debt resolved 2026-09-03)* | — |
@@ -873,3 +873,44 @@ hash `3e9d2e2d…` over 15,837 rows.
 
 Corpus: **12 objects · 2,079 units · 2,423 context rows · 2,106 assets · 453 persons ·
 80 annotations**. The primary ENWorld preservation run is closed.
+
+
+## Part IV identity reconciliation: Flekor → Flexor
+
+Two Part IV prompts (`ENW_P04_095`, `ENW_P04_096`) were attributed to
+`Flekor the Mighty!`, a handle that existed nowhere else in the corpus, beside
+`Flexor the Mighty!` with 25 prompts. Both were corrected upstream to `Flexor`.
+
+**Verified against the rendering before ingestion, not accepted on assertion.** Across
+the whole Part IV source text layer, `Flekor` occurs exactly twice and only ever inside
+`Originally Posted by`; `Flexor the Mighty!` occurs seven times including three post
+bylines. Both cards were then rendered at 9× and **both read `Flexor the Mighty!`
+intact**. This is the same `k`-for-`x` text-layer substitution Part XIII-B documented in
+this PDF family, so the change is a restoration from the rendering, in line with the rule
+applied throughout Part XIII.
+
+**Applied by rebuild, not by patching.** Because the corpus had already been shown
+reproducible, the correction was made by swapping the Part IV package and rebuilding the
+whole corpus from held artefacts, rather than editing the derived database. The rebuilt
+corpus differs from its predecessor in exactly the expected places and nowhere else:
+
+- `persons` 453 → **452** — `Flekor the Mighty!` no longer exists;
+- two `discovery_text` provenance locators renamed from `Flekor` to `Flexor`;
+- the two prompts consolidated: `Flexor the Mighty!` 25 → **27**;
+- `Flekor` now occurs **zero** times anywhere in the corpus;
+- every other table byte-for-byte identical: units, context, assets, provenance,
+  coverage, annotations, objects, families.
+
+The package changed only metadata — all 117 cards and the source PDF are byte-identical
+to the superseded Part IV package.
+
+A side effect worth recording: the rebuild also **consolidated the staged evidence tree**,
+which had become split across two directories. All 2,106 assets now live in one tree and
+were verified present and hash-correct against the database.
+
+### The handle scan now returns one open case
+
+Re-run over the corrected corpus, the single-character-edit scan across all **434**
+ENWorld-scoped handles returns exactly one candidate: **`coz` (1 prompt, Part I) beside
+`BOZ` (28)**. It cannot be settled without the Part I source and therefore belongs to the
+Stage A reconciliation rather than to this correction.

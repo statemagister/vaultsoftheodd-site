@@ -1,8 +1,9 @@
 # Gygax Corpus — Preservation and Reproduction Manifest
 
-**Written:** 5 September 2026, at commit `d579f2b` (Part XIII closed complete)
+**Written:** 5 September 2026, at commit `d579f2b` (Part XIII closed complete);
+updated after the Part IV identity reconciliation
 **Corpus state:** 12 objects · 2,079 testimony units · 2,423 context rows · 2,106
-evidence assets · 453 persons · 6,022 discovery rows · 80 annotations
+evidence assets · **452** persons · 6,022 discovery rows · 80 annotations
 
 ## Why this document exists
 
@@ -104,7 +105,7 @@ gamespy-part1          unit-cards v2  --reconciliation <gamespy reconciliation p
 cyclopeatron · gamasutra-2002 · wargamers-digest-1974 · ae15-letter
 white-dwarf-14         corrected package  --page-map <map>        <-- see below
 22-questions · oerth-journal-12 (corrected) · sacco-interview (MANIFESTFIXED, not FINAL)
-enworld-part03 (corrected) · part04 (corrected) · part05
+enworld-part03 (corrected) · part04 (FLEXOR identity reconciliation) · part05
 enworld-part06 --force · part07 --force                            <-- see below
 enworld-part13a · part13b (corrected) · part13c (v2.2 corrected)
 ```
@@ -187,3 +188,21 @@ three different states, and the project is currently in the first only:
   package upstream and the ingestion re-run.
 - Plaintext SQLite, WAL/SHM sidecars and evidence originals stay gitignored. Only an
   encrypted artefact is deployable.
+
+## Update: the recipe has been exercised a second time
+
+The Part IV `Flekor`→`Flexor` correction was applied by **swapping one package and
+rebuilding the entire corpus** from held artefacts, rather than by editing the derived
+database. The rebuild differed from its predecessor only in the two corrected
+attributions and the person row they had forked, and in nothing else.
+
+Two consequences for preservation:
+
+- **The canonical corpus is now literally rebuild output**, so reproducibility is
+  maintained by construction rather than re-established after the fact.
+- **The staged evidence tree is no longer fragmented.** All 2,106 assets live in one
+  directory and were verified present and hash-correct against the database.
+
+The Part IV entry in any archive should be the **FLEXOR identity reconciliation**
+package; the previously canonical `CORRECTED` Part IV package is superseded, and its
+cards and source PDF are byte-identical to it in any case.

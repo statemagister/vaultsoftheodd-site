@@ -22,7 +22,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 | # | Source | Status | Open items |
 |---|---|---|---|
-| 1 | ENWorld Q&A (Stage A + **Parts III–V**) | **Conformant** *(reconstructions regularised 2026-09-03; Parts III–V added 2026-09-04/05)* | 532 → **900** units. Three segments closed preservation gaps carried since v1; Parts VI, VII and XIII remain missing. completeness `unknown` corpus-wide (§12 review) |
+| 1 | ENWorld Q&A (Stage A + **Parts III–VI**) | **Conformant** *(reconstructions regularised 2026-09-03; Parts III–VI added 2026-09-04/05)* | 532 → **1,005** units. Four segments closed preservation gaps carried since v1; Parts VII and XIII remain missing. **Stage A attributions need reconciliation** (§ below). completeness `unknown` corpus-wide (§12 review) |
 | 2 | Dragonsfoot batch 01 | **Conformant** *(reconstructions regularised 2026-09-03)* | completeness `unknown` (§12 review) |
 | 3 | Ward "Greyhawk #2" | **Conformant** *(defect fixed, see below)* | — |
 | 4 | GameSpy Interview Part I | **Conformant** *(debt resolved 2026-09-03)* | — |
@@ -37,7 +37,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 **Corpus-wide checks: all pass.** Integrity check; FTS sync and queryability for
 `units_fts` / `context_fts` / `discovery_fts`; transcript structural purity (§7); no
-context text indexed as speaker testimony (§8); all 1,121 staged evidence files hash
+context text indexed as speaker testimony (§8); all 1,226 staged evidence files hash
 to their database records (§15).
 
 **Summary: 12 objects · 0 defects · 0 grandfathered debt items · 9 review items.**
@@ -485,6 +485,83 @@ check now matches the parenthesised label exactly. The guard failing loudly on i
 defect is the behaviour worth having; a silently permissive version would have been
 worse.
 
+## Two attribution methods, and 485 attributions that need reconciling
+
+Establishing the Part V quote-label rule exposed a **methodological inconsistency** in
+what the corpus already holds. The two regimes are not equivalent:
+
+| Segments | Prompts | Attributed | How the participant was identified |
+|---|---|---|---|
+| **I, II, VIII** (Stage A) | 645 | **485** | parsed from the vBulletin quote **label** |
+| **III, IV, V, VI** | 569 | 562 | the recovered **antecedent post header** |
+
+Every one of the 485 Stage A `explicit_speaker_name` values came from a segment whose
+text opens `"Originally posted by …"`. No antecedent recovery was performed for those
+parts — the concept did not exist yet. Part V then showed that label and antecedent can
+disagree, and that when they do the label is the weaker evidence.
+
+So those 485 are **not** to be treated as equivalent to the later method. They need a
+preparation-side reconciliation against the Parts I, II and VIII source PDFs, which the
+Stage A package does not contain and which must be re-supplied. Each prompt should
+acquire the same distinction used prospectively: antecedent-post speaker as canonical
+where recoverable, source-native quote label retained separately, and an unresolved
+antecedent left **explicitly unresolved** rather than silently inheriting the label. No
+identity merging follows from a mismatch alone.
+
+Sequence agreed: **VII → XIII → Stage A reconciliation**, so the retrospective work does
+not block the remaining primary gaps.
+
+### What not to do, established by a failure
+
+An attempt to measure the label-vs-antecedent divergence rate by re-deriving labels from
+the PDFs **failed twice**, and its intermediate numbers (33%, 100%, 57%) are artefacts
+that should never be cited. The first pass collapsed newlines, so its label regex
+truncated handles at the first capitalised word — "Flexor the" for *Flexor the Mighty!*
+— and a 120-character look-back caught Gygax's own byline, which is why `Col_Pladoh`
+kept appearing as a quote label. The second, line-structured, still missed both cases.
+
+The decisive point is that **both runs failed their control**: neither recovered the two
+known Part V mismatches. A method that cannot recover the known cases has failed before
+any percentage it produces carries evidentiary weight. The reconciliation therefore
+belongs in preparation, working from the rendered evidence, not in algorithmic
+antecedent reconstruction inside the ingester.
+
+## Part VI, and a boundary that runs backwards
+
+Part VI (5 September 2026) added 105 Gygax posts of the segment's 217 printable-view
+posts, P06:post0004 to post0216, 9 February to 31 March 2004. The ENWorld object reaches
+**1,005** units — the first source in the corpus past a thousand.
+
+**The date-window duplicate guard blocked the first run**, and the reason was real. Part
+V's last Gygax post reads *Monday, 9th February, 2004, 10:08 PM*; Part VI's first three
+read 07:42, 07:54 and 08:04 PM the same evening, although they follow it in thread
+order. Both were read from their own preservation PDFs; neither is a parse error.
+
+Duplication was excluded four ways before the guard was overridden: Gygax's 22:08 post
+appears only in the Part V PDF, the 19:42 post only in the Part VI PDF, four content
+anchors from Part VI appear nowhere in Part V, and no text in the package already existed
+in the corpus. An earlier "the PDFs overlap" probe was a false positive — it had sampled
+Part V's trailing 3,000 characters, which is shared footer furniture.
+
+Every other boundary in this object is monotonic, so the anomaly is confined to this
+join. A roughly three-hour difference in the capturing account's display timezone would
+reconcile it exactly, since vBulletin renders times in the viewer's zone — but that is a
+hypothesis and is recorded as one. **Consequence:** ordering within a segment is sound;
+stored minute-precision times may not share a frame across this boundary. Verbatim
+`date_display` and normalised `date_value` are both kept, and `sequence_in_object`
+asserts nothing historical, so the question stays fully recoverable.
+
+The guard tests a date window as a *proxy* for duplication. The proxy misfires when
+segment clocks disagree — worth knowing before Part VII.
+
+**A source markup defect, preserved rather than repaired.** vBulletin failed to parse the
+quote markup on four posts, so a literal `[/QUOTE]` is rendered as visible text in the
+PDF, seven times across the segment. The cards preserve what the source displays, defect
+included, because the card *is* the source-native rendering. The participant wording
+those broken tags enclose is classified as context, and the stray markup appears in
+neither text layer. The malformed tag is in fact useful: it marks where the quoted
+material ends and Gygax resumes.
+
 ## Observed limitation: OCR reconciliation over-reaches on units carrying context cards
 
 Oerth Journal #12 produced four `INSPECT` warnings (Q2, Q8, Q15, Q23). All four trace to
@@ -523,9 +600,9 @@ Recorded so these are not mistaken for certified:
 Verified absent from the corpus by inventory; these go through the full
 one-source-at-a-time process (§16) when their packages are ready:
 **Alarums & Excursions July 1975 letter**, **Ward "Gary Gygax Things"**,
-and the **ENWorld Page 39 update**. ENWorld **Parts III, IV and V are no longer
-outstanding** — all three complete segments were ingested 4–5 September 2026;
-**Parts VI, VII and XIII** remain missing.
+and the **ENWorld Page 39 update**. ENWorld **Parts III–VI are no longer
+outstanding** — all four complete segments were ingested 4–5 September 2026;
+**Parts VII and XIII** remain missing.
 
 ---
 

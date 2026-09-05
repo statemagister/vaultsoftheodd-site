@@ -22,7 +22,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 | # | Source | Status | Open items |
 |---|---|---|---|
-| 1 | ENWorld Q&A (Stage A + **Parts III–VI**) | **Conformant** *(reconstructions regularised 2026-09-03; Parts III–VI added 2026-09-04/05)* | 532 → **1,005** units. Four segments closed preservation gaps carried since v1; Parts VII and XIII remain missing. **Stage A attributions need reconciliation** (§ below). completeness `unknown` corpus-wide (§12 review) |
+| 1 | ENWorld Q&A (Stage A + **Parts III–VII**) | **Conformant** *(reconstructions regularised 2026-09-03; Parts III–VII added 2026-09-04/05)* | 532 → **1,219** units. Five segments closed preservation gaps carried since v1; **only Part XIII remains missing**. **Stage A attributions need reconciliation** (§ below). completeness `unknown` corpus-wide (§12 review) |
 | 2 | Dragonsfoot batch 01 | **Conformant** *(reconstructions regularised 2026-09-03)* | completeness `unknown` (§12 review) |
 | 3 | Ward "Greyhawk #2" | **Conformant** *(defect fixed, see below)* | — |
 | 4 | GameSpy Interview Part I | **Conformant** *(debt resolved 2026-09-03)* | — |
@@ -37,7 +37,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 **Corpus-wide checks: all pass.** Integrity check; FTS sync and queryability for
 `units_fts` / `context_fts` / `discovery_fts`; transcript structural purity (§7); no
-context text indexed as speaker testimony (§8); all 1,226 staged evidence files hash
+context text indexed as speaker testimony (§8); all 1,440 staged evidence files hash
 to their database records (§15).
 
 **Summary: 12 objects · 0 defects · 0 grandfathered debt items · 9 review items.**
@@ -562,6 +562,73 @@ those broken tags enclose is classified as context, and the stray markup appears
 neither text layer. The malformed tag is in fact useful: it marks where the quoted
 material ends and Gygax resumes.
 
+## Part VII: the largest segment, and a label that was only a font
+
+Part VII (5 September 2026) added **214** Gygax units of the segment's 491 printable-view
+posts, P07:post0002 to post0491, 24 October 2004 to 20 February 2005. The ENWorld object
+reaches **1,219** units and only Part XIII remains missing.
+
+**A truncated discovery row, caught by line-level matching.** One unit (P07:post0316) had
+lost text from the searchable layer. The source's own rendering is broken there — an
+overlapping draw makes the text layer read *"the T h ape ofM theg genres"* — and the
+discovery string had stopped mid-garble, dropping *"of the genres as were Howard and"*.
+The card was correct throughout; only the search layer suffered, which on a corpus built
+for searching is the layer that matters: a query for *Howard*, *Lovecraft* or *genres*
+would have missed a post specifically about Gygax's literary influences. Corrected
+upstream from the rendering, keeping the mangled `ap` exactly as the evidence supports
+and recovering only words demonstrably present in the source. **`shape` was not
+inferred**, though it is the obvious reading.
+
+**Three of four "mismatches" were a glyph variant, not an identity question.** The package
+declared four antecedent/quote-label disagreements. Checked against the source:
+
+| String | As a post byline | As a quote label | Already held |
+|---|---|---|---|
+| `T. Foster` | **8×** | 4× | yes |
+| `TI Foster` | **0×** | 3× | no |
+| `Scott_Holst` | 1× | – | no |
+| `Doomed Battalions` | **0×** | 1× | no |
+
+`TI Foster` never appears as a byline and differs from `T. Foster` by one character — a
+rendering variant of a single handle, the Part IV U+FFFD class. `Scott_Holst` /
+`Doomed Battalions` are unrelated strings and a genuine disagreement. The identity
+-reconciliation worklist therefore carries **one** case from this segment, not four;
+counting the other three would have sent the retrospective chasing a font defect. The
+package now records the two kinds in separate fields.
+
+**Parts VII and VIII overlap in time.** Part VIII's first preserved post is 18 February
+2005 23:15 while Part VII runs to 20 February 16:02, so four Gygax posts here fall after
+Part VIII begins. None is duplicated — each was checked against the corpus, which already
+held Part VIII. This is the **second** boundary where the date-window guard proves a poor
+proxy for duplication, after Part V/VI. The guard is still worth having: both times it
+stopped the ingest and both times the investigation produced a real finding.
+
+**Also disclosed and verified:** ten source-rendered malformed `[/QUOTE]` cases, seven
+needing manual antecedent reconciliation upstream; three failed first letters (U+0000,
+U+0001, U+0002) restored as `I`, `D`, `H` from the rendering rather than guessed; and one
+`editorial_framing` context — Henry's administrator note announcing continuation into
+Part VIII — kept visible on the card but stored as framing, not as a prompt Gygax
+answered.
+
+### Three rounds of self-inflicted assertion failures
+
+This segment's ingester failed its own checks three times, and the data was correct every
+time:
+
+1. an inherited Part VI expectation that quote labels and antecedents never disagree
+   (Part VII declares four);
+2. the context-type INSERT still hardcoded `quoted_question`, so the one
+   `editorial_framing` row was written with the wrong type — the **only one of the three
+   that was a genuine defect in the output**, and the checks caught it;
+3. a locator-wording change I made broke my own `LIKE '%NOT Gygax%'` test, because the
+   reworded framing label read "NOT a prompt Gygax answered".
+
+The pattern is now established across Parts III–VII: **deriving one segment's ingester
+from the last carries stale expectations, and editing output wording silently invalidates
+assertions that match on it.** Both failure modes are cheap to catch and expensive to
+miss, which is the argument for running the confirmations on every segment rather than
+trusting a passing predecessor.
+
 ## Observed limitation: OCR reconciliation over-reaches on units carrying context cards
 
 Oerth Journal #12 produced four `INSPECT` warnings (Q2, Q8, Q15, Q23). All four trace to
@@ -600,9 +667,9 @@ Recorded so these are not mistaken for certified:
 Verified absent from the corpus by inventory; these go through the full
 one-source-at-a-time process (§16) when their packages are ready:
 **Alarums & Excursions July 1975 letter**, **Ward "Gary Gygax Things"**,
-and the **ENWorld Page 39 update**. ENWorld **Parts III–VI are no longer
-outstanding** — all four complete segments were ingested 4–5 September 2026;
-**Parts VII and XIII** remain missing.
+and the **ENWorld Page 39 update**. ENWorld **Parts III–VII are no longer
+outstanding** — all five complete segments were ingested 4–5 September 2026;
+**only Part XIII** remains missing.
 
 ---
 

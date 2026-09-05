@@ -1,0 +1,432 @@
+[
+ {
+  "file": "032e840e-gygaxoerthjournal12gygaxquestionnairesevidencev2.120260904.zip",
+  "bytes": 5040692,
+  "sha256": "52d981f255300b5061e2bc8470edb483d80bcf22f4e3511db9933df25eaf44e6",
+  "files_inside": 40,
+  "assets_contributed": {
+   "Thus Spake Gary Gygax: Ye Secrets of Oerth Revealed": 31
+  },
+  "status": "required"
+ },
+ {
+  "file": "09f65c64-gygax22questionsevidencev2.1corrected20260904.zip",
+  "bytes": 4018846,
+  "sha256": "08c750c8e56d3c1029245e25f3f621d4249afa6633d2fc1f79e96de1e44e4f8f",
+  "files_inside": 30,
+  "assets_contributed": {
+   "22 Questions on Tharizdun answered by Gary Gygax": 22
+  },
+  "status": "required"
+ },
+ {
+  "file": "0b0b32d3-gygaxenworldsearchenginev1.zip",
+  "bytes": 3712350,
+  "sha256": "e337288e64d15d7a7bca87183c892f1b35c599c230b43973cb80bca0ba5911c6",
+  "files_inside": 5,
+  "assets_contributed": {},
+  "status": "superseded/no surviving asset"
+ },
+ {
+  "file": "0c8ba3f2-gygaxenworldpart06COMPLETEevidencev220260905.zip",
+  "bytes": 15680554,
+  "sha256": "e915b3bc7e8e5455a70e6f9df6a04107f3c463ea31636f0504254a2146b87dd7",
+  "files_inside": 125,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 105
+  },
+  "status": "required"
+ },
+ {
+  "file": "0caa1766-gygaxenworldpart13Aevidencev220260905.zip",
+  "bytes": 25632765,
+  "sha256": "8f3cbb9ef43de5e35579b0d330822d19c70d20300d30d1f5bf95dc7d3398a4ca",
+  "files_inside": 255,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 224
+  },
+  "status": "required"
+ },
+ {
+  "file": "0d3c23da-gygaxcyclopeatronprovenancev2.zip",
+  "bytes": 890604,
+  "sha256": "3e68c5bd34da82b48959756a7a72e94a3cdabac4f231603dc5762f164d518a58",
+  "files_inside": 25,
+  "assets_contributed": {
+   "Gary Gygax's Whitebox OD&D House Rules": 1
+  },
+  "status": "required"
+ },
+ {
+  "file": "124d85df-gygaxdragonsfootbatch01reconstructionregularization20260903.zip",
+  "bytes": 638183,
+  "sha256": "fde0500c59ce10894d97c5fb300ffa5531aadb0f8588076075399d8f1b58d10e",
+  "files_inside": 15,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 9
+  },
+  "status": "required"
+ },
+ {
+  "file": "1829fe5d-gygaxwhitedwarf14interviewevidenceverifiedcorrected20260904.zip",
+  "bytes": 6033410,
+  "sha256": "041eff3d9185f6103d734bcc4f86894cf92ece3e2cbffe4dbb53791b7cd05365",
+  "files_inside": 29,
+  "assets_contributed": {
+   "White Dwarf Interviews Gary Gygax": 19
+  },
+  "status": "required"
+ },
+ {
+  "file": "1a90fd26-gygaxgamespyinterviewpart1evidence.zip",
+  "bytes": 825698,
+  "sha256": "7aa386bd715381e610902257dda39aba8a493619427f33fe79f7ecd1759dd69a",
+  "files_inside": 16,
+  "assets_contributed": {},
+  "status": "superseded/no surviving asset"
+ },
+ {
+  "file": "1e65b46f-gygaxenworldpart04COMPLETEevidencev220260904.zip",
+  "bytes": 14235921,
+  "sha256": "eadf3d1c22b1537c8dba9b89b8560623a1242654dfa2f4c48eb584a7038bf9c9",
+  "files_inside": 140,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 117
+  },
+  "status": "required"
+ },
+ {
+  "file": "1f88d3ec-gygaxgamasutra2002interviewevidence.zip",
+  "bytes": 3297402,
+  "sha256": "a724274fd05407615f84ad7d4367810d0b1cdfc71156eb84524e637ec843b01e",
+  "files_inside": 31,
+  "assets_contributed": {
+   "The Dungeon Master: An Interview with Gary Gygax": 14
+  },
+  "status": "required"
+ },
+ {
+  "file": "20d7ead4-gygaxwhitedwarf14interviewevidenceverified20260903.zip",
+  "bytes": 5395079,
+  "sha256": "0e0a42ab8e6adfce26ce37db170584b15154d6590bedc74dd5af5b0a245dd11b",
+  "files_inside": 26,
+  "assets_contributed": {
+   "White Dwarf Interviews Gary Gygax": 14
+  },
+  "status": "required"
+ },
+ {
+  "file": "23670ac8-gygaxenworldpart06COMPLETEevidencev220260905.zip",
+  "bytes": 15680554,
+  "sha256": "e915b3bc7e8e5455a70e6f9df6a04107f3c463ea31636f0504254a2146b87dd7",
+  "files_inside": 125,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 105
+  },
+  "status": "required"
+ },
+ {
+  "file": "25143d92-gygaxwargamersdigest1974swordssorceryevidencev3.zip",
+  "bytes": 5791618,
+  "sha256": "6cbd96626e7294027922fa699d75bd68197b4587fabdae5fa676a45e1b0b7e5b",
+  "files_inside": 25,
+  "assets_contributed": {
+   "Swords and Sorcery - In Wargaming": 10
+  },
+  "status": "required"
+ },
+ {
+  "file": "4535977d-gygaxenworldpart03batch01evidence20260904.zip",
+  "bytes": 3424743,
+  "sha256": "c951a2decab4fc11dec7c11908941e902fde4d7e58221190eeb2da6c1833d6df",
+  "files_inside": 32,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 20
+  },
+  "status": "required"
+ },
+ {
+  "file": "471d3268-gygaxwardgreyhawk2evidence.zip",
+  "bytes": 79084,
+  "sha256": "cb37278680a69d62a2c09559534b7ecb340f99b81903cb1ae35b83b8ca00e196",
+  "files_inside": 7,
+  "assets_contributed": {},
+  "status": "superseded/no surviving asset"
+ },
+ {
+  "file": "4ca16dd9-gygaxenworldpart13Bevidencev2.1CORRECTED20260905.zip",
+  "bytes": 30679642,
+  "sha256": "20c66f246c143ea615d2992b919535248a5ac020799172c31bf56e6746d41fdc",
+  "files_inside": 268,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 235
+  },
+  "status": "required"
+ },
+ {
+  "file": "4d9bd32d-gygaxgamespyinterviewpart1unitcardsv2.zip",
+  "bytes": 1986526,
+  "sha256": "23919348d8a0807594188b057d381dc1494d4fe280b5051588ca2c4eabe1731a",
+  "files_inside": 59,
+  "assets_contributed": {
+   "Gary Gygax Interview - Part I": 21
+  },
+  "status": "required"
+ },
+ {
+  "file": "587475b4-gygaxenworldpart07COMPLETEevidencev220260905.zip",
+  "bytes": 26862614,
+  "sha256": "411ca63d85fddee377e8c05055e66e52422b62ce7c95642d382d4fb15d3e65e4",
+  "files_inside": 245,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 214
+  },
+  "status": "required"
+ },
+ {
+  "file": "6527d623-gygaxdragonsfootcardsbatch01.zip",
+  "bytes": 1422544,
+  "sha256": "b954bdb23d2ae60e64fcf5a50e1858935a2cb52a5925ea5eae2df0846a3673f9",
+  "files_inside": 16,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 5
+  },
+  "status": "required"
+ },
+ {
+  "file": "6954e1a7-gygaxwardgreyhawk2evidencecorrectedv2.zip",
+  "bytes": 104717,
+  "sha256": "9c3dc036303351494edb78de96cfe28f7cc7e413b81bbc4c453d85a1c259871f",
+  "files_inside": 8,
+  "assets_contributed": {},
+  "status": "superseded/no surviving asset"
+ },
+ {
+  "file": "71cca1e7-gygaxdungeonsitsaccoultimateinterviewevidenceFINAL20260904.zip",
+  "bytes": 30907026,
+  "sha256": "e712d394a58d2756161014b01a7184231ab8a974ff1275e378ffb65f0ca33ff9",
+  "files_inside": 109,
+  "assets_contributed": {
+   "The Ultimate Interview With Gary Gygax": 74
+  },
+  "status": "required"
+ },
+ {
+  "file": "7865e27b-gygaxenworldpart03COMPLETEevidencev2.1CORRECTED20260904.zip",
+  "bytes": 15061426,
+  "sha256": "490680d0ac56e1b32fefffe3ad3c1a44daec03003e24bc2a9ca14d1788d48ff6",
+  "files_inside": 175,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 154
+  },
+  "status": "required"
+ },
+ {
+  "file": "8de852f6-gygaxenworldstageAquotedquestionregularizationv420260903.zip",
+  "bytes": 966993,
+  "sha256": "805277445f5f6101f9f8009d014068f3bb7bed3317473aed30213d616ad0df28",
+  "files_inside": 11,
+  "assets_contributed": {},
+  "status": "superseded/no surviving asset"
+ },
+ {
+  "file": "8fa737b4-gygaxenworldstageAreconstructionregularization20260903.zip",
+  "bytes": 16436716,
+  "sha256": "6f28750e96383cb224e8c7ae1b30ba8990cbdb37359b844c51709cfd5c5a9c2c",
+  "files_inside": 192,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 186
+  },
+  "status": "required"
+ },
+ {
+  "file": "91e5a549-gygaxdragonsfootbatch01quotedquestionregularization20260903.zip",
+  "bytes": 28284,
+  "sha256": "37722a821c05c0577cf9381507a29b5e749062db477b467479971e9fdbcf3d26",
+  "files_inside": 7,
+  "assets_contributed": {},
+  "status": "superseded/no surviving asset"
+ },
+ {
+  "file": "92ba67f7-gygaxenworldpart13Bevidencev220260905.zip",
+  "bytes": 30699424,
+  "sha256": "b169d0860bdc1ccd6f88f13d5c95d51f971429822140e12713f7361808eee835",
+  "files_inside": 268,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 235
+  },
+  "status": "required"
+ },
+ {
+  "file": "955dcdcb-gygaxenworldpart04COMPLETEevidencev2.1CORRECTED20260904.zip",
+  "bytes": 14229583,
+  "sha256": "a5df340a45c917dbf37801bf43e6d63e0d8a9c5a10b12380182892ce8bba6d02",
+  "files_inside": 140,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 117
+  },
+  "status": "required"
+ },
+ {
+  "file": "a042c1cf-gygaxwardgreyhawk2evidencecorrectedv3.zip",
+  "bytes": 110765,
+  "sha256": "a1f0785869bff851b2a28ba204bab07e6c37255366a54a0f692890f7509d6a59",
+  "files_inside": 8,
+  "assets_contributed": {
+   "Greyhawk #2": 1
+  },
+  "status": "required"
+ },
+ {
+  "file": "a1814f69-22Qclean.zip",
+  "bytes": 2513026,
+  "sha256": "7bf5c37bfc4ff02ecd2735450bda2d96045ff0ad9a4ed00cc34da7fa4b444cb4",
+  "files_inside": 27,
+  "assets_contributed": {
+   "22 Questions on Tharizdun answered by Gary Gygax": 22
+  },
+  "status": "required"
+ },
+ {
+  "file": "a35d36e1-gygaxwardgreyhawk2evidencecorrected.zip",
+  "bytes": 111310,
+  "sha256": "a5e21c2220febfd928e342490729e8bb7c8421357625eca3d520ab8706b59d16",
+  "files_inside": 8,
+  "assets_contributed": {},
+  "status": "superseded/no surviving asset"
+ },
+ {
+  "file": "a9416ca5-gygaxpdfpostcardsv2stageA.zip",
+  "bytes": 29823565,
+  "sha256": "a2f540a06dfd5198364c18c2ceb301bd3f1bc03866591bc985ef2a6abdcef428",
+  "files_inside": 535,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 346
+  },
+  "status": "required"
+ },
+ {
+  "file": "aca26ae3-gygaxae15letterevidenceverified20260903.zip",
+  "bytes": 490154,
+  "sha256": "a9d3ca6e7f7e88f0ae2953f9b2398fb4ba29d36366e7a2a700d9ebe40dded492",
+  "files_inside": 10,
+  "assets_contributed": {
+   "Alarums & Excursions #15": 3
+  },
+  "status": "required"
+ },
+ {
+  "file": "b477e46a-gygaxenworldpart03COMPLETEevidencev220260904.zip",
+  "bytes": 15021283,
+  "sha256": "de31eaae2416b9329cdac4d3c00cc3dbe1d34fe49c8671035db20b6c4448b28d",
+  "files_inside": 174,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 153
+  },
+  "status": "required"
+ },
+ {
+  "file": "cac839ec-gygaxenworldpart13Cevidencev220260905.zip",
+  "bytes": 26071873,
+  "sha256": "9c69eb7fb80c5996b6a93907ed619023382335561f7237e458d43eb922ad8a7b",
+  "files_inside": 238,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 207
+  },
+  "status": "required"
+ },
+ {
+  "file": "cc0eb06d-gygaxenworldstageAquotedquestionregularizationv320260903.zip",
+  "bytes": 965387,
+  "sha256": "58f3ff3738535d3a77c43612ddad15b3c38fd8fd4cc35f9e31c18b878b4f756b",
+  "files_inside": 10,
+  "assets_contributed": {},
+  "status": "superseded/no surviving asset"
+ },
+ {
+  "file": "d434633c-gygaxenworldpart13Cevidencev2.2CORRECTED20260905.zip",
+  "bytes": 26056229,
+  "sha256": "cbdc2b3d86f522fbee84ab8c5d2ad28e3fd7ad0e57d047afd48dd57317486a53",
+  "files_inside": 238,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 207
+  },
+  "status": "required"
+ },
+ {
+  "file": "db837b77-gygaxgamespypart1reconciliation20260903.zip",
+  "bytes": 1246218,
+  "sha256": "947ebb99822473d5cdd686ec7d6c6673b1e249ac22c5f24aa0bbfa3250f3647e",
+  "files_inside": 25,
+  "assets_contributed": {
+   "Gary Gygax Interview - Part I": 7
+  },
+  "status": "required"
+ },
+ {
+  "file": "e0cd982b-gygaxenworldpart05COMPLETEevidencev220260904.zip",
+  "bytes": 12291170,
+  "sha256": "08a92e9c490dadcf42558b73a0807a2b7537afd58f922ce73360e19e1256b283",
+  "files_inside": 120,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 97
+  },
+  "status": "required"
+ },
+ {
+  "file": "eb31466f-gygaxoerthjournal12gygaxquestionnairesevidencev2.1corrected20260904.zip",
+  "bytes": 5333326,
+  "sha256": "89d07639af11de2bf358d9147839298b6b073046b665ec5788dce4fcb56ea33b",
+  "files_inside": 47,
+  "assets_contributed": {
+   "Thus Spake Gary Gygax: Ye Secrets of Oerth Revealed": 35
+  },
+  "status": "required"
+ },
+ {
+  "file": "ef1a814a-gygaxenworldstageAquotecontextregularization20260903.zip",
+  "bytes": 902186,
+  "sha256": "1cd7e8f4d622c3eb8ec05b97cf504ed7f5c57d6a66907ae39c906e1ac8d11688",
+  "files_inside": 7,
+  "assets_contributed": {},
+  "status": "superseded/no surviving asset"
+ },
+ {
+  "file": "f398f35b-gygaxkyngdomssaccoultimateinterviewevidencev2.120260904.zip",
+  "bytes": 10861325,
+  "sha256": "1c376779321e3000bd8afeed8acbe0f0cda30271b38d2681a93e2ca42557af13",
+  "files_inside": 81,
+  "assets_contributed": {},
+  "status": "superseded/no surviving asset"
+ },
+ {
+  "file": "f4597f5b-gygaxdungeonsitsaccoultimateinterviewevidencev2.1MANIFESTFIXED20260904.zip",
+  "bytes": 30902145,
+  "sha256": "f9eb28c5fd8febbfa1fbbf72b2a8bafbf74d5ebf28ce22d3567dff8d84a6ff4c",
+  "files_inside": 109,
+  "assets_contributed": {
+   "The Ultimate Interview With Gary Gygax": 74
+  },
+  "status": "required"
+ },
+ {
+  "file": "f511fb06-gygaxenworldpart07COMPLETEevidencev2.1CORRECTED20260905.zip",
+  "bytes": 26862957,
+  "sha256": "012ed5d1aeadc48f7504b464e53770206fe03c531ba2525f25942a5e04da19d0",
+  "files_inside": 245,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 214
+  },
+  "status": "required"
+ },
+ {
+  "file": "fe6ddf7d-gygaxenworldpart13Cevidencev2.1CORRECTED20260905.zip",
+  "bytes": 26072381,
+  "sha256": "38a74d7c0c8bb237e7f51bb391228b040c91c16affcb3deb97ce5a513770bcf9",
+  "files_inside": 238,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 207
+  },
+  "status": "required"
+ }
+]

@@ -136,6 +136,14 @@
   "status": "required"
  },
  {
+  "file": "432b2af8-gygaxenworldstageAreconciliationSOURCEBUNDLE20260905.zip",
+  "bytes": 4849082,
+  "sha256": "6b6de4b5cf51d9380b54b1fe35acc37180ee1b26ead2618c70c66e837cd9c86f",
+  "files_inside": 5,
+  "assets_contributed": {},
+  "status": "metadata-only (no evidence assets)"
+ },
+ {
   "file": "4535977d-gygaxenworldpart03batch01evidence20260904.zip",
   "bytes": 3424743,
   "sha256": "c951a2decab4fc11dec7c11908941e902fde4d7e58221190eeb2da6c1833d6df",
@@ -324,6 +332,24 @@
    "Q&A with Gary Gygax": 153
   },
   "status": "required"
+ },
+ {
+  "file": "bb696eca-gygaxenworldpart04identityreconciliationFLEXOR20260905.zip",
+  "bytes": 14236244,
+  "sha256": "f4c4767d462588992a9953072a8c2684b23b65c6017b8e308525dcf9b62213a4",
+  "files_inside": 140,
+  "assets_contributed": {
+   "Q&A with Gary Gygax": 117
+  },
+  "status": "required"
+ },
+ {
+  "file": "bb98ceda-gygaxenworldstageAattributionreconciliationCORRECTED20260905.zip",
+  "bytes": 9472326,
+  "sha256": "96d33be913ba60be4f5751c5788226b74dab7181c74ea5c01aeff75fd76fa0ba",
+  "files_inside": 24,
+  "assets_contributed": {},
+  "status": "metadata-only (no evidence assets)"
  },
  {
   "file": "cac839ec-gygaxenworldpart13Cevidencev220260905.zip",

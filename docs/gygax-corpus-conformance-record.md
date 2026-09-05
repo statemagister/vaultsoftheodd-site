@@ -22,7 +22,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 | # | Source | Status | Open items |
 |---|---|---|---|
-| 1 | ENWorld Q&A (Stage A + **Parts III–IV**) | **Conformant** *(reconstructions regularised 2026-09-03; Parts III and IV added 2026-09-04)* | 532 → **803** units. Both segments closed preservation gaps carried since v1; Parts V–VII and XIII remain missing. completeness `unknown` corpus-wide (§12 review) |
+| 1 | ENWorld Q&A (Stage A + **Parts III–V**) | **Conformant** *(reconstructions regularised 2026-09-03; Parts III–V added 2026-09-04/05)* | 532 → **900** units. Three segments closed preservation gaps carried since v1; Parts VI, VII and XIII remain missing. completeness `unknown` corpus-wide (§12 review) |
 | 2 | Dragonsfoot batch 01 | **Conformant** *(reconstructions regularised 2026-09-03)* | completeness `unknown` (§12 review) |
 | 3 | Ward "Greyhawk #2" | **Conformant** *(defect fixed, see below)* | — |
 | 4 | GameSpy Interview Part I | **Conformant** *(debt resolved 2026-09-03)* | — |
@@ -37,7 +37,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 **Corpus-wide checks: all pass.** Integrity check; FTS sync and queryability for
 `units_fts` / `context_fts` / `discovery_fts`; transcript structural purity (§7); no
-context text indexed as speaker testimony (§8); all 1,024 staged evidence files hash
+context text indexed as speaker testimony (§8); all 1,121 staged evidence files hash
 to their database records (§15).
 
 **Summary: 12 objects · 0 defects · 0 grandfathered debt items · 9 review items.**
@@ -445,6 +445,46 @@ defect, and mechanical derivation between segments propagates both. Segment-spec
 probes are now taken from the segment's own data at run time rather than hardcoded, and
 text-shape checks are done in JS against the rows rather than in SQL `LIKE`.
 
+## When the quote label and the antecedent disagree: ENWorld Part V
+
+Part V (5 September 2026) added 97 Gygax posts of the segment's 214 printable-view
+posts, P05:post0005 to post0210, 10 December 2003 to 9 February 2004. The ENWorld
+object reaches **900** units.
+
+It introduced a distinction the earlier segments never needed. A vBulletin quote-back
+carries a label — *Originally Posted by X* — and the preserved antecedent post carries
+its own author header. In two cases here the two disagreed:
+
+| Antecedent | Header says | Quote label says |
+|---|---|---|
+| P05:post0003 | BrooklynKnight | ArthurQ |
+| P05:post0050 | Darrin Drader | Whisperfoot |
+
+The package treats the **antecedent as canonical** and keeps the label as linkage
+evidence only. That is right, and it was verified from two directions rather than
+accepted: the quoted words appear verbatim under the antecedent header at an earlier
+timestamp in the same preservation PDF, and neither phrase appears anywhere else in the
+corpus attributed to the label handle — so the alternative reading, that the label is
+correct and the antecedent is a repost, has no support.
+
+What makes the case sharp is that **both label handles are genuine ENWorld identities
+already held** from other segments (ArthurQ from Part IV, Whisperfoot from Part VIII).
+So this is not a phantom label. It is consistent with an account rename that the
+printable view renders inconsistently between post headers and quote blocks — which
+would make these two pairs candidate *identity links*. The corpus does not act on that:
+§19 requires identity to be independently established, and a rendering inconsistency is
+not that. The labels sit in the provenance locator so a later reconciliation can weigh
+them. Attributing the prompts to the labels would have credited two prompts to the wrong
+participants; treating the labels as proof of a rename would have merged identities on
+no evidence. Neither was done.
+
+**A guard caught a bug in itself.** The duplicate-segment check aborted the first run,
+reporting 157 existing "Part V" units. There were none: `LIKE '%Part V%'` also matches
+Part VI, VII and **VIII**. Roman-numeral labels are prefixes of one another, so the
+check now matches the parenthesised label exactly. The guard failing loudly on its own
+defect is the behaviour worth having; a silently permissive version would have been
+worse.
+
 ## Observed limitation: OCR reconciliation over-reaches on units carrying context cards
 
 Oerth Journal #12 produced four `INSPECT` warnings (Q2, Q8, Q15, Q23). All four trace to
@@ -483,9 +523,9 @@ Recorded so these are not mistaken for certified:
 Verified absent from the corpus by inventory; these go through the full
 one-source-at-a-time process (§16) when their packages are ready:
 **Alarums & Excursions July 1975 letter**, **Ward "Gary Gygax Things"**,
-and the **ENWorld Page 39 update**. ENWorld **Parts III and IV are no longer
-outstanding** — both complete segments were ingested 4 September 2026; **Parts V, VI,
-VII and XIII** remain missing.
+and the **ENWorld Page 39 update**. ENWorld **Parts III, IV and V are no longer
+outstanding** — all three complete segments were ingested 4–5 September 2026;
+**Parts VI, VII and XIII** remain missing.
 
 ---
 

@@ -13,7 +13,7 @@ You cancelled something. You expected to notice it. Then the next month arrives,
 
 If a tank is leaking, you can carry buckets to it or you can find the hole.
 
-Both leave more water in the tank. Only one of them feels like you have done something, because the bucket is visible and the hole was invisible the whole time it was costing you. Fix a leak and there’s nothing to point at afterwards. The tank simply stops emptying quite so fast.
+Both leave more water in the tank. Only one of them feels like you’ve done something, because the bucket is visible and the hole was invisible the whole time it was costing you. Fix a leak and there’s nothing to point at afterwards. The tank simply stops emptying quite so fast.
 
 That’s worth saying before the next article, which is about where money goes when you set it aside, because a great many people never get to that stage.
 
@@ -21,7 +21,7 @@ That’s worth saying before the next article, which is about where money goes w
 
 You cancelled a payment. One or more of the following may now be true.
 
-There is money genuinely left over at the end of the month that was not there before.
+There is money genuinely left over at the end of the month that wasn’t there before.
 
 Or the overdraft is a little less deep than it was.
 
@@ -48,7 +48,7 @@ So the question is not what should I do with the money. It is whether there is a
 
 Not everything leaving your account is a leak. Rent is not a leak. Insurance you never claim on is doing its job invisibly, which is different from doing nothing. The point is not to seal every outflow, only to notice which ones nobody is choosing any more.
 
-And a small amount kept back can still be the right call while you are borrowing, which sounds like the opposite of what I just said. If you have nothing at all within reach, the next thing that breaks goes straight back onto borrowing and the leak reopens. Interrupting that pattern can matter more than the arithmetic. That is what the next article is about.
+And a small amount kept back can still be the right call while you’re borrowing, which sounds like the opposite of what I just said. If you’ve nothing at all within reach, the next thing that breaks goes straight back onto borrowing and the leak reopens. Interrupting that pattern can matter more than the arithmetic. That is what the next article is about.
 
 Finally, if you looked and found nothing worth stopping, that is not a failure and it does not mean any of this was aimed at somebody else. It means your money is already committed, which is information rather than a verdict.
 
@@ -56,13 +56,13 @@ Finally, if you looked and found nothing worth stopping, that is not a failure a
 
 Say out loud which of the four things happened. That is all.
 
-If stopping the payment closed a gap, reduced what you owe, or kept something from being borrowed, then the money has already done its work and you have finished for this month.
+If stopping the payment closed a gap, reduced what you owe, or kept something from being borrowed, then the money has already done its work and you’ve finished for this month.
 
 You may not have saved any money at all. You may simply have stopped borrowing it.
 
-You do not need a savings account this month. You need to notice that this month was slightly less expensive to survive than the last one.
+You don’t need a savings account this month. You need to notice that this month was slightly less expensive to survive than the last one.
 
-If there is money genuinely sitting there at the end of the month, unspoken for, then it is finally available to wait, and the next article is about where.
+If there is money genuinely sitting there at the end of the month, unspoken for, then it’s finally available to wait, and the next article is about where.
 
 ## Useful links
 

@@ -22,7 +22,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 | # | Source | Status | Open items |
 |---|---|---|---|
-| 1 | ENWorld Q&A (Stage A + **Parts III–VII, XIII complete**) | **Conformant** *(reconstructions regularised 2026-09-03; Parts III–VII and XIII-A/B/C added 2026-09-04/05; Part IV identity reconciled 2026-09-05)* | 532 → **1,885** units. Part XIII is **complete**: A+B+C held, P13:post0001–1594, **666 Gygax posts, zero uncovered**. Part IV `Flekor`→`Flexor` **resolved**. **Stage A attributions still need reconciliation**, including the open `coz`/`BOZ` case (§ below). completeness `unknown` corpus-wide (§12 review) |
+| 1 | ENWorld Q&A (Stage A + **Parts III–VII, XIII complete**) | **Conformant** *(reconstructions regularised 2026-09-03; Parts III–VII and XIII-A/B/C added 2026-09-04/05; Part IV identity reconciled 2026-09-05)* | 532 → **1,885** units. Part XIII is **complete**: A+B+C held, P13:post0001–1594, **666 Gygax posts, zero uncovered**. Part IV `Flekor`→`Flexor` **resolved**. **Stage A attributions still need reconciliation** — scoped 2026-09-05: 262 of 485 antecedents recoverable, 8 disagreements to weigh, 212 not recoverable from the three Part PDFs. `coz`/`BOZ` **settled from source: distinct handles, no merge** (§ below). completeness `unknown` corpus-wide (§12 review) |
 | 2 | Dragonsfoot batch 01 | **Conformant** *(reconstructions regularised 2026-09-03)* | completeness `unknown` (§12 review) |
 | 3 | Ward "Greyhawk #2" | **Conformant** *(defect fixed, see below)* | — |
 | 4 | GameSpy Interview Part I | **Conformant** *(debt resolved 2026-09-03)* | — |

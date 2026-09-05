@@ -109,3 +109,38 @@ Remaining known limits, not defects but boundaries:
   as an antecedent) are necessary but not sufficient.
 
 The 8 disagreements are therefore a **candidate list to verify**, not a correction set.
+
+## The handoff file
+
+The full result is `docs/gygax-stagea-antecedent-candidates.json` — **all 485 attributed
+prompts**, not only the disagreements, so the upstream pass packages the demonstrated set
+rather than re-deriving a subtly different one. Each row carries the unit locator,
+printable-view position, context sequence, the stored (label-derived) speaker, the
+recorded quote label, a prompt excerpt and a sha256 of the full prompt text, the outcome,
+and — where recovered — the antecedent byline, page and timestamp.
+
+It is produced by `scripts/gygax-v2-stagea-antecedent-scan.py`, which is read-only,
+re-runnable, and **refuses to write output unless both controls pass**, so the set is
+bound to a commit rather than to one session:
+
+```
+python3 scripts/gygax-v2-stagea-antecedent-scan.py <v2.sqlite> <source-bundle-dir> <out.json>
+```
+
+The file also embeds the three source PDF sha256 values, so the correction package that
+carries those same bytes can be checked against it.
+
+### Recovery is markedly uneven across the three Parts
+
+| part | attributed | agrees | disagrees | not recoverable | too short |
+|---|---|---|---|---|---|
+| Part I | 216 | 123 | 2 | 88 | 3 |
+| Part II | 112 | 58 | 5 | 46 | 3 |
+| Part VIII | 157 | 73 | 1 | 78 | 5 |
+
+**Part VIII is the weakest case: more prompts are unrecoverable than recoverable (78 vs
+73).** It opens in February 2005, well into the thread, so a larger share of what Gygax
+quotes there originates in posts that precede its own preservation window. That is a
+property of where the Part boundary falls, not a defect in the material, and it is the
+clearest illustration of why the 223 non-promotable prompts must keep the weaker Stage A
+state rather than being made to look uniform with the rest.

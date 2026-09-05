@@ -146,10 +146,27 @@ evidence tree. This includes the four recipe details in the previous section, ea
 which is recoverable from git history or from a documented derivation, though none from
 the packages alone.
 
-**3. Currently missing or unproven — nothing that blocks reconstruction.** The only input
-not held as a file anywhere is the White Dwarf #14 page map, and it was reconstructed
-from held artefacts during this audit and shown to close the gap exactly. The passphrase
-is deliberately absent and must stay so.
+**3. Currently missing or unproven — now empty.** The only input not held as a file
+anywhere was the White Dwarf #14 page map. It has since been **committed to the
+repository** as `scripts/gygax-v2-wd14-pagemap.json`, so it is no longer merely derivable
+but durable. The passphrase is deliberately absent and must stay so.
+
+### The reconstruction path is now executable, not just documented
+
+`scripts/gygax-v2-rebuild.sh <packages-dir> <out-dir>` performs the whole rebuild. It
+encodes all four non-obvious details — the Sacco MANIFESTFIXED package rather than the one
+named FINAL, `--force` on Parts VI and VII, the committed page map, and the two packages
+that nest their payload under an inner directory — so none of them has to be rediscovered
+from commit archaeology.
+
+It was verified on 5 September 2026 against the canonical corpus *after* the Stage A
+reconciliation: all ten tables identical on id-independent content, and a 2,106-file
+evidence tree byte-identical on every path. Prose was not enough; running it is what
+surfaced those four details in the first place.
+
+An archive therefore needs three things, and only three: the package set named in the
+inventory, this repository, and the manifest/checksums. The page map is inside the
+repository, so it is no longer a separate item.
 
 ### Two operational findings from the audit
 

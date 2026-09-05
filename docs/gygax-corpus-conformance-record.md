@@ -954,9 +954,14 @@ Two consequences worth recording:
   by antecedent under the later standard. The 5 Baraendur prompts joining them take it to
   10. That is independent cross-part corroboration that the replacement is right, and it
   is exactly the consistency the reconciliation existed to produce.
-- **`Jodjod` is left holding zero prompts but its person row is retained.** Deleting it
-  would be the identity merge the package forbids; the handle remains attested as a quote
-  label in the provenance of the prompt that moved.
+- **`Jodjod` is left holding zero prompts but its person row is retained** — confirmed as
+  the intended outcome. Deleting it would be the identity merge the package forbids, and
+  it would collapse the distinction this whole reconciliation exists to draw. The ruling
+  is worth stating as a modelling principle: **`persons` records attested participant
+  identifiers, not current canonical prompt authors.** `Jodjod` remains historically
+  attested as the source-native quote-back label on the prompt that moved to
+  `Captain NeMo`, so a row with zero canonical prompts is not spurious — it is the
+  evidence model working. The empty row is a useful test case for exactly that.
 
 ### Applied by rebuild, and one fail-closed catch
 

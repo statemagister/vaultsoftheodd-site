@@ -48,7 +48,13 @@ const REG = (() => { const i = args.indexOf('--regularization'); return (i >= 0 
 // is never indexed as Gygax-authored. quoted_question is used in its FUNCTIONAL
 // sense (the prompt Gygax selected and answered), not as a punctuation test.
 const QQ = (() => { const i = args.indexOf('--quoted-questions'); return (i >= 0 && args[i + 1] && !args[i + 1].startsWith('--')) ? args[i + 1] : null; })();
-const [DB_PATH, PKG, EVID] = args.filter((a) => !a.startsWith('--') && a !== REG && a !== QQ);
+// Stage A attributed every quoted prompt from the vBulletin quote LABEL, while Parts
+// III-VII and XIII attribute from the recovered ANTECEDENT post. This overlay reconciles
+// the two, per-prompt, from an upstream decision set. It never invents a decision: each
+// of the 485 prompts must be named explicitly, and each decision is applied exactly as
+// written or the run aborts.
+const AR = (() => { const i = args.indexOf('--attribution-reconciliation'); return (i >= 0 && args[i + 1] && !args[i + 1].startsWith('--')) ? args[i + 1] : null; })();
+const [DB_PATH, PKG, EVID] = args.filter((a) => !a.startsWith('--') && a !== REG && a !== QQ && a !== AR);
 if (!DB_PATH || !PKG || !EVID) {
   console.error('Usage: node --experimental-sqlite scripts/gygax-v2-ingest-enworld-cards.mjs <v2.sqlite> <package-dir> <evidence-staging-dir> [--force]');
   process.exit(2);
@@ -112,6 +118,52 @@ if (REG) {
 // Natural-key-only fallback is NOT authorised.
 const QREPL = new Map();      // "part/pos" -> replacement record
 const QSEGS = new Map();      // "part/pos" -> ordered segment records
+// ---- Stage A attribution reconciliation overlay -----------------------------
+// Keyed by Part + printable-view position + context sequence, exactly as the package
+// specifies. The prompt sha256 is checked too, so a decision cannot silently land on a
+// prompt whose wording differs from the one it was made against.
+const ARDEC = new Map();
+let AR_META = null;
+const arStats = { promoted: 0, replaced: 0, unresolved: 0 };
+const arSeen = new Set();
+// Must reproduce EXACTLY the normalisation the candidate set hashed, or the fail-closed
+// prompt check would reject every row: NFKC, curly punctuation folded, whitespace
+// collapsed, and the leading "Originally posted by X" label line dropped.
+const arNorm = (t) => {
+  let x = String(t || '').normalize('NFKC');
+  for (const [a, b] of [['\u2019', "'"], ['\u2018', "'"], ['\u201c', '"'],
+                        ['\u201d', '"'], ['\u2013', '-'], ['\u2014', '-']]) x = x.split(a).join(b);
+  return x.replace(/\s+/g, ' ').trim();
+};
+const arPromptSha = (text) => {
+  // Hash the SANITISED text, because that is what the corpus stores and therefore what
+  // the decision set was made against. Part II locator 101 carries an embedded NUL — the
+  // isolated storage defect the Stage A v4 package documents — and hashing the raw form
+  // would reject that one decision even though the wording is the same.
+  const lines = String(text || '').split(NUL).join(REPLACEMENT).split('\n');
+  const body = /^\s*Originally posted by\s+/i.test(lines[0] || '') ? lines.slice(1).join('\n') : lines.join('\n');
+  return sha(Buffer.from(arNorm(body), 'utf8'));
+};
+if (AR) {
+  if (!QQ) die('--attribution-reconciliation requires --quoted-questions: it reconciles the context rows that overlay creates.');
+  AR_META = JSON.parse(readFileSync(join(AR, 'stageA-reconciliation-decisions.json'), 'utf8'));
+  const seen = new Set();
+  for (const d of AR_META.decisions) {
+    const k = `${d.part}/${d.printable_view_position}/${d.context_sequence}`;
+    if (seen.has(k)) die(`attribution reconciliation names ${k} twice`);
+    seen.add(k);
+    if (!['promote_to_antecedent_attribution', 'replace_canonical_speaker_with_antecedent_byline', 'no_attribution_change'].includes(d.decision))
+      die(`unknown reconciliation decision "${d.decision}" for ${k}`);
+    // A promotion must not move the speaker, and a no-change must not move it either.
+    // Only an explicit replacement may, and only to the recovered antecedent byline.
+    if (d.decision !== 'replace_canonical_speaker_with_antecedent_byline' && d.canonical_speaker !== d.stored_speaker)
+      die(`${k}: decision ${d.decision} changes the speaker, which only a replacement may do`);
+    if (d.decision === 'replace_canonical_speaker_with_antecedent_byline' && d.canonical_speaker !== d.antecedent_byline)
+      die(`${k}: replacement does not use the recovered antecedent byline`);
+    ARDEC.set(k, d);
+  }
+}
+
 if (QQ) {
   const key = (p, n) => `${p}/${n}`;
   const rd = (f) => readFileSync(join(QQ, f), 'utf8').split('\n').filter((l) => l.trim()).map((l) => JSON.parse(l));
@@ -302,9 +354,37 @@ for (const r of recs) {
     for (const s of QSEGS.get(qk) || []) {
       seqNo++;
       const handle = s.explicit_speaker_name || null;
-      const pid = handle ? personIdForHandle(handle) : null;
+      let pid = handle ? personIdForHandle(handle) : null;
+      let who = handle ? handle : 'speaker not named in this quote-back';
+      // Reconcile this prompt's attribution if a decision names it. Unattributed
+      // quote-backs are out of scope: the decision set covers attributed prompts only.
+      if (AR && handle) {
+        const dk = `${label}/${r.post_number}/${seqNo}`;
+        const d = ARDEC.get(dk);
+        if (!d) die(`no attribution decision for ${dk}, but the overlay must name every attributed prompt`);
+        if (d.stored_speaker !== handle) die(`${dk}: decision was made against speaker "${d.stored_speaker}" but the package supplies "${handle}"`);
+        const promptSha = arPromptSha(s.text || '');
+        if (d.prompt_sha256 && d.prompt_sha256 !== promptSha)
+          die(`${dk}: decision was made against a different prompt wording (sha mismatch)`);
+        arSeen.add(dk);
+        if (d.decision === 'replace_canonical_speaker_with_antecedent_byline') {
+          // The antecedent post header is canonical. The label is kept in the locator as
+          // LINKAGE EVIDENCE only — never as the speaker — and establishes no identity.
+          pid = personIdForHandle(d.canonical_speaker);
+          who = `${d.canonical_speaker} (recovered antecedent post header, ${d.source_pdf} p.${d.antecedent_page}, ${d.antecedent_timestamp}; the vBulletin quote label reads "${d.stored_speaker}" — retained as linkage evidence, NOT as the speaker, and establishing no identity)`;
+          arStats.replaced++;
+        } else if (d.decision === 'promote_to_antecedent_attribution') {
+          who = `${handle} (confirmed against the recovered antecedent post header, ${d.source_pdf} p.${d.antecedent_page}, ${d.antecedent_timestamp}; label and antecedent agree)`;
+          arStats.promoted++;
+        } else {
+          // The antecedent could not be recovered from the preservation Part. The
+          // attribution stays as Stage A left it and is marked so, rather than being
+          // made to look as though it met the antecedent standard.
+          who = `${handle} (attribution derived from the vBulletin quote label only; antecedent NOT recovered — ${d.outcome} — and this attribution remains UNRESOLVED)`;
+          arStats.unresolved++;
+        }
+      }
       insCtx.run(uid, pid, seqNo);
-      const who = handle ? handle : 'speaker not named in this quote-back';
       insDisc.run(obj.id, label, `${locator}; quoted prompt ${seqNo} — ${who} (quoted by Gygax, NOT Gygax-authored)`, (s.text || '').split(NUL).join(REPLACEMENT).trim(), uid);
       stats.discovery++; stats.qSegments++;
       if (handle) stats.qWithSpeaker++; else stats.qNoSpeaker++;
@@ -346,6 +426,13 @@ if (REG) {
   if (stats.rangeCorrected.length > 8) P(`             …and ${stats.rangeCorrected.length - 8} more`);
 }
 if (stats.nulSanitised) { P(`  NUL bytes sanitised to U+FFFD   : ${stats.nulSanitised}  (prevents silent SQLite truncation of the remaining extracted text)`); for (const u of stats.nulUnits) P(`             ${u}`); }
+if (AR) {
+  P(`  attribution reconciliation      : ${AR_META.decisions.length} decisions applied to ${arSeen.size} attributed prompt(s)`);
+  P(`    promoted to antecedent basis        : ${arStats.promoted}  (speaker string unchanged; label and antecedent agree)`);
+  P(`    canonical speaker REPLACED          : ${arStats.replaced}  (antecedent byline canonical; label kept as linkage evidence only)`);
+  P(`    left explicitly UNRESOLVED          : ${arStats.unresolved}  (antecedent not recoverable from the preservation Part)`);
+  P('    no identity merge is authorised by any of these decisions.');
+}
 if (QQ) {
   P(`  quoted-question separation      : ${stats.qUnits} units split into Gygax-reply + ${stats.qSegments} quoted prompt(s)`);
   P(`    quoted prompts with a named speaker : ${stats.qWithSpeaker}`);
@@ -385,6 +472,29 @@ ok('no historical unit_number asserted (all NULL / unknown)',
    q(`SELECT count(*) c FROM testimony_units WHERE unit_number IS NOT NULL OR unit_number_status<>'unknown'`) === 0);
 ok('printable-view positions preserved as locators',
    q(`SELECT count(*) c FROM testimony_units WHERE source_locator LIKE '%printable-view position %'`) === after.units);
+if (AR) {
+  // Every decision must have landed, and nothing may have been applied that the
+  // package did not name. A decision left unconsumed means the overlay silently
+  // failed to match a prompt, which would leave that attribution unreconciled.
+  const unconsumed = AR_META.decisions.filter((d) => !arSeen.has(`${d.part}/${d.printable_view_position}/${d.context_sequence}`));
+  ok(`every one of the ${AR_META.decisions.length} decisions was applied`, unconsumed.length === 0,
+     unconsumed.length ? `${unconsumed.length} unconsumed, e.g. ${unconsumed[0].part}/${unconsumed[0].printable_view_position}` : '');
+  ok('the applied split matches the package counts',
+     arStats.promoted === AR_META.counts.antecedent_agrees
+     && arStats.replaced === AR_META.counts.antecedent_disagrees
+     && arStats.unresolved === AR_META.counts.antecedent_not_recoverable + AR_META.counts.prompt_too_short_to_trace,
+     `${arStats.promoted}/${arStats.replaced}/${arStats.unresolved}`);
+  // The reconciliation must not create testimony, and must not silently change the
+  // number of attributed prompts: it reattributes eight, it does not add or drop any.
+  ok('the attributed-prompt count is unchanged by the reconciliation',
+     q('SELECT count(*) c FROM unit_context WHERE speaker_id IS NOT NULL') === stats.qWithSpeaker);
+  ok('no reconciled prompt is attributed to Gygax',
+     q(`SELECT count(*) c FROM unit_context WHERE speaker_id=${speaker.id}`) === 0);
+  ok('every unresolved attribution is marked as such in its provenance',
+     q(`SELECT count(*) c FROM discovery_text WHERE source_locator LIKE '%remains UNRESOLVED%'`) === arStats.unresolved);
+  ok('every replacement records the label as linkage evidence, never as the speaker',
+     q(`SELECT count(*) c FROM discovery_text WHERE source_locator LIKE '%retained as linkage evidence, NOT as the speaker%'`) === arStats.replaced);
+}
 if (QQ) {
   // With the quoted-question overlay, structural context rows are created on
   // purpose — one per quoted prompt — but they must stay empty/untranscribed,

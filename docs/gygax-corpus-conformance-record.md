@@ -22,7 +22,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 | # | Source | Status | Open items |
 |---|---|---|---|
-| 1 | ENWorld Q&A (Stage A + **Parts III–VII, XIII complete**) | **Conformant** *(reconstructions regularised 2026-09-03; Parts III–VII and XIII-A/B/C added 2026-09-04/05; Part IV identity reconciled 2026-09-05)* | 532 → **1,885** units. Part XIII is **complete**: A+B+C held, P13:post0001–1594, **666 Gygax posts, zero uncovered**. Part IV `Flekor`→`Flexor` **resolved**. **Stage A attributions still need reconciliation** — scoped 2026-09-05: 262 of 485 antecedents recoverable, 8 disagreements to weigh, 212 not recoverable from the three Part PDFs. `coz`/`BOZ` **settled from source: distinct handles, no merge** (§ below). completeness `unknown` corpus-wide (§12 review) |
+| 1 | ENWorld Q&A (Stage A + **Parts III–VII, XIII complete**) | **Conformant** *(reconstructions regularised 2026-09-03; Parts III–VII and XIII-A/B/C added 2026-09-04/05; Part IV identity reconciled 2026-09-05)* | 532 → **1,885** units. Part XIII is **complete**: A+B+C held, P13:post0001–1594, **666 Gygax posts, zero uncovered**. Part IV `Flekor`→`Flexor` **resolved**. Stage A attributions **reconciled 2026-09-05**: 254 promoted to antecedent basis, 8 canonical speakers replaced by the recovered antecedent, 223 explicitly **unresolved** and deliberately not made to look uniform. `coz`/`BOZ` settled: distinct handles, no merge (§ below). completeness `unknown` corpus-wide (§12 review) |
 | 2 | Dragonsfoot batch 01 | **Conformant** *(reconstructions regularised 2026-09-03)* | completeness `unknown` (§12 review) |
 | 3 | Ward "Greyhawk #2" | **Conformant** *(defect fixed, see below)* | — |
 | 4 | GameSpy Interview Part I | **Conformant** *(debt resolved 2026-09-03)* | — |
@@ -917,3 +917,63 @@ evidence: they are distinct handles and no merge is warranted.** `coz` occurs tw
 Part I and `BOZ` never; the second occurrence is `coz`'s own post byline (p.36, 5
 September 2002), and the quote label Gygax carries on p.38 agrees with it. See
 [the Stage A scope record](./gygax-stagea-reconciliation-scope.md).
+
+
+## Stage A attribution reconciliation (Parts I, II, VIII)
+
+The 485 Stage A prompt attributions were derived from vBulletin quote **labels**, while
+Parts III–VII and XIII attribute from the recovered **antecedent** post. That
+inconsistency is now closed — asymmetrically, which is the point:
+
+| decision | count | effect |
+|---|---|---|
+| promote to antecedent basis | 254 | speaker string unchanged; label and antecedent agree |
+| replace canonical speaker | 8 | antecedent byline becomes canonical; label kept as linkage evidence |
+| no attribution change | 223 | remains label-derived and **explicitly marked unresolved** |
+
+**Uniformity was not manufactured.** The 223 prompts whose antecedent could not be
+recovered from the preservation Part keep the weaker Stage A state and say so in their
+provenance. Recovery is very uneven — Part VIII has more unrecoverable than recoverable
+prompts — so a correction that made all three Parts look alike would have asserted
+recovery that did not happen.
+
+### The eight replacements
+
+`Fourecks`→`DDK` (Part I 60) · `Baraendur`→`Darrin Drader` (Part I 623; Part II 7, 38,
+39, 161) · `Tallarn`→`Mathew_Freeman` (Part II 147) · `Jodjod`→`Captain NeMo`
+(Part VIII 232).
+
+All eight were verified independently against the embedded PDFs: the named antecedent
+byline heads a post on the named page at the named timestamp, and the named label appears
+on Gygax's own quote-back page. **No identity merge follows**, and the package marks each
+`identity_merge: forbidden_without_independent_evidence`.
+
+Two consequences worth recording:
+
+- **`Darrin Drader` was already held with 5 prompts, all from Part V** — attributed there
+  by antecedent under the later standard. The 5 Baraendur prompts joining them take it to
+  10. That is independent cross-part corroboration that the replacement is right, and it
+  is exactly the consistency the reconciliation existed to produce.
+- **`Jodjod` is left holding zero prompts but its person row is retained.** Deleting it
+  would be the identity merge the package forbids; the handle remains attested as a quote
+  label in the provenance of the prompt that moved.
+
+### Applied by rebuild, and one fail-closed catch
+
+Applied as an `--attribution-reconciliation` overlay on the Stage A ingester and the whole
+corpus rebuilt, so the corrected state is rebuild output and reproducibility is preserved
+by construction. The overlay refuses to run unless every one of the 485 decisions is
+consumed, the applied split matches the package counts, and each decision's
+`prompt_sha256` matches the prompt it lands on.
+
+That last check **fired on the first run**, at Part II locator 101 — the isolated
+embedded-NUL storage defect the Stage A v4 package documents. The decision set was hashed
+against the corpus text (NUL already sanitised to U+FFFD) while the overlay was hashing
+the raw package text. The fix was to my derivation, not to the data: hash what the corpus
+actually stores. No package defect.
+
+Result: `persons` 452 → **455** (`Captain NeMo`, `DDK`, `Mathew_Freeman` added; none
+removed), 485 provenance locators rewritten, and **discovery text identical across all
+6,022 rows** — no testimony, prompt wording, unit, asset, provenance, coverage or
+annotation changed. Audit 12 objects / 0 defects; gate accepted 605, blocked 0; all 2,106
+assets present and hash-correct.

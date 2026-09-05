@@ -22,7 +22,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 | # | Source | Status | Open items |
 |---|---|---|---|
-| 1 | ENWorld Q&A (Stage A + **Parts III–VII**) | **Conformant** *(reconstructions regularised 2026-09-03; Parts III–VII added 2026-09-04/05)* | 532 → **1,219** units. Five segments closed preservation gaps carried since v1; **only Part XIII remains missing**. **Stage A attributions need reconciliation** (§ below). completeness `unknown` corpus-wide (§12 review) |
+| 1 | ENWorld Q&A (Stage A + **Parts III–VII, XIII-A**) | **Conformant** *(reconstructions regularised 2026-09-03; Parts III–VII and XIII-A added 2026-09-04/05)* | 532 → **1,443** units. Part XIII is **partial**: batch A held, B and C to follow. **Stage A attributions need reconciliation** (§ below). completeness `unknown` corpus-wide (§12 review) |
 | 2 | Dragonsfoot batch 01 | **Conformant** *(reconstructions regularised 2026-09-03)* | completeness `unknown` (§12 review) |
 | 3 | Ward "Greyhawk #2" | **Conformant** *(defect fixed, see below)* | — |
 | 4 | GameSpy Interview Part I | **Conformant** *(debt resolved 2026-09-03)* | — |
@@ -37,7 +37,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 **Corpus-wide checks: all pass.** Integrity check; FTS sync and queryability for
 `units_fts` / `context_fts` / `discovery_fts`; transcript structural purity (§7); no
-context text indexed as speaker testimony (§8); all 1,440 staged evidence files hash
+context text indexed as speaker testimony (§8); all 1,664 staged evidence files hash
 to their database records (§15).
 
 **Summary: 12 objects · 0 defects · 0 grandfathered debt items · 9 review items.**
@@ -629,6 +629,45 @@ assertions that match on it.** Both failure modes are cheap to catch and expensi
 miss, which is the argument for running the confirmations on every segment rather than
 trusting a passing predecessor.
 
+## Part XIII-A: the first batched segment
+
+Part XIII is large enough — 1,606 printable-view posts across a 438-page PDF — to be
+prepared in three operational batches. Batch A (5 September 2026) added **224** Gygax
+units, P13:post0001 to post0540, 10 April to 22 June 2007. The ENWorld object reaches
+**1,443** units.
+
+The batching is an **upload boundary, never a historical one**, and the architecture
+holds that line: every unit records `preservation_segment` "Part XIII" alongside
+`operational_batch` "Part XIII-A", both checked at ingest, so no phantom segment can be
+created. Two consequences follow, and both are now built into the ingester:
+
+- **Coverage is PARTIAL, not complete.** The Part XIII row names only the locator range
+  actually held and says B and C are outstanding. It becomes complete when C lands.
+- **The duplicate guard is locator-scoped, not segment-scoped.** B and C will legitimately
+  add units to a segment that already has some; a bare "does Part XIII exist" test would
+  refuse them. This is the third distinct way a duplicate guard has needed rethinking —
+  after the Roman-numeral prefix collision at Part V and the two date-window boundaries.
+
+**Five label divergences, two phenomena, and the ingester now checks the package's own
+split rather than re-deriving it.** Three are text-layer glyph loss where the damaged
+label is a truncation of the antecedent handle itself — `nterthorn` for Winterthorn,
+`canid` for Mycanid, `a dim` for Naidim — and are excluded from the identity worklist for
+the same reason the Part VII `TI Foster` cases were. Two are genuine: the antecedent
+header reads `Nahat Anoj` where the label reads `Jonathan Moyer`.
+
+That pair is worth recording carefully, because **the handle is the given name reversed**:
+`NahatAnoj` backwards reads `jonAtahaN`. So this is a pseudonymous handle set against a
+real name, not an account rename — a stronger reconciliation candidate than anything seen
+so far, and also one whose resolution touches **real-name enrichment**, which is
+deliberately deferred. Nothing is merged: the antecedent stays canonical and the label is
+linkage evidence in the provenance locator.
+
+The validation improvement matters beyond this batch: rather than the ingester deciding
+which divergences are glyph damage, it now **asserts that the observed set partitions
+exactly into the two sets the package declares**, with no extras in either direction. The
+classification is a historical judgement and belongs upstream; the ingester's job is to
+confirm the data matches it.
+
 ## Observed limitation: OCR reconciliation over-reaches on units carrying context cards
 
 Oerth Journal #12 produced four `INSPECT` warnings (Q2, Q8, Q15, Q23). All four trace to
@@ -667,9 +706,9 @@ Recorded so these are not mistaken for certified:
 Verified absent from the corpus by inventory; these go through the full
 one-source-at-a-time process (§16) when their packages are ready:
 **Alarums & Excursions July 1975 letter**, **Ward "Gary Gygax Things"**,
-and the **ENWorld Page 39 update**. ENWorld **Parts III–VII are no longer
-outstanding** — all five complete segments were ingested 4–5 September 2026;
-**only Part XIII** remains missing.
+and the **ENWorld Page 39 update**. ENWorld **Parts III–VII are complete** and
+**Part XIII is in progress** — batch A ingested 5 September 2026, with **XIII-B and
+XIII-C** still to come.
 
 ---
 

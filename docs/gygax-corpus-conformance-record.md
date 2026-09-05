@@ -22,7 +22,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 | # | Source | Status | Open items |
 |---|---|---|---|
-| 1 | ENWorld Q&A (Stage A + **Parts III–VII, XIII-A**) | **Conformant** *(reconstructions regularised 2026-09-03; Parts III–VII and XIII-A added 2026-09-04/05)* | 532 → **1,443** units. Part XIII is **partial**: batch A held, B and C to follow. **Stage A attributions need reconciliation** (§ below). completeness `unknown` corpus-wide (§12 review) |
+| 1 | ENWorld Q&A (Stage A + **Parts III–VII, XIII-A/B**) | **Conformant** *(reconstructions regularised 2026-09-03; Parts III–VII and XIII-A/B added 2026-09-04/05)* | 532 → **1,678** units. Part XIII is **partial**: batches A and B held (P13:post0001–1080), C to follow. **Stage A attributions need reconciliation**, and **Part IV carries a confirmed `Flekor`/`Flexor` fragmentation** (§ below). completeness `unknown` corpus-wide (§12 review) |
 | 2 | Dragonsfoot batch 01 | **Conformant** *(reconstructions regularised 2026-09-03)* | completeness `unknown` (§12 review) |
 | 3 | Ward "Greyhawk #2" | **Conformant** *(defect fixed, see below)* | — |
 | 4 | GameSpy Interview Part I | **Conformant** *(debt resolved 2026-09-03)* | — |
@@ -37,7 +37,7 @@ ingestions *happened under* v1.2 — only whether they *conform to* it now.
 
 **Corpus-wide checks: all pass.** Integrity check; FTS sync and queryability for
 `units_fts` / `context_fts` / `discovery_fts`; transcript structural purity (§7); no
-context text indexed as speaker testimony (§8); all 1,664 staged evidence files hash
+context text indexed as speaker testimony (§8); all 1,899 staged evidence files hash
 to their database records (§15).
 
 **Summary: 12 objects · 0 defects · 0 grandfathered debt items · 9 review items.**
@@ -667,6 +667,65 @@ which divergences are glyph damage, it now **asserts that the observed set parti
 exactly into the two sets the package declares**, with no extras in either direction. The
 classification is a historical judgement and belongs upstream; the ingester's job is to
 confirm the data matches it.
+
+## Part XIII-B, and a defect it exposed in Part IV
+
+Batch B (5 September 2026) added **235** Gygax units, P13:post0543 to post1080, 25 June
+to 16 October 2007. Part XIII now holds 459 units across batches A and B; coverage
+remains **partial** and records the cumulative range, since rewriting it with only B's
+range would have dropped A from the record of what is held.
+
+**The largest restoration set yet, and why it was trustworthy.** This PDF's text layer is
+systematically damaged where the rendering is not: it substitutes `5` for `c` and `k` for
+`x`, and drops leading letters. The batch restored 18 quote labels, one discovery string
+(the book title *Anubis Murders*, whose initial `A` the text layer loses), one context
+opening and two antecedent timestamps — all from the rendered card, none inferred.
+
+Restorations that rewrite a handle are the dangerous kind, because a wrong one invents or
+merges an identity. These were corroborated rather than trusted: **nine land on handles
+the corpus already holds while the damaged form exists nowhere**, and the rest are
+confirmed by byline frequency in the source (`Marshal Lucky` 20 occurrences against 2
+damaged, `Valiant` 6 against 1, `haakon1` 135). The one case running *counter* to the
+`5`-for-`c` pattern — `JMac5892` against a text layer reading `JMacc892` — was settled by
+the byline: `JMac5892` appears twice as a post header and never as a label, and the card
+confirms it.
+
+**A Gygax unit's own timestamp was damaged, and the gate caught it.** `ENW_P13B_219`
+(P13:post1047) read `12:01 \nM`. The batch had already restored two *antecedent*
+timestamps of the same shape, but this was a testimony unit's own date and was missed.
+The value is `12:01 AM` on three independent grounds — the card renders it, the preceding
+unit is 11:59 PM the previous day, and the date rolls over to Saturday. Corrected
+upstream; all 235 cards and the source PDF stayed byte-identical, so the physical
+verification carried over.
+
+### A confirmed fragmentation in already-ingested Part IV data
+
+The `Flekor the Mighty!` → `Flexor the Mighty!` restoration prompted a check of the
+corpus, which turned out to hold **both as separate identities**: `Flexor the Mighty!`
+with 16 prompts across Parts I/III/IV/V, and `Flekor the Mighty!` with 2 prompts in Part
+IV. Part IV's own PDF settles it — `Flekor` appears twice and **only ever as a quote
+label**, `Flexor` seven times **including as a byline**. Same handle, same document, text
+layer damaged in two places.
+
+No control-character check could have caught this: the damaged form is plausible text. A
+corpus-wide scan of all 378 ENWorld-scoped handles for single-character-edit pairs found
+**exactly two** candidates:
+
+| Rare form | Prompts | Likely true form | Prompts | Segment | Status |
+|---|---|---|---|---|---|
+| `Flekor the Mighty!` | 2 | `Flexor the Mighty!` | 16 | Part IV | **confirmed**, correction outstanding |
+| `coz` | 1 | `BOZ` | 28 | Part I | unresolved — needs the Part I source |
+
+`coz` falls in the Stage A label-attributed set, so it cannot be settled before that
+reconciliation and belongs with it. Neither is patched in the database; both are upstream
+corrections.
+
+**One deliberate asymmetry worth recording.** At `ENW_P13B_128` the card shows a *visible
+gap* where the word "good" should be — it does not render at all — while the text layer
+holds `g ood`. The package kept the text-layer form, preserving the participant's word in
+searchable shape. That is the opposite call from the restorations above, and defensible
+for the same reason they are: each follows whichever layer actually carries the evidence.
+Card and context text will read differently there.
 
 ## Observed limitation: OCR reconciliation over-reaches on units carrying context cards
 

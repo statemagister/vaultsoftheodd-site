@@ -65,37 +65,105 @@ notice names **v4 (`805277445f5f`)** as superseding v1, v2 and v3; all four carr
 645 context rows, so the row count cannot discriminate and the notice is the only
 evidence that does.
 
-## Reproduction chain
+## Reproduction chain — TESTED, not asserted
 
-The corpus is rebuilt by replaying, in order:
+On 5 September 2026 the corpus was rebuilt end to end **from held artefacts only** — the
+uploaded package ZIPs plus this repository — into a fresh database, and compared against
+the canonical `d579f2b` corpus on id-independent content:
+
+| table | canonical | rebuilt | content |
+|---|---|---|---|
+| documentary_objects | 12 | 12 | identical |
+| source_families | 12 | 12 | identical |
+| testimony_units | 2,079 | 2,079 | identical |
+| unit_context | 2,423 | 2,423 | identical |
+| discovery_text | 6,022 | 6,022 | identical |
+| evidence_assets | 2,106 | 2,106 | identical |
+| evidence_sources | 2,727 | 2,727 | identical |
+| persons | 453 | 453 | identical |
+| coverage | 27 | 27 | identical |
+| annotations | 80 | 80 | identical |
+
+The rebuild also produced a staged evidence tree of 2,106 files, **byte-identical to the
+canonical one on every path**, and passes the conformance audit (12 objects, 0 defects)
+and the reconstruction acceptance gate (605 accepted, 0 blocked).
+
+**Reproducibility is therefore demonstrated, not argued.**
+
+### The working recipe
 
 ```
-gygax-v2-migrate.mjs            v1 root database  ->  v2 skeleton (no testimony units)
-gygax-v2-ingest-enworld-cards   Stage A: 532 units
-  + Stage A reconstruction regularisation (186 resolved, 26 never cross-page)
-  + Stage A quoted-question regularisation v4
-gygax-v2-ingest-dragonsfoot     + batch 01 regularisations
-gygax-v2-ingest-ward-greyhawk2  (v3 package)
-gygax-v2-ingest-gamespy-part1   + reconciliation overlay (7 continuous stitched cards)
-gygax-v2-ingest-cyclopeatron
-gygax-v2-ingest-gamasutra-2002
-gygax-v2-ingest-wargamers-digest-1974
-gygax-v2-ingest-ae15-letter
-gygax-v2-ingest-white-dwarf-14
-gygax-v2-ingest-22-questions
-gygax-v2-ingest-oerth-journal-12
-gygax-v2-ingest-sacco-interview
-gygax-v2-ingest-enworld-part03 .. part07          (corrected packages)
-gygax-v2-ingest-enworld-part13a / 13b / 13c       (corrected packages)
+migrate                v1 root DB -> v2 skeleton
+enworld-cards          stageA pkg (inner dir gygax_pdf_post_cards_v2_staging/)
+                         --regularization <stageA reconstruction pkg>
+                         --quoted-questions <stageA quoted-question pkg v4>
+dragonsfoot            df pkg (inner dir mnt/data/gygax_dragonsfoot_cards_batch01/)
+                         --regularization <df reconstruction pkg> --quoted-questions <df qq pkg>
+ward-greyhawk2         corrected v3 package
+gamespy-part1          unit-cards v2  --reconciliation <gamespy reconciliation pkg>
+cyclopeatron · gamasutra-2002 · wargamers-digest-1974 · ae15-letter
+white-dwarf-14         corrected package  --page-map <map>        <-- see below
+22-questions · oerth-journal-12 (corrected) · sacco-interview (MANIFESTFIXED, not FINAL)
+enworld-part03 (corrected) · part04 (corrected) · part05
+enworld-part06 --force · part07 --force                            <-- see below
+enworld-part13a · part13b (corrected) · part13c (v2.2 corrected)
 ```
 
-The order is recoverable from git history: every ingestion is its own commit, and each
-commit message records the package involved, the counts added and the gate results.
+### Four things the recipe needs that a package inventory does not reveal
 
-Determinism is not assumed — it is checked. Every ENWorld segment ingestion in this
-project was re-run from a pre-ingestion snapshot into a separate database and compared on
-id-independent content hashes. The most recent (XIII-C) reproduced hash `3e9d2e2d…` over
-15,837 rows.
+Each was found by actually running the rebuild, and each would have broken a
+reconstruction attempt that relied on the inventory alone:
+
+1. **`sacco-interview` must use the `MANIFESTFIXED` package, not the one named `FINAL`.**
+   The FINAL-labelled archive is the third of four rounds and carries no clip boxes; the
+   ingester rejects it with 220 problems. Filename labels are not authority.
+2. **Parts VI and VII require `--force`.** Both trip the date-window duplicate guard for
+   real reasons recorded at the time: the Part V/VI boundary runs backwards in displayed
+   time, and Parts VII and VIII genuinely overlap. Both are documented in their ingest
+   commits and in `segment_boundary_discontinuity` annotations inside the corpus itself,
+   so the flag is recoverable — but only from the history, never from the packages.
+3. **White Dwarf #14 requires a `--page-map` that exists in neither the package nor git.**
+   Without it every provenance row reads `pp.23-24` instead of the specific page, which
+   is the only difference that survived the first otherwise-successful rebuild. It is
+   derivable by the method the ingest commit records: exact pixel matching of each card
+   against the two preserved page images placed 16 of 19 cards (10 on p.23, 6 on p.24),
+   and the three it cannot place are exactly the three stitched composites the commit
+   names (q03 spanning p.23's column break, q14 and q15 on p.24), whose assignment the
+   commit states. Reconstructed that way, the rebuild matches canonical exactly.
+4. **Two packages nest their payload under an inner directory** rather than at the
+   archive root, so the package path is not the unpack path.
+
+## Audit outcome: three categories
+
+**1. Recoverable now (present in the working container).** The canonical database, both
+staged evidence directories, all unpacked packages and every derived artefact. This
+category is real but worthless for preservation, since it disappears with the container.
+
+**2. Recoverable from repository + held packages — the whole corpus.** Demonstrated by
+the end-to-end rebuild above: all ten tables identical and a byte-identical 2,106-file
+evidence tree. This includes the four recipe details in the previous section, each of
+which is recoverable from git history or from a documented derivation, though none from
+the packages alone.
+
+**3. Currently missing or unproven — nothing that blocks reconstruction.** The only input
+not held as a file anywhere is the White Dwarf #14 page map, and it was reconstructed
+from held artefacts during this audit and shown to close the gap exactly. The passphrase
+is deliberately absent and must stay so.
+
+### Two operational findings from the audit
+
+- **The canonical staged evidence tree is fragmented across two directories.** 1,899 files
+  sit in one and the 207 Part XIII-C files in another, because a different path was passed
+  for the last ingest. All 2,106 assets verify against the corpus across their union, and
+  no single directory holds them all. The rebuild produces one complete tree, so the
+  rebuilt layout is cleaner than the incrementally accumulated one.
+- **Correction to earlier reporting: "build gate strict … accepted / blocked" never
+  verified that asset files exist.** The build takes the evidence directory as a named
+  `--evidence-dir` flag; it was being passed positionally, so that stage never ran and the
+  gate reported only the acceptance gate and the content hash. Those results stand as far
+  as they go, but they were not an asset round-trip. Verified directly instead: all 2,106
+  assets present and hash-correct for the canonical corpus across the union of its two
+  directories, and for the rebuilt corpus in its single directory.
 
 ## Preserved ≠ deployed
 

@@ -42,7 +42,7 @@ schedule:
     date: "2026-09-07"
   - slug: "why-leave-money-doing-nothing"
     title: "Why Leave Money Doing Nothing?"
-    teaser: "Money sitting in an account looks like money doing nothing. That is not quite what is happening."
+    teaser: "Money sitting in an account looks like money doing nothing. That isn’t quite what’s happening."
     date: "2026-09-14"
   - slug: "why-did-that-month-go-wrong"
     title: "Why Did That Month Go Wrong?"

@@ -71,10 +71,19 @@ tradition Howard had only gestured at.
    those two worlds.
 
 **Where that leaves it.** A reading, held with some confidence, which one sentence from
-Cook could confirm or destroy. I have put the question to him. If he answers, this
-postscript will be replaced by whatever he says, and I will note whether he confirmed it
-or not.
+Cook could confirm or destroy. I have set out the question below. If I am able to put it
+to him and he answers, this postscript will be updated to record what he says and whether
+it supports the reading. A negative answer would not make the reconstruction worthless:
+it would make it a documented reading that testimony ruled out, which is worth having.
 
 Until then it stays here, below the line, labelled as mine.
+
+---
+
+## A question I would ask David Cook
+
+*These are questions the surviving texts cannot answer. They are included to mark where contemporary testimony could still change the record.*
+
+> When you were developing I1, did Howard's Eastern material in Red Nails have any part in pushing the Forbidden City toward the culture that appears in the module, or is that connection something I am seeing retrospectively?
 
 *Drew Griffiths*

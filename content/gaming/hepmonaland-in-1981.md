@@ -100,4 +100,26 @@ That is as far as the 1980 and 1981 evidence allows. It does not establish what 
 
 ---
 
+## Questions the text leaves open
+
+*Some could still be answered by David Cook or other contemporary testimony. Others belong to the referee, because the published module does not settle them.*
+
+**For David Cook, or contemporary testimony**
+
+> When you placed the Forbidden City in Hepmonaland, were you consciously working from the 1980 World of Greyhawk folio's Suel migration and Duxchan trade material, or was Hepmonaland mainly a convenient unmapped location for the adventure?
+
+> Did you have any picture of the wider society outside the Forbidden City, or was the city's cultural detail intended to stand on its own?
+
+**For the referee**
+
+> Is the Forbidden City an isolated cultural exception within Hepmonaland, or evidence of a wider society beyond the mapped ruins?
+
+> If caravans are being intercepted rather than trade simply ceasing, who still controls the routes between the city, the southern jungle and the northern markets?
+
+> What does Horan's ability to issue recognised tablets imply about authority outside his own compound?
+
+> If the city once had nobles, merchants, tradesmen and poor quarters, what institutions or descendants of those groups still exist beyond the keyed ruins?
+
+---
+
 *Source note. I1 passages were collated across both 1981 printings of TSR 9046, identified by back cover: the first printing carries the ISBN alone, the second adds the product number 394-51424-6TSR0550. All were found textually identical. Folio passages were checked against the 1980 folio itself rather than the 1983 Guide, and are drawn from the migration account, the Lordship of the Isles entry and the Hold of the Sea Princes entry. The itemised southern commodities (rare woods, spices, ivory, gold) are stated of the Amedio, not of Hepmonaland, whose cargo contents the folio never specifies.*

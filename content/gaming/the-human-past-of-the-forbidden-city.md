@@ -116,4 +116,30 @@ It cannot securely tell us who the humans of the Forbidden City were. It is much
 
 ---
 
+## Questions the text leaves open
+
+*Some could still be answered by David Cook or other contemporary testimony. Others belong to the referee, because the published module does not settle them.*
+
+**For David Cook, or contemporary testimony**
+
+> Did you have a particular answer in mind for who the original human inhabitants of the Forbidden City were?
+
+> The module variously describes the mongrelmen as descendants of slaves, the area J mongrelmen as the remains of the original inhabitants, and the sewer humans as descendants of the yuan-ti's ancestors. Were those intended to fit together, or are they remnants of different stages of development?
+
+**For the referee**
+
+> Which of the three incompatible genealogies, if any, is true in this campaign?
+
+> If more than one survives, how are the mongrelmen, the yuan-ti ancestors and the sewer humans related?
+
+> Are the yuan-ti restoring an empire that once belonged to the city's original people, or building a new one in old ruins?
+
+> Do the mongrelmen know anything reliable about their own ancestry, or only the stories imposed on them by other factions?
+
+> Does the bullywug restoration project ever intersect with the yuan-ti plan, and what happens if the player characters discover both before the factions discover each other?
+
+> If the folio's Suel population is connected to the city, is that ancestry known to anyone in the present, or wholly lost?
+
+---
+
 *Source note. I1 passages were collated across both 1981 printings of TSR 9046, identified by back cover: the first printing carries the ISBN alone, the second adds the product number 394-51424-6TSR0550. All were found textually identical. The mongrelman, tasloi and yuan-ti are first published in I1; their alignments originate there rather than being inherited, Monster Manual II being two years later. Folio passages were checked against the 1980 folio rather than the 1983 Guide; it names Hepmonaland twice, in the migration account and the Lordship of the Isles entry, and supplies no population for the region other than the Suel. One qualification on the degenerate-human motif: the Fiend Folio's bullywug entry already rumours viable bullywug-human crossbreeds and degenerate humans dwelling in mixed communities, and I1 makes bullywug ancestry one possible component of a mongrelman. The association of these creatures with degraded human stock is therefore inherited. The three transformation mechanisms discussed above are I1's own.*

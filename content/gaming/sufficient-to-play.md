@@ -124,4 +124,32 @@ On the page, all three look equally authoritative and complete.
 
 ---
 
+## Questions the text leaves open
+
+*Some could still be answered by David Cook or other contemporary testimony. Others belong to the referee, because the published module does not settle them.*
+
+**For David Cook, or contemporary testimony**
+
+> Do you remember how the Fiend Folio creatures were reduced for I1? Were you working from full entries and deliberately shortening them for space, or were abbreviated working notes being carried into the module?
+
+> In particular, do you remember whether the bloodworm's fire-release rule, the bullywug's initiative weakness and the creeper's buried root were intentionally omitted or simply lost during condensation?
+
+> Was the lake encounter originally built around a different dragon before the pan lung statistics were substituted? I ask because the I1 pan lung has continual ESP, polymorph to human form and invisibility, none of which are pan lung abilities in the Fiend Folio, and its 54-foot length matches the Monster Manual gold dragon exactly. I am not assuming that happened; I am trying to distinguish a textual reconstruction from something you might actually remember.
+
+**For the referee**
+
+> Which entrance are the guides supposed to bring the party to, and should that choice be made for dramatic fit, party composition or difficulty?
+
+> Do the Fiend Folio counterplay rules apply where I1 omits them? Should the bloodworm release its victim on a successful fire attack, is the creeper's root buried, can heal restore drained intelligence, and should bullywugs suffer their source initiative weakness when not using long weapons?
+
+> How should a referee treat the 78% against 75% camouflage discrepancy?
+
+> Is the pan lung meant primarily as an encounter, a social complication, or a pressure device that may never become hostile?
+
+> If a party reaches one of the lethal cliff entrances without the right spell or climbing resources, is that intended risk or an unmarked routing problem?
+
+> Which omitted rules will you restore from the Fiend Folio, and which will you treat as intentional simplifications for your campaign?
+
+---
+
 *Source note. I1 passages were collated across both 1981 printings of TSR 9046, identified by back cover: the first printing carries the ISBN alone, the second adds the product number 394-51424-6TSR0550. Both were checked for every passage cited here; the 78% and 75% camouflage figures are present in both, so neither is a scanning artefact nor a revision between states. Fiend Folio entries are from the 1981 edition: bullywug pp. 16-17, giant bloodworm p. 15, pan lung p. 29, yellow musk creeper and zombie p. 97. The Dungeon Masters Guide citations are I1's own.*

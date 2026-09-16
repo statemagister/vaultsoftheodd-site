@@ -96,6 +96,26 @@ That is what I1 contributed to Greyhawk, and it survives the finding that Cook i
 
 What became of that direction afterwards is a question about publication history rather than about I1, and it needs the later sources read on their own terms before anything is said about it. What can be said now is that it was there, that it was there by the summer of 1980, and that it has been sitting in an out-of-print module ever since, largely unread as anything but a dungeon.
 
+---
+
+## Questions the text leaves open
+
+*Some could still be answered by David Cook or other contemporary testimony. Others belong to the referee, because the published module does not settle them.*
+
+**For David Cook, or contemporary testimony**
+
+> When you first developed the Forbidden City, did you already imagine its inhabitants and material culture in the direction that appears in the published module, or did that develop during the tournament or publication stages?
+
+> Do you remember where details such as the rice-straw matting, sunken hearth, pickled plums, paper screens and writing implements came from?
+
+**For the referee**
+
+> Which details should be treated as surviving evidence of the old society, and which as decoration left in a ruin?
+
+> How much of that culture is still understood by the present inhabitants, and how much are they occupying spaces whose meaning they no longer know?
+
+> Does the pan lung belong to the same cultural world as the vanished city, or is it simply another creature now living in the valley?
+
 *A separate signed postscript, [A Reading I Cannot Prove](/a-reading-i-cannot-prove/), sets out one reading the evidence permits but does not establish.*
 
 ---

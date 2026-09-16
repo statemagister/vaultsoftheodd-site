@@ -1,0 +1,28 @@
+{{- /* Previous / next within a named series, ordered by WEIGHT.
+
+     Used instead of the vault's date-ordered nav whenever a page declares
+     `series`. That substitution is the point: a research sequence is written to
+     be read in order, and its parts are typically published on one date, so
+     PrevInSection / NextInSection would order them arbitrarily.
+
+     Membership is the `series` value itself rather than the section, because a
+     vault can hold several series at once.
+
+     site.RegularPages omits drafts and future-dated pages, so the chain only
+     ever points at parts that are actually live, and fills in as they publish.
+*/ -}}
+{{- $name := index .Params.series 0 }}
+{{- $series := (where site.RegularPages "Params.series" "intersect" (slice $name)).ByWeight }}
+{{- $prev := false }}{{- $next := false }}
+{{- range $i, $p := $series }}
+  {{- if eq $p.RelPermalink $.RelPermalink }}
+    {{- if gt $i 0 }}{{ $prev = index $series (sub $i 1) }}{{ end }}
+    {{- if lt (add $i 1) (len $series) }}{{ $next = index $series (add $i 1) }}{{ end }}
+  {{- end }}
+{{- end }}
+{{- if or $prev $next }}
+<nav class="post-nav" aria-label="More in this series">
+  {{- if $prev }}<a class="post-nav-link prev" href="{{ $prev.RelPermalink }}"><span class="post-nav-dir">&larr; Previous</span><span class="post-nav-title">{{ $prev.Title }}</span></a>{{ else }}<span></span>{{ end }}
+  {{- if $next }}<a class="post-nav-link next" href="{{ $next.RelPermalink }}"><span class="post-nav-dir">Next &rarr;</span><span class="post-nav-title">{{ $next.Title }}</span></a>{{ else }}<span></span>{{ end }}
+</nav>
+{{- end }}

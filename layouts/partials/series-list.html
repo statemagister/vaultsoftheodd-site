@@ -1,0 +1,25 @@
+{{- /* The series so far, in reading order (weight), current part marked.
+
+     Mirrors the Money vault's aside block. A page may carry `series_label` to
+     name its own position where that differs from the run of numbered parts —
+     the signed postscript of a research sequence, for instance, which sits last
+     by weight but is deliberately not "Part 5". Where no label is given the
+     title carries itself, exactly as in Money.
+*/ -}}
+{{- $name := index .Params.series 0 }}
+{{- $series := (where site.RegularPages "Params.series" "intersect" (slice $name)).ByWeight }}
+{{- if gt (len $series) 1 }}
+<section class="aside-block">
+  <details class="aside-folder" open>
+    <summary>{{ $name }} <span class="folder-count">{{ len $series }}</span></summary>
+    <ul>
+      {{- range $series }}
+      <li{{ if eq .RelPermalink $.RelPermalink }} class="current"{{ end }}>
+        {{- if eq .RelPermalink $.RelPermalink }}<span>{{ .Title }}</span>{{ else }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+        {{- with .Params.series_label }} <span class="series-label">{{ . }}</span>{{ end }}
+      </li>
+      {{- end }}
+    </ul>
+  </details>
+</section>
+{{- end }}

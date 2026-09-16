@@ -27,6 +27,12 @@
     <p class="fan-disclaimer">{{ .Title }} is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. &copy;Wizards of the Coast LLC.</p>
     {{- end }}
 
+    {{- /* A page in a named series navigates by reading order (weight) instead of
+           by date: series parts are usually published together, so the vault's
+           date ordering would scramble them. Everything else is unaffected. */ -}}
+    {{- if .Params.series }}
+    {{ partial "series-nav.html" . }}
+    {{- else }}
     {{- /* Previous / next within the vault, ordered by date so labels are right */ -}}
     {{- $earlier := false }}{{- $later := false }}
     {{- with .PrevInSection }}{{ if lt .Date $.Date }}{{ $earlier = . }}{{ else }}{{ $later = . }}{{ end }}{{ end }}
@@ -36,6 +42,7 @@
       {{- if $earlier }}<a class="post-nav-link prev" href="{{ $earlier.RelPermalink }}"><span class="post-nav-dir">&larr; Earlier</span><span class="post-nav-title">{{ $earlier.Title }}</span></a>{{ else }}<span></span>{{ end }}
       {{- if $later }}<a class="post-nav-link next" href="{{ $later.RelPermalink }}"><span class="post-nav-dir">Later &rarr;</span><span class="post-nav-title">{{ $later.Title }}</span></a>{{ else }}<span></span>{{ end }}
     </nav>
+    {{- end }}
     {{- end }}
 
     <div class="post-actions">
@@ -52,6 +59,10 @@
     <div class="aside-inner">
 
       {{ partial "search.html" . }}
+
+      {{- /* Sits above Tags so a reader who arrives mid-sequence sees the
+             reading order before anything else in the sidebar. */ -}}
+      {{- if .Params.series }}{{ partial "series-list.html" . }}{{ end }}
 
       {{- with .Params.tags }}
       <section class="aside-block">

@@ -18,7 +18,7 @@ draft: false
 
 
 
-<figure class="wp-block-image alignright is-resized"><img src="/images/gaming/i1-dwellers-of-the-forbidden-city-cover.jpg" alt="Front cover of Dungeon Module I1, Dwellers of the Forbidden City, by David Cook. An adventure for character levels 4 to 7. TSR Hobbies, 1981, product code 9046. Cover art by Erol Otus." width="760" height="977" style="aspect-ratio:0.777892;width:300px;height:auto"/><figcaption class="wp-element-caption">I1, TSR 9046, 1981, first printing. The cover promises background and tournament notes, referee&rsquo;s keys, new monsters, pre-generated characters and eight maps. Part 4 examines a different claim the module makes about its own completeness.</figcaption></figure>
+<figure class="wp-block-image alignright is-resized"><img src="/images/gaming/i1-dwellers-of-the-forbidden-city-cover.jpg" alt="Front cover of Dungeon Module I1, Dwellers of the Forbidden City, by David Cook. An adventure for character levels 4 to 7. TSR Hobbies, 1981, product code 9046. Cover art by Erol Otus." width="760" height="977" style="aspect-ratio:0.777892;width:300px;height:auto"/><figcaption class="wp-element-caption">Cover art by Erol Otus. I1 Dwellers of the Forbidden City, TSR Hobbies, Inc., 1981.</figcaption></figure>
 
 Every claim in these four articles rests on I1 itself, collated across both 1981 printings, together with texts published in or before 1981: the World of Greyhawk folio, the Fiend Folio, Howard's "Red Nails" and "Jewels of Gwahlur", Burroughs's *Tarzan and the Forbidden City*, and David Cook's own later statements about what he wrote between 1979 and 1981.
 

@@ -12,13 +12,13 @@ authorVoice: ""
 draft: false
 ---
 
-<figure class="cover-hero"><img src="/images/gaming/i1-dwellers-of-the-forbidden-city-cover.jpg" alt="The front cover of Dungeon Module I1, Dwellers of the Forbidden City, by David Cook, an adventure for character levels 4 to 7, TSR Hobbies 1981, product code 9046. A painted scene on a dark red board: a large green amphibious creature with one bulbous eye and a wide fanged mouth lunges forward holding a dagger, a robed and helmeted figure looming behind it, while a small turbaned figure stands on rocks at the right with a hand raised, yellow light bursting behind them." width="760" height="977" style="aspect-ratio:0.777892"/><figcaption class="wp-element-caption">I1, TSR 9046, 1981, first printing, identified by the ISBN standing alone on the back cover without the product number added to the second. The cover promises background and tournament notes, referee&rsquo;s keys, new monsters, pre-generated characters and eight maps. Part 4 examines a different claim the module makes about its own completeness.</figcaption></figure>
-
 *A four-part research sequence on I1, TSR 9046, 1981, with a separate signed postscript.*
 
 ---
 
-<figure class="wp-block-image alignright is-resized"><a href="/images/gaming/i1-dwellers-of-the-forbidden-city-back-cover.jpg"><img src="/images/gaming/i1-dwellers-of-the-forbidden-city-back-cover.jpg" alt="The back cover of the same copy: a painted scene of an armoured warrior with sword and shield facing a green serpentine creature wielding a jewelled blade, above a long list of other AD&amp;D playing aids available from TSR Hobbies. At the foot, on the left, the line ISBN 0-935696-33-4. The bottom right corner is bare maroon board." width="1240" height="1614" style="aspect-ratio:0.768278;width:300px;height:auto"/></a><figcaption class="wp-element-caption">The face that does the identifying. <span class="nowrap">ISBN 0-935696-33-4</span> stands alone at the foot; the right corner is bare, where the second printing carries the product number. Shown larger on click.</figcaption></figure>
+
+
+<figure class="wp-block-image alignright is-resized"><img src="/images/gaming/i1-dwellers-of-the-forbidden-city-cover.jpg" alt="The front cover of Dungeon Module I1, Dwellers of the Forbidden City, by David Cook, an adventure for character levels 4 to 7, TSR Hobbies 1981, product code 9046. A painted scene on a dark red board: a large green amphibious creature with one bulbous eye and a wide fanged mouth lunges forward holding a dagger, a robed and helmeted figure looming behind it, while a small turbaned figure stands on rocks at the right with a hand raised, yellow light bursting behind them." width="760" height="977" style="aspect-ratio:0.777892;width:300px;height:auto"/><figcaption class="wp-element-caption">I1, TSR 9046, 1981, first printing, identified by the ISBN standing alone on the back cover without the product number added to the second. The cover promises background and tournament notes, referee&rsquo;s keys, new monsters, pre-generated characters and eight maps. Part 4 examines a different claim the module makes about its own completeness.</figcaption></figure>
 
 Every claim in these four articles rests on I1 itself, collated across both 1981 printings, together with texts published in or before 1981: the World of Greyhawk folio, the Fiend Folio, Howard's "Red Nails" and "Jewels of Gwahlur", Burroughs's *Tarzan and the Forbidden City*, and David Cook's own later statements about what he wrote between 1979 and 1981.
 
@@ -46,6 +46,8 @@ What a referee actually receives. One room, one missing sentence from another bo
 Not part of the sequence's argument. A signed reading of what the evidence suggests without establishing, set out plainly with the four reasons it cannot be a finding.
 
 ## Method
+
+<figure class="wp-block-image alignright is-resized"><a href="/images/gaming/i1-dwellers-of-the-forbidden-city-back-cover.jpg"><img src="/images/gaming/i1-dwellers-of-the-forbidden-city-back-cover.jpg" alt="The back cover of the same copy: a painted scene of an armoured warrior with sword and shield facing a green serpentine creature wielding a jewelled blade, above a long list of other AD&amp;D playing aids available from TSR Hobbies. At the foot, on the left, the line ISBN 0-935696-33-4. The bottom right corner is bare maroon board." width="1240" height="1614" style="aspect-ratio:0.768278;width:300px;height:auto"/></a><figcaption class="wp-element-caption">The back of the same copy, and the face that does the identifying. <span class="nowrap">ISBN 0-935696-33-4</span> stands alone at the foot; the right corner is bare, where the second printing carries the product number. Shown larger on click.</figcaption></figure>
 
 Three principles emerged from the research, each by finding evidence against an earlier position:
 

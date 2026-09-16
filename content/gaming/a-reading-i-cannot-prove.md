@@ -91,4 +91,8 @@ Until then it stays here, below the line, labelled as mine.
 
 > When you were developing I1, did Howard's Eastern material in Red Nails have any part in pushing the Forbidden City toward the culture that appears in the module, or is that connection something I am seeing retrospectively?
 
+---
+
+*Source note. Cook's account of his boyhood reading, and his confirmation that Red Nails was what he was going for, are from his interview with James Maliszewski at Grognardia, July 2009, both parts. His statement that he has always been big on Asian history is from the "Q&A with David 'Zeb' Cook" thread at Dragonsfoot, posting as zebcook, 28 February 2008, answering a question about which cultures and periods of history interest him. His account of advising on Oriental Adventures before being asked to write it is from the same 2009 interview. All of this is retrospective testimony, given between twenty-seven and twenty-nine years after the module, and none of it is dated to 1979 to 1981 by anything other than the speaker's own later characterisation. The Eastern material in Red Nails is from the Weird Tales serialisation of July to October 1936, via Project Gutenberg Australia. The features of I1 referred to are collated across both 1981 printings and set out in "The Forbidden City Cook Left Behind".*
+
 *Drew Griffiths*

@@ -7,7 +7,7 @@ series: ["Dwellers of the Forbidden City"]
 weight: 40
 tags: ["Source Analysis", "I1", "Fiend Folio", "Playability"]
 authorVoice: ""
-draft: true
+draft: false
 ---
 
 *Part 4 of four. Parts 1 to 3 asked where I1 came from, what it placed in Hepmonaland, and what happened to the city's human past. This part asks what a referee actually receives when they sit down to run it.*

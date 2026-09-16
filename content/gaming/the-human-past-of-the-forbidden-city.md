@@ -7,7 +7,7 @@ series: ["Dwellers of the Forbidden City"]
 weight: 30
 tags: ["Source Analysis", "I1", "Hepmonaland", "Yuan-ti"]
 authorVoice: ""
-draft: true
+draft: false
 ---
 
 *Part 3 of four. Parts 1 and 2 established what I1 owes to the lost-city tradition and what it placed into Hepmonaland. This part asks who the ruined city belonged to before its present factions occupied it.*

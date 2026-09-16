@@ -8,7 +8,7 @@ series_landing: true
 weight: 5
 tags: ["Source Analysis", "I1", "AD&D"]
 authorVoice: ""
-draft: true
+draft: false
 ---
 
 *A four-part research sequence on I1, TSR 9046, 1981, with a separate signed postscript.*

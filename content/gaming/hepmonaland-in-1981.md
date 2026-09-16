@@ -7,7 +7,7 @@ series: ["Dwellers of the Forbidden City"]
 weight: 20
 tags: ["Source Analysis", "I1", "Hepmonaland", "World of Greyhawk Folio"]
 authorVoice: ""
-draft: true
+draft: false
 ---
 
 *Part 2 of four. Part 1, "The Forbidden City Cook Left Behind", establishes what I1 owes to the lost-city tradition and what survives when that debt is paid. This part asks a different question: what did the module put into Hepmonaland, and what was already there?*

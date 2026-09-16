@@ -7,7 +7,7 @@ series: ["Dwellers of the Forbidden City"]
 weight: 10
 tags: ["Source Analysis", "I1", "Pulp Sources", "David Cook"]
 authorVoice: ""
-draft: true
+draft: false
 ---
 
 *Part 1 of four. This article belongs to a four-part sequence on I1 with a separate signed postscript. [View the complete series](/dwellers-of-the-forbidden-city/).*

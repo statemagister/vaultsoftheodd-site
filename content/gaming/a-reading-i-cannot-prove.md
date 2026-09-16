@@ -8,7 +8,7 @@ weight: 50
 series_label: "Postscript"
 tags: ["I1", "Pulp Sources", "David Cook"]
 authorVoice: ""
-draft: true
+draft: false
 ---
 
 *This is a separate reading arising from the research behind "The Forbidden City Cook Left Behind". It is not part of that article's argument.*

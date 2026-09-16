@@ -661,6 +661,10 @@ figcaption, .wp-element-caption { display: table-caption; caption-side: bottom; 
 .aside-folder summary::before { content: "\25B8"; margin-right: 0.45rem; font-size: 0.7rem; color: var(--text-muted); transition: transform 0.15s ease; display: inline-block; }
 .aside-folder[open] summary::before { transform: rotate(90deg); }
 .folder-count { color: var(--text-muted); opacity: 0.7; font-size: 0.7rem; font-family: var(--display); }
+/* A series gateway standing where its parts would otherwise be listed. Sized and
+   coloured like .folder-count, since it does the same job one level down: it
+   says what the entry contains, not what it is called. */
+.series-note { display: block; color: var(--text-muted); opacity: 0.7; font-size: 0.7rem; font-family: var(--display); margin-top: 0.1rem; }
 .aside-folder ul { list-style: none; margin: 0.4rem 0 0.9rem; padding: 0 0 0 1.15rem; }
 .aside-folder li { font-size: 0.93rem; line-height: 1.35; margin-bottom: 0.55rem; }
 .aside-folder li.current { color: var(--text-muted); }

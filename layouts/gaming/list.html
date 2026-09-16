@@ -14,11 +14,10 @@
            as separate posts and invite arrival at Part 3 first.
 
            A page opts in by declaring `series`; the one carrying
-           `series_landing` is the entry that represents it. */ -}}
-    {{- $listed := slice }}
-    {{- range $.Pages }}
-      {{- if or (not .Params.series) .Params.series_landing }}{{ $listed = $listed | append . }}{{ end }}
-    {{- end }}
+           `series_landing` is the entry that represents it. The rule lives in
+           vault-listed.html because the article sidebar applies it too, and the
+           two columns must not drift apart. */ -}}
+    {{- $listed := partial "vault-listed.html" $.Pages }}
 
     {{- /* Build setting groups in a preferred order, then any others. */ -}}
     {{- $order := slice "Ravenloft" "Greyhawk" "Forgotten Realms" "Mystara" }}
@@ -89,7 +88,7 @@
               <details class="aside-folder">
                 <summary>{{ .Key }} <span class="folder-count">{{ len .Pages }}</span></summary>
                 <ul>
-                  {{- range .Pages.ByDate.Reverse }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+                  {{- range .Pages.ByDate.Reverse }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ partial "series-note.html" . }}</li>{{ end }}
                 </ul>
               </details>
               {{- end }}

@@ -5,6 +5,7 @@ date: 2026-09-09
 settings: ["Greyhawk"]
 series: ["Dwellers of the Forbidden City"]
 series_landing: true
+series_note: "4 parts and a postscript"
 weight: 5
 tags: ["Source Analysis", "I1", "AD&D"]
 authorVoice: ""

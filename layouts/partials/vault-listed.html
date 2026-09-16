@@ -1,0 +1,31 @@
+{{- /* Given a page collection, return it with research sequences collapsed to
+       their gateway.
+
+       A page is dropped only when its series HAS a gateway — a member carrying
+       `series_landing` — and it is not that gateway. The condition matters. The
+       economics and politics vaults declare `series` on 14 pages between them
+       and have no landing page for any of it, so a rule that dropped every
+       series member would have emptied their by-date columns outright: the
+       block needs two siblings to render, and collapsing to a gateway that does
+       not exist left none. That is the archive genuinely losing posts, rather
+       than representing several by the one that contains them.
+
+       Single-sourced because the rule is applied in more than one column and
+       the two must not drift. The vault listing and the by-date browse both go
+       through here; taxonomy pages deliberately do not, since tags are
+       cross-cutting by design and a reader following "I1" is entitled to every
+       page that carries it.
+*/ -}}
+{{- $gateways := slice }}
+{{- range . }}
+  {{- if .Params.series_landing }}{{ $gateways = $gateways | append (index .Params.series 0) }}{{ end }}
+{{- end }}
+{{- $listed := slice }}
+{{- range . }}
+  {{- if or (not .Params.series) .Params.series_landing }}
+    {{- $listed = $listed | append . }}
+  {{- else if not (in $gateways (index .Params.series 0)) }}
+    {{- $listed = $listed | append . }}
+  {{- end }}
+{{- end }}
+{{- return $listed }}

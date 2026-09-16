@@ -105,7 +105,15 @@
       </section>
       {{- end }}
 
-      {{- $siblings := where .Site.RegularPages "Section" .Section }}
+      {{- /* A research sequence appears here as its gateway alone, matching the
+             vault listing. This column browses by DATE, and date says nothing
+             about a sequence: the parts share one publication day because they
+             are one piece of work, so listing them puts five entries under a
+             month in an order that is arbitrary by construction — navigation
+             that looks like it works while pointing at the wrong thing. The
+             archive still reports the day truthfully, because the gateway sits
+             at that date and carries the whole sequence. */ -}}
+      {{- $siblings := partial "vault-listed.html" (where .Site.RegularPages "Section" .Section) }}
       {{- /* Detect whether this vault's pages are dated. Some vaults (e.g. Mythology)
              are ordered by depth, not chronology; grouping those by date would collapse
              every undated page into "January 0001". */ -}}
@@ -123,6 +131,7 @@
             {{- range .Pages.ByDate.Reverse }}
             <li{{ if eq .RelPermalink $.RelPermalink }} class="current"{{ end }}>
               {{- if eq .RelPermalink $.RelPermalink }}<span>{{ .Title }}</span>{{ else }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+              {{- partial "series-note.html" . }}
             </li>
             {{- end }}
           </ul>

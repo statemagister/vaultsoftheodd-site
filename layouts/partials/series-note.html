@@ -1,0 +1,17 @@
+{{- /* For a series gateway standing in a list, say that it is a sequence.
+
+       One entry sitting where several might have been needs to explain itself,
+       or the archive looks like it has lost something. The landing page may set
+       `series_note` where the shape needs words ("4 parts and a postscript",
+       which no count can derive); otherwise a plain count is used.
+
+       Prints nothing for an ordinary page, so it is safe to call unguarded.
+*/ -}}
+{{- if .Params.series_landing }}
+  {{- with .Params.series_note }}<span class="series-note">{{ . }}</span>
+  {{- else }}
+    {{- $name := index $.Params.series 0 }}
+    {{- $n := sub (len (where site.RegularPages "Params.series" "intersect" (slice $name))) 1 }}
+    {{- if gt $n 0 }}<span class="series-note">{{ $n }} part{{ if gt $n 1 }}s{{ end }}</span>{{ end }}
+  {{- end }}
+{{- end }}

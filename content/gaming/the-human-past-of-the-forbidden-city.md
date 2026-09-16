@@ -12,7 +12,7 @@ draft: false
 
 *Part 3 of four. Parts 1 and 2 established what I1 owes to the lost-city tradition and what it placed into Hepmonaland. This part asks who the ruined city belonged to before its present factions occupied it.*
 
-*Evidence: I1, both 1981 printings, with the 1980 World of Greyhawk folio only where regional placement bears on the question. Nothing published later is used.*
+*Evidence: I1, both 1981 printings, with the 1980 World of Greyhawk folio only where regional placement bears on the question. Nothing published after 1981 is used as evidence about the module's text. Cook's own later statements are admitted as testimony about 1979 to 1981, dated and marked as retrospective wherever they appear.*
 
 ---
 

@@ -20,7 +20,7 @@ draft: false
 
 Every claim in these four articles rests on I1 itself, collated across both 1981 printings, together with texts published in or before 1981: the World of Greyhawk folio, the Fiend Folio, Howard's "Red Nails" and "Jewels of Gwahlur", Burroughs's *Tarzan and the Forbidden City*, and David Cook's own later statements about what he wrote between 1979 and 1981.
 
-Nothing published after 1981 is used as evidence, including to check a conclusion. Where an inference happens to match later published material, that is coincidence and is not treated as corroboration.
+Nothing published after 1981 is used as evidence about the module's text, including to check a conclusion. Where an inference happens to match later published material, that is coincidence and is not treated as corroboration. Cook's own later statements are admitted as testimony about 1979 to 1981, always dated and marked as retrospective, and never as evidence about what the text says.
 
 The parts are written to be read in order. Each depends on ground cleared by the one before it.
 

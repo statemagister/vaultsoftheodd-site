@@ -42,9 +42,7 @@ Cook's own city inherits: a lost jungle city built by a vanished people.
 Cook's version is Asian-coded far beyond his source, and coded in the places source
 material does not reach: matting on the floors, a sunken hearth with a kettle, sliding
 paper panels, pickled plums, an inkstone and brushes, a six-armed serpent-bodied
-goddess, and an explicitly oriental dragon in the lake. He also, on the most economical
-reading of the pan lung's leftover abilities, reached for the one Monster Manual dragon
-drawn as an Asian dragon before a properly Chinese one was available to him.
+goddess, and an explicitly oriental dragon in the lake.
 
 And he has described a passion for oriental history, in his own words, as the reason he
 was already advising on Oriental Adventures before he was asked to write it.
@@ -59,21 +57,21 @@ tradition Howard had only gestured at.
 **What stops it being a finding.** Four things, and they are not small.
 
 1. Cook said what he took from Red Nails, and named three things: fabulous treasure,
-   decadent ruin, eldritch horror. Not the East. He had the opportunity and said
-   otherwise.
+ decadent ruin, eldritch horror. Not the East. He had the opportunity and said
+ otherwise.
 2. Cook described himself in 2008 as having always been big on Asian history, answering a
-   broad question about which cultures and periods of history interested him. That is
-   stronger evidence of a longstanding interest than the later Oriental Adventures remark
-   alone. But "always" is retrospective language used in 2008, not a dated statement of
-   what interested him in 1980.
+ broad question about which cultures and periods of history interested him. That is
+ stronger evidence of a longstanding interest than the later Oriental Adventures remark
+ alone. But "always" is retrospective language used in 2008, not a dated statement of
+ what interested him in 1980.
 3. The available account of his boyhood reading names Conan, Solomon Kane, Tarzan, Doc
-   Savage, the Shadow, Vance and Lovecraft, and no specifically Asian source. So the
-   interest and the reading history remain separately attested rather than connected at
-   the point the module was made.
+ Savage, the Shadow, Vance and Lovecraft, and no specifically Asian source. So the
+ interest and the reading history remain separately attested rather than connected at
+ the point the module was made.
 4. The reading is compatible with the evidence, but so is its opposite. Everything we
-   observe would look the same if Cook had never registered Howard's Kosalans and had
-   simply built the city he wanted to build. Nothing available discriminates between
-   those two worlds.
+ observe would look the same if Cook had never registered Howard's Kosalans and had
+ simply built the city he wanted to build. Nothing available discriminates between
+ those two worlds.
 
 **Where that leaves it.** A reading, held with some confidence, which one sentence from
 Cook could confirm or destroy. I have set out the question below. If I am able to put it

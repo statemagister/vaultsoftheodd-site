@@ -134,8 +134,6 @@ On the page, all three look equally authoritative and complete.
 
 > In particular, do you remember whether the bloodworm's fire-release rule, the bullywug's initiative weakness and the creeper's buried root were intentionally omitted or simply lost during condensation?
 
-> Was the lake encounter originally built around a different dragon before the pan lung statistics were substituted? I ask because the I1 pan lung has continual ESP, polymorph to human form and invisibility, none of which are pan lung abilities in the Fiend Folio, and its 54-foot length matches the Monster Manual gold dragon exactly. I am not assuming that happened; I am trying to distinguish a textual reconstruction from something you might actually remember.
-
 **For the referee**
 
 > Which entrance are the guides supposed to bring the party to, and should that choice be made for dramatic fit, party composition or difficulty?

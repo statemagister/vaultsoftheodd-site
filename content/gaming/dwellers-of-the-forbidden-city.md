@@ -75,7 +75,7 @@ no probability, because it would fit equally well whether the claim were true or
 **Source self-description is itself a claim to be tested.** When a text says material has
 been shortened, adapted or reproduced from another source, that statement is not a
 substitute for collation. I1 says its Fiend Folio material is shortened and adjusted;
-comparison found at least five different relationships under that one description.
+comparison found different relationships under that one description.
 
 **Availability is not selection.** Showing that a repertoire was available to a designer
 does not explain why it was selected, especially where comparable alternatives were

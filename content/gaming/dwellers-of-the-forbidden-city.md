@@ -12,7 +12,7 @@ authorVoice: ""
 draft: false
 ---
 
-*A four-part research sequence on I1, TSR 9046, 1981, with a separate signed postscript.*
+*Four articles on I1 Dwellers of the Forbidden City, 1981, and a separate postscript.*
 
 ---
 

@@ -4,6 +4,7 @@ slug: "dwellers-of-the-forbidden-city"
 date: 2026-09-09
 settings: ["Greyhawk"]
 series: ["Dwellers of the Forbidden City"]
+series_landing: true
 weight: 5
 tags: ["Source Analysis", "I1", "AD&D"]
 authorVoice: ""

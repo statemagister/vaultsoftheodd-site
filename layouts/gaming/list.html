@@ -6,16 +6,30 @@
       {{- with .Content }}<div class="list-intro">{{ . }}</div>{{ end }}
     </header>
 
+    {{- /* A research sequence appears in the vault as ONE entry, its landing
+           page, rather than as a run of loose parts. The parts keep their
+           setting, so they stay inside Greyhawk (and keep its palette) and
+           remain reachable by tag, by search and by the series navigation —
+           they are simply not listed individually here, where they would read
+           as separate posts and invite arrival at Part 3 first.
+
+           A page opts in by declaring `series`; the one carrying
+           `series_landing` is the entry that represents it. */ -}}
+    {{- $listed := slice }}
+    {{- range $.Pages }}
+      {{- if or (not .Params.series) .Params.series_landing }}{{ $listed = $listed | append . }}{{ end }}
+    {{- end }}
+
     {{- /* Build setting groups in a preferred order, then any others. */ -}}
     {{- $order := slice "Ravenloft" "Greyhawk" "Forgotten Realms" "Mystara" }}
     {{- $groups := slice }}
     {{- range $order }}
       {{- $s := . }}
-      {{- $g := where $.Pages "Params.settings" "intersect" (slice $s) }}
+      {{- $g := where $listed "Params.settings" "intersect" (slice $s) }}
       {{- with $g }}{{ $groups = $groups | append (dict "label" $s "slug" ($s | urlize) "pages" .) }}{{ end }}
     {{- end }}
-    {{- $matched := where $.Pages "Params.settings" "intersect" $order }}
-    {{- with ($.Pages | complement $matched) }}
+    {{- $matched := where $listed "Params.settings" "intersect" $order }}
+    {{- with ($listed | complement $matched) }}
       {{- $groups = $groups | append (dict "label" "Other" "slug" "other" "pages" .) }}
     {{- end }}
 

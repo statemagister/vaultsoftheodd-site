@@ -6,7 +6,7 @@ settings: ["Greyhawk"]
 series: ["Dwellers of the Forbidden City"]
 weight: 50
 series_label: "Postscript"
-tags: ["I1", "Pulp Sources", "David Cook"]
+tags: ["Greyhawk", "I1", "Pulp Sources", "David Cook"]
 authorVoice: ""
 draft: false
 ---

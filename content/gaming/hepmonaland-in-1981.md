@@ -5,7 +5,7 @@ date: 2026-09-09
 settings: ["Greyhawk"]
 series: ["Dwellers of the Forbidden City"]
 weight: 20
-tags: ["Source Analysis", "I1", "Hepmonaland", "World of Greyhawk Folio"]
+tags: ["Greyhawk", "Source Analysis", "I1", "Hepmonaland", "World of Greyhawk Folio"]
 authorVoice: ""
 draft: false
 ---

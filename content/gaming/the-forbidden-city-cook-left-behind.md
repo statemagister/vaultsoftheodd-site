@@ -5,7 +5,7 @@ date: 2026-09-09
 settings: ["Greyhawk"]
 series: ["Dwellers of the Forbidden City"]
 weight: 10
-tags: ["Source Analysis", "I1", "Pulp Sources", "David Cook"]
+tags: ["Greyhawk", "Source Analysis", "I1", "Pulp Sources", "David Cook"]
 authorVoice: ""
 draft: false
 ---

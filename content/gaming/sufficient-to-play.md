@@ -5,7 +5,7 @@ date: 2026-09-09
 settings: ["Greyhawk"]
 series: ["Dwellers of the Forbidden City"]
 weight: 40
-tags: ["Source Analysis", "I1", "Fiend Folio", "Playability"]
+tags: ["Greyhawk", "Source Analysis", "I1", "Fiend Folio", "Playability"]
 authorVoice: ""
 draft: false
 ---

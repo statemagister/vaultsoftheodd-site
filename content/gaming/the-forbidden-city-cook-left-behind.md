@@ -104,7 +104,7 @@ What became of that direction afterwards is a question about publication history
 
 **For David Cook, or contemporary testimony**
 
-> When you first developed the Forbidden City, did you already imagine its inhabitants and material culture in the direction that appears in the published module, or did that develop during the tournament or publication stages?
+> When you first developed the Forbidden City, was your interest in Asian history already influencing its inhabitants and material culture, or did that cultural direction emerge later during the tournament or publication stages?
 
 > Do you remember where details such as the rice-straw matting, sunken hearth, pickled plums, paper screens and writing implements came from?
 

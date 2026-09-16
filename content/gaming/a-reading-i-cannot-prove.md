@@ -61,10 +61,15 @@ tradition Howard had only gestured at.
 1. Cook said what he took from Red Nails, and named three things: fabulous treasure,
    decadent ruin, eldritch horror. Not the East. He had the opportunity and said
    otherwise.
-2. The Asian statement is from 2009 and describes advising on a project in the
-   mid-eighties. It cannot be carried back to 1980 on evidence that exists.
-3. The one contemporaneous window onto his boyhood reading is that pulp list, and it
-   contains no Asian material.
+2. Cook described himself in 2008 as having always been big on Asian history, answering a
+   broad question about which cultures and periods of history interested him. That is
+   stronger evidence of a longstanding interest than the later Oriental Adventures remark
+   alone. But "always" is retrospective language used in 2008, not a dated statement of
+   what interested him in 1980.
+3. The available account of his boyhood reading names Conan, Solomon Kane, Tarzan, Doc
+   Savage, the Shadow, Vance and Lovecraft, and no specifically Asian source. So the
+   interest and the reading history remain separately attested rather than connected at
+   the point the module was made.
 4. The reading is compatible with the evidence, but so is its opposite. Everything we
    observe would look the same if Cook had never registered Howard's Kosalans and had
    simply built the city he wanted to build. Nothing available discriminates between

@@ -114,6 +114,8 @@ The published module stops earlier.
 
 It cannot securely tell us who the humans of the Forbidden City were. It is much clearer about what happens to humans who remain there.
 
+**Later testimony.** In a 2012 Star Frontiersman interview, Cook described creature design as beginning with a goal or theme rather than with the creature itself, and discussed the creatures made for Dwellers in connection with its Conan and Burroughs lost-city conception. That supports treating the module's distinctive populations as thematic design rather than an accidental collection of monsters. It does not establish that the particular pattern identified here, human degeneration and transformation, was itself the intended theme.
+
 ---
 
 ## Questions the text leaves open

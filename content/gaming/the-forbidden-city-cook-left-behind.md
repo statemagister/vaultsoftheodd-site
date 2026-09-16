@@ -116,6 +116,8 @@ What became of that direction afterwards is a question about publication history
 
 > Does the pan lung belong to the same cultural world as the vanished city, or is it simply another creature now living in the valley?
 
+---
+
 *A separate signed postscript, [A Reading I Cannot Prove](/a-reading-i-cannot-prove/), sets out one reading the evidence permits but does not establish.*
 
 ---

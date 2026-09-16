@@ -82,7 +82,7 @@ The name deserves care here. Burroughs means the title cannot show that Cook too
 
 ## Limits
 
-None of this recovers intention. Cook has said he had a passion for oriental history, but he said it in 2009 about advising on a project in the mid-eighties, and it cannot be carried back to 1980 on evidence that does not exist. The distribution of Asian-coded choices across I1 is a fact about the module; why they were made is not in any of these documents.
+None of this recovers intention. Cook has described a passion for oriental history twice: in 2009, about advising on a project in the mid-eighties, and in 2008, more broadly, as having always been interested in Asian history. The second is the stronger of the two, but neither dates the interest to 1980. "Always" is retrospective language used in 2008, not a statement about what interested him when this module was made. The distribution of Asian-coded choices across I1 is a fact about the module; why they were made is not in any of these documents.
 
 Nor does it establish who made which change. Cook's home campaign, the tournament version and the published expansion are three stages, and Harold Johnson and Lawrence Schick hold development credits on the last.
 

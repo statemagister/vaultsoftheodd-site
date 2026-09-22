@@ -27,6 +27,20 @@
          site-wide default banner. Facebook/Twitter need an absolute URL. */ -}}
   {{- $ogImage := site.Params.ogImage -}}
   {{- $ogW := "1200" -}}{{- $ogH := "630" -}}
+  {{- /* Most specific card wins: the site default, then images/og-<section>.png,
+         then images/og-<first setting>.png for the gaming vault, then an explicit
+         per-page `images`. Each is used only if the file is actually there, so a
+         new card starts being served by existing, with no front matter to set and
+         nothing to remember. All are drawn at 1200x630, so the declared
+         dimensions stay true for every branch except the explicit override. */ -}}
+  {{- with .Section }}
+    {{- $p := printf "images/og-%s.png" . }}
+    {{- if os.FileExists (printf "static/%s" $p) }}{{ $ogImage = $p }}{{ end }}
+  {{- end }}
+  {{- with .Params.settings }}
+    {{- $p := printf "images/og-%s.png" (index . 0 | urlize) }}
+    {{- if os.FileExists (printf "static/%s" $p) }}{{ $ogImage = $p }}{{ end }}
+  {{- end }}
   {{- with .Params.images }}{{ $ogImage = index . 0 }}{{ $ogW = "" }}{{ $ogH = "" }}{{ end -}}
   {{- with $ogImage -}}
     {{- $img := . -}}{{ if not (hasPrefix $img "http") }}{{ $img = ($img | absURL) }}{{ end }}

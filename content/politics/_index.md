@@ -12,7 +12,6 @@ sections:
   - key: evidence
     label: "Evidence Notes"
     intro: "These notes audit published work against evidence that became available after publication. They are assessments of the framework rather than extensions of it. Each tests a set of published propositions against independently produced sources, records what the evidence reaches and what it does not, and distinguishes between findings that are consistent with the published analysis, findings that add new evidence, and findings that qualify it. Where a qualification is identified, it is recorded against the published claim rather than used to revise it. The framework papers remain as published; the evidence notes record how subsequent material bears upon them."
-    note: "The first evidence note is in preparation."
   - key: supporting
     label: "Supporting Papers"
     intro: "These papers examine particular methodological or constitutional questions independently of the framework series. They share the same analytical discipline, keeping distinct domains distinct and holding claims at the level the evidence supports, but they do not advance the framework's substantive thesis. Each stands on its own terms."

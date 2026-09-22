@@ -185,6 +185,42 @@ body.theme-gaming.set-greyhawk .post-body hr {
   border: 0; height: 24px; max-width: 300px; margin: 2.8rem auto;
   background: url("/img/greyhawk-divider.svg") center / contain no-repeat;
 }
+/* Dark Sun: the 1991 boxed set's look — sun-scoured sand, bitumen-dark text and
+   the crimson sun as the single accent. Deliberately hot and arid where Greyhawk
+   is cool heraldic gold: browner and oranger in the ground, crimson where
+   Greyhawk is heraldic blue, so the two light settings cannot be mistaken for
+   each other at a glance. Athas has no gilt and no gothic, so it borrows neither
+   Greyhawk's illuminated initial nor Ravenloft's dark ground. */
+body.theme-gaming.set-dark-sun {
+  --bg: #d9bd93;            /* sun-scoured sand */
+  --bg-alt: #cdad7f;
+  --bg-card: #e6d0ac;
+  --text-primary: #241309;  /* bitumen */
+  --text-body: #33200f;
+  --text-muted: #6d4a2a;
+  --gold: #9e3311;          /* the crimson sun, standing in for the gold accent */
+  --gold-bright: #7a2409;
+  --rule: rgba(158, 51, 17, 0.45);
+  --rule-soft: rgba(36, 19, 9, 0.16);
+}
+body.theme-gaming.set-dark-sun .post-title,
+body.theme-gaming.set-dark-sun .list-title { color: #8c2a10; }
+body.theme-gaming.set-dark-sun .post-subtitle,
+body.theme-gaming.set-dark-sun .post-setting,
+body.theme-gaming.set-dark-sun .post-body h2,
+body.theme-gaming.set-dark-sun .post-body h3 { color: #6d3512; }
+body.theme-gaming.set-dark-sun .post-body a { color: #9e3311; text-decoration-color: #b07a3c; }
+body.theme-gaming.set-dark-sun .post-body a:hover { color: #3f2a12; }
+body.theme-gaming.set-dark-sun .post-body strong,
+body.theme-gaming.set-dark-sun .cat-label { color: #8c2a10; }
+/* Windblown grit rather than Greyhawk's parchment grain: coarser and redder. */
+body.theme-gaming.set-dark-sun { background-image: url("/img/darksun-sand.svg"); }
+/* The dark sun itself as the section divider, in place of Greyhawk's lozenge. */
+body.theme-gaming.set-dark-sun .post-body hr {
+  border: 0; height: 34px; max-width: 300px; margin: 2.8rem auto;
+  background: url("/img/darksun-divider.svg") center / contain no-repeat;
+}
+
 body.theme-gaming.set-forgotten-realms {
   --gold: #6fa8c7;
   --gold-bright: #9cc8e0; /* silver-blue, Sword Coast */
@@ -474,6 +510,7 @@ hr { border: 0; height: 1px; background: var(--rule); margin: 2.4rem auto; max-w
 .setting-heading { font-family: var(--display); font-size: 1.5rem; color: var(--gold); letter-spacing: 0.04em; margin: 1.6rem 0 0.2rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--rule); }
 .setting-heading.s-greyhawk { color: #8fb3dd; border-bottom-color: rgba(143, 179, 221, 0.4); }
 .setting-heading.s-ravenloft { color: #c9a24b; border-bottom-color: rgba(201, 162, 75, 0.4); }
+.setting-heading.s-dark-sun { color: #c9601f; border-bottom-color: rgba(201, 96, 31, 0.4); }
 /* Politics vault: compact section selector. The shared setting-tabs styling is
    sized for the gaming setting picker and reads as too heavy for four sections,
    so scope a smaller, tighter set of tabs to this vault only. */

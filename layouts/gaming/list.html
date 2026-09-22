@@ -20,7 +20,7 @@
     {{- $listed := partial "vault-listed.html" $.Pages }}
 
     {{- /* Build setting groups in a preferred order, then any others. */ -}}
-    {{- $order := slice "Ravenloft" "Greyhawk" "Forgotten Realms" "Mystara" }}
+    {{- $order := slice "Ravenloft" "Greyhawk" "Dark Sun" "Forgotten Realms" "Mystara" }}
     {{- $groups := slice }}
     {{- range $order }}
       {{- $s := . }}

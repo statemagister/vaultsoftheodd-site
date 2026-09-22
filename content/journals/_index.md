@@ -4,7 +4,7 @@ title: "The Journals"
 
 Journals published under the Vaults of the ODD imprint. Each one is built to be used and kept: hardback, with a date margin on every page for circle-the-date journalling, so a single journal works for any year and never goes out of date.
 
-The Perpetual Journal and The Monster Hunter's Journal are available now; further titles are in preparation. Each is offered in a choice of covers — pick the one you like, and choose a different cover next time. Buy links go live as each journal is published. If you bought a journal that carried this website on its cover, welcome; this is the home it points to.
+Published titles are listed below, each with its buy links; those still in preparation are marked as planned. Each is offered in a choice of covers — pick the one you like, and choose a different cover next time. If you bought a journal that carried this website on its cover, welcome; this is the home it points to.
 
 <div class="product-grid">
 

@@ -10,10 +10,19 @@
 {{- $themeFile := "giscus/vaults-light.css" }}
 {{- if eq $sec "gaming" }}
   {{- /* Gaming settings carry their own palettes: Ravenloft (dark gothic) is the
-         default, Greyhawk is light heraldic parchment. Match giscus to the
-         article's setting, not just the section. */ -}}
+         default, Greyhawk is light heraldic parchment, Dark Sun is light sand.
+         Match giscus to the article's setting, not just the section.
+
+         A setting takes its own stylesheet by having one, rather than by being
+         named in a branch here. Dark Sun shipped without one and inherited
+         Ravenloft's dark gothic box on a sand-coloured page; naming settings
+         one at a time is what let that through. Every file in static/giscus is
+         a light theme except vaults-dark.css, so a match also clears $dark. */ -}}
   {{- $themeFile = "giscus/vaults-dark.css" }}
-  {{- if eq $set "greyhawk" }}{{ $themeFile = "giscus/vaults-greyhawk.css" }}{{ $dark = false }}{{ end }}
+  {{- $setFile := printf "giscus/vaults-%s.css" $set }}
+  {{- if and $set (os.FileExists (printf "static/%s" $setFile)) }}
+    {{- $themeFile = $setFile }}{{ $dark = false }}
+  {{- end }}
 {{- end }}
 {{- if eq $sec "stories" }}{{ $themeFile = "giscus/vaults-stories.css" }}{{ end }}
 {{- if eq $sec "mythology" }}{{ $themeFile = "giscus/vaults-mythology.css" }}{{ end }}

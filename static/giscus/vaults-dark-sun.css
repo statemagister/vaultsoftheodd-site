@@ -1,0 +1,37 @@
+/* giscus theme — Vaults of the ODD, Dark Sun sun-scoured sand (crimson accent) */
+main {
+  --color-prettylights-syntax-comment: #7a5a38;
+  --color-fg-default: #33200f;
+  --color-fg-muted: #6d4a2a;
+  --color-fg-subtle: #8a6742;
+  --color-canvas-default: #d9bd93;
+  --color-canvas-overlay: #e6d0ac;
+  --color-canvas-inset: #e6d0ac;
+  --color-canvas-subtle: #cdad7f;
+  --color-border-default: rgba(158, 51, 17, 0.45);
+  --color-border-muted: rgba(36, 19, 9, 0.16);
+  --color-neutral-muted: rgba(36, 19, 9, 0.10);
+  --color-accent-fg: #9e3311;
+  --color-accent-emphasis: #9e3311;
+  --color-accent-muted: rgba(158, 51, 17, 0.40);
+  --color-accent-subtle: rgba(158, 51, 17, 0.12);
+  --color-success-fg: #5c6e24;
+  --color-btn-text: #241309;
+  --color-btn-bg: #e6d0ac;
+  --color-btn-border: rgba(158, 51, 17, 0.45);
+  --color-btn-hover-bg: #cdad7f;
+  --color-btn-hover-border: #9e3311;
+  --color-btn-active-bg: #c4a273;
+  --color-btn-primary-text: #f0dcc0;
+  --color-btn-primary-bg: #9e3311;
+  --color-btn-primary-border: #9e3311;
+  --color-btn-primary-hover-bg: #7a2409;
+  --color-btn-primary-hover-border: #7a2409;
+  --color-social-reaction-bg-hover: #cdad7f;
+  --color-social-reaction-bg-reacted-hover: #c4a273;
+  color-scheme: light;
+}
+main .gsc-comment-box-tabs,
+main .gsc-comment-box {
+  border-color: rgba(158, 51, 17, 0.45);
+}

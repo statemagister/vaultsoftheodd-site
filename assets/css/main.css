@@ -820,6 +820,21 @@ figcaption, .wp-element-caption { display: table-caption; caption-side: bottom; 
 
 /* ---- Comments (fills the content column, matches page theme) ---- */
 .comments { margin: 3rem 0 0; padding-top: 2rem; border-top: 1px solid var(--rule-soft); }
+/* Reserve the giscus thread's space before it arrives. The iframe is injected at
+   zero height and resized by postMessage once loaded, and on narrow screens the
+   aside stacks directly beneath the comments, so a reader who has scrolled that
+   far watches the whole sidebar jump. Measured at 0.44 on a 390px viewport,
+   attributed to aside.post-aside; on desktop the aside is in its own column and
+   the footer takes the shift instead.
+
+   The reserve sits on .comments, which is in the HTML, and NOT on .giscus, which
+   giscus injects. Reserving on the injected element is worse than doing nothing:
+   the space appears at injection rather than at load, so the sidebar is pushed by
+   the reserve itself. Measured at 0.22 before the iframe had grown at all.
+
+   Sized for an empty thread, which is what these pages are. A thread with replies
+   will still grow past it, but from a floor rather than from nothing. */
+.comments { min-height: 20.5rem; }
 .comments-title { font-size: 1.4rem; margin-bottom: 1.2rem; }
 .comments-note { color: var(--text-muted); font-style: italic; }
 

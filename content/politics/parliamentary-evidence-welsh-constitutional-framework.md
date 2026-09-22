@@ -8,6 +8,7 @@ series: "evidence"
 summary: "The first of a series recording how evidence published after a paper's completion bears on propositions already in print. Two select committee reports produced independently of the framework — HC 137 on prisons, probation and rehabilitation in Wales, and HC 229 on community energy — are assessed against eleven propositions drawn from the Welsh Constitutional Framework. Two propositions are qualified, four are not reached at all, and none of the findings requires the published framework to be revised."
 description: "Two 2026 select committee reports tested against eleven propositions of the Welsh Constitutional Framework. Two qualified, four not reached, none revised."
 tags: ["Wales", "Welsh devolution", "Welsh constitutional development", "constitutional analysis", "institutional capability", "justice devolution", "intergovernmental relations", "evidence-based policy", "United Kingdom"]
+pdf: "/papers/griffiths-parliamentary-evidence-welsh-constitutional-framework-september-2026.pdf"
 prereq: "An evidence note on [**A Framework for Welsh Constitutional Development**](/politics/welsh-constitutional-development-framework/). It records how parliamentary evidence published after that paper's completion bears on its propositions, and revises nothing. Read the Framework first."
 ---
 

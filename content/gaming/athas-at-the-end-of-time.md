@@ -125,8 +125,6 @@ The strongest proposition the sources support is that nothing available to Athas
 
 Read that way, Athas is not a ruined world awaiting restoration. It is a world experiencing the ending that eventually comes for everything, simply further along than the rest. Nothing is coming to save it, and even for the few who find a way out, there may be almost nowhere left to go.
 
-<img class="endpiece" src="/img/darksun-endpiece.png" alt="" aria-hidden="true" width="400" height="426"/>
-
 ---
 
 ## Bibliography

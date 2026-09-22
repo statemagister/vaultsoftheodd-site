@@ -578,6 +578,15 @@ figure img, .wp-block-image img { display: block; border-radius: 2px; }
 .wp-block-image.aligncenter, figure.aligncenter { text-align: center; margin-inline: auto; }
 figcaption, .wp-element-caption { display: table-caption; caption-side: bottom; font-size: 0.78rem; font-style: italic; color: var(--text-muted); margin-top: 0.5rem; text-align: center; }
 
+/* A tailpiece closing an article, in the printer's sense: an ornament that marks
+   the end of the argument. Decorative by definition, so it carries an empty alt
+   and is hidden from assistive technology — the one case where that is correct
+   rather than a defect. */
+.endpiece { display: block; width: 170px; max-width: 45%; height: auto; margin: 3.4rem auto 1rem; }
+/* A tailpiece IS a section break, so it stands in for the rule that follows it
+   rather than stacking above one — otherwise Dark Sun renders two suns in a row. */
+.endpiece + hr { display: none; }
+
 .nowrap { white-space: nowrap; }
 .wp-block-separator { max-width: 8rem; }
 .wp-block-button__link, .wp-block-file__button {

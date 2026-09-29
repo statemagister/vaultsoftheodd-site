@@ -40,7 +40,7 @@ A great deal, and it should be conceded plainly.
 
 The cliff-ringed valley is Howard's. So is the secret entrance, the taboo jungle, the gong, bamboo and thatch, and the monumental bronze doorway with a monstrous head worked into it, which bears on I1's Hall of the Serpent God and its bronze-plated doors with a cobra-headed man above them.
 
-So is the pattern of contradictory origins. I1 says three incompatible things about the mongrelmen: descendants of the slaves once kept in the city, all that remains of the original human inhabitants, and the last human descendants of the yuan-ti ancestors. Alone that reads as an author who never decided. But Red Nails has three population layers and Gwahlur has conflicting legends about the vanished race stated as such. The contradiction has a shape its ancestors already possess.
+So is the pattern of layered and contradictory origins. I1 has three human-derived populations standing in different relationships to the old city. The yuan-ti were once human. The mongrelmen are described twice, and differently: in the notes for the referee as descendants of the slaves once kept in the city, and at their own ruins as all that remains of the original human inhabitants. And the sewers hold a third group, described separately as the last human descendants of the yuan-ti ancestors. Read as one people described three ways, that looks like an author who never decided. Read as three peoples, the contradiction sits inside a layered population history, and Red Nails has exactly such a history, three layers deep, while Gwahlur states its conflicting legends about the vanished race as conflicting. Whether Cook set out to reproduce Howard's layers is not something these texts can show. What they show is that the apparent confusion occurs within a population structure his acknowledged source already has.
 
 The title is not exclusively anyone's. A pulp lost city called the Forbidden City was in print in 1938, in a series Cook says he read most of.
 
@@ -70,13 +70,13 @@ The pulp lost-city repertoire, in these three instances, furnishes ruins. It doe
 
 One qualification travels with that. No antecedent found means none found in three controlled texts. It does not mean Cook invented these details, and it does not mean they have no ancestor anywhere in his reading.
 
-## Selection, administration, and date
+## Selection, accommodation, and date
 
 **The pan lung** sits outside the pattern and is useful for it. Its immediate provenance is the Fiend Folio, so an antecedent plainly exists. What is Cook's is the choice of that creature, from a large bestiary, for a lake in this city. And the cultural signal is not one we have to supply, because the module's own text calls it a type of oriental dragon. It is clean evidence that a further Asian-coded element was selected into a register already running, and evidence of nothing else.
 
-**Movement is administered.** Horan issues gold tablets which his agents show the Main Entrance guards to prove they are on his business, and the guards at C11 will attack anyone attempting to enter or leave without one. Set against the controls this is a different kind of thing. Alkmeenon is restricted by taboo and priestly monopoly of a secret way. Ashair is restricted by prohibition. Xuchotl is sealed by circumstance. I1 has an authority issuing portable credentials that a third party can carry, which guards recognise, governing passage in both directions.
+**One passage has a rule.** Horan keeps three gold tablets in his chest, which his agents show to the guards at the Main Entrance to prove they are on his business. Those guards are two halfbreed yuan-ti at C11, and they attack anyone who tries to enter or leave the city through that passage without one. The claim is narrow and should stay so: the tablets govern one tunnel, not the city's boundary, and nothing suggests the yuan-ti need them to come and go. What they show is an accommodation. Horan can send people through ground where they would otherwise be attacked, because guards belonging to another power recognise his token and let the bearer pass. Set against the controls this is still a different kind of thing. Alkmeenon is restricted by taboo and priestly monopoly of a secret way. Ashair is restricted by prohibition. Xuchotl is sealed by circumstance. I1 has two powers in one city, and a physical object one of them issues that the other honours.
 
-The name deserves care here. Burroughs means the title cannot show that Cook took it from Beijing, and no route of transmission is recoverable. But the phrase carries its meaning from the historical Forbidden City, a restricted imperial seat, and that meaning was already available to Burroughs. I1 realises it. Its city is not merely a dangerous place outsiders avoid; it is a seat of authority to which admission is administered. The provenance is unrecoverable and the semantic correspondence is not.
+The name deserves care here. Burroughs means the title cannot show that Cook took it from Beijing, and no route of transmission is recoverable. The phrase carries its meaning from the historical Forbidden City, a restricted imperial seat, and that meaning was already available to Burroughs. I1 does not realise it as fully as the phrase invites. There is no court and no administered admission, only one guarded passage whose guards honour another power's tokens. What the name and the module share is narrower: a city whose occupants do not treat every stranger alike.
 
 **And the register is dated.** Two of the surviving details sit in areas A1 to A10, which were the Origins 1980 tournament, a timed run of three and a half hours with everything else ignored. A6 is named the Hall of Meditation and has rice-straw matting on part of its floor. A2 holds the six-armed statue. So the cultural specification is not a flourish added when a tournament dungeon was expanded into a book. It is present by the summer of 1980, and Horan's house develops it much more densely afterwards.
 
@@ -90,9 +90,9 @@ And it does not make Cook the inventor of a lost city. Almost nobody in that tra
 
 ## What was left behind
 
-What I1 supplies, once the tradition has taken back everything it can claim, is a society whose furnishings, worship, writing and household arrangements are drawn from an Asian repertoire, with an explicitly oriental dragon in its lake and a bureaucracy at its gate.
+What I1 supplies, once the tradition has taken back everything it can claim, is a society whose furnishings, writing, domestic arrangements and some of whose imagery are drawn from an Asian repertoire, with an explicitly oriental dragon in its lake and an arrangement between two of its powers at one of its gates.
 
-That is what I1 contributed to Greyhawk, and it survives the finding that Cook invented very little of the machinery around it. The cliffs, the hidden entrance, the taboo, the bronze doors, the gong, the contradictory history and even the name were all in the tradition before him. What was not is the interior: matting on a floor, a kettle over a sunken hearth, plums in a tub, an inkstone and two brushes on a low platform, a six-armed goddess between braziers, and tablets checked at a gate.
+That is what I1 contributed to Greyhawk, and it survives the finding that Cook invented very little of the machinery around it. The cliffs, the hidden entrance, the taboo, the bronze doors, the gong, the contradictory history and even the name were all in the tradition before him. What was not is the interior: matting on a floor, a kettle over a sunken hearth, plums in a tub, an inkstone and two brushes on a low platform, a snake-bodied, six-armed woman between braziers, and three gold tablets honoured at one tunnel mouth.
 
 What became of that direction afterwards is a question about publication history rather than about I1, and it needs the later sources read on their own terms before anything is said about it. What can be said now is that it was there, that it was there by the summer of 1980, and that it has been sitting in an out-of-print module ever since, largely unread as anything but a dungeon.
 
@@ -112,7 +112,7 @@ What became of that direction afterwards is a question about publication history
 
 > Which details should be treated as surviving evidence of the old society, and which as decoration left in a ruin?
 
-> How much of that culture is still understood by the present inhabitants, and how much are they occupying spaces whose meaning they no longer know?
+> How much of that culture is still understood by the present inhabitants, and how much are they occupying spaces whose meaning they no longer know? The question has a scale: the city's keyed inhabitants and wandering populations together occupy perhaps four to seven per cent of what its districts were built to hold, and Cook calls those districts unused. The emptiness is published, not unfinished.
 
 > Does the pan lung belong to the same cultural world as the vanished city, or is it simply another creature now living in the valley?
 

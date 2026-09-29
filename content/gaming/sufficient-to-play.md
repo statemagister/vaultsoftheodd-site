@@ -52,13 +52,13 @@ Five of its creatures come from the Fiend Folio: the giant bloodworm, the bullyw
 
 So the Fiend Folio is not presented as a prerequisite. The claim is that what I1 supplies is enough.
 
-Two of the five get no entry in the New Monsters section at all. The pan lung, creeper and zombie are there. The bullywug and the bloodworm are not. Each exists only as a parenthetical stat line inside an encounter, thirty words in the bloodworm's case.
+Two of the five get no entry in the New Monsters section at all. The pan lung, creeper and zombie are there. The bullywug and the bloodworm are not. The bloodworm exists only as a parenthetical stat line inside one encounter, thirty words. The bullywug's rules are carried in the encounter text instead, most fully in a paragraph at the head of area K.
 
 And the module knows perfectly well how to tell a referee that another book is needed. It sends them to the Dungeon Masters Guide for unarmed combat, and to pages 13 and 14 of the same book for the parasitic infection rules that govern the bullywugs' pungi stakes. Its pan lung and yellow musk creeper entries each close by pointing to the Fiend Folio for further information.
 
 No such pointer appears for the bullywug or the bloodworm.
 
-The missing pointers therefore cannot simply be explained as a general assumption that the referee would know to consult the other books. I1 tells the referee when to look elsewhere. It just does not do so consistently, and the two creatures it does not do it for are the two whose presentation is thinnest.
+The missing pointers therefore cannot simply be explained as a general assumption that the referee would know to consult the other books. I1 tells the referee when to look elsewhere. It just does not do so consistently, and the two creatures it does not do it for are the two with no entry of their own.
 
 "Sufficient to play" does not promise completeness. A shortened entry may drop appearance, ecology, optional detail, and still be true to the claim. The charge here is narrower. What the bloodworm's abbreviation omits is a rule governing what the players can do once its principal attack has succeeded.
 
@@ -74,35 +74,35 @@ The Fiend Folio says the creeper's only vulnerable point, its bulbous root, is b
 
 The buried-belongings rule turns up anyway, uncredited: at C4 four clay balls of incense of meditation lie hidden in the soil near the root.
 
-And the Fiend Folio says a heal spell restores all drained intelligence at once. I1 reserves heal for curing a zombie and leaves drained survivors recovering at a point a day.
+And the Fiend Folio says a heal spell restores all drained intelligence at once. I1 says so too, but only in the encounter at C4. The creature's own entry reserves heal for curing a zombie and leaves drained survivors recovering at a point a day. A referee who reads the entry and not the encounter will not find the remedy.
 
-So the creeper keeps its entire offensive sequence and loses the location of its only weak point and the quick remedy for its effect. The module keeps the threat and discards two of the ways out of it.
+So the creeper keeps its entire offensive sequence and loses the location of its only weak point. Its quick remedy survives, in one of the two places a referee might look for it.
 
-## And a weakness that vanishes
+## And a rule stated twice
 
-The bullywugs are the faction I1 leans on hardest outside the yuan-ti, and their entry gives the third case.
+The bullywugs are the faction I1 leans on hardest outside the yuan-ti, and their rules give the third case.
 
 The Fiend Folio bullywug has a real disadvantage. Unless it is using a long weapon, its attacks always fall after its opponents', because of its slow movement and its exposure while hopping, and a weapon may be set against a hop exactly as against a charge.
 
-None of that appears in I1. A referee running the creature from the module will never impose it.
+I1 states that rule twice, and differently. At area K, the main stockade, bullywugs will attack last if not using a long pole weapon, close to the Fiend Folio's own terms. At F, among the outcast bullywugs, they always attack last when hopping, a narrower condition. What neither location states is the other half of the source rule: that a weapon may be set against a hop as against a charge.
 
 Two smaller things sit beside it. The Fiend Folio allows a bullywug band a tribal shaman on a percentage chance, and the band in the city is large enough to qualify; I1 declines the option, leaving a faction that worships a god with no priest at all. And the module gives the camouflage chance as 78% at C2 and 75% at area K, against the source's 75%, in both printings. That last is probably a slip rather than a decision, and is worth recording only because it is consistent with the imported entry having been transcribed separately at the two locations rather than referred back to.
 
-## The choice nobody is told they are making
+## A marked choice with unmarked consequences
 
 The imported monsters are one half of this. The other half is at the very start.
 
-There are five ways into the rift. The tribespeople supply guides to the city's location; nothing in the module says which entrance the party arrives at. That decision belongs to the referee, and it is made before play.
+There are five ways into the rift. The tribespeople supply guides to the city's location, and the module assumes the party will then search for a way in. It also offers the referee an alternative, in a note: since there are several entrances, the referee may wish to have the characters start at a particular one instead of searching, and simply have the guides lead them there. So the choice is marked. What the note does not say is what the choice decides.
 
 The five are not variations in difficulty. They are different problems.
 
 Entrance A is the Forgotten Entrance, the tournament route, a dungeon crawl. Entrance C is the main tunnel, the long gauntlet where the aboleth, the bullywugs at the waterfall, the gate trap, the ants, the xorn, the creeper and the guard patrol accumulate.
 
-The other three make falling the primary threat. At D a crumbling path runs 600 feet down a 360-foot cliff with a ten per cent chance of collapse each turn; a falling character has a one-in-five chance of catching a ledge for 3d6 and otherwise takes 20d6, which kills anyone in the module's stated level range outright. At B the descent is by liana, and the wasps nesting a hundred feet down sting for paralysis, which means falling; climbers fight at a penalty, cannot cast spells, and get no dexterity bonus to armour class. At E the party swings to a tree on a rope and rolls on a table that simply breaks the branch on a one or a two.
+The other three make falling the primary threat. At D a crumbling path runs 600 feet down a 360-foot cliff with a ten per cent chance of collapse each turn; a falling character has a one-in-five chance of catching a ledge for 3d6 and otherwise takes 20d6, which averages seventy points and will kill almost any character in the module's stated level range. At B the descent is by liana, and the wasps nesting a hundred feet down sting for paralysis; a paralysed climber has an even chance of falling, and otherwise hangs tangled in the vines until the poison is neutralised. Climbers fight at a penalty, cannot cast spells, and get no dexterity bonus to armour class. At E the party swings to a tree on a rope and rolls on a table that simply breaks the branch on a one or a two.
 
-So rope becomes the limiting resource, a thief's climbing ability becomes diagnostic at B, small characters are mechanically advantaged at E and nowhere else, and feather fall would neutralise three of the five entrances. The module mentions none of this.
+So rope becomes the limiting resource, a thief's climbing ability becomes diagnostic at B, and small characters are mechanically advantaged at E and nowhere else. The module mentions none of this.
 
-The referee does not choose who falls at D. The referee chooses whether falling for 20d6 is part of this party's entrance to the adventure. That decision is made when the guides' route is described, and the players never see it happen.
+If the party searches, the players choose their own way in, with whatever they can see of a cliff path or a wall of lianas. If the referee takes up the module's offer, the referee makes it, and decides whether falling for 20d6 is part of this party's entrance to the adventure. Either way the module offers the option without saying what rides on it.
 
 ## Three kinds of silence
 
@@ -110,15 +110,17 @@ Put those together and the module is doing three different things that look iden
 
 **It delegates consequential choices without marking them as consequential.** The entrances are the clearest case, and the first thing a referee touches.
 
-**It loses inherited rules silently.** The bloodworm's release mechanism, the creeper's buried root and heal remedy, the bullywug's initiative penalty. The shortening is not neutral in effect: across the creatures checked here, the omitted rules disproportionately remove counters, weaknesses or remedies while preserving the threat. Not unanimously, since the bloodworm also loses its immediate re-attachment, which cuts the other way. But the distribution is one-sided.
+**It loses some inherited rules silently.** The bloodworm's release mechanism, the location of the creeper's root, the setting of a weapon against a bullywug's hop. Those are the omissions that survive a search of the whole module rather than its monster section, and all three are counterplay: means by which players answer a threat. Not every difference cuts that way, since the bloodworm also loses its immediate re-attachment. But the verified omissions fall on the players' side.
 
-**And it reproduces its sources inconsistently.** The two camouflage figures.
+Establishing that took a search of the whole module. The creature entries at the back are not I1's complete statement of those creatures' rules. Some rules live only in the encounters where the creatures appear, and omission from the appendix is not omission from the book.
 
-A referee running these creatures from I1 alone is missing player-favouring rules the Fiend Folio supplies, and cannot know they are missing. In several encounters that makes the creature harder to counter than its source version. Not every use: at the waterfall the bullywugs carry spears, so the omitted initiative penalty would not have applied there anyway.
+**And it distributes and restates its rules inconsistently.** The creeper's heal remedy appears in the encounter at C4 and not in the creature's own entry. The bullywug initiative rule appears twice, in two forms: last when hopping at F, last unless using a long pole weapon at K. The bullywug camouflage chance appears twice as two numbers. The two forms of the initiative rule are better evidence than the camouflage figures that the imported material was restated at each location rather than referred back to.
 
-None of this establishes intent. Three creatures establish a textual pattern and nothing about why it exists. A module assembled in stages from a tournament scenario, with development credits shared between three people and material drawn from a separately produced bestiary, has more than enough ordinary routes by which inconsistencies and omissions can arise.
+A referee running these creatures from I1 alone is missing some player-favouring rules the Fiend Folio supplies, and cannot know they are missing. A referee who relies on the monster section alone is missing more, including rules I1 does supply elsewhere. In some encounters that makes the creature harder to counter than its source version.
 
-What can be said is what the comparison shows. I1 preserves the threat more completely than it preserves the means of understanding or countering it. It tells the referee that what it supplies is sufficient, and in at least two encounters it is not. And the referee cannot tell which parts of the book are complete, which are abbreviated, and which are choices being handed over unannounced.
+None of this establishes intent. Three creatures establish a textual pattern and nothing about why it exists. A module assembled in stages from a tournament scenario, with design credited to Cook, development to Harold Johnson and Lawrence Schick, and material drawn from a separately produced bestiary, has more than enough ordinary routes by which inconsistencies and omissions can arise.
+
+What can be said is what the comparison shows. I1 preserves the threat more completely than it preserves the means of understanding or countering it. It tells the referee that what it supplies is sufficient, and in at least two encounters it is not. And the referee cannot tell which parts of the book are complete, which are abbreviated, which rules are stated somewhere else, and which choices carry consequences the module does not mention.
 
 On the page, all three look equally authoritative and complete.
 
@@ -132,19 +134,21 @@ On the page, all three look equally authoritative and complete.
 
 > Do you remember how the Fiend Folio creatures were reduced for I1? Were you working from full entries and deliberately shortening them for space, or were abbreviated working notes being carried into the module?
 
-> In particular, do you remember whether the bloodworm's fire-release rule, the bullywug's initiative weakness and the creeper's buried root were intentionally omitted or simply lost during condensation?
+> In particular, do you remember whether the bloodworm's fire-release rule, the creeper's buried root and setting a weapon against a bullywug's hop were intentionally omitted or simply lost during condensation? And why does the bullywug initiative rule take one form at F and another at K?
 
 **For the referee**
 
-> Which entrance are the guides supposed to bring the party to, and should that choice be made for dramatic fit, party composition or difficulty?
+> Should the party search for an entrance, as the module assumes, or be brought to one? If the latter, should the choice be made for dramatic fit, party composition or difficulty?
 
-> Do the Fiend Folio counterplay rules apply where I1 omits them? Should the bloodworm release its victim on a successful fire attack, is the creeper's root buried, can heal restore drained intelligence, and should bullywugs suffer their source initiative weakness when not using long weapons?
+> Do the Fiend Folio counterplay rules apply where I1 omits them? Should the bloodworm release its victim on a successful fire attack, is the creeper's root buried, and can a weapon be set against a bullywug's hop?
+
+> Where I1 states a rule in two forms, as with the bullywug initiative rule at F and K, which governs?
 
 > How should a referee treat the 78% against 75% camouflage discrepancy?
 
 > Is the pan lung meant primarily as an encounter, a social complication, or a pressure device that may never become hostile?
 
-> If a party reaches one of the lethal cliff entrances without the right spell or climbing resources, is that intended risk or an unmarked routing problem?
+> If a party reaches one of the lethal cliff entrances without adequate rope or climbing ability, is that intended risk or an unmarked routing problem?
 
 > Which omitted rules will you restore from the Fiend Folio, and which will you treat as intentional simplifications for your campaign?
 

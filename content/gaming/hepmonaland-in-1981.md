@@ -40,19 +40,21 @@ The module's premise sits inside that pattern.
 
 Caravans out of the southern jungles have been destroyed. The goods they carried were rare pieces of art, scrolls, books and other items expected to fetch good prices in the kingdoms of the north. Survivors came back with stories of singing snakes, deformed ape-men, men who were not men and horrid flowers, which the merchants discount as fever.
 
-What they do not discount is the commercial fact. None of the goods taken from the caravans has ever appeared in northern markets, and some were distinctive enough to be identifiable. The module draws the conclusion for the reader: someone or something is hoarding.
+What they do not discount is the commercial fact. None of the goods taken from the caravans has appeared in northern markets, at least as far as the merchants can tell, and some were distinctive enough to be identifiable. The background then draws the conclusion the merchants draw: someone or something must be hoarding a great treasure in the jungle. That is their inference, presented to the players as the reason to go. The module's own later material complicates it.
 
-So the first inheritance is not a cultural register. It is an economic one. The southern jungle already produced valuable goods; those goods already moved north; northern wealth already depended in part on value taken out of lands the folio left undescribed. I1 does not invent that traffic. It gives it a destination and an opposition.
+So the first inheritance is not a cultural register. It is an economic one. The southern jungle already produced valuable goods; those goods already moved north; northern wealth already depended in part on value taken out of lands the folio left undescribed. I1 does not invent that traffic. It puts an opposition in its path.
 
 ## The reversal
 
-The module makes the yuan-ti the organisers of the caravan raids, assisted by Horan, who has convinced them to rebuild their empire. Its wandering-monster table can generate a pureblood-led caravan leaving the city with stolen goods worth between 5,000 and 10,000 gold pieces, escorted by tasloi carrying bundles, bugbears as guards, bullywugs, and an assistant magic-user from Horan's compound.
+The raiders are the yuan-ti. Horan, a human magic-user who has settled in the city, is responsible for the increased raiding, is attempting to unite the yuan-ti's disorganized bands, and plans once he succeeds to create a new empire, leading them meanwhile with promises of regained evil power and glory. The raiding is theirs; its increase is his; the empire is still his ambition rather than their project.
+
+The wandering-monster table then shows where some of the goods go next. A pureblood is preparing to leave the city with a caravan of stolen goods worth between 5,000 and 10,000 gold pieces, escorted by tasloi carrying bundles, bugbears as guards, bullywugs, and Horan's assistant magic-user. Purebloods, the module says elsewhere, normally handle affairs with the outside world and may travel far and wide doing so.
 
 The same broad movement persists. Valuable material passes through the southern jungle and is worth money elsewhere. But the direction of control has changed.
 
-In the folio, outsiders enter the southern jungle, take goods from the people living there, and carry them north. In I1, goods travelling north are intercepted by people in the jungle and removed from the market altogether. The city does not export. It accumulates.
+In the folio, outsiders enter the southern jungle, take goods from the people living there, and carry them north. In I1, goods travelling north are intercepted by people in the jungle and removed from the northern market. They do not simply stop there. At least some are loaded onto a caravan and moved on again, under yuan-ti control, to a destination the module never names. What the merchants read as hoarding is, on the module's own evidence, at least partly traffic that has changed hands and changed route.
 
-The inherited structure is extraction from the south for northern benefit. I1 turns that structure around.
+The inherited structure is extraction from the south for northern benefit. I1 turns that structure around: the reversal is in who controls the movement of goods, not in where they come to rest, which the module leaves open.
 
 That is a claim about what two published texts do when read together. It is not a claim about intention. Nothing available says Cook meant to invert the folio's political economy, and the module never mentions the folio's trade at all.
 
@@ -76,21 +78,21 @@ The city was laid out by rank. Government and important business buildings occup
 
 That is government, rank, commerce, poverty, storage, specialised trades and an urban geography organised around them. Not a collection of exotic furnishings but a working settlement, described as having been one.
 
-Movement through the city is administered. Horan issues gold tablets which his agents show the Main Entrance guards to prove they are on his business, and the guards at C11 will attack anyone attempting to enter or leave without one.
+One passage has a rule. Horan keeps three gold tablets, which his agents show to the guards at the Main Entrance to prove they are on his business. Those guards are two halfbreed yuan-ti at C11, and they attack anyone who tries to enter or leave the city through that passage without one.
 
-Part 1 used that evidence for a different purpose, because the pass system survives comparison with the lost-city controls and is therefore distinctive. Here its significance is what it shows about the society: authority that can be delegated, represented by a portable object, and recognised by people enforcing access on someone else's behalf.
+Part 1 used that evidence to show something the lost-city controls do not contain. Here its significance is what it shows about the city in 1981: authority that can be delegated, represented by a portable object, and recognised by guards who serve another power. The guards do not belong to Horan. They are yuan-ti, and nothing suggests the yuan-ti need tablets to come and go. What the tablets show is an accommodation: two powers in one city, and a token one of them issues that the other honours at one tunnel mouth. It is consistent with the raiding. Horan intensifies a yuan-ti practice for his own ambition, and the yuan-ti honour his token without becoming his.
 
 None of that was in the folio, for Hepmonaland or for anywhere else in the southern jungles.
 
 ## The limit
 
-I1 describes one city, and much of that city is held by factions, ruins and later arrivals who did not build it. The module itself gives three incompatible accounts of who the original inhabitants were.
+I1 describes one city, and much of that city is held by factions, ruins and later arrivals who did not build it. The module gives three human-derived populations standing in different relations to the old city, the yuan-ti, the mongrelmen and the people in the sewers, and it gives the mongrelmen two incompatible origins, as the city's slaves and as its original inhabitants.
 
 So the evidence does not support turning one settlement's internal arrangement into an ethnography of a continent. What can be said is narrower and still worth saying.
 
 The folio supplied the frame: a southern land reached by Suloise migration, trade moving north through the Duxchan islands, and an economy in which outsiders extracted wealth from southern jungles for northern markets.
 
-The traffic remains; what stands behind it has changed. The blank point on the trade route became a settlement with households, writing, worship, rank, merchants, poor quarters, guarded movement and its own accumulation of goods that never reach the north.
+The traffic remains; what stands behind it has changed. The blank point on the trade route became a ruined city that had once been organised by rank, commerce and poverty. Its surviving fabric carries household goods, writing materials and religious imagery. In 1981 its occupants worship powers of their own, keep an accommodation at one guarded passage, and dispatch a caravan of stolen goods toward somewhere the merchants cannot trace.
 
 The same south-to-north economy remains visible around it. But the people in the jungle are no longer only the people from whom value is taken.
 
@@ -116,7 +118,9 @@ That is as far as the 1980 and 1981 evidence allows. It does not establish what 
 
 > If caravans are being intercepted rather than trade simply ceasing, who still controls the routes between the city, the southern jungle and the northern markets?
 
-> What does Horan's ability to issue recognised tablets imply about authority outside his own compound?
+> Where is the departing yuan-ti caravan taking the stolen goods, and does every captured cargo follow the same route?
+
+> Yuan-ti guards honour Horan's tablets at the Main Entrance. What else might his tokens, or his promises, secure elsewhere in the city?
 
 > If the city once had nobles, merchants, tradesmen and poor quarters, what institutions or descendants of those groups still exist beyond the keyed ruins?
 

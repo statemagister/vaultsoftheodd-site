@@ -41,8 +41,8 @@ Cook's own city inherits: a lost jungle city built by a vanished people.
 
 Cook's version is Asian-coded far beyond his source, and coded in the places source
 material does not reach: matting on the floors, a sunken hearth with a kettle, sliding
-paper panels, pickled plums, an inkstone and brushes, a six-armed serpent-bodied
-goddess, and an explicitly oriental dragon in the lake.
+paper panels, pickled plums, an inkstone and brushes, and an explicitly oriental
+dragon in the lake.
 
 And he has described a passion for oriental history, in his own words, as the reason he
 was already advising on Oriental Adventures before he was asked to write it.

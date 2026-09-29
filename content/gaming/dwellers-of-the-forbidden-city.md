@@ -44,7 +44,7 @@ Cook named his source. Three lost-city stories are read in full and given back e
 What the 1980 folio had already put in the eastern jungle, what Cook inherited rather than invented, and what changed. The folio supplied an economy running north out of the southern jungles. I1 keeps the traffic and changes what stands behind it.
 
 **[Part 3. The Human Past of the Forbidden City](/the-human-past-of-the-forbidden-city/)**
-The module gives three incompatible accounts of who the city's people were, and one consistent account of what became of them. Transformation belongs to the humans, and it has not stopped.
+The module gives two incompatible accounts of the mongrelmen's ancestry, a separate surviving human line in the sewers, and an epic in which the mongrelmen preserve their own past. Transformation belongs to the humans, and it has not stopped.
 
 **[Part 4. Sufficient to Play](/sufficient-to-play/)**
 What a referee actually receives. One room, one missing sentence from another book, and three kinds of silence in a text that looks complete on the page.

@@ -108,7 +108,7 @@ If the party searches, the players choose their own way in, with whatever they c
 
 Put those together and the module is doing three different things that look identical on the page.
 
-**It delegates consequential choices without marking them as consequential.** The entrances are the clearest case, and the first thing a referee touches.
+**It hands over consequential choices without saying what they decide.** The entrances are the clearest case, and the first thing a referee touches.
 
 **It loses some inherited rules silently.** The bloodworm's release mechanism, the location of the creeper's root, the setting of a weapon against a bullywug's hop. Those are the omissions that survive a search of the whole module rather than its monster section, and all three are counterplay: means by which players answer a threat. Not every difference cuts that way, since the bloodworm also loses its immediate re-attachment. But the verified omissions fall on the players' side.
 

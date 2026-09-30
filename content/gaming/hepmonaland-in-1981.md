@@ -46,7 +46,7 @@ So the first inheritance is not a cultural register. It is an economic one. The 
 
 ## The reversal
 
-The raiders are the yuan-ti. Horan, a human magic-user who has settled in the city, is responsible for the increased raiding, is attempting to unite the yuan-ti's disorganized bands, and plans once he succeeds to create a new empire, leading them meanwhile with promises of regained evil power and glory. The raiding is theirs; its increase is his; the empire is still his ambition rather than their project.
+The raiders are the yuan-ti, and on Horan, a human magic-user who has settled in the city, the module gives two accounts. The notes for the referee make the yuan-ti the organisers of the caravan raids, assisted by Horan, who has convinced them to rebuild their empire. The entry for his compound makes him responsible for the increased raiding, still attempting to unite their disorganized bands, and planning once he succeeds to create a new empire, leading them meanwhile with promises of regained evil power and glory. The two agree that the raiding is theirs and that Horan has made it worse. They disagree on whether he has succeeded, and on whose empire it is.
 
 The wandering-monster table then shows where some of the goods go next. A pureblood is preparing to leave the city with a caravan of stolen goods worth between 5,000 and 10,000 gold pieces, escorted by tasloi carrying bundles, bugbears as guards, bullywugs, and Horan's assistant magic-user. Purebloods, the module says elsewhere, normally handle affairs with the outside world and may travel far and wide doing so.
 
@@ -80,7 +80,7 @@ That is government, rank, commerce, poverty, storage, specialised trades and an 
 
 One passage has a rule. Horan keeps three gold tablets, which his agents show to the guards at the Main Entrance to prove they are on his business. Those guards are two halfbreed yuan-ti at C11, and they attack anyone who tries to enter or leave the city through that passage without one.
 
-Part 1 used that evidence to show something the lost-city controls do not contain. Here its significance is what it shows about the city in 1981: authority that can be delegated, represented by a portable object, and recognised by guards who serve another power. The guards do not belong to Horan. They are yuan-ti, and nothing suggests the yuan-ti need tablets to come and go. What the tablets show is an accommodation: two powers in one city, and a token one of them issues that the other honours at one tunnel mouth. It is consistent with the raiding. Horan intensifies a yuan-ti practice for his own ambition, and the yuan-ti honour his token without becoming his.
+Part 1 used that evidence to show something the lost-city controls do not contain. Here its significance is what it shows about the city in 1981: authority that can be delegated, represented by a portable object, and recognised by guards who serve another power. The guards do not belong to Horan. They are yuan-ti, and nothing suggests the yuan-ti need tablets to come and go. What the tablets show is an accommodation: two powers in one city, and a token one of them issues that the other honours at one tunnel mouth. It is consistent with the raiding. Horan intensifies a yuan-ti practice for an empire the module calls both theirs and his, and the yuan-ti honour his token without becoming his.
 
 None of that was in the folio, for Hepmonaland or for anywhere else in the southern jungles.
 

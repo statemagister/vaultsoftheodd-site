@@ -54,7 +54,7 @@ Three mechanisms. Three agents. One repeated result.
 
 Human stock remains in the city by degrees.
 
-That is the stable fact beneath the incompatible genealogies. I1 repeatedly refuses simple disappearance. Whatever ancestry is chosen, the human past survives as transformation.
+That is the stable fact beneath the conflicting accounts and separate lines of descent. I1 repeatedly refuses simple disappearance. Whatever ancestry is chosen, the human past survives as transformation.
 
 ## Transformation belongs to the humans
 
@@ -94,13 +94,13 @@ The phrase "breeding programmes" matters because it turns the city's history int
 
 The module's past is still producing its present.
 
-That sits beside another pattern. Two projects look towards restored power. Horan, who is responsible for the increased raiding, is attempting to unite the yuan-ti's disorganized bands and plans a new empire of his own, leading the yuan-ti meanwhile with promises of regained evil power and glory. The bullywugs are trying to rebuild their race and hope one day to drive every other creature from the city, co-existing for now. And the module notes that Horan's promises to the bullywugs are much the same as those he makes the yuan-ti.
+That sits beside another pattern. Two projects look towards restored power. The module describes Horan's in two ways. In the notes for the referee he has convinced the yuan-ti to rebuild their empire. In the entry for his compound he is responsible for the increased raiding, still attempting to unite their disorganized bands for a new empire of his own, and leading them with promises of regained evil power and glory. The bullywugs are trying to rebuild their race and hope one day to drive every other creature from the city, co-existing for now. And the module notes that Horan's promises to the bullywugs are much the same as those he makes the yuan-ti.
 
 The mongrelmen have no comparable project. They are described as vindictive and full of hate because of the way the other inhabitants treat them, and they survive partly by hiding and stealing. But not only by that. They gamble with visitors, trade information and service for coin, and will barter with parties that are not hostile. And they keep the epic.
 
 So the ruins contain two projects looking towards restored power, and one population that seeks no restoration but hides, trades and remembers.
 
-The yuan-ti's part in that is particularly strange. The power Horan promises them is regained power, which implies they once held it, and they are a people the module simultaneously describes as the result of human degeneration, while the same faction continues a breeding programme involving another degraded human population.
+The yuan-ti's part in that is particularly strange. The notes call it their empire, to be rebuilt, and the promise is of regained power, so on either account they once held it; and they are a people the module simultaneously describes as the result of human degeneration, while the same faction continues a breeding programme involving another degraded human population.
 
 Restoration and transformation are happening together.
 
@@ -118,7 +118,7 @@ The 1980 folio offers one further possibility but not a solution. It places Sulo
 
 The published module stops earlier.
 
-It cannot securely tell us who the humans of the Forbidden City were. It is much clearer about what happens to humans who remain there, and about what they keep: a war, an exchange, and a history of their own.
+It cannot securely tell us who the humans of the Forbidden City were. It is much clearer about what happens to humans who remain there, and about what they keep: warfare, exchange and a history of their own.
 
 **Later testimony.** In a 2012 Star Frontiersman interview, Cook described creature design as beginning with a goal or theme rather than with the creature itself, and discussed the creatures made for Dwellers in connection with its Conan and Burroughs lost-city conception. That supports treating the module's distinctive populations as thematic design rather than an accidental collection of monsters. It does not establish that the particular pattern identified here, human degeneration and transformation, was itself the intended theme.
 
@@ -140,7 +140,7 @@ It cannot securely tell us who the humans of the Forbidden City were. It is much
 
 > If more than one survives, how are the mongrelmen, the yuan-ti ancestors and the sewer humans related?
 
-> Horan plans a new empire and promises the yuan-ti regained power. Did they once hold power in this city, and if so, over whom?
+> The notes say Horan has convinced the yuan-ti to rebuild their empire; the entry for his compound calls it a new empire of his own. Which is it, and if the yuan-ti once held an empire here, over whom?
 
 > The mongrelmen's own epic is heroic in parts and confused in others. What in it is true, and what has it forgotten, inflated or invented?
 

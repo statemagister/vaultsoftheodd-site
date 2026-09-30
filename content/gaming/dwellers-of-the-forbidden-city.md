@@ -27,7 +27,7 @@ The parts are written to be read in order. Each depends on ground cleared by the
 **What this is, and is not.** It is not a walkthrough of rooms. It is a walkthrough of
 unresolved decisions. A conventional walkthrough tells a referee what is in each chamber.
 These articles follow the module through the places where the text stops being
-self-sufficient: where a consequential choice is handed over without being marked as one,
+self-sufficient: where a choice is marked but not what rides on it,
 where the history contradicts itself, where an imported rule has gone missing, and where
 the referee has to decide what kind of Forbidden City they are actually running.
 
@@ -44,7 +44,7 @@ Cook named his source. Three lost-city stories are read in full and given back e
 What the 1980 folio had already put in the eastern jungle, what Cook inherited rather than invented, and what changed. The folio supplied an economy running north out of the southern jungles. I1 keeps the traffic and changes what stands behind it.
 
 **[Part 3. The Human Past of the Forbidden City](/the-human-past-of-the-forbidden-city/)**
-The module gives two incompatible accounts of the mongrelmen's ancestry, a separate surviving human line in the sewers, and an epic in which the mongrelmen preserve their own past. Transformation belongs to the humans, and it has not stopped.
+The module says two incompatible things about the mongrelmen and describes a separate human line beneath the city, but gives one consistent account of what became of the city's people. Transformation belongs to the humans, and it has not stopped.
 
 **[Part 4. Sufficient to Play](/sufficient-to-play/)**
 What a referee actually receives. One room, one missing sentence from another book, and three kinds of silence in a text that looks complete on the page.

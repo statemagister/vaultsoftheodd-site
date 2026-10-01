@@ -5,7 +5,7 @@ date: 2026-09-09
 settings: ["Greyhawk"]
 series: ["Dwellers of the Forbidden City"]
 series_landing: true
-series_note: "4 parts and a postscript"
+series_note: "4 parts, a postscript and an investigation"
 weight: 5
 tags: ["Greyhawk", "Source Analysis", "I1", "AD&D"]
 authorVoice: ""
@@ -53,6 +53,9 @@ What a referee actually receives. One room, one missing sentence from another bo
 
 **[Postscript: A Reading I Cannot Prove](/a-reading-i-cannot-prove/)**
 Not part of the sequence's argument. A signed reading of what the evidence suggests without establishing, set out plainly with the four reasons it cannot be a finding.
+
+**[The Forbidden City: The Mystery of Ranet](/the-mystery-of-ranet/)**
+One name in Dwellers of the Forbidden City may preserve an unexpected connection to Ursula K. Le Guin, but the adventure leaves a mystery that may no longer have an answer.
 
 ## Method
 

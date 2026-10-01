@@ -54,6 +54,13 @@ What a referee actually receives. One room, one missing sentence from another bo
 **[Postscript: A Reading I Cannot Prove](/a-reading-i-cannot-prove/)**
 Not part of the sequence's argument. A signed reading of what the evidence suggests without establishing, set out plainly with the four reasons it cannot be a finding.
 
+## Further investigations
+
+*Not part of the sequence. Independent work on the same module.*
+
+**[The Forbidden City: The Mystery of Ranet](/the-mystery-of-ranet/)**
+One name in Dwellers of the Forbidden City may preserve an unexpected connection to Ursula K. Le Guin, but the adventure leaves a mystery that may no longer have an answer.
+
 ## Method
 
 <figure class="wp-block-image alignright is-resized"><a href="/images/gaming/i1-dwellers-of-the-forbidden-city-back-cover.jpg"><img src="/images/gaming/i1-dwellers-of-the-forbidden-city-back-cover.jpg" alt="The back cover of the same copy: a painted scene of an armoured warrior with sword and shield facing a green serpentine creature wielding a jewelled blade, above a long list of other AD&amp;D playing aids available from TSR Hobbies. At the foot, on the left, the line ISBN 0-935696-33-4. The bottom right corner is bare maroon board." width="1240" height="1614" style="aspect-ratio:0.768278;width:300px;height:auto"/></a><figcaption class="wp-element-caption">The back of the same copy, and the face that does the identifying. <span class="nowrap">ISBN 0-935696-33-4</span> stands alone at the foot; the right corner is bare, where the second printing carries the product number. Shown larger on click.</figcaption></figure>

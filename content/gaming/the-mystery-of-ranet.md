@@ -3,14 +3,12 @@ title: "The Forbidden City: The Mystery of Ranet"
 slug: "the-mystery-of-ranet"
 date: 2026-09-29
 settings: ["Greyhawk"]
-series: ["Dwellers of the Forbidden City"]
-weight: 60
 tags: ["Greyhawk", "Source Analysis", "I1", "David Cook", "Ranet"]
 authorVoice: ""
 draft: false
 ---
 
-*A separate investigation arising from the I1 sequence. Ranet appears once in Dwellers of the Forbidden City. The name may preserve an unexpected connection to Ursula K. Le Guin, but the adventure leaves a mystery that may no longer have an answer.*
+*Ranet appears once in Dwellers of the Forbidden City, David Cook's 1981 module I1. The name may preserve an unexpected connection to Ursula K. Le Guin, but the adventure leaves a mystery that may no longer have an answer.*
 
 *Evidence: I1, collated across both 1981 printings; the Monster Manual (1977); the Players Handbook (1978); Deities & Demigods (1980); the Fiend Folio (1981); Ursula K. Le Guin, The Tombs of Atuan (1971). Later Greyhawk material is named only so that it can be set aside.*
 

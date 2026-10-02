@@ -56,7 +56,7 @@ At the Autumn Budget in 2025, the government announced changes that will take ef
 
 The obvious response would be to hold your cash in a stocks and shares ISA instead, and simply leave it sitting there as cash. So a rule is coming to stop that.
 
-From the same date, interest paid on cash held inside a stocks and shares ISA will be charged at twenty-two pence in every pound. HMRC calls it the 22% charge. Your provider pays it rather than you, so nothing will land on your doorstep. The money will just be less than it would have been.
+From the same date, interest paid on cash held inside a stocks and shares ISA will be charged at twenty-two pence in every pound. HMRC calls it the flat-rate charge. Your provider pays it rather than you, so nothing will land on your doorstep. The money will just be less than it would have been.
 
 If your money is actually invested in something, none of this touches it. It applies to cash sitting there as cash, and nothing else.
 

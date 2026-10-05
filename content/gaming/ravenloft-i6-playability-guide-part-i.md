@@ -397,6 +397,24 @@ What the party hears at Madam Eva's tent is not a disinterested oracle. It is fi
 
 This does not break the module. The party can still use the reading's information. It just means the information arrives wrapped. PCs who go to Madam Eva expecting a disinterested guide find a seer who sees truly and serves another master. That tension is where the Tser Pool encampment earns its place in the adventure rather than being a flavour stop.
 
+---
+
+## 6. Before session one
+
+Part I ends where preparation ends. Everything below has already been set out in Sections 3 to 5. This is what should be on the DM's desk before the first session begins.
+
+1. **The party.** Six to eight characters of 5th to 7th level, with the four core roles covered, and a note of which characters are of good alignment and can pass the curtain at K87 (3, 3a).
+2. **The Sunsword carrier.** The name of the fighter whose longsword is the Sunsword's blade, so that the DM tracks the sword from session one (3d).
+3. **The spellcasters' lists.** The cleric's and wizard's prepared spells, checked against the recommendations in 3b and 3c.
+4. **The location sheet.** The four Table 1 placements in draw order (the Holy Symbol, the Tome, Strahd's starting position, and the Sunsword hilt), each with its Table 2 modifier, and each marked on the master map (5a, 5d).
+5. **The Strahd sheet.** His goal from Table 3 and the module's plan for it, the three scripted strikes marked unspent, and the six-hour intelligence clock ready for the first dawn, noon, dusk, or midnight report of the game (4c, 5d).
+6. **His routes.** K18a, K52, and the secret doors from his personal floor, so that his exit from any fight is immediate (4e).
+7. **A blank log.** One page for what the party does and what Strahd learns, to be reviewed between sessions (4e).
+8. **The tent.** A plan for the reading at Madam Eva's. If the PCs accept, the reading is run again aloud and replaces items 4 and 5. If they decline, the sheets stand (5c).
+
+The best case is all eight in hand, so that session one runs without reopening Part I. The worse case is a missing location sheet or Strahd sheet. Without them the DM does not know where the module's key objects are or what Strahd wants, which is the condition 4d warns cannot be played coherently, and session one should wait until both exist.
+
+
 *Last updated 5 October 2026.*
 
 ---

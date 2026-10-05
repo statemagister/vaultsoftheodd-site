@@ -19,11 +19,8 @@
       {{- with .Params.prereq }}<aside class="read-first">{{ . | markdownify }}</aside>{{- end }}
 
       <div class="post-body" data-listen-content>
-        {{- /* Pages migrated from WordPress HTML always showed straight quotes, because
-               raw HTML content bypasses Hugo's typographer. straight_quotes: true lets
-               such a page move to markdown and still look exactly as it did. */ -}}
         {{- if .Params.straight_quotes }}
-        {{ .Content | replaceRE "&[lr]squo;|[‘’]" "'" | replaceRE "&[lr]dquo;|[“”]" "\"" | safeHTML }}
+        {{ partial "straight-quotes.html" .Content | safeHTML }}
         {{- else }}
         {{ .Content }}
         {{- end }}

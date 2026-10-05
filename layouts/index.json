@@ -3,10 +3,9 @@
   {{- if and .Content (not .Params.noindex) -}}
   {{- $summary := .Summary | plainify }}
   {{- $plain := .Plain | replaceRE "\\s+" " " }}
-  {{- /* Keep search snippets as the page shows them; see straight_quotes in single.html. */ -}}
   {{- if .Params.straight_quotes }}
-    {{- $summary = $summary | replaceRE "&[lr]squo;|[‘’]" "'" | replaceRE "&[lr]dquo;|[“”]" "\"" }}
-    {{- $plain = $plain | replaceRE "&[lr]squo;|[‘’]" "'" | replaceRE "&[lr]dquo;|[“”]" "\"" }}
+    {{- $summary = partial "straight-quotes.html" $summary }}
+    {{- $plain = partial "straight-quotes.html" $plain }}
   {{- end }}
   {{- $list = $list | append (dict
       "title" .Title

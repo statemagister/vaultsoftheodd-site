@@ -4,7 +4,9 @@
        stops html/template re-escaping the JSON inside the <script>. No prose is
        touched — this is metadata only. */ -}}
 {{- if and .IsPage (eq .Section "politics") -}}
-  {{- $desc := (or .Description .Summary .Site.Params.description) | plainify | truncate 200 -}}
+  {{- $desc := or .Description .Summary .Site.Params.description -}}
+  {{- if .Params.straight_quotes }}{{ $desc = partial "straight-quotes.html" $desc | safeHTML }}{{ end -}}
+  {{- $desc = $desc | plainify | truncate 200 -}}
   {{- $img := site.Params.ogImage -}}
   {{- with .Params.images }}{{ $img = index . 0 }}{{ end -}}
   {{- if not (hasPrefix $img "http") }}{{ $img = ($img | absURL) }}{{ end -}}

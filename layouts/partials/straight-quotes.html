@@ -1,0 +1,8 @@
+{{- /* Turns the typographer's curly quotes back into straight ones. Used for pages
+       with straight_quotes: true, which were migrated from WordPress HTML: raw HTML
+       content bypasses Hugo's typographer, so those pages have always shown straight
+       quotes, and moving them to markdown should not change how they look. Applied
+       wherever page text is output: the body, the search index, the meta and Open
+       Graph descriptions and the JSON-LD description. Returns a string; callers that
+       need HTML add safeHTML. */ -}}
+{{- return (string . | replaceRE "&[lr]squo;|[‘’]" "'" | replaceRE "&[lr]dquo;|[“”]" "\"") -}}

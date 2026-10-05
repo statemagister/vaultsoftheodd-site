@@ -12,6 +12,7 @@
   <title>{{ if $isHome }}{{ .Site.Title }}{{ else }}{{ $title }} · {{ .Site.Title }}{{ end }}</title>
 
   {{- $desc := or .Description .Summary .Site.Params.description -}}
+  {{- if .Params.straight_quotes }}{{ $desc = partial "straight-quotes.html" $desc | safeHTML }}{{ end -}}
   <meta name="description" content="{{ $desc | plainify | truncate 200 }}">
   <link rel="canonical" href="{{ .Permalink }}">
 

@@ -19,7 +19,7 @@ Part II ended with the party walking into the village of Barovia, tired and shor
 
 ### 1a. The village's geography, east to north
 
-The village is a small grid of cobbled streets, shuttered houses, and a single active square. The main road runs east to west into that square, then bends and climbs north out of the village toward the cliffs, the church, and the road up to the castle. The party enters along the main road. The square is a few minutes walk from the first shuttered houses. The church stands on the rise at the north end, against the pillar-stone. The Burgomaster's house sits on the north road between the square and the church rise. Mad Mary's townhouse is off a side street within earshot of the square.
+The village is a small grid of cobbled streets, shuttered houses, and a single active square. The main road runs east to west into that square, and leaves it again heading west and southwest, crossing the river by a bridge on the road to the junction at F (Map 1). A short spur runs north from the square to the church and the cemetery. The party enters along the main road. The square is a few minutes walk from the first shuttered houses. The church stands on the rise at the north end, against the pillar-stone. The Burgomaster's house lies south of the square, on the street that runs down toward the river. Mad Mary's townhouse is off a side street within earshot of the square.
 
 ### 1b. What the square delivers, and what it does not
 
@@ -59,7 +59,7 @@ For play in the village, Mad Mary gives nothing the party can act on. She is a c
 
 ### 2d. E4 and E5, the Burgomaster's home
 
-The house sits behind a rusting iron fence on the north road. The module's description is specific: gates twisted and torn, one cast aside and one swinging crazily, weeds choking the grounds, claw marks on the walls, great black blottings of old fire, every window barred with planks. A path has been worn in the weeds around the house, as if something has been walking its perimeter. This is the state of the place Ismark is taking them to.
+The house sits behind a rusting iron fence south of the square. The module's description is specific: gates twisted and torn, one cast aside and one swinging crazily, weeds choking the grounds, claw marks on the walls, great black blottings of old fire, every window barred with planks. A path has been worn in the weeds around the house, as if something has been walking its perimeter. This is the state of the place Ismark is taking them to.
 
 Inside, Ireena bars the door. She opens it on recognition of Ismark or on conviction that the visitors are not Strahd's. Inside is well furnished but wearing: overuse of holy symbols in every room, shutters nailed, and in a side drawing room the Burgomaster Kolyan Indirovich lies dead among candles, ten days gone. The stench is the stench of a body kept indoors too long.
 
@@ -89,7 +89,7 @@ The walk through E1 to E7 hands the party three durable threads. They are what P
 
 ### 3a. Ismark's proposal
 
-Ismark wants his sister moved somewhere safe and his father buried. He asks the party to help with both. This is the adventure's immediate hook once the opening has landed. It gives the party a named NPC they are helping, a stated destination, and an in-fiction reason to take the north road out of the village. The module gives Ismark no role beyond the village: he greets the party and takes them to the house (p.8). A DM who wants a familiar face on the road can have him come along until Ireena is safe, since his sister is his whole motivation, but that is the DM's addition, not the module's. He is a minor fighter with decent stats, not a second party member.
+Ismark wants his sister moved somewhere safe and his father buried. He asks the party to help with both. This is the adventure's immediate hook once the opening has landed. It gives the party a named NPC they are helping, a stated destination, and an in-fiction reason to take the road out of the village. The module gives Ismark no role beyond the village: he greets the party and takes them to the house (p.8). A DM who wants a familiar face on the road can have him come along until Ireena is safe, since his sister is his whole motivation, but that is the DM's addition, not the module's. He is a minor fighter with decent stats, not a second party member.
 
 ### 3b. Donavich's knowledge
 
@@ -171,7 +171,7 @@ The hold-out is a legitimate strategic choice. It is not a safe one. The module 
 
 ## 6. Where Part III should stop
 
-The clean stopping point is the party's departure from the village on the north road with Ireena, and with Ismark too if the DM has sent him along, carrying whatever Bildrath was willing to sell them, with the Tome of Strahd named, and with the cemetery's midnight procession seen or at least inferred. That is true whether the party walked the village in a single day and left the next morning, or held the church for a week before Strahd's pressure, or the cost of staying, persuaded them to move on.
+The clean stopping point is the party's departure from the village on the west road with Ireena, and with Ismark too if the DM has sent him along, carrying whatever Bildrath was willing to sell them, with the Tome of Strahd named, and with the cemetery's midnight procession seen or at least inferred. That is true whether the party walked the village in a single day and left the next morning, or held the church for a week before Strahd's pressure, or the cost of staying, persuaded them to move on.
 
 That is a complete Part III. The party has met the village's living NPCs, understood its condition, picked up the three threads the village hands them, and set themselves on the only outbound path the valley still offers. Everything else belongs to the road up, the Tser Pool encampment, and the castle.
 

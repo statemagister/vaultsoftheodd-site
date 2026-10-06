@@ -129,7 +129,7 @@ Madam Eva's potion is the only way out short of Strahd's destruction. The module
 
 The gates function as threshold, not wall. The seal is enforced by fog, worgs, and the forest itself, not by invisible masonry.
 
-Map 1 shows no adjacent walls. The gates stand between stone buttresses that jut from woods the module calls impenetrable (p.7), and anyone who crosses back over the border is choked by the fog. A party that tries to go around the gates should be answered on those terms. The best case is a DM who lets the attempt run into the woods, the fog, and the worgs, so that the seal holds without the gates needing to be walls. The worse case is an invisible wall, which costs the player's trust at the moment that trust is most load-bearing.
+Map 1 shows no adjacent walls. The gates stand between stone buttresses that jut from woods the boxed text calls impenetrable (p.7). That description puts the gates at the centre of the scene and says nothing about a wall, and there is no need for the DM to add anything. A player who asks what their characters can see beside the gate gets the answer the map gives: buttresses, dense woods, and no wall. The effect works only if the DM neither invents a wall nor volunteers the way round. Whether the woods can be forced is the DM's ruling, because I6 calls them impenetrable in description but never states it as a rule. A party that inspects the gate and turns back has not tried to leave. Anyone who does cross back over the border is choked by the fog. A party that tries to go around the gates should be answered on those terms. The best case is a DM who lets the attempt run into the woods, the fog, and the worgs, so that the seal holds without the gates needing to be walls. The worse case is an invisible wall, which costs the player's trust at the moment that trust is most load-bearing.
 
 ### 3c. The village
 
@@ -198,7 +198,6 @@ the road in, the body, the letter, the village, day as oppressive, night as leth
 That is a complete Part II. The party is inside the valley, has a destination, has a threat named, has the valley's two registers distinguished, and has seen or at minimum can infer the cost of trying to leave. Everything else belongs to the village, to the road up, to the castle, to the climax.
 
 Part III takes the party into the village proper from here, to Ismark, Ireena, the church, Bildrath, and the first social choices.
-
 
 ## 6. Before session one
 

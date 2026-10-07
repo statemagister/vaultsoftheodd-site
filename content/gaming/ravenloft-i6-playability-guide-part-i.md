@@ -306,7 +306,7 @@ The module's own instruction on p.4 is unambiguous: "You must run this card read
 
 ### 5a. Procedure
 
-The card deck is a standard 52-card deck with the 2s, 4s, 6s, 8s, 9s, and jokers removed. That leaves 32 cards in four suits of eight. As an alternative, roll d8 for card value (3, 5, 7, 10, J, Q, K, A maps to 1 through 8) and d4 for suit (hearts, diamonds, clubs, spades).
+The card deck is a standard 52-card deck with the 2s, 4s, 6s, 8s, 9s, and jokers removed. That leaves 32 cards in four suits of eight. As an alternative, roll d8 for card value (3, 5, 7, 10, J, Q, K, A maps to 1 through 8) and d4 for suit (hearts, diamonds, clubs, spades). If you roll dice instead of drawing cards, I6 says to roll again "if you get the same card in any suit twice" (p.4). Read it as rerolling an exact duplicate (the same value and suit), which keeps the dice giving the same results as the deck, as the module intends. Read as "the same value", it would stop dice from ever co-locating items, which the deck can do.
 
 The reading deals the top five cards face down. The module's arrangement places them in a specific spread on p.5, but the outcomes of each table are what matter for play rather than the spread's symbolism.
 
@@ -341,6 +341,8 @@ For each of cards one through four, the result fixes one of the placements from 
 - Spades: PCs suffer -1 to hit and +1 penalty to AC. A dark shadow of evil over that place.
 
 The modifier applies only to combats fought at the specific location the paired card drew. It does not apply to the adventure as a whole. A Hearts draw for the Sunsword location gives the party +1/-1 only when they fight in that room, not everywhere.
+
+When two placements share a location but their cards have different suits, I6 does not say how their Table 2 modifiers interact. The recommended ruling is to apply both modifiers cumulatively. This preserves the effect attached to each card without inventing a precedence between them. Opposed modifiers cancel normally. Thus Spades with Clubs gives the PCs -2 to hit and no net AC modifier, while Spades with Hearts cancels out completely. This is a ruling, not module text.
 
 **Table 3, Strahd's Goals.** Four goals, each keyed to card ranges rather than single values.
 

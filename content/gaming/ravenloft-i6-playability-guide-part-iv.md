@@ -92,7 +92,7 @@ At I the road splits again. A dirt road continues northwest. An older road, show
 
 The horses are under Strahd's control. If the party gets in, the carriage takes them to area J, the castle gates, and the horses cannot be discouraged from their course. A party that wants to walk the east road can walk it instead. The horses wait until the PCs get in (p.11), so a party that walks leaves the carriage standing at I. The other option at I is the dirt road northwest. It runs a short way to Barovia's second gate, west of the crossroads (p.6, Map 1). Map 1 marks it B, like the gate the party came in by, so it shares that gate's description (p.2), and it will not open for the party. Like the east gate, it bars the road rather than the landscape (Part II Section 3b). A party that inspects it and turns back has not tried to leave. A party that tries to go round it through the woods is attempting to leave Barovia, and the procedure at C applies, with twenty-five worgs (p.8). The module ends that attack only when a party enters the village, and there is no village on this side, so where it stops is the DM's ruling.
 
-A party that refuses the carriage and walks east toward J is also travelling through C, but is neither entering nor attempting to leave Barovia. I6 gives no worg figure for that case, so whether the procedure produces an attack, and in what strength, is the DM's ruling.
+A party that refuses the carriage and walks east toward J is also travelling through C, but is neither entering nor attempting to leave Barovia, and I6's worg figures do not describe that case. The recommended ruling is that the special C procedure applies only to those two boundary movements, as I6 specifies. For other travel through the C woods, including the walk from I to J, use the ordinary Barovian encounter procedure: Table 4 by day and Table 5 by night (Part II Section 3). This is a ruling, not module text.
 
 The carriage is Strahd's offer of accommodation to guests he is expecting. Convenient and direct, and it goes only one way. A party that gets in has committed.
 
@@ -115,6 +115,10 @@ The clean stopping point is the party committed to the road from I to J. Usually
 That is a complete Part IV. The party has crossed the last mundane geography of the valley, heard the Fortunes read again at the tent or played on with the prep results, brought Ireena with them, and committed to the castle approach by carriage or on foot. Everything else belongs to Castle Ravenloft.
 
 Part V takes the party into the castle from here, through J (the gates) and into the keyed K-rooms. J's boxed text assumes the carriage (p.11), and Part V notes how to adapt it for a party arriving on foot. It is where the apparatus of Part I Section 4e opens for play, and where the Fortunes reading's placements start to matter.
+
+---
+
+*Last updated 7 October 2026.*
 
 ---
 

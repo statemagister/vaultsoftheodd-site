@@ -345,7 +345,7 @@ The modifier applies only to combats fought at the specific location the paired 
 **Table 3, Strahd's Goals.** Four goals, each keyed to card ranges rather than single values.
 
 - 3 or 5: *Strahd seeks a new identity.* Active subversion. He charms a lone PC, isolates them, casts polymorph other to transform them into a vampire, places them in his coffin, polymorphs himself into that PC's likeness, and attempts to join the party as the transformed PC, claiming to have found a way out of Barovia. The intent is to carry his identity into another country, with the Rhenari moving his coffin dirt. This is the subversion mode named in 4's opening, made specific.
-- 7 or 10: *Strahd wants to make a magical sphere of darkness.* He is missing only a black opal, the last piece of an ancient apparatus he has been assembling over centuries. He believes mistakenly that one of the PCs is carrying a black opal. He charms lone PCs, sends them back to the party with the question "Do you have the black opal?", and when he discovers none of them do, turns on them. Read Section 1c against this goal: the module says the completed sphere would greatly extend the range of his travels.
+- 7 or 10: *Strahd wants to make a magical sphere of darkness.* He is missing only a black opal, the last piece of an ancient apparatus he has been assembling over centuries. He believes mistakenly that one of the PCs is carrying a black opal. He charms lone PCs, sends them back to the party with the question "Do you have the black opal?", and when he discovers none of them do, turns on them. I6 does not say how that discovery reaches him. Under the AD&D rules a charmed character is not a slave: charm turns the victim's priorities toward the charmer but leaves personality and alignment unchanged, and nothing makes the victim report back automatically (DMG). The recommended ruling is that the charmed PC must get the answer back to Strahd, at his next contact with them. Once he receives a credible report that nobody in the party has the black opal, he switches from probing to destroying them, and he does not need to charm every PC separately. This is a ruling, not module text. Read Section 1c against this goal: the module says the completed sphere would greatly extend the range of his travels.
 - Jack or Queen: *Strahd wants to win the love of Ireena Kolyana.* Not her capture but her affection. He charms the entire party and makes them attack Ireena. He then swoops down to rescue her from them, hoping the rescue turns her heart toward him. He wants her willingly, not by force. The goal that puts Ireena at the centre of his plan.
 - King or Ace: *Strahd wants the Sunsword.* He believes, correctly, that a random fighter PC has been unknowingly carrying the Sunsword blade. He wants to destroy the weapon before the hilt is reunited with it. If the hilt is found and reunited, the Sunsword becomes a real threat to him. This is the goal where Strahd's urgency is highest, because the Sunsword carrier does not know what they have until the hilt is recovered.
 
@@ -397,7 +397,9 @@ What the party hears at Madam Eva's tent is not a disinterested oracle. It is fi
 
 This does not break the module. The party can still use the reading's information. It just means the information arrives wrapped. PCs who go to Madam Eva expecting a disinterested guide find a seer who sees truly and serves another master. That tension is where the Tser Pool encampment earns its place in the adventure rather than being a flavour stop.
 
-*Last updated 5 October 2026.*
+---
+
+*Last updated 7 October 2026.*
 
 ---
 

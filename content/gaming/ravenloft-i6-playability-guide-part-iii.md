@@ -17,7 +17,7 @@ straight_quotes: true
 
 Part II ended with the party walking into the village of Barovia, tired and short on certainty. The church and the castle were the two sightlines visible above the rooftops. Part III opens at the first cobblestone.
 
-### 1a. The village's geography, east to north
+### 1a. The village's geography and the road through it
 
 The village is a small grid of cobbled streets, shuttered houses, and a single active square. The main road runs east to west into that square, and leaves it again heading west and southwest, crossing the river by a bridge on the road to the junction at F (Map 1). A short spur runs north from the square to the church and the cemetery. The party enters along the main road. The square is a few minutes walk from the first shuttered houses. The church stands on the rise at the north end, against the pillar-stone. The Burgomaster's house lies south of the square, on the street that runs down toward the river. Mad Mary's townhouse is off a side street within earshot of the square.
 
@@ -38,6 +38,8 @@ The tavern is the only lit commercial building the party sees on arrival, and th
 Inside is thin. Arik, the barkeep, cleans glasses in a dull rhythm, takes orders in a hollow voice, and ignores questions. Three Rhenari sit at a table near the door, owners of the tavern and its standing enforcers with customers who do not pay. The Rhenari are the guide's name for the itinerant clan the module calls "gypsies," introduced in Part I Section 2. They are otherwise disinterested in the party. Ismark the Lesser sits in the shadows to the right, sipping wine, waiting to be approached.
 
 The tavern is a meeting-point, not a place the party learns much by sitting in. Arik gives nothing, the Rhenari give nothing, the patrons cower. What the tavern delivers is Ismark. He is the Burgomaster's son, and he reveals that on approach. He takes the party to the Burgomaster's house (E4) to meet his adopted sister, Ireena Kolyana. What has happened to her, the party learns at the house. He is tight-lipped on everything except what concerns his sister.
+
+> **Behind the horror.** One possible reading of "Ismark the Lesser" is "his mark": the lesser mark, beside Ireena. I6 carries a good deal of wordplay like this beneath its straight Gothic presentation.
 
 A party that shows Ismark a letter purporting to be from the Burgomaster gets an immediate reading of it. In the module's as-written opening, Ismark confirms the tavern letter is not his father's hand. In the camouflaged opening from Part II, there was no forgery to confirm, and Ismark instead confirms that the body-letter is his father's.
 
@@ -149,7 +151,7 @@ Each of the actions below is within Strahd's character and his capabilities. Non
 
 *Attriting Donavich.* The prayers are active work by an exhausted 2nd-level cleric. Every night of harassment at the church exterior is another night's sleep he does not get, another day of recovery he cannot take, another prayer delivered hoarser than the last. Strahd does not need to enter the church to attack its protection. Wolves, bats, charm attempts, fear, lack of sleep, and the visible suffering of the village all work on Donavich as much as they work on the party. I6 gives no exhaustion track and no point at which the prayers fail. A DM who decides that sustained pressure eventually breaks him is adding that consequence, and should settle in advance what triggers it. The best case is a DM who has made that call before the party settles in. The worse case is a lapse invented on the night the party is winning, which ends the hold-out by fiat.
 
-*Targeting the invitation.* The charm-gaze mechanic runs every night the party is harassed. A party sleeping in one place for multiple nights gives Strahd repeated attempts against the same roster of saves. The procedure is the one Part II Section 3f sets out: Strahd works to charm someone inside into inviting him in. How long that invitation lasts is the ruling the DM made before the first night. The invitation is the only lever he needs to pull, and the party provides it for him by staying in place long enough for the dice to find a failure.
+*Targeting the invitation.* The charm-gaze mechanic runs every night the party is harassed. A party sleeping in one place for multiple nights gives Strahd repeated attempts against the same roster of saves. The procedure is the one Part II Section 3f sets out: Strahd works to charm someone inside into inviting him in. Once given, the invitation keeps that building open to him (Part II Section 3f). A PC charmed this way stays charmed under the *charm person* rules, because the DMG treats a vampire's gaze as *charm person*: the victim repeats the saving throw at the interval set by Intelligence, and *dispel magic* can end the effect. For a PC of middling Intelligence that can mean weeks. Charm turns the victim's loyalties toward Strahd, not their personality or alignment. The invitation is the only lever he needs to pull, and the party provides it for him by staying in place long enough for the dice to find a failure.
 
 *Using the time the party gives him.* The church changes where Ireena is, not what Strahd wants with her. Under the Ireena goal his plan is to charm the party into attacking her so that he can stage her rescue (Part I Section 5b), and a party that stays in one place gives him night after night of charm attempts against the same saves. Under his other goals she is leverage rather than the target. Either way, I6 gives no decline in her condition from the passage of time. What the party spends by waiting is Strahd's opportunity, not her health.
 
@@ -163,7 +165,7 @@ The hold-out is not useless. A party that sustains it for several days has learn
 
 Whether they have also recovered their spells is a separate question, because sanctuary and rest are not the same thing. The harassment comes every night (p.6), so overnight recovery is unreliable. Under the AD&D rules, though, recovery is not tied to night. A caster needs a span of uninterrupted rest set by the highest level of spell being regained, four hours for 1st and 2nd level and six for 3rd and 4th, followed by time to prepare each spell. A party that guards the church by day and lets its casters sleep through the daylight hours can recover before the next night comes. This is a consequence of the rules, not something I6 states.
 
-The inversion is possible, not secure. The module checks for an encounter every 3 turns wherever the party is outside the castle, by day as well as by night (p.6). A six-hour rest spans twelve daytime checks. Something turns up almost nine times in ten, and whether villagers or Rhenari at the door wake the sleepers is the DM's call. Worgs turn up somewhere between two times in five and one in two, and the DM can reasonably rule that a worg attack on the doors breaks the rest. Strahd's scripted strikes are not limited to the night either, and the worg and zombie summons can be spent against a sleeping church (Part I Section 4c). The best case is a party that rests by day, keeps a watch, and absorbs the interruptions. The worse case is a party that assumes sanctuary means recovery, and finds its casters emptier each night than the one before.
+The inversion is possible, not secure. A party holed up in the church is not exempt from encounter checks, though the DM may moderate their frequency, and a rolled encounter does not automatically come inside (Part II Section 3e). Whether a result breaks the casters' rest is decided from the circumstances: villagers passing in the street do not, and worgs at the doors may. Strahd's scripted strikes are not limited to the night either, and the worg and zombie summons can be spent against a sleeping church (Part I Section 4c). The best case is a party that rests by day, keeps a watch, and absorbs the interruptions. The worse case is a party that assumes sanctuary means recovery, and finds its casters emptier each night than the one before.
 
 What they have lost is time Strahd can use against Ireena, supplies on Bildrath's terms, and the tempo advantage against a Strahd who has been watching them fortify. Part I Section 4e's learning layer is live through the hold-out. Every night the party spends at the church is a night Strahd spends studying their watch rotations, their charm-save performance, and their spell usage under a repeated stimulus. The Strahd they eventually walk out to face is optimised against the party that held the church, not the party that walked through the village.
 
@@ -171,7 +173,7 @@ The hold-out is a legitimate strategic choice. It is not a safe one. The module 
 
 ## 6. Where Part III should stop
 
-The clean stopping point is the party's departure from the village on the west road with Ireena, and with Ismark too if the DM has sent him along, carrying whatever Bildrath was willing to sell them, with the Tome of Strahd named, and with the cemetery's midnight procession seen or at least inferred. That is true whether the party walked the village in a single day and left the next morning, or held the church for a week before Strahd's pressure, or the cost of staying, persuaded them to move on.
+The clean stopping point is the party's departure from the village on the west road with Ireena, and with Ismark too if the DM has sent him along, carrying whatever Bildrath was willing to sell them, with the Tome of Strahd named, and with the cemetery's midnight procession learned about, and perhaps seen. That is true whether the party walked the village in a single day and left the next morning, or held the church for a week before Strahd's pressure, or the cost of staying, persuaded them to move on.
 
 That is a complete Part III. The party has met the village's living NPCs, understood its condition, picked up the three threads the village hands them, and set themselves on the only outbound path the valley still offers. Everything else belongs to the road up, the Tser Pool encampment, and the castle.
 
@@ -179,7 +181,7 @@ Part IV takes the party north from here, through the road junction (F), to Tser 
 
 ---
 
-*Last updated 5 October 2026.*
+*Last updated 7 October 2026.*
 
 ---
 

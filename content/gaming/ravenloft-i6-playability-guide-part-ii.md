@@ -155,11 +155,13 @@ The table feeds atmosphere more than combat. An encounter with two villagers who
 
 ### 3e. The night register
 
-By night, outdoor movement is a different category of risk altogether.
+By night, the valley is a different category of risk altogether.
 
 The night table (Table 5, p.6) escalates hard, and it should. Rolled every three turns on d6, triggered on 1 or 2. Worgs in larger numbers, zombies, bats in swarms, a ghost, ghouls, wights, wraiths. A 12 on the roll produces a maiden with a vampire's statistics: she drains two levels, charms with her gaze, and can turn gaseous as Strahd does. She is not Strahd, and the module does not say who she is. One reading is that Strahd's predation across centuries has left a tail, and the tail is still on the ground.
 
 The lesson is strongest the first time the party encounters it. A night encounter rolled honestly on session one does more work than three lectures about how dangerous Barovia is at night.
+
+The every-3-turn check runs wherever the party is in Barovia outside the castle (p.6), not only while it is on the move. A party that holes up in a house or the church is not exempt, but the DMG lets the referee moderate the frequency for a party that holes up. A rolled encounter while the party is sheltered does not mean the creature comes inside. Decide from the circumstances whether it passes nearby, notices the occupants, or can reach them. Strahd's nightly harassment is separate and happens as I6 directs (3f). This is a ruling, not module text.
 
 ### 3f. Strahd's nightly harassment
 

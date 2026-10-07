@@ -17,6 +17,8 @@ straight_quotes: true
 
 The module's opening on p.7 is probably the most recognisable opening in the hobby. The party begins in an unnamed tavern in a nameless province, a gypsy messenger arrives with a sealed letter from the Burgomaster of Barovia pleading for help for Ireena Kolyana, whom it calls "the love of my life", the party marches five hours through the Svalich woods, and three turns [30 minutes] into the woods they find a dead villager holding a second letter that reveals the first as a forgery. The first letter drew the party in under false pretences. The real letter, arriving too late to act on, asks them not to come. By the time they have the information to decide, the gates have closed behind them.
 
+In the module's opening the messenger is a gypsy, and the gypsies are neutral evil (p.6), so a paladin's detect evil marks him at once, and a suspicious party may question him, hold him, or follow him out. I6 gives him nothing after "With that, he leaves." Its own account of his people supplies a workable answer. Questioned, he talks in riddles of useless information, and nothing he says is true: the only information the gypsies give away is "misleading at best and often a lie" (p.32). Pressed hard, he is quick to act and merciless if he must be, and he fears Strahd more than the party (p.32). Followed, he takes the west road he named, and the gypsies alone pass through Barovia at will (p.32). The recommended ruling is to let him lose any tail in the fog once he is clear of the town. A party that keeps going has chosen to enter the woods at night, against his own warning, and the night table runs. This is advice, not module text.
+
 This opening works. It has also been read and played often enough that a player who has encountered I6 before will recognise it the moment the boxed text begins. What follows is a camouflaged version of the same opening that reaches the same points in the valley by a different route, offered as an interpretation a DM can fit to any of the published-setting placements or homebrew equivalents set out in Part I Section 1d.
 
 ### 1a. What the camouflage preserves, and what it changes
@@ -117,6 +119,8 @@ The opening ends here. Before moving into Part III, Sections 3 and 4 set out the
 
 The valley has a day register and a night register, and the transition is absolute. By day, Barovia is oppressive. By night, Barovia becomes actively lethal. That is the governing distinction, and the DM's handling of everything in the valley that is not a specific scene in the module follows from it.
 
+I6 does not say when these procedures begin. With the printed opening that matters, because the party spends a night at the inn and then marches five hours before it reaches the gates. The recommended ruling is to start them at the gates. Run no intelligence checks, no nightly harassment and no encounter checks at the inn or on the Old Svalich Road. Starting them earlier lets Strahd's machinery reach past the adventure's own threshold and shows his hand before the opening has done its work. This is a ruling, not module text.
+
 ### 3a. The fog
 
 The fog functions as atmosphere inside the valley and as doom at the boundary. It is not a constant active hazard during ordinary travel, and mechanically it is not doing that. The horror of the fog is retrospective. The party has already breathed it, and the danger is attached to exit, not to ordinary movement within Barovia.
@@ -165,7 +169,7 @@ He is not trying to kill the party here. He is trying to fray them.
 
 Worgs test thresholds. They attempt to breach doors and windows on a d6 roll of 1 or 2 per turn [per 10 minutes]. Bats foul spellcasting, forcing dexterity checks on material components. Charm seeks invitation. The invitation rule binds Strahd: he cannot enter a building until someone inside invites him in, and he works on charming a character into doing so.
 
-This is how the party learns two things before the castle. First, Strahd attacks indirectly by preference. Second, the invitation rule matters, and a PC who fails a charm save and extends the invitation unlocks the building to him. The module does not say for how long, so the DM decides that before it happens rather than at the table.
+This is how the party learns two things before the castle. First, Strahd attacks indirectly by preference. Second, the invitation rule matters, and a PC who fails a charm save and extends the invitation unlocks the building to him. The AD&D vampire rule says that once a vampire has been invited into a home, it may enter freely thereafter (Monster Manual). I6 applies the invitation restriction to Strahd but gives no separate duration or revocation rule. The clean ruling is therefore that once someone inside has invited him into a building, that building remains open to him.
 
 The omission of Ireena is equally important. Neither Strahd nor his worgs ever attack Ireena Kolyana. The module is explicit. A player who notices that the worgs and bats harry everyone except her has seen one of the adventure's key truths before anyone explains it. Ismark will confirm it in conversation later (E2 and E4 in Part III), but the evidence is on the floor before he does.
 
@@ -175,9 +179,9 @@ On later traversal, the woods leave marks on the party. They are the pressure co
 
 ### 4a. The worgs
 
-The wolf howls function as tempo rather than as a cue to roll for combat. The logic sits on p.8. A d6 roll every turn [every 10 minutes]: on a 4 or higher, one wolf cries in the distance. Another cry joins each round [each minute]. After five rounds of howling, the worgs attack. The attack stops if the party leaves the woods by entering the village. The party hears wolves. What reaches them is worgs.
+The wolf howls function as tempo rather than as a cue to roll for combat. The logic sits on p.8. A d6 roll every turn [every 10 minutes]: on a 4 or higher, one wolf cries in the distance. Another cry joins each round [each minute]. If the party is still in the woods after five rounds of howling, the worgs attack. The attack stops if the party leaves the woods by entering the village. The party hears wolves. What reaches them is worgs.
 
-The sound gathers. The party has time to decide whether to stand, run, or prepare. The encounter is not mainly about danger by numbers. The point is that the road is already being hunted, and the party has time to hear it coming.
+The sound gathers, and the five rounds are real preparation time. The party can choose its ground, organise a withdrawal, ready missile fire, cast protective or battlefield magic, or simply run for the village. The DM's job is to leave room for all of those. Twenty-five worgs on the way out is a large pack arriving after a warning, not twenty-five attackers appearing around the party when the fifth round ends. The encounter is not mainly about danger by numbers. The point is that the road is already being hunted, and the party has time to hear it coming.
 
 ### 4b. The asymmetry
 
@@ -209,13 +213,13 @@ Reading stops here and play can begin. Parts I and II ask the DM to understand a
 4. **The module to hand.** The maps, and Tables 4 and 5 for the valley (Sections 3d, 3e).
 5. **The opening.** The module's or the camouflage. If the camouflage, the hamlet, Anshel Rhen's offer, and the item the Rhenari will take (Sections 1, 1a to 1e).
 
-Everything else is used when it arises and needs no preparation beyond knowing where it is: the nightly harassment (3f, p.6), the worg mechanic (4a, p.8), the gates (3b), and Ireena's immunity from attack (3f). The one ruling worth making before the first night is how long a charmed invitation lasts, because the module does not say (3f).
+Everything else is used when it arises and needs no preparation beyond knowing where it is: the nightly harassment (3f, p.6), the worg mechanic (4a, p.8), the gates (3b), and Ireena's immunity from attack (3f). A charmed invitation needs no ruling of its own: once given, the building stays open to Strahd (3f).
 
 The best case is all five in hand, and play begins. The worse case is a missing Fortunes reading or an undecided opening. Without the reading, the DM does not know where the module's key objects are or what Strahd wants (Part I Section 4d). Without the opening, the four deliveries in 1a do not land. Session one waits for those two.
 
 ---
 
-*Last updated 5 October 2026.*
+*Last updated 7 October 2026.*
 
 ---
 

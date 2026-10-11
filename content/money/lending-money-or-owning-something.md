@@ -8,77 +8,81 @@ description: "Shares, bonds, gilts and funds sound like different things to lear
 tags: ["getting started", "investing"]
 ---
 
-Two of my neighbours needed money at various points.
+Two of my friends needed money at various points.
 
-One of them asked to borrow a hundred pounds until the end of the month. We agreed he would give me back a hundred, and if he had wanted to make it worth my while he might have offered a bit more on top. What I was owed was fixed from the moment we shook hands. Whether his month went well or badly did not change the number. The uncertainty was whether he would repay it as agreed.
+One asked to borrow a hundred pounds until the end of the month. We agreed he’d give me back a hundred, and if he had wanted to make it worth my while he might have offered a bit more on top. The amount he owed was settled from the beginning. Whether his month went well or badly didn’t change that. What I didn’t know was whether he’d actually pay me back.
 
-The other was setting up a business and offered me a slice of it instead. No fixed amount, no date. If the business became more valuable, my slice might too, and if it went nowhere I could be left with a slice of nothing.
+The other was setting up a business and offered me a slice of it instead. There was no amount he promised to return and no date on which he’d return it. If the business did well, my slice might become worth more. If it failed, I might be left with nothing.
 
-Those are the two arrangements. Most ordinary ways of saving and investing are a version of one or the other.
+I could give both friends the same hundred pounds, but I’d be doing two quite different things with it. Most ordinary saving and investing comes down to the same distinction: lending money to somebody who agrees to repay it, or buying an interest in something whose future value you can’t know.
 
-## Lending
+## When you’re lending
 
-When you lend, the borrower owes you under terms agreed at the start.
+A savings account is closer to the first friend than it might appear.
 
-You hand over money, and they agree the terms on which it will be repaid. Their success afterwards is not your business. If they do brilliantly you are still owed what was agreed. If they struggle, you are still owed what was agreed. The question is whether you will receive it.
+When you put money into a bank, you’re lending it to the bank. It owes you the balance under the account’s terms, and if the account pays interest, that’s what it adds for using your money.
 
-A savings account is this. You are lending money to a bank, and it owes you the balance under the account's terms. If the account pays interest, that is what it adds for the use of the money.
+Companies borrow money too. One way they do this is by issuing bonds. Governments can do much the same thing, and a UK government bond is called a gilt.
 
-One way of lending to a company is by buying a bond. A UK government bond is called a gilt. Different borrowers, same arrangement: they owe you under agreed terms, and the first question is whether they can meet them.
+The names sound different, but the underlying arrangement is familiar. Somebody has borrowed money and agreed the terms on which they will pay it back.
 
-## Owning
+That doesn’t mean every loan is equally safe. A government and a struggling company may both owe you money, but they’re not equally likely to have difficulty paying it. Nor does it mean a bond will always be worth what you paid for it. Bonds can be bought and sold, and their market prices move even when their contractual payments haven’t changed.
 
-When you own, no return is agreed at the start.
+The important distinction is that the borrower has an obligation. Whether they can meet it is another matter.
 
-A business can divide its ownership into pieces called shares. Buying one gives you a small ownership interest in the business, with the rights attached to that share.
+## When you’re owning
 
-There is no promised return attached. If it grows, your piece may become worth more, and if it fails your piece may be worth nothing. Some businesses pay part of their profits to their owners as a dividend, and that is a decision they make rather than an obligation they have. A decade of dividends does not create an obligation to pay another next year.
+The second friend offered something different. Instead of promising to repay me, he offered part of the business.
 
-So the return is not agreed at the start; it depends on what happens afterwards. That is the entire difference.
+Companies can divide their ownership into pieces called shares. When you buy a share, you own a small interest in that company, with whatever rights attach to it.
 
-## Which is why they behave so differently
+There’s no agreed amount that the company must eventually give you back. If the business becomes more valuable, your share may become more valuable too. If it struggles, the value may fall. If it fails altogether, you could lose what you put in.
 
-The two arrangements ask different questions.
+Some companies also pay dividends, distributing money to shareholders. That was one of the things that first attracted me to shares. But a dividend isn’t interest on a loan. A company can reduce it, stop paying it or decide to use its profits elsewhere. Even a long history of payments is no promise about the next one.
 
-With lending, the question is whether the borrower can meet the obligation.
+That’s what makes ownership different. You’re not waiting for somebody to meet an agreed repayment. You’re accepting a share of whatever happens to the business.
 
-With owning, the question is what the thing will become, which nobody knows, including the people running it. The uncertainty is not an extra risk attached later. It is part of ownership from the start.
+Neither arrangement is automatically better. They expose you to different uncertainties, and whether the return has justified those uncertainties is a separate question.
 
-Lending begins with an obligation. Owning begins with an outcome that has not happened yet. One is judged by whether the obligation is met, the other by what the thing becomes.
+## Where I started
 
-## Where I started, and what was wrong with it
+When I first bought shares, I chose companies I already knew.
 
-I bought shares in companies I already used.
+They were shops I used, services I paid for and businesses whose products were in my house. I thought that if I was spending money with them anyway, I might as well own a little of them and receive some of it back in dividends.
 
-Shops I bought things from, services I paid for every month, businesses whose products were in my house. It seemed reasonable at the time. If I was handing them money anyway, I could own a slice and get some of it back as dividends.
+I can still see why that approach appealed to me. I understood what those companies sold, and buying something familiar felt less daunting than choosing a business I’d never heard of. More importantly, it got me started.
 
-As a way in, I can still see why it worked for me. It got me over the line from reading about this to actually doing it, and understanding what a business does is genuinely useful.
+The trouble was that I knew those companies as a customer, not as an investor.
 
-As a place to stay, it was a mistake, and I want to be clear about that because it is a comfortable one to make.
+Knowing that a shop is busy doesn’t tell you whether it makes much profit. Liking a product doesn’t tell you how much the company owes, what it costs to operate or whether a competitor is about to take its customers. I’d mistaken familiarity for knowledge.
 
-Knowing a shop as a customer did not tell me enough about it as a business. It did not tell me its debts, its margins, or what its competitors were about to do. Familiarity feels like enough information and is not. My familiarity also kept leading me back to a small number of similar businesses in the same country, which was a lot of eggs and not many baskets.
+There was another problem. Because I kept choosing companies I recognised, I was repeatedly choosing from the same fairly small group of businesses, often operating in the same country and facing similar conditions.
 
-What I noticed next was more useful, and it is the subject of the next article: what these two arrangements had actually paid me, and what I had accepted in exchange.
+I thought I was making several investments. In some respects, I was making the same decision several times.
 
-## Where the analogy breaks
+## More than one basket
 
-The neighbours are a clean picture and real investments are messier.
+This’s where funds become useful.
 
-Lending is not automatically safe. A government is one borrower and a small company is another. The arrangement is the same, but the chance of the obligation being met is not.
+A fund lets you own or lend through a collection of investments without having to choose every individual one yourself. That could have helped me avoid some of my early mistakes, because buying several familiar names wasn’t necessarily spreading my money very far.
 
-Bonds and gilts can also move in price before they mature, so agreed payments do not mean a fixed market value while you hold them.
+You still need to understand what the fund owns. A fund full of shares is exposing you to ownership, while one holding bonds is exposing you to lending. Some contain both. Putting investments together doesn’t change what they are.
 
-Owning is not automatically better either. Whether accepting that uncertainty has been worth it is a question about evidence rather than arrangements. That question belongs to the next article.
+Funds deserve an article of their own, because there are different kinds and the differences matter.
 
-And most of this is not done one holding at a time. A fund pools money across many shares or bonds, so a single holding can spread your money across many businesses or borrowers. That is a subject of its own, and it can be one answer to the eggs and baskets problem I just described.
+## Where this stops working
+
+Knowing whether you’re lending or owning tells you what sort of arrangement you’ve entered into. It doesn’t tell you whether any particular investment is a good one. It doesn’t tell you what price to pay, what return to expect or whether the risks are worth taking.
 
 ## One thing to do
 
-If you already hold something, or you are looking at one, ask which of the two it is.
+Once I understood the difference between lending and owning, the names became less intimidating. It didn’t tell me which investments to choose, but it gave me somewhere to begin.
 
-Am I lending this money to somebody who has agreed to pay it back, or am I buying a piece of something and taking whatever happens?
+When you’re looking at something to put your money into, ask what you are actually getting. Is somebody agreeing to repay you, or are you buying an interest in something whose value will depend on what happens next?
 
-That single question sorts most ordinary ways of saving and investing, and it tells you which risk you are actually running. It also catches the things that will not answer it cleanly, and anything that cannot be sorted into lending or owning is worth understanding properly before you touch it.
+If the answer isn’t clear, that is a reason to understand it better before putting money in.
+
+The question I eventually had to ask wasn’t just what I owned, but what those investments had actually paid me, and what risks I had accepted to receive it. That’s what the next article is about.
 
 ## Useful links
 

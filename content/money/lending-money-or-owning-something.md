@@ -62,7 +62,7 @@ I thought I was making several investments. In some respects, I was making the s
 
 ## More than one basket
 
-This’s where funds become useful.
+That’s where funds become useful.
 
 A fund lets you own or lend through a collection of investments without having to choose every individual one yourself. That could have helped me avoid some of my early mistakes, because buying several familiar names wasn’t necessarily spreading my money very far.
 

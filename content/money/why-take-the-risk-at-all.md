@@ -12,13 +12,13 @@ Any food you can think of cost less when you were younger.
 
 The food didn’t change all that much. A tin of beans is still a tin of beans. What changed was what the pound in your pocket could buy, and that can be hard to see from one month to the next and startling across thirty years.
 
-The same thing happens to money sitting in a savings account. The number can go up whilst the amount of shopping it buys goes down.
+The same thing happens to money sitting in a savings account. The number can go up whilst what it buys goes down.
 
 ## The safe option can lose too
 
 Suppose you put £1,000 into a savings account paying 2% interest. At the end of the year you have £1,020.
 
-Now suppose prices have risen by 4%. The shopping that cost £1,000 at the beginning of the year costs £1,040 at the end. Your savings have grown by £20, but the same shopping costs £40 more. You have more pounds and can’t buy as much.
+Now suppose prices have risen by 4%. What cost £1,000 at the beginning of the year costs £1,040 at the end. Your savings have grown by £20, but the same things now cost £40 more. You have more pounds and can’t buy as much.
 
 Nothing in your savings account tells you that. The balance has gone up, the interest has arrived, and there is no line on the statement saying that your money doesn’t go as far as it did.
 

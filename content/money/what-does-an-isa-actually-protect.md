@@ -6,6 +6,7 @@ weight: 55
 draft: false
 description: "An ISA is closer to a wrapper than a kind of account. It doesn’t change what’s inside. It changes what the taxman can take from it."
 tags: ["getting started", "savings"]
+uk_rules: true
 ---
 
 Wrap something up and nobody can see what’s inside.

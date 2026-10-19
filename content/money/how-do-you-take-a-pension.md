@@ -6,6 +6,7 @@ weight: 97
 draft: true
 description: "You spend your working life being told to put money into a pension. What happens when you are finally allowed to take it out is a different decision."
 tags: ["workplace pension"]
+uk_rules: true
 ---
 
 You spend a working life being given one instruction about a pension, and it never changes.

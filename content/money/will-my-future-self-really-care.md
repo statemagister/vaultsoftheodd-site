@@ -6,6 +6,7 @@ weight: 93
 draft: true
 description: "Opting out of a pension gives you something now and takes something from later, but only one side is easy to see. That is what makes the decision hard to judge."
 tags: ["getting started", "workplace pension"]
+uk_rules: true
 ---
 
 Skip one training session and nothing happens.

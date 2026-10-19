@@ -5,6 +5,7 @@ weight: 90
 draft: false
 description: "There is money attached to your job that only appears once you have put some of your own down. Most people have never found out how much."
 tags: ["getting started", "workplace pension"]
+uk_rules: true
 ---
 
 You know the moment when somebody says they will give you a hand with the wardrobe.

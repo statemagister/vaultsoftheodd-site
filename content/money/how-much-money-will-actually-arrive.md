@@ -5,6 +5,7 @@ weight: 70
 draft: false
 description: "Before anyone worries about repaying a student loan, there is a nearer question, and most families have not been told the answer."
 tags: ["student finance", "getting started"]
+uk_rules: true
 ---
 
 Somebody in your house has a place at university.

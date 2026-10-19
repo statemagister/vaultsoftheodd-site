@@ -5,6 +5,7 @@ weight: 50
 draft: false
 description: "If the money is only sitting there waiting, why not put it wherever it earns the most?"
 tags: ["getting started", "savings"]
+uk_rules: true
 ---
 
 My cash reserve has been in two different accounts. I chose the first because it paid well, but the interest rate wasn’t why I moved it.

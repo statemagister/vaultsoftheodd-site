@@ -6,6 +6,7 @@ weight: 15
 draft: false
 description: "You were told what the job pays. Your payslip says something different. Both the numbers are correct, but it isn’t always explained why."
 tags: ["getting started", "pay"]
+uk_rules: true
 ---
 
 You get offered a job. It’s a good offer and you take it.

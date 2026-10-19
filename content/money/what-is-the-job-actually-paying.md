@@ -6,6 +6,7 @@ weight: 16
 draft: true
 description: "Two jobs, two salaries, and the comparison people make is between those two numbers. Most of the difference is somewhere else."
 tags: ["pay", "getting started"]
+uk_rules: true
 ---
 
 Somebody once tried to hire me and I had decided to say no.

@@ -6,6 +6,7 @@ weight: 17
 draft: false
 description: "Your pay went up but the month felt the same. There are two reasons for that, and only one of them usually ever gets talked about."
 tags: ["pay", "tax"]
+uk_rules: true
 ---
 
 You might remember a series of pencil marks on a doorframe somewhere with a date next to each one.

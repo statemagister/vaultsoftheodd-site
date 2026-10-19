@@ -14,6 +14,14 @@
         {{ partial "listen.html" . }}
       </header>
 
+      {{- /* UK-rules note for articles whose substance depends on UK schemes or
+             thresholds (ISA, FSCS, pensions, student loans, payslip/tax, employer
+             contributions). One line, flagged per article with uk_rules: true, so the
+             wording stays consistent and lives in one place. */ -}}
+      {{- if .Params.uk_rules }}
+      <p class="uk-note">The rules here are UK ones. If you live elsewhere, the idea still applies, but check the equivalent where you are.</p>
+      {{- end }}
+
       <div class="post-body" data-listen-content>
         {{ .Content }}
       </div>

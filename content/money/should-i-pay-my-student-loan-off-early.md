@@ -6,6 +6,7 @@ weight: 85
 draft: false
 description: "Before sending them extra money, there is one question worth answering. It is not the obvious one."
 tags: ["student finance", "debt"]
+uk_rules: true
 ---
 
 I left university partway through, needing work quickly, and took the first job that would have me.

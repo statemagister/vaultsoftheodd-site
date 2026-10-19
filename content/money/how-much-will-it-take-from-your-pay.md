@@ -5,6 +5,7 @@ weight: 80
 draft: false
 description: "The number on the student loan statement and the number that comes out of a payslip are worked out from completely different things."
 tags: ["student finance", "getting started"]
+uk_rules: true
 ---
 
 There are two important numbers in a student loan.

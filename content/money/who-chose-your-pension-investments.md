@@ -6,6 +6,7 @@ weight: 95
 draft: false
 description: "Your pension is invested in something. You almost certainly did not pick it, and it is following a plan you have never seen."
 tags: ["workplace pension"]
+uk_rules: true
 ---
 
 Nobody drives off in a hire car without moving the seat.

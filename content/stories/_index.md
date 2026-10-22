@@ -2,4 +2,4 @@
 title: "The Stories Vault"
 ---
 
-Long-form fiction and creative writing. An earlier piece is available below, with new work to follow.
+Long-form fiction and creative writing, from a tribute to Lenard Lakofka to the opening of an unfinished Dragonlance novel.

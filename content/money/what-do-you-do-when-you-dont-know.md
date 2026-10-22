@@ -3,7 +3,7 @@ title: "What Do You Do When You Don't Know?"
 subtitle: "Have a default that does not require you to know."
 date: 2026-12-28T07:00:00+00:00
 weight: 59
-draft: true
+draft: false
 description: "Is now a good time? Should I put this back or spend it? Most money questions arrive without enough information to answer them, and waiting is itself an answer."
 tags: ["getting started", "investing"]
 ---

@@ -3,7 +3,7 @@ title: "Will My Future Self Really Care?"
 subtitle: "The decision that never sends you a signal."
 date: 2027-01-11T07:00:00+00:00
 weight: 93
-draft: true
+draft: false
 description: "Opting out of a pension gives you something now and takes something from later, but only one side is easy to see. That is what makes the decision hard to judge."
 tags: ["getting started", "workplace pension"]
 uk_rules: true

@@ -76,7 +76,7 @@ Start with what your money does now. Work out what your savings or investments p
 
 Not what they’re worth. What they pay.
 
-Then decide what you’d like that number to do first. It doesn’t have to be a bill. It might be a night out each month without having to think about it, or two. It might be your phone, or your energy. Or it might simply be knowing that what you’ve put aside is already working for you, even if it can’t cover everything yet.
+Then decide what you’d like that number to do first. It doesn’t have to be a bill. It might be a night out each month, or two, without having to worry so much about it. It might be your phone, or your energy. Or it might simply be knowing that what you’ve put aside is already working for you, even if it can’t cover everything yet.
 
 Whatever you choose, give it a figure. Then you have two numbers you can compare: what your money pays, and what you want it to pay for. If the first is bigger, you’re there. If it isn’t, you know exactly how far away you are.
 

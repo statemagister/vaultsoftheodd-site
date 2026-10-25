@@ -76,7 +76,7 @@ schedule:
   - slug: "how-much-is-enough"
     title: "How Much Is Enough?"
     subtitle: "Enough is a number, not a feeling."
-    teaser: "Every time you get closer to enough, it seems to move. There is a reason for that, and it is not greed."
+    teaser: "Every time you get closer to enough, it seems to move. There’s a reason for that, and it isn’t greed."
     date: "2026-10-26"
   - slug: "compare-to-your-past-self"
     title: "Am I Actually Doing Better?"

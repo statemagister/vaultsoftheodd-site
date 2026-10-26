@@ -17,7 +17,7 @@
     if (!q || !index) { results.innerHTML = ''; results.hidden = true; return; }
     var terms = q.split(/\s+/);
     var matches = index.filter(function (it) {
-      var hay = (it.title + ' ' + (it.tags || []).join(' ') + ' ' +
+      var hay = (it.title + ' ' + (it.byline || '') + ' ' + (it.tags || []).join(' ') + ' ' +
                  (it.settings || []).join(' ') + ' ' + (it.content || it.summary || '')).toLowerCase();
       return terms.every(function (t) { return hay.indexOf(t) !== -1; });
     }).slice(0, 8);

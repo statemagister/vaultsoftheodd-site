@@ -9,6 +9,7 @@
   {{- end }}
   {{- $list = $list | append (dict
       "title" .Title
+      "byline" (.Params.byline | default "")
       "url" .RelPermalink
       "section" .Section
       "tags" (or .Params.tags slice)

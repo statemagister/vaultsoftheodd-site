@@ -70,6 +70,4 @@ Then ask what made the difference. Some of it may be a decision you made. Some o
 
 Finally, write down where you are today, with the date: what you owe, what you’ve set aside, and how much is usually left just before payday. Three numbers. Put a reminder in your calendar for a year from now.
 
-Next year you won’t be comparing yourself with a memory. You’ll be comparing yourself with a record.
-
-A year from now, you won’t be relying on a feeling that things are better or worse. You’ll know what changed, by how much, and at least some of why. And you’ll have measured yourself against the one person whose starting point you actually know.
+Next year you won’t be comparing yourself with a memory, but with a record: what changed, by how much, and at least some of why. And you’ll have measured yourself against the one person whose starting point you actually know.

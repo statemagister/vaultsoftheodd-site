@@ -48,7 +48,7 @@ Are you borrowing less to finish the month than you were a year ago? Is there an
 
 Most of the evidence is already in your banking app or online banking. Look back at the same time last year. How much money did you have left just before payday? Were you using an overdraft or credit card to get through the month? How much did you owe on loans or credit cards? Did you have anything saved?
 
-Say that a year ago you were £300 overdrawn by the last week of the month and had nothing put aside. Now you reach payday £50 in credit, with £400 saved. Your pay may have barely changed. That’s a £750 turnaround: £350 in your current account and £400 in savings, on much the same pay. Nobody looking at you would see it, and you might not feel any better off. But you’re no longer finishing each month in debt.
+Say that a year ago you were £300 overdrawn by the last week of the month and had nothing put aside. Now you reach payday £50 in credit, with £400 saved. Your pay may have barely changed. That’s a £750 turnaround: £350 in your current account and £400 in savings. Nobody looking at you would see it, and you might not feel any better off. But you’re no longer finishing each month in debt.
 
 Doing better doesn’t have to mean having more money. Owing less, or having more room to choose, can matter just as much.
 

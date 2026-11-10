@@ -22,7 +22,7 @@ The trouble isn’t just that comparing yourself with other people can make you 
 
 You can’t see what somebody was given. You can’t see what they owe, what they inherited, what their rent is, who helps them, what they gave up, or what they’re quietly not paying. You’re looking at an output with none of the inputs, and a number with no inputs can’t tell you whether you’re doing well or badly.
 
-That doesn’t make other people’s numbers useless. Knowing the going rate for your job is worth something. But that’s information about the world. It isn’t a verdict on you, and used as one it can only change how you feel, which is a poor thing to act on.
+That doesn’t make other people’s numbers useless. Knowing what your job pays elsewhere can help you recognise when you’re being underpaid, or give you a reason to negotiate. That’s information you can use to improve your circumstances. It isn’t a verdict on you, or on how well you’re doing with the money you have.
 
 Comparison with your own past has the opposite property. You know far more of the inputs, because you were there for them. You know what you earned, what was going out, what you were frightened of, and what you decided. It isn’t a perfect picture, but it’s the most complete one you’ll ever have of anybody.
 

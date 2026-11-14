@@ -94,7 +94,7 @@ schedule:
   - slug: "should-i-pay-my-student-loan-off-early"
     title: "Should I Pay My Student Loan Off Early?"
     subtitle: "I did, for a while. Then I worked out what it was buying me."
-    teaser: "Before sending them extra money, there is one question worth answering. It is not the obvious one."
+    teaser: "Before sending them extra money, there’s one question worth answering. It isn’t the obvious one."
     date: "2026-11-16"
   - slug: "what-will-your-employer-add"
     title: "What Will Your Employer Add?"

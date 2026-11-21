@@ -1,12 +1,10 @@
 {{- /* The two I6 series, at the head of the Gaming vault's Ravenloft section.
        Appears only once the first Encounter Guide is published. Lists the
-       Playability Guide Parts and the Encounter Guides that are live, and names
-       the next Encounter Guide with its due date, unlinked. Wording of the
+       Playability Guide Parts that are live, and all three Encounter Guides:
+       linked once live, otherwise with their due date and no link. Wording of the
        relationship sentence and the comparison table is Drew's. */ -}}
-{{- $live := slice }}{{ $next := false }}
-{{- range site.Data.encounter_guides }}
-  {{- with site.GetPage .path }}{{ $live = $live | append . }}{{ else }}{{ if not $next }}{{ $next = . }}{{ end }}{{ end }}
-{{- end }}
+{{- $live := slice }}
+{{- range site.Data.encounter_guides }}{{ with site.GetPage .path }}{{ $live = $live | append . }}{{ end }}{{ end }}
 {{- if $live }}
 {{- $parts := where (where site.RegularPages "Section" "gaming") "Params.tags" "intersect" (slice "Playability Guide") }}
 <section class="i6-panel" aria-label="The I6 Ravenloft guides">
@@ -22,8 +20,10 @@
     <div>
       <h4>The Encounter Guides</h4>
       <ul>
-        {{- range $live }}<li><a href="{{ .RelPermalink }}">{{ .Title | replaceRE "^Ravenloft Encounter " "" }}</a></li>{{ end }}
-        {{- with $next }}<li class="due">Guide {{ .numeral }}: {{ .name }} <span class="due-date">(due {{ (time .due).Format "2 January 2006" }})</span></li>{{ end }}
+        {{- range site.Data.encounter_guides }}
+        {{- with site.GetPage .path }}<li><a href="{{ .RelPermalink }}">{{ .Title | replaceRE "^Ravenloft Encounter " "" }}</a></li>
+        {{- else }}<li class="due">Guide {{ .numeral }}: {{ .name }} <span class="due-date">(due {{ (time .due).Format "2 January 2006" }})</span></li>{{ end }}
+        {{- end }}
       </ul>
     </div>
   </div>

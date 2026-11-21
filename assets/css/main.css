@@ -880,7 +880,15 @@ figcaption, .wp-element-caption { display: table-caption; caption-side: bottom; 
 @font-face { font-family: 'EB Garamond Guide'; font-style: italic; font-weight: 400 800; font-display: optional; src: url(/fonts/ebgaramond-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 .guide-body { font-synthesis-weight: none; }
 .guide-body strong { font-family: 'EB Garamond Guide', var(--body); font-weight: 600; color: var(--text-primary); }
-.guide-body .table-scroll { overflow-x: auto; margin: 1.6rem 0; }
+.guide-body .table-wrap { position: relative; margin: 1.6rem 0; }
+.guide-body .table-scroll { overflow-x: auto; }
+.guide-body .table-wrap::before, .guide-body .table-wrap::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: 2.6rem; pointer-events: none;
+  opacity: 0; transition: opacity 0.15s ease; z-index: 1;
+}
+.guide-body .table-wrap::before { left: 0; background: linear-gradient(to left, transparent, var(--bg) 85%); }
+.guide-body .table-wrap::after { right: 0; background: linear-gradient(to right, transparent, var(--bg) 85%); border-right: 2px solid var(--gold); }
+.guide-body .table-wrap.more-left::before, .guide-body .table-wrap.more-right::after { opacity: 1; }
 .guide-body .table-scroll table { margin: 0; }
 /* Phones: give tables of three or more columns a readable width and let them
    scroll, rather than squeezing every column to one word per line. */

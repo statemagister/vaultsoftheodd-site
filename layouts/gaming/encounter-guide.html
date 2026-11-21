@@ -7,8 +7,8 @@
        a sticky column on desktop, a collapsible list at the top on phones. */ -}}
 {{- $toc := partial "as-written.html" (.Fragments.ToHTML 2 4 false) | replaceRE "<nav id=\"TableOfContents\">" "<nav>" }}
 {{- $body := partial "as-written.html" .Content
-    | replaceRE "<table>" "<div class=\"table-scroll\"><table>"
-    | replaceRE "</table>" "</table></div>" }}
+    | replaceRE "<table>" "<div class=\"table-wrap\"><div class=\"table-scroll\"><table>"
+    | replaceRE "</table>" "</table></div></div>" }}
 <div class="post-layout wrap guide-layout">
   <div class="post-main">
     <article class="post guide">
@@ -66,6 +66,19 @@
 <a class="guide-toc-jump" href="#guide-contents" hidden>Contents</a>
 <script>
 (function () {
+  // Wide tables: fade the edge that has more table beyond it, so a reader can
+  // see a table scrolls sideways before trying it.
+  document.querySelectorAll('.table-wrap').forEach(function (w) {
+    var s = w.firstElementChild;
+    var update = function () {
+      var max = s.scrollWidth - s.clientWidth;
+      w.classList.toggle('more-right', s.scrollLeft < max - 2);
+      w.classList.toggle('more-left', s.scrollLeft > 2);
+    };
+    s.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
   var toc = document.getElementById('guide-contents');
   var jump = document.querySelector('.guide-toc-jump');
   if (!toc || !jump) return;

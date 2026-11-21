@@ -13,6 +13,10 @@ straight_quotes: true
 
 > **Editorial note.** This guide works from I6 itself. Where it reaches beyond the module, it says so. The itinerant clan the module calls "gypsies" is named Rhenari throughout, following the convention set out in Part I Section 2. Direct quotations from the module retain the original wording.
 
+{{% when-live "/gaming/ravenloft-i6-encounter-guide-i" %}}
+> **The companion Encounter Guides.** This multi-part Playability Guide concentrates on preparing and developing Ravenloft as an adventure, including its characters, atmosphere, player choices and consequences. The three Encounter Guides provide location-by-location references for running encounters, with statistics, rules, dice rolls and immediate consequences. Both series can be used independently or together.
+{{% /when-live %}}
+
 ## 1. The opening act, and a camouflage for it
 
 The module's opening on p.7 is probably the most recognisable opening in the hobby. The party begins in an unnamed tavern in a nameless province, a gypsy messenger arrives with a sealed letter from the Burgomaster of Barovia pleading for help for Ireena Kolyana, whom it calls "the love of my life", the party marches five hours through the Svalich woods, and three turns [30 minutes] into the woods they find a dead villager holding a second letter that reveals the first as a forgery. The first letter drew the party in under false pretences. The real letter, arriving too late to act on, asks them not to come. By the time they have the information to decide, the gates have closed behind them.

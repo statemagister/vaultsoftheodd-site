@@ -44,6 +44,7 @@
     {{- $gp := $g.pages }}
     <section class="setting-section" data-set="{{ $g.slug }}" aria-label="{{ $g.label }}">
       <h2 class="setting-heading s-{{ $g.slug }}">{{ $g.label }}</h2>
+      {{- if eq $g.slug "ravenloft" }}{{ partial "i6-guides-panel.html" . }}{{ end }}
       <ul class="post-list">
         {{- range $gp.ByDate.Reverse }}
         <li class="post-list-item">

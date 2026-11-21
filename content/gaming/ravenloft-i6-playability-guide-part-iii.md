@@ -13,6 +13,10 @@ straight_quotes: true
 
 > **Editorial note.** This guide works from I6 itself. Where it reaches beyond the module, it says so. The itinerant clan the module calls "gypsies" is named Rhenari throughout, following the convention set out in Part I Section 2. Direct quotations from the module retain the original wording.
 
+{{% when-live "/gaming/ravenloft-i6-encounter-guide-i" %}}
+> **The companion Encounter Guides.** This multi-part Playability Guide concentrates on preparing and developing Ravenloft as an adventure, including its characters, atmosphere, player choices and consequences. The three Encounter Guides provide location-by-location references for running encounters, with statistics, rules, dice rolls and immediate consequences. Both series can be used independently or together.
+{{% /when-live %}}
+
 ## 1. Arrival in the village
 
 Part II ended with the party walking into the village of Barovia, tired and short on certainty. The church and the castle were the two sightlines visible above the rooftops. Part III opens at the first cobblestone.

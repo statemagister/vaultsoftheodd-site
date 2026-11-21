@@ -1,0 +1,46 @@
+{{- /* The two I6 series, at the head of the Gaming vault's Ravenloft section.
+       Appears only once the first Encounter Guide is published. Lists the
+       Playability Guide Parts and the Encounter Guides that are live, and names
+       the next Encounter Guide with its due date, unlinked. Wording of the
+       relationship sentence and the comparison table is Drew's. */ -}}
+{{- $live := slice }}{{ $next := false }}
+{{- range site.Data.encounter_guides }}
+  {{- with site.GetPage .path }}{{ $live = $live | append . }}{{ else }}{{ if not $next }}{{ $next = . }}{{ end }}{{ end }}
+{{- end }}
+{{- if $live }}
+{{- $parts := where (where site.RegularPages "Section" "gaming") "Params.tags" "intersect" (slice "Playability Guide") }}
+<section class="i6-panel" aria-label="The I6 Ravenloft guides">
+  <h3 class="i6-panel-title">Running I6 Ravenloft</h3>
+  <p class="i6-panel-lede">The Playability Guide helps you understand and prepare the adventure. The Encounter Guides help you run it, encounter by encounter.</p>
+  <div class="i6-panel-cols">
+    <div>
+      <h4>The Playability Guide</h4>
+      <ul>
+        {{- range $parts.ByDate }}<li><a href="{{ .RelPermalink }}">{{ .Title | replaceRE "^Ravenloft I6 Playability Guide, " "" }}</a></li>{{ end }}
+      </ul>
+    </div>
+    <div>
+      <h4>The Encounter Guides</h4>
+      <ul>
+        {{- range $live }}<li><a href="{{ .RelPermalink }}">{{ .Title | replaceRE "^Ravenloft Encounter " "" }}</a></li>{{ end }}
+        {{- with $next }}<li class="due">Guide {{ .numeral }}: {{ .name }} <span class="due-date">(due {{ (time .due).Format "2 January 2006" }})</span></li>{{ end }}
+      </ul>
+    </div>
+  </div>
+  <details class="i6-panel-compare">
+    <summary>How the two series differ</summary>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th></th><th>Playability Guide (in Parts)</th><th>Encounter Guides (three, monthly)</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Purpose</th><td>Help the DM prepare, understand and develop the adventure</td><td>Help the DM run encounters at the table</td></tr>
+        <tr><th scope="row">Organisation</th><td>Follows the adventure's developing story and decisions</td><td>Follows I6's locations and keyed encounters</td></tr>
+        <tr><th scope="row">Emphasis</th><td>Motivations, atmosphere, relationships, player agency and consequences</td><td>Statistics, triggers, saving throws, spells and immediate consequences</td></tr>
+        <tr><th scope="row">Rules</th><td>Explains how rules affect the adventure and player choices</td><td>Gives the numbers and procedures where they are needed</td></tr>
+        <tr><th scope="row">Best used</th><td>Before a session, and when considering how events develop</td><td>During a session, when an encounter needs resolving</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </details>
+</section>
+{{- end }}

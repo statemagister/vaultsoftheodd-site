@@ -12,6 +12,10 @@ straight_quotes: true
 
 > **Editorial note.** This guide works from I6 itself. Where it reaches beyond the module, it says so. The itinerant clan the module calls "gypsies" is named Rhenari throughout, following the convention set out in Part I Section 2. Direct quotations from the module retain the original wording.
 
+{{% when-live "/gaming/ravenloft-i6-encounter-guide-i" %}}
+> **The companion Encounter Guides.** This multi-part Playability Guide concentrates on preparing and developing Ravenloft as an adventure, including its characters, atmosphere, player choices and consequences. The three Encounter Guides provide location-by-location references for running encounters, with statistics, rules, dice rolls and immediate consequences. Both series can be used independently or together.
+{{% /when-live %}}
+
 ## 1. The road west from the village
 
 Part III ended with the party leaving the village, Ireena with them and Ismark too if the DM sent him along, the Tome of Strahd named at the church, and the cemetery's midnight procession seen or at least inferred. Part IV opens on the road west of the village.

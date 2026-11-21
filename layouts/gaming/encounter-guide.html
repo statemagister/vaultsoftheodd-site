@@ -1,0 +1,87 @@
+{{ define "main" }}
+{{- /* The I6 Encounter Guides: long DM reference pages used at the table. The
+       text is approved and must render exactly as written, so the body and the
+       contents list pass through as-written.html (undoes the typographer), and
+       tables are wrapped so they scroll sideways inside their own box instead of
+       widening the page. The contents list covers ##, ### and #### headings:
+       a sticky column on desktop, a collapsible list at the top on phones. */ -}}
+{{- $toc := partial "as-written.html" (.Fragments.ToHTML 2 4 false) | replaceRE "<nav id=\"TableOfContents\">" "<nav>" }}
+{{- $body := partial "as-written.html" .Content
+    | replaceRE "<table>" "<div class=\"table-scroll\"><table>"
+    | replaceRE "</table>" "</table></div>" }}
+<div class="post-layout wrap guide-layout">
+  <div class="post-main">
+    <article class="post guide">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span class="sep" aria-hidden="true">&rsaquo;</span><a href="/gaming/">Gaming</a></nav>
+      <header class="post-header">
+        {{- with .Params.settings }}
+        <p class="post-setting">{{ delimit . " &middot; " | safeHTML }}</p>
+        {{- end }}
+        <h1 class="post-title">{{ .Title }}</h1>
+        <p class="post-meta">By {{ .Params.byline | default .Site.Params.author }}{{ if not .Date.IsZero }} &middot; <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>{{ end }}{{ with .Params.updated }} &middot; <span class="post-updated">Updated <time datetime="{{ (time .).Format "2006-01-02" }}">{{ (time .).Format "2 January 2006" }}</time></span>{{ end }}</p>
+      </header>
+
+      <nav class="guide-series" aria-label="The I6 Encounter Guides">
+        <p class="guide-series-label">The I6 Encounter Guides</p>
+        {{ partial "encounter-guides-list.html" (dict "page" . "class" "guide-series-list") }}
+      </nav>
+
+      <details class="guide-toc guide-toc-mobile" id="guide-contents">
+        <summary>Contents</summary>
+        {{ $toc | safeHTML }}
+      </details>
+
+      <div class="post-body guide-body">
+        {{ $body | safeHTML }}
+      </div>
+    </article>
+
+    <nav class="guide-series guide-series-end" aria-label="The I6 Encounter Guides">
+      <p class="guide-series-label">The I6 Encounter Guides</p>
+      {{ partial "encounter-guides-list.html" (dict "page" . "class" "guide-series-list") }}
+    </nav>
+
+    <div class="post-actions">
+      <a class="button ghost" href="/gaming/">Back to Gaming</a>
+      <a class="button ghost" href="/">Home</a>
+    </div>
+
+    {{ partial "comments.html" . }}
+  </div>
+
+  <aside class="post-aside guide-aside" aria-label="Guide contents">
+    <div class="aside-inner">
+      <section class="aside-block">
+        <h2 class="aside-title">Encounter Guides</h2>
+        {{ partial "encounter-guides-list.html" (dict "page" . "class" "aside-siblings") }}
+      </section>
+      <section class="aside-block guide-toc-block">
+        <h2 class="aside-title">Contents</h2>
+        <div class="guide-toc">{{ $toc | safeHTML }}</div>
+      </section>
+    </div>
+  </aside>
+</div>
+
+<a class="guide-toc-jump" href="#guide-contents" hidden>Contents</a>
+<script>
+(function () {
+  var toc = document.getElementById('guide-contents');
+  var jump = document.querySelector('.guide-toc-jump');
+  if (!toc || !jump) return;
+  // Phones: choosing an entry closes the list so the reader lands on the section;
+  // the floating button reopens it from anywhere on the page.
+  toc.addEventListener('click', function (e) {
+    if (e.target.closest('a')) toc.open = false;
+  });
+  jump.addEventListener('click', function (e) {
+    e.preventDefault();
+    toc.open = true;
+    toc.scrollIntoView({ block: 'start' });
+  });
+  var show = function () { jump.hidden = window.scrollY < toc.offsetTop + toc.offsetHeight; };
+  window.addEventListener('scroll', show, { passive: true });
+  show();
+})();
+</script>
+{{ end }}

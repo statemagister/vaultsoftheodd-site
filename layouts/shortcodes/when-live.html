@@ -1,0 +1,6 @@
+{{- /* Shows its inner content only when the page at the given path is published,
+       meaning it is in this build (not draft, its date reached). Lets a cross-reference go
+       live on the same day as the page it points to, with no edit on the day.
+       Call with percent delimiters so the inner content is rendered as Markdown:
+       {{% when-live "/gaming/ravenloft-i6-encounter-guide-i" %}} ... {{% /when-live %}} */ -}}
+{{- with site.GetPage (.Get 0) }}{{ $.Inner }}{{ end -}}

@@ -1,0 +1,13 @@
+{{- /* Undoes Goldmark's typographer for pages that must render exactly as written
+       (the I6 Encounter Guides). The typographer emits these as entities, so only
+       its output is touched: characters typed in the source stay as they are.
+       House rule: no en or em dashes. The turn-undead tables use "--" for empty
+       cells, and inch measurements such as 6" and 1½" must keep straight double
+       primes, not become closing quotation marks. Returns a string; callers that
+       need HTML add safeHTML. */ -}}
+{{- return (string .
+    | replaceRE "&[lr]squo;" "'"
+    | replaceRE "&[lr]dquo;" "\""
+    | replaceRE "&mdash;" "---"
+    | replaceRE "&ndash;" "--"
+    | replaceRE "&hellip;" "...") -}}

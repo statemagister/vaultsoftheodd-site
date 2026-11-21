@@ -1,0 +1,16 @@
+{{- /* The three I6 Encounter Guides, from data/encounter_guides.yaml. A guide whose
+       page is in this build is linked; one that is not yet published shows its
+       due date instead, so nothing unpublished is ever linked.
+       Context: dict "page" (the current page, or nil) "class" (ul class). */ -}}
+{{- $cur := .page }}
+<ul class="{{ .class }}">
+  {{- range site.Data.encounter_guides }}
+  {{- $p := site.GetPage .path }}
+  <li>
+    {{- if and $p $cur (eq $p.RelPermalink $cur.RelPermalink) }}<span class="current" aria-current="page">Guide {{ .numeral }}: {{ .name }}</span>
+    {{- else if $p }}<a href="{{ $p.RelPermalink }}">Guide {{ .numeral }}: {{ .name }}</a>
+    {{- else }}<span class="due">Guide {{ .numeral }}: {{ .name }} <span class="due-date">(due {{ (time .due).Format "2 January 2006" }})</span></span>
+    {{- end }}
+  </li>
+  {{- end }}
+</ul>

@@ -13,6 +13,10 @@ straight_quotes: true
 
 > **Editorial note.** This guide works from I6 itself. Where it reaches beyond the module, it says so. The itinerant clan the module calls "gypsies" is named Rhenari throughout, following the convention set out in Section 2. Direct quotations from the module retain the original wording. The printed "First Counsellor to Baron von Zarovich" on Crypt 25 is treated throughout as a typesetting error for "First Counsellor to King Barov"; Barov is Strahd's father, and the printed "Baron" is not a rank but a corruption of the name.
 
+{{% when-live "/gaming/ravenloft-i6-encounter-guide-i" %}}
+> **The companion Encounter Guides.** This multi-part Playability Guide concentrates on preparing and developing Ravenloft as an adventure, including its characters, atmosphere, player choices and consequences. The three Encounter Guides provide location-by-location references for running encounters, with statistics, rules, dice rolls and immediate consequences. Both series can be used independently or together.
+{{% /when-live %}}
+
 ## 1. Campaign placement
 
 ### 1a. The four seals

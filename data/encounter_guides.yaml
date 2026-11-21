@@ -1,0 +1,16 @@
+# The three I6 Encounter Guides, released a month apart. The guide pages and the
+# Gaming vault's Ravenloft panel read this list: a guide whose page is in the
+# build (published, not draft, date reached) is linked; one that is not shows
+# its due date instead. Change a date here AND in the guide's front matter.
+- numeral: "I"
+  name: "Barovia and the Approach"
+  path: "/gaming/ravenloft-i6-encounter-guide-i"
+  due: 2026-12-04
+- numeral: "II"
+  name: "Tser Pool and Castle Ravenloft"
+  path: "/gaming/ravenloft-i6-encounter-guide-ii"
+  due: 2027-01-04
+- numeral: "III"
+  name: "Beneath Ravenloft"
+  path: "/gaming/ravenloft-i6-encounter-guide-iii"
+  due: 2027-02-04

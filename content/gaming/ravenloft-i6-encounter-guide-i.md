@@ -3,7 +3,7 @@ title: "Ravenloft Encounter Guide I: Barovia and the Approach"
 date: 2026-12-04T07:00:00+00:00
 slug: "ravenloft-i6-encounter-guide-i"
 layout: encounter-guide
-draft: true
+draft: false
 settings:
   - "Ravenloft"
 tags:
@@ -12,7 +12,7 @@ tags:
 # Approved source, verified against the handover checksum. The body below is
 # that file with its first four lines (title, blank, byline, blank) removed:
 # the title is in front matter and the byline comes from the site.
-source_sha256: "001043704b16c676d8c828d76b663eb7f6466ebcddd696e1afd53fbdb18178b6"
+source_sha256: "210b5118c8907e8767edc78d0cd66a05a8c2f83b5b75db150f49add24f48a150"
 ---
 
 > **What this is.** A DM-facing companion to module I6, covering everything from the opening scene to the moment the party leaves the village. **It is designed to be opened cold.** Each encounter carries the statistics, behaviour, mechanics, player choices and consequences needed to run it, so that the module's encounters can be run from I6 and this guide alone.
@@ -148,7 +148,7 @@ source_sha256: "001043704b16c676d8c828d76b663eb7f6466ebcddd696e1afd53fbdb18178b6
 - **Saves, 4+4 counts as 5, as a fighter of 5 to 6:** paralysis, poison or death magic 11; petrification or polymorph 12; rod, staff or wand 13; breath weapon 13; spell 14.
 - **They are not undead** and cannot be turned.
 
-**The howling is a warning, and its five rounds are five minutes.** **Only a party already near the village reaches it before the wolves attack, and a party that stops to investigate is choosing the fight.** **I6 gives no distance from the gates to the village, so set the turns the road takes before the party enters the woods** (ruling). **Keep rolling every turn the party remains in the woods, after an attack as before: a new howl brings a new attack** (printed, I6 p.8, "every turn"), **and the finite population below is the limit.**
+**The howling is a warning, and its five rounds are five minutes.** **Only a party already near the village reaches it before the wolves attack, and a party that stops to investigate is choosing the fight.** **I6 gives no distance from the gates to the village, so set the turns the road takes before the party enters the woods** (ruling). **I6 does not say whether the howling starts again after the worgs attack.** **Read literally, "every turn the PCs are in the woods" never stops, so a long road through the woods could bring attack after attack.** **This guide recommends one attack for each journey through the woods (ruling): after the worgs attack, the howling procedure does not restart during that journey.** **A genuinely later journey, after leaving the woods and re-entering them, begins a new procedure; a brief movement out of the trees during the same encounter does not.** **The recommendation plays better because it keeps the five-round warning meaningful, keeps the woods a single test of the party's arrival rather than a grind, and keeps I6's contrast between five worgs entering and twenty-five leaving.** **A DM who prefers the literal reading keeps rolling, and the finite worg population below is then the only limit.**
 
 **The woods are Strahd's (printed, I6 p.6):** "patrolled constantly by the wolves and serving beasts of Count Strahd".
 

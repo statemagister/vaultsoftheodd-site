@@ -1,6 +1,7 @@
 ---
 title: "Ravenloft I6 Playability Guide, Part IV"
 date: 2026-10-06T08:00:00Z
+lastmod: 2026-11-21
 slug: "ravenloft-i6-playability-guide-part-iv"
 settings:
   - "Ravenloft"
@@ -8,6 +9,9 @@ tags:
   - "Ravenloft"
   - "Playability Guide"
 straight_quotes: true
+as_written: true
+# Body is the approved file (handover section 10, SHA-256 725a2936fcb21bab...) less its
+# title and byline lines, plus the Encounter Guides note and the PDF link.
 ---
 
 > **Editorial note.** This guide works from I6 itself. Where it reaches beyond the module, it says so. The itinerant clan the module calls "gypsies" is named Rhenari throughout, following the convention set out in Part I Section 2. Direct quotations from the module retain the original wording.
@@ -18,7 +22,7 @@ straight_quotes: true
 
 ## 1. The road west from the village
 
-Part III ended with the party leaving the village, Ireena with them and Ismark too if the DM sent him along, the Tome of Strahd named at the church, and the cemetery's midnight procession seen or at least inferred. Part IV opens on the road west of the village.
+Part III ended with the party leaving the village, Ireena with them unless they persuaded her to stay, and Ismark too if he chose to come, the Tome of Strahd named at the church, and the cemetery's midnight procession seen or at least inferred. Part IV opens on the road west of the village.
 
 ### 1a. Leaving the village
 
@@ -44,7 +48,7 @@ The Rhenari attack only if the party shows hostility or gives insult inside the 
 
 ### 2b. Recognition: Anshel Rhen again
 
-If the DM used the camouflaged opening from Part II, the Rhenari leader who hired the party at the hamlet tavern, Anshel Rhen, is among the ten. He does not apologise. He does not explain. He is simply present, and that presence is the acknowledgment that the hamlet deception was their work. A party that recognises him has recognised the pattern the rest of the valley has been teaching them: a smiling welcome in Barovia is no evidence of an ally.
+If the DM used the camouflaged opening from Part II, the Rhenari leader who hired the party at the hamlet tavern, Anshel Rhen, is among the ten, unless the party killed or captured him, or otherwise kept him from reaching the camp (Part II Section 1e). He does not apologise. He does not explain. He is simply present, and that presence is the acknowledgment that the hamlet deception was their work. A party that recognises him has recognised the pattern the rest of the valley has been teaching them: a smiling welcome in Barovia is no evidence of an ally.
 
 In the module's as-written opening, the messenger who delivered the forged letter in the tavern is a gypsy, which the guide renders as Rhenari. The module does not place him at G. A DM may put him among the ten at the fire, and the same logic then applies, but that is the DM's choice rather than the module's text.
 
@@ -52,9 +56,9 @@ No explanation is offered, and the party will not be given one.
 
 ### 2c. The stolen item, and the welcome
 
-In the camouflaged opening, the camp is where the stolen possession from Part II Section 1e reappears. It may be returned in hand as the welcome is offered. It may be lying in one of the wagons, unmistakably present. The Rhenari do not present it as theft. They present it as property returned, as if the theft never happened. A party that presses the point gets nothing. A party that accepts the return has accepted the grammar of the encampment, which is that things happen at Tser Pool and are not discussed at Tser Pool.
+In the camouflaged opening, if the Rhenari took a possession (Part II Section 1e), the camp is where it reappears. It may be returned in hand as the welcome is offered. It may be lying in one of the wagons, unmistakably present. The Rhenari do not present it as theft. They present it as property returned, as if the theft never happened. A party that presses the point gets nothing. A party that accepts the return has accepted the grammar of the encampment, which is that things happen at Tser Pool and are not discussed at Tser Pool.
 
-In the module's as-written opening, there was no theft, and this subsection is skipped. The welcome is bare: the fire, the song, and the tent behind the fire.
+In the module's as-written opening there was no theft, and in the camouflage the party may have prevented it (Part II Section 1e); either way the returned item is skipped. The welcome is bare: the fire, the song, and the tent behind the fire.
 
 ## 3. The Fortunes reading at Madam Eva's tent
 
@@ -86,7 +90,7 @@ The DM's work during the reading is Madam Eva's editorial voice. She serves Stra
 
 ### 4a. Back to F, and south
 
-Whatever happened at Tser Pool, the castle lies beyond I. A party at G can go back to F and take the southern fork, or follow the trail that runs on past the camp along the river and joins the road at the bridge by H (Map 1). Ireena is with them (Part III Section 2d). Ismark is with them only if the DM sent him along (Part III Section 3a).
+Whatever happened at Tser Pool, the castle lies beyond I. A party at G can go back to F and take the southern fork, or follow the trail that runs on past the camp along the river and joins the road at the bridge by H (Map 1). Ireena is with them unless they persuaded her to stay (Part III Section 2d). Ismark is with them only if he chose to come (Part III Section 3a).
 
 The southern fork descends. The module's cue at F was that the southern fork "slants slightly downward" while the northern fork climbs. On Map 1 it is the long way round: it winds west and then north, crosses the river by the bridge, and climbs to I.
 
@@ -108,7 +112,7 @@ H is keyed, but the module gives it no content. Its value is context the DM can 
 
 ### 4d. Ireena on the castle road
 
-Ireena travels with the party (p.9; Part III Section 2d). A party that tries to leave her at Tser Pool finds Madam Eva will not take her, because she never gives aid (p.11). The castle approach is therefore hers as well as theirs.
+Ireena travels with the party unless they persuaded her to stay in the village (p.9; Part III Section 2d). A party that tries to leave her at Tser Pool finds Madam Eva will not take her, because she never gives aid (p.11). If she is with them, the castle approach is hers as well as theirs, and the rest of this subsection applies.
 
 Under the Ireena goal (Table 3, Jack or Queen: win her love), the castle is where Strahd can stage the rescue he hopes will turn her heart. Under the other three goals she is leverage rather than the central target. The best case is a party that treats her as the target she is under every goal, and keeps her inside its formation through the castle. The worse case is a party that mistakes her immunity from the wolves (Part III Section 3c) for safety, and loses track of her once the castle starts separating them.
 
@@ -116,13 +120,13 @@ Under the Ireena goal (Table 3, Jack or Queen: win her love), the castle is wher
 
 The clean stopping point is the party committed to the road from I to J. Usually that means the carriage door closing behind them, the horses drawing it east toward J, and the castle rising ahead through the fog. A party that refuses the carriage and walks the east road reaches the same place on foot (Map 1).
 
-That is a complete Part IV. The party has crossed the last mundane geography of the valley, heard the Fortunes read again at the tent or played on with the prep results, brought Ireena with them, and committed to the castle approach by carriage or on foot. Everything else belongs to Castle Ravenloft.
+That is a complete Part IV. The party has crossed the last mundane geography of the valley, heard the Fortunes read again at the tent or played on with the prep results, brought Ireena with them if she came, and committed to the castle approach by carriage or on foot. Everything else belongs to Castle Ravenloft.
 
 Part V takes the party into the castle from here, through J (the gates) and into the keyed K-rooms. J's boxed text assumes the carriage (p.11), and Part V notes how to adapt it for a party arriving on foot. It is where the apparatus of Part I Section 4e opens for play, and where the Fortunes reading's placements start to matter.
 
 ---
 
-*Last updated 7 October 2026.*
+*Last updated 21 November 2026.*
 
 ---
 
@@ -130,4 +134,4 @@ Part V takes the party into the castle from here, through J (the gates) and into
 
 A print-optimised PDF of Part IV is available for download.
 
-[Download PDF](/wp-content/uploads/2026/10/ravenloft-i6-playability-guide-part4.pdf)
+[Download PDF](/wp-content/uploads/2026/10/ravenloft-i6-playability-guide-part4.pdf?v=20261121)

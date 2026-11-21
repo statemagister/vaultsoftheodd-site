@@ -1,7 +1,7 @@
 ---
 title: "Ravenloft I6 Playability Guide, Part I"
 date: 2026-04-25T08:21:30Z
-lastmod: 2026-10-05
+lastmod: 2026-11-21
 slug: "ravenloft-i6-playability-guide-part-i"
 settings:
   - "Ravenloft"
@@ -9,9 +9,12 @@ tags:
   - "Ravenloft"
   - "Playability Guide"
 straight_quotes: true
+as_written: true
+# Body is the approved file (handover section 10, SHA-256 94433dd307c7e14c...) less its
+# title and byline lines, plus the Encounter Guides note and the PDF link.
 ---
 
-> **Editorial note.** This guide works from I6 itself. Where it reaches beyond the module, it says so. The itinerant clan the module calls "gypsies" is named Rhenari throughout, following the convention set out in Section 2. Direct quotations from the module retain the original wording. The printed "First Counsellor to Baron von Zarovich" on Crypt 25 is treated throughout as a typesetting error for "First Counsellor to King Barov"; Barov is Strahd's father, and the printed "Baron" is not a rank but a corruption of the name.
+> **Editorial note.** This guide works from I6 itself, and says so where it goes beyond the module. The itinerant clan the module calls "gypsies" is named Rhenari (Section 2); quotations keep the original wording.
 
 {{% when-live "/gaming/ravenloft-i6-encounter-guide-i" %}}
 > **The companion Encounter Guides.** This multi-part Playability Guide concentrates on preparing and developing Ravenloft as an adventure, including its characters, atmosphere, player choices and consequences. The three Encounter Guides provide location-by-location references for running encounters, with statistics, rules, dice rolls and immediate consequences. Both series can be used independently or together.
@@ -19,86 +22,60 @@ straight_quotes: true
 
 ## 1. Campaign placement
 
+I6 gives Barovia no place in a wider world and no history of its road. This section is the guide's placement, built to fit what the module does establish.
+
 ### 1a. The four seals
 
-Barovia is isolated four ways, not one. The fog is what the module foregrounds, but on its own it would be insufficient. Four reinforcing seals together produce the actual state the module describes. Two of them preexisted Strahd. The other two he set in motion.
+Barovia is isolated four ways, not one. Strahd created the fog. Its consequences created the economic seal. Terrain and neighbouring powers supplied the other two.
 
-1. **Fog.** The magical layer. Strahd-generated, activates on exit as a neutralised poison that re-asserts the moment a traveller leaves the valley. The fog disappears on Strahd's destruction.
-2. **Economics.** The commercial layer, downstream of the fog. A route travellers do not return from sheds traffic regardless of what alternative routes offer. Over centuries the pass drops off regional trade, then off the maps, then out of common knowledge as a working route at all.
-3. **Terrain.** The physical layer. Mountains pressing the valley on at least three sides, a single practical approach, forested slopes discouraging off-road travel, weather compounding difficulty across most seasons.
-4. **Neighbours.** The political layer. Surrounding powers are either too fragmented to notice, too strong to be safely provoked, or too thinly populated and migratory to supply either investigation or prey.
+1. **Fog.** Strahd's magic, and the seal the module foregrounds. It disappears when he is destroyed.
+2. **Economics.** A road travellers do not return from loses its traffic. Over centuries the pass drops out of trade, then off the maps, then out of common knowledge.
+3. **Terrain.** Mountains on at least three sides, few practical approaches, forested slopes and hard weather.
+4. **Neighbours.** The surrounding powers are too fragmented to notice, too strong to provoke safely, or too thinly spread to investigate or to feed him.
 
-Strahd built the fog. The economic seal follows from the fog. Terrain and neighbours he did not build, but he has been careful across centuries not to disturb them.
+He has been careful for centuries not to disturb the terrain and the neighbours.
 
 ### 1b. The pass, once useful, now avoided
 
-The valley's infrastructure implies past prosperity. Barovia was once a working kingdom with a royal line under Barov and Ravenovia, a castle, a burgomaster, a priesthood, and a merchant class. The pass was commercially active during the royal era and through the years before Strahd's pact.
+The valley's castle, burgomaster, church and merchants imply a working kingdom under Barov and Ravenovia, and a pass that carried trade until Strahd's pact. After the pact he killed, and travellers and traders went missing. Disappearances on a trade route bring enquiries, and enquiries bring investigators. In the guide's reading, the fog is his answer: whoever comes looking for the missing can enter, but cannot leave to report. Investigators saw the fog, heard the warnings and turned back; those who entered did not return. The folk warning of a valley where the road itself kills is the outside world's account of it.
 
-What ended it was Strahd's appetite. After the pact he began killing. Not only the wedding, and not only at the castle. Anyone inside the valley was potential prey, and so was anyone passing through. Travellers and traders went missing. Disappearances on a trade route do not stay quiet. Merchants' guilds notice their people fail to arrive. Relatives make enquiries. Neighbouring rulers hear the complaints. Sooner or later investigation comes.
-
-The fog is Strahd's answer to that. It is a defensive work, not a territorial one. Its function is to stop anyone with cause to look for the missing from reaching him. Once it was in place, the valley sealed. The fog is a neutralised poison: breathed once, it infuses around the vital organs and activates the moment a character leaves Barovia. No one who has entered the valley can leave without the Rhenari's potion or Strahd's destruction. The module is explicit that the potion cannot be found by the party. Investigators who approached the pass saw the fog, heard the warnings, and turned back before breathing it. Those who entered did not return. The folk warning about the cursed valley where the road itself kills you is the downstream account of all of this, carried outward by the Rhenari on their own travels and by the few who turned back at the fog's edge without entering.
-
-The residual users are the Rhenari, smugglers avoiding customs, fugitives avoiding patrols, and the occasional desperate traveller who has outrun the warning or discounted it. The Rhenari charge extortionate rates for physical passage in their own wagons, which they alone can drive through the fog. The potion Strahd gave them is real but never for sale. A separate anti-vampire potion they hawk to arriving adventurers is the scam. People who fail to emerge are not missed. The smuggler's employer assumes he absconded, the fugitive's pursuers assume he escaped abroad, the merchant's family lists him as lost on the road, which is technically accurate.
+The road's remaining users are the Rhenari, who alone pass through Barovia at will, and those with reasons to avoid other roads: smugglers, fugitives, the desperate and the uninformed. In this reading the Rhenari also carry passengers through the fog in their wagons, at extortionate rates. Nobody misses the travellers who fail to emerge.
 
 ### 1c. Strahd's restraint
 
-The placement flanks Strahd with neighbours his own intelligence tells him to leave alone. The valley offers a fixed population trained across generations, a controlled flow of victims via the Rhenari, a defensive perimeter in the fog, and the undisturbed quiet that has let him survive. Expansion loses all of it. The sphere of darkness he pursues, per the Fortunes Goals table on p.5, reads more easily as insurance and tactical flexibility within his domain than as a plan for external predation.
+His neighbours are ones his intelligence tells him to leave alone. The valley gives him a population trained across generations, a controlled flow of victims through the Rhenari, the fog as his perimeter, and the quiet that has let him survive. Expansion would lose all of it. The sphere of darkness (Table 3, 7 or 10) would greatly extend the range of his travels, but reads more easily as freedom of movement than as a plan for conquest. The new identity goal (3 or 5) is the exception: under it he means to leave.
 
 ### 1d. Published settings, all passing the four-seal test
 
-**Greyhawk.** Central Yatils, with Perrenland to the east, Ket to the south, and the Wolf and Tiger Nomads to the north. Ket is the strong organised neighbour, Perrenland the fragmented tempting one, the Nomads the low-yield migratory frontier. The setting's existing overland clans can stand in for the Rhenari without strain.
+**Greyhawk.** The central Yatils, with Perrenland to the east, Ket to the south, and the Wolf and Tiger Nomads to the north: Ket the strong organised neighbour, Perrenland the fragmented one, the Nomads the low-yield frontier. The setting's overland clans can stand in for the Rhenari.
 
-**Mystara.** Altan Tepes mountains between Karameikos and Thyatis. Traladaran culture is directly Wallachian-coded, meaning almost the entire I6 naming layer lands without adjustment. Karameikos is the fragmented tempting neighbour, Thyatis the strong organised one. The Dymrak Forest is a ready-made Svalich woods analogue.
+**Mystara.** The Altan Tepes between Karameikos and Thyatis. Traladaran culture is Wallachian in flavour, so almost all of I6's names land unchanged. Karameikos is the fragmented neighbour, Thyatis the strong one; the Dymrak Forest is a ready-made Svalich woods.
 
-**Forgotten Realms.** Galena Mountains between Damara and Vaasa. Damaran naming is Slavic and needs almost no adjustment. Damara is the fragmented tempting neighbour, Impiltur the strong organised one, Vaasa the hostile northern seal. Published 1987, so this is an adaptation exercise rather than period-appropriate.
+**Forgotten Realms.** The Galena Mountains between Damara and Vaasa. Damaran naming is Slavic and needs almost no adjustment. Damara is the fragmented neighbour, Impiltur the strong one, Vaasa the hostile northern seal. The setting was published in 1987, so this is an adaptation rather than a period choice.
 
 ### 1e. Generic placement for homebrew
 
-A mountain valley flanked by a fragmented tempting neighbour, a strong organised neighbour, and a low-yield frontier, accessed by a decayed trade route that regional folk warn against. The valley's own culture should be insular and drifted, distinguishable from any of its neighbours. A pre-Strahd royal era matching the Barov and Ravenovia frame explains the castle, the burgomaster, the church, and the merchant class. The pass should have been commercially viable during this royal era and through the years before Strahd's pact, with its closure following the pact and his subsequent predation. Any setting that can supply these elements can host Barovia without strain.
+A mountain valley between a fragmented neighbour, a strong organised neighbour and a low-yield frontier, reached by a decayed trade route that regional folk warn against. The valley's culture is insular and distinct from its neighbours'. A royal era like Barov and Ravenovia's explains the castle, the burgomaster, the church and the merchants, and the pass was viable until the pact.
 
 ### 1f. The patron problem, why the party is in Barovia
 
-The module delivers the party into the valley without explaining why they accepted the job. Someone engaged them. Someone had a reason. The four-seal framing in 1a and the causal history in 1b supply the answer directly: a neighbouring power has a Barovia-shaped gap in its intelligence, and outsiders are the natural instrument for closing it.
+I6 gives the party a forged plea and a promised reward, and tells the DM that Strahd lured them; it gives no one in the wider world a reason to send them. The four seals supply one. A neighbouring power has lost people on the pass for generations: merchants, travellers, and then the officers it sent to find out why. It knows something is in the valley and cannot see in. An army cannot investigate, would fare badly in a valley with so few approaches, and would cost dearly in politics if it failed. Adventurers with no official ties are cheaper and deniable: if they succeed, the patron has solved a long-standing problem; if they fail, they were freelancers. The commission is intelligence first: find out what is in the valley, who is behind the disappearances, and whether it can be ended, and end it if it can.
 
-The patron's problem is exactly the problem the fog was built to produce. Over decades or centuries people have been going missing on the valley's pass. Merchants, traders, travellers, and in time the investigators those disappearances produced. Anyone official sent in has not returned. The neighbouring kingdom knows something is in the valley. It does not know what. It cannot see in. Its own scouts are inside the pile of the disappeared, and sending more is throwing additional officers after the ones already lost.
+In Greyhawk, Ket is best placed to commission the work, with Perrenland a smaller secondary hire and Tusmit affected enough to help fund it but occupied with Ket and Ekbir. In Mystara, Karameikos is the closer, more directly affected patron and Thyatis the larger imperial hand. In the Forgotten Realms, Damara has lost the most, and Impiltur has the organisation to commission the work on its behalf.
 
-An army is the other available instrument, and it is worse than the problem. A mountain valley with a single practical approach favours the defender at every turn. The force that enters the valley is not the force that emerges, assuming any force emerges. The political cost of a visible military operation against a neighbouring territory is high. The diplomatic cost of the operation failing is higher. And the patron still does not know what is in there. An army cannot investigate, it can only fight, and it cannot fight what it cannot find.
-
-Outsiders are cheaper, lower-profile, and deniable. A group of adventurers with the right capabilities and no official ties is a contractor, not a soldier. If they succeed, the patron has solved a long-standing problem at no visible political cost. If they fail, they were freelancers acting on their own initiative, and the patron has lost nothing it owns. The commission is therefore an intelligence commission first and an adventure second. Find out what is in the valley. Find out who is behind the disappearances. Find out whether it can be ended, and end it if it can.
-
-The specific patron depends on the setting. In Greyhawk, Ket is best placed to commission the work, large and organised enough to have lost caravans and officers, strong enough to retain outsiders discreetly, and sufficiently close to the valley that ongoing losses sit in its ledger. Perrenland is the plausible secondary hire, smaller, more fragmented, with the same losses but fewer resources to absorb them. Tusmit is adjacent and militarily capable but primarily occupied with Ket and Ekbir, which makes it a secondary patron: affected enough to fund the work, not invested enough to lead it. In Mystara, Karameikos or Thyatis fills the role, with Karameikos as the closer, more directly affected party and Thyatis as the larger imperial hand. In the Forgotten Realms, Damara is the patron that has lost the most and Impiltur the one with the organisation to commission the work on Damara's behalf.
-
-What this gives the DM at session one is a reason the party took the job and a patron who expects something in return. Information, at minimum. A report, a map, a name. Ideally the destruction of whatever is running the valley. The commission also gives the DM a lever for the campaign after I6 if the DM wants to use it: the party has a relationship with a real power that now owes them something, and a valley that has been closed for generations has just been reopened.
+This gives the DM a reason the party took the job, and a patron who expects at least a report and ideally the end of whatever runs the valley. After I6, it leaves the party with a relationship to a real power that owes them something.
 
 ### 1g. The valley after failure, and how it continues
 
-Barovia does not return to a prior state when a company fails. It continues.
+When a company fails, Barovia does not return to its earlier state. The dead stay dead; houses stand empty or are taken; offices are filled, so a burgomaster or priest is replaced, or the church falls quiet until one is found. A party entering after a failure meets a village that has absorbed it: in who holds authority, which doors are shut or watched, and which stand open because no one remains to close them. Strahd learns from night to night (4e); the valley does the same across years.
 
-The dead remain dead. Houses stand empty or are taken by others. Offices do not vanish; they are filled. A burgomaster is replaced. A priest is replaced, or the church falls quiet until one is found. Those who survive adjust to what has happened, and what has happened becomes the condition under which the next company enters the valley.
-
-This is the same movement described at the smaller scale in Section 4e. There it is Strahd who learns and alters his use of the castle from night to night. Here it is the valley itself that does the same from one span of time to the next. Nothing is undone. It is only taken forward.
-
-The practical effect is that repetition does not produce familiarity. A party entering Barovia after a failure does not encounter the same village with different faces. They encounter a village that has already absorbed the failure. The marks of it are visible in who holds authority, which doors are shut, which are watched, and which stand open because no one remains to close them.
-
-Tatyana's return follows the same rule. She returns, but not into the same place within the village's structure, nor under the same conditions. The soul persists. The life does not repeat.
-
-This matters because Strahd's attention follows her, and his attention shapes the pressures the party encounters. Where she stands within the valley determines how those pressures are expressed. Whether she is protected, exposed, constrained, or moving freely shapes the form his attention takes.
-
-The castle remains what it is. Strahd's methods are already established in Sections 4c and 4e. What changes here is where and why they are applied: the cycle's new conditions determine where his attention falls and which of his standing capabilities the valley draws him into using.
-
-A DM running Barovia more than once should alter the offices, the relationships, and the local memory of prior failure accordingly. The burgomaster in the second run is not Kolyan, and the party is arriving into whatever the first run left behind.
-
-What continues is the valley as it has become, not the valley as it was.
-
----
+Tatyana's soul continues to return, as it has across the centuries, but not necessarily into the same circumstances. Where she stands, protected, exposed or free, shapes how Strahd's attention, and so the pressure on the party, falls. A DM running Barovia more than once changes the offices, the relationships and the local memory accordingly: the village's authorities in the second run are not those of the first.
 
 ## 2. Names, keep what works, change what does not
 
-Keep the names as written where they land without friction. They are the module's original voice, and they travel well. Where a placement makes a name feel out of tune, rename it. The itinerant clan the module calls "gypsies" needs a setting-native name in any adaptation, both because the English term has become contested and because a local name reads as lived-in rather than imported. What must survive is the essence of each character and relationship: Strahd's pride and pact, Sergei's murder on the wedding day, Tatyana and Ireena as the same soul across centuries, Madam Eva's sight and divided loyalties, the dynastic frame of Barov and Ravenovia, and the specific roles of the village and castle NPCs. Names serve that essence, they are not the thing itself.
+The module's names are kept where they land without friction; they are its original voice. Where a placement makes a name feel out of tune, it is changed. What must survive is the essence of each character and relationship: Strahd's pride and pact, Sergei's murder on the wedding day, Tatyana and Ireena as the same soul across centuries, Madam Eva's sight and divided loyalties, the dynastic frame of Barov and Ravenovia, and the roles of the village and castle NPCs.
 
-The guide uses **Rhenari** throughout for this clan. Rhenari is both collective and singular: "the Rhenari," "a Rhenari." No suffix, no folk or people or kin construction; the name stands on its own in the way Vistani does in later Ravenloft material, without being Vistani.
-
-Direct quotations from the module's text retain the original wording. Elsewhere, Rhenari.
+The clan the module calls "gypsies" needs a setting-native name, because the English term is contested and a local name reads as lived-in. The guide uses **Rhenari**, both collective and singular ("the Rhenari", "a Rhenari"), with no suffix, standing on its own as Vistani does in later Ravenloft material without being Vistani. Quotations from the module keep the original wording.
 
 *Further reading: a companion note on the site sets out the fuller argument for this naming convention.*
 
@@ -106,105 +83,73 @@ Direct quotations from the module's text retain the original wording. Elsewhere,
 
 ## 3. Overview and how to run the module
 
-The module's requirements for the party, set out on p.2, are six to eight characters of 5th to 7th level, a balance of character classes, and at least one fighter with a longsword. The fighter requirement is load-bearing for the module's intended resolution, because that longsword is the lost blade of the Sunsword (p.31), and waiving it requires conscious replacement of that function. The module does not require good alignment, but the best case is a wholly good-aligned party, partly because Strahd's manipulations of the morally ambiguous complicate the ending the module builds toward, and partly because the tonal register of gothic horror works better when the party are unambiguous protagonists rather than shades of grey. There is a mechanical reason too. The curtain at K87 admits only characters of good alignment, and Sergei's coffin at K85 opens only to a lawful good touch. A party with neutral members can still finish the module, but those members stop at K87. The DM should know at prep which characters can pass, and whether anything placed at K88 is reachable by the party as built.
+**The adventure in brief.** Strahd brought the party here. "There is a reason why Strahd lured the PCs into his little kingdom" (p.3), and the Fortunes reading decides what it is (Section 5). In the module's opening the party arrives on a plea for help in the Burgomaster's name, which I6 shows to be forged (p.9) without naming the forger (4a); Part II also offers a camouflaged opening. Once through the gates of Barovia the party cannot simply leave: the gates close behind it and "will not open for the PCs again until Strahd is destroyed", and "Anyone attempting to cross back over the border is choked by the fog" (pp.6 and 7; 3b).
 
-The module asks for a balance of character classes, and the encounter design assumes the four core AD&D roles are covered. A group without a cleric tends to break down in the crypts and under Strahd's bite. A group without a wizard tends to exhaust its damage options against Strahd's hit points and regeneration. A group without a thief typically loses PCs to traps that no other class can reliably locate or disarm. The fighter is mandated by the text. The other three are strongly implied by the content.
+What they walk into is a valley under siege. "The village of Barovia is a sad place now. Most of the shops have been forced to close. The night, and its creatures, belong to Strahd. When the sun sets, the people of Barovia barricade their homes, trembling in fear. Each night the attacks get worse" (p.1). The Burgomaster's mansion has been "the center of most attacks" (p.1). The Burgomaster, Kolyan Indirovich, has been dead for nearly a week, the figure the guide follows among I6's three, and the mansion's great holy symbol has been stolen (pp.1 and 9). His adopted daughter, Ireena Kolyana, has been bitten twice and can no longer be protected there; his son, Ismark, sits in the tavern, ready to take the party to her (pp.8 and 9). On the outskirts the church is kept safe at night only by "the constant prayers of the priest" (p.1), Donavich. "Only the town priest and the few survivors of the second ruling house of Barovia have the will to offer more than just personal resistance to Strahd" (p.6); I6 does not say who the survivors are. In the Svalich woods the Rhenari camp at Tser Pool, and Madam Eva, who leads them, foretells the future "with surprising accuracy" (p.1; the camp, p.11). Above them all, Castle Ravenloft stands on its 1,000-foot pillar of rock (p.6).
 
-This guide is scoped to the module as a published text. Adaptation to specific virtual tabletops, AI map generators, or other modern platforms is left to the DM. The prep logic set out here applies equally to in-person pen-and-paper play, online voice, any VTT, and any future format. What the party must look like, what the spellcasters should prepare, and what the DM should internalise before session one does not change with the delivery medium.
+I6 gives the worsening no schedule. The nightly attacks follow the procedure given in each Part; in the guide's reading they can grow more dangerous through what the party does, where it shelters and what Strahd learns (4e), not through larger dice.
+
+The adventure "can run in any direction, culminating in a fantastic vampire hunt" (p.1). The party can move between the village, the camp and the castle in any order. The reading places the three treasures that can turn the hunt and fixes what Strahd wants, so it shapes the hunt. The party wins by destroying him (Section 4). If it does, and Ireena is with them, the optional ending reveals her past (4a). The module's horror is not unrelieved: the tavern's sign "originally read, 'Blood of the Vine,' but the 'F' has been scratched over with an 'N'" (p.8), one of the grim jokes I6 sets beside its terrors.
+
+Ravenloft is designed for six to eight characters of 5th to 7th level. A balance of classes is helpful, and any AD&D class has a place. At least one must be a fighter carrying a longsword: that longsword is the lost blade of the Sunsword (3d). Under the guide's reading, I6's "fighter" includes fighters, rangers and paladins, and the barbarian and cavalier of *Unearthed Arcana*. If none of them carries a longsword, the DM can give the blade to any character able to wield one, a departure from I6, which names a fighter.
 
 ### 3a. Group composition
 
-The four-role baseline is fighter, cleric, wizard, thief. Any party can add a second of each, or add a paladin, ranger, druid, or dual-class character as specialist cover, provided the party stays within the module's six to eight characters of 5th to 7th level.
+A table of four or five players reaches the module's numbers by having each player run two characters, by henchmen, or by both. Ordinary recruitment produces 1st-level henchmen, who are fragile beside a party of 5th to 7th level.
 
-With six characters at 5th level, the baseline is tight. Each role is filled by one PC with no redundancy. A fallen cleric leaves the party without healing or turn undead in the middle of a vampire module, which is typically the run's end.
+**Established companions (optional).** At Session 0 the DM can let players create companions for their characters, such as apprentices or squires, with the DM setting their level and circumstances. If a principal character dies, an established companion can become a player character by campaign ruling, and need not match the dead character's abilities or level. Barovia's own people can also supply successors if events give them a reason. Donavich, the village priest, is one: a 2nd-level cleric whose nightly prayers alone keep his church sacred, so leaving with the party has a cost.
 
-With six characters at 6th to 7th level, the party can afford a second front-line fighter, a second spellcaster, or a dedicated specialist. This is the recommended configuration because it gives redundancy at one or two roles without bloating the table.
+### 3b. Turning and the fog
 
-At seven or eight characters closer to level 5 each, the party has redundancy at every role and can absorb casualties, but it also moves slowly and spends more session time on group decision-making. Larger groups need firmer DM pacing.
+Two of the party's capabilities change the adventure. Whether it can turn Strahd is known before session one; whether it has *neutralize poison* matters before it tries to leave the valley (Section 6).
 
-**Hitting the character count with modern table sizes.** The six-to-eight-character requirement assumes 1e-era tables, which ran larger than modern groups. A DM running with four or five players today has two main routes to the numbers the module expects.
+**Turning Strahd.** Within the module's levels, only a cleric of 6th or 7th level can turn him, on a high roll and only for a matter of rounds; no paladin in that range can. A party with such a cleric has a real if uncertain defence, and Strahd treats that cleric accordingly (4e). The turning figures, the Icon's bonus, the guide's ruling on failed turning, and the rule on lesser undead in his company are given in each Part where turning is run.
 
-First, each player runs two characters. This was standard 1e practice. It keeps the PC count up without adding seats, doubles each player's tactical interest, and gives them a built-in backup when one of their characters falls. Downside is cognitive load per player and slower turns while each one resolves two actions per round.
+**The fog and *neutralize poison*.** The fog is harmless inside the valley; those who leave must save against poison or choke (p.6). The spell cures a character choking outside the valley, one casting per character, though breathing the fog again infuses the character again. Within those limits, a party with *neutralize poison* is not trapped as the module assumes. The spell does not remove the fog, which ends only with Strahd. The fog's full effect and the guide's ruling are given in the Part where the party can try to leave.
 
-Second, recruit henchmen before the party enters Barovia. AD&D 1e gives each PC a Charisma-based henchman limit with loyalty and morale rules governing their behaviour. High-Charisma PCs can bring two or three along, which scales the party to the module's intended size without doubling each player's character load. Henchmen are run by the DM under instruction from the recruiting PC in combat, take a half share of XP and treasure, and can be chosen by role to plug gaps, a second cleric for healing redundancy, additional fighters for the front rank, a specialist thief for the castle traps.
+### 3c. Harming Strahd
 
-A useful design move is establishing at session zero that henchmen can be promoted to full PCs when their recruiter falls. The module has no designed replacement NPCs, and a henchman who has been with the party since arrival in Barovia steps seamlessly into the empty seat. Flagging this upfront encourages players to bring henchmen as genuine characters rather than disposable retainers, which in turn makes their eventual promotion feel earned rather than mechanical.
+He can be hit only by magical weapons, +1 or better, so a party without them must rely on spells, holy water and the other means in 4b. The combat reference, including backstab, is given in each Part where he can be fought.
 
-### 3b. The cleric, the adventure's keystone class
+### 3d. The Sunsword's blade
 
-The cleric is the adventure's single most important class. Turn undead is the primary offensive tool against a significant fraction of the module's opposition, including the zombies, skeletons, ghouls, and wraiths scattered through the castle, and the vampire himself when turned at higher cleric levels. A cleric who is not prepared to turn aggressively and repeatedly throughout the module is playing the wrong character.
-
-The cleric also supplies healing, disease recovery, poison neutralisation, protective wards, and anti-caster disruption. The spell list has to cover offensive, defensive, and recovery functions simultaneously. Critical prepared spells at levels 5 to 7, by spell level:
-
-- Level 1: Cure Light Wounds (multiple copies), Protection from Evil, Bless
-- Level 2: Hold Person, Silence 15' Radius, Spiritual Hammer
-- Level 3: Cure Disease, Prayer, Dispel Magic, Remove Curse
-- Level 4, if the cleric is 7th level: Cure Serious Wounds, Neutralize Poison, Protection from Evil 10' Radius
-
-Critical notes on selection: Protection from Evil blunts Strahd's charm gaze and disrupts the undead he summons, so prepare at least one. Prayer is a standing combat buff that repays the slot inside one round. Silence 15' Radius shuts down an enemy caster at range and can be cast on an unwilling target who fails the save. Spiritual Hammer gives the cleric a ranged damage option in rounds when healing is not required. Neutralize Poison is the standard AD&D response to poison effects, though the module does not explicitly confirm it works against the fog (see 1b for the fog's mechanics). Remove Curse answers the curse spells in Madam Eva's repertoire and in the witches' spellbook.
-
-### 3c. The wizard, damage and utility
-
-The wizard's role is reliable damage and high-leverage utility. Offensive spells have to account for the environment and the target. Strahd makes saving throws well, has substantial hit points, and the castle is a warren of tight spaces where area effects either endanger the party or waste themselves on stone walls.
-
-Magic Missile is the reliable choice against Strahd specifically. No save, automatic hits, multiple darts per casting, and the damage stacks across castings. A wizard with several Magic Missiles prepared contributes more to the vampire's defeat than one relying on a single Fireball held in reserve. Fireball and Lightning Bolt look dramatic on paper and rarely deliver in practice here, though they remain useful against softer opposition in open terrain.
-
-Critical prepared spells at levels 5 to 7, by spell level:
-
-- Level 1: Magic Missile (multiple copies), Protection from Evil, Shield
-- Level 2: Invisibility, Mirror Image, Knock, Web
-- Level 3: Dispel Magic, Haste, Fly, Protection from Normal Missiles
-- Level 4, if the wizard is 7th level: Stoneskin, Dimension Door, Wizard Eye, Ice Storm
-
-Critical notes on selection: Dispel Magic is the most important utility spell in the book. The castle is full of Strahd's active magic, and Dispel Magic opens doors, disarms effects, and interrupts his concentration spells during combat. Haste on the fighter doubles their attack rate during the Strahd confrontation, which is frequently decisive against a regenerating opponent. Stoneskin on the Sunsword carrier converts them into a durable frontline piece for the endgame. Invisibility lets a wizard or thief scout ahead of the main party without tripping Strahd's spy network at every corner. Knock bypasses locks that the thief's skill check misses.
-
-### 3d. The thief and the fighter
-
-The thief's primary role is trap detection and disarming. The castle contains several traps that separate, relocate, or seriously injure the PCs who trigger them, and Find/Remove Traps is the only reliable way to locate them before they trigger. The thief should scout ahead during exploration rather than walk in the front rank. Backstab is a bonus against living opposition and ineffective against most of the undead the party will face, which puts the thief in a support rather than damage role at the module's upper levels.
-
-The fighter is the Sunsword carrier. One fighter's longsword is already the Sunsword's blade, though no one knows it, and when the party finds the hilt it leaps onto the blade (p.31). The best case is that fighter still holding the sword when the hilt is found. The worse case is the blade lost, dropped, or left with a fallen character before then. The DM should note at prep which fighter carries it, and track the sword rather than the character. Plate or chain armour, a shield unless two-handed, a missile weapon for situations where Strahd retreats into flight or mist form, and the highest hit point total of the group. The fighter takes the front rank in every combat that is not scouted.
-
-### 3e. Prep conventions from p.2
-
-The remaining items on p.2 are prep rather than interpretation. The DM needs to have them internalised before session one, but they do not require developed argument.
-
-**Duplicate areas and Fortunes placements.** Some areas in the module are exact duplicates of others. Areas that are exactly alike carry the same number on the maps and share a single text description (p.2). This is a map convention, not a variable. The variable placements are Strahd's position, the Holy Symbol of Ravenkind, the Tome of Strahd, and the Sunsword hilt. They come from the Fortunes reading in Section 5, and the DM marks them on the master copy before session one. Attempting to resolve them mid-session breaks the tempo and can accidentally telegraph the draw to the players.
-
-**Statistics abbreviations.** AD&D 1e stat-block shorthand, defined on p.2 and assumed throughout the module. AC, MV, HD, #AT, Dmg, SA, SD, AL, and the rest. A 1e DM will know these. A DM coming from a later edition should spend a few minutes with p.2 before prep to make sure the stat blocks read cleanly during play.
-
-**Torch and lighting conventions.** Per the module's stated radius on p.2. Lighting matters because much of the castle is unlit, several encounters turn on the distinction between light and darkness, vampires have specific relationships to sunlight and lesser light sources, and a party without reliable illumination cannot navigate the deeper interior. The cleric's Continual Light is worth noting here as a module-usable spell for sustained exploration, since it does not consume torch stock or attract encounters the way a burning flame does.
-
-**Dexterity and constitution checks.** Roll d20, equal to or under the relevant stat to succeed. Non-standard for 1e general rules, specific to I6's handling of physical hazards the module does not want to resolve as saving throws. Used for dodging sudden traps, crossing hazardous ground, and similar situations where a save mechanic would either be too generous or too harsh. The fog is not one of them: leaving Barovia calls for a saving throw vs. poison (p.6).
-
-**The victory condition.** Strahd's destruction ends the adventure. The module states this explicitly. Once the vampire is destroyed, the fog dispels and the valley is released from the curse. This matters for two reasons. First, it gives the DM a clear endpoint and confirms the campaign does not continue inside Barovia after Strahd falls, which also means the DM does not need to prepare content beyond the climax. Second, it removes the burden of "what happens next in the valley" from I6's design remit. The aftermath belongs to the DM's wider campaign if they choose to take it there. The module's work is done at the climax.
+Before play, the DM determines which fighter's longsword, in the guide's broad reading of "fighter" (Section 3), is the blade; I6 makes it a random fighter, and no one in the party knows. When hilt and blade are brought together, the hilt magically leaps onto the blade, replacing the carrier's hilt (p.31). I6 ties this to the party finding the hilt and gives no distance, and the guide sets none. From then on the DM tracks the sword rather than the character, since it may be dropped, lost or left with a fallen fighter.
 
 ---
 
 ## 4. Count Strahd Von Zarovich, who he is and how to play him
 
-The module opens with Strahd speaking in his own voice on p.2: *"I am the ancient. My beginnings are lost in the darkness of the past. I am not dead. Nor am I alive. I am undead, forever."* This is the figure the DM is preparing to play. He is ancient, self-conscious of his ancientness, and self-defining. He is not a monster that has forgotten it was once a man. He is a man who has chosen to outlast his own death and is still choosing, night after night.
+The module opens with Strahd in his own voice: *"I am the ancient. My beginnings are lost in the darkness of the past. I am not dead. Nor am I alive. I am undead, forever."* He is not a monster that has forgotten it was once a man. He is a man who chose to outlast his own death and is still choosing, night after night.
 
-The note on p.3 tells the DM what this means for preparation. "The entire adventure centers around the vampire. Always keep in mind the motives of the vampire, how he moves about, and what his cunning plot is. You must play Strahd in the same way the players play their characters." The instruction is to know Strahd thoroughly before session one, in memory rather than on the page. The stat block, the spell list, the intelligence cycle, the three scripted strikes, the harassment pattern, and the goals set by the Fortunes reading all need to be at the DM's fingertips. Looking things up mid-session is where the vampire loses his advantage.
+I6 puts him at the centre of the adventure: "Always keep in mind the motives of the vampire, how he moves about, and what his cunning plot is. You must play Strahd in the same way the players play their characters" (p.3). It also asks the DM to "use every power available to the vampire to keep him (and the game) going". His powers, his spells, his intelligence reports, his three strikes, the nightly attacks and the goal the reading gives him are all things the DM knows before session one.
 
-What the PCs want and what Strahd wants are not mirror images. The PCs win by destroying him. Strahd wins by completing his goal as set by the Fortunes reading in Section 5. Depending on the draw, that may mean turning a PC into a vampire and leaving Barovia in that PC's likeness, recovering a black opal he believes the party carries, winning Ireena's love through a staged rescue, or destroying the Sunsword before blade and hilt are reunited. His victory modes include subversion, not only slaughter. A party that leaves the valley alive but with a PC in his service, or with Ireena in his possession, has lost the adventure as surely as if they had all fallen.
-
-The destruction the module calls for is hard-won, not handed over. The DM's job is to make Strahd cost the party something before he falls. Every fight that depletes their resources, every bargain they refuse, every attachment he exploits, every trap that thins them before the climax, these are the texture of his defeat. A Strahd who dies easily is a Strahd the DM did not play. The advocacy for him set out in the three principles below is the price of a climax worth reaching.
+The PCs win by destroying him. His aim is the goal the reading gives him (Section 5): to leave Barovia in a PC's likeness, to complete a sphere of darkness whose last piece he wrongly believes the party carries, to win Ireena's love through a staged rescue, or to destroy the Sunsword, whose reunion with its hilt he fears. He can win without killing anyone. A companion drawn into his service, or Ireena persuaded by his staged rescue, may leave the survivors with consequences harder than an ordinary defeat. A Strahd played with every power he has makes the party earn whatever ending they reach.
 
 ### 4a. Who he is
 
-Count Strahd Von Zarovich, styled "The First Vampyr." Lord of Castle Ravenloft and ruler of Barovia. He is the genius-level intellect that the stat block specifies, not inference from behaviour. He is a 10th-level magic-user who has spent centuries studying, which means his tactical repertoire extends beyond his vampire powers into prepared magic. He is a vampire of the full classical type: energy-draining, regenerating, charming at a glance, gaseous and batform at will. His alignment is chaotic evil.
+"The First Vampyr", chaotic evil, of genius intelligence, and a 10th-level magic-user as well as a vampire. Behind the statistics is a man who has arranged his whole world to express himself. His castle dominates the valley from its 1,000-foot pillar of rock; the peasantry fears him; the Rhenari serve him; the fog keeps his people in. One reading of why he stays is in 1c.
 
-Behind the statistics is a man who has built his entire circumstance to express himself. Castle Ravenloft on its 1,000-foot pillar dominates the valley in every direction. The peasantry serves him. The fog keeps the world out. He is the biggest figure in his geography, and he has arranged things so that this remains true. One reading of why he stays, set out in 1c, treats the fog and the neighbours as the constraints he has been careful not to disturb.
+He is a manipulator even when he is being a monster. Violence, courtesy, fear and charm are different ways of asserting the same control. He works through the party's attachments, through the fear he has bred into the villagers over centuries, and through the courtesies of a noble host. Ismark is the first example: he knows that Strahd is drawn to his adopted sister more than to anything else, and his love for her is a lever Strahd can use against him, and against any party that takes up her cause.
 
-His manipulation of those around him follows the same pattern. Ismark, the burgomaster's son, is the immediate example. A well-meaning man who asks the party to save his sister without grasping that his love for Ireena is itself the lever Strahd is using against him. The module's wider cast is populated with similar levers. Strahd does not threaten the party directly until he has to. He works through their attachments, through the fear he has spent centuries conditioning into the peasantry, and through the ritualised courtesies of a noble host receiving guests under his own roof. A DM playing him well plays a manipulator first and a monster only when manipulation has run out.
+I6 sets his manner before the party ever fights him. The letter that brings the party is a forgery, delivered by a Rhenari on behalf of "my master"; Ismark, if shown it, knows the handwriting is not the Burgomaster's. I6 never names the forger, though it tells the DM that Strahd lured the party; the players can be left to suspect him. His nightly attacks are "intended more to frighten the PCs than to damage them. Strahd just toys with them", and indoors they end with his hollow laughter in the distance. At K10, the first time the party enters, an illusion of him welcomes them and invites them to dine while "Strahd himself is elsewhere." The DM can move between courtesy, mockery and distance as the encounter demands, so the players recognise the same personality whether he is offering hospitality, frightening them or preparing to attack.
 
-One further note worth holding in view. The module gives the DM Strahd's own account of his origin in the Tome of Strahd, covered in Part VIII Section 1c, and it is his own account, written by him. The DM reads his self-presentation at the table with that in mind.
+The Tome of Strahd (p.31) is his own account of himself, and the best guide to his voice. In it he names himself "The Ancient" and "The Land". His brother Sergei was "handsome and youthful. I hated him for both." He loved Tatyana, who called him "brother" and "Old One", and he saw in her eyes "the death of the aged". By his account he made a pact with death, killed Sergei on the wedding day, and watched Tatyana fling herself from the walls. He still hunts for her: "I have even felt her within my grasp, but she escapes. She taunts me! She taunts me! What will it take to bend her love to me?" And he fears the sword Sergei brought: "I fear and hate it as much as the sun." He tells it as a justification of himself. The pride, the grievance against youth, the obsession and the fear are what he brings to every scene. The players may read fragments of the same words if they find the Tome: most of it is illegible, and each paragraph, read in order, has a base 30% chance of being read.
+
+**Ireena and Tatyana.** Ireena Kolyana is "a sweet but troubled woman. Although she may at first appear mild, she has a strong will and a good arm. By no means a hapless victim, she will aid the party as best she can in saving herself" (p.9). She acts on it from the first meeting. She "will not open the heavily barred door to anyone unless absolutely convinced that those outside her door are of no allegiance to the Count", or if Ismark is with them; she tells the party that "each night, wolves and other, terrible creatures attack the house"; and she "will accompany the PCs" (p.9). I6 adds that since her father's death "the wolves have not attacked the house" (p.9); it says this of the wolves, not of the other creatures. She does not remember her early past, nor how she came to Barovia. Old Kolyan found her as a girl "at the edge of the Svalich Woods near the Pillarstone of Ravenloft" and adopted her; she does not know where he found her (p.9). Ismark knows that "for some unknown reason" Strahd is drawn to her more than to anything else (p.8). In the Tome, Tatyana flung herself from the walls of Ravenloft: "It was a thousand feet through the mists. No trace of her was ever found" (p.31). The optional ending names what the module otherwise leaves unsaid: "in my past I was Sergei's beloved Tatyana" (p.30). That the girl found near the Pillarstone is connected with Tatyana's fall is the guide's interpretation, which the module invites without stating. By his own account Strahd has felt Tatyana "within my grasp" before and lost her (p.31); whether he recognises her in Ireena, I6 does not say, and the DM settles it before he first acts towards her, which under the Ireena goal means before session one (5e; Section 6). The characters can learn where she was found only from Donavich or from the dead Burgomaster (Part III), and who she is only in the optional ending, if the DM uses it; that ending needs her with the party at dawn on the overlook (K6) (p.30).
 
 ### 4b. Capabilities
 
-*Vampire abilities.* AC -1, 55 hit points, regenerates 3 hp per round, can only be hit by +1 or better weapons, immune to sleep, charm, hold, and the standard vampire-immune effects. Melee attack does 1d6+4 damage and drains two life energy levels per hit. 18/76 strength. Gaze-charm on any character meeting his eyes, save vs spells at -2 to resist. Gaseous form and large-bat shape-change at will. Cannot enter a building until invited, and will work on charming a character into inviting him.
+This is what the DM needs to understand before play: what he can do, and how it shapes the way he behaves. The full combat reference, with his statistics, his attacks, his defences and the operative charm rules, is given in each Part where he can be fought or can charm.
 
-*Magic-user spells, 10th level.*
+**Damage to his body alone does not finish him.** He regenerates 3 hit points a round and can be hit only by magical weapons, +1 or better. If brought to 0 hit points "by combat", he "is not killed, but it is forced into gaseous form. It must then return to its coffin within 12 turns, rest 8 hours, and reform a corporeal body" (MM p.99). His coffin is in his tomb, K86 (p.30). The MM states no consequence for missing the deadline; under the guide's ruling he is then destroyed, and a coffin destroyed before he reaches it cannot receive him. A defeat within reach of K86 is a setback he learns from; a defeat beyond it, or after his coffin is gone, can end him, which is why he chooses where he fights (4e).
+
+**What harms him.** Direct sunlight destroys him, as does immersion in running water; holy water harms him; a wooden stake through the heart kills him only while it stays, and the head must then be cut off and the mouth filled with holy wafers. He fears the Sunsword "as much as the sun" (4a). He recoils from strong garlic, a mirror, or a lawful good holy symbol presented boldly, but none harms him or drives him off: he hesitates, works around it, or has a servant remove it.
+
+**Forms, servants and thresholds.** He takes gaseous form or the shape of a large bat at will, and has *polymorph self*. He summons rats, bats or wolves, which arrive within rounds; summoning is separate from his three strikes, in the guide's reading (4c), and I6 sets no limit on it. He cannot enter a building until someone invites him in (p.6). So he arrives and leaves where the party cannot follow, he seldom has to fight alone, and a house is closed to him until someone does, which is what his nightly attacks work on (4c).
+
+**The blow and the gaze.** His blow drains two levels, but his most dangerous weapon is his eyes. A character who meets his gaze saves against spells at -2 or is charmed, and a charmed victim obeys his commands, including handing over possessions and betraying companions, unless an instruction is obviously self-destructive. A magic circle of protection suspends his control while the victim stays inside it. Under the guide's rulings, a character who deliberately avoids his eyes makes meeting them unlikely, at a cost in combat; *protection from evil* counts as such a circle while the spell lasts; and the charm ends when a further saving throw succeeds, at intervals set by the victim's Intelligence, from one day to three months. The player keeps playing the charmed character (the guide's recommendation). The charm is how he turns the party against itself, and three of his four goals depend on it (5b). The interval table and the operative form are given in each Part where he can charm.
+
+**His spells (10th level).**
 
 - 1st: comprehend languages, hold portal, protection from good, sleep
 - 2nd: invisibility, locate object, mirror image, ESP
@@ -212,200 +157,211 @@ One further note worth holding in view. The module gives the DM Strahd's own acc
 - 4th: polymorph other, polymorph self
 - 5th: animate dead, distance distortion
 
-The spell list tells its own story about how he fights. Animate dead gives him ordinary undead servants. The Strahd zombies themselves were called into being through a dark magic now forgotten even by Strahd (p.32). Invisibility, polymorph self, gaseous form, and charm combine into someone who does not meet the party on open ground unless it suits him. Fireball is his unambiguous combat spell, held in reserve for a moment where the party is clustered and the collateral damage to his own servants is acceptable. ESP and locate object support his intelligence network. Suggestion is the social-combat spell, used against a charmed or isolated character to make their betrayal look like their own choice. Hold portal is defensive, sealing a door long enough for him to reposition or vanish.
+The list tells how he fights. Invisibility, polymorph self, gaseous form and the gaze make someone who meets the party on open ground only when it suits him. Fireball is held for the moment the party is clustered. ESP and locate object feed his intelligence. Suggestion is for those he has not charmed: an isolated character can be steered into a reasonable-sounding course that serves him, though an obviously harmful one breaks the spell. He needs no spell to make a charmed victim betray the party. Hold portal seals a door while he repositions or vanishes. Animate dead gives him ordinary undead servants; the Strahd zombies were made by a dark magic he has himself forgotten.
 
-The list on p.3 is Strahd's memorised repertoire during the adventure, not the ceiling of what he knows. He is 10th level and has had centuries to acquire spells. Under the AD&D rules a magic-user re-memorises after rest, and nothing in the module prevents Strahd doing so, which matters more than it looks because it means his loadout after a first engagement will not be the same as his loadout before it. The DM should treat the stat block as a snapshot and adjust his prepared spells between engagements based on what he has seen the party do (see 4e).
+In the guide's reading, the list is his memorised repertoire during the adventure, not all he knows. Recovering spells takes hours of rest and study (DMG p.40), and after a defeat, under the guide's ruling, his recovery in the coffin comes first, so a hard fight leaves him weaker for a time, and his choices for the next engagement reflect what he has seen (4e). Spells beyond the p.3 list are the DM's call.
 
 ### 4c. How he operates
 
-Strahd keeps a network of spies and servants through Barovia. They report to him four times daily at dawn, noon, dusk, and midnight. At each report there is a 60% chance he knows where the PCs are. If he knows, he attacks within two hours, at the time and manner of his choosing. The DM should track the six-hour clock privately through the adventure and roll d% at each report. On 60 or under, Strahd has the party's position and is planning. On 61 or above, the party has another six hours of relative obscurity before the next check.
+I6 gives the DM four ways of running him across the adventure: reports, the place the Fortunes reading gives him, three strikes and the nightly attacks. This section explains how they work. The operative reference, with the report times and chance, the strike figures and the attack procedure, is given in each Part where he can intervene, and his spent strikes go on the running record (5e).
 
-Strahd can appear anywhere the Fortunes of Ravenloft reading places him, subject to having been forced to his tomb. He is not confined to the castle despite the 90% in-lair rate. The castle is where he is by default, not where he must be. For the adventure as played, the Fortunes location is where he is, and the DM should treat it as such. This is one of the reasons Section 5 must be run during prep.
+**What he knows.** His spies and servants report to him four times a day, at dawn, noon, dusk and midnight, and at each report he may learn where the party is. When he does, he attacks within two hours, at the time and in the manner of his choosing (p.3); under the guide's ruling in 4d he may also decline. The DM tracks the report clock privately.
 
-Against the PCs directly he has three scripted strikes available, each usable once across the whole adventure.
+**By day.** Vampires "must rest in a coffin or similar receptacle during hours of sunlight unless far beneath the surface of the ground, and in the latter case they must occasionally return to such rest" (MM p.99), and direct sunlight is lethal to them. In the guide's reading Barovia's clouds give no exemption, so above ground he does not act by day. In the guide's reading his tomb, K86, is far beneath the surface, and there he can conduct his affairs by day. These guide rulings govern his day. The reports reach him underground at their printed times. While he rests, his servants hold routine reports until he is available, may wake him for urgent ones, and raise the alarm at an immediate threat. The two-hour window runs from the scheduled report time, even when the report is held; once that window expires, the opportunity lapses. His servants act above ground by day on his orders. A personal attack above ground cannot come by day (MM p.99).
 
-1. Strahd attacks a single PC in person for five melee rounds, then leaves.
-2. Strahd summons 10 to 15 Strahd zombies. All must attack at the same time in the same place.
-3. Strahd summons 3 to 12 worg wolves. All must attack at the same time in the same place.
+**Where he is found.** In the place the reading gives him (5b), unless he has been forced to his tomb. Under the guide's ruling that place is his default and his return point, where he is whenever nothing has drawn him away; the 90% in-lair figure in his statistics is not rolled, and he is not confined to the castle. The place sets where he is met during the hours he can act. By day, in the guide's reading, he is somewhere far beneath the surface, such as his tomb, so an above-ground place finds him absent; the notes under Table 1 give what that means for the Jack and the Queen.
 
-Each strike is a one-use resource. Once spent, it is not repeated. This forces the DM to save strikes for moments where they land hardest rather than spend them on the first 60% hit of the adventure. A poorly-timed zombie summons on the party's first night in the village burns an asset that would have been decisive later in the castle.
+**The three strikes.** Once each in the adventure, he can attack a single PC in person, call a band of Strahd zombies, or call a pack of worg wolves. They are scarce: a strike spent on the first night is gone when it would have been decisive in the castle. Which he holds for which moment is part of his opening plan (5e).
 
-Separate from the scripted strikes, Strahd runs a harassment pattern every night the PCs stay anywhere other than Castle Ravenloft. He arrives with worg wolves and bats, attacks for five melee rounds, and withdraws, leaving his hollow laughter in the distance. The harassment is not meant to kill, it is meant to wear the party down and fray their nerves. Wolves attempt to breach doors or windows on d6 rolls of 1 or 2 per turn. Bats interfere with spell components, forcing dexterity checks to cast. Indoors, the invitation rule binds Strahd, who cannot enter a building until someone inside invites him in. He tries to charm a character into doing so. Neither Strahd nor his wolves ever attack Ireena Kolyana. Anyone paying attention will notice the omission.
+**The nightly attacks.** Every night the party spends anywhere but the castle, he attacks with his wolves and bats, attacks "intended more to frighten the PCs than to damage them" (p.6), and tries to charm someone into inviting him in. "The wolves and Strahd never attack Ireena Kolyana" (p.6); anyone paying attention will notice.
 
-### 4d. The three principles of play
+### 4d. The three principles
 
-The module sets out three principles on p.3 for running Strahd well. They are not suggestions, and the DM's job is to hold all three at once.
+I6 gives three principles for playing him (p.3):
 
-1. *Strahd chooses when he attacks.* The module's instruction to "play him as a genius" is not operational on its own. See 4e for what that means in practice. The mechanical core of the principle is that when Strahd knows where the PCs are, his attacks happen on his timing, not on the clock and not on the DM's convenience. He picks the moment where his advantage is highest and theirs is lowest. If the party is resting, he arrives. If the party is divided, he arrives on the weaker half. If the party is fleeing, he intercepts at a chokepoint. The module's own responsibility framing puts the work firmly on the DM: "It is your responsibility to see that the vampire uses his abilities to his greatest advantage."
-2. *Strahd knows when to withdraw.* He fights only while winning. If a fight turns, he leaves. Gaseous form, polymorph to wolf or bat, or summoning other creatures to cover his retreat. He does not die fighting, because he has eternity. The DM should be willing to have him break off mid-combat without embarrassment. Losing one fight is data for the next, and the next will be on terms he sets.
-3. *Strahd's attacks depend upon his goals.* He brought the PCs into Barovia for a reason, determined by the Fortunes of Ravenloft reading in Section 5. His specific plans for achieving that goal are listed with each goal in the module. Without running the Fortunes before play, the DM does not know what Strahd wants and cannot play him coherently.
+1. **He chooses when he attacks.** When he knows where the party is, he times the attack to his greatest advantage; the guide's examples are when they rest, when they divide, and when they flee through a narrow place.
+2. **He knows when to withdraw.** If he is losing, he becomes gaseous, polymorphs into a wolf or bat, and/or summons creatures to guard his retreat (p.3). Breaking off is not defeat for someone with eternity.
+3. **His attacks depend on his goal.** Without the reading, the DM does not know what he wants.
 
-Reinforcing all three is the module's stated stake from p.2: "When the vampire, Strahd von Zarovich, is destroyed, the adventure is over. You must use every power available to the vampire to keep him (and the game) going." The DM's advocacy for Strahd is not bias, it is the engine the module runs on. Every abandoned opportunity, every telegraphed attack, every fight pressed past the point of sense is a piece of the adventure the party does not get to earn.
-
-All three principles rest on the same requirement: the DM has to play Strahd as a thinking intelligence, not as a stat block. The next section is what that looks like in practice.
+**The two-hour rule and his judgement.** I6 has him attack within two hours when a report at dawn, noon, dusk or midnight gives him the party's location (p.3), but also says he times his attacks to his advantage and knows when to withdraw. Under the guide's ruling the two-hour rule keeps up the pressure; it never obliges a foolish attack. He may change the circumstances, or decline to attack at all, and need not replace an abandoned attack.
 
 ### 4e. What genius looks like at the table
 
-"Play him as a genius" is hollow advice for most DMs, who reasonably observe that most people are not geniuses and cannot perform one on demand. Genius is not cleverness, it is a level of abstraction above the current encounter. A tactically competent NPC picks the right option in the moment. A genius NPC treats each encounter as training data for the next, invests in capabilities that pay off three fights later, and operates on the problem of defeating the party as a whole rather than winning any particular fight. Strahd has centuries of this kind of work behind him. He has also had centuries to refine his library, his laboratory, and the infrastructure of his castle into a purpose-built apparatus for defeating intruders.
+"Strahd is supposed to be a genius, play him as one" is hard advice to follow. In practice, genius is working one level above the current encounter: treating each fight as information for the next, and pursuing the defeat of the party as a whole rather than the winning of any one fight.
 
-The lists below unpack genius into specific behaviours the DM can consult during prep and play instead of generating brilliance from scratch. Three layers: the pre-cached layer, which is what centuries of experience have already settled; the learning layer, which is how he uses this adventure itself to improve; and the resource layer, which is what the castle and his preparation give him beyond the p.3 stat block.
+**How to play his judgement.** These are the guide's recommendations for playing Strahd as the calculating opponent I6 describes. They are habits the DM can give him, not rules that prevent him acting otherwise.
 
-**The pre-cached layer: things he has already gamed out.**
+- *He does not fight the whole party in the open.* One vampire against six to eight adventurers is a fight he risks losing, and a cleric of 6th or 7th level has a chance of turning him (3b).
+- *He does not ignore a cleric who can turn him.* A scene in which such a cleric stands intact and facing him is one he declines or leaves.
+- *He does not rush to win Ireena.* Patience lets him learn. By his own account, he has felt Tatyana "within my grasp" before and lost her. The optional ending reveals that her soul has returned across the centuries. Urgency is the party's problem, not his.
+- *Outside the nightly attacks, he need not appear in person.* Most of his presence is servants, atmosphere, invitations and rumour, which keeps both his mystery and the party's uncertainty.
+- *He prefers keeping to killing, where it serves his goal.* A PC charmed into his service can be a worse outcome for the players than a death.
+- *He keeps his word.* He keeps a formally given word: if he promises no harm tonight, there is none tonight. His parleys are worth taking, which is part of the trap.
+- *He does not destroy the village.* He needs it; he terrorises but does not exterminate.
+- *He avoids the Sunsword.* Where he knows or suspects the blade is with the party, he fights them before they find the hilt, after they have lost the sword, or where he can separate it from its wielder. It is the weapon he fears.
+- *He always has a way out.* Every room he enters, he knows the exit: which window, shaft or chimney.
+- *He does not explain himself.* He is charming, evasive and occasionally cryptic, and lets the party's fears fill the silence.
 
-- *Fight the whole party together in open ground.* He has done the math. One vampire against five to eight adventurers with a cleric and a fighter is a fight he loses. Turn undead alone can drive him off. He does not take that fight, and will not regardless of how attractive the short-term opportunity looks.
-- *Underestimate the cleric.* He knows exactly what turn undead does to him. Any scenario where the cleric is intact, conscious, and facing him is a scenario he declines or exits.
-- *Rush to take Ireena in the first week.* The party has just arrived. He does not yet know their capabilities. Patience lets him learn, and the soul of Tatyana has returned before and will return again if this attempt fails. Urgency is the party's problem, not his.
-- *Appear in person for every attack.* The three scripted strikes are a resource, not a default. Most of his presence is through servants, through atmosphere, through letters and invitations, through reported sightings and rumours. Staying off-screen preserves both his mystique and the party's strategic uncertainty.
-- *Threaten to kill when he can threaten to keep.* A vampire's worst implied outcome is not death, it is subversion. A PC joining his court as a charmed servant or one of his undead is worse for the players than a PC death. He knows this, and his pressure on the party reflects it.
-- *Break his own rules for short-term advantage.* The invitation rule is inconvenient but he respects it. He works within his constraints because working within them is part of what makes him him. The constraints are his dignity.
-- *Destroy the village.* He needs it. The population is his long-term food supply and his ritualised power base. He terrorises but does not exterminate.
-- *Engage the Sunsword wielder on the Sunsword's terms.* That fight only goes one way. He fights the party before they find it, after they have lost the carrier, or in circumstances where he can isolate the Sunsword from its wielder.
-- *Leave himself without a retreat option.* Every room he enters, he has already identified the escape: gaseous form through which window, which shaft, which chimney. He does not commit to a confined space without an out.
-- *Break a formally given word.* Noble honour is part of his self-conception. If he says he will not harm the party tonight, he will not. Tomorrow is another matter. This makes his parleys worth taking, which is itself part of the trap.
-- *Explain himself.* He does not monologue his plans. In conversation he is charming, evasive, occasionally cryptic. He gives the party nothing they can use against him and lets their own projections fill the silence.
+**What he learns.** These too are habits the guide recommends. When he withdraws, he reviews what he saw:
 
-**The learning layer: how he uses this adventure to get better.**
+- *What worked.* Which attacks landed, which spells the party used. If the cleric turned his zombies, he notes the cleric's apparent level. If one defence failed against the party's magic, he leads with another next time.
+- *Who matters.* The cleric, the wizard whose spells hurt him, and the Sunsword's carrier once he knows who it is (5b). He targets them first, not the weakest.
+- *Where the cracks are.* Friction in the party, attachments he can use, watch rotations and resting habits.
+- *What to prepare.* With time to rest he changes his spells to answer what he has seen: sleep against a party leaning on low-level henchmen, or invisibility to approach the wizard who has hurt him, or to stay out of that wizard's sight until the strongest spells are spent.
+- *His informants.* A spy who failed to notice the party is replaced; a villager who sides with them has an accident.
 
-Strahd does not play each encounter in isolation. He plays the problem of defeating this specific party, and the encounters are his information-gathering mechanism. After each engagement he withdraws to his study (K37, described in the Fortunes Places table as "a place of wisdom, warmth, and despair" where "great secrets are there") and reviews what he has learned. The DM should run this review explicitly during prep or between sessions, not just handwave it as character.
+The DM's log of what each PC did, kept on the running record (5e), and the time between sessions spent as Strahd reviewing it, are where his genius lives.
 
-- *What worked and what did not.* Which attacks landed, which missed, which spells the party had prepared, which they did not. If the cleric turned his zombies, he notes the cleric's apparent level and adjusts. If a wizard threw Magic Missiles through his Mirror Image, he knows next time to lead with a different screen.
-- *Who the threats are.* He identifies the load-bearing PCs: the Sunsword carrier, the cleric, the wizard with the right spells. Subsequent operations target those threats first, not the softest PC. Taking out the cleric leaves the party incapable of turning undead or healing through a prolonged fight, which is worth more than picking off a weaker character.
-- *Where the vulnerabilities are.* He watches for friction inside the party, for attachments he can exploit (Ismark's love for Ireena, a paladin's code, a PC's backstory), for patterns in their watch rotations and resting habits. Each observation becomes leverage in the next encounter.
-- *Spell re-selection between engagements.* The p.3 spell list is his current loadout, not his whole repertoire. When he has time to rest and re-memorise, he swaps in spells that counter what he has just seen. Facing a party that charges into melee? Next time he leads with Sleep for lower-level henchmen. Facing a heavy-Magic-Missile wizard? Next time he starts with Protection from Good and Mirror Image already active. Spells beyond the p.3 list are the DM's call, not module text.
-- *Adjusting victim selection for the intelligence network.* If one spy failed to notice the party, he replaces them. If a particular villager developed sympathy with the PCs, that villager has an accident or is replaced. He is pruning and reinforcing his information system in real time.
+**The castle as his apparatus.** The module describes the castle at rest. A DM playing Strahd as its resident can have him use it actively:
 
-The DM's practical move is to keep a brief log during the adventure: which PCs did what, which spells the party burned, which encounters turned on which moment. Between sessions, spend five minutes as Strahd reviewing that log. What would he change? What would he prepare? That review is where genius lives.
-
-**The resource layer: the castle as apparatus.**
-
-Crucially for play, Strahd need not be static. The module describes the castle in its resting state: every keyed item, every creature, every trap sits where it was placed. A DM playing Strahd as an active resident can reasonably have him reconfigure that state in response to the party's approach. An item in the wrong place by the module's room text is not evidence he cannot use it; it is evidence of the room as described before the party arrived.
-
-The survey below distils the module's own room-by-room text into categories Strahd thinks in. Directly keyed items are cited. Inferred affordances of a 10th-level magic-user with centuries of residence are flagged as DM's call.
-
-*Observation points.* The Dining Hall (K10) holds the clearest example: floor-to-ceiling mirrors between which the module stages a charming illusion of Strahd himself at the organ, conversing for three rounds while Strahd is elsewhere. The mirrors, and the mirror room at K11, reached by a secret door behind the organ, from which the illusion is projected, make K10 a working projection stage rather than a dining room. Strahd can open any engagement with a mirrored double, read the party's first reactions, and only step in later when he knows what he is dealing with. He can also relocate mirrors from K10 to any other room he expects the party in.
-
-*Forced relocation.* The Trapworks (K31) is a 230-foot vertical shaft with a stone compartment moved up and down by screws, connecting the Larders corridor (K61) up past Strahd's personal floor, ending at the Landing (K47). Riders on the roof of the compartment are crushed against the shaft top for 3d10 damage. Strahd does not need to fight the party from where they enter. He can split them with a closing portcullis and transport one half to a different floor entirely, then address the halves separately on terrain of his choosing. The Dungeon Hall (K73) operates on the same principle through weight-sensitive trap doors that teleport triggered characters into sealed underwater cells at K74 and K75, where Strahd attacks lone characters if he can. The module's own text names him as the one who arrives when these traps fire.
-
-*Standing relocation magic.* The crypt teleports (crypt 32 to K86, with the return alcove in K86 east) let him move between the catacombs and his own tomb without passing through the intervening floors. Other rooms in the castle operate on the same principle, relocating characters who trigger them. The individual cases are covered in Part V with the keyed rooms.
-
-*Summonable forces inside the castle.* The Maid's Hall (K32) houses Helga, a vampire who attacks only when she can do so without fighting the entire party, or when Strahd commands it, which is to say she fights Strahd's fights for him on his terms. The Witches' Cauldron (K56) holds seven witches with collective spells including burning hands, charm person, magic missile, shield, and shocking grasp, plus a spellbook containing fear, curse, and cloudkill. The witches' familiars wait in K54, alerting them at first sight of the party. The Catacombs (K84) hold 3,000 bats that hunt by night and return at dawn. The Facing Guardians (K35) post two wraiths outside the Dining Hall of the Count. The Office of Vengeance (K72) houses a shadow demon. Strahd commands or can command all of these.
-
-*Stored magical items and resources.* The module places specific items in specific rooms, and the room text fixes where each one sits. The Fortunes objects are a separate matter: the reading decides where the Holy Symbol, the Tome, and the Sunsword hilt are for this playthrough, which is not the same as Strahd having stored them there. The Icon of Ravenloft on the altar in the Chapel (K15), the Treasury (K41) contents, the Brazier Room (K78) scrolls and potions, Sergei's plate mail at (K85), the crypt items including the Crypt 37 hoard, the dungeon sword at (K74): all are module-placed. The portable ones, the scrolls and potions and minor weapons, a DM playing Strahd as an active resident will consider whether he has moved in anticipation of the party's approach. A servant ordered to carry the Icon to a K74 cell and drown it in the black water would be one such move, and within character.
-
-*Animated defenders and traps that run themselves.* The Guardian Portrait in the Landing (K47) casts levitate and hypnotic pattern to hold characters in place until Strahd commands release. The Guardian of Sorrow, a living tower at K20, attacks with halberds, shakes its spiral staircase, and costs dexterity checks every round to stay on the stairs. The two iron golems in K78 activate on the hourglass timer. The King's Worship Place (K28) has two Strahd zombies hidden in thrones facing away from the entrance, attacking anyone who looks around. The wraiths at K35 and the catacombs' wights, ghost, spectre, and banshee populate the deeper floors. Strahd does not have to be present for any of these to do their work.
-
-*Escape and retreat infrastructure.* The castle is built for his exits as much as his dwelling. The High Tower Shaft (K18a) is his primary gaseous-form route, running 390 feet from the catacombs up through the chapel to the peak. The Smokestack (K52) runs 60 feet down from the rooftop into his study fireplace, damaging intruders but trivial for him in gaseous form. Beyond these, a network of secret doors connects his personal floor to the treasury, the tower, and the larders. The DM should have these routes mapped before session one so his exit from any fight is immediate rather than improvised. The full list is in Part V with the keyed rooms.
-
-*His personal apartments.* The Dining Hall of the Count (K36) sits at the heart of his floor, with a centuries-old wedding cake still on the table, a dropped groom figure on the floor, and a bride figure intact atop the cake. This is not a trap, it is a preserved tableau. It reads as the room he kept after Sergei's murder and Tatyana's death, and it sits next to his Study (K37), which is his active workspace. The Bedchamber (K42) holds Gertruda, daughter of Mad Mary, whom Strahd has not yet bitten. The module's text: "He is intent on his current plot and is saving her for later." The Closet (K44) holds 28 capes and black formal wear, his active wardrobe. The Bath Chamber (K43) with its iron tub completes the suite. This is a lived-in residence, not a dungeon level.
-
-*Infrastructure and personnel he does not command.* The Icon of Ravenloft is a holy artifact of tremendous lawful good power (K15). Sergei's coffin opens easily to the touch of any lawful good character (K85). The Guardians (K87) admit only characters of good alignment to Barov and Ravenovia's tomb (K88), though the Fortunes can still place Strahd there, in a frenzy of rage and despair (Table 1, Queen). These are the constraints he lives with, and they are where the party can find ground that does not serve him.
+- *Observation.* At K10 an illusion of him, worked from K11, greets the party and talks with them for three rounds while he is elsewhere. Using such a double to watch the party's reactions before he steps in, or moving its mirrors to another room, is the DM's call.
+- *Separation.* K61's elevator trap lifts whoever it catches to K47, and K73's trap doors teleport a character into a flooded cell at K74 or K75. I6 says the lift's sleepers "present an excellent opportunity for Strahd to attack", and that in the dungeon "Strahd attacks lone characters here if he can".
+- *His own passage.* Crypt 32's east alcove sends whoever enters to K86's east alcove, and K86's west alcove sends them to crypt 32's west alcove, so, in the guide's reading, he can move between catacombs and tomb without passing the teleports on the obvious way to his coffin.
+- *Forces.* Helga (K32) attacks only when she can avoid fighting the whole party, or when he commands it. The catacombs' 3,000 bats (K84) attack humans only at his command or if provoked. That he also commands the castle's other residents, such as the witches (K56), the wraiths (K35) and the shadow demon (K72), is the DM's reading.
+- *Items.* The reading decides where the Holy Symbol, the Tome and the hilt are. The other items sit where I6 places them; whether an active resident moves the portable ones before the party arrives is the DM's call.
+- *Defenders that run themselves.* The portrait at K47 tries to hold characters until he releases them; the Guardian of Sorrow (K20), the throne zombies (K28), the wraiths (K35), the golems (K78) and the catacombs' undead work whether or not he is there.
+- *Retreats.* The High Tower shaft (K18a) runs 390 feet from the catacombs to the peak, and the bats fly out through it each evening; "Wind blows up the shaft" (p.16), which under the guide's ruling carries a gas up and blows back one trying to descend. The wall blocking the staircase beside it has "A small chink in the masonry wall" that "allows gas to pass from one side of this wall to the other" (p.16); under the guide's reading the staircase is then a way down for him as gas, provided the chink and the stair beyond are passable when he needs them. The smokestack (K52) drops 60 feet into his study fireplace, but "The smoke and fire in the chimney causes 1-6 points of damage per round spent in the chimney" (p.21), and the heated air from the blaze below rises up it. That these are his routes is the DM's reading. The DM maps his exits before the party enters the castle (Section 6), so a withdrawal is immediate rather than improvised.
+- *His apartments.* His floor is a lived-in residence: the wedding tableau at K36, the Study at K37, and the Bedchamber at K42, where Gertruda waits unbitten because "He is intent on his current plot and is saving her for later."
+- *What he cannot command.* The Icon of Ravenloft (K15) is a holy artifact of great lawful good power. Sergei's coffin (K85) opens easily to a lawful good touch. The curtain at K87 passes only the lawful good. These are where the party can find ground that does not serve him.
 
 ---
 
 ## 5. Fortunes of Ravenloft, the card reading
 
-The Fortunes reading is the module's randomisation engine. It determines three things: where Strahd and the major treasures actually are (Table 1, Places), what modifiers apply when the party fights at those places (Table 2, Modifiers), and what Strahd is trying to accomplish during the adventure (Table 3, Goals). Every run of I6 is different because the reading is different. Without it, the module falls apart: the placements from 3e have no resolution, Strahd's starting position in 4c is undefined, and his motivation from 4d's third principle is blank.
+The reading decides where Strahd and three treasures are (Table 1), what modifiers its suits set in those places (Table 2), and what Strahd is trying to do (Table 3). "You must run this card reading before playing this module" (p.4). Without it, Strahd's place and his motive are blank.
 
-The module's own instruction on p.4 is unambiguous: "You must run this card reading before playing this module." This is not a suggestion for flavour. Running the Fortunes at prep is how the DM turns an abstract dungeon into a specific scenario with a specific villain doing a specific thing.
+The reading also sets the shape of the hunt. Two of the treasures are weapons against him, and one is his own story. The Holy Symbol of Ravenkind is "an ancient platinum medallion that was once worn by the High Priest of Ravenloft", shaped like the sun, and against vampires it "flares with the light of the sun" (p.30). The Sunsword's hilt completes the blade a fighter has unknowingly carried into the valley (3d). The Tome of Strahd is "a tragic tale of how Strahd came to his fallen state", in his own hand (p.31); in the guide's interpretation it is the book Donavich speaks of, in which Strahd "kept meticulous notes on all that he did or said" (p.9). If the party hears the reading, its omens are their leads to where each lies (5c).
 
 ### 5a. Procedure
 
-The card deck is a standard 52-card deck with the 2s, 4s, 6s, 8s, 9s, and jokers removed. That leaves 32 cards in four suits of eight. As an alternative, roll d8 for card value (3, 5, 7, 10, J, Q, K, A maps to 1 through 8) and d4 for suit (hearts, diamonds, clubs, spades). If you roll dice instead of drawing cards, I6 says to roll again "if you get the same card in any suit twice" (p.4). Read it as rerolling an exact duplicate (the same value and suit), which keeps the dice giving the same results as the deck, as the module intends. Read as "the same value", it would stop dice from ever co-locating items, which the deck can do.
+The reading uses a standard deck with the 2s, 4s, 6s, 8s, 9s and jokers removed: 32 cards, eight to a suit. Instead of cards, I6 allows a d8 for the card and a d4 for the suit, without saying which number is which; the guide's convention is below. I6 says to roll again "if you get the same card in any suit twice"; the guide's reading is to reroll an exact duplicate, value and suit, so that dice behave as the deck does and can still co-locate items.
 
-The reading deals the top five cards face down. The module's arrangement places them in a specific spread on p.5, but the outcomes of each table are what matter for play rather than the spread's symbolism.
+*Dice, the guide's convention:*
 
-- First card determines the location of the Holy Symbol of Ravenkind.
-- Second card determines the location of the Tome of Strahd.
-- Third card determines the location of Strahd's starting position.
-- Fourth card determines the location of the Sunsword hilt.
-- Fifth card determines Strahd's goal.
+| Roll | d8: card | d4: suit |
+|---|---|---|
+| 1 | 3 | Hearts |
+| 2 | 5 | Diamonds |
+| 3 | 7 | Clubs |
+| 4 | 10 | Spades |
+| 5 | Jack | |
+| 6 | Queen | |
+| 7 | King | |
+| 8 | Ace | |
 
-The card's *value* maps via Table 1 to one of eight places in the castle for cards one through four, and via Table 3 to one of four goals for card five. The card's *suit* maps via Table 2 to a combat modifier at that location (+1/-1 on the to-hit and AC axes in the four possible combinations).
+Five cards are dealt:
 
-### 5b. The three tables, summarised
+1. The Holy Symbol of Ravenkind.
+2. The Tome of Strahd.
+3. Where Strahd "can always be found" (4c).
+4. The Sunsword hilt.
+5. Strahd's goal.
 
-**Table 1, Places.** Eight locations in the castle, each keyed to a card value and each marked by a flavour-text omen the DM reads to the party at the Tser Pool card reading. The eight:
+Cards one to four give a place by value (Table 1) and a modifier by suit (Table 2). Card five gives the goal (Table 3).
 
-- 3: Study (K37). "A harbor for the mighty and powerful, a place of wisdom, warmth, and despair."
-- 5: Treasure Room (K41). "A carefully hidden place of great worldly wealth."
-- 7: Chapel of Ravenloft (K15). "Amid the ruins of a place of supplication."
-- 10: High Tower Room (K60). "Dizzying heights that all loathe to travel."
-- Jack: Crypt of Sergei Von Zarovich (K85). "A fallen prince of old."
-- Queen: Crypt of Ravenovia (K88). "The mother's place."
-- King: King's Audience Hall (K25). "A king's throne."
-- Ace: Crypt of Strahd (K86). "The very heart of darkness: his home, his source."
+### 5b. The tables
 
-For each of cards one through four, the result fixes one of the placements from 3e. Crucially, if the same card is drawn for multiple items (possible because the same value can come up in different suits), the items co-locate. The Ace result for multiple items puts the Sunsword hilt, the Tome, or both in Strahd's own tomb, which changes the climax's geometry significantly.
+**Table 1, Places.** Each place has an omen Madam Eva speaks, and a scene if Strahd is found there. Where an object lies in each place is in that room's entry in the castle Parts, so that the DM reads it when the party arrives.
 
-**Table 2, Modifiers.** Four outcomes keyed to suit.
+| Card | Place | Omen | If Strahd is there |
+|---|---|---|---|
+| 3 | Study (K37) | "... a harbor for the mighty and powerful ... a place of wisdom, warmth, and despair." | In the overstuffed chair, staring into the fire |
+| 5 | Treasure Room (K41) | "... a carefully hidden place of great worldly wealth." | Counting his ill-gotten gains |
+| 7 | Chapel of Ravenloft (K15) | "... amid the ruins of a place of supplication." | Standing in the centre, a dark shape in the vast hall |
+| 10 | High Tower Room (K60) | "... a place of dizzying heights that all loathe to travel." | At the window, looking over his lands |
+| Jack | Crypt of Sergei (K85) | "This lies with a fallen prince of old. ..." | Lying across the marble slab, weeping |
+| Queen | Crypt of Ravenovia (K88) | "This is in the mother's place." | In a frenzy of rage and despair |
+| King | King's Audience Hall (K25) | "A king's throne is the place to find this." | Sitting on the throne |
+| Ace | Crypt of Strahd (K86) | "... This is in the very heart of darkness: his home, his source. ..." | Within his coffin, ready to attack whoever opens the lid |
 
-- Hearts (+ in the module's notation): PCs gain +1 to hit and -1 (bonus) to AC. Powers of good aid them.
-- Diamonds: PCs gain +1 to hit but suffer +1 penalty to AC. Skill blessed, protection compromised.
-- Clubs: PCs suffer -1 to hit but gain -1 (bonus) to AC. Strength sustained, victory slowed.
-- Spades: PCs suffer -1 to hit and +1 penalty to AC. A dark shadow of evil over that place.
+*Jack.* Sergei's crypt lies with the deep catacombs, and in the guide's reading Strahd can be found there by day. Sergei's coffin "opens easily to the touch of any lawful good character" (p.30).
 
-The modifier applies only to combats fought at the specific location the paired card drew. It does not apply to the adventure as a whole. A Hearts draw for the Sunsword location gives the party +1/-1 only when they fight in that room, not everywhere.
+*Queen.* The tomb of Barov and Ravenovia lies down the stairs beyond the curtain of light at K87 (Map 12), which only lawful good characters pass; all others are teleported back to the top of the stairs (p.30). Its "Great stained windows filling the eastern walls filter dim light into this room" (p.30), so by day he is absent from it, in the guide's reading; under the guide's ruling that filtered light is not the direct sunlight that destroys him. This qualifies p.3's "can always be found" for the hours of daylight.
 
-When two placements share a location but their cards have different suits, I6 does not say how their Table 2 modifiers interact. The recommended ruling is to apply both modifiers cumulatively. This preserves the effect attached to each card without inventing a precedence between them. Opposed modifiers cancel normally. Thus Spades with Clubs gives the PCs -2 to hit and no net AC modifier, while Spades with Hearts cancels out completely. This is a ruling, not module text.
+*Ace.* His tomb, where his coffin lies.
 
-**Table 3, Strahd's Goals.** Four goals, each keyed to card ranges rather than single values.
+The same value in different suits puts items in the same place.
 
-- 3 or 5: *Strahd seeks a new identity.* Active subversion. He charms a lone PC, isolates them, casts polymorph other to transform them into a vampire, places them in his coffin, polymorphs himself into that PC's likeness, and attempts to join the party as the transformed PC, claiming to have found a way out of Barovia. The intent is to carry his identity into another country, with the Rhenari moving his coffin dirt. This is the subversion mode named in 4's opening, made specific.
-- 7 or 10: *Strahd wants to make a magical sphere of darkness.* He is missing only a black opal, the last piece of an ancient apparatus he has been assembling over centuries. He believes mistakenly that one of the PCs is carrying a black opal. He charms lone PCs, sends them back to the party with the question "Do you have the black opal?", and when he discovers none of them do, turns on them. I6 does not say how that discovery reaches him. Under the AD&D rules a charmed character is not a slave: charm turns the victim's priorities toward the charmer but leaves personality and alignment unchanged, and nothing makes the victim report back automatically (DMG). The recommended ruling is that the charmed PC must get the answer back to Strahd, at his next contact with them. Once he receives a credible report that nobody in the party has the black opal, he switches from probing to destroying them, and he does not need to charm every PC separately. This is a ruling, not module text. Read Section 1c against this goal: the module says the completed sphere would greatly extend the range of his travels.
-- Jack or Queen: *Strahd wants to win the love of Ireena Kolyana.* Not her capture but her affection. He charms the entire party and makes them attack Ireena. He then swoops down to rescue her from them, hoping the rescue turns her heart toward him. He wants her willingly, not by force. The goal that puts Ireena at the centre of his plan.
-- King or Ace: *Strahd wants the Sunsword.* He believes, correctly, that a random fighter PC has been unknowingly carrying the Sunsword blade. He wants to destroy the weapon before the hilt is reunited with it. If the hilt is found and reunited, the Sunsword becomes a real threat to him. This is the goal where Strahd's urgency is highest, because the Sunsword carrier does not know what they have until the hilt is recovered.
+**Table 2, Modifiers.** Each placement's suit sets modifiers to the PCs' attacks and armour class, which apply only to fights at the place the card names. Hearts favours the party on both, Spades works against it on both, and Diamonds and Clubs are mixed. So the reading decides whether the party meets Strahd in his place on good ground or bad. The modifiers, and the guide's ruling where placements share a place but differ in suit, are in the castle room entries.
 
-Each goal comes with module text giving Strahd's specific plan for achieving it. The DM must read the relevant goal's full description before play, because his behaviour across the adventure depends on it. The p.3 principles are general; the goal is specific.
+**Table 3, Strahd's goals.** Each entry gives Madam Eva's warning, his course, where the players can turn it, and how it ends.
+
+- **3 or 5: a new identity.** *The warning:* "Not yet, but soon, one who appears to be your friend will become your enemy." *His course:* he tries to be alone with a charmed PC, turns that PC into a vampire with *polymorph other*, puts the new vampire in his own coffin, takes the PC's likeness with *polymorph self*, and tries to join the party, claiming to have found a way out of Barovia; he can, after all, open the valley's gates, which answer to his will. *Where the players can turn it:* his plan depends on isolating a charmed character and then passing as that character. The party's choices about separation, trust and recognition help decide whether either step succeeds. I6 does not say what the impostor knows of the PC's life; the DM settles that before he first isolates a charmed PC (Section 6), which keeps the test fair. *The transformed PC:* the PC in Strahd's coffin is not necessarily lost. Not every PC survives the transformation, and not every survivor keeps their own mind, but one who does can act and can fight Strahd, so that player may still have a character. The mechanics are given in the Part where the transformation is adjudicated. *How it ends:* if it succeeds, he leaves Barovia in the PC's likeness, and the Rhenari carry dirt from his crypt to his new home. Under this goal he means to leave Barovia, the exception to his restraint in 1c.
+- **7 or 10: a sphere of darkness.** *The warning:* "This card tells of a tool of evil. Darkness surrounds and protects this tool, giving comfort to black hearts and protection from good." *His course:* he is missing only a black opal, the last piece of an item that casts a continuous sphere of darkness and would greatly extend the range of his travels, and he wrongly believes a PC has one. He charms lone PCs and sends them back to ask, "Do you have the black opal?"; when he discovers none of them has one, he tries to destroy them. The party does not have the opal, so questioning them cannot succeed; the danger comes when he learns his assumption was wrong. Under the guide's ruling, once he has a credible report that none of them has the stone, he turns from probing to destroying them, without needing to charm every PC. When a charmed PC's answer reaches him is given in the Parts where he can question one. *Where the players can turn it:* the question is the clue, since a friend who asks it has been with him. Until he learns that none of them has the stone, he probes rather than destroys, so what answer reaches him, and when, sets the pace. A party that claims to have the stone is the DM's to judge. *How it ends:* in the turn from probing to destruction. 1c reads the sphere as freedom of movement rather than conquest.
+- **Jack or Queen: Ireena's love.** *The warning:* "The darkness loves a light and desires it. Great subtle plans are in motion about you; plans that the dead may find warmth from the living." *His course:* he tries to charm all of the PCs and make them attack Ireena, then swoops down to save her, hoping the rescue turns her heart: "He wants Ireena to love him willingly rather than by force." *Where the players can turn it:* he must meet each character's eyes, each saving at -2, and a character who avoids his gaze makes that harder (4b), so the plan may unfold over several encounters, and every PC who resists or is freed is a gap in it. He and his wolves never attack her (p.6), though he has bitten her twice before the party arrives; under this goal that restraint is the plan showing. *How it ends:* the charm can manufacture the attack; it cannot manufacture her love. I6 does not say whether the rescue works. Ireena is lawful good, and in the optional ending she is revealed as Sergei's beloved Tatyana; the DM plays her response from who she is.
+- **King or Ace: the Sunsword.** *The warning:* "Here is a high and noble card. One of you carries a weapon that is stronger than any other against the evil in this land. Only one part is missing from this weapon. That part is found in the evil one's lair." A party that hears this reading learns the secret, if not who holds it. *His course:* he believes, correctly, that one of the PCs, a random fighter (in the guide's broad reading, Section 3), has unknowingly been carrying the blade, and he wants to destroy the sword. I6 does not say whether he knows which PC; the DM decides what he knows, and his attempts to identify or recover the sword follow from that. A charmed carrier can be commanded to give up the blade. How he would destroy it I6 does not say; its one account of an attempt needed hilt and blade separated, "then destroyed simultaneously". *Where the players can turn it:* by understanding the warning, guarding the carrier and finding the hilt (3d). *How it ends:* reunited, "Strahd could be in real trouble"; in his hands, the sword is out of the party's, and what follows is the DM's.
 
 ### 5c. When to run the reading
 
-The module sets two rules.
+Before play, the DM runs the reading alone and fixes the results. If the PCs visit Madam Eva and accept a reading, the DM runs it again, out loud, and the new results replace the old: the items move, and Strahd's goal may change mid-adventure. If they decline, the prep results stand. The tent reading is the module's foreshadowing, the omens and the goal's warning spoken in the players' own game; it also means re-marking the map and rethinking Strahd's plan mid-session, which goes better prepared than drawn cold.
 
-The first, which the module requires, is at prep. The DM runs the reading alone before session one, records the results, resolves the placements from 3e, and plays the adventure with those results fixed.
+A DM can depart from the module by redrawing privately when the party visits her and speaking the reading only if asked. That may suit a table where she is already suspect, but it gives up the foreshadowing: the warnings reach the players only if the reading is spoken.
 
-The second, which the module requires on p.4 whenever it arises, is the reading at Madam Eva's tent. If the PCs visit the Tser Pool encampment and accept a reading, the DM runs the reading again, out loud, and the new results substitute for the original ones. The items move. Strahd's goal may change mid-adventure. The castle reconfigures.
+### 5d. Recording the reading
 
-The tent reading has a dramatic payoff: the players hear the omens in their own game, pointing them toward specific locations in ways Madam Eva chooses to misdirect or clarify. It also creates real work mid-session as the DM re-marks the master map and reconsiders Strahd's plan. The best case is a DM who has prepared for it in advance. The worse case is a reading drawn cold at the table. If the PCs decline the reading, the prep results stand (p.11).
+The location sheet:
 
-A third configuration is a deliberate departure from the module, which says the reading is run out loud. In it, the DM redraws privately when the party visits Madam Eva but does not share the reading aloud unless the party asks for it. This keeps the in-fiction reconfiguration available without the player-facing ceremony, which is useful if Madam Eva's presentation has already been established as suspect (and it should be, since the Rhenari serve Strahd per 1b).
+| Placement | Card | Room | Suit |
+|---|---|---|---|
+| Holy Symbol | | | |
+| Tome | | | |
+| Strahd's place | | | |
+| Sunsword hilt | | | |
 
-### 5d. How to record the reading
+Card five, his goal, goes on the Strahd sheet.
 
-Two outputs from prep: a location sheet and a Strahd sheet.
+### 5e. The Strahd sheet
 
-The location sheet lists the four item locations and their modifiers, cross-referenced to room numbers. Sample:
+Kept beside the location sheet. Its entries for his goal, his first move and his strikes, and the entry his goal requires (Ireena under her love, the blade's carrier under the Sunsword), are filled in before session one, and the others by their triggers in Section 6; it is revised if the tent reading changes his goal (5c).
 
-- Strahd's starting position: Study (K37), Hearts. Strahd sits in the overstuffed chair staring into the fire. PCs who fight him here gain +1/-1.
-- Holy Symbol of Ravenkind: Chapel of Ravenloft (K15), Spades. On the altar in a shaft of light. PCs fighting here suffer -1/+1.
-- Tome of Strahd: Crypt of Sergei Von Zarovich (K85), Diamonds. Across Sergei's chest. PCs fighting here gain +1 to hit, lose 1 to AC.
-- Sunsword hilt: High Tower Room (K60), Clubs. In a locked iron chest. PCs fighting here lose 1 to hit, gain 1 to AC.
-- Strahd's goal: Queen (Jack or Queen band) = win the love of Ireena Kolyana. He will try to charm the party into attacking her so that he can stage her rescue.
+| Field | Entry |
+|---|---|
+| Goal (card five), and his first move | |
+| Which strike he is holding for which moment (4c) | |
+| *If the goal is a new identity:* what the impostor knows of the PC he replaces | |
+| *If the goal is the Sunsword:* whether he knows which PC carries the blade | |
+| What he knows or suspects of Ireena (4a) | |
 
-The Strahd sheet records the behavioural consequences: what his current goal means for his immediate operations, which PCs he has identified as targets, and which scripted strike he is holding back for which moment. Update between sessions as the learning layer from 4e accumulates observations.
+What changes during play (the PCs he has marked, charmed PCs and their next saves, buildings he has been invited into, strikes spent, when he was last reduced to 0 hit points, and the DM's log of what he has learned) goes on a running record kept with the encounter Parts.
 
-### 5e. Integration with Sections 3 and 4
+### 5f. Madam Eva
 
-The reading closes several loops opened earlier in Part I.
+The Rhenari serve Strahd and fear the consequences of disobedience; their potion against him is a lie, and the information they give away is "misleading at best and often a lie". Madam Eva leads them, but she is not simply one of them. I6 makes her chaotic neutral and "very neutral", "quite cunning and sharp of mind", and never fooled by adventurers: "She serves Strahd as long as that benefits her and her troupe. She never gives aid and never needs any" (p.11). It is "well known" that she foretells the future "with surprising accuracy". She greets the party by naming each PC and a past deed of each, so the DM prepares one deed for each PC before the party can reach Tser Pool (Section 6). Her reading carries the module's truest warnings of what Strahd intends. Whether she knows his plan beyond what the cards show, I6 does not say.
 
-3e's placements resolve here. The four Table 1 draws tell the DM where Strahd, the Holy Symbol, the Tome, and the Sunsword hilt are for this run.
+The cards fix the reading's results. What the DM shapes is the presentation: her manner, what she lingers on, how much she seems to enjoy what she sees. The guide's reading is that she serves her own interests rather than either side's cause. She can deliver a truthful warning without becoming the party's ally, and the DM need not explain how she reconciles that warning with her arrangement with Strahd. A DM can also play her as leaning his way, since she serves him while it pays; leaving a card's text unspoken, though, departs from the module.
 
-4c's starting position for Strahd resolves here. The third card puts him in a specific room with specific behaviour the Places table describes. That is where the 60% intelligence check reaches for him on session one.
-
-4d's third principle, "his attacks depend on his goals," takes its content from Table 3. A DM who skipped the reading is working blind on what Strahd actually wants. With the goal in hand, his manipulation pattern in 4a, his spell repertoire in 4b, his strikes in 4c, and his pre-cached behaviour in 4e all line up in the same direction.
-
-4e's resource layer reads differently under different goals. Under the sphere-of-darkness goal, his attention is on the black opal he believes one of the PCs carries. Under the Sunsword goal, Strahd's knowledge of which PC is carrying the blade is what drives his targeting. Under the Ireena goal, the Bedchamber (K42) with Gertruda is in the background as a contingency. Under the new identity goal, the DM needs to note which PC is most likely to be isolated first.
-
-### 5f. The Fortunes reading as part of the world
-
-One last framing note. The Tser Pool encampment and the Rhenari are in Strahd's service per 1b. Their fake anti-vampire potion is a scam. Their information is misleading at best and often a lie. Madam Eva herself, as seer of the Rhenari, almost certainly knows what Strahd wants. Her reading is real sight, but it is delivered inside a relationship of service to the vampire.
-
-What the party hears at Madam Eva's tent is not a disinterested oracle. It is filtered, framed, and potentially directed by someone working for the enemy. The mechanical outcomes of the Fortunes reading are fixed by the cards. The *presentation* is not. A DM playing Madam Eva well has her emphasise the omens Strahd wants the party to follow (the Ace result that sends them into Strahd's own tomb reads like fate rather than trap in her mouth) and de-emphasise the ones he would rather they missed. The cards do not lie. The seer may select what she says aloud.
-
-This does not break the module. The party can still use the reading's information. It just means the information arrives wrapped. PCs who go to Madam Eva expecting a disinterested guide find a seer who sees truly and serves another master. That tension is where the Tser Pool encampment earns its place in the adventure rather than being a flavour stop.
+The party can still use what she tells them. It arrives wrapped. PCs who go to her expecting a disinterested guide find a seer who sees truly and serves another master for her own reasons, and that tension is what makes the encampment more than a stop on the road.
 
 ---
 
-*Last updated 7 October 2026.*
+## 6. Where Part I stops
+
+Part I ends before the first session. By then the reading is fixed and recorded, Strahd's goal, his first move and his plan for the strikes are chosen, and the DM knows which opening the party will meet: the module's own, with the messenger and the letter at the inn, or the camouflaged escort (Part II). If the party came on a patron's commission (1f), that job is what puts them on the road where the plea or the escort finds them; that link is the guide's suggestion. Nothing has yet been changed by play. Part II inherits the reading, the two sheets and the party as it stands.
+
+**Before session one: seven decisions.**
+
+1. The five cards, recorded on the location sheet with each placement and its suit, not resolved at the table (5a, 5d).
+2. Strahd's goal, his first move and his plan for the strikes, on the Strahd sheet (5e).
+3. The decision his goal requires: under Ireena's love (Jack or Queen), what he knows or suspects of her (4a, 5e); under the Sunsword (King or Ace), whether he knows which PC carries the blade (5b).
+4. Which fighter's longsword is the Sunsword's blade (3d).
+5. Party size: how a table of fewer players reaches the module's six to eight characters (3a).
+6. Whether the party has a cleric who can turn Strahd (3b), since he treats that cleric accordingly (4e).
+7. Which opening the party meets, the module's or the camouflaged escort, and, if a patron is used (1f), how the commission brings the party to it (Part II).
+
+**Later, each before it is needed:**
+
+- *Before the party can reach Tser Pool,* which may be the coming session: one past deed for each PC, for Madam Eva to name (5f), and how a tent reading will be run if the party accepts one, since re-marking the map mid-session "goes better prepared than drawn cold" (5c).
+- *Before the party enters the castle:* Strahd's exits from the rooms where he is likely to fight (4e); and which characters are lawful good, and so can pass the curtain at K87 and open Sergei's coffin at K85, and whether anything placed at K88 is within this party's reach (Table 1).
+- *Under the new-identity goal (3 or 5), before he first isolates a charmed PC:* what the impostor knows of the PC he replaces (5b).
+- *Under the other goals, before Strahd first acts towards Ireena in play:* what he knows or suspects of her (4a, 5e).
+- *Before the party tries to leave the valley:* whether it has *neutralize poison* (3b).
+- *Before the ending becomes relevant:* whether to use the optional ending, which needs Ireena with the party at dawn on the overlook (K6) (p.30).
+
+**Consulted when it arises:** the tent reading's new results (5c); the castle room entries for each placement (Table 1).
+
+---
+
+*Last updated 21 November 2026.*
 
 ---
 
@@ -413,4 +369,4 @@ This does not break the module. The party can still use the reading's informatio
 
 A print-optimised PDF of Part I is available for download.
 
-[Download PDF](/wp-content/uploads/2026/04/ravenloft-i6-playability-guide-part1.pdf)
+[Download PDF](/wp-content/uploads/2026/04/ravenloft-i6-playability-guide-part1.pdf?v=20261121)

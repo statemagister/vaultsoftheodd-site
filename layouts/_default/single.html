@@ -19,7 +19,11 @@
       {{- with .Params.prereq }}<aside class="read-first">{{ . | markdownify }}</aside>{{- end }}
 
       <div class="post-body" data-listen-content>
-        {{- if .Params.straight_quotes }}
+        {{- if .Params.as_written }}
+        {{- /* Approved text that must render character for character as its source
+               file (the I6 Playability Guide Parts): see as-written.html. */}}
+        {{ partial "as-written.html" .Content | safeHTML }}
+        {{- else if .Params.straight_quotes }}
         {{ partial "straight-quotes.html" .Content | safeHTML }}
         {{- else }}
         {{ .Content }}

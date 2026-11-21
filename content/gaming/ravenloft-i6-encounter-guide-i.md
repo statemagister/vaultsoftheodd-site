@@ -12,7 +12,7 @@ tags:
 # Approved source, verified against the handover checksum. The body below is
 # that file with its first four lines (title, blank, byline, blank) removed:
 # the title is in front matter and the byline comes from the site.
-source_sha256: "4dbb696160778be854da3d6025e82eecda77ae8255147da0f01e527759ffaa2a"
+source_sha256: "001043704b16c676d8c828d76b663eb7f6466ebcddd696e1afd53fbdb18178b6"
 ---
 
 > **What this is.** A DM-facing companion to module I6, covering everything from the opening scene to the moment the party leaves the village. **It is designed to be opened cold.** Each encounter carries the statistics, behaviour, mechanics, player choices and consequences needed to run it, so that the module's encounters can be run from I6 and this guide alone.
@@ -148,7 +148,7 @@ source_sha256: "4dbb696160778be854da3d6025e82eecda77ae8255147da0f01e527759ffaa2a
 - **Saves, 4+4 counts as 5, as a fighter of 5 to 6:** paralysis, poison or death magic 11; petrification or polymorph 12; rod, staff or wand 13; breath weapon 13; spell 14.
 - **They are not undead** and cannot be turned.
 
-**The five rounds of howling are the encounter.** They are a warning, and they are time: a party that keeps moving reaches the village. **A party that stops to investigate the howling is choosing the fight.**
+**The howling is a warning, and its five rounds are five minutes.** **Only a party already near the village reaches it before the wolves attack, and a party that stops to investigate is choosing the fight.** **I6 gives no distance from the gates to the village, so set the turns the road takes before the party enters the woods** (ruling). **Keep rolling every turn the party remains in the woods, after an attack as before: a new howl brings a new attack** (printed, I6 p.8, "every turn"), **and the finite population below is the limit.**
 
 **The woods are Strahd's (printed, I6 p.6):** "patrolled constantly by the wolves and serving beasts of Count Strahd".
 
@@ -228,7 +228,9 @@ source_sha256: "4dbb696160778be854da3d6025e82eecda77ae8255147da0f01e527759ffaa2a
 
 ### 2f. Arrival
 
-**Printed, I6 p.8.** Later the same morning, or by early afternoon, the road descends and the woods thin. **The village becomes visible through the fog**: cobblestones, shuttered windows, a church on a rise at the base of the cliffs, and Castle Ravenloft on its pillar above.
+**Printed, I6 p.8.** **"Tall shapes loom out of the dense fog that surrounds everything. The muddy ground underfoot gives way to slick, wet cobblestones. The tall shapes become recognizable as the dwellings of the village of Barovia."** **The windows stare out from pools of black nothingness, and nothing breaks the silence but the distant sobbing** (3a).
+
+**When they arrive (ruling).** **I6 prints no time of arrival.** **The messenger asks the party to come at first light, and the road to the gates takes five hours** (printed, I6 p.7); **the time in the woods is the DM's to set** (2c).
 
 ---
 
@@ -447,6 +449,8 @@ source_sha256: "4dbb696160778be854da3d6025e82eecda77ae8255147da0f01e527759ffaa2a
 
 **What comes (printed).** **4d4 worg wolves** and **10d10 bats**, drawn from the surviving populations (ruling).
 
+**When it comes (ruling).** **I6 gives no hour.** **Fix the hour before the night is played**, so that whether the attack interrupts rest (5b-bis) follows from the time, and not the other way round.
+
 > **Run it on the goal from the applicable reading, not from the sheet drawn before play.** **If the party accepted a reading at Madam Eva's tent, the goal may have changed and his conduct changes with it** (1a, and Guide II 2c). **The record carries which reading is in force.**
 
 > **The draw is capped by what is left, and the harassment is no exception to that.** **No attack deploys more creatures than remain** (ruling). **A roll of 16 worgs when nine survive brings nine.** **Creatures that survive the five rounds stay in their populations; casualties reduce them**, and the bats return to the colony at K84 they came from (a guide ruling, not a statement I6 makes). **The harassment is a separate procedure from the encounter checks and is not an independent supply of creatures**: being "not an encounter" exempts it from the three-turn cadence, not from the finite populations (1c and 4d). **He attacks with them.** **"Strahd may knock at the door"**, and **he tries to charm characters into inviting him in**, for as long as the attack lasts (interpretation).
@@ -495,7 +499,9 @@ source_sha256: "4dbb696160778be854da3d6025e82eecda77ae8255147da0f01e527759ffaa2a
 2. **He calls 10 to 15 Strahd zombies**, all attacking at the same time in the same place.
 3. **He calls 3 to 12 worg wolves**, likewise.
 
-**A strike needs him to know where the party is**, from a report or from what he or his servants have learned in play (interpretation). **The zombie strike deploys only what his reserve and withdrawn garrisons can supply** (ruling). **Outside the first strike, this guide imposes no fixed duration on his combat**: he presses or withdraws as his goals and the circumstances dictate.
+**A strike needs him to know where the party is**, from a report or from what he or his servants have learned in play (interpretation). **Outside the first strike, this guide imposes no fixed duration on his combat**: he presses or withdraws as his goals and the circumstances dictate.
+
+**The Strahd zombie reserve (ruling).** **Roll 1d10 once before play: that is the reserve.** **The garrisons are two at K28 and six at K76, which stay in place unless moved in play.** **Strike 2 deploys no more than survive in the reserve and any garrisons withdrawn: the reserve first, then the shortfall from K76 and then K28.** **Withdrawn garrison zombies are recorded against their garrison while deployed; after a strike, surviving reserve zombies return to the reserve and surviving garrison zombies to their rooms, if able.** **The dead are never replaced, because no more can be made** (interpretation).
 
 **Strahd zombies, if the second strike falls (printed, I6 pp.12, 32).** AC 8; MV 9"; HD 4; 1 attack for **1-8**; AL N. **To hit, 4 Hit Dice:** AC 10 on 5, AC 8 on 7, AC 6 on 9, AC 4 on 11, AC 2 on 13, AC 0 on 15. **Saves:** they are non-intelligent (I6 p.32), so they save as a fighter of 1 to 2 except against poison or death magic, where they save as a fighter of 3 to 4: paralysis 14, poison or death magic 13; petrification or polymorph 15; rod, staff or wand 16; breath weapon 17; spell 17. **Any single hit of 5 points or more severs parts of their bodies, and severed limbs continue to attack.** **One creature, one pool of hit points**: damage to any part damages the whole, and damage to one part in excess of the zombie's total destroys all of its parts. **A severed limb is not a separate creature.** **They turn as mummies.** **No more can ever be made**, the magic being "now forgotten even by Strahd himself".
 
@@ -565,7 +571,7 @@ source_sha256: "4dbb696160778be854da3d6025e82eecda77ae8255147da0f01e527759ffaa2a
 
 **Before any of these becomes a fight:** a rolled encounter is not an engagement, and surprise is rolled when the sides come into view (1c, 5a-bis). **With the ghost it decides the most: its effect begins with seeing it, so surprise settles whether anyone acts before the save.**
 
-**The populations are finite (ruling).** Fixed and random encounters draw on one count per creature type, established once before play: **worgs 25 at C plus 4d4; bats 3,000, the colony at K84; zombies 3d4 in the valley; ghouls 3d4; wights 1d4; wraiths 1d4; ghost 1; Helga 1.** **Confirmed deaths are permanent, survivors reappear with their wounds, and a type whose population reaches zero gives no further encounter.**
+**The populations are finite (ruling).** Fixed and random encounters draw on one count per creature type, established once before play: **worgs 25 at C plus 4d4; bats 3,000, the colony at K84; zombies 3d4 in the valley; Strahd zombies 1d10 in reserve, with two at K28 and six at K76 (4b); ghouls 3d4; wights 1d4; wraiths 1d4; ghost 1; Helga 1.** **Confirmed deaths are permanent, survivors reappear with their wounds, and a type whose population reaches zero gives no further encounter.**
 
 ---
 
@@ -635,9 +641,11 @@ source_sha256: "4dbb696160778be854da3d6025e82eecda77ae8255147da0f01e527759ffaa2a
 
 **When the roll is made (ruling).** **Surprise is rolled when the creature comes into view, not for an approach the party could not see.** A vampire who approaches invisible and then steps into view is rolled for on emergence; **the invisible approach does not carry a surprise advantage forward into the moment of appearance.**
 
+**What a side does with the segments (printed, DMG p.62).** **The side not surprised acts in each segment of surprise "as if the segment were an entire round"**: a fighter entitled to two attacks a round makes two in each segment, and **missiles that are ready are discharged at three times the normal rate**. **The surprised side is inactive.** **A spell may be begun in a segment, and its casting time decides whether it is complete before the surprise ends** (ruling). **Dexterity reaction adjusts the segments for each individual only.** **"Surprise gives initiative to the non- or less-surprised party"; once the segments are over, melee proceeds round by round.**
+
 **What this connects to.**
 - **The gaze (5k).** Its probabilities are stated for a target **completely surprised, surprised, viewing him, attacking normally, or deliberately avoiding his gaze.** **The first two of those states are established by this roll and by nothing else in the guide.**
-- **Creatures that cannot be surprised, and the backstab question, are at the entries that need them.** **This procedure settles the segments and nothing else.**
+- **Creatures that cannot be surprised, and the backstab question, are at the entries that need them.** **This procedure settles the segments and what may be done in them.**
 
 ### 5b. Energy drain, and what it costs
 
@@ -708,6 +716,8 @@ source_sha256: "4dbb696160778be854da3d6025e82eecda77ae8255147da0f01e527759ffaa2a
 
 **Harmed (MM p.99; DMG pp.64, 65).** **Holy water (printed, MM p.99).** **"Holy water splashed upon a vampire causes 2-7 hit points of damage per vial-full which strikes the monster."** **2 by splash, thrown to 3 inches.** **It does not harm a vampire in gaseous form** (section 5i).
 
+**Throwing it (printed, DMG pp.63, 64).** **A vial is a grenade-like missile: roll to hit as for any missile, against the target's armour class, at range 3", -2 beyond 1" and -5 beyond 2".** **A hit must then break the vial: roll its item saving throw (5l), and only a vial that breaks does damage.** **Every creature within 3 feet of the break saves against poison or is splashed; a splashed vampire takes 2.** **A miss lands 1d6 feet off target (1d4 at short range, optionally), in the direction given by 1d8: 1 long right, 2 right, 3 short right, 4 short, 5 short left, 6 left, 7 long left, 8 long.** **Thrown at a wall, read long as high and short as low.**
+
 **Destroyed (MM p.99).** **Direct sunlight kills in 1 turn and makes it powerless immediately.** **Immersion in running water kills in 3 rounds, at a third of its hit points a round.** **A stake through the heart kills it while the stake remains, after which the head must be cut off and the mouth filled with holy wafers.**
 
 > **The Tome of Strahd claims otherwise, and it changes nothing.** In his own words, **"Even a stake through my heart does not kill me, though it holds me from movement"** (I6 p.31). **The Monster Manual rule above applies as printed**: his testimony is not an authoritative source. **Carry his claim as a hazard to the players**: a party that reads the Tome may act on it. **You run the printed rule regardless.** The Tome itself is in the castle.
@@ -771,7 +781,7 @@ Keep, privately: **the day and time of day, and every deadline above as a time**
 > 2. **It belongs to that character's use of the weapon, not to the weapon.** **The *sunsword* is not permanently improved, and another character taking it up wields it at the printed +2.**
 > 3. **The adjusted bonus is the real bonus, including for overcoming special defences.** **A *sunsword* adjusted to +3 does damage the iron golems at K78.** **That is accepted rather than worked around.** **The three +3 maces at K41 are a provision for a party without a qualifying weapon, not a restriction needing protection**: a party arriving with its own +3 weapons could always damage the golems, and I6 never said otherwise.
 
-**Why it matters from the first night.** **The blade is already in a player character's hands before the adventure begins**, so it is in play from the first encounter in Barovia, **and the wights, wraiths, ghouls, ghosts and Strahd zombies on the night table are all undead.** **A DM running the village needs the +3 line and the vampire bonus from the first night, long before the hilt is anywhere in reach.**
+**What the blade is until the hilt is found (printed, I6 p.31).** **Separated from its hilt, the blade "took on the appearance of a normal longsword", and "without the hilt it cannot be discerned from a normal blade".** **It becomes the *sunsword* only when the hilt leaps onto it.** **Until then it is an ordinary longsword: no glow, and none of the bonuses above, against undead, vampires or anything else.** **The hilt is in the castle.** **The properties above, and the optional accommodation, apply from the moment hilt and blade are joined, wherever the party then goes.**
 
 ### 5g. Strahd zombies
 
@@ -795,7 +805,7 @@ Keep, privately: **the day and time of day, and every deadline above as a time**
 
 **Keyed appearances vary from this entry and are carried as printed where they occur.** **Table 6 and K76 match it at MV 9", Dmg 1-8, AL N.** **K28 prints MV 6", Dmg 1-6, AL NE.** **The guides carry the figures printed at each location rather than this general line.**
 
-**Where they appear in this guide.** **Table 5, by night, result 8** (I6 p.6), and **wherever Strahd sets them on the village**. **The figures printed on that table govern there.**
+**Where they appear in this guide.** **Only through Strahd's second strike (4b), at the figures carried there.** **No Strahd zombie is on Table 5** (I6 p.6).
 
 ### 5h. Making holy water, and whether the party can
 
@@ -1595,10 +1605,12 @@ Keep, privately: **the day and time of day, and every deadline above as a time**
 | An invitation given under a valid *suggestion* counts. A character who understands that admitting him exposes them to a vampire treats the request as obviously harmful, and the *suggestion* fails. *Protection from evil* or a paladin's aura gives +2 on the save against the *suggestion*. Net against the *suggestion*: unprotected 0, protected +2, the paladin +4. | Guide ruling |
 | Under *Unearthed Arcana*, magical or magic-like effects on the mind, explicitly including charm and *suggestion*, are 90% unlikely to affect a cavalier, in addition to any saving throw. A paladin "gains the abilities and powers of the cavalier class", and in the guide's reading this resistance is among them. The 90% is rolled first, then the save. A paladin under the Players Handbook alone has no such resistance. | UA pp.15 to 16 (the resistance), p.16 (the general clause); the paladin's inclusion is an interpretation; the order is a guide ruling |
 | A charmed victim is "not an automaton", but hastens to carry out his commands, including handing over possessions and betraying companions, unless an instruction is obviously self-destructive. Commands reach the victim within sight, or within 60 feet out of sight; without a shared language, only basic emotions and simple commands pass. | DMG p.65 |
-| A magic circle of protection suspends his control while the victim is inside it, without ending the charm; his control returns once the victim is outside, unless the charm has been dispelled or has worn off. *Protection from evil* counts as such a circle while it lasts, and gives +2 on the save against his gaze. A paladin's 10-foot aura does the same for everyone within it, and the paladin's own +2 on all saves applies in addition, to the paladin alone. | DMG p.65 (the circle); PHB pp.22, 44; *protection from evil* as the circle is a guide ruling; the +2 against the gaze and the aura are guide rulings |
+| A magic circle of protection suspends his control while the victim is inside it, without ending the charm; his control returns once the victim is outside, unless the charm has been dispelled or has worn off. *Protection from evil* counts as such a circle while it lasts, and gives +2 on the save against his gaze. A paladin's 10-foot aura does the same for everyone within it, the paladin included, and the paladin's own +2 on all saves applies in addition, to the paladin alone. | DMG p.65 (the circle); PHB pp.22, 44; *protection from evil* as the circle is a guide ruling; the +2 against the gaze and the aura are guide rulings; that the aura covers the paladin is an interpretation of PHB p.22 ("round the paladin") |
+| While his control is suspended, the charmed character acts on their own judgement. The charm stays latent and imposes no duty to defend him or his servants: the character may fight his creatures, or him, as freely as anyone else. Control returns when they leave the protection, unless the charm has been dispelled or has worn off. | DMG p.65 (circles "break the communication link and seemingly cause the *charm* to be broken"); the rest is a guide ruling |
+| Elves' 90% and half-elves' 30% resistance is to sleep and charm *spells* (PHB pp.16, 17). His gaze is not a spell: it has "the effect of charming", and the victim behaves "as if" struck by *charm person* (MM p.99), a power the DMG treats separately from the spell (DMG p.65). This guide does not apply the racial resistance to the gaze. A DM who extends it rolls the resistance first, then the save. | PHB pp.16, 17; MM p.99; DMG p.65; the reading is an interpretation, the extension an optional ruling |
 | Net against the gaze: unprotected -2, protected 0, the paladin +2; a UA paladin rolls the 90% first. A protected character still makes the contact roll and the save. The aura does not stop him attacking physically or turning his gaze on anyone. | Guide rulings |
 | A charm ends when a further save succeeds, made without the -2, at an interval set by the victim's Intelligence: 3 or less, 3 months; 4 to 6, 2 months; 7 to 9, 1 month; 10 to 12, 3 weeks; 13 or 14, 2 weeks; 15 or 16, 1 week; 17, 3 days; 18, 2 days; 19 or more, 1 day. Neither his Hit Dice nor his level alters the intervals. | PHB pp.55, 65; applied to his charm by the guide |
-| *Dispel magic* can end the charm, rolled as against his 10th level: 40% for a 5th-level caster, 44% for a 7th. | DMG p.65; PHB p.47; guide ruling |
+| *Dispel magic* can end the charm, rolled as against his 10th level: 40% for a 5th-level caster, 42% for a 6th, 44% for a 7th. | DMG p.65; PHB p.47; guide ruling |
 | The player keeps playing a charmed character, carrying out his commands within their terms and deciding how. The DM passes his commands privately. Nothing scripts a particular betrayal. | The guide's advice |
 | If his goal is the sphere of darkness, a charmed PC's answer reaches him at his next contact with that PC, which does not rule out his learning it another way. | Guide ruling |
 
@@ -1746,7 +1758,7 @@ Clerics include druids; fighters include paladins, rangers and 0-level types; ma
 
 **Worked for this adventure:** Strahd, 10 Hit Dice with a magic-user's abilities, takes the more favourable of the fighter 9 to 10 and magic-user 6 to 10 rows in each category: 8 / 9 / 9 / 9 / 10. Helga, 8+3, becomes 9 for saving throws and saves as a fighter of 9 to 10. A wight at 4+3 becomes 5 and saves as a fighter of 5 to 6. A wraith at 5+3 becomes 6 and saves as a fighter of 5 to 6. A worg at 4+4 becomes 5. A ghoul or an ordinary zombie at 2 saves as a fighter of 1 to 2. **A Strahd zombie is non-intelligent at 4 Hit Dice, so it saves as a fighter of 1 to 2, except against poison or death magic, where it saves as a fighter of 3 to 4.**
 
-**Adjustments to the roll (DMG p.78).** Additions: magic-user +1, cleric +2, elf +2, dwarf +4, halfling +4. Subtractions: panicked -1, enraged -1, confused -2, hopeless -3, stunned -3.
+**Adjustments to saving throws (PHB pp.15 to 17, 22).** **Use the saving throw for the character's class and level, then apply only the bonuses or penalties established for that character and that attack.** **Dwarves, gnomes and halflings gain +1 for every 3½ points of Constitution against rods, staves, wands and spells: Constitution 4 to 6 +1, 7 to 10 +2, 11 to 13 +3, 14 to 17 +4, 18 +5.** **Dwarves and halflings gain the same against poison.** **Elves and half-elves have no general bonus; they have their stated resistance to sleep and charm spells (5k).** **Paladins gain +2 on all saving throws.** Other modifiers come from specific spells, abilities, magic items and circumstances, where their own rules allow them.
 
 **Magic armour (DMG p.81)** does **not** aid saving throws against gas, poison, or spells which cause no physical damage, that is petrification, polymorph, *magic jar* and charm. It **does** aid saves against acid except when immersion occurs, disintegration, falling damage, fire magical or otherwise, and spells which cause physical damage. Metallic armour does not add against electrical attacks; nonmetallic armour does.
 
@@ -1763,7 +1775,7 @@ Clerics include druids; fighters include paladins, rangers and 0-level types; ma
 | Parchment or paper | 16 | 11 | 6 | 0 | 25 | 21 | 18 | 2 | 20 | 1 |
 | Wood or rope, thin | 9 | 13 | 6 | 2 | 15 | 11 | 9 | 1 | 10 | 1 |
 
-**Which blow applies.** A crushing blow is the item struck by a weighty falling object or a giant's weapon, **or a vial of holy water hurled against a hard surface or dropped from a height**. A normal blow is an attack by a normal-strength opponent, or a vial **hurled against a tough but slightly yielding surface**. So a vial of holy water thrown at a stone wall or a plate-armoured target saves at 19; thrown at a yielding target it saves at 14. Magical items gain +2 on all rolls plus +1 for each plus above +1, and gain +5 against attack forms in their own mode.
+**Which blow applies (interpretation, DMG pp.64, 80).** A crushing blow is the item struck by a weighty falling object or a giant's weapon; a normal blow is an attack by a normal-strength opponent. **For a thrown vial of holy water, use the crushing blow column, as the grenade-like missile procedure on DMG p.64 instructs: a vial, on the crystal or vial row, survives on 19 or 20 and breaks on 1 to 18.** **DMG p.80 also describes the normal blow column for a vial hurled against a tough but slightly yielding surface, where it would survive on 14 or better; this guide gives p.64's specific procedure precedence.** **A container specially weakened is an exception p.64 names, with no number printed, so the DM adjudicates it.** Magical items gain +2 on all rolls plus +1 for each plus above +1, and gain +5 against attack forms in their own mode.
 
 #### Zero hit points and recovery (DMG p.82)
 

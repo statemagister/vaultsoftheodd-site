@@ -285,4 +285,4 @@ Part III ends when the party leaves the village on the west road, with Ireena un
 
 A print-optimised PDF of Part III is available for download.
 
-[Download PDF](/wp-content/uploads/2026/05/ravenloft-i6-playability-guide-part3.pdf?v=20261121b)
+[Download PDF](/wp-content/uploads/2026/05/ravenloft-i6-playability-guide-part3.pdf?v=20261121c)

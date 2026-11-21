@@ -439,4 +439,4 @@ Everything else in Sections 3 and 4 is used when it arises.
 
 A print-optimised PDF of Part II is available for download.
 
-[Download PDF](/wp-content/uploads/2026/04/ravenloft-i6-playability-guide-part2.pdf?v=20261121b)
+[Download PDF](/wp-content/uploads/2026/04/ravenloft-i6-playability-guide-part2.pdf?v=20261121c)

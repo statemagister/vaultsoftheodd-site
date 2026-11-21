@@ -369,4 +369,4 @@ Part I ends before the first session. By then the reading is fixed and recorded,
 
 A print-optimised PDF of Part I is available for download.
 
-[Download PDF](/wp-content/uploads/2026/04/ravenloft-i6-playability-guide-part1.pdf?v=20261121b)
+[Download PDF](/wp-content/uploads/2026/04/ravenloft-i6-playability-guide-part1.pdf?v=20261121c)

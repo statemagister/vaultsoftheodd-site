@@ -282,68 +282,106 @@ def build(src, out):
         updated = bl[-1][1].strip('*')
         bl = bl[:-2]
 
-    story = [Paragraph(series, TITLE), Paragraph(part, PART),
-             Paragraph('By Drew Griffiths &middot; vaultsoftheodd.com', BYLINE)]
-    for kind, val in bl:
-        if kind == 'h2':
-            story.append(Underlined(val))
-        elif kind == 'h3':
-            story.append(Paragraph(inline(val), H3))
-        elif kind in ('h4', 'h5', 'h6'):
-            story.append(Paragraph(inline(val), H4))
-        elif kind == 'p':
-            story.append(Paragraph(inline(val), BODY))
-        elif kind == 'hr':
-            story.append(HRFlowable(width='100%', thickness=0.5, color=RULE, spaceBefore=6, spaceAfter=14))
-        elif kind == 'quote':
-            inner = [Paragraph(inline(p), NOTE) for p in val]
-            t = Table([[inner]], colWidths=['100%'])
-            t.setStyle(TableStyle([
-                ('LINEABOVE', (0, 0), (-1, 0), 0.6, RULE), ('LINEBELOW', (0, -1), (-1, -1), 0.6, RULE),
-                ('LEFTPADDING', (0, 0), (-1, -1), 11), ('RIGHTPADDING', (0, 0), (-1, -1), 11),
-                ('TOPPADDING', (0, 0), (-1, -1), 10), ('BOTTOMPADDING', (0, 0), (-1, -1), 6)]))
-            story += [Spacer(1, 4), t, Spacer(1, 10)]
-        elif kind in ('ul', 'ol'):
-            items = [ListItem(Paragraph(inline(x), ITEM), leftIndent=28.3) for x in val]
-            story.append(ListFlowable(
-                items, bulletType='1' if kind == 'ol' else 'bullet', start='1' if kind == 'ol' else None,
-                bulletFontName='DejaVuSerif', bulletFontSize=9.25 if kind == 'ul' else 9.5,
-                bulletColor=INK, leftIndent=28.3, bulletDedent=28.3 if kind == 'ul' else 17,
-                bulletFormat='%s.' if kind == 'ol' else None, spaceBefore=0, spaceAfter=8.6))
-        elif kind == 'table':
-            story.append(('TABLE', val))
-
     doc = SimpleDocTemplate(out, pagesize=A4, leftMargin=25 * mm, rightMargin=25 * mm,
                             topMargin=20 * mm, bottomMargin=25 * mm,
                             title='%s, %s' % (series, part), author='Drew Griffiths',
                             subject='I6 Ravenloft playability guide for DMs')
     width = doc.width - 12  # the frame keeps 6pt padding each side
-    final = []
-    for f in story:
-        if isinstance(f, tuple):
-            tb = table(f[1], width)
-            h = tb.wrap(width, 10000)[1]
-            if h < 0.6 * doc.height:
-                # Short enough to keep whole: never start it at a page foot, and keep
-                # an introducing line ("The location sheet:") with it.
-                lead = []
-                if final and isinstance(final[-1], Paragraph) and final[-1].text.rstrip().endswith(':'):
-                    lead = [final.pop()]
-                final += [Spacer(1, 2), KeepTogether(lead + [tb]), Spacer(1, 11)]
+    H = doc.height
+
+    # 1. Blocks to flowables, tagged by how they may break across pages:
+    #    head  a heading, with the room it needs below it;
+    #    p     a paragraph (its source text kept, to spot lines that introduce a table);
+    #    block something that must not break (a note box, a table shorter than a page);
+    #    long  a table that will run over pages;
+    #    list, other.
+    items = []
+    for kind, val in bl:
+        if kind == 'h2':
+            items.append(('head', Underlined(val), 110))
+        elif kind == 'h3':
+            items.append(('head', Paragraph(inline(val), H3), 85))
+        elif kind in ('h4', 'h5', 'h6'):
+            items.append(('head', Paragraph(inline(val), H4), 75))
+        elif kind == 'p' and re.fullmatch(r'\*\*[^*]+\*\*', val.strip()) and len(val) < 90:
+            # A bold line on its own ("**Encounters and the night**") labels what
+            # follows, so it is planned like a heading.
+            items.append(('head', Paragraph(inline(val), BODY), 75))
+        elif kind == 'p':
+            items.append(('p', Paragraph(inline(val), BODY), val))
+        elif kind == 'hr':
+            items.append(('other', HRFlowable(width='100%', thickness=0.5, color=RULE, spaceBefore=6, spaceAfter=14), None))
+        elif kind == 'quote':
+            inner = [Paragraph(inline(p), NOTE) for p in val]
+            q = Table([[inner]], colWidths=['100%'])
+            q.setStyle(TableStyle([
+                ('LINEABOVE', (0, 0), (-1, 0), 0.6, RULE), ('LINEBELOW', (0, -1), (-1, -1), 0.6, RULE),
+                ('LEFTPADDING', (0, 0), (-1, -1), 11), ('RIGHTPADDING', (0, 0), (-1, -1), 11),
+                ('TOPPADDING', (0, 0), (-1, -1), 10), ('BOTTOMPADDING', (0, 0), (-1, -1), 6)]))
+            items.append(('block', q, (4, 10)))
+        elif kind in ('ul', 'ol'):
+            li = [ListItem(Paragraph(inline(x), ITEM), leftIndent=28.3) for x in val]
+            items.append(('list', ListFlowable(
+                li, bulletType='1' if kind == 'ol' else 'bullet', start='1' if kind == 'ol' else None,
+                bulletFontName='DejaVuSerif', bulletFontSize=9.25 if kind == 'ul' else 9.5,
+                bulletColor=INK, leftIndent=28.3, bulletDedent=28.3 if kind == 'ul' else 17,
+                bulletFormat='%s.' if kind == 'ol' else None, spaceBefore=0, spaceAfter=8.6), None))
+        elif kind == 'table':
+            tb = table(val, width)
+            items.append(('block' if tb.wrap(width, 10000)[1] < 0.6 * H else 'long', tb, (4, 11)))
+
+    def intro(it):
+        """A paragraph that introduces what follows it: ends with a colon, or is a
+        short lead-in line ("Table 4's three results, with what the DM needs...")."""
+        return it[0] == 'p' and (it[2].rstrip().endswith(':') or len(it[2]) <= 260)
+
+    # 2. Page planning. A heading never ends a page: it starts only where there is
+    #    room for a few lines after it, and it travels with a table or note that
+    #    follows it, together with any introducing line. A table or note shorter than
+    #    a page is never split. A long table starts on a fresh page unless a good
+    #    part of the page is free, and its heading and lead-in go with it.
+    story = [Paragraph(series, TITLE), Paragraph(part, PART),
+             Paragraph('By Drew Griffiths &middot; vaultsoftheodd.com', BYLINE)]
+    i = 0
+    while i < len(items):
+        # Gather the run that leads into the next item: headings, labels and
+        # introducing lines, in any order, up to four.
+        j, lead, need, heads = i, [], 0, 0
+        while j < len(items) and len(lead) < 4 and (items[j][0] == 'head' or (intro(items[j]) and j + 1 < len(items) and items[j + 1][0] in ('head', 'block', 'long', 'list'))):
+            if items[j][0] == 'head':
+                heads += 1
+                need = max(need, items[j][2]) + (15 if heads > 1 else 0)
             else:
-                # A long table that will run over pages: start it on a new page
-                # rather than with a row or two at the foot of this one.
-                final += [CondPageBreak(0.3 * doc.height), Spacer(1, 2), tb, Spacer(1, 11)]
+                need = max(need, 60)
+            lead.append(items[j][1])
+            j += 1
+        # Plain paragraphs alone are only held back when they end in a colon
+        # before a list ("Five cards are dealt:"); otherwise let them flow.
+        if lead and not heads and not (j < len(items) and items[j][0] in ('block', 'long')):
+            last = items[j - 1]
+            if not (last[2].rstrip().endswith(':') and j < len(items) and items[j][0] == 'list'):
+                lead, j = [], i
+        nxt = items[j] if j < len(items) else None
+        if lead and nxt and nxt[0] == 'block':
+            before, after = nxt[2]
+            story += [Spacer(1, before), KeepTogether(lead + [Spacer(1, before), nxt[1]]), Spacer(1, after)]
+            i = j + 1
+        elif lead and nxt and nxt[0] == 'long':
+            story += [CondPageBreak(0.3 * H)] + lead + [Spacer(1, 4), nxt[1], Spacer(1, 11)]
+            i = j + 1
+        elif lead:
+            story += [CondPageBreak(need)] + lead
+            i = j
         else:
-            final.append(f)
-    # Keep each heading with what follows it.
-    kept = []
-    for f in final:
-        if kept and isinstance(kept[-1], (Underlined,)) or (kept and isinstance(kept[-1], Paragraph) and kept[-1].style.name in ('h3', 'h4')):
-            prev = kept.pop()
-            kept.append(KeepTogether([prev, f]))
-        else:
-            kept.append(f)
+            kind, fl, extra = items[i]
+            if kind == 'block':
+                story += [Spacer(1, extra[0]), KeepTogether([fl]), Spacer(1, extra[1])]
+            elif kind == 'long':
+                story += [CondPageBreak(0.3 * H), Spacer(1, 4), fl, Spacer(1, 11)]
+            else:
+                story.append(fl)
+            i += 1
+    kept = story
     if updated:
         note = ('This document is a printable companion to the web version at vaultsoftheodd.com. '
                 'Formatted for A4 and intended for table reference during play.<br/>%s.' % updated.rstrip('.'))

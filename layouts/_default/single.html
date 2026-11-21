@@ -22,7 +22,7 @@
         {{- if .Params.as_written }}
         {{- /* Approved text that must render character for character as its source
                file (the I6 Playability Guide Parts): see as-written.html. */}}
-        {{ partial "as-written.html" .Content | safeHTML }}
+        {{ partial "as-written.html" .Content | replaceRE "<table>" "<div class=\"table-scroll\"><table>" | replaceRE "</table>" "</table></div>" | safeHTML }}
         {{- else if .Params.straight_quotes }}
         {{ partial "straight-quotes.html" .Content | safeHTML }}
         {{- else }}

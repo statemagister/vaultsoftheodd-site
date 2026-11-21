@@ -542,6 +542,9 @@ body.theme-politics .setting-tab.is-active { box-shadow: inset 0 0 0 1px var(--g
 .post-body li { margin-bottom: 0.5rem; }
 .post-body table { width: 100%; border-collapse: collapse; margin: 1.6rem 0; font-size: 0.98rem; }
 .post-body th, .post-body td { border: 1px solid var(--rule-soft); padding: 0.55rem 0.7rem; text-align: left; }
+/* Wide tables scroll inside their own box (pages rendered as_written); the page never scrolls sideways. */
+.post-body .table-scroll { overflow-x: auto; margin: 1.6rem 0; }
+.post-body .table-scroll table { margin: 0; }
 .post-body th { color: var(--gold); font-family: var(--display); font-size: 0.85rem; }
 
 /* Collapsible evidence annex — opens into a self-contained scrollable panel so

@@ -29,7 +29,7 @@ from reportlab.lib.units import mm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.fonts import addMapping
-from reportlab.platypus import (Flowable, HRFlowable, KeepTogether, ListFlowable,
+from reportlab.platypus import (CondPageBreak, Flowable, HRFlowable, KeepTogether, ListFlowable,
                                 ListItem, Paragraph, SimpleDocTemplate, Spacer,
                                 Table, TableStyle)
 
@@ -121,43 +121,99 @@ class Underlined(Flowable):
         return 12
 
 
-def table(rows):
+PAD = 5  # cell padding, left and right
+
+
+def text_width(markup, style):
+    """Width of a cell's text on one line; bold runs are measured in bold."""
+    plain = re.sub(r'<[^>]+>', '', markup)
+    bold_chars = sum(len(m) for m in re.findall(r'<b>(.*?)</b>', markup))
+    w = pdfmetrics.stringWidth(plain, style.fontName, style.fontSize)
+    return w * (1 + 0.08 * bold_chars / max(len(plain), 1))
+
+
+def word_width(markup, style):
+    plain = re.sub(r'<[^>]+>', '', markup)
+    return max([pdfmetrics.stringWidth(x, style.fontName, style.fontSize) * 1.08 for x in plain.split()] or [0])
+
+
+def table(rows, width, scale=1.0):
+    """A Markdown pipe table as a ReportLab Table, laid out the way a browser lays
+    out an automatic-width table: every column gets at least its longest word,
+    columns that fit on one line get their full width, and the rest of the width
+    goes to the columns with the most text. Columns of short values (all cells of
+    ten characters or fewer: numbers, dice, card values, page references) are kept
+    on one line and centred. An all-empty header row is left out."""
     cells = [[c.strip() for c in r.strip().strip('|').split('|')] for r in rows]
-    header, body = cells[0], [r for r in cells[2:]]
+    header, body = cells[0], cells[2:]
     ncol = len(header)
-    body = [r + [''] * (ncol - len(r)) for r in body]
-    # Column widths from content length, within sensible bounds.
-    lens = [max(len(re.sub(r'\*', '', r[i])) for r in [header] + body) for i in range(ncol)]
-    # A column left blank for the DM to fill in (the record sheets) gets room to write.
-    blank = [all(not r[i].strip() for r in body) for i in range(ncol)]
-    weights = [min(max(n, 40 if blank[i] else 4), 400) ** 0.6 for i, n in enumerate(lens)]
-    data = [[Paragraph(inline(h), HEAD) for h in header]]
-    data += [[Paragraph(inline(c), CELL) for c in r] for r in body]
-    return data, weights
+    body = [(r + [''] * ncol)[:ncol] for r in body]
+    has_head = any(h for h in header)
+    plain = lambda s: re.sub(r'[*`]', '', s)
+    short = [all(len(plain(r[c])) <= 10 for r in body) and len(plain(header[c])) <= 14 and any(r[c] for r in body)
+             for c in range(ncol)]
+    blank = [not any(r[c] for r in body) for c in range(ncol)]
+    head = ParagraphStyle('hd', parent=HEAD, fontSize=HEAD.fontSize * scale, leading=HEAD.leading * scale)
+    cell = ParagraphStyle('cl', parent=CELL, fontSize=CELL.fontSize * scale, leading=CELL.leading * scale)
+    head_style = [ParagraphStyle('h%d' % c, parent=head, alignment=TA_CENTER if short[c] else TA_LEFT) for c in range(ncol)]
+    cell_style = [ParagraphStyle('c%d' % c, parent=cell, alignment=TA_CENTER if short[c] else TA_LEFT) for c in range(ncol)]
+    data = []
+    if has_head:
+        data.append([Paragraph(inline(h), head_style[c]) for c, h in enumerate(header)])
+    data += [[Paragraph(inline(x), cell_style[c]) for c, x in enumerate(r)] for r in body]
 
+    mins, maxs = [], []
+    for c in range(ncol):
+        texts = [(inline(header[c]), head)] if has_head else []
+        texts += [(inline(r[c]), cell) for r in body]
+        mx = max(text_width(x, s) for x, s in texts) + 2 * PAD + 2
+        mn = max(word_width(x, s) for x, s in texts) + 2 * PAD + 2
+        if blank[c]:            # a column left for the DM to write in
+            mn, mx = max(mn, 70), max(mx, 140)
+        if short[c]:            # keep on one line
+            mn = mx
+        mins.append(mn)
+        maxs.append(mx)
+    if sum(mins) > width and scale > 0.76:
+        # Too many columns for the page at this size (the ten-column Intelligence
+        # table): set the whole table smaller rather than break short values.
+        return table(rows, width, scale * max(0.76, width / sum(mins) * 0.99))
+    if all(short) and sum(maxs) <= width:
+        # A table of short values only: compact, not stretched across the page.
+        widths = [m + 14 for m in maxs]
+        if sum(widths) > width:
+            widths = [w * width / sum(widths) for w in widths]
+    elif sum(maxs) <= width:
+        # Everything fits on one line: share the spare width out by content.
+        extra = width - sum(maxs)
+        grow = [0 if short[c] else maxs[c] for c in range(ncol)]
+        tot = sum(grow) or sum(maxs)
+        grow = grow if sum(grow) else maxs
+        widths = [maxs[c] + extra * grow[c] / tot for c in range(ncol)]
+    else:
+        spare = width - sum(mins)
+        # A cell's one-line width is capped at the table width, so one column of
+        # long prose cannot starve the others.
+        give = [min(maxs[c], width) - mins[c] for c in range(ncol)]
+        tot = sum(give) or 1
+        widths = [mins[c] + max(spare, 0) * give[c] / tot for c in range(ncol)]
+        if spare < 0:  # longest words alone overflow: scale down
+            widths = [w * width / sum(widths) for w in widths]
 
-def col_widths(data, weights, width):
-    """Share the width by content, but never narrower than a column's longest
-    word, so short columns such as "Card" are not broken letter by letter."""
-    pad = 10.5
-    mins = []
-    for c in range(len(weights)):
-        m = 0
-        for r, row in enumerate(data):
-            st = HEAD if r == 0 else CELL
-            txt = re.sub(r'<[^>]+>', '', row[c].text) if hasattr(row[c], 'text') else ''
-            for word in txt.split():
-                m = max(m, pdfmetrics.stringWidth(word, st.fontName, st.fontSize))
-        mins.append(m + pad)
-    tw = sum(weights)
-    w = [max(mins[i], width * weights[i] / tw) for i in range(len(weights))]
-    # Take any excess back from the columns with room to spare.
-    over = sum(w) - width
-    if over > 0:
-        spare = [w[i] - mins[i] for i in range(len(w))]
-        total = sum(spare) or 1
-        w = [w[i] - over * spare[i] / total for i in range(len(w))]
-    return w
+    # A row taller than about half a page must be allowed to break across pages.
+    # ReportLab then repeats the header at the break even mid-page, so such tables
+    # do not repeat their header; the rest do.
+    tall = any(p.wrap(widths[c] - 2 * PAD, 10000)[1] > 330 for row in data for c, p in enumerate(row))
+    t = Table(data, colWidths=widths, repeatRows=1 if has_head and not tall else 0,
+              hAlign='LEFT', splitInRow=1 if tall else 0)
+    style = [('GRID', (0, 0), (-1, -1), 0.4, RULE), ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+             ('LEFTPADDING', (0, 0), (-1, -1), PAD), ('RIGHTPADDING', (0, 0), (-1, -1), PAD),
+             ('TOPPADDING', (0, 0), (-1, -1), 3.5), ('BOTTOMPADDING', (0, 0), (-1, -1), 4.5)]
+    if has_head:
+        style += [('LINEBELOW', (0, 0), (-1, 0), 0.8, GOLD), ('BACKGROUND', (0, 0), (-1, 0), SHADE),
+                  ('VALIGN', (0, 0), (-1, 0), 'MIDDLE'), ('TOPPADDING', (0, 0), (-1, 0), 4.5)]
+    t.setStyle(TableStyle(style))
+    return t
 
 
 def blocks(md):
@@ -255,8 +311,7 @@ def build(src, out):
                 bulletColor=INK, leftIndent=28.3, bulletDedent=28.3 if kind == 'ul' else 17,
                 bulletFormat='%s.' if kind == 'ol' else None, spaceBefore=0, spaceAfter=8.6))
         elif kind == 'table':
-            data, weights = table(val)
-            story.append(('TABLE', data, weights))
+            story.append(('TABLE', val))
 
     doc = SimpleDocTemplate(out, pagesize=A4, leftMargin=25 * mm, rightMargin=25 * mm,
                             topMargin=20 * mm, bottomMargin=25 * mm,
@@ -266,20 +321,19 @@ def build(src, out):
     final = []
     for f in story:
         if isinstance(f, tuple):
-            _, data, weights = f
-            cw = col_widths(data, weights, width)
-            # A row taller than about half a page must be allowed to break across
-            # pages. ReportLab then repeats the header at the break even mid-page,
-            # so such tables do not repeat their header; the rest do.
-            tall = any(p.wrap(cw[c] - 10, 10000)[1] > 330 for row in data for c, p in enumerate(row))
-            t = Table(data, colWidths=cw, repeatRows=0 if tall else 1, hAlign='LEFT',
-                      splitInRow=1 if tall else 0)
-            t.setStyle(TableStyle([
-                ('GRID', (0, 0), (-1, -1), 0.4, RULE), ('LINEBELOW', (0, 0), (-1, 0), 0.8, GOLD),
-                ('BACKGROUND', (0, 0), (-1, 0), SHADE), ('VALIGN', (0, 0), (-1, -1), 'TOP'),
-                ('LEFTPADDING', (0, 0), (-1, -1), 5), ('RIGHTPADDING', (0, 0), (-1, -1), 5),
-                ('TOPPADDING', (0, 0), (-1, -1), 3.5), ('BOTTOMPADDING', (0, 0), (-1, -1), 4)]))
-            final += [Spacer(1, 2), t, Spacer(1, 11)]
+            tb = table(f[1], width)
+            h = tb.wrap(width, 10000)[1]
+            if h < 0.6 * doc.height:
+                # Short enough to keep whole: never start it at a page foot, and keep
+                # an introducing line ("The location sheet:") with it.
+                lead = []
+                if final and isinstance(final[-1], Paragraph) and final[-1].text.rstrip().endswith(':'):
+                    lead = [final.pop()]
+                final += [Spacer(1, 2), KeepTogether(lead + [tb]), Spacer(1, 11)]
+            else:
+                # A long table that will run over pages: start it on a new page
+                # rather than with a row or two at the foot of this one.
+                final += [CondPageBreak(0.3 * doc.height), Spacer(1, 2), tb, Spacer(1, 11)]
         else:
             final.append(f)
     # Keep each heading with what follows it.

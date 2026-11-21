@@ -134,4 +134,4 @@ Part V takes the party into the castle from here, through J (the gates) and into
 
 A print-optimised PDF of Part IV is available for download.
 
-[Download PDF](/wp-content/uploads/2026/10/ravenloft-i6-playability-guide-part4.pdf?v=20261121)
+[Download PDF](/wp-content/uploads/2026/10/ravenloft-i6-playability-guide-part4.pdf?v=20261121b)

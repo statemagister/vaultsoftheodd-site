@@ -22,7 +22,7 @@
       <ul>
         {{- range site.Data.encounter_guides }}
         {{- with site.GetPage .path }}<li><a href="{{ .RelPermalink }}">{{ .Title | replaceRE "^Ravenloft Encounter " "" }}</a></li>
-        {{- else }}<li class="due">Guide {{ .numeral }}: {{ .name }} <span class="due-date">(due {{ (time .due).Format "2 January 2006" }})</span></li>{{ end }}
+        {{- else }}<li class="due">Guide {{ .numeral }}: {{ .name }} <span class="due-date">({{ if (time .due).After now }}due {{ (time .due).Format "2 January 2006" }}{{ else }}coming soon{{ end }})</span></li>{{ end }}
         {{- end }}
       </ul>
     </div>

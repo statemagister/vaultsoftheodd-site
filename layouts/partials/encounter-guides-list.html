@@ -9,7 +9,7 @@
   <li>
     {{- if and $p $cur (eq $p.RelPermalink $cur.RelPermalink) }}<span class="current" aria-current="page">Guide {{ .numeral }}: {{ .name }}</span>
     {{- else if $p }}<a href="{{ $p.RelPermalink }}">Guide {{ .numeral }}: {{ .name }}</a>
-    {{- else }}<span class="due">Guide {{ .numeral }}: {{ .name }} <span class="due-date">(due {{ (time .due).Format "2 January 2006" }})</span></span>
+    {{- else }}<span class="due">Guide {{ .numeral }}: {{ .name }} <span class="due-date">({{ if (time .due).After now }}due {{ (time .due).Format "2 January 2006" }}{{ else }}coming soon{{ end }})</span></span>
     {{- end }}
   </li>
   {{- end }}

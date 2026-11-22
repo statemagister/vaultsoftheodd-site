@@ -10,7 +10,7 @@ tags:
   - "Playability Guide"
 straight_quotes: true
 as_written: true
-# Body is the approved file (handover section 10, SHA-256 94433dd307c7e14c...) less its
+# Body is the approved file (handover section 10, SHA-256 9ab9a2cd6b09989e...) less its
 # title and byline lines, plus the Encounter Guides note and the PDF link.
 ---
 
@@ -295,8 +295,6 @@ The same value in different suits puts items in the same place.
 
 Before play, the DM runs the reading alone and fixes the results. If the PCs visit Madam Eva and accept a reading, the DM runs it again, out loud, and the new results replace the old: the items move, and Strahd's goal may change mid-adventure. If they decline, the prep results stand. The tent reading is the module's foreshadowing, the omens and the goal's warning spoken in the players' own game; it also means re-marking the map and rethinking Strahd's plan mid-session, which goes better prepared than drawn cold.
 
-A DM can depart from the module by redrawing privately when the party visits her and speaking the reading only if asked. That may suit a table where she is already suspect, but it gives up the foreshadowing: the warnings reach the players only if the reading is spoken.
-
 ### 5d. Recording the reading
 
 The location sheet:
@@ -369,4 +367,4 @@ Part I ends before the first session. By then the reading is fixed and recorded,
 
 A print-optimised PDF of Part I is available for download.
 
-[Download PDF](/wp-content/uploads/2026/04/ravenloft-i6-playability-guide-part1.pdf?v=20261121c)
+[Download PDF](/wp-content/uploads/2026/04/ravenloft-i6-playability-guide-part1.pdf?v=20261122)

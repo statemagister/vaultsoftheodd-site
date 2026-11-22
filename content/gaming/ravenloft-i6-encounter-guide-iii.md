@@ -12,7 +12,7 @@ tags:
 # Approved source, verified against the handover checksum. The body below is
 # that file with its first four lines (title, blank, byline, blank) removed:
 # the title is in front matter and the byline comes from the site.
-source_sha256: "03a19e8995d419ff54958e7de6f12b0409fa05bd01b1ec4214b8347234b02b38"
+source_sha256: "f285b32d62fe350c224cd61f102b49e891d1e54bd5108c568e89af23c3f9c078"
 ---
 
 > **What this is.** A DM-facing companion to module I6, covering everything below the castle: the Larders of Ill Omen, the Dungeon and Catacomb, the forty crypts, the four tombs, the climax and the optional ending. **It is designed to be opened cold.** Each encounter carries the statistics, the mechanics that fire and the consequences.
@@ -873,7 +873,7 @@ source_sha256: "03a19e8995d419ff54958e7de6f12b0409fa05bd01b1ec4214b8347234b02b38
 
 **Three items are placed by the applicable Fortunes of Ravenloft reading** (printed, I6 p.4), **the Icon being fixed at K15 and not placed by it.** **Their full descriptions are at I6 pp.30 and 31 and are carried at section 6d and 6e above.**
 
-> **The applicable reading is the one the DM drew before play unless the party accepted a reading at Madam Eva's tent, G1** (Guide II, 2c), **in which case the placements may have changed.** **A DM working from the prep sheet after an accepted reading will place these items in the wrong rooms.** **What a replacement does not do is move an item the party has already recovered, or put one into a room they have already searched and established as empty** (guide ruling; the full statement is at Guide II, 2c). **Those placements are spent.**
+> **The applicable reading is the one the DM drew before play unless the party accepted a reading at Madam Eva's tent, G1** (Guide II, 2c), **in which case the placements may have changed.** **A DM working from the prep sheet after an accepted reading will place these items in the wrong rooms.**
 
 | Item | Where it is | What it does, printed |
 |---|---|---|

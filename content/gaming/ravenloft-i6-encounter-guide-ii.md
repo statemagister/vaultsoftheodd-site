@@ -12,7 +12,7 @@ tags:
 # Approved source, verified against the handover checksum. The body below is
 # that file with its first four lines (title, blank, byline, blank) removed:
 # the title is in front matter and the byline comes from the site.
-source_sha256: "476d6ccc46828f4765d62dc620d22482f512e2febcb4a4da54263a0b72e314bd"
+source_sha256: "02beb8d492a99c151f3554b4a9f1fcb1171af718ea28ebe903c297cd925c6ef9"
 ---
 
 > **What this is.** A DM-facing companion to module I6, covering the road from the junction to the castle gates and the whole of Castle Ravenloft above ground, K1 to K60. **It is designed to be opened cold.** Each encounter carries the statistics, the mechanics that fire and the consequences, so that the module's encounters can be run from I6 and this guide alone.
@@ -127,7 +127,9 @@ source_sha256: "476d6ccc46828f4765d62dc620d22482f512e2febcb4a4da54263a0b72e314bd
 
 **What she does (printed).** **She speaks the name of each PC** and makes some reference to a past deed of each. **She asks whether they wish their fortunes read.** If they agree, the DM runs the sequence in Fortunes of Ravenloft on p.4. **If they refuse, play continues using the Fortunes results generated before the game started.**
 
-> **This tent is where the adventure's configuration can change, and the module says so in one sentence.** **"If... the PCs have their fortunes read at the gypsy camp, run this card reading again, out loud. Substitute the new results for the old ones"** (printed, I6 p.4). **That is an instruction, not a permission**: it applies whenever the party take a reading here. **Strahd may now be somewhere else, the three objects may have moved, and his goal may have changed.**
+> **This tent is where the adventure's configuration can change, and the module says so in one sentence.** **"If... the PCs have their fortunes read at the gypsy camp, run this card reading again, out loud. Substitute the new results for the old ones"** (printed, I6 p.4). **That is an instruction, not a permission**: it applies when the party accept the reading she offers. **Strahd may now be somewhere else, the three objects may have moved, and his goal may have changed.**
+
+> **One reading in the adventure (ruling).** **I6 provides for a reading at the camp and sets no number, so the limit is this guide's.** **Madam Eva offers the party one reading.** **A party that refused may return and accept while none has been given; once she has given it, she refuses another, and its results stand for the rest of the adventure.** **She has revealed their fate; she has not offered a service to be bought again until the castle holds an arrangement the party prefers.**
 
 > **Three ways a party leaves here, and only one changes anything.** **They never enter the tent**, and the procedure does not apply at all (printed, I6 p.11): the prep results stand. **They enter and refuse**, and the prep results stand, unspoken. **They enter and agree**, and the reading is run out loud, with the party watching, and the new results are the ones the rest of the adventure runs on.
 
@@ -138,16 +140,6 @@ source_sha256: "476d6ccc46828f4765d62dc620d22482f512e2febcb4a4da54263a0b72e314bd
 **The default is the fresh reading, because it is what I6 prints.** **Draw the cards aloud when the characters accept her offer, and let the results stand even when they change the adventure.** **This is the option that makes her reading consequential in the world rather than theatrical.**
 
 > **An alternative for a DM who wants the prepared adventure to remain intact (ruling).** **Before play, arrange the cards so that Madam Eva's reading reproduces the original Fortunes results.** **When the party accepts her offer, conduct the reading openly, revealing and interpreting each card in turn.** **The players experience the full scene, including Madam Eva's prophecies, while the prepared locations and Strahd's goal remain unchanged.** **This preserves the theatrical reading but deliberately replaces I6's fresh random draw with a predetermined one.** **To follow I6 as printed, draw afresh and substitute the new results.**
-
-**What a replacement reaches, and what it does not (guide ruling).** **I6 prints that the reading determines "the placement of important treasures" and Strahd's goals, that a reading at the camp substitutes the new results for the old, and that the DM writes the results down. It says nothing about what a substitution does to events that have already happened.**
-
-> **The principle.** **A replacement reading changes only what remains unsettled in play.** **It does not undo established discoveries, possession, actions or consequences.**
-
-- **An item the party has already recovered stays recovered.** **Placement describes where a thing was put; once they hold it, placement describes nothing**, and the new reading's placement for that item is spent.
-- **An item placed by the new reading in a room the party has already searched and established as empty does not appear there.** **That placement is spent.** **The DM does not undo the earlier search or introduce the item retroactively.**
-- **"Searched and established as empty" means the absence was actually established.** **Entering the room, glancing round, being driven out, or failing a search for something concealed establishes nothing** (discovery is not established by visiting the location). **An unsuccessful search must not become a benefit.**
-- **A replaced goal governs his conduct from the moment the reading is taken.** **Completed actions stand. Spent strikes stay spent. What he has learned stays learned.** **The guide does not claim the old goal was never his.**
-- **Strahd's location is not a treasure placement and is not governed by the same limit.** **A room the party has already cleared can become his newly designated location**, because the designation says where he can always be found and makes no claim that he was there when they passed through. **An absence they established remains true.**
 
 > **What the guide does not claim.** **Mechanically the reading replaces the results, and that much is printed.** **Whether that is fate changing, fate being revealed more accurately, or the earlier reading simply becoming obsolete is an interpretation, and the guide adopts none of them.** **Madam Eva is not established as a creature who alters what will happen.** The ambiguity is worth keeping: it lets her be a seer, a fraud or an instrument, **and the players cannot tell which from anything the module gives them.**
 

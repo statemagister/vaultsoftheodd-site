@@ -1,7 +1,7 @@
 ---
 title: "Ravenloft I6 Playability Guide, Part I"
 date: 2026-04-25T08:21:30Z
-lastmod: 2026-11-21
+lastmod: 2026-11-22
 slug: "ravenloft-i6-playability-guide-part-i"
 settings:
   - "Ravenloft"
@@ -10,7 +10,7 @@ tags:
   - "Playability Guide"
 straight_quotes: true
 as_written: true
-# Body is the approved file (handover section 10, SHA-256 9ab9a2cd6b09989e...) less its
+# Body is the approved file (handover section 10, SHA-256 a2e7ff54f12751b2...) less its
 # title and byline lines, plus the Encounter Guides note and the PDF link.
 ---
 
@@ -220,7 +220,7 @@ The DM's log of what each PC did, kept on the running record (5e), and the time 
 - *Forces.* Helga (K32) attacks only when she can avoid fighting the whole party, or when he commands it. The catacombs' 3,000 bats (K84) attack humans only at his command or if provoked. That he also commands the castle's other residents, such as the witches (K56), the wraiths (K35) and the shadow demon (K72), is the DM's reading.
 - *Items.* The reading decides where the Holy Symbol, the Tome and the hilt are. The other items sit where I6 places them; whether an active resident moves the portable ones before the party arrives is the DM's call.
 - *Defenders that run themselves.* The portrait at K47 tries to hold characters until he releases them; the Guardian of Sorrow (K20), the throne zombies (K28), the wraiths (K35), the golems (K78) and the catacombs' undead work whether or not he is there.
-- *Retreats.* The High Tower shaft (K18a) runs 390 feet from the catacombs to the peak, and the bats fly out through it each evening; "Wind blows up the shaft" (p.16), which under the guide's ruling carries a gas up and blows back one trying to descend. The wall blocking the staircase beside it has "A small chink in the masonry wall" that "allows gas to pass from one side of this wall to the other" (p.16); under the guide's reading the staircase is then a way down for him as gas, provided the chink and the stair beyond are passable when he needs them. The smokestack (K52) drops 60 feet into his study fireplace, but "The smoke and fire in the chimney causes 1-6 points of damage per round spent in the chimney" (p.21), and the heated air from the blaze below rises up it. That these are his routes is the DM's reading. The DM maps his exits before the party enters the castle (Section 6), so a withdrawal is immediate rather than improvised.
+- *Retreats.* The High Tower shaft (K18a) runs 390 feet from the catacombs to the peak, and the bats fly out through it each evening; "Wind blows up the shaft" (p.16), which under the guide's ruling carries a gas up and blows back one trying to descend. The wall blocking the staircase beside it has "A small chink in the masonry wall" that "allows gas to pass from one side of this wall to the other" (p.16); under the guide's reading the staircase is then a way down for him as gas, provided the chink and the stair beyond are passable when he needs them. The smokestack (K52) drops 60 feet into his study fireplace, but it is not a route for him as gas: it is an unsupported vertical drop that a gas cannot descend (R), "The smoke and fire in the chimney causes 1-6 points of damage per round spent in the chimney" (p.21), and the heated air from the blaze below rises up it. That these are his routes is the DM's reading. The DM maps his exits before the party enters the castle (Section 6), so a withdrawal is immediate rather than improvised.
 - *His apartments.* His floor is a lived-in residence: the wedding tableau at K36, the Study at K37, and the Bedchamber at K42, where Gertruda waits unbitten because "He is intent on his current plot and is saving her for later."
 - *What he cannot command.* The Icon of Ravenloft (K15) is a holy artifact of great lawful good power. Sergei's coffin (K85) opens easily to a lawful good touch. The curtain at K87 passes only the lawful good. These are where the party can find ground that does not serve him.
 
@@ -359,7 +359,7 @@ Part I ends before the first session. By then the reading is fixed and recorded,
 
 ---
 
-*Last updated 21 November 2026.*
+*Last updated 22 November 2026.*
 
 ---
 
@@ -367,4 +367,4 @@ Part I ends before the first session. By then the reading is fixed and recorded,
 
 A print-optimised PDF of Part I is available for download.
 
-[Download PDF](/wp-content/uploads/2026/04/ravenloft-i6-playability-guide-part1.pdf?v=20261122)
+[Download PDF](/wp-content/uploads/2026/04/ravenloft-i6-playability-guide-part1.pdf?v=20261122c)

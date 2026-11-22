@@ -12,7 +12,7 @@ tags:
 # Approved source, verified against the handover checksum. The body below is
 # that file with its first four lines (title, blank, byline, blank) removed:
 # the title is in front matter and the byline comes from the site.
-source_sha256: "02beb8d492a99c151f3554b4a9f1fcb1171af718ea28ebe903c297cd925c6ef9"
+source_sha256: "4c7e19992007bb18ea899ed63c50c2e4428df0feb6047f5810c0a22cee41d411"
 ---
 
 > **What this is.** A DM-facing companion to module I6, covering the road from the junction to the castle gates and the whole of Castle Ravenloft above ground, K1 to K60. **It is designed to be opened cold.** Each encounter carries the statistics, the mechanics that fire and the consequences, so that the module's encounters can be run from I6 and this guide alone.
@@ -101,7 +101,7 @@ source_sha256: "02beb8d492a99c151f3554b4a9f1fcb1171af718ea28ebe903c297cd925c6ef9
 
 **Where they go (printed).** **The northern fork leads to G, Tser Pool. The southern road goes to I, the Carriage.**
 
-**This is the adventure's only real choice of route** and it is presented without a signpost. **Both arrive at the castle.**
+**This is the adventure's only real choice of route** and it is presented without a signpost. **Only the southern road leads on towards the castle**: the northern fork ends at Tser Pool, and a party returning from G takes the southern road from F unless another route is established in play.
 
 ### 2b. G, Tser Pool Encampment
 
@@ -406,7 +406,7 @@ source_sha256: "02beb8d492a99c151f3554b4a9f1fcb1171af718ea28ebe903c297cd925c6ef9
 
 > **The updraft closes this shaft to a descending gas (ruling).** **The direction is stated twice in the module**: "wind blows up the shaft", and the catacombs' three thousand bats fly out through it each evening. **No speed is given anywhere, and none is invented here.** Treated as a **strong adverse current** (ruling), which blows gas back at air speed for as long as it lasts, **a vampire in forced gaseous form cannot descend K18a against it.**
 - **This is deliberately local.** It does not make every draft described as rushing or chilling a strong current. **K47's downward draft assists a descent and obstructs nothing**, and it is given no movement bonus, there being no printed rule for one.
-- **The retreat is not defeated, only redirected.** A DM whose Strahd is driven to gas in the towers routes him by **K20's spiral staircase** or **the K31a shaft** instead. **The twelve-turn clock runs throughout and the alternative must itself be traversable**; the distances are not the difficulty, since twelve turns allow 3,600 feet at the gas's 30 feet a round (ruling) and no route in the castle approaches that.
+- **The retreat is not defeated, only redirected.** A DM whose Strahd is driven to gas in the towers routes him by **K20's spiral staircase** instead. **The twelve-turn clock runs throughout and the alternative must itself be traversable**; the distances are not the difficulty, since twelve turns allow 3,600 feet at the gas's 30 feet a round (ruling) and no route in the castle approaches that.
 - **Falling is a different question and is not settled by this ruling.** **Whether the updraft can lift a character descending slowly under *feather fall* is not established**, and the wind ruling for gas does not establish it. **A character under *feather fall* continues to descend unless the updraft is established as strong enough to lift them**, which nothing in the module establishes. **No wind speed is assigned to force any outcome.**
 
 ### 4h. K19, Grand Landing, and the joke trap

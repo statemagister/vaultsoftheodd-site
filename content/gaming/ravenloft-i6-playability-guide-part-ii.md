@@ -1,7 +1,7 @@
 ---
 title: "Ravenloft I6 Playability Guide, Part II"
 date: 2026-05-03T08:00:00Z
-lastmod: 2026-11-21
+lastmod: 2026-11-22
 slug: "ravenloft-i6-playability-guide-part-ii"
 settings:
   - "Ravenloft"
@@ -10,7 +10,7 @@ tags:
   - "Playability Guide"
 straight_quotes: true
 as_written: true
-# Body is the approved file (handover section 10, SHA-256 6373b63abbade08b...) less its
+# Body is the approved file (handover section 10, SHA-256 9476ee50b368bcf2...) less its
 # title and byline lines, plus the Encounter Guides note and the PDF link.
 ---
 
@@ -174,8 +174,6 @@ Its use at the table is for sightlines, muffling, and mood. Spent too early, wit
 I6 gives two ways out of the fog's hold. Strahd gave the Rhenari a potion that cancels its effects, not the fake potion they sell against him (p.32); the guide reads it as a lasting protection, which is why they alone pass through Barovia at will (pp.6 and 32). Madam Eva has buried it in a secret place, and the module says the party cannot discover it. The fog is Strahd's magic and disappears entirely upon his destruction (p.6); under the guide's reading, the poison already breathed ends with it. The rules supply a partial third, summarised for preparation in Part I 3b and given in full here. *Neutralize poison* cures only the poison present when it is cast (PHB p.48), and the fog infuses whoever breathes it (p.6), so inside the valley the cure lasts only until the next breath. A character cured outside the valley stays cured unless exposed again, by returning to the fog or otherwise; the spell gives no protection against a new exposure, and each character needs their own casting. Surviving the border is not by itself escaping the valley: curing the poison neither opens the gates nor makes a way through the woods (3b).
 
 **What a searched or captured Rhenari yields is at 3d**, and the short answer is that the vial they carry and sell is a fake (p.32).
-
-A DM may depart from the module over the potion. A party that comes to believe it cannot defeat Strahd may look for another way out, and the potion is the obvious one. Madam Eva serves Strahd only while it benefits her and her troupe (p.11), so she need not be willing to die to keep it, and the search leads to the Rhenari camp at Tser Pool (G, p.11). Escaping is survival, not victory: Strahd and the valley remain, and he need not let the matter rest. This is a departure from I6, which makes the potion undiscoverable, and how it plays out belongs with the camp, where its quantity and dose are settled before the party can obtain it.
 
 **How the fog works, for the DM (the guide's interpretation).** Breathing the fog deposits a poison that stays dormant while the character goes on breathing the valley's air. That air counts as the fog's air indoors and out, whether or not any mist is visible. Breathing air without the fog's influence is a withdrawal: leaving the valley is the ordinary case, and magically cleared air is another. A poisoned character who withdraws saves vs. poison; on a failure the choking begins, and it stops when the character breathes the fog again, though the poison remains. The save belongs to the withdrawal, not to the passing of time: a character who stays out of the fog's air makes no further save, and one who returns and withdraws again makes a fresh one. A character carrying no poison has nothing to activate. A choking character acts, moves and casts spells normally; I6 imposes no penalty short of its 24-hour consequence.
 
@@ -376,12 +374,12 @@ The night table's eight results, with the statistics I6 prints and the rule each
 
 **If a vampire is brought to 0 hit points in Part II.** The procedure is the same for Helga and for Strahd, and the outcome is the same, but the two are adjudicated separately.
 1. **Nothing is destroyed at 0.** The vampire **is not killed**; it is **forced into gaseous form** (S6.1, MM p.99). What the party sees is the body collapsing into gas and the gas **leaving**, at 3" a round, 30 yards in the open (S6.4). That is all they see.
-2. **The twelve turns then run** (S6.1). **The road is too long to cover in 12 turns** (S6.6). **Strahd's coffin is at K86, which I6 prints** (p.30); **Helga's is at K32 by the guide's ruling above**. Both are in the castle, and **neither is reachable from Part II's road, the woods at C or the camp**.
+2. **The twelve turns then run** (S6.1). **The gas is bound to the ground and cannot climb to the castle** (S6.4): **its way back is by F and the southern road, which is too long to cover in 12 turns** (S6.6). **Strahd's coffin is at K86, which I6 prints** (p.30); **Helga's is at K32 by the guide's ruling above**. Both are in the castle, and **neither is reachable from Part II's road, the woods at C or the camp**.
 3. **So the vampire is destroyed**, at the end of the twelve turns, out of the party's sight.
 4. **The party does not automatically know it.** They witnessed a retreat, not a death. **Nothing in Part II tells them the outcome**, and a DM should not announce it. A party that assumes it killed something has assumed it.
 5. **Two things can change the outcome:** a **strong wind already established** that carries the gas, and a **coffin the DM has placed elsewhere**. Neither arises by default.
 
-**On S6.6's carriage.** Part II carries **the road provision only**. The village and pillarstone provision, and the whole of the gaseous-movement procedure, are carried **in full in Part III**, whose wording this agrees with. The duplication is deliberate: this is partial carriage under the series rule.
+**On S6.6's carriage.** Part II carries **the road provision only**. The village provision, and the whole of the gaseous-movement procedure, are carried **in full in Part III**, whose wording this agrees with. The duplication is deliberate: this is partial carriage under the series rule.
 
 ## 4. The Svalich woods
 
@@ -431,7 +429,7 @@ Everything else in Sections 3 and 4 is used when it arises.
 
 ---
 
-*Last updated 21 November 2026.*
+*Last updated 22 November 2026.*
 
 ---
 
@@ -439,4 +437,4 @@ Everything else in Sections 3 and 4 is used when it arises.
 
 A print-optimised PDF of Part II is available for download.
 
-[Download PDF](/wp-content/uploads/2026/04/ravenloft-i6-playability-guide-part2.pdf?v=20261121c)
+[Download PDF](/wp-content/uploads/2026/04/ravenloft-i6-playability-guide-part2.pdf?v=20261122c)

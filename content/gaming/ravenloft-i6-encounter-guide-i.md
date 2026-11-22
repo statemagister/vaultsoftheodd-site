@@ -3,7 +3,7 @@ title: "Ravenloft Encounter Guide I: Barovia and the Approach"
 date: 2026-12-04T07:00:00+00:00
 slug: "ravenloft-i6-encounter-guide-i"
 layout: encounter-guide
-draft: true
+draft: false
 settings:
   - "Ravenloft"
 tags:

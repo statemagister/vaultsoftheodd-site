@@ -4,7 +4,7 @@ date: 2026-09-07T07:00:00+01:00
 weight: 30
 draft: false
 description: "Sometimes you cancel something and nothing seems to change. That does not mean nothing happened."
-tags: ["getting started"]
+tags: ["getting started", "subscriptions"]
 ---
 
 Sometimes you stop a payment and nothing seems to change.

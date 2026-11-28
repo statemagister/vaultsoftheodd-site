@@ -5,7 +5,7 @@ date: 2026-08-17T07:00:00+01:00
 weight: 15
 draft: false
 description: "You were told what the job pays. Your payslip says something different. Both the numbers are correct, but it isn’t always explained why."
-tags: ["getting started", "pay"]
+tags: ["getting started", "pay", "tax"]
 uk_rules: true
 ---
 

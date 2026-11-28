@@ -4,7 +4,7 @@ date: 2026-08-03T08:00:00+01:00
 weight: 80
 draft: false
 description: "The number on the student loan statement and the number that comes out of a payslip are worked out from completely different things."
-tags: ["student finance", "getting started"]
+tags: ["student finance", "getting started", "pay"]
 uk_rules: true
 ---
 

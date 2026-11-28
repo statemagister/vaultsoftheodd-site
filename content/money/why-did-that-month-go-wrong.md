@@ -5,7 +5,7 @@ date: 2026-09-21T07:00:00+01:00
 weight: 45
 draft: false
 description: "Nothing unusual happened. You didn’t buy anything you regret. The month broke anyway, and there’s normally a reason that has nothing to do with willpower."
-tags: ["getting started"]
+tags: ["getting started", "budgeting"]
 ---
 
 Some months go wrong for no reason you can immediately see.

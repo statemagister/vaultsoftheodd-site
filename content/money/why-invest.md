@@ -5,7 +5,7 @@ date: 2026-08-10T07:00:00+01:00
 weight: 10
 draft: false
 description: "Time with your loved ones, family and friends is investing. Let me explain how."
-tags: ["getting started"]
+tags: ["getting started", "investing"]
 ---
 
 Think about all the times you have spent with friends, or all the days with the ones you love. You enjoy the time being together, and you don’t want it to end, but when it ends you still have the memories and the way it made you feel, and likely quite a few photos, and maybe tags across your socials.

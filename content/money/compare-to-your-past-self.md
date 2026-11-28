@@ -5,7 +5,7 @@ date: 2026-11-02T07:00:00+00:00
 weight: 65
 draft: false
 description: "Comparing your money to other people’s tells you very little, for a reason that has nothing to do with envy."
-tags: ["getting started"]
+tags: ["getting started", "budgeting"]
 ---
 
 There’s a hill near me that I used to have to stop halfway up to catch my breath.

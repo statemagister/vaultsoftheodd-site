@@ -5,7 +5,7 @@ subtitle: "Enough is a number, not a feeling."
 weight: 60
 draft: false
 description: "Every time you get closer to enough, it seems to move. There’s a reason for that, and it isn’t greed."
-tags: ["getting started"]
+tags: ["getting started", "budgeting"]
 ---
 
 Walk towards the horizon and it moves.

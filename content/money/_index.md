@@ -98,7 +98,7 @@ schedule:
     date: "2026-11-16"
   - slug: "what-will-your-employer-add"
     title: "What Will Your Employer Add?"
-    teaser: "There is money attached to your job that only appears once you have put some of your own down. Most people have never found out how much."
+    teaser: "There’s money attached to your job that only appears once you’ve put some of your own down. It’s worth finding out how much."
     date: "2026-11-30"
   - slug: "will-my-future-self-really-care"
     title: "Will My Future Self Really Care?"
